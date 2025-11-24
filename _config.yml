@@ -1,21 +1,20 @@
-title: "Geongyu Lee Resume"
 name: "Geongyu Lee"
-description: "AI Researcher Resume Site"
-markdown: kramdown
+title: "AI Researcher Resume"
+description: "Resume of Geongyu Lee"
+
+remote_theme: sproogen/modern-resume-theme
 
 plugins:
+  - jekyll-remote-theme
   - jekyll-seo-tag
 
-# Required for modern-resume-theme
 markdown: kramdown
 
-sass:
-  sass_dir: _sass
-  style: compressed
+about_profile_image: "assets/images/profile.jpg"
 
-# Dummy content so theme can load
 content:
-  - title: "About"
+  - title: "About Me"
     layout: text
     content: |
-      This is a resume site for Geongyu Lee.
+      AI Researcher specializing in computational pathology and multi-omics modeling.
+

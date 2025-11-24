@@ -1,0 +1,19 @@
+name: "Geongyu Lee"
+title: "Geongyu Lee 履歷"
+description: "Geongyu Lee 的繁體中文履歷頁面"
+
+remote_theme: sproogen/modern-resume-theme
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+markdown: kramdown
+
+about_profile_image: "../assets/images/profile.jpg"
+
+content:
+  - title: "About"
+    layout: text
+    content: |
+      這是 Geongyu Lee 的繁體中文履歷頁面。

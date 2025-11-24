@@ -1,0 +1,19 @@
+name: "이건규"
+title: "이건규 이력서"
+description: "이건규 AI Researcher Resume (Korean)"
+
+remote_theme: sproogen/modern-resume-theme
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+
+markdown: kramdown
+
+about_profile_image: "../assets/images/profile.jpg"
+
+content:
+  - title: "소개"
+    layout: text
+    content: |
+      이 사이트는 이건규 연구자의 한국어 이력서입니다.
