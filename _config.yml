@@ -1,28 +1,29 @@
 # ---------------------------------------------------
-# Basic Site Settings
+# Site Information
 # ---------------------------------------------------
 
-repository: geongyu-lee/your-resume-site  # 실제 repo 이름으로 변경
+repository: geongyu-lee/geongyu-lee.github.io
 version: 2
 
-# ---------------------------------------------------
-# Personal Information
-# ---------------------------------------------------
-
+# Primary Site Settings
 name: "Geongyu Lee"
 title: "AI Researcher | Computational Pathology · Multi-Omics Modeling"
 email: "gglee@omixai.com"
 phone: "+82 10 8408 2255"
-website: ""
+website: "https://geongyu-lee.github.io"
+
+# Dark Mode (auto: true, false, never)
 darkmode: true
 
 # ---------------------------------------------------
 # Social Links
 # ---------------------------------------------------
+
 github_username: geongyu-lee
 linkedin_username: geongyu-lee
 googlescholar_username: 43BuluYAAAAJ
 
+# Hide unused links (theme automatically ignores empty fields)
 twitter_username:
 stackoverflow_username:
 dribbble_username:
@@ -35,188 +36,29 @@ youtube_username:
 orcid_username:
 
 # ---------------------------------------------------
-# Additional Links
+# Additional Links (shows icons)
 # ---------------------------------------------------
 
 additional_links:
   - title: Google Scholar
     icon: fas fa-graduation-cap
     url: "https://scholar.google.com/citations?user=43BuluYAAAAJ"
+  - title: LinkedIn
+    icon: fab fa-linkedin
+    url: "https://www.linkedin.com/in/geongyu-lee"
 
 # ---------------------------------------------------
-# About Section
+# About Section (used only for theme metadata)
+# NOTE: real content lives inside index.md, ko/index.md, etc.
 # ---------------------------------------------------
 
 about_profile_image: images/profile.jpg
 about_content: |
-  AI researcher specializing in **computational pathology** and **multi-omics modeling**, bridging histopathology and proteomic data through deep learning.  
-  Experienced in foundation model design, cell perturbation prediction, and translational bioinformatics integration.  
-  Passionate about developing interpretable, clinically translatable AI systems for oncology and drug discovery.
+  This site contains multilingual versions of my academic CV.
+  See English, Korean, Japanese, and Chinese pages using the navigation bar.
 
 # ---------------------------------------------------
-# Content Sections
-# ---------------------------------------------------
-
-content:
-
-  # ========================
-  # EXPERIENCE
-  # ========================
-  - title: Professional Experience
-    layout: list
-    content:
-
-      - layout: right
-        title: RadiSen Co., Ltd. (Acquired by OMIXAI)
-        sub_title: AI Researcher
-        caption: Feb 2025 – Present
-        quote: >
-          Multi-omics foundation modeling for oncology.
-        description: |
-          - Spearheaded multi-omics foundation model initiatives integrating proteomics and histopathology for drug response prediction.
-          - Developed self-supervised proteomic representation learning pipelines and LoRA-based fine-tuning for downstream tasks.
-          - Co-led the Virtual Cell Challenge collaboration predicting CRISPR knockdown responses in pluripotent stem cells.
-          - Advised translational oncology teams on TNBC digital pathology model deployment for clinical validation.
-
-      - layout: right
-        title: Deep Bio Inc.
-        sub_title: AI Researcher
-        caption: Mar 2021 – Jan 2025
-        quote: >
-          Digital pathology & clinical oncology AI development.
-        description: |
-          - Built scalable whole-slide image (WSI) pipelines for breast cancer recurrence risk assessment.
-          - Led prostate metastasis detection projects using cross-modal features from histopathology and clinical variables.
-          - Established ADME/Tox predictive frameworks bridging pathology morphometrics with molecular profiling.
-          - Collaborated on KFDA regulatory submissions for pathology AI model validation.
-
-  # ========================
-  # EDUCATION
-  # ========================
-  - title: Education
-    layout: list
-    content:
-      - layout: top-right
-        title: Seoul National University of Science and Technology (SeoulTech)
-        sub_title: M.S. in Data Science
-        caption: 2019 – 2021
-        description: |
-          - Advisor: Prof. Sangheum Hwang  
-          - Thesis: *Utilizing Contrastive Loss to Improve Segmentation Model Performance*
-
-      - layout: top-right
-        title: Daejeon University
-        sub_title: B.S. in Information Security
-        caption: 2012 – 2019
-
-  # ========================
-  # PUBLICATIONS
-  # ========================
-  - title: Selected Publications
-    layout: list
-    content:
-      - layout: left
-        title: Scientific Reports (Nature Publishing Group), 2025
-        description: |
-          *Assessing the risk of recurrence in early-stage breast cancer through H&E-stained whole slide images.*
-
-      - layout: left
-        title: Pattern Recognition in Life Sciences / Prostate International, 2025
-        description: |
-          *AI-driven Digital Pathology in Urological Cancers: Current Trends and Future Directions.*
-
-      - layout: left
-        title: Bioengineering, 2024
-        description: |
-          *MurSS: A Multi-Resolution Selective Segmentation Model for Breast Cancer.*
-
-      - layout: left
-        title: IEEE Access, 2022
-        description: |
-          *Supervised Contrastive Embedding for Medical Image Segmentation.*
-
-  # ========================
-  # PREPRINTS / ABSTRACTS
-  # ========================
-  - title: Preprints & Conference Abstracts
-    layout: list
-    content:
-      - layout: left
-        title: arXiv:2510.11176 (2025)
-        description: |
-          *G2L: From Giga-Scale to Cancer-Specific Pathology Foundation Models via Knowledge Distillation.*
-
-      - layout: left
-        title: arXiv:2502.07288 (2025)
-        description: |
-          *KPI Challenge 2024: Advancing Glomerular Segmentation from Patch-to-Slide-Level.*
-
-      - layout: left
-        title: AACR 2023
-        description: |
-          *Predicting Protein Receptor Status from H&E-stained Images in Breast Cancer.*
-
-      - layout: left
-        title: USCAP 2022
-        description: |
-          *Automatic Histological Grading of Breast Cancer Resection Tissue.*
-
-  # ========================
-  # AWARDS
-  # ========================
-  - title: Honors & Awards
-    layout: list
-    content:
-      - layout: left
-        title: KPI Challenge 2024
-        sub_title: 2nd Place — Glomeruli Segmentation (Whole-Slide Level)
-      - layout: left
-        title: Dacon × Zigbang, 2018
-        sub_title: 7th Place — Apartment Price Prediction
-
-  # ========================
-  # TECHNICAL SKILLS
-  # ========================
-  - title: Technical Skills
-    layout: list
-    content:
-      - layout: left
-        title: Languages
-        description: |
-          Python, R, JavaScript, Bash
-
-      - layout: left
-        title: Frameworks
-        description: |
-          PyTorch, FastAPI, scikit-learn, Transformers
-
-      - layout: left
-        title: Tools
-        description: |
-          Docker, Git, Linux, VS Code
-
-      - layout: left
-        title: Domains
-        description: |
-          Deep Learning, Computational Pathology, Multi-Omics Integration, Protein Modeling
-
-  # ========================
-  # RESEARCH INTERESTS
-  # ========================
-  - title: Research Interests
-    layout: text
-    content: |
-      Computational Pathology · Multi-Omics Modeling · Proteomics Integration  
-      Calibration and Interpretability · Biomedical Foundation Models · Cell Perturbation Prediction
-
-# ---------------------------------------------------
-# Footer
-# ---------------------------------------------------
-
-footer_show_references: false
-
-# ---------------------------------------------------
-# Build Settings
+# Build Configuration
 # ---------------------------------------------------
 
 remote_theme: sproogen/modern-resume-theme
@@ -226,7 +68,7 @@ sass:
   style: compressed
 
 plugins:
- - jekyll-seo-tag
+  - jekyll-seo-tag
 
 exclude:
   - "Gemfile"
