@@ -2,7 +2,7 @@
 # Site Information
 # ---------------------------------------------------
 
-repository: geongyu-lee/geongyu-lee.github.io
+repository: Geongyu/Geongyu.github.io
 version: 2
 
 # Primary Site Settings
@@ -19,7 +19,7 @@ darkmode: true
 # Social Links
 # ---------------------------------------------------
 
-github_username: geongyu-lee
+github_username: Geongyu
 linkedin_username: geongyu-lee
 googlescholar_username: 43BuluYAAAAJ
 
