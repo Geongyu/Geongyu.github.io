@@ -3,84 +3,131 @@ layout: cv
 title: Geongyu Lee | AI Researcher
 ---
 
-<div style="text-align:right;">
-  <a href="/" style="font-weight:600;">🇺🇸 English</a> |
-  <a href="/ko/" style="font-weight:600;">🇰🇷 한국어</a>
+<!-- Global Navigation Bar -->
+<div style="
+  width:100%;
+  background:#ffffffdd;
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #e5e5e5;
+  padding:12px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+">
+  <div style="font-weight:700; font-size:16px;">
+    🌐 Geongyu Lee
+  </div>
+  <div style="display:flex; gap:18px; font-weight:600;">
+    <a href="/" style="text-decoration:none; color:#666;">EN</a>
+    <a href="/ko/" style="text-decoration:none; color:#666;">KR</a>
+    <a href="/ja/" style="text-decoration:none; color:#0366d6;">JP</a>
+    <a href="/zh/" style="text-decoration:none; color:#666;">CN</a>
+  </div>
 </div>
 
 # Geongyu Lee  
-AI Researcher · Computational Pathology · Multi-Omics Modeling
+AI Researcher · Computational Pathology · Multi-Omics Modeling  
 
 ---
 
-## プロフィール  
-Computational Pathology と Multi-Omics Modeling を専門とする AI リサーチャー。  
-H&E Whole Slide Image と proteomics データを統合したマルチオミクス基盤モデル、cell perturbation 予測、  
-Foundation Model 設計、トランスレーショナルバイオインフォマティクスに取り組んでいる。  
+# プロフェッショナルサマリー
+Computational Pathology および Multi-Omics Modeling を中心に研究を行う AI リサーチャー。  
+H&E 病理画像と proteomics プロファイルを統合し、深層学習を用いた multi-omics foundation model の開発に従事。
 
-腫瘍学・精密医療・薬剤応答モデリングにおける **解釈性と臨床応用可能性の高いバイオメディカル AI** の構築を目指して研究を行っている。  
-:contentReference[oaicite:1]{index=1}
-
----
-
-## 職務経歴
-
-### **RadiSen Co., Ltd.（OMIXAI により買収） — AI Researcher**  
-`2025年2月 – 現在`
-
-- Proteomics と病理画像を統合した multi-omics foundation model の研究開発。  
-- Self-supervised proteomic representation pipeline の構築および LoRA を用いた微調整。  
-- Virtual Cell Challenge（ARC Institute）共同研究：pluripotent stem-cell CRISPR knockdown 予測モデルに参加。  
-- TNBC（トリプルネガティブ乳がん）における digital pathology モデルの検証支援。  
-:contentReference[oaicite:2]{index=2}
+Cell perturbation 予測、foundation model 設計、トランスレーショナル・バイオインフォマティクスの経験を有し、  
+**臨床応用可能で解釈性の高いバイオメディカル AI** の構築を目標としている。
 
 ---
 
-### **Deep Bio Inc. — AI Researcher**  
-`2021年3月 – 2025年1月`
+# 職務経験
 
-- 早期乳がん再発リスク予測のための WSI（Whole Slide Image）パイプラインを構築。  
-- 病理画像＋臨床変数を用いた cross-modal prostate metastasis detection モデルを主導。  
-- 病理形態量と分子情報を統合した ADME/Tox 予測フレームワークを開発。  
-- Digital pathology AI の KFDA 申請に必要な検証業務に参加。  
-:contentReference[oaicite:3]{index=3}
+## RadiSen Co., Ltd.（OMIXAI による買収） — AI Researcher  
+**2025年2月 – 現在**  
+- Proteomics と病理画像を統合した multi-omics foundation model の企画・開発を主導。  
+- Self-supervised proteomics representation の学習パイプラインおよび LoRA 微調整の実装を担当。  
+- Virtual Cell Challenge（ARC Institute）にて、pluripotent stem-cell CRISPR knockdown 予測モデル開発に参画。  
+- トリプルネガティブ乳がん（TNBC）における digital pathology の展開と臨床ワークフロー統合を支援。  
 
 ---
 
-## 学歴
+## Deep Bio Inc. — AI Researcher  
+**2021年3月 – 2025年1月**  
+- 早期乳がん再発リスク予測のための WSI（Whole Slide Image）解析パイプラインを構築。  
+- H&E + 臨床データを用いた cross-modal prostate metastasis detection モデルの開発を主導。  
+- 形態学的特徴と分子特徴を統合した ADME/Tox 予測フレームワークを構築。  
+- デジタル病理 AI の KFDA 申請に必要な検証・ドキュメント作成に貢献。  
 
-### **ソウル科学技術大学（SeoulTech）**  
+---
+
+# 学歴
+
+## ソウル科学技術大学（SeoulTech）  
 **データサイエンス学科 修士（2019–2021）**  
-- 指導教員：Sangheum Hwang 教授  
-- 修士論文：Contrastive Loss を用いたセグメンテーション性能向上に関する研究  
-:contentReference[oaicite:4]{index=4}
+- 指導教員：*Prof. Sangheum Hwang*  
+- 修士論文：**Contrastive Loss を活用したセグメンテーション性能向上に関する研究**
 
-### **大田大学（Daejeon University）**  
-**情報セキュリティ学科 学士（2012–2019）**  
-:contentReference[oaicite:5]{index=5}
+## 大田大学（Daejeon University）  
+**情報セキュリティ学科 学士（2012–2019）**
 
 ---
 
-## 主な研究業績
+# 主な査読付き論文
 
 - **Assessing the risk of recurrence in early-stage breast cancer through H&E-stained whole slide images.**  
-  *Scientific Reports (Nature Publishing Group), 2025.*  
+  *Scientific Reports (Nature Publishing Group), 2025.*
+
 - **AI-driven Digital Pathology in Urological Cancers: Current Trends and Future Directions.**  
-  *Pattern Recognition in Life Sciences / Prostate International, 2025.*  
-- **MurSS: Multi-Resolution Selective Segmentation Model for Breast Cancer.**  
-  *Bioengineering, 2024.*  
+  *Pattern Recognition in Life Sciences / Prostate International, 2025.*
+
+- **MurSS: A Multi-Resolution Selective Segmentation Model for Breast Cancer.**  
+  *Bioengineering, 2024.*
+
 - **Supervised Contrastive Embedding for Medical Image Segmentation.**  
-  *IEEE Access, 2022.*  
-:contentReference[oaicite:6]{index=6}
+  *IEEE Access, 2022.*
 
 ---
 
-## 研究分野  
-Computational Pathology · Multi-Omics Integration · Proteomics Modeling ·  
-Cell Perturbation Prediction · Biomedical Foundation Models · Interpretability  
-:contentReference[oaicite:7]{index=7}
+# プレプリント・学会要旨
+
+- **G2L: From Giga-Scale to Cancer-Specific Pathology Foundation Models via Knowledge Distillation.**  
+  *arXiv:2510.11176, 2025.*
+
+- **KPI Challenge 2024: Advancing Glomerular Segmentation from Patch-to-Slide-Level.**  
+  *arXiv:2502.07288, 2025.*
+
+- **Predicting Protein Receptor Status from H&E-stained Images in Breast Cancer.**  
+  *AACR, 2023.*
+
+- **Automatic Histological Grading of Breast Cancer Resection Tissue.**  
+  *USCAP, 2022.*
 
 ---
 
-## 言語切り替え  
-右上のメニューから英語 / 韓国語ページに移動できます。
+# 受賞歴
+- **第2位 — 糸球体セグメンテーション（Whole-Slide Level）**, KPI Challenge 2024  
+- **第7位 — 不動産価格予測**, Dacon × Zigbang（2018）
+
+---
+
+# テクニカルスキル
+
+### 言語  
+Python / R / JavaScript / Bash  
+
+### フレームワーク  
+PyTorch / FastAPI / scikit-learn / Transformers  
+
+### ツール  
+Docker / Git / Linux / VS Code  
+
+### 専門領域  
+Deep Learning / Computational Pathology / Multi-Omics Integration / Protein Modeling  
+
+---
+
+# 研究分野  
+Computational Pathology · Multi-Omics Modeling · Proteomics Integration  
+Biomedical Foundation Models · Interpretability · Cell Perturbation Prediction
