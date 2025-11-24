@@ -81,3 +81,9 @@ exclude:
   - "lib/"
   - "scripts/"
   - "docker-compose.yml"
+
+remote_theme: sproogen/modern-resume-theme
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
