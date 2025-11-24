@@ -1,5 +1,5 @@
 ---
-layout: cv
+layout: resume
 title: 이건규 | AI Researcher
 ---
 
