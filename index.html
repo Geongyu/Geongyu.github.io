@@ -6,7 +6,7 @@
 <title>Geongyu Lee — AI Researcher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=IBM+Plex+Sans+JP:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0d0e12;--panel:#14161d;--panel-2:#1a1d26;
@@ -14,7 +14,7 @@
     --fg:#e9ebf1;--muted:#949bab;--faint:#5e6573;
     --accent:#7d8cff;--accent-dim:rgba(125,140,255,.14);
     --f-disp:"Space Grotesk",system-ui,sans-serif;
-    --f-body:"IBM Plex Sans","IBM Plex Sans KR",system-ui,sans-serif;
+    --f-body:"IBM Plex Sans","IBM Plex Sans KR","IBM Plex Sans JP",system-ui,sans-serif;
     --f-mono:"IBM Plex Mono",ui-monospace,monospace;
     --maxw:1140px;
   }
@@ -147,7 +147,7 @@
   .reveal{opacity:0;transform:translateY(20px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-  :lang(ko) .head h2,:lang(ko) .hero h1,:lang(ko) .row .main h3,:lang(ko) .card h3,:lang(ko) .role-row .what h3,:lang(ko) .contact .big{letter-spacing:-.01em}
+  :lang(ko) .head h2,:lang(ko) .hero h1,:lang(ko) .row .main h3,:lang(ko) .card h3,:lang(ko) .role-row .what h3,:lang(ko) .contact .big,:lang(ja) .head h2,:lang(ja) .hero h1,:lang(ja) .row .main h3,:lang(ja) .card h3,:lang(ja) .role-row .what h3,:lang(ja) .contact .big{letter-spacing:-.01em}
 
   /* ---- media: avatar, figure thumbnails, card banners ---- */
   .hero-id{display:flex;align-items:center;gap:16px;margin-bottom:18px}
@@ -166,6 +166,11 @@
   .poster img{display:block;width:100%;height:120px;object-fit:contain;background:#fff;padding:5px}
   .poster .cap{font-family:var(--f-mono);font-size:.63rem;letter-spacing:.03em;color:var(--muted);padding:8px 10px;border-top:1px solid var(--line);line-height:1.5}
   .poster .cap b{color:var(--accent);font-weight:500}
+  /* ---- language switch ---- */
+  .langsw{display:inline-flex;border:1px solid var(--line-2);border-radius:100px;overflow:hidden;font-family:var(--f-mono)}
+  .langopt{font-size:.72rem;letter-spacing:.06em;color:var(--muted);background:transparent;border:0;padding:7px 12px;cursor:pointer;transition:background .2s,color .2s}
+  .langopt:hover{color:var(--fg)}
+  .langopt.is-active{background:var(--accent);color:#0d0e12}
 </style>
 </head>
 <body>
@@ -174,12 +179,16 @@
   <div class="brand"><b>Geongyu&nbsp;Lee</b> · 이건규</div>
   <div class="topright">
     <nav class="nav">
-      <a href="#publications" data-ko="논문">Publications</a>
-      <a href="#projects" data-ko="프로젝트">Projects</a>
-      <a href="#experience" data-ko="경력">Experience</a>
-      <a href="#contact" data-ko="연락처">Contact</a>
+      <a href="#publications" data-ko="논문" data-ja="論文">Publications</a>
+      <a href="#projects" data-ko="프로젝트" data-ja="プロジェクト">Projects</a>
+      <a href="#experience" data-ko="경력" data-ja="経歴">Experience</a>
+      <a href="#contact" data-ko="연락처" data-ja="連絡先">Contact</a>
     </nav>
-    <button id="langtoggle" class="langbtn" aria-pressed="false">한국어</button>
+    <div class="langsw" role="group" aria-label="Language">
+      <button type="button" class="langopt is-active" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" class="langopt" data-lang="ko" aria-pressed="false">KO</button>
+      <button type="button" class="langopt" data-lang="ja" aria-pressed="false">JA</button>
+    </div>
   </div>
 </div>
 
@@ -190,13 +199,13 @@
     <div>
       <div class="hero-id">
         <img class="avatar" src="https://github.com/Geongyu.png" onerror="this.onerror=null;this.src='assets/profile.jpg'" alt="Geongyu Lee · 이건규" width="76" height="76" loading="eager">
-        <span class="eyebrow" data-ko="AI 리서처 · 서울">AI Researcher · Seoul</span>
+        <span class="eyebrow" data-ko="AI 리서처 · 서울" data-ja="AIリサーチャー · ソウル">AI Researcher · Seoul</span>
       </div>
       <h1>Geongyu Lee<span class="kr">이건규</span></h1>
-      <p class="role" data-ko="<span class='b'>Computational Pathology</span> / 병리 파운데이션 모델 / <span class='b'>멀티오믹스</span>"><span class="b">Computational Pathology</span> / Pathology Foundation Models / <span class="b">Multi-Omics</span></p>
-      <p class="lede" data-ko="5년간 의료영상과 신약 개발을 위한 딥러닝을 연구해 왔습니다 — <b>WSI 파이프라인</b>과 식약처(KFDA) 인허가 검증부터 <b>병리 파운데이션 모델</b>까지, 그리고 지금은 프로테오믹스·멀티오믹스로 영역을 넓히고 있습니다.">Five years building deep learning for medical imaging and drug discovery — from <b>whole-slide-image pipelines</b> and KFDA-track validation to <b>pathology foundation models</b>, now integrating proteomics and multi-omics.</p>
+      <p class="role" data-ko="<span class='b'>Computational Pathology</span> / 병리 파운데이션 모델 / <span class='b'>멀티오믹스</span>" data-ja="<span class='b'>Computational Pathology</span> / 病理基盤モデル / <span class='b'>マルチオミクス</span>"><span class="b">Computational Pathology</span> / Pathology Foundation Models / <span class="b">Multi-Omics</span></p>
+      <p class="lede" data-ko="5년간 의료영상과 신약 개발을 위한 딥러닝을 연구해 왔습니다 — <b>WSI 파이프라인</b>과 식약처(KFDA) 인허가 검증부터 <b>병리 파운데이션 모델</b>까지, 그리고 지금은 프로테오믹스·멀티오믹스로 영역을 넓히고 있습니다." data-ja="5年間、医療画像と創薬のための深層学習を研究してきました — <b>WSIパイプライン</b>と食品医薬品安全処(KFDA)承認検証から<b>病理基盤モデル</b>まで、そして現在はプロテオミクス・マルチオミクスへと領域を広げています。">Five years building deep learning for medical imaging and drug discovery — from <b>whole-slide-image pipelines</b> and KFDA-track validation to <b>pathology foundation models</b>, now integrating proteomics and multi-omics.</p>
       <div class="chips">
-        <a class="chip" href="mailto:rjsrb365@gmail.com" data-ko="<svg viewBox='0 0 24 24'><path d='M2 5h20v14H2zm2 2v.5l8 5 8-5V7l-8 5z'/></svg>이메일"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.5l8 5 8-5V7l-8 5z"/></svg>Email</a>
+        <a class="chip" href="mailto:rjsrb365@gmail.com" data-ko="<svg viewBox='0 0 24 24'><path d='M2 5h20v14H2zm2 2v.5l8 5 8-5V7l-8 5z'/></svg>이메일" data-ja="<svg viewBox='0 0 24 24'><path d='M2 5h20v14H2zm2 2v.5l8 5 8-5V7l-8 5z'/></svg>メール"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2zm2 2v.5l8 5 8-5V7l-8 5z"/></svg>Email</a>
         <a class="chip" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ko" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.9V15h2V8zM4 12.4v3.5C4 18.1 7.6 20 12 20s8-1.9 8-4.1v-3.5l-8 4.4z"/></svg>Scholar</a>
         <a class="chip" href="https://github.com/Geongyu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 1a11 11 0 0 0-3.5 21.4c.6.1.8-.2.8-.5v-2c-3 .7-3.7-1.3-3.7-1.3-.5-1.2-1.2-1.6-1.2-1.6-1-.7 0-.7 0-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.4-.3-5-1.2-5-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10.4 10.4 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.1-2.6 5-5 5.3.4.3.8 1 .8 2.1v3.1c0 .3.2.6.8.5A11 11 0 0 0 12 1z"/></svg>GitHub</a>
         <a class="chip" href="https://www.linkedin.com/in/geongyu-lee/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 3.5A1.5 1.5 0 1 1 4 6.5 1.5 1.5 0 0 1 4 3.5zM3 8h2v13H3zm5 0h2v1.8h.1c.3-.6 1.2-1.3 2.6-1.3 2.8 0 3.3 1.8 3.3 4.2V21h-2v-5.8c0-1.4 0-3.1-1.9-3.1s-2.1 1.5-2.1 3V21H8z"/></svg>LinkedIn</a>
@@ -204,43 +213,43 @@
     </div>
 
     <div class="ledger" aria-label="Selected publications">
-      <div class="ledger-h"><span data-ko="주요 논문">Selected publications</span><span class="dot"></span></div>
-      <a class="pub" href="https://arxiv.org/abs/2406.06650" target="_blank" rel="noopener"><span class="t" data-ko="H&E 조직 이미지 기반 조기 유방암 재발 위험 예측">Recurrence risk in early-stage breast cancer from H&amp;E WSIs</span><span class="v first">Sci. Reports · '25</span></a>
-      <a class="pub" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><span class="t" data-ko="G2L: 기가스케일 → 암종 특화 병리 파운데이션 모델">G2L: giga-scale → cancer-specific pathology foundation models</span><span class="v" data-ko="AAAI'26 · 구두">AAAI'26 · oral</span></a>
-      <a class="pub" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener"><span class="t" data-ko="MurSS: 다중 해상도 선택적 분할">MurSS: multi-resolution selective segmentation</span><span class="v">Bioeng. · '24</span></a>
-      <a class="pub" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ko" target="_blank" rel="noopener"><span class="t" data-ko="비뇨기암에서의 AI 기반 디지털 병리">AI-driven digital pathology in urological cancers</span><span class="v first">Prostate Int. · '25</span></a>
-      <a class="pub" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener"><span class="t" data-ko="의료영상 분할을 위한 지도 대조 임베딩">Supervised contrastive embedding for medical segmentation</span><span class="v">IEEE Access · '21</span></a>
+      <div class="ledger-h"><span data-ko="주요 논문" data-ja="主要論文">Selected publications</span><span class="dot"></span></div>
+      <a class="pub" href="https://arxiv.org/abs/2406.06650" target="_blank" rel="noopener"><span class="t" data-ko="H&E 조직 이미지 기반 조기 유방암 재발 위험 예측" data-ja="H&E組織画像による早期乳がん再発リスク予測">Recurrence risk in early-stage breast cancer from H&amp;E WSIs</span><span class="v first">Sci. Reports · '25</span></a>
+      <a class="pub" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><span class="t" data-ko="G2L: 기가스케일 → 암종 특화 병리 파운데이션 모델" data-ja="G2L: ギガスケール → がん種特化の病理基盤モデル">G2L: giga-scale → cancer-specific pathology foundation models</span><span class="v" data-ko="AAAI'26 · 구두" data-ja="AAAI'26 · 口頭">AAAI'26 · oral</span></a>
+      <a class="pub" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener"><span class="t" data-ko="MurSS: 다중 해상도 선택적 분할" data-ja="MurSS: マルチ解像度・選択的セグメンテーション">MurSS: multi-resolution selective segmentation</span><span class="v">Bioeng. · '24</span></a>
+      <a class="pub" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ko" target="_blank" rel="noopener"><span class="t" data-ko="비뇨기암에서의 AI 기반 디지털 병리" data-ja="泌尿器がんにおけるAIデジタル病理">AI-driven digital pathology in urological cancers</span><span class="v first">Prostate Int. · '25</span></a>
+      <a class="pub" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener"><span class="t" data-ko="의료영상 분할을 위한 지도 대조 임베딩" data-ja="医療画像セグメンテーションのための教師ありコントラスティブ埋め込み">Supervised contrastive embedding for medical segmentation</span><span class="v">IEEE Access · '21</span></a>
     </div>
   </header>
 
   <!-- STRIP -->
   <section class="block" style="border-top:0;padding-top:0">
     <div class="strip reveal">
-      <div class="cell"><div class="big">5+</div><div class="lab" data-ko="년 · 딥러닝 R&D">Years · deep learning R&amp;D</div></div>
-      <div class="cell"><div class="big">4</div><div class="lab" data-ko="동료심사 논문 · (공동)1저자 2편">Peer-reviewed · 2 (co-)first</div></div>
-      <div class="cell"><div class="big">G2L</div><div class="lab" data-ko="병리 파운데이션 모델 · AAAI'26 구두">Pathology FM · AAAI'26 oral</div></div>
-      <div class="cell"><div class="big">2<span style="font-size:.5em;color:var(--muted)">nd</span></div><div class="lab" data-ko="KPI 챌린지 2024 · MICCAI">KPI Challenge 2024 · MICCAI</div></div>
+      <div class="cell"><div class="big">5+</div><div class="lab" data-ko="년 · 딥러닝 R&D" data-ja="年 · 深層学習R&D">Years · deep learning R&amp;D</div></div>
+      <div class="cell"><div class="big">4</div><div class="lab" data-ko="동료심사 논문 · (공동)1저자 2편" data-ja="査読論文 · (共同)筆頭2編">Peer-reviewed · 2 (co-)first</div></div>
+      <div class="cell"><div class="big">G2L</div><div class="lab" data-ko="병리 파운데이션 모델 · AAAI'26 구두" data-ja="病理基盤モデル · AAAI'26 口頭">Pathology FM · AAAI'26 oral</div></div>
+      <div class="cell"><div class="big">2<span style="font-size:.5em;color:var(--muted)">nd</span></div><div class="lab" data-ko="KPI 챌린지 2024 · MICCAI" data-ja="KPIチャレンジ2024 · MICCAI">KPI Challenge 2024 · MICCAI</div></div>
     </div>
   </section>
 
   <!-- PROFILE -->
   <section class="block" id="about">
-    <div class="head reveal"><span class="num">00</span><h2 data-ko="프로필">Profile</h2></div>
+    <div class="head reveal"><span class="num">00</span><h2 data-ko="프로필" data-ja="プロフィール">Profile</h2></div>
     <div class="about reveal">
       <div>
-        <p data-ko="저는 <strong>Computational Pathology</strong>와 신약 개발을 위한 딥러닝 시스템을 개발합니다. H&E 기반 유방암 재발 예측 연구로 <strong>Scientific Reports</strong> 제1저자 논문을, <strong>Prostate International</strong>에 공동 제1저자 리뷰를 냈고, 대규모 <strong>병리 파운데이션 모델</strong>(G2L, AAAI 2026 워크숍 구두 발표)에도 참여했습니다.">I build deep learning systems for <strong>computational pathology</strong> and drug discovery. First-author work on H&amp;E-based breast-cancer recurrence in <strong>Scientific Reports</strong>, a co-first review in <strong>Prostate International</strong>, and a contribution to large-scale <strong>pathology foundation models</strong> (G2L, AAAI 2026 workshop, oral).</p>
-        <p data-ko="OMIXAI에서는 조직병리 AI를 <strong>프로테오믹스·멀티오믹스</strong>로 확장하고 있습니다 — 한·미·일 정밀종양학 공동연구(Pan-Sarcoma 프로테오지노믹스)도 그 일환입니다. 앞서 딥바이오에서는 WSI 파이프라인 개발과 <strong>식약처(KFDA) 인허가 모델 검증</strong>을 이끌었습니다.">At OMIXAI I'm extending histopathology AI into <strong>proteomics and multi-omics</strong> — including a Korea–US–Japan precision-oncology collaboration on Pan-Sarcoma proteogenomics. Earlier, at Deep Bio, I led WSI pipeline development and <strong>KFDA-track model validation</strong>.</p>
-        <p data-ko="<strong>정보보안에서 의료 AI로</strong> 넘어온 이력 덕분에 저는 견고함을 먼저 생각합니다 — 모델이 실제 임상에 쓰이는 순간, 정확도만큼이나 보정(calibration)·불확실성·분포 밖(OOD) 동작이 중요해지기 때문입니다.">Coming from <strong>information security into medical AI</strong> gives me a robustness-first instinct — calibration, uncertainty, and out-of-distribution behavior matter as much as accuracy once a model reaches the clinic.</p>
+        <p data-ko="저는 <strong>Computational Pathology</strong>와 신약 개발을 위한 딥러닝 시스템을 개발합니다. H&E 기반 유방암 재발 예측 연구로 <strong>Scientific Reports</strong> 제1저자 논문을, <strong>Prostate International</strong>에 공동 제1저자 리뷰를 냈고, 대규모 <strong>병리 파운데이션 모델</strong>(G2L, AAAI 2026 워크숍 구두 발표)에도 참여했습니다." data-ja="私は<strong>Computational Pathology</strong>と創薬のための深層学習システムを開発しています。H&Eによる乳がん再発予測研究で<strong>Scientific Reports</strong>の筆頭著者論文を、<strong>Prostate International</strong>に共同筆頭のレビューを発表し、大規模<strong>病理基盤モデル</strong>(G2L、AAAI 2026 ワークショップ口頭発表)にも参加しました。">I build deep learning systems for <strong>computational pathology</strong> and drug discovery. First-author work on H&amp;E-based breast-cancer recurrence in <strong>Scientific Reports</strong>, a co-first review in <strong>Prostate International</strong>, and a contribution to large-scale <strong>pathology foundation models</strong> (G2L, AAAI 2026 workshop, oral).</p>
+        <p data-ko="OMIXAI에서는 조직병리 AI를 <strong>프로테오믹스·멀티오믹스</strong>로 확장하고 있습니다 — 한·미·일 정밀종양학 공동연구(Pan-Sarcoma 프로테오지노믹스)도 그 일환입니다. 앞서 딥바이오에서는 WSI 파이프라인 개발과 <strong>식약처(KFDA) 인허가 모델 검증</strong>을 이끌었습니다." data-ja="OMIXAIでは組織病理AIを<strong>プロテオミクス・マルチオミクス</strong>へ拡張しています — 日米韓の精密腫瘍学共同研究(Pan-Sarcomaプロテオゲノミクス)もその一環です。以前はDeep BioでWSIパイプライン開発と<strong>食品医薬品安全処(KFDA)承認モデル検証</strong>を主導しました。">At OMIXAI I'm extending histopathology AI into <strong>proteomics and multi-omics</strong> — including a Korea–US–Japan precision-oncology collaboration on Pan-Sarcoma proteogenomics. Earlier, at Deep Bio, I led WSI pipeline development and <strong>KFDA-track model validation</strong>.</p>
+        <p data-ko="<strong>정보보안에서 의료 AI로</strong> 넘어온 이력 덕분에 저는 견고함을 먼저 생각합니다 — 모델이 실제 임상에 쓰이는 순간, 정확도만큼이나 보정(calibration)·불확실성·분포 밖(OOD) 동작이 중요해지기 때문입니다." data-ja="<strong>情報セキュリティから医療AIへ</strong>と移ってきた経歴から、私はまず頑健性を重視します — モデルが実際の臨床で使われる瞬間、精度と同じくらいキャリブレーション(calibration)・不確実性・分布外(OOD)挙動が重要になるからです。">Coming from <strong>information security into medical AI</strong> gives me a robustness-first instinct — calibration, uncertainty, and out-of-distribution behavior matter as much as accuracy once a model reaches the clinic.</p>
       </div>
       <div class="aside">
-        <h3 data-ko="연구 관심사">Research Interests</h3>
+        <h3 data-ko="연구 관심사" data-ja="研究関心">Research Interests</h3>
         <ul>
-          <li data-ko="병리 파운데이션 모델">Pathology foundation models</li>
-          <li data-ko="프로테오믹스·멀티오믹스 × 조직병리">Proteomics &amp; multi-omics × histopathology</li>
-          <li data-ko="버추얼 셀·섭동(perturbation) 예측">Virtual-cell &amp; perturbation prediction</li>
-          <li data-ko="임상의사결정지원(사람·수의)">Clinical decision support (human &amp; veterinary)</li>
-          <li data-ko="임상 AI의 보정·불확실성">Calibration &amp; uncertainty in clinical AI</li>
-          <li data-ko="자기·약지도 학습">Self-/weakly-supervised learning</li>
+          <li data-ko="병리 파운데이션 모델" data-ja="病理基盤モデル">Pathology foundation models</li>
+          <li data-ko="프로테오믹스·멀티오믹스 × 조직병리" data-ja="プロテオミクス・マルチオミクス × 組織病理">Proteomics &amp; multi-omics × histopathology</li>
+          <li data-ko="버추얼 셀·섭동(perturbation) 예측" data-ja="バーチャルセル・摂動(perturbation)予測">Virtual-cell &amp; perturbation prediction</li>
+          <li data-ko="임상의사결정지원(사람·수의)" data-ja="臨床意思決定支援(ヒト・獣医)">Clinical decision support (human &amp; veterinary)</li>
+          <li data-ko="임상 AI의 보정·불확실성" data-ja="臨床AIのキャリブレーション・不確実性">Calibration &amp; uncertainty in clinical AI</li>
+          <li data-ko="자기·약지도 학습" data-ja="自己・弱教師あり学習">Self-/weakly-supervised learning</li>
         </ul>
       </div>
     </div>
@@ -248,17 +257,17 @@
 
   <!-- PUBLICATIONS -->
   <section class="block" id="publications">
-    <div class="head reveal"><span class="num">01</span><h2 data-ko="논문">Publications</h2><span class="note" data-ko="† (공동)1저자">† (co-)first author</span></div>
+    <div class="head reveal"><span class="num">01</span><h2 data-ko="논문" data-ja="論文">Publications</h2><span class="note" data-ko="† (공동)1저자" data-ja="† (共同)筆頭">† (co-)first author</span></div>
     <div class="pubs">
 
       <article class="row reveal">
         <div class="acc">01 †</div>
         <div class="main">
           <a class="thumb" href="https://arxiv.org/abs/2406.06650" target="_blank" rel="noopener"><img src="assets/pub_breast_gradcam.jpg" alt="Grad-CAM heatmaps over H&amp;E breast tissue patches" loading="lazy"></a>
-          <span class="venue" data-ko="Scientific Reports · 2025 · 1저자">Scientific Reports · 2025 · First author</span>
-          <h3 data-ko="H&E 전체 슬라이드 이미지 기반 조기 유방암 재발 위험 예측">Recurrence risk in early-stage breast cancer from H&amp;E whole-slide images</h3>
-          <p data-ko="다기관 후향적 연구(n=125; 국립암센터 + 고려대 구로병원)로, 조직병리만으로도 유전자 검사에 준하는 위험 층화가 가능함을 보였습니다.">Multi-center retrospective study (n=125; National Cancer Center + Korea University Guro) showing histopathology-only deep learning can approximate genomic-assay-style risk stratification.</p>
-          <div class="metrics" data-ko="<span>민감도</span><b>0.86 / 0.75 / 0.53</b><span>특이도</span><b>0.82 / 0.80 / 0.97</b>"><span>Sensitivity</span><b>0.86 / 0.75 / 0.53</b><span>Specificity</span><b>0.82 / 0.80 / 0.97</b></div>
+          <span class="venue" data-ko="Scientific Reports · 2025 · 1저자" data-ja="Scientific Reports · 2025 · 筆頭著者">Scientific Reports · 2025 · First author</span>
+          <h3 data-ko="H&E 전체 슬라이드 이미지 기반 조기 유방암 재발 위험 예측" data-ja="H&E全スライド画像による早期乳がん再発リスク予測">Recurrence risk in early-stage breast cancer from H&amp;E whole-slide images</h3>
+          <p data-ko="다기관 후향적 연구(n=125; 국립암센터 + 고려대 구로병원)로, 조직병리만으로도 유전자 검사에 준하는 위험 층화가 가능함을 보였습니다." data-ja="多施設後ろ向き研究(n=125; 国立がんセンター + 高麗大学九老病院)により、組織病理のみで遺伝子検査に準じるリスク層別化が可能であることを示しました。">Multi-center retrospective study (n=125; National Cancer Center + Korea University Guro) showing histopathology-only deep learning can approximate genomic-assay-style risk stratification.</p>
+          <div class="metrics" data-ko="<span>민감도</span><b>0.86 / 0.75 / 0.53</b><span>특이도</span><b>0.82 / 0.80 / 0.97</b>" data-ja="<span>感度</span><b>0.86 / 0.75 / 0.53</b><span>特異度</span><b>0.82 / 0.80 / 0.97</b>"><span>Sensitivity</span><b>0.86 / 0.75 / 0.53</b><span>Specificity</span><b>0.82 / 0.80 / 0.97</b></div>
         </div>
         <a class="go" href="https://arxiv.org/abs/2406.06650" target="_blank" rel="noopener">arXiv ↗</a>
       </article>
@@ -267,10 +276,10 @@
         <div class="acc">02</div>
         <div class="main">
           <a class="thumb" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="https://arxiv.org/html/2510.11176v3/Figure_2_AAAI.png" alt="G2L knowledge-distillation framework overview" loading="lazy" onerror="var t=this.closest('.thumb'); if(t) t.style.display='none';"></a>
-          <span class="venue" data-ko="AAAI 2026 · W3PHIAI · 구두">AAAI 2026 · W3PHIAI · Oral</span>
-          <h3 data-ko="G2L — 기가스케일에서 암종 특화 병리 파운데이션 모델로">G2L — giga-scale to cancer-specific pathology foundation models</h3>
-          <p data-ko="지식 증류(knowledge distillation)로 기가스케일 병리 파운데이션 모델을 작고 암종 특화된 인코더로 압축해, 더 적은 연산으로도 downstream 성능을 유지합니다.">Distilling giga-scale pathology foundation models into compact, cancer-specific encoders via knowledge distillation, preserving downstream performance at lower compute.</p>
-          <div class="metrics" data-ko="<span>지식 증류</span><b>·</b><span>자기지도</span>"><span>Knowledge distillation</span><b>·</b><span>Self-supervised</span></div>
+          <span class="venue" data-ko="AAAI 2026 · W3PHIAI · 구두" data-ja="AAAI 2026 · W3PHIAI · 口頭">AAAI 2026 · W3PHIAI · Oral</span>
+          <h3 data-ko="G2L — 기가스케일에서 암종 특화 병리 파운데이션 모델로" data-ja="G2L — ギガスケールからがん種特化の病理基盤モデルへ">G2L — giga-scale to cancer-specific pathology foundation models</h3>
+          <p data-ko="지식 증류(knowledge distillation)로 기가스케일 병리 파운데이션 모델을 작고 암종 특화된 인코더로 압축해, 더 적은 연산으로도 downstream 성능을 유지합니다." data-ja="知識蒸留(knowledge distillation)でギガスケール病理基盤モデルを小型のがん種特化エンコーダへ圧縮し、より少ない計算量でも下流タスク性能を維持します。">Distilling giga-scale pathology foundation models into compact, cancer-specific encoders via knowledge distillation, preserving downstream performance at lower compute.</p>
+          <div class="metrics" data-ko="<span>지식 증류</span><b>·</b><span>자기지도</span>" data-ja="<span>知識蒸留</span><b>·</b><span>自己教師あり</span>"><span>Knowledge distillation</span><b>·</b><span>Self-supervised</span></div>
         </div>
         <a class="go" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener">arXiv ↗</a>
       </article>
@@ -280,9 +289,9 @@
         <div class="main">
           <a class="thumb" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener"><img src="assets/pub_murss_arch.png" alt="MurSS multi-resolution selective segmentation architecture" loading="lazy"></a>
           <span class="venue">Bioengineering · 2024</span>
-          <h3 data-ko="MurSS — 유방암을 위한 다중 해상도 선택적 분할">MurSS — multi-resolution selective segmentation for breast cancer</h3>
-          <p data-ko="여러 해상도를 동시에 입력받고, 신뢰도(confidence) 기반 reject loss로 불확실한 영역은 예측을 보류합니다 — 라벨 노이즈가 많은 조직병리를 위해 설계했습니다.">Ingests multiple resolutions simultaneously and abstains on unreliable regions via a confidence-based reject loss, built for noisy histopathology labels.</p>
-          <div class="metrics" data-ko="<span>mIoU</span><b>최대 0.76</b><span>·</span><b>커버리지 인식</b>"><span>mIoU</span><b>up to 0.76</b><span>·</span><b>Coverage-aware</b></div>
+          <h3 data-ko="MurSS — 유방암을 위한 다중 해상도 선택적 분할" data-ja="MurSS — 乳がんのためのマルチ解像度・選択的セグメンテーション">MurSS — multi-resolution selective segmentation for breast cancer</h3>
+          <p data-ko="여러 해상도를 동시에 입력받고, 신뢰도(confidence) 기반 reject loss로 불확실한 영역은 예측을 보류합니다 — 라벨 노이즈가 많은 조직병리를 위해 설계했습니다." data-ja="複数解像度を同時に入力し、信頼度(confidence)ベースのreject lossで不確実な領域は予測を保留します — ラベルノイズの多い組織病理のために設計しました。">Ingests multiple resolutions simultaneously and abstains on unreliable regions via a confidence-based reject loss, built for noisy histopathology labels.</p>
+          <div class="metrics" data-ko="<span>mIoU</span><b>최대 0.76</b><span>·</span><b>커버리지 인식</b>" data-ja="<span>mIoU</span><b>最大0.76</b><span>·</span><b>カバレッジ考慮</b>"><span>mIoU</span><b>up to 0.76</b><span>·</span><b>Coverage-aware</b></div>
         </div>
         <a class="go" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener">Paper ↗</a>
       </article>
@@ -290,10 +299,10 @@
       <article class="row reveal">
         <div class="acc">04 †</div>
         <div class="main">
-          <span class="venue" data-ko="Prostate International · 2025 · 공동 1저자">Prostate International · 2025 · Co-first</span>
-          <h3 data-ko="비뇨기암에서의 AI 기반 디지털 병리">AI-driven digital pathology in urological cancers</h3>
-          <p data-ko="비뇨기암 병리에서의 AI 최신 동향과 향후 방향을 임상·기술·규제 관점에서 정리한 리뷰 논문입니다.">A review of current trends and future directions for AI in urological cancer pathology, spanning clinical, technical, and regulatory perspectives.</p>
-          <div class="metrics" data-ko="<span>리뷰</span><b>디지털 병리</b>"><span>Review</span><b>Digital pathology</b></div>
+          <span class="venue" data-ko="Prostate International · 2025 · 공동 1저자" data-ja="Prostate International · 2025 · 共同筆頭">Prostate International · 2025 · Co-first</span>
+          <h3 data-ko="비뇨기암에서의 AI 기반 디지털 병리" data-ja="泌尿器がんにおけるAIデジタル病理">AI-driven digital pathology in urological cancers</h3>
+          <p data-ko="비뇨기암 병리에서의 AI 최신 동향과 향후 방향을 임상·기술·규제 관점에서 정리한 리뷰 논문입니다." data-ja="泌尿器がん病理におけるAIの最新動向と今後の方向性を、臨床・技術・規制の観点から整理したレビュー論文です。">A review of current trends and future directions for AI in urological cancer pathology, spanning clinical, technical, and regulatory perspectives.</p>
+          <div class="metrics" data-ko="<span>리뷰</span><b>디지털 병리</b>" data-ja="<span>レビュー</span><b>デジタル病理</b>"><span>Review</span><b>Digital pathology</b></div>
         </div>
         <a class="go" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ko" target="_blank" rel="noopener">Scholar ↗</a>
       </article>
@@ -302,10 +311,10 @@
         <div class="acc">05</div>
         <div class="main">
           <a class="thumb" href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener"><img src="assets/pub_prostate_multisection.png" alt="Multi-section whole-slide sampling strategies for prostate BCR" loading="lazy"></a>
-          <span class="venue" data-ko="프리프린트 · 2026">Preprint · 2026</span>
-          <h3 data-ko="전립선암 생화학적 재발 예측을 위한 다중 섹션 WSI 분석">Multi-section WSI analysis for biochemical recurrence in prostate cancer</h3>
-          <p data-ko="여러 조직 섹션을 아우르는 효율적 AI 분석으로 생화학적 재발을 예측하고, 단일 슬라이드 추론을 다중 섹션 검체 전체로 확장합니다.">Efficient AI-driven analysis across multiple tissue sections to predict biochemical recurrence, extending single-slide inference to full multi-section specimens.</p>
-          <div class="metrics" data-ko="<span>다중 섹션 WSI</span><b>전립선 BCR</b>"><span>Multi-section WSI</span><b>Prostate BCR</b></div>
+          <span class="venue" data-ko="프리프린트 · 2026" data-ja="プレプリント · 2026">Preprint · 2026</span>
+          <h3 data-ko="전립선암 생화학적 재발 예측을 위한 다중 섹션 WSI 분석" data-ja="前立腺がん生化学的再発予測のためのマルチセクションWSI解析">Multi-section WSI analysis for biochemical recurrence in prostate cancer</h3>
+          <p data-ko="여러 조직 섹션을 아우르는 효율적 AI 분석으로 생화학적 재발을 예측하고, 단일 슬라이드 추론을 다중 섹션 검체 전체로 확장합니다." data-ja="複数の組織セクションを横断する効率的なAI解析で生化学的再発を予測し、単一スライド推論をマルチセクション検体全体へ拡張します。">Efficient AI-driven analysis across multiple tissue sections to predict biochemical recurrence, extending single-slide inference to full multi-section specimens.</p>
+          <div class="metrics" data-ko="<span>다중 섹션 WSI</span><b>전립선 BCR</b>" data-ja="<span>マルチセクションWSI</span><b>前立腺BCR</b>"><span>Multi-section WSI</span><b>Prostate BCR</b></div>
         </div>
         <a class="go" href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener">arXiv ↗</a>
       </article>
@@ -315,9 +324,9 @@
         <div class="main">
           <a class="thumb" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener"><img src="assets/pub_contrastive_embed.png" alt="Encoder embedding-space illustration for supervised contrastive learning" loading="lazy"></a>
           <span class="venue">IEEE Access · 2021</span>
-          <h3 data-ko="의료영상 분할을 위한 지도 대조 임베딩">Supervised contrastive embedding for medical image segmentation</h3>
-          <p data-ko="영역 주석(annotation) 단위의 픽셀 대조 손실로, 적고 불확실한 의료영상 라벨에서도 분할을 안정화합니다 — 석사 논문으로 이어진 연구입니다.">Region-annotation-level pixel-wise contrastive loss to stabilize segmentation under scarce and unreliable medical-image labels — the line of work behind my M.S. thesis.</p>
-          <div class="metrics" data-ko="<span>대조 학습</span><b>·</b><span>도메인 견고성</span>"><span>Contrastive learning</span><b>·</b><span>Domain robustness</span></div>
+          <h3 data-ko="의료영상 분할을 위한 지도 대조 임베딩" data-ja="医療画像セグメンテーションのための教師ありコントラスティブ埋め込み">Supervised contrastive embedding for medical image segmentation</h3>
+          <p data-ko="영역 주석(annotation) 단위의 픽셀 대조 손실로, 적고 불확실한 의료영상 라벨에서도 분할을 안정화합니다 — 석사 논문으로 이어진 연구입니다." data-ja="領域アノテーション単位のピクセル・コントラスティブ損失により、少なく不確実な医療画像ラベルでもセグメンテーションを安定化します — 修士論文につながった研究です。">Region-annotation-level pixel-wise contrastive loss to stabilize segmentation under scarce and unreliable medical-image labels — the line of work behind my M.S. thesis.</p>
+          <div class="metrics" data-ko="<span>대조 학습</span><b>·</b><span>도메인 견고성</span>" data-ja="<span>コントラスティブ学習</span><b>·</b><span>ドメイン頑健性</span>"><span>Contrastive learning</span><b>·</b><span>Domain robustness</span></div>
         </div>
         <a class="go" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener">IEEE ↗</a>
       </article>
@@ -325,10 +334,10 @@
       <article class="row reveal">
         <div class="acc">07</div>
         <div class="main">
-          <span class="venue" data-ko="KPIs 2024 챌린지 · MICCAI">KPIs 2024 Challenge · MICCAI</span>
-          <h3 data-ko="사구체 분할, 패치→슬라이드 레벨">Glomerular segmentation, patch-to-slide level</h3>
-          <p data-ko="KPIs 2024 챌린지 전체 슬라이드 트랙의 신장 사구체 분할 — 2위, 패치→슬라이드 레벨 일반화.">Kidney glomeruli segmentation for the whole-slide track of the KPIs 2024 challenge — 2nd place, advancing patch-to-slide-level generalization.</p>
-          <div class="metrics" data-ko="<span>전체 슬라이드 트랙</span><b>2위</b>"><span>Whole-slide track</span><b>2nd place</b></div>
+          <span class="venue" data-ko="KPIs 2024 챌린지 · MICCAI" data-ja="KPIs 2024 チャレンジ · MICCAI">KPIs 2024 Challenge · MICCAI</span>
+          <h3 data-ko="사구체 분할, 패치→슬라이드 레벨" data-ja="糸球体セグメンテーション、パッチ→スライドレベル">Glomerular segmentation, patch-to-slide level</h3>
+          <p data-ko="KPIs 2024 챌린지 전체 슬라이드 트랙의 신장 사구체 분할 — 2위, 패치→슬라이드 레벨 일반화." data-ja="KPIs 2024 チャレンジ全スライドトラックの腎糸球体セグメンテーション — 2位、パッチ→スライドレベルの汎化。">Kidney glomeruli segmentation for the whole-slide track of the KPIs 2024 challenge — 2nd place, advancing patch-to-slide-level generalization.</p>
+          <div class="metrics" data-ko="<span>전체 슬라이드 트랙</span><b>2위</b>" data-ja="<span>全スライドトラック</span><b>2位</b>"><span>Whole-slide track</span><b>2nd place</b></div>
         </div>
         <a class="go" href="https://arxiv.org/abs/2502.07288" target="_blank" rel="noopener">arXiv ↗</a>
       </article>
@@ -336,8 +345,8 @@
     </div>
 
     <div class="talks reveal">
-      <b data-ko="학회 발표 & 초록">Talks &amp; abstracts</b>
-      <span data-ko="AACR 연례학술대회(2022, 2023) · USCAP 연례학술대회(2022) · 대한산업공학회 추계학술대회(2020) — 유방암 재발, H&E 기반 단백질 수용체 상태, 여러 장기의 선암 생존, 조직학적 등급 예측.">AACR Annual Meeting (2022, 2023) · USCAP Annual Meeting (2022) · KIIE Fall Conference (2020) — breast-cancer recurrence, protein-receptor status from H&amp;E, cross-organ adenocarcinoma survival, and histological grading.</span>
+      <b data-ko="학회 발표 & 초록" data-ja="学会発表 & 抄録">Talks &amp; abstracts</b>
+      <span data-ko="AACR 연례학술대회(2022, 2023) · USCAP 연례학술대회(2022) · 대한산업공학회 추계학술대회(2020) — 유방암 재발, H&E 기반 단백질 수용체 상태, 여러 장기의 선암 생존, 조직학적 등급 예측." data-ja="AACR年次総会(2022, 2023) · USCAP年次総会(2022) · 韓国産業工学会 秋季学術大会(2020) — 乳がん再発、H&Eによるタンパク質受容体ステータス、複数臓器の腺がん生存、組織学的グレード予測。">AACR Annual Meeting (2022, 2023) · USCAP Annual Meeting (2022) · KIIE Fall Conference (2020) — breast-cancer recurrence, protein-receptor status from H&amp;E, cross-organ adenocarcinoma survival, and histological grading.</span>
       <div class="poster-strip">
         <figure class="poster"><img src="assets/talk_receptor_gradcam.jpg" alt="Grad-CAM over H&amp;E for protein-receptor status prediction" loading="lazy"><figcaption class="cap"><b>AACR '23</b><br>Protein-receptor status from H&amp;E</figcaption></figure>
         <figure class="poster"><img src="assets/talk_grading_cam.jpg" alt="Class-activation maps for breast histologic grading" loading="lazy"><figcaption class="cap"><b>USCAP '22</b><br>Automatic histologic grading</figcaption></figure>
@@ -348,66 +357,66 @@
 
   <!-- PROJECTS -->
   <section class="block" id="projects">
-    <div class="head reveal"><span class="num">02</span><h2 data-ko="프로젝트">Projects</h2><span class="note" data-ko="이미징·정형데이터·오믹스 전반의 응용 ML">applied ML across imaging, tabular &amp; omics</span></div>
+    <div class="head reveal"><span class="num">02</span><h2 data-ko="프로젝트" data-ja="プロジェクト">Projects</h2><span class="note" data-ko="이미징·정형데이터·오믹스 전반의 응용 ML" data-ja="画像・表形式データ・オミクス全般の応用ML">applied ML across imaging, tabular &amp; omics</span></div>
     <div class="grid">
 
       <div class="card reveal">
-        <div class="k" data-ko="멀티오믹스 · OMIXAI">Multi-omics · OMIXAI</div>
-        <h3 data-ko="프로테오믹스 기반 약물 반응성 예측">Proteomics drug-response prediction</h3>
-        <p data-ko="LoRA/PEFT 파인튜닝 기반 자기지도 프로테옴 표현 학습과 세포주(cell line) IC50 예측. 미학습 약물에 대해 leave-drug-out 프로토콜로 검증.">Self-supervised proteomic representation learning with LoRA / PEFT fine-tuning; also cell-line IC50 prediction. Validated under a leave-drug-out protocol on held-out compounds.</p>
+        <div class="k" data-ko="멀티오믹스 · OMIXAI" data-ja="マルチオミクス · OMIXAI">Multi-omics · OMIXAI</div>
+        <h3 data-ko="프로테오믹스 기반 약물 반응성 예측" data-ja="プロテオミクスによる薬剤応答性予測">Proteomics drug-response prediction</h3>
+        <p data-ko="LoRA/PEFT 파인튜닝 기반 자기지도 프로테옴 표현 학습과 세포주(cell line) IC50 예측. 미학습 약물에 대해 leave-drug-out 프로토콜로 검증." data-ja="LoRA/PEFTファインチューニングによる自己教師ありプロテオーム表現学習と細胞株(cell line)IC50予測。未学習の薬剤に対しleave-drug-outプロトコルで検証。">Self-supervised proteomic representation learning with LoRA / PEFT fine-tuning; also cell-line IC50 prediction. Validated under a leave-drug-out protocol on held-out compounds.</p>
         <div class="tagline"><span>LDO CV Pearson</span><b>≥ 0.65</b><span>·</span><b>PEFT</b></div>
       </div>
 
       <div class="card reveal">
-        <div class="k" data-ko="정밀종양학 · OMIXAI">Precision oncology · OMIXAI</div>
-        <h3 data-ko="수의 종양 CDSS & 버추얼 셀">Veterinary oncology CDSS &amp; Virtual Cell</h3>
-        <p data-ko="임상의사결정지원(CDSS)을 위한 반려견 종양 약물 추천 알고리즘 개발, 그리고 Virtual Cell Challenge 공동 주도 — 만능줄기세포의 CRISPR 넉다운 반응 예측.">Canine oncology drug-recommendation algorithm toward a clinical decision support system, plus co-leading the Virtual Cell Challenge — predicting CRISPR-knockdown response in pluripotent stem cells.</p>
-        <div class="tagline" data-ko="<span>Top-k 정확도</span><b>≥ 70%</b><span>·</span><b>CRISPR 섭동</b>"><span>Top-k accuracy</span><b>≥ 70%</b><span>·</span><b>CRISPR perturbation</b></div>
+        <div class="k" data-ko="정밀종양학 · OMIXAI" data-ja="精密腫瘍学 · OMIXAI">Precision oncology · OMIXAI</div>
+        <h3 data-ko="수의 종양 CDSS & 버추얼 셀" data-ja="獣医腫瘍CDSS & バーチャルセル">Veterinary oncology CDSS &amp; Virtual Cell</h3>
+        <p data-ko="임상의사결정지원(CDSS)을 위한 반려견 종양 약물 추천 알고리즘 개발, 그리고 Virtual Cell Challenge 공동 주도 — 만능줄기세포의 CRISPR 넉다운 반응 예측." data-ja="臨床意思決定支援(CDSS)のためのイヌ腫瘍薬剤推薦アルゴリズム開発、およびVirtual Cell Challengeの共同主導 — 多能性幹細胞のCRISPRノックダウン応答予測。">Canine oncology drug-recommendation algorithm toward a clinical decision support system, plus co-leading the Virtual Cell Challenge — predicting CRISPR-knockdown response in pluripotent stem cells.</p>
+        <div class="tagline" data-ko="<span>Top-k 정확도</span><b>≥ 70%</b><span>·</span><b>CRISPR 섭동</b>" data-ja="<span>Top-k精度</span><b>≥ 70%</b><span>·</span><b>CRISPR摂動</b>"><span>Top-k accuracy</span><b>≥ 70%</b><span>·</span><b>CRISPR perturbation</b></div>
       </div>
 
       <div class="card reveal">
         <div class="card-fig"><img src="assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></div>
-        <div class="k" data-ko="디지털 병리 · 딥바이오">Digital pathology · Deep Bio</div>
-        <h3 data-ko="Oncotype DX 재발 예측">Oncotype DX recurrence prediction</h3>
-        <p data-ko="다른 임상정보 없이 H&E WSI만으로 유방암 예후 예측. 패치 단위 분류에 신뢰도(confidence) 기반 선택과 다수결을 결합해 슬라이드 단위 GHI-RS 위험군으로 분류.">Predicting breast-cancer prognosis from H&amp;E WSIs only — no other clinical inputs. Patch-wise classification with confidence-aware selection and majority voting into slide-level GHI-RS risk groups.</p>
-        <div class="tagline" data-ko="<span>고위험군 정확도</span><b>91.2%</b><span>전체</span><b>~87.3%</b>"><span>High-risk acc</span><b>91.2%</b><span>Overall</span><b>~87.3%</b></div>
+        <div class="k" data-ko="디지털 병리 · 딥바이오" data-ja="デジタル病理 · Deep Bio">Digital pathology · Deep Bio</div>
+        <h3 data-ko="Oncotype DX 재발 예측" data-ja="Oncotype DX 再発予測">Oncotype DX recurrence prediction</h3>
+        <p data-ko="다른 임상정보 없이 H&E WSI만으로 유방암 예후 예측. 패치 단위 분류에 신뢰도(confidence) 기반 선택과 다수결을 결합해 슬라이드 단위 GHI-RS 위험군으로 분류." data-ja="他の臨床情報なしにH&E WSIのみで乳がん予後を予測。パッチ単位分類に信頼度(confidence)ベースの選択と多数決を組み合わせ、スライド単位のGHI-RSリスク群へ分類。">Predicting breast-cancer prognosis from H&amp;E WSIs only — no other clinical inputs. Patch-wise classification with confidence-aware selection and majority voting into slide-level GHI-RS risk groups.</p>
+        <div class="tagline" data-ko="<span>고위험군 정확도</span><b>91.2%</b><span>전체</span><b>~87.3%</b>" data-ja="<span>高リスク群精度</span><b>91.2%</b><span>全体</span><b>~87.3%</b>"><span>High-risk acc</span><b>91.2%</b><span>Overall</span><b>~87.3%</b></div>
       </div>
 
       <div class="card reveal">
         <div class="card-fig"><img src="assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></div>
-        <div class="k" data-ko="의료영상 · SK / 아주대병원">Medical imaging · SK / Ajou Univ. Hospital</div>
-        <h3 data-ko="CT 뇌출혈 검출">Brain-hemorrhage detection on CT</h3>
-        <p data-ko="뇌출혈 영역의 2D·3D 분할과 슬라이스 단위 분류. 외부 공개 데이터로 도메인 일반화를 검증하고, class-activation map으로 분류 신뢰성을 점검(U-Net vs DeepLab).">2D and 3D segmentation of hemorrhage regions plus slice-level classification. Validated domain generalization on external public data and used class-activation maps to audit classification reliability (U-Net vs DeepLab).</p>
-        <div class="tagline" data-ko="<span>2D + 3D 분할</span><b>·</b><span>도메인 일반화</span>"><span>2D + 3D seg</span><b>·</b><span>Domain generalization</span></div>
+        <div class="k" data-ko="의료영상 · SK / 아주대병원" data-ja="医療画像 · SK / 亜洲大学病院">Medical imaging · SK / Ajou Univ. Hospital</div>
+        <h3 data-ko="CT 뇌출혈 검출" data-ja="CT脳出血検出">Brain-hemorrhage detection on CT</h3>
+        <p data-ko="뇌출혈 영역의 2D·3D 분할과 슬라이스 단위 분류. 외부 공개 데이터로 도메인 일반화를 검증하고, class-activation map으로 분류 신뢰성을 점검(U-Net vs DeepLab)." data-ja="脳出血領域の2D・3Dセグメンテーションとスライス単位分類。外部公開データでドメイン汎化を検証し、class-activation mapで分類の信頼性を点検(U-Net vs DeepLab)。">2D and 3D segmentation of hemorrhage regions plus slice-level classification. Validated domain generalization on external public data and used class-activation maps to audit classification reliability (U-Net vs DeepLab).</p>
+        <div class="tagline" data-ko="<span>2D + 3D 분할</span><b>·</b><span>도메인 일반화</span>" data-ja="<span>2D + 3D セグメンテーション</span><b>·</b><span>ドメイン汎化</span>"><span>2D + 3D seg</span><b>·</b><span>Domain generalization</span></div>
       </div>
 
       <div class="card reveal">
         <div class="card-fig"><img src="assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></div>
-        <div class="k" data-ko="컴퓨터 비전 · 프론텍">Computer vision · Fronttec</div>
-        <h3 data-ko="나사 불량 판별">Screw defect classification</h3>
-        <p data-ko="생산 라인 불량 검출 — 969장, 5개 클래스, 장당 0.3초 제약. 딥러닝 대신 머신비전으로 나사 위치를 잡아 배경을 제거한 뒤 분류해 성능을 끌어올림.">Defect detection on a manufacturing line — 969 images across 5 classes, under a hard 0.3s/image budget. Used machine vision (not DL) to localize the screw and strip background before classification, which lifted accuracy.</p>
-        <div class="tagline" data-ko="<span>5개 클래스</span><b>·</b><b>장당 0.3초 미만</b>"><span>5 classes</span><b>·</b><b>&lt;0.3s / image</b></div>
+        <div class="k" data-ko="컴퓨터 비전 · 프론텍" data-ja="コンピュータビジョン · Fronttec">Computer vision · Fronttec</div>
+        <h3 data-ko="나사 불량 판별" data-ja="ねじ不良判別">Screw defect classification</h3>
+        <p data-ko="생산 라인 불량 검출 — 969장, 5개 클래스, 장당 0.3초 제약. 딥러닝 대신 머신비전으로 나사 위치를 잡아 배경을 제거한 뒤 분류해 성능을 끌어올림." data-ja="製造ラインの不良検出 — 969枚、5クラス、1枚あたり0.3秒の制約。深層学習ではなくマシンビジョンでねじ位置を特定し背景を除去してから分類し、性能を向上。">Defect detection on a manufacturing line — 969 images across 5 classes, under a hard 0.3s/image budget. Used machine vision (not DL) to localize the screw and strip background before classification, which lifted accuracy.</p>
+        <div class="tagline" data-ko="<span>5개 클래스</span><b>·</b><b>장당 0.3초 미만</b>" data-ja="<span>5クラス</span><b>·</b><b>1枚0.3秒未満</b>"><span>5 classes</span><b>·</b><b>&lt;0.3s / image</b></div>
       </div>
 
       <div class="card reveal">
-        <div class="k" data-ko="정형 데이터 ML · 직방">Tabular ML · Zigbang</div>
-        <h3 data-ko="아파트 실거래가 예측">Apartment price prediction</h3>
-        <p data-ko="서울·부산 실거래가 예측(160만 건). 우편번호로 주소를 재매칭해 오기입 지역을 바로잡고, 원본에 없던 공공 API 피처(주변 지하철·학교)를 추가.">Transaction-price modeling for Seoul/Busan from 1.6M records. Re-matched addresses by postal code to fix mislabeled districts, and enriched with public-API features (nearby subway, schools) missing from the raw data.</p>
-        <div class="tagline" data-ko="<span>160만 건</span><b>·</b><span>지표: RMSE</span>"><span>1.6M records</span><b>·</b><span>Metric: RMSE</span></div>
+        <div class="k" data-ko="정형 데이터 ML · 직방" data-ja="表形式データML · Zigbang">Tabular ML · Zigbang</div>
+        <h3 data-ko="아파트 실거래가 예측" data-ja="マンション成約価格予測">Apartment price prediction</h3>
+        <p data-ko="서울·부산 실거래가 예측(160만 건). 우편번호로 주소를 재매칭해 오기입 지역을 바로잡고, 원본에 없던 공공 API 피처(주변 지하철·학교)를 추가." data-ja="ソウル・釜山の成約価格予測(160万件)。郵便番号で住所を再マッチングし誤記の地域を修正、元データにない公共API特徴量(周辺の地下鉄・学校)を追加。">Transaction-price modeling for Seoul/Busan from 1.6M records. Re-matched addresses by postal code to fix mislabeled districts, and enriched with public-API features (nearby subway, schools) missing from the raw data.</p>
+        <div class="tagline" data-ko="<span>160만 건</span><b>·</b><span>지표: RMSE</span>" data-ja="<span>160万件</span><b>·</b><span>指標: RMSE</span>"><span>1.6M records</span><b>·</b><span>Metric: RMSE</span></div>
       </div>
 
       <div class="card reveal">
-        <div class="k" data-ko="신약 설계 · 딥바이오">Drug design · Deep Bio</div>
-        <h3 data-ko="ADMET & 약물-표적 상호작용">ADMET &amp; drug–target interaction</h3>
-        <p data-ko="흡수·분포·대사·배설·독성(ADMET) 예측과 약물-표적 상호작용 모델링으로 초기 약물 물성 프로파일링.">Absorption, Distribution, Metabolism, Excretion &amp; Toxicity prediction plus drug–target interaction modeling for early-stage drug property profiling.</p>
+        <div class="k" data-ko="신약 설계 · 딥바이오" data-ja="創薬設計 · Deep Bio">Drug design · Deep Bio</div>
+        <h3 data-ko="ADMET & 약물-표적 상호작용" data-ja="ADMET & 薬物-標的相互作用">ADMET &amp; drug–target interaction</h3>
+        <p data-ko="흡수·분포·대사·배설·독성(ADMET) 예측과 약물-표적 상호작용 모델링으로 초기 약물 물성 프로파일링." data-ja="吸収・分布・代謝・排泄・毒性(ADMET)予測と薬物-標的相互作用モデリングによる初期の薬物物性プロファイリング。">Absorption, Distribution, Metabolism, Excretion &amp; Toxicity prediction plus drug–target interaction modeling for early-stage drug property profiling.</p>
         <div class="tagline"><span>ADMET</span><b>·</b><span>DTI</span></div>
       </div>
 
       <div class="card reveal">
-        <div class="k" data-ko="견고성 · 딥바이오">Robustness · Deep Bio</div>
-        <h3 data-ko="OOD & 액티브 러닝">OOD &amp; active learning</h3>
-        <p data-ko="병리 이미지에서 OOD 샘플을 정의하고, OOD 기반 액티브 러닝 프레임워크를 설계해 라벨 효율과 견고성을 높임.">Defining out-of-distribution samples in pathology images and designing an OOD-driven active-learning framework to make training more label-efficient and robust.</p>
-        <div class="tagline" data-ko="<span>OOD 검출</span><b>·</b><span>액티브 러닝</span>"><span>OOD detection</span><b>·</b><span>Active learning</span></div>
+        <div class="k" data-ko="견고성 · 딥바이오" data-ja="頑健性 · Deep Bio">Robustness · Deep Bio</div>
+        <h3 data-ko="OOD & 액티브 러닝" data-ja="OOD & 能動学習">OOD &amp; active learning</h3>
+        <p data-ko="병리 이미지에서 OOD 샘플을 정의하고, OOD 기반 액티브 러닝 프레임워크를 설계해 라벨 효율과 견고성을 높임." data-ja="病理画像におけるOODサンプルを定義し、OODに基づく能動学習フレームワークを設計してラベル効率と頑健性を向上。">Defining out-of-distribution samples in pathology images and designing an OOD-driven active-learning framework to make training more label-efficient and robust.</p>
+        <div class="tagline" data-ko="<span>OOD 검출</span><b>·</b><span>액티브 러닝</span>" data-ja="<span>OOD検出</span><b>·</b><span>能動学習</span>"><span>OOD detection</span><b>·</b><span>Active learning</span></div>
       </div>
 
     </div>
@@ -415,50 +424,50 @@
 
   <!-- EXPERIENCE -->
   <section class="block" id="experience">
-    <div class="head reveal"><span class="num">03</span><h2 data-ko="경력">Experience</h2></div>
+    <div class="head reveal"><span class="num">03</span><h2 data-ko="경력" data-ja="経歴">Experience</h2></div>
     <div>
       <div class="role-row reveal">
-        <div class="when"><span class="co">OMIXAI</span><span data-ko="2025.02 — 현재">Feb 2025 — Present</span><br><span class="loc" data-ko="서울 · 前 래디센">Seoul · fmr. RadiSen</span></div>
+        <div class="when"><span class="co">OMIXAI</span><span data-ko="2025.02 — 현재" data-ja="2025.02 — 現在">Feb 2025 — Present</span><br><span class="loc" data-ko="서울 · 前 래디센" data-ja="ソウル · 前 RadiSen">Seoul · fmr. RadiSen</span></div>
         <div class="what">
-          <h3 data-ko="AI 리서처">AI Researcher</h3>
-          <div class="sub" data-ko="멀티오믹스 · 병리 파운데이션 모델">Multi-omics · Pathology foundation models</div>
+          <h3 data-ko="AI 리서처" data-ja="AIリサーチャー">AI Researcher</h3>
+          <div class="sub" data-ko="멀티오믹스 · 병리 파운데이션 모델" data-ja="マルチオミクス · 病理基盤モデル">Multi-omics · Pathology foundation models</div>
           <ul>
-            <li data-ko="약물 반응성 예측을 위해 프로테오믹스와 H&E 병리를 통합하는 멀티오믹스 파운데이션 모델 R&D 주도; G2L 병리 FM 공동저자.">Lead multi-omics foundation-model R&amp;D integrating proteomics with H&amp;E pathology for drug-response prediction; co-authored the G2L pathology FM.</li>
-            <li data-ko="프로테오믹스 DRP(Leave-Drug-Out Pearson ≥ 0.65)와 반려견 수의 종양 약물 추천 알고리즘(top-k ≥ 70%) 개발.">Built proteomics DRP (Leave-Drug-Out Pearson ≥ 0.65) and a canine veterinary oncology drug-recommendation algorithm (top-k ≥ 70%).</li>
-            <li data-ko="ADMET 예측과 LoRA/PEFT 기반 자기지도 프로테옴 표현 학습 고도화.">Advanced ADMET prediction and self-supervised proteomic representation learning with LoRA / PEFT.</li>
-            <li data-ko="Virtual Cell Challenge 공동 주도 — 만능줄기세포의 CRISPR 넉다운 반응 예측.">Co-led the Virtual Cell Challenge — CRISPR-knockdown response in pluripotent stem cells.</li>
+            <li data-ko="약물 반응성 예측을 위해 프로테오믹스와 H&E 병리를 통합하는 멀티오믹스 파운데이션 모델 R&D 주도; G2L 병리 FM 공동저자." data-ja="薬剤応答性予測のためプロテオミクスとH&E病理を統合するマルチオミクス基盤モデルR&Dを主導；G2L病理FM共同著者。">Lead multi-omics foundation-model R&amp;D integrating proteomics with H&amp;E pathology for drug-response prediction; co-authored the G2L pathology FM.</li>
+            <li data-ko="프로테오믹스 DRP(Leave-Drug-Out Pearson ≥ 0.65)와 반려견 수의 종양 약물 추천 알고리즘(top-k ≥ 70%) 개발." data-ja="プロテオミクスDRP(Leave-Drug-Out Pearson ≥ 0.65)とイヌ獣医腫瘍の薬剤推薦アルゴリズム(top-k ≥ 70%)を開発。">Built proteomics DRP (Leave-Drug-Out Pearson ≥ 0.65) and a canine veterinary oncology drug-recommendation algorithm (top-k ≥ 70%).</li>
+            <li data-ko="ADMET 예측과 LoRA/PEFT 기반 자기지도 프로테옴 표현 학습 고도화." data-ja="ADMET予測とLoRA/PEFTベースの自己教師ありプロテオーム表現学習を高度化。">Advanced ADMET prediction and self-supervised proteomic representation learning with LoRA / PEFT.</li>
+            <li data-ko="Virtual Cell Challenge 공동 주도 — 만능줄기세포의 CRISPR 넉다운 반응 예측." data-ja="Virtual Cell Challenge共同主導 — 多能性幹細胞のCRISPRノックダウン応答予測。">Co-led the Virtual Cell Challenge — CRISPR-knockdown response in pluripotent stem cells.</li>
           </ul>
         </div>
       </div>
       <div class="role-row reveal">
-        <div class="when"><span class="co" data-ko="딥바이오">Deep Bio</span><span data-ko="2021.03 — 2025.01">Mar 2021 — Jan 2025</span><br><span class="loc" data-ko="서울 · 구로">Seoul · Guro</span></div>
+        <div class="when"><span class="co" data-ko="딥바이오" data-ja="Deep Bio">Deep Bio</span><span data-ko="2021.03 — 2025.01" data-ja="2021.03 — 2025.01">Mar 2021 — Jan 2025</span><br><span class="loc" data-ko="서울 · 구로" data-ja="ソウル · 九老">Seoul · Guro</span></div>
         <div class="what">
-          <h3 data-ko="AI 리서처 / 머신러닝 엔지니어">AI Researcher</h3>
-          <div class="sub" data-ko="Computational Pathology · 인허가 검증">Computational pathology · Regulatory validation</div>
+          <h3 data-ko="AI 리서처 / 머신러닝 엔지니어" data-ja="AIリサーチャー / 機械学習エンジニア">AI Researcher</h3>
+          <div class="sub" data-ko="Computational Pathology · 인허가 검증" data-ja="Computational Pathology · 承認検証">Computational pathology · Regulatory validation</div>
           <ul>
-            <li data-ko="다기관 유방암 재발 연구 1저자(Scientific Reports 2025); 500장 이상을 처리하는 확장형 WSI 파이프라인 구축.">First-authored the multi-center breast-cancer recurrence study (Scientific Reports 2025); built a scalable WSI pipeline handling 500+ slides.</li>
-            <li data-ko="림프절 전이 검출 모델과 KPI 2024 사구체 분할 모델 개발(2위, MICCAI).">Developed lymph-node metastasis detection and the KPI 2024 glomeruli segmentation model (2nd place, MICCAI).</li>
-            <li data-ko="전립선 전이·재발 위험 프로젝트 리드; AACR(2022, 2023)·USCAP(2022) 발표.">Led prostate metastasis &amp; recurrence-risk projects; presented at AACR (2022, 2023) and USCAP (2022).</li>
-            <li data-ko="식약처(KFDA) 인허가 문서·검증 기여, 사내 서버 자동화 도구(Docker 인프라) 개발.">Contributed to KFDA regulatory documentation and validation, plus internal server-automation tooling (Docker infra).</li>
+            <li data-ko="다기관 유방암 재발 연구 1저자(Scientific Reports 2025); 500장 이상을 처리하는 확장형 WSI 파이프라인 구축." data-ja="多施設乳がん再発研究の筆頭著者(Scientific Reports 2025)；500枚以上を処理するスケーラブルなWSIパイプラインを構築。">First-authored the multi-center breast-cancer recurrence study (Scientific Reports 2025); built a scalable WSI pipeline handling 500+ slides.</li>
+            <li data-ko="림프절 전이 검출 모델과 KPI 2024 사구체 분할 모델 개발(2위, MICCAI)." data-ja="リンパ節転移検出モデルとKPI 2024 糸球体セグメンテーションモデルを開発(2位、MICCAI)。">Developed lymph-node metastasis detection and the KPI 2024 glomeruli segmentation model (2nd place, MICCAI).</li>
+            <li data-ko="전립선 전이·재발 위험 프로젝트 리드; AACR(2022, 2023)·USCAP(2022) 발표." data-ja="前立腺の転移・再発リスクプロジェクトを主導；AACR(2022, 2023)・USCAP(2022)で発表。">Led prostate metastasis &amp; recurrence-risk projects; presented at AACR (2022, 2023) and USCAP (2022).</li>
+            <li data-ko="식약처(KFDA) 인허가 문서·검증 기여, 사내 서버 자동화 도구(Docker 인프라) 개발." data-ja="食品医薬品安全処(KFDA)承認文書・検証に貢献、社内サーバ自動化ツール(Dockerインフラ)を開発。">Contributed to KFDA regulatory documentation and validation, plus internal server-automation tooling (Docker infra).</li>
           </ul>
         </div>
       </div>
       <div class="role-row reveal">
-        <div class="when"><span class="co" data-ko="누리콘">Nuricon</span>2021<br><span class="loc" data-ko="판교">Pangyo</span></div>
+        <div class="when"><span class="co" data-ko="누리콘" data-ja="Nuricon">Nuricon</span>2021<br><span class="loc" data-ko="판교" data-ja="パンギョ">Pangyo</span></div>
         <div class="what">
-          <h3 data-ko="인턴">Intern</h3>
-          <div class="sub" data-ko="컴퓨터 비전">Computer vision</div>
-          <ul><li data-ko="주차장 화재 감지 AI 시스템 개발.">Built a parking-lot fire-detection AI system.</li></ul>
+          <h3 data-ko="인턴" data-ja="インターン">Intern</h3>
+          <div class="sub" data-ko="컴퓨터 비전" data-ja="コンピュータビジョン">Computer vision</div>
+          <ul><li data-ko="주차장 화재 감지 AI 시스템 개발." data-ja="駐車場の火災検知AIシステムを開発。">Built a parking-lot fire-detection AI system.</li></ul>
         </div>
       </div>
       <div class="role-row reveal">
-        <div class="when"><span class="co" data-ko="학력">Education</span>2012 — 2021</div>
+        <div class="when"><span class="co" data-ko="학력" data-ja="学歴">Education</span>2012 — 2021</div>
         <div class="what">
-          <h3 data-ko="데이터사이언스 석사 · 서울과학기술대">M.S. Data Science · SeoulTech</h3>
-          <div class="sub" data-ko="지도교수: 황상흠 · 2019–2021">Advisor: Prof. Sangheum Hwang · 2019–2021</div>
+          <h3 data-ko="데이터사이언스 석사 · 서울과학기술대" data-ja="データサイエンス修士 · ソウル科学技術大学">M.S. Data Science · SeoulTech</h3>
+          <div class="sub" data-ko="지도교수: 황상흠 · 2019–2021" data-ja="指導教員: ファン・サンフム · 2019–2021">Advisor: Prof. Sangheum Hwang · 2019–2021</div>
           <ul>
-            <li data-ko="석사 논문: 불확실한 의료영상 라벨에서 분할 성능을 높이는 대조 손실.">Thesis: contrastive loss for improving segmentation under uncertain medical-image labels.</li>
-            <li data-ko="정보보안학 학사, 대전대학교(2012–2019) — 견고함을 우선하는 접근의 밑바탕이 된 교차 분야 경험.">B.S. Information Security, Daejeon University (2012–2019) — the cross-domain foundation behind a robustness-first approach.</li>
+            <li data-ko="석사 논문: 불확실한 의료영상 라벨에서 분할 성능을 높이는 대조 손실." data-ja="修士論文: 不確実な医療画像ラベル下でセグメンテーション性能を高めるコントラスティブ損失。">Thesis: contrastive loss for improving segmentation under uncertain medical-image labels.</li>
+            <li data-ko="정보보안학 학사, 대전대학교(2012–2019) — 견고함을 우선하는 접근의 밑바탕이 된 교차 분야 경험." data-ja="情報セキュリティ学士、大田大学校(2012–2019) — 頑健性を優先する姿勢の土台となった分野横断的な経験。">B.S. Information Security, Daejeon University (2012–2019) — the cross-domain foundation behind a robustness-first approach.</li>
           </ul>
         </div>
       </div>
@@ -467,28 +476,28 @@
 
   <!-- SKILLS + FUNDING -->
   <section class="block" id="skills">
-    <div class="head reveal"><span class="num">04</span><h2 data-ko="기술 스택 & 수행 과제">Toolkit &amp; Funded Work</h2></div>
+    <div class="head reveal"><span class="num">04</span><h2 data-ko="기술 스택 & 수행 과제" data-ja="技術スタック & 遂行課題">Toolkit &amp; Funded Work</h2></div>
     <div class="two">
       <div class="reveal">
-        <div class="skillset"><h4 data-ko="딥러닝">Deep Learning</h4><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div>
-        <div class="skillset"><h4 data-ko="병리 스택">Pathology Stack</h4><div class="tags"><span class="tag">OpenSlide</span><span class="tag">QuPath</span><span class="tag">CLAM / weakly-supervised MIL</span><span class="tag">UNI · CONCH · Virchow</span><span class="tag" data-ko="WSI 타일링">WSI tiling</span></div></div>
-        <div class="skillset"><h4 data-ko="바이오 / 오믹스">Bio / Omics</h4><div class="tags"><span class="tag">scanpy · AnnData</span><span class="tag" data-ko="단일세포 섭동">Single-cell perturbation</span><span class="tag" data-ko="프로테옴 표현학습">Proteomic representation</span><span class="tag">ADMET</span></div></div>
-        <div class="skillset"><h4 data-ko="MLOps & 언어">MLOps &amp; Languages</h4><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div>
+        <div class="skillset"><h4 data-ko="딥러닝" data-ja="深層学習">Deep Learning</h4><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div>
+        <div class="skillset"><h4 data-ko="병리 스택" data-ja="病理スタック">Pathology Stack</h4><div class="tags"><span class="tag">OpenSlide</span><span class="tag">QuPath</span><span class="tag">CLAM / weakly-supervised MIL</span><span class="tag">UNI · CONCH · Virchow</span><span class="tag" data-ko="WSI 타일링" data-ja="WSIタイリング">WSI tiling</span></div></div>
+        <div class="skillset"><h4 data-ko="바이오 / 오믹스" data-ja="バイオ / オミクス">Bio / Omics</h4><div class="tags"><span class="tag">scanpy · AnnData</span><span class="tag" data-ko="단일세포 섭동" data-ja="単一細胞摂動">Single-cell perturbation</span><span class="tag" data-ko="프로테옴 표현학습" data-ja="プロテオーム表現学習">Proteomic representation</span><span class="tag">ADMET</span></div></div>
+        <div class="skillset"><h4 data-ko="MLOps & 언어" data-ja="MLOps & 言語">MLOps &amp; Languages</h4><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div>
       </div>
       <div class="reveal">
-        <div class="fund"><h4 data-ko="정밀종양학을 위한 Pan-Sarcoma 프로테오지노믹 프로파일링">Pan-Sarcoma Proteogenomic Profiling for Precision Oncology</h4><div class="meta" data-ko="한·미·일 · 경희대학교 의료원<br>2025.04 – 2028.12 · <span class='amt'>4억 원</span> · 참여연구원">Korea–US–Japan · Kyung Hee Univ. Medical Center<br>Apr 2025 – Dec 2028 · <span class="amt">KRW 400M</span> · Participating Researcher</div></div>
-        <div class="fund"><h4 data-ko="수의 종양학을 위한 버추얼 셀 CDSS">Virtual-Cell CDSS for Veterinary Oncology</h4><div class="meta" data-ko="농림축산식품부 IPET · 국가 R&D<br>2026 – 2030 (선정) · <span class='amt'>30억 원+</span> · 참여연구원">IPET / Ministry of Agriculture · National R&amp;D Program<br>2026 – 2030 (awarded) · <span class="amt">KRW 3B+</span> · Participating Researcher</div></div>
-        <div class="fund"><h4 data-ko="암 병리 진단용 범용 AI 개발·상용화">General-Purpose AI for Cancer Pathology Diagnosis</h4><div class="meta" data-ko="주관: 딥바이오 · 국가 R&D<br>2021.04 – 2025.12 · <span class='amt'>23.75억 원</span> · 참여연구원">Lead: Deep Bio · National R&amp;D Program<br>Apr 2021 – Dec 2025 · <span class="amt">KRW 2.375B</span> · Participating Researcher</div></div>
-        <div class="award"><span class="medal">2<span style="font-size:.5em">nd</span></span><p data-ko="<b>KPI 챌린지 2024 — 전체 슬라이드 트랙</b><br>사구체 분할 · MICCAI 2024 개최"><b>KPI Challenge 2024 — Whole-Slide Track</b><br>Glomeruli segmentation · held at MICCAI 2024</p></div>
+        <div class="fund"><h4 data-ko="정밀종양학을 위한 Pan-Sarcoma 프로테오지노믹 프로파일링" data-ja="精密腫瘍学のためのPan-Sarcomaプロテオゲノムプロファイリング">Pan-Sarcoma Proteogenomic Profiling for Precision Oncology</h4><div class="meta" data-ko="한·미·일 · 경희대학교 의료원<br>2025.04 – 2028.12 · <span class='amt'>4억 원</span> · 참여연구원" data-ja="日米韓 · 慶熙大学校医療院<br>2025.04 – 2028.12 · <span class='amt'>4億ウォン</span> · 参加研究員">Korea–US–Japan · Kyung Hee Univ. Medical Center<br>Apr 2025 – Dec 2028 · <span class="amt">KRW 400M</span> · Participating Researcher</div></div>
+        <div class="fund"><h4 data-ko="수의 종양학을 위한 버추얼 셀 CDSS" data-ja="獣医腫瘍学のためのバーチャルセルCDSS">Virtual-Cell CDSS for Veterinary Oncology</h4><div class="meta" data-ko="농림축산식품부 IPET · 국가 R&D<br>2026 – 2030 (선정) · <span class='amt'>30억 원+</span> · 참여연구원" data-ja="農林畜産食品部 IPET · 国家R&D<br>2026 – 2030 (採択) · <span class='amt'>30億ウォン+</span> · 参加研究員">IPET / Ministry of Agriculture · National R&amp;D Program<br>2026 – 2030 (awarded) · <span class="amt">KRW 3B+</span> · Participating Researcher</div></div>
+        <div class="fund"><h4 data-ko="암 병리 진단용 범용 AI 개발·상용화" data-ja="がん病理診断向け汎用AIの開発・実用化">General-Purpose AI for Cancer Pathology Diagnosis</h4><div class="meta" data-ko="주관: 딥바이오 · 국가 R&D<br>2021.04 – 2025.12 · <span class='amt'>23.75억 원</span> · 참여연구원" data-ja="主管: Deep Bio · 国家R&D<br>2021.04 – 2025.12 · <span class='amt'>23.75億ウォン</span> · 参加研究員">Lead: Deep Bio · National R&amp;D Program<br>Apr 2021 – Dec 2025 · <span class="amt">KRW 2.375B</span> · Participating Researcher</div></div>
+        <div class="award"><span class="medal">2<span style="font-size:.5em">nd</span></span><p data-ko="<b>KPI 챌린지 2024 — 전체 슬라이드 트랙</b><br>사구체 분할 · MICCAI 2024 개최" data-ja="<b>KPIチャレンジ2024 — 全スライドトラック</b><br>糸球体セグメンテーション · MICCAI 2024 開催"><b>KPI Challenge 2024 — Whole-Slide Track</b><br>Glomeruli segmentation · held at MICCAI 2024</p></div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="block contact" id="contact">
-    <span class="eyebrow reveal" style="justify-content:center;display:inline-flex" data-ko="협업 환영">Open to collaboration</span>
-    <div class="big reveal" data-ko="실제로 <a href='mailto:rjsrb365@gmail.com'>배포되는</a><br>임상 AI를 함께 만들어요.">Let's build clinical AI<br>that actually <a href="mailto:rjsrb365@gmail.com">ships</a>.</div>
-    <p class="sub reveal" data-ko="파운데이션 모델, 멀티오믹스, 또는 중개(translational) 디지털 병리 — 편하게 연락 주세요.">Foundation models, multi-omics, or translational digital pathology — I'd like to hear about it.</p>
+    <span class="eyebrow reveal" style="justify-content:center;display:inline-flex" data-ko="협업 환영" data-ja="協業歓迎">Open to collaboration</span>
+    <div class="big reveal" data-ko="실제로 <a href='mailto:rjsrb365@gmail.com'>배포되는</a><br>임상 AI를 함께 만들어요." data-ja="実際に<a href='mailto:rjsrb365@gmail.com'>現場で使われる</a><br>臨床AIを一緒に作りましょう。">Let's build clinical AI<br>that actually <a href="mailto:rjsrb365@gmail.com">ships</a>.</div>
+    <p class="sub reveal" data-ko="파운데이션 모델, 멀티오믹스, 또는 중개(translational) 디지털 병리 — 편하게 연락 주세요." data-ja="基盤モデル、マルチオミクス、あるいはトランスレーショナルなデジタル病理 — お気軽にご連絡ください。">Foundation models, multi-omics, or translational digital pathology — I'd like to hear about it.</p>
     <div class="links reveal">
       <a class="chip" href="mailto:rjsrb365@gmail.com">rjsrb365@gmail.com</a>
       <a class="chip" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ko" target="_blank" rel="noopener">Google Scholar</a>
@@ -505,19 +514,26 @@
 (function(){
   var nodes = [].slice.call(document.querySelectorAll('[data-ko]'));
   nodes.forEach(function(el){ el._en = el.innerHTML; });
-  var titleEn = "Geongyu Lee — AI Researcher";
-  var titleKo = "이건규 — AI 리서처";
-  var btn = document.getElementById('langtoggle');
+  var titles = {en:"Geongyu Lee — AI Researcher", ko:"이건규 — AI 리서처", ja:"イ・ゴンギュ — AIリサーチャー"};
+  var opts = [].slice.call(document.querySelectorAll('.langopt'));
   var lang = 'en';
   function apply(l){
     lang = l;
-    nodes.forEach(function(el){ el.innerHTML = (l==='ko' ? el.getAttribute('data-ko') : el._en); });
-    document.documentElement.lang = (l==='ko' ? 'ko' : 'en');
-    document.title = (l==='ko' ? titleKo : titleEn);
-    btn.textContent = (l==='ko' ? 'EN' : '한국어');
-    btn.setAttribute('aria-pressed', l==='ko' ? 'true' : 'false');
+    nodes.forEach(function(el){
+      var v = el._en;
+      if(l==='ko'){ v = el.getAttribute('data-ko') || el._en; }
+      else if(l==='ja'){ v = el.getAttribute('data-ja') || el._en; }
+      el.innerHTML = v;
+    });
+    document.documentElement.lang = l;
+    document.title = titles[l] || titles.en;
+    opts.forEach(function(b){
+      var on = b.getAttribute('data-lang')===l;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
   }
-  btn.addEventListener('click', function(){ apply(lang==='en' ? 'ko' : 'en'); });
+  opts.forEach(function(b){ b.addEventListener('click', function(){ apply(b.getAttribute('data-lang')); }); });
 
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
