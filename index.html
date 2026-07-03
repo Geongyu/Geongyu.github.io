@@ -148,6 +148,18 @@
   .reveal.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
   :lang(ko) .head h2,:lang(ko) .hero h1,:lang(ko) .row .main h3,:lang(ko) .card h3,:lang(ko) .role-row .what h3,:lang(ko) .contact .big{letter-spacing:-.01em}
+
+  /* ---- media: avatar, figure thumbnails, card banners ---- */
+  .hero-id{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+  .avatar{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:top;border:1px solid var(--line-2);box-shadow:0 8px 26px rgba(0,0,0,.45);background:var(--panel-2);flex:none}
+  .thumb{float:right;width:190px;margin:3px 0 10px 26px;border:1px solid var(--line-2);border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 10px 28px rgba(0,0,0,.3);transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+  .thumb img{display:block;width:100%;height:auto}
+  .thumb:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 36px rgba(0,0,0,.45)}
+  @media(max-width:820px){.thumb{float:none;width:100%;max-width:300px;margin:6px 0 16px}}
+  .card{overflow:hidden}
+  .card-fig{margin:-26px -26px 20px;height:152px;background:#fff;border-bottom:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .card-fig img{width:100%;height:100%;object-fit:contain;padding:9px;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+  .card:hover .card-fig img{transform:scale(1.045)}
 </style>
 </head>
 <body>
@@ -170,7 +182,10 @@
   <!-- HERO -->
   <header class="hero">
     <div>
-      <span class="eyebrow" data-ko="AI 리서처 · 서울">AI Researcher · Seoul</span>
+      <div class="hero-id">
+        <img class="avatar" src="https://github.com/Geongyu.png" onerror="this.onerror=null;this.src='assets/profile.jpg'" alt="Geongyu Lee · 이건규" width="76" height="76" loading="eager">
+        <span class="eyebrow" data-ko="AI 리서처 · 서울">AI Researcher · Seoul</span>
+      </div>
       <h1>Geongyu Lee<span class="kr">이건규</span></h1>
       <p class="role" data-ko="<span class='b'>계산병리</span> / 병리 파운데이션 모델 / <span class='b'>멀티오믹스</span>"><span class="b">Computational Pathology</span> / Pathology Foundation Models / <span class="b">Multi-Omics</span></p>
       <p class="lede" data-ko="5년간 의료영상과 신약개발을 위한 딥러닝을 만들어 왔습니다 — <b>WSI 파이프라인</b>과 식약처(KFDA) 트랙 검증부터 <b>병리 파운데이션 모델</b>까지, 지금은 프로테오믹스·멀티오믹스를 통합하고 있습니다.">Five years building deep learning for medical imaging and drug discovery — from <b>whole-slide-image pipelines</b> and KFDA-track validation to <b>pathology foundation models</b>, now integrating proteomics and multi-omics.</p>
@@ -233,6 +248,7 @@
       <article class="row reveal">
         <div class="acc">01 †</div>
         <div class="main">
+          <a class="thumb" href="https://arxiv.org/abs/2406.06650" target="_blank" rel="noopener"><img src="assets/pub_breast_gradcam.jpg" alt="Grad-CAM heatmaps over H&amp;E breast tissue patches" loading="lazy"></a>
           <span class="venue" data-ko="Scientific Reports · 2025 · 1저자">Scientific Reports · 2025 · First author</span>
           <h3 data-ko="H&E 전체 슬라이드 이미지 기반 조기 유방암 재발 위험 예측">Recurrence risk in early-stage breast cancer from H&amp;E whole-slide images</h3>
           <p data-ko="다기관 후향적 연구(n=125; 국립암센터 + 고려대 구로병원)로, 조직병리만으로도 유전자 검사 방식의 위험 층화를 근사할 수 있음을 보였습니다.">Multi-center retrospective study (n=125; National Cancer Center + Korea University Guro) showing histopathology-only deep learning can approximate genomic-assay-style risk stratification.</p>
@@ -244,6 +260,7 @@
       <article class="row reveal">
         <div class="acc">02</div>
         <div class="main">
+          <a class="thumb" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="https://arxiv.org/html/2510.11176v3/Figure_2_AAAI.png" alt="G2L knowledge-distillation framework overview" loading="lazy" onerror="var t=this.closest('.thumb'); if(t) t.style.display='none';"></a>
           <span class="venue" data-ko="AAAI 2026 · W3PHIAI · 구두">AAAI 2026 · W3PHIAI · Oral</span>
           <h3 data-ko="G2L — 기가스케일에서 암종 특화 병리 파운데이션 모델로">G2L — giga-scale to cancer-specific pathology foundation models</h3>
           <p data-ko="지식 증류(knowledge distillation)로 기가스케일 병리 파운데이션 모델을 작고 암종 특화된 인코더로 압축하면서, 더 적은 연산으로 downstream 성능을 유지합니다.">Distilling giga-scale pathology foundation models into compact, cancer-specific encoders via knowledge distillation, preserving downstream performance at lower compute.</p>
@@ -255,6 +272,7 @@
       <article class="row reveal">
         <div class="acc">03</div>
         <div class="main">
+          <a class="thumb" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener"><img src="assets/pub_murss_arch.png" alt="MurSS multi-resolution selective segmentation architecture" loading="lazy"></a>
           <span class="venue">Bioengineering · 2024</span>
           <h3 data-ko="MurSS — 유방암을 위한 다중 해상도 선택적 분할">MurSS — multi-resolution selective segmentation for breast cancer</h3>
           <p data-ko="여러 해상도를 동시에 입력받고, confidence 기반 reject loss로 신뢰하기 어려운 영역은 예측을 보류합니다 — 노이즈가 많은 조직병리 라벨을 위해 설계했습니다.">Ingests multiple resolutions simultaneously and abstains on unreliable regions via a confidence-based reject loss, built for noisy histopathology labels.</p>
@@ -277,6 +295,7 @@
       <article class="row reveal">
         <div class="acc">05</div>
         <div class="main">
+          <a class="thumb" href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener"><img src="assets/pub_prostate_multisection.png" alt="Multi-section whole-slide sampling strategies for prostate BCR" loading="lazy"></a>
           <span class="venue" data-ko="프리프린트 · 2026">Preprint · 2026</span>
           <h3 data-ko="전립선암 생화학적 재발 예측을 위한 다중 섹션 WSI 분석">Multi-section WSI analysis for biochemical recurrence in prostate cancer</h3>
           <p data-ko="여러 조직 섹션에 걸친 효율적 AI 분석으로 생화학적 재발을 예측하며, 단일 슬라이드 추론을 다중 섹션 검체로 확장합니다.">Efficient AI-driven analysis across multiple tissue sections to predict biochemical recurrence, extending single-slide inference to full multi-section specimens.</p>
@@ -288,6 +307,7 @@
       <article class="row reveal">
         <div class="acc">06</div>
         <div class="main">
+          <a class="thumb" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener"><img src="assets/pub_contrastive_embed.png" alt="Encoder embedding-space illustration for supervised contrastive learning" loading="lazy"></a>
           <span class="venue">IEEE Access · 2021</span>
           <h3 data-ko="의료영상 분할을 위한 지도 대조 임베딩">Supervised contrastive embedding for medical image segmentation</h3>
           <p data-ko="영역 어노테이션 단위의 픽셀 단위 대조 손실로, 적고 불확실한 의료영상 라벨에서도 분할을 안정화합니다 — 석사 논문으로 이어진 연구입니다.">Region-annotation-level pixel-wise contrastive loss to stabilize segmentation under scarce and unreliable medical-image labels — the line of work behind my M.S. thesis.</p>
@@ -335,6 +355,7 @@
       </div>
 
       <div class="card reveal">
+        <div class="card-fig"><img src="assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></div>
         <div class="k" data-ko="디지털 병리 · 딥바이오">Digital pathology · Deep Bio</div>
         <h3 data-ko="Oncotype DX 재발 예측">Oncotype DX recurrence prediction</h3>
         <p data-ko="다른 임상정보 없이 H&E WSI만으로 유방암 예후 예측. 패치 단위 분류에 confidence 기반 선택과 다수결을 결합해 슬라이드 단위 GHI-RS 위험군으로 분류.">Predicting breast-cancer prognosis from H&amp;E WSIs only — no other clinical inputs. Patch-wise classification with confidence-aware selection and majority voting into slide-level GHI-RS risk groups.</p>
@@ -342,6 +363,7 @@
       </div>
 
       <div class="card reveal">
+        <div class="card-fig"><img src="assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></div>
         <div class="k" data-ko="의료영상 · SK / 아주대병원">Medical imaging · SK / Ajou Univ. Hospital</div>
         <h3 data-ko="CT 뇌출혈 검출">Brain-hemorrhage detection on CT</h3>
         <p data-ko="뇌출혈 영역의 2D·3D 분할과 슬라이스 단위 분류. 외부 공개 데이터로 도메인 일반화를 검증하고, class-activation map으로 분류 신뢰성을 점검(U-Net vs DeepLab).">2D and 3D segmentation of hemorrhage regions plus slice-level classification. Validated domain generalization on external public data and used class-activation maps to audit classification reliability (U-Net vs DeepLab).</p>
@@ -349,6 +371,7 @@
       </div>
 
       <div class="card reveal">
+        <div class="card-fig"><img src="assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></div>
         <div class="k" data-ko="컴퓨터 비전 · 프론텍">Computer vision · Fronttec</div>
         <h3 data-ko="나사 불량 판별">Screw defect classification</h3>
         <p data-ko="생산 라인 불량 검출 — 969장, 5개 클래스, 장당 0.3초 제약. 딥러닝 대신 머신비전으로 나사 위치를 잡아 배경을 제거한 뒤 분류해 성능을 끌어올림.">Defect detection on a manufacturing line — 969 images across 5 classes, under a hard 0.3s/image budget. Used machine vision (not DL) to localize the screw and strip background before classification, which lifted accuracy.</p>
