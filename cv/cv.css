@@ -1,0 +1,104 @@
+/* Geongyu Lee — CV stylesheet (WeasyPrint)
+   Palette sampled from the previous PDF so regenerated files stay on-brand. */
+@page {
+  size: A4;
+  margin: 15mm 15mm 14mm 15mm;
+}
+
+:root {
+  --ink:      #1c2030;   /* headings, names, titles      */
+  --ink-soft: #424859;   /* body copy                    */
+  --muted:    #747888;   /* venues, meta                 */
+  --faint:    #a7aab4;   /* dates, secondary meta        */
+  --accent:   #3b47c4;   /* section headers, rules       */
+  --rule:     #ecedf4;   /* light hairlines              */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Liberation Sans", "Noto Sans CJK KR", "Noto Sans CJK JP", Arial, sans-serif;
+  font-size: 8.6pt;
+  line-height: 1.46;
+  color: var(--ink-soft);
+  -weasy-hyphens: none;
+}
+html[lang="ko"] body { font-family: "Noto Sans CJK KR", "Liberation Sans", sans-serif; }
+html[lang="ja"] body { font-family: "Noto Sans CJK JP", "Liberation Sans", sans-serif; }
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- header ---------- */
+.masthead { border-bottom: .8pt solid var(--accent); padding-bottom: 7pt; }
+.name {
+  font-size: 20pt; font-weight: 700; letter-spacing: -.015em;
+  color: var(--ink); line-height: 1.1;
+}
+.name .native {
+  font-size: 9pt; font-weight: 400; letter-spacing: 0;
+  color: var(--muted); margin-left: 6pt;
+}
+.role {
+  margin-top: 4pt;
+  font-size: 10pt; font-weight: 700; color: var(--accent);
+}
+.contact {
+  margin-top: 5pt;
+  font-size: 7.4pt; color: var(--muted); letter-spacing: .005em;
+}
+.contact span + span::before { content: " · "; color: var(--faint); }
+
+/* ---------- summary ---------- */
+.summary { margin-top: 9pt; font-size: 8.6pt; color: var(--ink-soft); text-align: justify; }
+/* CJK justification stretches inter-character space badly — keep those ragged-right */
+html[lang="ko"] .summary, html[lang="ja"] .summary { text-align: left; }
+
+/* ---------- sections ---------- */
+section { margin-top: 13pt; }
+h2 {
+  font-size: 8pt; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .13em; color: var(--accent);
+  border-bottom: .75pt solid var(--rule);
+  padding-bottom: 4pt; margin-bottom: 7pt;
+}
+h2 .scholar {
+  float: right; font-weight: 400; text-transform: none;
+  letter-spacing: .01em; font-size: 7pt; color: var(--faint);
+}
+
+/* ---------- publications ---------- */
+.pub { display: flex; gap: 6pt; margin-bottom: 5pt; page-break-inside: avoid; }
+.pub .n { flex: none; width: 9pt; text-align: right; font-size: 7.4pt; color: var(--accent); padding-top: .8pt; }
+.pub .body { flex: 1; }
+.pub .t { font-weight: 700; color: var(--ink); }
+.pub .v { color: var(--muted); }
+.pub .x { color: var(--faint); font-size: 7.4pt; }
+
+/* ---------- experience ---------- */
+.job { margin-bottom: 9pt; page-break-inside: avoid; }
+.job-h { display: flex; align-items: baseline; }
+.job-h .co { font-weight: 700; font-size: 9.2pt; color: var(--ink); flex: 1; }
+.job-h .when { font-size: 7.6pt; color: var(--faint); white-space: nowrap; }
+.job .sub { font-size: 8.2pt; color: var(--muted); margin: 1pt 0 3pt; }
+.job ul { list-style: none; }
+.job li { position: relative; padding-left: 9pt; margin-bottom: 1.6pt; }
+.job li::before { content: "–"; position: absolute; left: 0; color: var(--accent); }
+
+/* ---------- projects / education ---------- */
+.item { margin-bottom: 6pt; page-break-inside: avoid; }
+.item .h { font-weight: 700; color: var(--ink); font-size: 8.8pt; }
+.item .h .org { font-weight: 400; color: var(--faint); font-size: 7.6pt; }
+.item .h .when { float: right; font-weight: 400; font-size: 7.6pt; color: var(--faint); }
+.item .d { color: var(--ink-soft); }
+
+/* ---------- skills ---------- */
+.skill { display: flex; margin-bottom: 3pt; }
+.skill .k { flex: none; width: 105pt; font-weight: 700; color: var(--ink); }
+.skill .v { flex: 1; color: var(--ink-soft); }
+
+/* ---------- awards ---------- */
+.award { margin-bottom: 5.5pt; page-break-inside: avoid; }
+.award .h { font-weight: 700; color: var(--ink); font-size: 8.8pt; }
+.award .m { color: var(--muted); font-size: 8pt; }
+
+.talks { color: var(--ink-soft); }
