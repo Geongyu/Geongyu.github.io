@@ -33,13 +33,16 @@
 
 | Year | Venue | Title |
 |------|-------|-------|
-| 2025 | **Scientific Reports** † | [Recurrence risk in early-stage breast cancer from H&E WSIs](https://arxiv.org/abs/2406.06650) |
+| 2026 | **Medical Image Analysis** | [KPIs 2024 Challenge: glomerular segmentation, patch → slide level](https://doi.org/10.1016/j.media.2026.104234) |
 | 2026 | **AAAI** (W3PHIAI, oral) | [G2L: giga-scale → cancer-specific pathology foundation models](https://arxiv.org/abs/2510.11176) |
-| 2025 | **Prostate International** † | AI-driven digital pathology in urological cancers |
+| 2026 | Preprint | [Spatial proteomics × H&E AI: recurrence-risk niches in TNBC](https://arxiv.org/abs/2608.03145) |
+| 2026 | Preprint | [Multi-section WSI analysis for biochemical recurrence in prostate cancer](https://arxiv.org/abs/2603.20273) |
+| 2025 | **Scientific Reports** † | [Recurrence risk in early-stage breast cancer from H&E WSIs](https://www.nature.com/articles/s41598-025-16679-x) |
+| 2025 | **Prostate International** † | [AI-driven digital pathology in urological cancers](https://www.sciencedirect.com/science/article/pii/S2287888225000066) |
 | 2024 | **Bioengineering** | [MurSS: multi-resolution selective segmentation](https://www.mdpi.com/2306-5354/11/5/463) |
 | 2021 | **IEEE Access** | [Supervised contrastive embedding for medical segmentation](https://ieeexplore.ieee.org/document/9564042) |
 
-📚 Full list on [Google Scholar](https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ko)
+📚 Full list on [Google Scholar](https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ko) — 55 citations · h-index 5 · i10-index 2
 
 ---
 
@@ -68,7 +71,7 @@
 
 ### 🏆 Highlights
 
-- 🥈 **2nd place**, KPI Challenge 2024 — Whole-Slide Track (MICCAI 2024)
+- 🥈 **2nd place**, KPIs Challenge 2024 — Whole-Slide Track (MICCAI 2024) · results published in **Medical Image Analysis** (2026)
 - 🎤 Talks & abstracts at **AACR** (2022, 2023) and **USCAP** (2022)
 
 ---
