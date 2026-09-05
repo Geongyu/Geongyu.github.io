@@ -178,6 +178,7 @@
   .card p{color:var(--muted);font-size:.96rem;margin-bottom:16px;flex:1}
   .card .tagline{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--f-mono);font-size:.73rem;color:var(--faint)}
   .card .tagline b{color:var(--fg);font-weight:500}
+  .card .tagline a{margin-left:auto;color:var(--accent);letter-spacing:.04em;transition:opacity .2s}.card .tagline a:hover{opacity:.7}
 
   .role-row{display:grid;grid-template-columns:200px 1fr;gap:clamp(16px,4vw,48px);padding:32px 0;border-top:var(--line-w) solid var(--line)}
   .role-row .when{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
@@ -513,14 +514,14 @@
         <div class="k">医療画像 · SK / 亜洲大学病院</div>
         <h3>CT脳出血検出</h3>
         <p>脳出血領域の2D・3Dセグメンテーションとスライス単位分類。外部公開データでドメイン汎化を検証し、class-activation mapで分類の信頼性を点検(U-Net vs DeepLab)。</p>
-        <div class="tagline"><span>2D + 3D セグメンテーション</span><b>·</b><span>ドメイン汎化</span></div>
+        <div class="tagline"><span>2D + 3D セグメンテーション</span><b>·</b><span>ドメイン汎化</span><a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
       </div>
 
     </div>
 
     <div class="subhead reveal">
       <h3>医療AIの外で</h3>
-      <span class="note">産業用ビジョン · 表形式データML — ドメインを越えて活きるMLエンジニアリング</span>
+      <span class="note">産業用ビジョン · 表形式データ · データエンジニアリング · 頑健性 — ドメインを越えて活きるMLエンジニアリング</span>
     </div>
     <div class="grid">
       <div class="card reveal">
@@ -536,6 +537,20 @@
         <h3>マンション成約価格予測</h3>
         <p>ソウル・釜山の成約価格予測(160万件)。郵便番号で住所を再マッチングし誤記の地域を修正、元データにない公共API特徴量(周辺の地下鉄・学校)を追加。</p>
         <div class="tagline"><span>160万件</span><b>·</b><span>指標: RMSE</span></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="k">データエンジニアリング · ソウル科学技術大</div>
+        <h3>音楽チャート収集パイプライン & DB</h3>
+        <p>Melon・Genie・VIBE・YouTube Music・Apple Music・Bugsの6プラットフォームの日次Top 100を毎日同時刻に収集し、曲・アーティスト単位でマージしてDBに格納。チャートイン/アウトによる欠損をスキーマ(NULL許容カラム)で設計し、多言語タイトルのためnvarcharを採用。</p>
+        <div class="tagline"><span>6プラットフォーム</span><b>·</b><span>日次収集</span><b>·</b><span>スキーマ設計</span><a href='https://github.com/Geongyu/2020-Database-Project' target='_blank' rel='noopener'>code ↗</a></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="k">コンピュータビジョン · ソウル科学技術大</div>
+        <h3>セグメンテーションモデルの敵対的頑健性</h3>
+        <p>PASCAL VOC(20クラス、1,928枚、4,203オブジェクト)でU-Netセグメンテーションにadversarial training・label smoothing・cut-outを単独/組み合わせで適用し、頑健性と精度のトレードオフを比較。医療AIでの「頑健性優先」の出発点。</p>
+        <div class="tagline"><span>敵対的学習</span><b>·</b><span>Label smoothing</span><b>·</b><span>Cut-out</span><a href='https://github.com/Geongyu/2019_DL_Project' target='_blank' rel='noopener'>code ↗</a></div>
       </div>
 
     </div>

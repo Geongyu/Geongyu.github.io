@@ -178,6 +178,7 @@
   .card p{color:var(--muted);font-size:.96rem;margin-bottom:16px;flex:1}
   .card .tagline{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--f-mono);font-size:.73rem;color:var(--faint)}
   .card .tagline b{color:var(--fg);font-weight:500}
+  .card .tagline a{margin-left:auto;color:var(--accent);letter-spacing:.04em;transition:opacity .2s}.card .tagline a:hover{opacity:.7}
 
   .role-row{display:grid;grid-template-columns:200px 1fr;gap:clamp(16px,4vw,48px);padding:32px 0;border-top:var(--line-w) solid var(--line)}
   .role-row .when{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
@@ -513,14 +514,14 @@
         <div class="k">의료영상 · SK / 아주대병원</div>
         <h3>CT 뇌출혈 검출</h3>
         <p>뇌출혈 영역의 2D·3D 분할과 슬라이스 단위 분류. 외부 공개 데이터로 도메인 일반화를 검증하고, class-activation map으로 분류 신뢰성을 점검(U-Net vs DeepLab).</p>
-        <div class="tagline"><span>2D + 3D 분할</span><b>·</b><span>도메인 일반화</span></div>
+        <div class="tagline"><span>2D + 3D 분할</span><b>·</b><span>도메인 일반화</span><a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
       </div>
 
     </div>
 
     <div class="subhead reveal">
       <h3>의료 AI 밖에서</h3>
-      <span class="note">산업용 비전 · 정형 데이터 ML — 도메인을 넘어 옮겨 가는 ML 엔지니어링</span>
+      <span class="note">산업용 비전 · 정형 데이터 · 데이터 엔지니어링 · 견고성 — 도메인을 넘어 옮겨 가는 ML 엔지니어링</span>
     </div>
     <div class="grid">
       <div class="card reveal">
@@ -536,6 +537,20 @@
         <h3>아파트 실거래가 예측</h3>
         <p>서울·부산 실거래가 예측(160만 건). 우편번호로 주소를 재매칭해 오기입 지역을 바로잡고, 원본에 없던 공공 API 피처(주변 지하철·학교)를 추가.</p>
         <div class="tagline"><span>160만 건</span><b>·</b><span>지표: RMSE</span></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="k">데이터 엔지니어링 · 서울과기대</div>
+        <h3>음원 차트 수집 파이프라인 & DB</h3>
+        <p>멜론·지니·바이브·유튜브 뮤직·애플 뮤직·벅스 6개 플랫폼의 일간 Top 100을 매일 같은 시각에 수집해 곡·아티스트 기준으로 병합하고 DB에 적재. 차트인/아웃에 따른 결측을 스키마(NULL 허용 컬럼)로 설계하고 다국어 제목을 위해 nvarchar 채택.</p>
+        <div class="tagline"><span>6개 플랫폼</span><b>·</b><span>일 단위 수집</span><b>·</b><span>스키마 설계</span><a href='https://github.com/Geongyu/2020-Database-Project' target='_blank' rel='noopener'>code ↗</a></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="k">컴퓨터 비전 · 서울과기대</div>
+        <h3>분할 모델의 적대적 견고성 연구</h3>
+        <p>PASCAL VOC(20개 클래스, 1,928장, 4,203개 객체)에서 U-Net 분할에 adversarial training · label smoothing · cut-out을 단독/조합으로 적용해 견고성-정확도 트레이드오프를 비교. 의료 AI에서의 '견고성 우선' 관점의 출발점.</p>
+        <div class="tagline"><span>적대적 학습</span><b>·</b><span>Label smoothing</span><b>·</b><span>Cut-out</span><a href='https://github.com/Geongyu/2019_DL_Project' target='_blank' rel='noopener'>code ↗</a></div>
       </div>
 
     </div>

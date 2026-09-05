@@ -178,6 +178,7 @@
   .card p{color:var(--muted);font-size:.96rem;margin-bottom:16px;flex:1}
   .card .tagline{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--f-mono);font-size:.73rem;color:var(--faint)}
   .card .tagline b{color:var(--fg);font-weight:500}
+  .card .tagline a{margin-left:auto;color:var(--accent);letter-spacing:.04em;transition:opacity .2s}.card .tagline a:hover{opacity:.7}
 
   .role-row{display:grid;grid-template-columns:200px 1fr;gap:clamp(16px,4vw,48px);padding:32px 0;border-top:var(--line-w) solid var(--line)}
   .role-row .when{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
@@ -513,14 +514,14 @@
         <div class="k" data-ko="의료영상 · SK / 아주대병원" data-ja="医療画像 · SK / 亜洲大学病院">Medical imaging · SK / Ajou Univ. Hospital</div>
         <h3 data-ko="CT 뇌출혈 검출" data-ja="CT脳出血検出">Brain-hemorrhage detection on CT</h3>
         <p data-ko="뇌출혈 영역의 2D·3D 분할과 슬라이스 단위 분류. 외부 공개 데이터로 도메인 일반화를 검증하고, class-activation map으로 분류 신뢰성을 점검(U-Net vs DeepLab)." data-ja="脳出血領域の2D・3Dセグメンテーションとスライス単位分類。外部公開データでドメイン汎化を検証し、class-activation mapで分類の信頼性を点検(U-Net vs DeepLab)。">2D and 3D segmentation of hemorrhage regions plus slice-level classification. Validated domain generalization on external public data and used class-activation maps to audit classification reliability (U-Net vs DeepLab).</p>
-        <div class="tagline" data-ko="<span>2D + 3D 분할</span><b>·</b><span>도메인 일반화</span>" data-ja="<span>2D + 3D セグメンテーション</span><b>·</b><span>ドメイン汎化</span>"><span>2D + 3D seg</span><b>·</b><span>Domain generalization</span></div>
+        <div class="tagline" data-ko="<span>2D + 3D 분할</span><b>·</b><span>도메인 일반화</span><a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a>" data-ja="<span>2D + 3D セグメンテーション</span><b>·</b><span>ドメイン汎化</span><a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a>"><span>2D + 3D seg</span><b>·</b><span>Domain generalization</span><a href="https://github.com/Geongyu/SK-Project" target="_blank" rel="noopener">code ↗</a></div>
       </div>
 
     </div>
 
     <div class="subhead reveal">
       <h3 data-ko="의료 AI 밖에서" data-ja="医療AIの外で">Beyond medical AI</h3>
-      <span class="note" data-ko="산업용 비전 · 정형 데이터 ML — 도메인을 넘어 옮겨 가는 ML 엔지니어링" data-ja="産業用ビジョン · 表形式データML — ドメインを越えて活きるMLエンジニアリング">industrial vision · tabular ML — ML engineering that transfers across domains</span>
+      <span class="note" data-ko="산업용 비전 · 정형 데이터 · 데이터 엔지니어링 · 견고성 — 도메인을 넘어 옮겨 가는 ML 엔지니어링" data-ja="産業用ビジョン · 表形式データ · データエンジニアリング · 頑健性 — ドメインを越えて活きるMLエンジニアリング">industrial vision · tabular · data engineering · robustness — ML engineering that transfers across domains</span>
     </div>
     <div class="grid">
       <div class="card reveal">
@@ -536,6 +537,20 @@
         <h3 data-ko="아파트 실거래가 예측" data-ja="マンション成約価格予測">Apartment price prediction</h3>
         <p data-ko="서울·부산 실거래가 예측(160만 건). 우편번호로 주소를 재매칭해 오기입 지역을 바로잡고, 원본에 없던 공공 API 피처(주변 지하철·학교)를 추가." data-ja="ソウル・釜山の成約価格予測(160万件)。郵便番号で住所を再マッチングし誤記の地域を修正、元データにない公共API特徴量(周辺の地下鉄・学校)を追加。">Transaction-price modeling for Seoul/Busan from 1.6M records. Re-matched addresses by postal code to fix mislabeled districts, and enriched with public-API features (nearby subway, schools) missing from the raw data.</p>
         <div class="tagline" data-ko="<span>160만 건</span><b>·</b><span>지표: RMSE</span>" data-ja="<span>160万件</span><b>·</b><span>指標: RMSE</span>"><span>1.6M records</span><b>·</b><span>Metric: RMSE</span></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="k" data-ko="데이터 엔지니어링 · 서울과기대" data-ja="データエンジニアリング · ソウル科学技術大">Data engineering · SeoulTech</div>
+        <h3 data-ko="음원 차트 수집 파이프라인 & DB" data-ja="音楽チャート収集パイプライン & DB">Music-chart crawling pipeline &amp; database</h3>
+        <p data-ko="멜론·지니·바이브·유튜브 뮤직·애플 뮤직·벅스 6개 플랫폼의 일간 Top 100을 매일 같은 시각에 수집해 곡·아티스트 기준으로 병합하고 DB에 적재. 차트인/아웃에 따른 결측을 스키마(NULL 허용 컬럼)로 설계하고 다국어 제목을 위해 nvarchar 채택." data-ja="Melon・Genie・VIBE・YouTube Music・Apple Music・Bugsの6プラットフォームの日次Top 100を毎日同時刻に収集し、曲・アーティスト単位でマージしてDBに格納。チャートイン/アウトによる欠損をスキーマ(NULL許容カラム)で設計し、多言語タイトルのためnvarcharを採用。">Daily Top-100 charts from 6 streaming platforms (Melon, Genie, VIBE, YouTube Music, Apple Music, Bugs) crawled at a fixed time, merged on track + artist, and loaded into a relational DB. Schema designed for chart-in/out sparsity (nullable rank columns) and multilingual titles (nvarchar).</p>
+        <div class="tagline" data-ko="<span>6개 플랫폼</span><b>·</b><span>일 단위 수집</span><b>·</b><span>스키마 설계</span><a href='https://github.com/Geongyu/2020-Database-Project' target='_blank' rel='noopener'>code ↗</a>" data-ja="<span>6プラットフォーム</span><b>·</b><span>日次収集</span><b>·</b><span>スキーマ設計</span><a href='https://github.com/Geongyu/2020-Database-Project' target='_blank' rel='noopener'>code ↗</a>"><span>6 platforms</span><b>·</b><span>Daily crawl</span><b>·</b><span>Schema design</span><a href="https://github.com/Geongyu/2020-Database-Project" target="_blank" rel="noopener">code ↗</a></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="k" data-ko="컴퓨터 비전 · 서울과기대" data-ja="コンピュータビジョン · ソウル科学技術大">Computer vision · SeoulTech</div>
+        <h3 data-ko="분할 모델의 적대적 견고성 연구" data-ja="セグメンテーションモデルの敵対的頑健性">Adversarial robustness for semantic segmentation</h3>
+        <p data-ko="PASCAL VOC(20개 클래스, 1,928장, 4,203개 객체)에서 U-Net 분할에 adversarial training · label smoothing · cut-out을 단독/조합으로 적용해 견고성-정확도 트레이드오프를 비교. 의료 AI에서의 '견고성 우선' 관점의 출발점." data-ja="PASCAL VOC(20クラス、1,928枚、4,203オブジェクト)でU-Netセグメンテーションにadversarial training・label smoothing・cut-outを単独/組み合わせで適用し、頑健性と精度のトレードオフを比較。医療AIでの「頑健性優先」の出発点。">U-Net segmentation on PASCAL VOC (20 classes, 1,928 images, 4,203 objects) with adversarial training, label smoothing and cut-out applied alone and in combination, comparing the robustness–accuracy trade-off — the starting point of the robustness-first view carried into medical AI.</p>
+        <div class="tagline" data-ko="<span>적대적 학습</span><b>·</b><span>Label smoothing</span><b>·</b><span>Cut-out</span><a href='https://github.com/Geongyu/2019_DL_Project' target='_blank' rel='noopener'>code ↗</a>" data-ja="<span>敵対的学習</span><b>·</b><span>Label smoothing</span><b>·</b><span>Cut-out</span><a href='https://github.com/Geongyu/2019_DL_Project' target='_blank' rel='noopener'>code ↗</a>"><span>Adversarial training</span><b>·</b><span>Label smoothing</span><b>·</b><span>Cut-out</span><a href="https://github.com/Geongyu/2019_DL_Project" target="_blank" rel="noopener">code ↗</a></div>
       </div>
 
     </div>
