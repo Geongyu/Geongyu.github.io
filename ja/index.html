@@ -101,10 +101,13 @@
   .role .b{color:var(--accent)}
   .lede{font-size:1.12rem;color:var(--muted);max-width:46ch;margin-bottom:30px}
   .lede b{color:var(--fg);font-weight:400}
-  .chips{display:flex;flex-wrap:wrap;gap:9px}
-  .chip{font-family:var(--f-mono);font-size:.76rem;letter-spacing:.02em;padding:9px 14px;border:var(--line-w) solid var(--line-2);border-radius:100px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.01em;padding:8px 12px;border:var(--line-w) solid var(--line-2);border-radius:100px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;transition:all .2s}
   .chip:hover{border-color:var(--accent);color:var(--fg);transform:translateY(-2px)}
   .chip svg{width:14px;height:14px;fill:currentColor}
+  .chip.icon{width:36px;height:36px;padding:0;justify-content:center}
+  .chip.icon svg{width:15px;height:15px}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
   .ledger{border:var(--line-w) solid var(--line-2);border-radius:8px;background:linear-gradient(180deg,var(--panel),var(--bg));overflow:hidden}
   .ledger-h{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:var(--line-w) solid var(--line);font-family:var(--f-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
@@ -229,6 +232,14 @@
   .row .main.nofig{padding-right:216px}
   @media(max-width:820px){.row .main.nofig{padding-right:0}}
   .card{overflow:hidden}
+  .earlier{margin-top:18px;border:var(--line-w) solid var(--line);border-radius:8px;background:linear-gradient(180deg,var(--panel),var(--bg))}
+  .earlier summary{cursor:pointer;list-style:none;padding:18px 24px;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .2s}
+  .earlier summary:hover{color:var(--fg)}
+  .earlier summary::-webkit-details-marker{display:none}
+  .earlier summary::after{content:"+";font-size:1.1rem;line-height:1;color:var(--accent)}
+  .earlier[open] summary::after{content:"−"}
+  .earlier .grid{padding:4px 18px 18px}
+  .earlier .card{background:var(--panel-2)}
   .card-fig{margin:-26px -26px 20px;height:152px;background:var(--plate);border-bottom:var(--line-w) solid var(--line-2);display:flex;align-items:center;justify-content:center;overflow:hidden}
   .card-fig img{width:100%;height:100%;object-fit:contain;padding:9px;filter:var(--fig-dim);transition:transform .35s cubic-bezier(.2,.7,.2,1),filter .35s}
   .card:hover .card-fig img{transform:scale(1.045);filter:none}
@@ -277,18 +288,18 @@
   <header class="hero">
     <div>
       <div class="hero-id">
-        <img class="avatar" src="https://github.com/Geongyu.png" onerror="this.onerror=null;this.src='/assets/profile.jpg'" alt="Geongyu Lee · 이건규" width="76" height="76" loading="eager">
+        <img class="avatar" src="/assets/profile.jpg" alt="Geongyu Lee · 이건규" width="76" height="76" loading="eager">
         <span class="eyebrow">AIリサーチャー · ソウル</span>
       </div>
-      <h1>Geongyu Lee<span class="kr">이건규</span></h1>
-      <p class="role"><span class='b'>Computational Pathology</span> / 病理基盤モデル / <span class='b'>マルチオミクス</span></p>
-      <p class="lede">5年間、医療画像と創薬のための深層学習を研究してきました — <b>WSIパイプライン</b>と食品医薬品安全処(KFDA)承認検証から<b>病理基盤モデル</b>まで、そして現在はプロテオミクス・マルチオミクスへと領域を広げています。</p>
+      <h1>Geongyu Lee<span class="kr">イ・ゴンギュ · 이건규</span></h1>
+      <p class="role"><span class='b'>Computational Pathology</span> / 病理画像基盤モデル / <span class='b'>マルチオミクス</span></p>
+      <p class="lede">5年間、医療画像と創薬のための深層学習を研究してきました — <b>WSIパイプライン</b>と韓国食品医薬品安全処(MFDS)承認申請に向けた検証から<b>病理画像基盤モデル</b>まで、そして現在はプロテオミクス・マルチオミクスへと領域を広げています。</p>
       <div class="chips">
         <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_JA.pdf" download><svg viewBox='0 0 24 24'><path d='M13 3h-2v8H8l4 4 4-4h-3V3zM5 19h14v2H5z'/></svg>履歴書 (PDF)</a>
         <a class="chip" href="mailto:rjsrb365@gmail.com"><svg viewBox='0 0 24 24'><path d='M2 5h20v14H2zm2 2v.5l8 5 8-5V7l-8 5z'/></svg>メール</a>
-        <a class="chip" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ko" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.9V15h2V8zM4 12.4v3.5C4 18.1 7.6 20 12 20s8-1.9 8-4.1v-3.5l-8 4.4z"/></svg>Scholar</a>
-        <a class="chip" href="https://github.com/Geongyu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 1a11 11 0 0 0-3.5 21.4c.6.1.8-.2.8-.5v-2c-3 .7-3.7-1.3-3.7-1.3-.5-1.2-1.2-1.6-1.2-1.6-1-.7 0-.7 0-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.4-.3-5-1.2-5-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10.4 10.4 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.1-2.6 5-5 5.3.4.3.8 1 .8 2.1v3.1c0 .3.2.6.8.5A11 11 0 0 0 12 1z"/></svg>GitHub</a>
-        <a class="chip" href="https://www.linkedin.com/in/geongyu-lee/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 3.5A1.5 1.5 0 1 1 4 6.5 1.5 1.5 0 0 1 4 3.5zM3 8h2v13H3zm5 0h2v1.8h.1c.3-.6 1.2-1.3 2.6-1.3 2.8 0 3.3 1.8 3.3 4.2V21h-2v-5.8c0-1.4 0-3.1-1.9-3.1s-2.1 1.5-2.1 3V21H8z"/></svg>LinkedIn</a>
+        <a class="chip icon" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ko" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.9V15h2V8zM4 12.4v3.5C4 18.1 7.6 20 12 20s8-1.9 8-4.1v-3.5l-8 4.4z"/></svg><span class="sr">Scholar</span></a>
+        <a class="chip icon" aria-label="GitHub" title="GitHub" href="https://github.com/Geongyu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 1a11 11 0 0 0-3.5 21.4c.6.1.8-.2.8-.5v-2c-3 .7-3.7-1.3-3.7-1.3-.5-1.2-1.2-1.6-1.2-1.6-1-.7 0-.7 0-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.4-.3-5-1.2-5-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10.4 10.4 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.1-2.6 5-5 5.3.4.3.8 1 .8 2.1v3.1c0 .3.2.6.8.5A11 11 0 0 0 12 1z"/></svg><span class="sr">GitHub</span></a>
+        <a class="chip icon" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/geongyu-lee/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 3.5A1.5 1.5 0 1 1 4 6.5 1.5 1.5 0 0 1 4 3.5zM3 8h2v13H3zm5 0h2v1.8h.1c.3-.6 1.2-1.3 2.6-1.3 2.8 0 3.3 1.8 3.3 4.2V21h-2v-5.8c0-1.4 0-3.1-1.9-3.1s-2.1 1.5-2.1 3V21H8z"/></svg><span class="sr">LinkedIn</span></a>
       </div>
     </div>
 
@@ -307,15 +318,15 @@
     <div class="strip reveal">
       <div class="cell"><div class="big">5+</div><div class="lab">年 · 深層学習R&D</div></div>
       <div class="cell"><div class="big">5</div><div class="lab">査読付き学術誌 · (共同)筆頭2編</div></div>
-      <div class="cell"><div class="big">G2L</div><div class="lab">病理基盤モデル · AAAI 2026 ワークショップ口頭</div></div>
+      <div class="cell"><div class="big">G2L</div><div class="lab">病理画像基盤モデル · AAAI 2026 ワークショップ口頭</div></div>
       <div class="cell"><div class="big">2<span style="font-size:.5em;color:var(--muted)">nd</span></div><div class="lab">KPIチャレンジ2024 · MICCAI</div></div>
     </div>
     <div class="strip-lab reveal">主な結果</div>
     <div class="strip results reveal">
       <div class="cell"><div class="big">0.85</div><div class="lab">AUC · 前立腺BCR</div></div>
       <div class="cell"><div class="big">0.76</div><div class="lab">mIoU · 乳がんWSIセグ</div></div>
-      <div class="cell"><div class="big">91.2%</div><div class="lab">高リスク精度 · 再発</div></div>
-      <div class="cell"><div class="big">≥0.65</div><div class="lab">Pearson · プロテオミクスDRP</div></div>
+      <div class="cell"><div class="big">91.2%</div><div class="lab">高リスク群 分類精度 · 内部検証</div></div>
+      <div class="cell"><div class="big">≥0.65</div><div class="lab">LDO CV Pearson · 未学習薬剤</div></div>
     </div>
   </section>
 
@@ -324,25 +335,25 @@
     <div class="head reveal"><span class="num">00</span><h2>プロフィール</h2></div>
     <div class="about reveal">
       <div>
-        <p>私は<strong>Computational Pathology</strong>と創薬のための深層学習システムを開発しています。H&Eによる乳がん再発予測研究で<strong>Scientific Reports</strong>の筆頭著者論文を、<strong>Prostate International</strong>に共同筆頭のレビューを発表し、大規模<strong>病理基盤モデル</strong>(G2L、AAAI 2026 ワークショップ口頭発表)にも参加しました。</p>
-        <p>OMIXAIでは組織病理AIを<strong>プロテオミクス・マルチオミクス</strong>へ拡張しています — 日米韓の精密腫瘍学共同研究(Pan-Sarcomaプロテオゲノミクス)もその一環です。以前はDeep BioでWSIパイプライン開発と<strong>食品医薬品安全処(KFDA)承認モデル検証</strong>を主導しました。</p>
+        <p>私は<strong>Computational Pathology</strong>と創薬のための深層学習システムを開発しています。H&Eによる乳がん再発予測研究で<strong>Scientific Reports</strong>の筆頭著者論文を、<strong>Prostate International</strong>に共同筆頭のレビューを発表し、大規模<strong>病理画像基盤モデル</strong>(G2L、AAAI 2026 ワークショップ口頭発表)にも参加しました。</p>
+        <p>OMIXAIでは組織病理AIを<strong>プロテオミクス・マルチオミクス</strong>へ拡張しています — 日米韓の精密腫瘍学共同研究(Pan-Sarcomaプロテオゲノミクス)もその一環です。以前はDeep BioでWSIパイプライン開発と<strong>韓国食品医薬品安全処（MFDS）の承認申請に向けたモデル検証</strong>を主導しました。</p>
         <p><strong>情報セキュリティから医療AIへ</strong>と移ってきた経歴から、私はまず頑健性を重視します — モデルが実際の臨床で使われる瞬間、精度と同じくらいキャリブレーション(calibration)・不確実性・分布外(OOD)挙動が重要になるからです。</p>
       </div>
       <div class="aside">
         <h3>研究関心</h3>
         <ul>
-          <li>病理基盤モデル</li>
+          <li>病理画像基盤モデル</li>
           <li>プロテオミクス・マルチオミクス × 組織病理</li>
           <li>バーチャルセル・摂動(perturbation)予測</li>
           <li>臨床意思決定支援(ヒト・獣医)</li>
           <li>臨床AIのキャリブレーション・不確実性</li>
           <li>自己・弱教師あり学習</li>
         </ul>
-        <h3 class="aside-gap">リード経験 · 一目で</h3>
+        <h3 class="aside-gap">リーダーシップ実績</h3>
         <ul>
           <li><strong>4つの研究ライン</strong>をリード/共同リード — WSIパイプライン、前立腺転移・再発リスク、マルチオミクスFM R&D、Virtual Cell Challenge</li>
           <li><strong>2病院</strong>の多施設コホート(国立がんセンター・高麗大九老)で筆頭研究 · <strong>500枚+</strong> WSIパイプラインを構築</li>
-          <li><strong>食品医薬品安全処(KFDA)承認トラック</strong>のモデル検証・文書化を担当 — 展開前の性能・頑健性検証に責任</li>
+          <li><strong>韓国食品医薬品安全処（MFDS）承認トラック</strong>の医療AI製品で、展開前モデル検証をリードし承認申請文書に貢献</li>
           <li>国家R&D・国際共同研究<strong>3課題</strong>に参加 · <strong>日米韓3か国</strong>の精密腫瘍学協業</li>
           <li>ジュニアAI・データ人材<strong>13名</strong>を1対1でメンタリング · <strong>8+プロジェクトチーム</strong>(2期+)を指導 — Codeitメンター</li>
         </ul>
@@ -373,7 +384,7 @@
           <a class="thumb" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="https://arxiv.org/html/2510.11176v3/Figure_2_AAAI.png" alt="G2L knowledge-distillation framework overview" loading="lazy" onerror="var t=this.closest('.thumb'); if(t) t.style.display='none';"></a>
           <span class="venue">AAAI 2026 ワークショップ (W3PHIAI) · 口頭</span>
           <h3>G2L — giga-scale to cancer-specific pathology foundation models</h3>
-          <p>知識蒸留(knowledge distillation)でギガスケール病理基盤モデルを小型のがん種特化エンコーダへ圧縮し、より少ない計算量でも下流タスク性能を維持します。</p>
+          <p>知識蒸留(knowledge distillation)でギガスケール病理画像基盤モデルを小型のがん種特化エンコーダへ圧縮し、より少ない計算量でも下流タスク性能を維持します。</p>
           <div class="metrics"><span>知識蒸留</span><b>·</b><span>自己教師あり</span></div>
         </div>
         <a class="go" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener">arXiv ↗</a>
@@ -463,21 +474,21 @@
 
   <!-- PROJECTS -->
   <section class="block" id="projects">
-    <div class="head reveal"><span class="num">02</span><h2>プロジェクト</h2><span class="note">画像・表形式データ・オミクス全般の応用ML</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
+    <div class="head reveal"><span class="num">02</span><h2>プロジェクト</h2><span class="note">医療AI・マルチオミクス中心</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
     <div class="grid">
 
       <div class="card reveal">
         <div class="k">マルチオミクス · OMIXAI</div>
         <h3>プロテオミクスによる薬剤応答性予測</h3>
         <p>LoRA/PEFTファインチューニングによる自己教師ありプロテオーム表現学習と細胞株(cell line)IC50予測。未学習の薬剤に対しleave-drug-outプロトコルで検証。</p>
-        <div class="tagline"><span>LDO CV Pearson</span><b>≥ 0.65</b><span>·</span><b>PEFT</b></div>
+        <div class="tagline"><span>LDO CV Pearson</span><b>≥ 0.65</b><span>· 未学習薬剤</span><span>·</span><b>PEFT</b></div>
       </div>
 
       <div class="card reveal">
         <div class="k">精密腫瘍学 · OMIXAI</div>
         <h3>獣医腫瘍CDSS & バーチャルセル</h3>
         <p>臨床意思決定支援(CDSS)のためのイヌ腫瘍薬剤推薦アルゴリズム開発、およびVirtual Cell Challengeの共同主導 — 多能性幹細胞のCRISPRノックダウン応答予測。</p>
-        <div class="tagline"><span>Top-k精度</span><b>≥ 70%</b><span>·</span><b>CRISPR摂動</b></div>
+        <div class="tagline"><span>Top-k精度</span><b>≥ 70%</b><span>· イヌ腫瘍コホート</span><span>·</span><b>CRISPR摂動</b></div>
       </div>
 
       <div class="card reveal">
@@ -485,9 +496,28 @@
         <div class="k">デジタル病理 · Deep Bio</div>
         <h3>Oncotype DX 再発予測</h3>
         <p>他の臨床情報なしにH&E WSIのみで乳がん予後を予測。パッチ単位分類に信頼度(confidence)ベースの選択と多数決を組み合わせ、スライド単位のGHI-RSリスク群へ分類。</p>
-        <div class="tagline"><span>高リスク群精度</span><b>91.2%</b><span>全体</span><b>~87.3%</b></div>
+        <div class="tagline"><span>高リスク群 分類精度</span><b>91.2%</b><span>全体</span><b>~87.3%</b><span>· 内部検証</span></div>
       </div>
 
+      <div class="card reveal">
+        <div class="k">創薬設計 · Deep Bio</div>
+        <h3>ADMET & 薬物-標的相互作用</h3>
+        <p>吸収・分布・代謝・排泄・毒性(ADMET)予測と薬物-標的相互作用モデリングによる初期の薬物物性プロファイリング。</p>
+        <div class="tagline"><span>ADMET</span><b>·</b><span>DTI</span></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="k">頑健性 · Deep Bio</div>
+        <h3>OOD & 能動学習</h3>
+        <p>病理画像におけるOODサンプルを定義し、OODに基づく能動学習フレームワークを設計してラベル効率と頑健性を向上。</p>
+        <div class="tagline"><span>OOD検出</span><b>·</b><span>能動学習</span></div>
+      </div>
+
+    </div>
+
+    <details class="earlier reveal">
+      <summary><span>以前のプロジェクト — 医療AI以前・初期 (3)</span></summary>
+      <div class="grid">
       <div class="card reveal">
         <div class="card-fig"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></div>
         <div class="k">医療画像 · SK / 亜洲大学病院</div>
@@ -511,21 +541,8 @@
         <div class="tagline"><span>160万件</span><b>·</b><span>指標: RMSE</span></div>
       </div>
 
-      <div class="card reveal">
-        <div class="k">創薬設計 · Deep Bio</div>
-        <h3>ADMET & 薬物-標的相互作用</h3>
-        <p>吸収・分布・代謝・排泄・毒性(ADMET)予測と薬物-標的相互作用モデリングによる初期の薬物物性プロファイリング。</p>
-        <div class="tagline"><span>ADMET</span><b>·</b><span>DTI</span></div>
       </div>
-
-      <div class="card reveal">
-        <div class="k">頑健性 · Deep Bio</div>
-        <h3>OOD & 能動学習</h3>
-        <p>病理画像におけるOODサンプルを定義し、OODに基づく能動学習フレームワークを設計してラベル効率と頑健性を向上。</p>
-        <div class="tagline"><span>OOD検出</span><b>·</b><span>能動学習</span></div>
-      </div>
-
-    </div>
+    </details>
   </section>
 
   <!-- EXPERIENCE -->
@@ -536,7 +553,7 @@
         <div class="when"><span class="co">OMIXAI</span><span>2025.02 — 現在</span><br><span class="loc">ソウル · 前 RadiSen</span></div>
         <div class="what">
           <h3>AIリサーチャー</h3>
-          <div class="sub">マルチオミクス · 病理基盤モデル</div>
+          <div class="sub">マルチオミクス · 病理画像基盤モデル</div>
           <ul>
             <li>薬剤応答性予測のためプロテオミクスとH&E病理を統合するマルチオミクス基盤モデルR&Dを主導；G2L病理FM共同著者。</li>
             <li>H&EベースのAIリスクスコアで空間プロテオミクスを誘導し、トリプルネガティブ乳がんの再発リスクニッチを解明した研究の共著(プレプリント、2026)。</li>
@@ -547,28 +564,15 @@
         </div>
       </div>
       <div class="role-row reveal">
-        <div class="when"><span class="co">Codeit</span><span>2025 — 現在</span><br><span class="loc">パートタイム</span></div>
-        <div class="what">
-          <h3>AIキャリア & プロジェクトメンター</h3>
-          <div class="sub">メンタリング · プロジェクト指導 · キャリアコーチング</div>
-          <ul>
-            <li>ジュニアAI・データ人材13名を1対1の履歴書・ポートフォリオ・キャリア開発プログラムでメンタリング。</li>
-            <li>2期以上・8チーム以上のプロジェクトチーム(1チーム4–6名)に対し、課題設定、方法論設計、実験、トラブルシューティング、結果解釈を支援。</li>
-            <li>課題・プロジェクト成果物をレビューし、技術的品質、問題定式化、プレゼンテーションについて実行可能なフィードバックを提供。</li>
-            <li>キャリアの方向性、プロジェクトのポジショニング、リクルーター・面接官への技術的貢献の伝え方について助言。</li>
-          </ul>
-        </div>
-      </div>
-      <div class="role-row reveal">
         <div class="when"><span class="co">Deep Bio</span><span>2021.03 — 2025.01</span><br><span class="loc">ソウル · 九老</span></div>
         <div class="what">
           <h3>AIリサーチャー / 機械学習エンジニア</h3>
-          <div class="sub">Computational Pathology · 承認検証</div>
+          <div class="sub">Computational Pathology · 承認申請に向けたモデル検証</div>
           <ul>
             <li>多施設乳がん再発研究の筆頭著者(Scientific Reports 2025)；500枚以上を処理するスケーラブルなWSIパイプラインを構築。</li>
             <li>リンパ節転移検出モデルとKPIs 2024 糸球体セグメンテーションモデルを開発(全スライドトラック2位、MICCAI) — チャレンジ結果はMedical Image Analysis(2026)に掲載。</li>
             <li>前立腺の転移・再発リスクプロジェクトを主導；AACR(2022, 2023)・USCAP(2022)で発表。</li>
-            <li>食品医薬品安全処(KFDA)承認文書・検証に貢献、社内サーバ自動化ツール(Dockerインフラ)を開発。</li>
+            <li>韓国食品医薬品安全処（MFDS）承認トラックの医療AI製品で展開前モデル検証をリードし、承認申請文書に貢献；社内サーバ自動化ツール(Dockerインフラ)を開発。</li>
           </ul>
         </div>
       </div>
@@ -594,9 +598,29 @@
     </div>
   </section>
 
+  <!-- LEADERSHIP & COMMUNITY -->
+  <section class="block" id="leadership">
+    <div class="head reveal"><span class="num">04</span><h2>リーダーシップ & コミュニティ</h2><span class="note">本業以外の活動 · メンタリング</span></div>
+    <div>
+      <div class="role-row reveal">
+        <div class="when"><span class="co">Codeit</span><span>2025 — 現在</span><br><span class="loc">パートタイム</span></div>
+        <div class="what">
+          <h3>AIキャリア & プロジェクトメンター</h3>
+          <div class="sub">メンタリング · プロジェクト指導 · キャリアコーチング</div>
+          <ul>
+            <li>ジュニアAI・データ人材13名を1対1の履歴書・ポートフォリオ・キャリア開発プログラムでメンタリング。</li>
+            <li>2期以上・8チーム以上のプロジェクトチーム(1チーム4–6名)に対し、課題設定、方法論設計、実験、トラブルシューティング、結果解釈を支援。</li>
+            <li>課題・プロジェクト成果物をレビューし、技術的品質、問題定式化、プレゼンテーションについて実行可能なフィードバックを提供。</li>
+            <li>キャリアの方向性、プロジェクトのポジショニング、リクルーター・面接官への技術的貢献の伝え方について助言。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SKILLS + FUNDING -->
   <section class="block" id="skills">
-    <div class="head reveal"><span class="num">04</span><h2>技術スタック & 遂行課題</h2></div>
+    <div class="head reveal"><span class="num">05</span><h2>技術スタック & 遂行課題</h2></div>
     <div class="two">
       <div class="reveal">
         <div class="skillset"><h4>深層学習</h4><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div>
@@ -605,9 +629,9 @@
         <div class="skillset"><h4>MLOps & 言語</h4><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div>
       </div>
       <div class="reveal">
-        <div class="fund"><h4>精密腫瘍学のためのPan-Sarcomaプロテオゲノムプロファイリング</h4><div class="meta">日米韓 · 慶熙大学校医療院<br>2025.04 – 2028.12 · <span class='amt'>4億ウォン</span> · 参加研究員</div></div>
-        <div class="fund"><h4>獣医腫瘍学のためのバーチャルセルCDSS</h4><div class="meta">農林畜産食品部 IPET · 国家R&D<br>2026 – 2030 (採択) · <span class='amt'>30億ウォン+</span> · 参加研究員</div></div>
-        <div class="fund"><h4>がん病理診断向け汎用AIの開発・実用化</h4><div class="meta">主管: Deep Bio · 国家R&D<br>2021.04 – 2025.12 · <span class='amt'>23.75億ウォン</span> · 参加研究員</div></div>
+        <div class="fund"><h4>精密腫瘍学のためのPan-Sarcomaプロテオゲノムプロファイリング</h4><div class="meta">日米韓 · 慶熙大学校医療院<br>2025.04 – 2028.12 · 総事業費 <span class='amt'>4億ウォン</span> · 参加研究員</div></div>
+        <div class="fund"><h4>獣医腫瘍学のためのバーチャルセルCDSS</h4><div class="meta">農林畜産食品部 IPET · 国家R&D<br>2026 – 2030 (採択) · 総事業費 <span class='amt'>30億ウォン+</span> · 参加研究員</div></div>
+        <div class="fund"><h4>がん病理診断向け汎用AIの開発・実用化</h4><div class="meta">主管: Deep Bio · 国家R&D<br>2021.04 – 2025.12 · 総事業費 <span class='amt'>23.75億ウォン</span> · 参加研究員</div></div>
         <div class="award"><span class="medal">2<span style="font-size:.5em">nd</span></span><p><b>KPIチャレンジ2024 — 全スライドトラック</b><br>糸球体セグメンテーション · MICCAI 2024 開催 · Med. Image Anal. 2026 掲載</p></div>
       </div>
     </div>

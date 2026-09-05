@@ -15,9 +15,9 @@
 
 ### 👋 About
 
-의료영상과 신약개발을 위한 딥러닝을 5년 넘게 만들어 왔습니다. Whole-slide image 파이프라인과 식약처(KFDA) 트랙 검증부터 병리 파운데이션 모델까지 다뤘고, 지금은 조직병리 AI를 **프로테오믹스·멀티오믹스**로 확장하고 있습니다. 정보보안에서 의료 AI로 넘어온 배경 덕에, 정확도만큼이나 **보정(calibration)·불확실성·OOD 거동** 같은 견고함을 먼저 봅니다.
+의료영상과 신약개발을 위한 딥러닝을 5년 넘게 만들어 왔습니다. Whole-slide image 파이프라인과 식약처(MFDS) 인허가 트랙 검증부터 병리 파운데이션 모델까지 다뤘고, 지금은 조직병리 AI를 **프로테오믹스·멀티오믹스**로 확장하고 있습니다. 정보보안에서 의료 AI로 넘어온 배경 덕에, 정확도만큼이나 **보정(calibration)·불확실성·OOD 거동** 같은 견고함을 먼저 봅니다.
 
-> I build deep learning for medical imaging and drug discovery — from WSI pipelines and KFDA-track validation to pathology foundation models, now integrating proteomics and multi-omics. A robustness-first researcher who cares as much about calibration and uncertainty as accuracy.
+> I build deep learning for medical imaging and drug discovery — from WSI pipelines and MFDS-track validation to pathology foundation models, now integrating proteomics and multi-omics. A robustness-first researcher who cares as much about calibration and uncertainty as accuracy.
 
 ---
 
@@ -49,7 +49,7 @@
 ### 🧪 Experience
 
 - **OMIXAI** — AI Researcher · 2025 – present · multi-omics, pathology foundation models
-- **Deep Bio** — AI Researcher · 2021 – 2025 · computational pathology, WSI pipelines (500+ slides), KFDA validation
+- **Deep Bio** — AI Researcher · 2021 – 2025 · computational pathology, WSI pipelines (500+ slides), MFDS-track model validation
 - **M.S. Data Science**, SeoulTech · **B.S. Information Security**, Daejeon Univ.
 
 ---
@@ -82,6 +82,18 @@
 </p>
 
 <p align="center"><sub>📫 rjsrb365@gmail.com · Seoul, Republic of Korea</sub></p>
+
+---
+
+### 🌐 Site build (geongyu.github.io)
+
+`index.html`(영문)이 단일 소스입니다. 번역은 각 요소의 `data-ko` / `data-ja` 속성에 두고, 아래 명령으로 `/ko/`, `/ja/` 독립 페이지를 생성합니다.
+
+```bash
+python3 build_i18n.py   # → ko/index.html, ja/index.html
+```
+
+`index.html`을 수정한 뒤에는 반드시 다시 빌드해서 `ko/`, `ja/`까지 함께 커밋하세요. `sitemap.xml`의 `lastmod`는 실제 수정 시에만 갱신하면 됩니다.
 
 ---
 

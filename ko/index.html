@@ -101,10 +101,13 @@
   .role .b{color:var(--accent)}
   .lede{font-size:1.12rem;color:var(--muted);max-width:46ch;margin-bottom:30px}
   .lede b{color:var(--fg);font-weight:400}
-  .chips{display:flex;flex-wrap:wrap;gap:9px}
-  .chip{font-family:var(--f-mono);font-size:.76rem;letter-spacing:.02em;padding:9px 14px;border:var(--line-w) solid var(--line-2);border-radius:100px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;transition:all .2s}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.01em;padding:8px 12px;border:var(--line-w) solid var(--line-2);border-radius:100px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;transition:all .2s}
   .chip:hover{border-color:var(--accent);color:var(--fg);transform:translateY(-2px)}
   .chip svg{width:14px;height:14px;fill:currentColor}
+  .chip.icon{width:36px;height:36px;padding:0;justify-content:center}
+  .chip.icon svg{width:15px;height:15px}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
   .ledger{border:var(--line-w) solid var(--line-2);border-radius:8px;background:linear-gradient(180deg,var(--panel),var(--bg));overflow:hidden}
   .ledger-h{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:var(--line-w) solid var(--line);font-family:var(--f-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
@@ -229,6 +232,14 @@
   .row .main.nofig{padding-right:216px}
   @media(max-width:820px){.row .main.nofig{padding-right:0}}
   .card{overflow:hidden}
+  .earlier{margin-top:18px;border:var(--line-w) solid var(--line);border-radius:8px;background:linear-gradient(180deg,var(--panel),var(--bg))}
+  .earlier summary{cursor:pointer;list-style:none;padding:18px 24px;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .2s}
+  .earlier summary:hover{color:var(--fg)}
+  .earlier summary::-webkit-details-marker{display:none}
+  .earlier summary::after{content:"+";font-size:1.1rem;line-height:1;color:var(--accent)}
+  .earlier[open] summary::after{content:"−"}
+  .earlier .grid{padding:4px 18px 18px}
+  .earlier .card{background:var(--panel-2)}
   .card-fig{margin:-26px -26px 20px;height:152px;background:var(--plate);border-bottom:var(--line-w) solid var(--line-2);display:flex;align-items:center;justify-content:center;overflow:hidden}
   .card-fig img{width:100%;height:100%;object-fit:contain;padding:9px;filter:var(--fig-dim);transition:transform .35s cubic-bezier(.2,.7,.2,1),filter .35s}
   .card:hover .card-fig img{transform:scale(1.045);filter:none}
@@ -277,18 +288,18 @@
   <header class="hero">
     <div>
       <div class="hero-id">
-        <img class="avatar" src="https://github.com/Geongyu.png" onerror="this.onerror=null;this.src='/assets/profile.jpg'" alt="Geongyu Lee · 이건규" width="76" height="76" loading="eager">
+        <img class="avatar" src="/assets/profile.jpg" alt="Geongyu Lee · 이건규" width="76" height="76" loading="eager">
         <span class="eyebrow">AI 리서처 · 서울</span>
       </div>
       <h1>Geongyu Lee<span class="kr">이건규</span></h1>
       <p class="role"><span class='b'>Computational Pathology</span> / 병리 파운데이션 모델 / <span class='b'>멀티오믹스</span></p>
-      <p class="lede">5년간 의료영상과 신약 개발을 위한 딥러닝을 연구해 왔습니다 — <b>WSI 파이프라인</b>과 식약처(KFDA) 인허가 검증부터 <b>병리 파운데이션 모델</b>까지, 그리고 지금은 프로테오믹스·멀티오믹스로 영역을 넓히고 있습니다.</p>
+      <p class="lede">5년간 의료영상과 신약 개발을 위한 딥러닝을 연구해 왔습니다 — <b>WSI 파이프라인</b>과 식약처(MFDS) 인허가 트랙 검증부터 <b>병리 파운데이션 모델</b>까지, 그리고 지금은 프로테오믹스·멀티오믹스로 영역을 넓히고 있습니다.</p>
       <div class="chips">
         <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_KO.pdf" download><svg viewBox='0 0 24 24'><path d='M13 3h-2v8H8l4 4 4-4h-3V3zM5 19h14v2H5z'/></svg>이력서 (PDF)</a>
         <a class="chip" href="mailto:rjsrb365@gmail.com"><svg viewBox='0 0 24 24'><path d='M2 5h20v14H2zm2 2v.5l8 5 8-5V7l-8 5z'/></svg>이메일</a>
-        <a class="chip" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ko" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.9V15h2V8zM4 12.4v3.5C4 18.1 7.6 20 12 20s8-1.9 8-4.1v-3.5l-8 4.4z"/></svg>Scholar</a>
-        <a class="chip" href="https://github.com/Geongyu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 1a11 11 0 0 0-3.5 21.4c.6.1.8-.2.8-.5v-2c-3 .7-3.7-1.3-3.7-1.3-.5-1.2-1.2-1.6-1.2-1.6-1-.7 0-.7 0-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.4-.3-5-1.2-5-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10.4 10.4 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.1-2.6 5-5 5.3.4.3.8 1 .8 2.1v3.1c0 .3.2.6.8.5A11 11 0 0 0 12 1z"/></svg>GitHub</a>
-        <a class="chip" href="https://www.linkedin.com/in/geongyu-lee/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 3.5A1.5 1.5 0 1 1 4 6.5 1.5 1.5 0 0 1 4 3.5zM3 8h2v13H3zm5 0h2v1.8h.1c.3-.6 1.2-1.3 2.6-1.3 2.8 0 3.3 1.8 3.3 4.2V21h-2v-5.8c0-1.4 0-3.1-1.9-3.1s-2.1 1.5-2.1 3V21H8z"/></svg>LinkedIn</a>
+        <a class="chip icon" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ko" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.9V15h2V8zM4 12.4v3.5C4 18.1 7.6 20 12 20s8-1.9 8-4.1v-3.5l-8 4.4z"/></svg><span class="sr">Scholar</span></a>
+        <a class="chip icon" aria-label="GitHub" title="GitHub" href="https://github.com/Geongyu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 1a11 11 0 0 0-3.5 21.4c.6.1.8-.2.8-.5v-2c-3 .7-3.7-1.3-3.7-1.3-.5-1.2-1.2-1.6-1.2-1.6-1-.7 0-.7 0-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.4-.3-5-1.2-5-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10.4 10.4 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.1-2.6 5-5 5.3.4.3.8 1 .8 2.1v3.1c0 .3.2.6.8.5A11 11 0 0 0 12 1z"/></svg><span class="sr">GitHub</span></a>
+        <a class="chip icon" aria-label="LinkedIn" title="LinkedIn" href="https://www.linkedin.com/in/geongyu-lee/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 3.5A1.5 1.5 0 1 1 4 6.5 1.5 1.5 0 0 1 4 3.5zM3 8h2v13H3zm5 0h2v1.8h.1c.3-.6 1.2-1.3 2.6-1.3 2.8 0 3.3 1.8 3.3 4.2V21h-2v-5.8c0-1.4 0-3.1-1.9-3.1s-2.1 1.5-2.1 3V21H8z"/></svg><span class="sr">LinkedIn</span></a>
       </div>
     </div>
 
@@ -314,8 +325,8 @@
     <div class="strip results reveal">
       <div class="cell"><div class="big">0.85</div><div class="lab">AUC · 전립선 BCR</div></div>
       <div class="cell"><div class="big">0.76</div><div class="lab">mIoU · 유방 WSI 분할</div></div>
-      <div class="cell"><div class="big">91.2%</div><div class="lab">고위험군 정확도 · 재발</div></div>
-      <div class="cell"><div class="big">≥0.65</div><div class="lab">Pearson · 프로테오믹스 DRP</div></div>
+      <div class="cell"><div class="big">91.2%</div><div class="lab">고위험군 분류 정확도 · 내부 검증</div></div>
+      <div class="cell"><div class="big">≥0.65</div><div class="lab">LDO CV Pearson · 미학습 약물</div></div>
     </div>
   </section>
 
@@ -325,7 +336,7 @@
     <div class="about reveal">
       <div>
         <p>저는 <strong>Computational Pathology</strong>와 신약 개발을 위한 딥러닝 시스템을 개발합니다. H&E 기반 유방암 재발 예측 연구로 <strong>Scientific Reports</strong> 제1저자 논문을, <strong>Prostate International</strong>에 공동 제1저자 리뷰를 냈고, 대규모 <strong>병리 파운데이션 모델</strong>(G2L, AAAI 2026 워크숍 구두 발표)에도 참여했습니다.</p>
-        <p>OMIXAI에서는 조직병리 AI를 <strong>프로테오믹스·멀티오믹스</strong>로 확장하고 있습니다 — 한·미·일 정밀종양학 공동연구(Pan-Sarcoma 프로테오지노믹스)도 그 일환입니다. 앞서 딥바이오에서는 WSI 파이프라인 개발과 <strong>식약처(KFDA) 인허가 모델 검증</strong>을 이끌었습니다.</p>
+        <p>OMIXAI에서는 조직병리 AI를 <strong>프로테오믹스·멀티오믹스</strong>로 확장하고 있습니다 — 한·미·일 정밀종양학 공동연구(Pan-Sarcoma 프로테오지노믹스)도 그 일환입니다. 앞서 딥바이오에서는 WSI 파이프라인 개발과 <strong>식약처(MFDS) 인허가 신청을 위한 배포 전 모델 검증</strong>을 이끌었습니다.</p>
         <p><strong>정보보안에서 의료 AI로</strong> 넘어온 이력 덕분에 저는 견고함을 먼저 생각합니다 — 모델이 실제 임상에 쓰이는 순간, 정확도만큼이나 보정(calibration)·불확실성·분포 밖(OOD) 동작이 중요해지기 때문입니다.</p>
       </div>
       <div class="aside">
@@ -338,11 +349,11 @@
           <li>임상 AI의 보정·불확실성</li>
           <li>자기·약지도 학습</li>
         </ul>
-        <h3 class="aside-gap">리드 경험 · 한눈에</h3>
+        <h3 class="aside-gap">리더십 실적</h3>
         <ul>
           <li><strong>4개 연구 라인</strong> 리드/공동 리드 — WSI 파이프라인, 전립선 전이·재발 위험, 멀티오믹스 FM R&D, Virtual Cell Challenge</li>
           <li><strong>2개 병원</strong> 다기관 코호트(국립암센터·고려대 구로) 1저자 연구 · <strong>500장+</strong> WSI 파이프라인 구축</li>
-          <li><strong>식약처(KFDA) 인허가 트랙</strong> 모델 검증·문서화 담당 — 배포 전 성능·견고성 검증 책임</li>
+          <li><strong>식약처(MFDS) 인허가 트랙</strong> 의료 AI 제품의 배포 전 모델 검증 리드, 인허가 문서 작성 기여</li>
           <li>국가 R&D·국제 공동연구 <strong>3개 과제</strong> 참여 · <strong>한·미·일 3개국</strong> 정밀종양학 협업</li>
           <li>주니어 AI·데이터 인력 <strong>13명</strong> 1:1 멘토링 · <strong>8개+ 프로젝트 팀</strong>(2개+ 기수) 지도 — 코드잇 멘토</li>
         </ul>
@@ -463,21 +474,21 @@
 
   <!-- PROJECTS -->
   <section class="block" id="projects">
-    <div class="head reveal"><span class="num">02</span><h2>프로젝트</h2><span class="note">이미징·정형데이터·오믹스 전반의 응용 ML</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
+    <div class="head reveal"><span class="num">02</span><h2>프로젝트</h2><span class="note">의료 AI · 멀티오믹스 중심</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
     <div class="grid">
 
       <div class="card reveal">
         <div class="k">멀티오믹스 · OMIXAI</div>
         <h3>프로테오믹스 기반 약물 반응성 예측</h3>
         <p>LoRA/PEFT 파인튜닝 기반 자기지도 프로테옴 표현 학습과 세포주(cell line) IC50 예측. 미학습 약물에 대해 leave-drug-out 프로토콜로 검증.</p>
-        <div class="tagline"><span>LDO CV Pearson</span><b>≥ 0.65</b><span>·</span><b>PEFT</b></div>
+        <div class="tagline"><span>LDO CV Pearson</span><b>≥ 0.65</b><span>· 미학습 약물</span><span>·</span><b>PEFT</b></div>
       </div>
 
       <div class="card reveal">
         <div class="k">정밀종양학 · OMIXAI</div>
         <h3>수의 종양 CDSS & 버추얼 셀</h3>
         <p>임상의사결정지원(CDSS)을 위한 반려견 종양 약물 추천 알고리즘 개발, 그리고 Virtual Cell Challenge 공동 주도 — 만능줄기세포의 CRISPR 넉다운 반응 예측.</p>
-        <div class="tagline"><span>Top-k 정확도</span><b>≥ 70%</b><span>·</span><b>CRISPR 섭동</b></div>
+        <div class="tagline"><span>Top-k 정확도</span><b>≥ 70%</b><span>· 반려견 종양 코호트</span><span>·</span><b>CRISPR 섭동</b></div>
       </div>
 
       <div class="card reveal">
@@ -485,9 +496,28 @@
         <div class="k">디지털 병리 · 딥바이오</div>
         <h3>Oncotype DX 재발 예측</h3>
         <p>다른 임상정보 없이 H&E WSI만으로 유방암 예후 예측. 패치 단위 분류에 신뢰도(confidence) 기반 선택과 다수결을 결합해 슬라이드 단위 GHI-RS 위험군으로 분류.</p>
-        <div class="tagline"><span>고위험군 정확도</span><b>91.2%</b><span>전체</span><b>~87.3%</b></div>
+        <div class="tagline"><span>고위험군 분류 정확도</span><b>91.2%</b><span>전체</span><b>~87.3%</b><span>· 내부 검증</span></div>
       </div>
 
+      <div class="card reveal">
+        <div class="k">신약 설계 · 딥바이오</div>
+        <h3>ADMET & 약물-표적 상호작용</h3>
+        <p>흡수·분포·대사·배설·독성(ADMET) 예측과 약물-표적 상호작용 모델링으로 초기 약물 물성 프로파일링.</p>
+        <div class="tagline"><span>ADMET</span><b>·</b><span>DTI</span></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="k">견고성 · 딥바이오</div>
+        <h3>OOD & 액티브 러닝</h3>
+        <p>병리 이미지에서 OOD 샘플을 정의하고, OOD 기반 액티브 러닝 프레임워크를 설계해 라벨 효율과 견고성을 높임.</p>
+        <div class="tagline"><span>OOD 검출</span><b>·</b><span>액티브 러닝</span></div>
+      </div>
+
+    </div>
+
+    <details class="earlier reveal">
+      <summary><span>이전 프로젝트 — 의료 AI 이전 · 초기 (3)</span></summary>
+      <div class="grid">
       <div class="card reveal">
         <div class="card-fig"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></div>
         <div class="k">의료영상 · SK / 아주대병원</div>
@@ -511,21 +541,8 @@
         <div class="tagline"><span>160만 건</span><b>·</b><span>지표: RMSE</span></div>
       </div>
 
-      <div class="card reveal">
-        <div class="k">신약 설계 · 딥바이오</div>
-        <h3>ADMET & 약물-표적 상호작용</h3>
-        <p>흡수·분포·대사·배설·독성(ADMET) 예측과 약물-표적 상호작용 모델링으로 초기 약물 물성 프로파일링.</p>
-        <div class="tagline"><span>ADMET</span><b>·</b><span>DTI</span></div>
       </div>
-
-      <div class="card reveal">
-        <div class="k">견고성 · 딥바이오</div>
-        <h3>OOD & 액티브 러닝</h3>
-        <p>병리 이미지에서 OOD 샘플을 정의하고, OOD 기반 액티브 러닝 프레임워크를 설계해 라벨 효율과 견고성을 높임.</p>
-        <div class="tagline"><span>OOD 검출</span><b>·</b><span>액티브 러닝</span></div>
-      </div>
-
-    </div>
+    </details>
   </section>
 
   <!-- EXPERIENCE -->
@@ -547,28 +564,15 @@
         </div>
       </div>
       <div class="role-row reveal">
-        <div class="when"><span class="co">코드잇</span><span>2025 — 현재</span><br><span class="loc">파트타임</span></div>
-        <div class="what">
-          <h3>AI 커리어 & 프로젝트 멘토</h3>
-          <div class="sub">멘토링 · 프로젝트 지도 · 커리어 코칭</div>
-          <ul>
-            <li>주니어 AI·데이터 인력 13명을 1:1 이력서·포트폴리오·커리어 개발 프로그램으로 멘토링.</li>
-            <li>2개 기수 이상, 8개 이상 프로젝트 팀(팀당 4–6명)의 문제 정의, 방법론 설계, 실험, 트러블슈팅, 결과 해석을 지원.</li>
-            <li>과제·프로젝트 산출물을 리뷰하고 기술적 완성도, 문제 정식화, 발표에 대한 실행 가능한 피드백 제공.</li>
-            <li>커리어 방향, 프로젝트 포지셔닝, 리크루터·면접관에게 기술 기여를 전달하는 방법을 조언.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="role-row reveal">
         <div class="when"><span class="co">딥바이오</span><span>2021.03 — 2025.01</span><br><span class="loc">서울 · 구로</span></div>
         <div class="what">
           <h3>AI 리서처 / 머신러닝 엔지니어</h3>
-          <div class="sub">Computational Pathology · 인허가 검증</div>
+          <div class="sub">Computational Pathology · 인허가 트랙 모델 검증</div>
           <ul>
             <li>다기관 유방암 재발 연구 1저자(Scientific Reports 2025); 500장 이상을 처리하는 확장형 WSI 파이프라인 구축.</li>
             <li>림프절 전이 검출 모델과 KPIs 2024 사구체 분할 모델 개발(전체 슬라이드 트랙 2위, MICCAI) — 챌린지 결과는 Medical Image Analysis(2026)에 게재.</li>
             <li>전립선 전이·재발 위험 프로젝트 리드; AACR(2022, 2023)·USCAP(2022) 발표.</li>
-            <li>식약처(KFDA) 인허가 문서·검증 기여, 사내 서버 자동화 도구(Docker 인프라) 개발.</li>
+            <li>식약처(MFDS) 인허가 트랙 의료 AI 제품의 배포 전 모델 검증을 리드하고 인허가 문서 작성에 기여; 사내 서버 자동화 도구(Docker 인프라) 개발.</li>
           </ul>
         </div>
       </div>
@@ -594,9 +598,29 @@
     </div>
   </section>
 
+  <!-- LEADERSHIP & COMMUNITY -->
+  <section class="block" id="leadership">
+    <div class="head reveal"><span class="num">04</span><h2>리더십 & 커뮤니티</h2><span class="note">본업 외 활동 · 멘토링</span></div>
+    <div>
+      <div class="role-row reveal">
+        <div class="when"><span class="co">코드잇</span><span>2025 — 현재</span><br><span class="loc">파트타임</span></div>
+        <div class="what">
+          <h3>AI 커리어 & 프로젝트 멘토</h3>
+          <div class="sub">멘토링 · 프로젝트 지도 · 커리어 코칭</div>
+          <ul>
+            <li>주니어 AI·데이터 인력 13명을 1:1 이력서·포트폴리오·커리어 개발 프로그램으로 멘토링.</li>
+            <li>2개 기수 이상, 8개 이상 프로젝트 팀(팀당 4–6명)의 문제 정의, 방법론 설계, 실험, 트러블슈팅, 결과 해석을 지원.</li>
+            <li>과제·프로젝트 산출물을 리뷰하고 기술적 완성도, 문제 정식화, 발표에 대한 실행 가능한 피드백 제공.</li>
+            <li>커리어 방향, 프로젝트 포지셔닝, 리크루터·면접관에게 기술 기여를 전달하는 방법을 조언.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SKILLS + FUNDING -->
   <section class="block" id="skills">
-    <div class="head reveal"><span class="num">04</span><h2>기술 스택 & 수행 과제</h2></div>
+    <div class="head reveal"><span class="num">05</span><h2>기술 스택 & 수행 과제</h2></div>
     <div class="two">
       <div class="reveal">
         <div class="skillset"><h4>딥러닝</h4><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div>
@@ -605,9 +629,9 @@
         <div class="skillset"><h4>MLOps & 언어</h4><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div>
       </div>
       <div class="reveal">
-        <div class="fund"><h4>정밀종양학을 위한 Pan-Sarcoma 프로테오지노믹 프로파일링</h4><div class="meta">한·미·일 · 경희대학교 의료원<br>2025.04 – 2028.12 · <span class='amt'>4억 원</span> · 참여연구원</div></div>
-        <div class="fund"><h4>수의 종양학을 위한 버추얼 셀 CDSS</h4><div class="meta">농림축산식품부 IPET · 국가 R&D<br>2026 – 2030 (선정) · <span class='amt'>30억 원+</span> · 참여연구원</div></div>
-        <div class="fund"><h4>암 병리 진단용 범용 AI 개발·상용화</h4><div class="meta">주관: 딥바이오 · 국가 R&D<br>2021.04 – 2025.12 · <span class='amt'>23.75억 원</span> · 참여연구원</div></div>
+        <div class="fund"><h4>정밀종양학을 위한 Pan-Sarcoma 프로테오지노믹 프로파일링</h4><div class="meta">한·미·일 · 경희대학교 의료원<br>2025.04 – 2028.12 · 총사업비 <span class='amt'>4억 원</span> · 참여연구원</div></div>
+        <div class="fund"><h4>수의 종양학을 위한 버추얼 셀 CDSS</h4><div class="meta">농림축산식품부 IPET · 국가 R&D<br>2026 – 2030 (선정) · 총사업비 <span class='amt'>30억 원+</span> · 참여연구원</div></div>
+        <div class="fund"><h4>암 병리 진단용 범용 AI 개발·상용화</h4><div class="meta">주관: 딥바이오 · 국가 R&D<br>2021.04 – 2025.12 · 총사업비 <span class='amt'>23.75억 원</span> · 참여연구원</div></div>
         <div class="award"><span class="medal">2<span style="font-size:.5em">nd</span></span><p><b>KPI 챌린지 2024 — 전체 슬라이드 트랙</b><br>사구체 분할 · MICCAI 2024 개최 · Med. Image Anal. 2026 게재</p></div>
       </div>
     </div>
