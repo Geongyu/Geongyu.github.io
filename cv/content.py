@@ -49,7 +49,7 @@ EN = {
         "a contribution to large-scale pathology foundation models (G2L, AAAI 2026 oral), and "
         "MFDS-track model validation; now extending histopathology AI into proteomics and multi-omics."),
     "h_pubs": "Selected Publications",
-    "scholar_note": "Google Scholar · 55 citations · h-index 5 · i10-index 2",
+    "scholar_note": "Google Scholar · 55 citations · h-index 5 · i10-index 2 · as of Sep 2026",
     "h_exp": "Experience",
     "h_proj": "Selected Projects",
     "h_edu": "Education",
@@ -133,7 +133,7 @@ KO = {
         "Scientific Reports 제1저자 논문을 냈고, 대규모 병리 파운데이션 모델(G2L, AAAI 2026 구두 발표)에 기여했으며, "
         "식약처(MFDS) 인허가 모델 검증을 수행했습니다. 현재는 조직병리 AI를 프로테오믹스·멀티오믹스로 확장하고 있습니다."),
     "h_pubs": "주요 논문",
-    "scholar_note": "Google Scholar · 인용 55 · h-index 5 · i10-index 2",
+    "scholar_note": "Google Scholar · 인용 55 · h-index 5 · i10-index 2 · 2026년 9월 기준",
     "h_exp": "경력",
     "h_proj": "대표 프로젝트",
     "h_edu": "학력",
@@ -217,7 +217,7 @@ JA = {
         "Scientific Reports筆頭著者論文を発表し、大規模病理基盤モデル(G2L、AAAI 2026 口頭発表)に貢献、"
         "食品医薬品安全処(MFDS)承認モデル検証を担当しました。現在は組織病理AIをプロテオミクス・マルチオミクスへ拡張しています。"),
     "h_pubs": "主要論文",
-    "scholar_note": "Google Scholar · 被引用 55 · h-index 5 · i10-index 2",
+    "scholar_note": "Google Scholar · 被引用 55 · h-index 5 · i10-index 2 · 2026年9月時点",
     "h_exp": "職務経歴",
     "h_proj": "主なプロジェクト",
     "h_edu": "学歴",
