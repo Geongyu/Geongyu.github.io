@@ -66,7 +66,7 @@ Pathology foundation models · Proteomics & multi-omics × histopathology · Vir
 | **Deep Bio** | AI Researcher | Mar 2021 – Jan 2025 · computational pathology, WSI pipeline (500+ slides), MFDS-track model validation, KPIs 2024 (2nd), AACR/USCAP presentations |
 | **Nuricon** | Intern | 2021 · parking-lot fire-detection AI |
 
-**Leadership & community:** AI Career & Project Mentor, **Codeit** (2025 – present, part-time): 1:1 résumé / portfolio / career programs for 13 mentees; project scoping, methodology and troubleshooting for 8+ teams across 2+ cohorts.
+**Leadership & community:** AI Career & Project Mentor, **Codeit** (2025 – present, part-time): 1:1 résumé / portfolio / career programs for 13 mentees; project scoping, methodology and troubleshooting for 8+ teams across 2+ cohorts. · Runner, **Pseudo Lab** season 12 "AutoBioX: AI Agents for End-to-End Bio Research" (2026, 16 weeks, completed; two outputs accepted at BIOINFO/GIW ISCB-Asia 2026 and ML4H 2026 Findings) · Reviewer, **ML4H 2026**.
 
 **Education:** M.S. Data Science, Seoul National University of Science and Technology (2019 – 2021, advisor: Prof. Sangheum Hwang)
 
