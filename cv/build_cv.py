@@ -18,7 +18,7 @@ def render_html(d):
     p = []
     a = p.append
     a(f'<html lang="{d["lang"]}"><head><meta charset="utf-8">'
-      f'<title>Geongyu Lee — CV ({d["lang"].upper()})</title></head><body>')
+      f'<title>Geongyu Lee · CV ({d["lang"].upper()})</title></head><body>')
 
     # masthead
     a('<div class="masthead">')

@@ -1,7 +1,7 @@
 <h1 align="center">Geongyu Lee · 이건규</h1>
 
 <p align="center">
-  <b>AI Researcher — Computational Pathology × Multi-Omics</b><br>
+  <b>AI Researcher · Computational Pathology × Multi-Omics</b><br>
   <sub>Pathology foundation models · Proteomics / multi-omics · Clinically deployable medical AI · Seoul, KR</sub>
 </p>
 
@@ -22,9 +22,7 @@
 
 ## About
 
-I build deep learning systems for **computational pathology** and drug discovery — from whole-slide-image (WSI) pipelines and pre-deployment validation for an **MFDS-track** medical AI product, to large-scale **pathology foundation models**. At **OMIXAI** I am extending histopathology AI into **proteomics and multi-omics**, including a Korea–US–Japan precision-oncology collaboration on Pan-Sarcoma proteogenomics.
-
-Coming from information security into medical AI, I take a **robustness-first** view: calibration, uncertainty, and out-of-distribution behaviour matter as much as accuracy once a model reaches the clinic.
+I build deep learning systems for **computational pathology** and drug discovery: from whole-slide-image (WSI) pipelines and pre-deployment validation for an **MFDS-track** medical AI product, to large-scale **pathology foundation models**. At **OMIXAI** I am extending histopathology AI into **proteomics and multi-omics**, including a Korea–US–Japan precision-oncology collaboration on Pan-Sarcoma proteogenomics.
 
 의료영상과 신약개발을 위한 딥러닝을 5년 넘게 만들어 왔습니다. WSI 파이프라인과 식약처(MFDS) 인허가 트랙 모델 검증부터 병리 파운데이션 모델까지 다뤘고, 지금은 조직병리 AI를 **프로테오믹스·멀티오믹스**로 확장하고 있습니다.
 
@@ -32,10 +30,10 @@ Coming from information security into medical AI, I take a **robustness-first** 
 
 | | |
 |---|---|
-| **First author** | *Scientific Reports* (2025) — multi-center H&E-only recurrence-risk prediction in early-stage breast cancer |
-| **Co-first author** | *Prostate International* (2025) — AI-driven digital pathology in urological cancers |
-| **Foundation models** | G2L: giga-scale → cancer-specific pathology FMs via knowledge distillation — **AAAI 2026 Workshop (W3PHIAI), oral** |
-| **Challenge** | 🥈 **2nd place**, KPIs 2024 Whole-Slide Track (MICCAI 2024) — report in *Medical Image Analysis* (2026) |
+| **First author** | *Scientific Reports* (2025): multi-center H&E-only recurrence-risk prediction in early-stage breast cancer |
+| **Co-first author** | *Prostate International* (2025): AI-driven digital pathology in urological cancers |
+| **Foundation models** | G2L: giga-scale → cancer-specific pathology FMs via knowledge distillation · **AAAI 2026 Workshop (W3PHIAI), oral** |
+| **Challenge** | 🥈 **2nd place**, KPIs 2024 Whole-Slide Track (MICCAI 2024) · report in *Medical Image Analysis* (2026) |
 | **Regulatory** | Led pre-deployment model validation and contributed to regulatory documentation for an MFDS-track product (Deep Bio) |
 | **Mentoring** | 13 early-career AI/data professionals · 8+ project teams across 2+ cohorts (Codeit) |
 
@@ -58,7 +56,7 @@ Pathology foundation models · Proteomics & multi-omics × histopathology · Vir
 | 2024 | **Bioengineering** | [MurSS: a multi-resolution selective segmentation model for breast cancer](https://www.mdpi.com/2306-5354/11/5/463) |
 | 2021 | **IEEE Access** | [Supervised contrastive embedding for medical image segmentation](https://ieeexplore.ieee.org/document/9564042) |
 
-**Talks & abstracts** — AACR Annual Meeting (2022, 2023) · USCAP Annual Meeting (2022) · KIIE Fall Conference (2020)
+**Conferences:** BIOINFO/GIW ISCB-Asia 2026 · Predictability is not substitutability: a cost-of-substitution framework for H&E-based molecular prediction across 5 cancers (poster, first author) · BIOINFO/GIW ISCB-Asia 2026 · A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics (oral, co-author) · AACR 2023 · Predicting protein receptor status from H&E-stained images in breast cancer (first author) · AACR 2022 · Recurrence risk prediction based on automatic histologic analysis of breast cancer using WSIs (first author) · AACR 2022 · Pancreatic adenocarcinoma survival prediction applicable to other organs (co-author) · USCAP 2022 · Automatic histological grading of breast cancer resection tissue (first author) · USCAP 2022 · Breast cancer survival analysis through features from a prostate diagnosis model (co-author) · KIIE Fall Conference 2020. Original posters and slides: [`archive/conferences/`](archive/conferences/).
 
 ## Experience
 
@@ -68,15 +66,15 @@ Pathology foundation models · Proteomics & multi-omics × histopathology · Vir
 | **Deep Bio** | AI Researcher | Mar 2021 – Jan 2025 · computational pathology, WSI pipeline (500+ slides), MFDS-track model validation, KPIs 2024 (2nd), AACR/USCAP presentations |
 | **Nuricon** | Intern | 2021 · parking-lot fire-detection AI |
 
-**Leadership & community** — AI Career & Project Mentor, **Codeit** (2025 – present, part-time): 1:1 résumé / portfolio / career programs for 13 mentees; project scoping, methodology and troubleshooting for 8+ teams across 2+ cohorts.
+**Leadership & community:** AI Career & Project Mentor, **Codeit** (2025 – present, part-time): 1:1 résumé / portfolio / career programs for 13 mentees; project scoping, methodology and troubleshooting for 8+ teams across 2+ cohorts.
 
-**Education** — M.S. Data Science, Seoul National University of Science and Technology (2019 – 2021, advisor: Prof. Sangheum Hwang) · B.S. Information Security, Daejeon University (2012 – 2019)
+**Education:** M.S. Data Science, Seoul National University of Science and Technology (2019 – 2021, advisor: Prof. Sangheum Hwang)
 
 ## Funded programs <sub>(participating researcher)</sub>
 
-- **Pan-Sarcoma Proteogenomic Profiling for Precision Oncology** — Korea–US–Japan · Kyung Hee Univ. Medical Center · 2025 – 2028
-- **Virtual-Cell CDSS for Veterinary Oncology** — IPET / Ministry of Agriculture, national R&D · 2026 – 2030 (awarded)
-- **General-Purpose AI for Cancer Pathology Diagnosis** — lead: Deep Bio, national R&D · 2021 – 2025
+- **Pan-Sarcoma Proteogenomic Profiling for Precision Oncology** · Korea–US–Japan · Kyung Hee Univ. Medical Center · 2025 – 2028
+- **Virtual-Cell CDSS for Veterinary Oncology** · IPET / Ministry of Agriculture, national R&D · 2026 – 2030 (awarded)
+- **General-Purpose AI for Cancer Pathology Diagnosis** · lead: Deep Bio, national R&D · 2021 – 2025
 
 ## Toolkit
 
@@ -93,12 +91,13 @@ Pathology foundation models · Proteomics & multi-omics × histopathology · Vir
 
 ## This repository
 
-Source of the portfolio site at **[geongyu.github.io](https://geongyu.github.io/)** — a single static page served by GitHub Pages, with independent language versions for search indexing.
+Source of the portfolio site at **[geongyu.github.io](https://geongyu.github.io/)**: a single static page served by GitHub Pages, with independent language versions for search indexing.
 
 ```
-index.html          English page — the single source of truth (translations live in data-ko / data-ja attributes)
-ko/index.html       Korean page   — generated
-ja/index.html       Japanese page — generated
+index.html          English page: the single source of truth (translations live in data-ko / data-ja attributes)
+archive/conferences  original posters and slides (source of truth for the Conferences section)
+ko/index.html       Korean page:   generated
+ja/index.html       Japanese page: generated
 build_i18n.py       generates ko/ and ja/ from index.html (localised <head>, hreflang, og:locale, CV link)
 robots.txt
 sitemap.xml         /, /ko/, /ja/ with hreflang alternates

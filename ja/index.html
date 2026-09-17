@@ -18,8 +18,8 @@
 <link rel="apple-touch-icon" href="/assets/favicon-180.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://geongyu.github.io/ja/">
-<meta property="og:title" content="イ・ゴンギュ — 医療AI・デジタル病理研究者">
-<meta property="og:description" content="Computational Pathology × マルチオミクス — 病理基盤モデル、H&amp;E深層学習、薬剤応答性予測。">
+<meta property="og:title" content="イ・ゴンギュ · 医療AI・デジタル病理研究者">
+<meta property="og:description" content="Computational Pathology × マルチオミクス: 病理基盤モデル、H&amp;E深層学習、薬剤応答性予測。">
 <meta property="og:image" content="https://geongyu.github.io/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -28,8 +28,8 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="イ・ゴンギュ — 医療AI・デジタル病理研究者">
-<meta name="twitter:description" content="Computational Pathology × マルチオミクス — 病理基盤モデル、H&amp;E深層学習、薬剤応答性予測。">
+<meta name="twitter:title" content="イ・ゴンギュ · 医療AI・デジタル病理研究者">
+<meta name="twitter:description" content="Computational Pathology × マルチオミクス: 病理基盤モデル、H&amp;E深層学習、薬剤応答性予測。">
 <meta name="twitter:image" content="https://geongyu.github.io/assets/og.png">
 <script type="application/ld+json">
 {
@@ -67,9 +67,9 @@
     --f-body:"IBM Plex Sans","IBM Plex Sans KR","IBM Plex Sans JP",system-ui,sans-serif;
     --f-mono:"IBM Plex Mono",ui-monospace,monospace;
     --maxw:1140px;
-    /* intensity dials — bump these to push toward brutalism */
+    /* intensity dials: bump these to push toward brutalism */
     --line-w:1px;      /* structural line thickness (try 2px / 3px) */
-    /* figure plates — scientific figures need a light ground, but pure #fff
+    /* figure plates: scientific figures need a light ground, but pure #fff
        glares against the near-black page, so soften plate + image slightly */
     --plate:#eef0f4;
     --fig-dim:brightness(.9) saturate(.9) contrast(1.02);
@@ -188,7 +188,7 @@
   .role-row .what .sub{color:var(--faint);font-family:var(--f-mono);font-size:.74rem;letter-spacing:.05em;margin-bottom:15px;text-transform:uppercase}
   .role-row .what ul{list-style:none;display:flex;flex-direction:column;gap:9px}
   .role-row .what li{color:var(--muted);font-size:.99rem;padding-left:20px;position:relative;max-width:66ch}
-  .role-row .what li::before{content:"—";position:absolute;left:0;color:var(--accent)}
+  .role-row .what li::before{content:"–";position:absolute;left:0;color:var(--accent)}
   @media(max-width:720px){.role-row{grid-template-columns:1fr;gap:14px}}
 
   .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px)}
@@ -266,6 +266,7 @@
   <div class="topright">
     <nav class="nav">
       <a href="#publications">論文</a>
+      <a href="#conferences">学会</a>
       <a href="#projects">プロジェクト</a>
       <a href="#experience">経歴</a>
       <a href="#contact">連絡先</a>
@@ -289,7 +290,7 @@
       </div>
       <h1>Geongyu Lee<span class="kr">イ・ゴンギュ · 이건규</span></h1>
       <p class="role"><span class='b'>Computational Pathology</span> / 病理画像基盤モデル / <span class='b'>マルチオミクス</span></p>
-      <p class="lede">5年間、医療画像と創薬のための深層学習を研究してきました — <b>WSIパイプライン</b>と韓国食品医薬品安全処(MFDS)承認申請に向けた検証から<b>病理画像基盤モデル</b>まで、そして現在はプロテオミクス・マルチオミクスへと領域を広げています。</p>
+      <p class="lede">5年間、医療画像と創薬のための深層学習を研究してきました。<b>WSIパイプライン</b>と韓国食品医薬品安全処(MFDS)承認申請に向けた検証から<b>病理画像基盤モデル</b>まで、そして現在はプロテオミクス・マルチオミクスへと領域を広げています。</p>
       <div class="chips">
         <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_JA.pdf" download><svg viewBox='0 0 24 24'><path d='M13 3h-2v8H8l4 4 4-4h-3V3zM5 19h14v2H5z'/></svg>履歴書 (PDF)</a>
         <a class="chip" href="mailto:rjsrb365@gmail.com"><svg viewBox='0 0 24 24'><path d='M2 5h20v14H2zm2 2v.5l8 5 8-5V7l-8 5z'/></svg>メール</a>
@@ -332,8 +333,7 @@
     <div class="about reveal">
       <div>
         <p>私は<strong>Computational Pathology</strong>と創薬のための深層学習システムを開発しています。H&Eによる乳がん再発予測研究で<strong>Scientific Reports</strong>の筆頭著者論文を、<strong>Prostate International</strong>に共同筆頭のレビューを発表し、大規模<strong>病理画像基盤モデル</strong>(G2L、AAAI 2026 ワークショップ口頭発表)にも参加しました。</p>
-        <p>OMIXAIでは組織病理AIを<strong>プロテオミクス・マルチオミクス</strong>へ拡張しています — 日米韓の精密腫瘍学共同研究(Pan-Sarcomaプロテオゲノミクス)もその一環です。以前はDeep BioでWSIパイプライン開発と<strong>韓国食品医薬品安全処（MFDS）の承認申請に向けたモデル検証</strong>を主導しました。</p>
-        <p><strong>情報セキュリティから医療AIへ</strong>と移ってきた経歴から、私はまず頑健性を重視します — モデルが実際の臨床で使われる瞬間、精度と同じくらいキャリブレーション(calibration)・不確実性・分布外(OOD)挙動が重要になるからです。</p>
+        <p>OMIXAIでは組織病理AIを<strong>プロテオミクス・マルチオミクス</strong>へ拡張しており、日米韓の精密腫瘍学共同研究(Pan-Sarcomaプロテオゲノミクス)もその一環です。以前はDeep BioでWSIパイプライン開発と<strong>韓国食品医薬品安全処（MFDS）の承認申請に向けたモデル検証</strong>を主導しました。</p>
       </div>
       <div class="aside">
         <h3>研究関心</h3>
@@ -347,11 +347,11 @@
         </ul>
         <h3 class="aside-gap">リーダーシップ実績</h3>
         <ul>
-          <li><strong>4つの研究ライン</strong>をリード/共同リード — WSIパイプライン、前立腺転移・再発リスク、マルチオミクスFM R&D、Virtual Cell Challenge</li>
+          <li><strong>4つの研究ライン</strong>をリード/共同リード: WSIパイプライン、前立腺転移・再発リスク、マルチオミクスFM R&D、Virtual Cell Challenge</li>
           <li><strong>2病院</strong>の多施設コホート(国立がんセンター・高麗大九老)で筆頭研究 · <strong>500枚+</strong> WSIパイプラインを構築</li>
           <li><strong>韓国食品医薬品安全処（MFDS）承認トラック</strong>の医療AI製品で、展開前モデル検証をリードし承認申請文書に貢献</li>
           <li>国家R&D・国際共同研究<strong>3課題</strong>に参加 · <strong>日米韓3か国</strong>の精密腫瘍学協業</li>
-          <li>ジュニアAI・データ人材<strong>13名</strong>を1対1でメンタリング · <strong>8+プロジェクトチーム</strong>(2期+)を指導 — Codeitメンター</li>
+          <li>ジュニアAI・データ人材<strong>13名</strong>を1対1でメンタリング · <strong>8+プロジェクトチーム</strong>(2期+)を指導 · Codeitメンター</li>
         </ul>
       </div>
     </div>
@@ -379,7 +379,7 @@
         <div class="main">
           <a class="thumb" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="https://arxiv.org/html/2510.11176v3/Figure_2_AAAI.png" alt="G2L knowledge-distillation framework overview" loading="lazy" onerror="var t=this.closest('.thumb'); if(t) t.style.display='none';"></a>
           <span class="venue">AAAI 2026 ワークショップ (W3PHIAI) · 口頭</span>
-          <h3>G2L — giga-scale to cancer-specific pathology foundation models</h3>
+          <h3>G2L: giga-scale to cancer-specific pathology foundation models</h3>
           <p>知識蒸留(knowledge distillation)でギガスケール病理画像基盤モデルを小型のがん種特化エンコーダへ圧縮し、より少ない計算量でも下流タスク性能を維持します。</p>
           <div class="metrics"><span>知識蒸留</span><b>·</b><span>自己教師あり</span></div>
         </div>
@@ -390,7 +390,7 @@
         <div class="acc">03</div>
         <div class="main nofig">
           <span class="venue">Medical Image Analysis · 2026</span>
-          <h3>KPIs 2024 Challenge — glomerular segmentation from patch- to slide-level</h3>
+          <h3>KPIs 2024 Challenge: glomerular segmentation from patch- to slide-level</h3>
           <p>KPIs 2024 チャレンジの公式結果論文(Medical Image Analysis 114巻, 104234)。全スライドトラックで2位を獲得し、パッチ単位の学習をスライド単位へ汎化する課題を扱います。</p>
           <div class="metrics"><span>全スライドトラック</span><b>2位</b><span>·</span><b>MICCAI 2024</b></div>
         </div>
@@ -413,8 +413,8 @@
         <div class="main">
           <a class="thumb" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener"><img src="/assets/pub_murss_arch.png" alt="MurSS multi-resolution selective segmentation architecture" loading="lazy"></a>
           <span class="venue">Bioengineering · 2024</span>
-          <h3>MurSS — multi-resolution selective segmentation for breast cancer</h3>
-          <p>複数解像度を同時に入力し、信頼度(confidence)ベースのreject lossで不確実な領域は予測を保留します — ラベルノイズの多い組織病理のために設計しました。</p>
+          <h3>MurSS: multi-resolution selective segmentation for breast cancer</h3>
+          <p>複数解像度を同時に入力し、信頼度(confidence)ベースのreject lossで不確実な領域は予測を保留します。ラベルノイズの多い組織病理のために設計しました。</p>
           <div class="metrics"><span>mIoU</span><b>最大0.76</b><span>·</span><b>カバレッジ考慮</b></div>
         </div>
         <a class="go" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener">Paper ↗</a>
@@ -424,7 +424,7 @@
         <div class="acc">06</div>
         <div class="main nofig">
           <span class="venue">プレプリント · 2026</span>
-          <h3>Spatial proteomics guided by H&amp;E-based AI — recurrence-risk niches in TNBC</h3>
+          <h3>Spatial proteomics guided by H&amp;E-based AI: recurrence-risk niches in TNBC</h3>
           <p>H&EベースのAIリスクスコアで空間プロテオミクスを誘導し、トリプルネガティブ乳がん156例を解析しました。高リスクニッチでは細胞増殖経路、低リスクニッチでは免疫活性が顕著で、そこから導出した13タンパク質シグネチャが画像ベースのリスクスコアと組み合わさり予後性能を向上させました。</p>
           <div class="metrics"><span>AUC / C-index</span><b>0.77</b><span>·</span><b>13タンパク質シグネチャ</b></div>
         </div>
@@ -449,28 +449,115 @@
           <a class="thumb" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener"><img src="/assets/pub_contrastive_embed.png" alt="Encoder embedding-space illustration for supervised contrastive learning" loading="lazy"></a>
           <span class="venue">IEEE Access · 2021</span>
           <h3>Supervised contrastive embedding for medical image segmentation</h3>
-          <p>領域アノテーション単位のピクセル・コントラスティブ損失により、少なく不確実な医療画像ラベルでもセグメンテーションを安定化します — 修士論文につながった研究です。</p>
+          <p>領域アノテーション単位のピクセル・コントラスティブ損失により、少なく不確実な医療画像ラベルでもセグメンテーションを安定化します。修士論文につながった研究です。</p>
           <div class="metrics"><span>コントラスティブ学習</span><b>·</b><span>ドメイン頑健性</span></div>
         </div>
         <a class="go" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener">IEEE ↗</a>
       </article>
 
     </div>
+  </section>
 
-    <div class="talks reveal">
-      <b>学会発表 & 抄録</b>
-      <span>AACR年次総会(2022, 2023) · USCAP年次総会(2022) · 韓国産業工学会 秋季学術大会(2020) — 乳がん再発、H&Eによるタンパク質受容体ステータス、複数臓器の腺がん生存、組織学的グレード予測。</span>
-      <div class="poster-strip">
-        <figure class="poster"><img src="/assets/talk_receptor_gradcam.jpg" alt="Grad-CAM over H&amp;E for protein-receptor status prediction" loading="lazy"><figcaption class="cap"><b>AACR '23</b><br>Protein-receptor status from H&amp;E</figcaption></figure>
-        <figure class="poster"><img src="/assets/talk_grading_cam.jpg" alt="Class-activation maps for breast histologic grading" loading="lazy"><figcaption class="cap"><b>USCAP '22</b><br>Automatic histologic grading</figcaption></figure>
-        <figure class="poster"><img src="/assets/talk_survival_km.png" alt="Kaplan-Meier survival curves by AI risk score" loading="lazy"><figcaption class="cap"><b>USCAP '22</b><br>Cross-organ survival transfer</figcaption></figure>
-      </div>
+  <!-- CONFERENCES -->
+  <section class="block" id="conferences">
+    <div class="head reveal"><span class="num">02</span><h2>学会発表</h2><span class="note">† 筆頭 · ポスター原本は<a class='schlink' href='https://github.com/Geongyu/Geongyu.github.io/tree/main/archive/conferences' target='_blank' rel='noopener'>GitHubアーカイブ ↗</a></span></div>
+    <div class="pubs">
+
+      <article class="row reveal">
+        <div class="acc">01 †</div>
+        <div class="main nofig">
+          <span class="venue">BIOINFO/GIW ISCB-Asia 2026 · ポスター · 筆頭・発表</span>
+          <h3>Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers</h3>
+          <p>ソウル · 2026.11.17–20。精度が高くても分子検査を代替できるとは限りません。誤分類を治療経路の逸脱に換算した「代替コスト」を定義し、5がん種(乳・肺・大腸・胃・頭頸部)に事前登録した単一プロトコル(UNI + CLAM-SB、施設分離hold-out、label-shuffle対照)を適用。約15エンドポイントのうち事前登録基準を満たしたのは頭頸部HPVのみで、大半は「否定」ではなく「未決」と報告しました。Pseudo Labとの共同研究。</p>
+          <div class="metrics"><span>確定</span><b>HNSC HPV · AUROC 0.959</b><span>除外</span><b>肺組織型 · V(site, label) = 1.0</b></div>
+        </div>
+      </article>
+
+      <article class="row reveal">
+        <div class="acc">02</div>
+        <div class="main nofig">
+          <span class="venue">BIOINFO/GIW ISCB-Asia 2026 · 口頭発表 · 共著者</span>
+          <h3>A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics</h3>
+          <p>ソウル · 2026.11.17–20。マルチオームRNA velocityが出力する遺伝子別パラメータ(転写率α、分解率γ、クロマチン-転写ラグ)が実際に信頼できるかを検証。5つのvelocity手法 × 4つの軸(手法間再現性、ATAC-shuffle対照、外部マルチオーム5種での再現、測定された合成・分解率との整合)で評価した結果、αのみが手法間で再現され、γとラグは直交検証が必要と判明しました。</p>
+          <div class="metrics"><span>α再現性</span><b>ρ = 0.88</b><span>γ</span><b>ρ ≈ −0.1</b><span>事前登録 6/6 通過</span></div>
+        </div>
+      </article>
+
+      <article class="row reveal">
+        <div class="acc">03 †</div>
+        <div class="main">
+          <a class="thumb" href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener"><img src="/assets/talk_receptor_gradcam.jpg" alt="Grad-CAM over H&amp;E for protein-receptor status prediction" loading="lazy"></a>
+          <span class="venue">AACR年次総会 2023 · ポスター · 筆頭著者</span>
+          <h3>Predicting protein receptor status from H&amp;E-stained images in breast cancer</h3>
+          <p>抄録 #5404 · 2023.04.02。IHC染色なしにH&E WSIのみでER・PR・HER2ステータスを予測。TCGA-BRCA 728例、共有エンコーダ + 受容体別予測ヘッドのマルチタスクモデルに信頼度ベースのパッチ選択を組み合わせ。高麗大学九老病院との共同研究。</p>
+          <div class="metrics"><span>スライド精度</span><b>ER 74.6 · PR 66.0 · HER2 76.6</b></div>
+        </div>
+        <a class="go" href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener">ポスター ↗</a>
+      </article>
+
+      <article class="row reveal">
+        <div class="acc">04 †</div>
+        <div class="main">
+          <a class="thumb" href="/archive/conferences/AACR2022_breast_recurrence_slide_01.png" target="_blank" rel="noopener"><img src="/archive/conferences/AACR2022_breast_recurrence_slide_03.png" alt="Patch-level classification and majority-voting pipeline for recurrence risk" loading="lazy"></a>
+          <span class="venue">AACR年次総会 2022 · ポスター · 筆頭著者</span>
+          <h3>Recurrence risk prediction based on automatic histologic analysis of breast cancer using whole slide images</h3>
+          <p>ニューオーリンズ · 2022.04.12。H&E WSI解析で21遺伝子再発スコアを近似できるかを検証。ホルモン陽性・リンパ節陰性・HER2陰性125例、パッチ単位CNN + 多数決で低・中・高リスクに分類、nested交差検証。低リスクを高リスクと誤分類した例は0件。Scientific Reports(2025)論文へつながった研究。</p>
+          <div class="metrics"><span>精度 低/中/高</span><b>0.832 / 0.776 / 0.912</b><span>感度</span><b>0.857 / 0.746 / 0.529</b></div>
+        </div>
+        <a class="go" href="/archive/conferences/AACR2022_breast_recurrence_slide_01.png" target="_blank" rel="noopener">スライド ↗</a>
+      </article>
+
+      <article class="row reveal">
+        <div class="acc">05</div>
+        <div class="main">
+          <a class="thumb" href="/archive/conferences/AACR2022_pancreatic_survival_slide_01.png" target="_blank" rel="noopener"><img src="/archive/conferences/AACR2022_pancreatic_survival_slide_05.png" alt="5-fold C-index results for pancreatic adenocarcinoma survival model" loading="lazy"></a>
+          <span class="venue">AACR年次総会 2022 · ポスター · 共著者</span>
+          <h3>A deep learning based pancreatic adenocarcinoma survival prediction model applicable to adenocarcinoma of other organs</h3>
+          <p>ニューオーリンズ · 2022.04。膵臓腺がんH&Eから生存リスクを予測し、汎腺がん特徴抽出器(GAFE)で他臓器への転移可能性を検証。TCGA膵臓179例、5-fold交差検証 · 直腸(READ)・乳房(BRCA)へ転移評価。</p>
+          <div class="metrics"><span>C-index</span><b>0.726</b><span>READ転移</span><b>0.694</b><span>BRCA転移</span><b>0.571</b></div>
+        </div>
+        <a class="go" href="/archive/conferences/AACR2022_pancreatic_survival_slide_01.png" target="_blank" rel="noopener">スライド ↗</a>
+      </article>
+
+      <article class="row reveal">
+        <div class="acc">06</div>
+        <div class="main">
+          <a class="thumb" href="/archive/conferences/USCAP2022_poster_breast_survival_prostate_feature.png" target="_blank" rel="noopener"><img src="/assets/talk_survival_km.png" alt="Kaplan-Meier survival curves by AI risk score" loading="lazy"></a>
+          <span class="venue">USCAP年次総会 2022 · ポスター · 共著者</span>
+          <h3>Breast cancer survival analysis through the extracted feature from the prostate diagnosis model</h3>
+          <p>2022.03.18。一般画像バックボーンの代わりに前立腺診断モデルの特徴で乳がん死亡リスクをH&E WSIから予測。TCGA-BRCA 980枚、attention型多重インスタンス学習、5-fold交差検証 · 高・低リスク群のKaplan-Meier分離。</p>
+          <div class="metrics"><span>C-index</span><b>0.655</b><span>log-rank</span><b>p = 0.0011</b></div>
+        </div>
+        <a class="go" href="/archive/conferences/USCAP2022_poster_breast_survival_prostate_feature.png" target="_blank" rel="noopener">ポスター ↗</a>
+      </article>
+
+      <article class="row reveal">
+        <div class="acc">07 †</div>
+        <div class="main">
+          <a class="thumb" href="/archive/conferences/USCAP2022_poster_histologic_grading.png" target="_blank" rel="noopener"><img src="/assets/talk_grading_cam.jpg" alt="Class-activation maps for breast histologic grading" loading="lazy"></a>
+          <span class="venue">USCAP年次総会 2022 · ポスター · 筆頭著者</span>
+          <h3>Automatic histological grading of breast cancer resection tissue</h3>
+          <p>2022.03.17。観察者間のばらつきを減らすための一貫した組織学的グレード判定(管形成・核グレード・核分裂)。病理医がグレードと領域を注釈したH&E WSI 125枚、腫瘍パッチを1/2/3グレードに分類し、class-activation mapで検討。高麗大学医学部との共同研究。</p>
+          <div class="metrics"><span>パッチ精度 G1 / G2 / G3</span><b>0.958 / 0.922 / 0.956</b></div>
+        </div>
+        <a class="go" href="/archive/conferences/USCAP2022_poster_histologic_grading.png" target="_blank" rel="noopener">ポスター ↗</a>
+      </article>
+
+      <article class="row reveal">
+        <div class="acc">08</div>
+        <div class="main nofig">
+          <span class="venue">韓国産業工学会 秋季学術大会 2020</span>
+          <h3>H&Eによる乳がん再発予測</h3>
+          <p>AACR 2022ポスターとScientific Reports(2025)論文へつながったH&Eによる再発予測研究の初期発表。</p>
+        </div>
+      </article>
+
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section class="block" id="projects">
-    <div class="head reveal"><span class="num">02</span><h2>プロジェクト</h2><span class="note">医療AI・マルチオミクス中心</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
+    <div class="head reveal"><span class="num">03</span><h2>プロジェクト</h2><span class="note">医療AI・マルチオミクス中心</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
     <div class="grid">
 
       <div class="card reveal">
@@ -483,7 +570,7 @@
       <div class="card reveal">
         <div class="k">精密腫瘍学 · OMIXAI</div>
         <h3>獣医腫瘍CDSS & バーチャルセル</h3>
-        <p>臨床意思決定支援(CDSS)のためのイヌ腫瘍薬剤推薦アルゴリズム開発、およびVirtual Cell Challengeの共同主導 — 多能性幹細胞のCRISPRノックダウン応答予測。</p>
+        <p>臨床意思決定支援(CDSS)のためのイヌ腫瘍薬剤推薦アルゴリズム開発、およびVirtual Cell Challengeの共同主導(多能性幹細胞のCRISPRノックダウン応答予測)。</p>
         <div class="tagline"><span>Top-k精度</span><b>≥ 70%</b><span>· イヌ腫瘍コホート</span><span>·</span><b>CRISPR摂動</b></div>
       </div>
 
@@ -521,14 +608,14 @@
 
     <div class="subhead reveal">
       <h3>医療AIの外で</h3>
-      <span class="note">産業用ビジョン · 表形式データ · データエンジニアリング · 頑健性 — ドメインを越えて活きるMLエンジニアリング</span>
+      <span class="note">産業用ビジョン · 表形式データ · データエンジニアリング · 頑健性 · ドメインを越えて活きるMLエンジニアリング</span>
     </div>
     <div class="grid">
       <div class="card reveal">
         <div class="card-fig"><img src="/assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></div>
         <div class="k">コンピュータビジョン · Fronttec</div>
         <h3>ねじ不良判別</h3>
-        <p>製造ラインの不良検出 — 969枚、5クラス、1枚あたり0.3秒の制約。深層学習ではなくマシンビジョンでねじ位置を特定し背景を除去してから分類し、性能を向上。</p>
+        <p>製造ラインの不良検出: 969枚、5クラス、1枚あたり0.3秒の制約。深層学習ではなくマシンビジョンでねじ位置を特定し背景を除去してから分類し、性能を向上。</p>
         <div class="tagline"><span>5クラス</span><b>·</b><b>1枚0.3秒未満</b></div>
       </div>
 
@@ -558,10 +645,10 @@
 
   <!-- EXPERIENCE -->
   <section class="block" id="experience">
-    <div class="head reveal"><span class="num">03</span><h2>経歴</h2></div>
+    <div class="head reveal"><span class="num">04</span><h2>経歴</h2></div>
     <div>
       <div class="role-row reveal">
-        <div class="when"><span class="co">OMIXAI</span><span>2025.02 — 現在</span><br><span class="loc">ソウル · 前 RadiSen</span></div>
+        <div class="when"><span class="co">OMIXAI</span><span>2025.02 – 現在</span><br><span class="loc">ソウル · 前 RadiSen</span></div>
         <div class="what">
           <h3>AIリサーチャー</h3>
           <div class="sub">マルチオミクス · 病理画像基盤モデル</div>
@@ -570,18 +657,18 @@
             <li>H&EベースのAIリスクスコアで空間プロテオミクスを誘導し、トリプルネガティブ乳がんの再発リスクニッチを解明した研究の共著(プレプリント、2026)。</li>
             <li>プロテオミクスDRP(Leave-Drug-Out Pearson ≥ 0.65)とイヌ獣医腫瘍の薬剤推薦アルゴリズム(top-k ≥ 70%)を開発。</li>
             <li>ADMET予測とLoRA/PEFTベースの自己教師ありプロテオーム表現学習を高度化。</li>
-            <li>Virtual Cell Challenge共同主導 — 多能性幹細胞のCRISPRノックダウン応答予測。</li>
+            <li>Virtual Cell Challenge共同主導(多能性幹細胞のCRISPRノックダウン応答予測)。</li>
           </ul>
         </div>
       </div>
       <div class="role-row reveal">
-        <div class="when"><span class="co">Deep Bio</span><span>2021.03 — 2025.01</span><br><span class="loc">ソウル · 九老</span></div>
+        <div class="when"><span class="co">Deep Bio</span><span>2021.03 – 2025.01</span><br><span class="loc">ソウル · 九老</span></div>
         <div class="what">
           <h3>AIリサーチャー / 機械学習エンジニア</h3>
           <div class="sub">Computational Pathology · 承認申請に向けたモデル検証</div>
           <ul>
             <li>多施設乳がん再発研究の筆頭著者(Scientific Reports 2025)；500枚以上を処理するスケーラブルなWSIパイプラインを構築。</li>
-            <li>リンパ節転移検出モデルとKPIs 2024 糸球体セグメンテーションモデルを開発(全スライドトラック2位、MICCAI) — チャレンジ結果はMedical Image Analysis(2026)に掲載。</li>
+            <li>リンパ節転移検出モデルとKPIs 2024 糸球体セグメンテーションモデルを開発(全スライドトラック2位、MICCAI)。チャレンジ結果はMedical Image Analysis(2026)に掲載。</li>
             <li>前立腺の転移・再発リスクプロジェクトを主導；AACR(2022, 2023)・USCAP(2022)で発表。</li>
             <li>韓国食品医薬品安全処（MFDS）承認トラックの医療AI製品で展開前モデル検証をリードし、承認申請文書に貢献；社内サーバ自動化ツール(Dockerインフラ)を開発。</li>
           </ul>
@@ -596,13 +683,12 @@
         </div>
       </div>
       <div class="role-row reveal">
-        <div class="when"><span class="co">学歴</span>2012 — 2021</div>
+        <div class="when"><span class="co">学歴</span>2019 – 2021</div>
         <div class="what">
           <h3>データサイエンス修士 · ソウル科学技術大学</h3>
           <div class="sub">指導教員: ファン・サンフム · 2019–2021</div>
           <ul>
             <li>修士論文: 不確実な医療画像ラベル下でセグメンテーション性能を高めるコントラスティブ損失。</li>
-            <li>情報セキュリティ学士、大田大学校(2012–2019) — 頑健性を優先する姿勢の土台となった分野横断的な経験。</li>
           </ul>
         </div>
       </div>
@@ -611,10 +697,10 @@
 
   <!-- LEADERSHIP & COMMUNITY -->
   <section class="block" id="leadership">
-    <div class="head reveal"><span class="num">04</span><h2>リーダーシップ & コミュニティ</h2><span class="note">本業以外の活動 · メンタリング</span></div>
+    <div class="head reveal"><span class="num">05</span><h2>リーダーシップ & コミュニティ</h2><span class="note">本業以外の活動 · メンタリング</span></div>
     <div>
       <div class="role-row reveal">
-        <div class="when"><span class="co">Codeit</span><span>2025 — 現在</span><br><span class="loc">パートタイム</span></div>
+        <div class="when"><span class="co">Codeit</span><span>2025 – 現在</span><br><span class="loc">パートタイム</span></div>
         <div class="what">
           <h3>AIキャリア & プロジェクトメンター</h3>
           <div class="sub">メンタリング · プロジェクト指導 · キャリアコーチング</div>
@@ -631,7 +717,7 @@
 
   <!-- SKILLS + FUNDING -->
   <section class="block" id="skills">
-    <div class="head reveal"><span class="num">05</span><h2>技術スタック & 遂行課題</h2></div>
+    <div class="head reveal"><span class="num">06</span><h2>技術スタック & 遂行課題</h2></div>
     <div class="two">
       <div class="reveal">
         <div class="skillset"><h4>深層学習</h4><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div>
@@ -643,7 +729,7 @@
         <div class="fund"><h4>精密腫瘍学のためのPan-Sarcomaプロテオゲノムプロファイリング</h4><div class="meta">日米韓 · 慶熙大学校医療院<br>2025.04 – 2028.12 · 総事業費 <span class='amt'>4億ウォン</span> · 参加研究員</div></div>
         <div class="fund"><h4>獣医腫瘍学のためのバーチャルセルCDSS</h4><div class="meta">農林畜産食品部 IPET · 国家R&D<br>2026 – 2030 (採択) · 総事業費 <span class='amt'>30億ウォン+</span> · 参加研究員</div></div>
         <div class="fund"><h4>がん病理診断向け汎用AIの開発・実用化</h4><div class="meta">主管: Deep Bio · 国家R&D<br>2021.04 – 2025.12 · 総事業費 <span class='amt'>23.75億ウォン</span> · 参加研究員</div></div>
-        <div class="award"><span class="medal">2<span style="font-size:.5em">nd</span></span><p><b>KPIチャレンジ2024 — 全スライドトラック</b><br>糸球体セグメンテーション · MICCAI 2024 開催 · Med. Image Anal. 2026 掲載</p></div>
+        <div class="award"><span class="medal">2<span style="font-size:.5em">nd</span></span><p><b>KPIチャレンジ2024 · 全スライドトラック</b><br>糸球体セグメンテーション · MICCAI 2024 開催 · Med. Image Anal. 2026 掲載</p></div>
       </div>
     </div>
   </section>
@@ -652,7 +738,7 @@
   <section class="block contact" id="contact">
     <span class="eyebrow reveal" style="justify-content:center;display:inline-flex">協業歓迎</span>
     <div class="big reveal">実際に<a href='mailto:rjsrb365@gmail.com'>現場で使われる</a><br>臨床AIを一緒に作りましょう。</div>
-    <p class="sub reveal">基盤モデル、マルチオミクス、あるいはトランスレーショナルなデジタル病理 — お気軽にご連絡ください。</p>
+    <p class="sub reveal">基盤モデル、マルチオミクス、あるいはトランスレーショナルなデジタル病理、お気軽にご連絡ください。</p>
     <div class="links reveal">
       <a class="chip" href="mailto:rjsrb365@gmail.com">rjsrb365@gmail.com</a>
       <a class="chip" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ko" target="_blank" rel="noopener">Google Scholar</a>
@@ -663,7 +749,7 @@
 
 </main>
 
-<footer>GEONGYU LEE · 이건규 — AI RESEARCHER · COMPUTATIONAL PATHOLOGY × MULTI-OMICS · SEOUL, KR
+<footer>GEONGYU LEE · 이건규 · AI RESEARCHER · COMPUTATIONAL PATHOLOGY × MULTI-OMICS · SEOUL, KR
   <span class="upd">最終更新 2026-09-05</span>
 </footer>
 
