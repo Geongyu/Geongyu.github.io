@@ -233,6 +233,12 @@
   .row .main.nofig{padding-right:216px}
   @media(max-width:820px){.row .main.nofig{padding-right:0}}
   .card{overflow:hidden}
+  .fold summary{cursor:pointer;list-style:none;font-family:var(--f-mono);font-size:.78rem;letter-spacing:.04em;color:var(--muted);padding:14px 18px;border:var(--line-w) dashed var(--line-2);border-radius:8px;transition:background .25s,color .25s}
+  .fold summary::-webkit-details-marker{display:none}
+  .fold summary::before{content:"+ ";color:var(--accent)}
+  .fold[open] summary::before{content:"– "}
+  .fold summary:hover{background:var(--accent-dim);color:var(--fg)}
+  .fold[open] summary{margin-bottom:18px}
   .subhead{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin:56px 0 22px;padding-top:28px;border-top:var(--line-w) solid var(--line)}
   .subhead h3{font-family:var(--f-disp);font-weight:600;font-size:1.35rem;letter-spacing:-.01em}
   .subhead .note{font-family:var(--f-mono);font-size:.72rem;color:var(--faint);letter-spacing:.04em}
@@ -460,13 +466,13 @@
 
   <!-- CONFERENCES -->
   <section class="block" id="conferences">
-    <div class="head reveal"><span class="num">02</span><h2 data-ko="학회 발표" data-ja="学会発表">Conferences</h2><span class="note" data-ko="† 1저자 · 포스터 원본은 · 원본은 <a class='schlink' href='https://github.com/Geongyu/Geongyu.github.io/tree/main/archive/conferences' target='_blank' rel='noopener'>GitHub 아카이브 ↗</a>" data-ja="† 筆頭 · ポスター原本は<a class='schlink' href='https://github.com/Geongyu/Geongyu.github.io/tree/main/archive/conferences' target='_blank' rel='noopener'>GitHubアーカイブ ↗</a>">† first author · originals in the <a class='schlink' href='https://github.com/Geongyu/Geongyu.github.io/tree/main/archive/conferences' target='_blank' rel='noopener'>GitHub archive ↗</a></span></div>
+    <div class="head reveal"><span class="num">02</span><h2 data-ko="학회 발표" data-ja="学会発表">Conferences</h2><span class="note" data-ko="† 1저자 · 포스터 원본은 <a class='schlink' href='https://github.com/Geongyu/Geongyu.github.io/tree/main/archive/conferences' target='_blank' rel='noopener'>GitHub 아카이브 ↗</a>" data-ja="† 筆頭 · ポスター原本は <a class='schlink' href='https://github.com/Geongyu/Geongyu.github.io/tree/main/archive/conferences' target='_blank' rel='noopener'>GitHubアーカイブ ↗</a>">† first author · originals in the <a class='schlink' href='https://github.com/Geongyu/Geongyu.github.io/tree/main/archive/conferences' target='_blank' rel='noopener'>GitHub archive ↗</a></span></div>
     <div class="pubs">
 
       <article class="row reveal">
         <div class="acc">01 †</div>
         <div class="main nofig">
-          <span class="venue" data-ko="BIOINFO/GIW ISCB-Asia 2026 · 포스터 · 1저자 · 발표" data-ja="BIOINFO/GIW ISCB-Asia 2026 · ポスター · 筆頭・発表">BIOINFO/GIW ISCB-Asia 2026 · Poster · First &amp; presenting author</span>
+          <span class="venue" data-ko="BIOINFO/GIW ISCB-Asia 2026 · 포스터 채택 · 1저자 · 발표 예정" data-ja="BIOINFO/GIW ISCB-Asia 2026 · ポスター採択 · 筆頭・発表予定">BIOINFO/GIW ISCB-Asia 2026 · Accepted poster · First &amp; presenting author</span>
           <h3>Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers</h3>
           <p data-ko="서울 · 2026.11.17–20. 정확도가 높다고 분자 검사를 대체할 수 있는 건 아닙니다. 오분류를 치료 경로 편차로 환산한 '대체 비용'을 정의하고, 5개 암종(유방·폐·대장·위·두경부)에 사전등록된 단일 프로토콜(UNI + CLAM-SB, 기관 분리 hold-out, label-shuffle 대조)을 적용했습니다. 약 15개 엔드포인트 중 사전등록 기준을 통과한 것은 두경부암 HPV 하나뿐이었고, 대부분은 '부정'이 아닌 '미결'로 보고했습니다. Pseudo Lab 공동." data-ja="ソウル · 2026.11.17–20。精度が高くても分子検査を代替できるとは限りません。誤分類を治療経路の逸脱に換算した「代替コスト」を定義し、5がん種(乳・肺・大腸・胃・頭頸部)に事前登録した単一プロトコル(UNI + CLAM-SB、施設分離hold-out、label-shuffle対照)を適用。約15エンドポイントのうち事前登録基準を満たしたのは頭頸部HPVのみで、大半は「否定」ではなく「未決」と報告しました。Pseudo Labとの共同研究。">Seoul · Nov 17–20, 2026. High accuracy does not make an H&amp;E model a substitute for a molecular test. We define substitution cost by translating each misclassification into a deviation from a prespecified treatment routing, and apply one pre-registered protocol (UNI + CLAM-SB, site-disjoint hold-outs, label-shuffle controls) across five cancers. Of ~15 endpoints only HPV status in head and neck met the confirmation criterion; most were reported as undecided rather than negative. With Pseudo Lab.</p>
           <div class="metrics" data-ko="<span>확정</span><b>HNSC HPV · AUROC 0.959</b><span>제외</span><b>폐 조직형 · V(site, label) = 1.0</b>" data-ja="<span>確定</span><b>HNSC HPV · AUROC 0.959</b><span>除外</span><b>肺組織型 · V(site, label) = 1.0</b>"><span>Confirmed</span><b>HNSC HPV · AUROC 0.959</b><span>Excluded</span><b>lung subtype · V(site, label) = 1.0</b></div>
@@ -476,7 +482,7 @@
       <article class="row reveal">
         <div class="acc">02</div>
         <div class="main nofig">
-          <span class="venue" data-ko="BIOINFO/GIW ISCB-Asia 2026 · 구두 발표 · 공저자" data-ja="BIOINFO/GIW ISCB-Asia 2026 · 口頭発表 · 共著者">BIOINFO/GIW ISCB-Asia 2026 · Oral · Co-author</span>
+          <span class="venue" data-ko="BIOINFO/GIW ISCB-Asia 2026 · 구두 발표 채택 · 공저자" data-ja="BIOINFO/GIW ISCB-Asia 2026 · 口頭発表採択 · 共著者">BIOINFO/GIW ISCB-Asia 2026 · Accepted oral · Co-author</span>
           <h3>A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics</h3>
           <p data-ko="서울 · 2026.11.17–20. 멀티옴 RNA velocity가 내놓는 유전자별 파라미터(전사율 α, 분해율 γ, 크로마틴-전사 지연)가 실제로 믿을 만한지 검증했습니다. 5개 velocity 방법 × 4개 축(방법 간 재현성, ATAC-shuffle 대조, 외부 멀티옴 5종 재현, 측정된 합성·분해율과의 정합)으로 평가한 결과, α만 방법 간에 재현됐고 γ와 지연은 직교 검증이 필요한 것으로 나타났습니다." data-ja="ソウル · 2026.11.17–20。マルチオームRNA velocityが出力する遺伝子別パラメータ(転写率α、分解率γ、クロマチン-転写ラグ)が実際に信頼できるかを検証。5つのvelocity手法 × 4つの軸(手法間再現性、ATAC-shuffle対照、外部マルチオーム5種での再現、測定された合成・分解率との整合)で評価した結果、αのみが手法間で再現され、γとラグは直交検証が必要と判明しました。">Seoul · Nov 17–20, 2026. Are the per-gene parameters that multiome RNA-velocity methods emit (transcription rate α, degradation rate γ, chromatin-to-transcription lag) actually reliable? Five velocity arms tested on four axes: cross-method reproducibility, an ATAC-shuffle control, replication in five external multiomes, and anchoring to measured synthesis and degradation rates. Only α reproduced across methods; γ and the lag need orthogonal validation.</p>
           <div class="metrics" data-ko="<span>α 재현성</span><b>ρ = 0.88</b><span>γ</span><b>ρ ≈ −0.1</b><span>사전등록 6/6 통과</span>" data-ja="<span>α再現性</span><b>ρ = 0.88</b><span>γ</span><b>ρ ≈ −0.1</b><span>事前登録 6/6 通過</span>"><span>α reproducibility</span><b>ρ = 0.88</b><span>γ</span><b>ρ ≈ −0.1</b><span>pre-registered 6 / 6 passed</span></div>
@@ -610,9 +616,10 @@
     </div>
 
     <div class="subhead reveal">
-      <h3 data-ko="의료 AI 밖에서" data-ja="医療AIの外で">Beyond medical AI</h3>
-      <span class="note" data-ko="산업용 비전 · 정형 데이터 · 데이터 엔지니어링 · 견고성 · 도메인을 넘어 옮겨 가는 ML 엔지니어링" data-ja="産業用ビジョン · 表形式データ · データエンジニアリング · 頑健性 · ドメインを越えて活きるMLエンジニアリング">industrial vision · tabular · data engineering · robustness · ML engineering that transfers across domains</span>
+      <h3 data-ko="초기 ML 엔지니어링" data-ja="初期のMLエンジニアリング">Earlier ML engineering</h3>
     </div>
+    <details class="fold reveal">
+      <summary data-ko="2019–2020 · 산업용 비전, 정형 데이터, 데이터 엔지니어링, 분할 모델 견고성 · 프로젝트 4개" data-ja="2019–2020 · 産業用ビジョン、表形式データ、データエンジニアリング、セグメンテーションの頑健性 · 4プロジェクト">2019–2020 · industrial vision, tabular data, data engineering, segmentation robustness · 4 projects</summary>
     <div class="grid">
       <div class="card reveal">
         <div class="card-fig"><img src="/assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></div>
@@ -644,6 +651,7 @@
       </div>
 
     </div>
+    </details>
   </section>
 
   <!-- EXPERIENCE -->
@@ -753,7 +761,7 @@
 </main>
 
 <footer>GEONGYU LEE · 이건규 · AI RESEARCHER · COMPUTATIONAL PATHOLOGY × MULTI-OMICS · SEOUL, KR
-  <span class="upd" data-ko="최종 업데이트 2026-09-05" data-ja="最終更新 2026-09-05">LAST UPDATED 2026-09-05</span>
+  <span class="upd" data-ko="최종 업데이트 2026-09-17" data-ja="最終更新 2026-09-17">LAST UPDATED 2026-09-17</span>
 </footer>
 
 <script>

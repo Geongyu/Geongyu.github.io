@@ -55,7 +55,7 @@ EN = {
     "h_edu": "Education",
     "h_skills": "Skills",
     "h_awards": "Awards &amp; Funding",
-    "h_talks": "Talks &amp; Abstracts",
+    "h_talks": "Conference Presentations",
     "jobs": [
         ("OMIXAI (fmr. RadiSen)", "Feb 2025 – Present", "AI Researcher · Seoul", [
             "Lead multi-omics foundation-model R&amp;D integrating proteomics with H&amp;E pathology for drug-response prediction; co-authored the G2L pathology foundation model.",
@@ -104,14 +104,16 @@ EN = {
         ("General-Purpose AI for Cancer Pathology Diagnosis",
          "Lead: Deep Bio · National R&amp;D · 2021–2025 · KRW 2.375B · Participating Researcher"),
     ],
-    "talks": ("<b>GIW ISCB-Asia 2026</b> · Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers (poster, first author) · "
-              "<b>GIW ISCB-Asia 2026</b> · A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics (oral, co-author) · "
-              "<b>AACR 2023</b> · Predicting protein receptor status from H&amp;E-stained images in breast cancer (poster, first author) · "
-              "<b>AACR 2022</b> · Recurrence risk prediction based on automatic histologic analysis of breast cancer using WSIs (poster, first author) · "
-              "<b>AACR 2022</b> · Deep learning based pancreatic adenocarcinoma survival prediction applicable to other organs (poster, co-author) · "
-              "<b>USCAP 2022</b> · Automatic histological grading of breast cancer resection tissue (poster, first author) · "
-              "<b>USCAP 2022</b> · Breast cancer survival analysis through features from a prostate diagnosis model (poster, co-author) · "
-              "<b>KIIE Fall Conference 2020</b> · Utilizing a contrastive loss to improve segmentation model performance (oral, first author)."),
+    "talks": [
+        ('Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers', 'BIOINFO/GIW ISCB-Asia 2026 · Accepted poster · First &amp; presenting author'),
+        ('A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics', 'BIOINFO/GIW ISCB-Asia 2026 · Accepted oral · Co-author'),
+        ('Predicting protein receptor status from H&amp;E-stained images in breast cancer', 'AACR Annual Meeting 2023 · Poster · First author'),
+        ('Recurrence risk prediction based on automatic histologic analysis of breast cancer using whole slide images', 'AACR Annual Meeting 2022 · Poster · First author'),
+        ('A deep learning based pancreatic adenocarcinoma survival prediction model applicable to adenocarcinoma of other organs', 'AACR Annual Meeting 2022 · Poster · Co-author'),
+        ('Automatic histological grading of breast cancer resection tissue', 'USCAP Annual Meeting 2022 · Poster · First author'),
+        ('Breast cancer survival analysis through the extracted feature from the prostate diagnosis model', 'USCAP Annual Meeting 2022 · Poster · Co-author'),
+        ('Utilizing a contrastive loss to improve segmentation model performance', 'KIIE Fall Conference 2020 · Oral · First author'),
+    ],
 }
 
 KO = {
@@ -131,7 +133,7 @@ KO = {
     "h_edu": "학력",
     "h_skills": "기술 스택",
     "h_awards": "수상 &amp; 연구과제",
-    "h_talks": "학회 발표 &amp; 초록",
+    "h_talks": "학회 발표",
     "jobs": [
         ("OMIXAI (前 래디센)", "2025.02 – 현재", "AI 리서처 · 서울", [
             "약물 반응성 예측을 위해 프로테오믹스와 H&amp;E 병리를 통합하는 멀티오믹스 파운데이션 모델 R&amp;D 주도; G2L 병리 FM 공동저자.",
@@ -180,14 +182,16 @@ KO = {
         ("암 병리 진단용 범용 AI 개발·상용화",
          "주관: 딥바이오 · 국가 R&amp;D · 2021–2025 · 23.75억 원 · 참여연구원"),
     ],
-    "talks": ("<b>GIW ISCB-Asia 2026</b> · Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers (poster, first author) · "
-              "<b>GIW ISCB-Asia 2026</b> · A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics (oral, co-author) · "
-              "<b>AACR 2023</b> · H&amp;E 기반 유방암 단백질 수용체 상태 예측 (포스터, 1저자) · "
-              "<b>AACR 2022</b> · WSI 자동 조직 분석 기반 유방암 재발 위험 예측 (포스터, 1저자) · "
-              "<b>AACR 2022</b> · 다른 장기로 적용 가능한 췌장 선암 생존 예측 모델 (포스터, 공저자) · "
-              "<b>USCAP 2022</b> · 유방암 절제 조직의 자동 조직학적 등급 판정 (포스터, 1저자) · "
-              "<b>USCAP 2022</b> · 전립선 진단 모델 특징을 이용한 유방암 생존 분석 (포스터, 공저자) · "
-              "<b>대한산업공학회 추계학술대회 2020</b> · 영역분할 모델 성능 향상을 위한 대조적 손실 함수의 활용 (구두, 1저자)."),
+    "talks": [
+        ('예측 가능성은 대체 가능성이 아니다: 5개 암종 H&amp;E 기반 분자 예측의 대체 비용 프레임워크', 'BIOINFO/GIW ISCB-Asia 2026 · 포스터 채택 · 1저자 · 발표 예정'),
+        ('단일세포 멀티옴 RNA velocity 유전자별 파라미터의 신뢰성 지도', 'BIOINFO/GIW ISCB-Asia 2026 · 구두 발표 채택 · 공저자'),
+        ('H&amp;E 기반 유방암 단백질 수용체 상태 예측', 'AACR 연례학술대회 2023 · 포스터 · 1저자'),
+        ('WSI 자동 조직 분석 기반 유방암 재발 위험 예측', 'AACR 연례학술대회 2022 · 포스터 · 1저자'),
+        ('다른 장기로 적용 가능한 췌장 선암 생존 예측 모델', 'AACR 연례학술대회 2022 · 포스터 · 공저자'),
+        ('유방암 절제 조직의 자동 조직학적 등급 판정', 'USCAP 연례학술대회 2022 · 포스터 · 1저자'),
+        ('전립선 진단 모델 특징을 이용한 유방암 생존 분석', 'USCAP 연례학술대회 2022 · 포스터 · 공저자'),
+        ('영역분할 모델 성능 향상을 위한 대조적 손실 함수의 활용', '대한산업공학회 추계학술대회 2020 · 구두 · 1저자'),
+    ],
 }
 
 JA = {
@@ -207,7 +211,7 @@ JA = {
     "h_edu": "学歴",
     "h_skills": "スキル",
     "h_awards": "受賞 &amp; 研究プロジェクト",
-    "h_talks": "学会発表 &amp; 抄録",
+    "h_talks": "学会発表",
     "jobs": [
         ("OMIXAI (前 RadiSen)", "2025.02 – 現在", "AIリサーチャー · ソウル", [
             "薬剤応答性予測のためプロテオミクスとH&amp;E病理を統合するマルチオミクス基盤モデルR&amp;Dを主導；G2L病理FM共同著者。",
@@ -256,14 +260,16 @@ JA = {
         ("がん病理診断向け汎用AIの開発・実用化",
          "主管: Deep Bio · 国家R&amp;D · 2021–2025 · 23.75億ウォン · 参加研究員"),
     ],
-    "talks": ("<b>GIW ISCB-Asia 2026</b> · Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers (poster, first author) · "
-              "<b>GIW ISCB-Asia 2026</b> · A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics (oral, co-author) · "
-              "<b>AACR 2023</b> · H&amp;Eによる乳がんタンパク質受容体ステータス予測 (ポスター, 筆頭) · "
-              "<b>AACR 2022</b> · WSI自動組織解析による乳がん再発リスク予測 (ポスター, 筆頭) · "
-              "<b>AACR 2022</b> · 他臓器へ適用可能な膵臓腺がん生存予測モデル (ポスター, 共著) · "
-              "<b>USCAP 2022</b> · 乳がん切除組織の自動組織学的グレード判定 (ポスター, 筆頭) · "
-              "<b>USCAP 2022</b> · 前立腺診断モデルの特徴を用いた乳がん生存解析 (ポスター, 共著) · "
-              "<b>韓国産業工学会 秋季学術大会 2020</b> · セグメンテーションモデル性能向上のための対照損失関数の活用 (口頭, 筆頭)。"),
+    "talks": [
+        ('予測可能性は代替可能性ではない: 5がん種H&amp;E分子予測の代替コストフレームワーク', 'BIOINFO/GIW ISCB-Asia 2026 · ポスター採択 · 筆頭・発表予定'),
+        ('単一細胞マルチオームRNA velocity遺伝子別パラメータの信頼性マップ', 'BIOINFO/GIW ISCB-Asia 2026 · 口頭発表採択 · 共著者'),
+        ('H&amp;Eによる乳がんタンパク質受容体ステータス予測', 'AACR年次総会 2023 · ポスター · 筆頭'),
+        ('WSI自動組織解析による乳がん再発リスク予測', 'AACR年次総会 2022 · ポスター · 筆頭'),
+        ('他臓器へ適用可能な膵臓腺がん生存予測モデル', 'AACR年次総会 2022 · ポスター · 共著'),
+        ('乳がん切除組織の自動組織学的グレード判定', 'USCAP年次総会 2022 · ポスター · 筆頭'),
+        ('前立腺診断モデルの特徴を用いた乳がん生存解析', 'USCAP年次総会 2022 · ポスター · 共著'),
+        ('セグメンテーションモデル性能向上のための対照損失関数の活用', '韓国産業工学会 秋季学術大会 2020 · 口頭 · 筆頭'),
+    ],
 }
 
 EDITIONS = {"EN": EN, "KO": KO, "JA": JA}

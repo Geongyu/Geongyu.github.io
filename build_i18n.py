@@ -9,7 +9,8 @@ stripped from the output so each language page is a clean, indexable document.
 
 Usage:  python3 build_i18n.py        (run from the repository root, then commit ko/ and ja/)
 """
-import html, os, re, sys
+import html, os, re, sys, datetime
+TODAY = datetime.date.today().isoformat()
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = "https://geongyu.github.io"
@@ -140,6 +141,13 @@ def localise_head(s, m):
 
 def main():
     src = open(SRC, encoding="utf-8").read()
+    # stamp today's date into the footer (index.html is rewritten so EN/KO/JA always agree)
+    stamped = re.sub(r'(최종 업데이트 |最終更新 |LAST UPDATED )(?:\{\{DATE\}\}|\d{4}-\d{2}-\d{2})', lambda m: m.group(1) + TODAY, src)
+    if stamped != src:
+        src = stamped
+        with open(SRC, "w", encoding="utf-8") as f:
+            f.write(src)
+        print(f"index.html  ← footer date stamped {TODAY}")
     for lang, m in META.items():
         body, n = localise_body(src, lang)
         page = localise_head(body, m)

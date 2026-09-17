@@ -233,6 +233,12 @@
   .row .main.nofig{padding-right:216px}
   @media(max-width:820px){.row .main.nofig{padding-right:0}}
   .card{overflow:hidden}
+  .fold summary{cursor:pointer;list-style:none;font-family:var(--f-mono);font-size:.78rem;letter-spacing:.04em;color:var(--muted);padding:14px 18px;border:var(--line-w) dashed var(--line-2);border-radius:8px;transition:background .25s,color .25s}
+  .fold summary::-webkit-details-marker{display:none}
+  .fold summary::before{content:"+ ";color:var(--accent)}
+  .fold[open] summary::before{content:"– "}
+  .fold summary:hover{background:var(--accent-dim);color:var(--fg)}
+  .fold[open] summary{margin-bottom:18px}
   .subhead{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin:56px 0 22px;padding-top:28px;border-top:var(--line-w) solid var(--line)}
   .subhead h3{font-family:var(--f-disp);font-weight:600;font-size:1.35rem;letter-spacing:-.01em}
   .subhead .note{font-family:var(--f-mono);font-size:.72rem;color:var(--faint);letter-spacing:.04em}
@@ -460,13 +466,13 @@
 
   <!-- CONFERENCES -->
   <section class="block" id="conferences">
-    <div class="head reveal"><span class="num">02</span><h2>学会発表</h2><span class="note">† 筆頭 · ポスター原本は<a class='schlink' href='https://github.com/Geongyu/Geongyu.github.io/tree/main/archive/conferences' target='_blank' rel='noopener'>GitHubアーカイブ ↗</a></span></div>
+    <div class="head reveal"><span class="num">02</span><h2>学会発表</h2><span class="note">† 筆頭 · ポスター原本は <a class='schlink' href='https://github.com/Geongyu/Geongyu.github.io/tree/main/archive/conferences' target='_blank' rel='noopener'>GitHubアーカイブ ↗</a></span></div>
     <div class="pubs">
 
       <article class="row reveal">
         <div class="acc">01 †</div>
         <div class="main nofig">
-          <span class="venue">BIOINFO/GIW ISCB-Asia 2026 · ポスター · 筆頭・発表</span>
+          <span class="venue">BIOINFO/GIW ISCB-Asia 2026 · ポスター採択 · 筆頭・発表予定</span>
           <h3>Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers</h3>
           <p>ソウル · 2026.11.17–20。精度が高くても分子検査を代替できるとは限りません。誤分類を治療経路の逸脱に換算した「代替コスト」を定義し、5がん種(乳・肺・大腸・胃・頭頸部)に事前登録した単一プロトコル(UNI + CLAM-SB、施設分離hold-out、label-shuffle対照)を適用。約15エンドポイントのうち事前登録基準を満たしたのは頭頸部HPVのみで、大半は「否定」ではなく「未決」と報告しました。Pseudo Labとの共同研究。</p>
           <div class="metrics"><span>確定</span><b>HNSC HPV · AUROC 0.959</b><span>除外</span><b>肺組織型 · V(site, label) = 1.0</b></div>
@@ -476,7 +482,7 @@
       <article class="row reveal">
         <div class="acc">02</div>
         <div class="main nofig">
-          <span class="venue">BIOINFO/GIW ISCB-Asia 2026 · 口頭発表 · 共著者</span>
+          <span class="venue">BIOINFO/GIW ISCB-Asia 2026 · 口頭発表採択 · 共著者</span>
           <h3>A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics</h3>
           <p>ソウル · 2026.11.17–20。マルチオームRNA velocityが出力する遺伝子別パラメータ(転写率α、分解率γ、クロマチン-転写ラグ)が実際に信頼できるかを検証。5つのvelocity手法 × 4つの軸(手法間再現性、ATAC-shuffle対照、外部マルチオーム5種での再現、測定された合成・分解率との整合)で評価した結果、αのみが手法間で再現され、γとラグは直交検証が必要と判明しました。</p>
           <div class="metrics"><span>α再現性</span><b>ρ = 0.88</b><span>γ</span><b>ρ ≈ −0.1</b><span>事前登録 6/6 通過</span></div>
@@ -610,9 +616,10 @@
     </div>
 
     <div class="subhead reveal">
-      <h3>医療AIの外で</h3>
-      <span class="note">産業用ビジョン · 表形式データ · データエンジニアリング · 頑健性 · ドメインを越えて活きるMLエンジニアリング</span>
+      <h3>初期のMLエンジニアリング</h3>
     </div>
+    <details class="fold reveal">
+      <summary>2019–2020 · 産業用ビジョン、表形式データ、データエンジニアリング、セグメンテーションの頑健性 · 4プロジェクト</summary>
     <div class="grid">
       <div class="card reveal">
         <div class="card-fig"><img src="/assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></div>
@@ -644,6 +651,7 @@
       </div>
 
     </div>
+    </details>
   </section>
 
   <!-- EXPERIENCE -->
@@ -753,7 +761,7 @@
 </main>
 
 <footer>GEONGYU LEE · 이건규 · AI RESEARCHER · COMPUTATIONAL PATHOLOGY × MULTI-OMICS · SEOUL, KR
-  <span class="upd">最終更新 2026-09-05</span>
+  <span class="upd">最終更新 2026-09-17</span>
 </footer>
 
 <script>

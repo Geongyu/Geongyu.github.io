@@ -82,7 +82,8 @@ def render_html(d):
     # talks
     a("<section>")
     a(f'<h2>{d["h_talks"]}</h2>')
-    a(f'<p class="talks">{d["talks"]}</p>')
+    for title, meta in d["talks"]:
+        a(f'<div class="award"><div class="h">{title}</div><div class="m">{meta}</div></div>')
     a("</section>")
 
     a("</body></html>")
