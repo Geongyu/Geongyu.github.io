@@ -11,7 +11,7 @@ Original posters and slides for conference presentations, kept in full here even
 | 2022-04 | AACR Annual Meeting 2022, New Orleans | A Deep Learning based Pancreatic Adenocarcinoma Survival Prediction Model Applicable to Adenocarcinoma of Other Organs | Co-author, poster | `AACR2022_pancreatic_survival_slide_01..06.png` |
 | 2022-03-18 | USCAP Annual Meeting 2022 | Breast Cancer Survival Analysis through the Extracted Feature from the Prostate Diagnosis Model | Co-author, poster | `USCAP2022_poster_breast_survival_prostate_feature.png` |
 | 2022-03-17 | USCAP Annual Meeting 2022 | Automatic Histological Grading of Breast Cancer Resection Tissue | First author, poster | `USCAP2022_poster_histologic_grading.png` |
-| 2020 | KIIE Fall Conference 2020 (대한산업공학회 추계학술대회) | Breast-cancer recurrence prediction from H&E | Presenter | none archived yet |
+| 2020-11 | KIIE Fall Conference 2020 (2020년 대한산업공학회 추계학술대회) | 영역분할 모델 성능 향상을 위한 대조적 손실 함수의 활용 (Utilizing a contrastive loss to improve segmentation model performance) | First author, oral | `KIIE2020_contrastive_loss_segmentation_slides.pdf`, `KIIE2020_contrastive_loss_segmentation_arch.png` |
 
 ## GIW ISCB-Asia 2026 · Predictability Is Not Substitutability: A cost-of-substitution framework for H&E-based molecular prediction across 5 cancers
 
@@ -112,6 +112,22 @@ Authors: Geongyu Lee¹, Chung-Yeul Kim²˒³, Tae-Yeong Kwak¹, Sun Woo Kim¹, H
 - CAM heatmaps show the regions the model attends to per grade.
 - Conclusion: a consistent automatic grading system; larger data and stronger reference standards are needed for full evaluation.
 
-## KIIE Fall Conference 2020 (대한산업공학회 추계학술대회)
+## KIIE Fall Conference 2020 · 영역분할 모델 성능 향상을 위한 대조적 손실 함수의 활용
 
-Early presentation of the H&E-based breast-cancer recurrence work. No source files archived yet.
+2020년 대한산업공학회 추계학술대회 (KIIE Fall Conference 2020), 논문집 수록. Oral presentation, first author.
+Authors: 이건규 (Geongyu Lee), 황상흠 (Sangheum Hwang), Department of Data Science, Seoul National University of Science and Technology. Supported by NRF Basic Science Research Program (NRF2018R1D1A1A02086017).
+
+- Motivation: encoder-decoder segmentation models give no guarantee that encoder embeddings of the same class lie close together and those of different classes lie apart. Prior medical-segmentation work improved performance by adding architectural complexity (residual / DAC blocks, cascaded U-Nets, UNet++ / UNet3+) rather than addressing embedding structure.
+- Method: a feature-wise contrastive loss on the encoder's bottleneck feature vectors. The ground-truth mask is resized to the feature-map resolution, positive (target-region) feature vectors are pulled together and pushed away from negative-region vectors (cosine similarity, temperature τ), and the loss is added to the segmentation loss (CE / Dice) with weight α. m random positive samples per batch keep the cost bounded. α = 0.1 chosen on validation.
+- Data: lung segmentation in CT (Kaggle "Finding and Measuring Lungs in CT", 263 images, 512×512, HU [−1000, 400]); liver segmentation in CT (LiTS2017, 19,263 liver-containing slices from 131 patients, 7:3 patient split, 330×330, HU [−200, 200]).
+- Setup: U-Net and UNet++, SGD (momentum 0.9, LR 0.01, decay at [75, 100] ×0.1, weight decay 1e-4), batch 20, 120 epochs. Metrics: JSC, DSC, ACD, ASD, precision, sensitivity, specificity.
+- Results (Base → Ours):
+
+| Task | Model | JSC | DSC | ACD ↓ | ASD ↓ |
+|---|---|---|---|---|---|
+| Lung (Kaggle) | U-Net | 0.970 → 0.980 | 0.980 → 0.990 | 0.463 → 0.440 | 0.311 → 0.298 |
+| Lung (Kaggle) | UNet++ | 0.980 → 0.982 | 0.989 → 0.991 | 0.455 → 0.391 | 0.314 → 0.273 |
+| Liver (LiTS2017) | U-Net | 0.850 → 0.867 | 0.912 → 0.923 | 0.697 → 0.499 | 0.533 → 0.365 |
+| Liver (LiTS2017) | UNet++ | 0.860 → 0.877 | 0.919 → 0.924 | 0.647 → 0.460 | 0.541 → 0.321 |
+
+- Conclusion: consistent gains, largest on distance-based boundary metrics, showing that well-structured embeddings help segmentation. Limitation: the contrastive term may not apply correctly when the target region is very small. Future work: handling small targets and testing whether the learned encoder is robust to domain shift. This work led to the M.S. thesis and the IEEE Access (2021) paper.

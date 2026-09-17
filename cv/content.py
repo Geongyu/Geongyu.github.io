@@ -111,7 +111,7 @@ EN = {
               "<b>AACR 2022</b> · Deep learning based pancreatic adenocarcinoma survival prediction applicable to other organs (poster, co-author) · "
               "<b>USCAP 2022</b> · Automatic histological grading of breast cancer resection tissue (poster, first author) · "
               "<b>USCAP 2022</b> · Breast cancer survival analysis through features from a prostate diagnosis model (poster, co-author) · "
-              "<b>KIIE Fall Conference 2020</b> · H&amp;E-based breast-cancer recurrence prediction."),
+              "<b>KIIE Fall Conference 2020</b> · Utilizing a contrastive loss to improve segmentation model performance (oral, first author)."),
 }
 
 KO = {
@@ -187,7 +187,7 @@ KO = {
               "<b>AACR 2022</b> · 다른 장기로 적용 가능한 췌장 선암 생존 예측 모델 (포스터, 공저자) · "
               "<b>USCAP 2022</b> · 유방암 절제 조직의 자동 조직학적 등급 판정 (포스터, 1저자) · "
               "<b>USCAP 2022</b> · 전립선 진단 모델 특징을 이용한 유방암 생존 분석 (포스터, 공저자) · "
-              "<b>대한산업공학회 추계학술대회 2020</b> · H&amp;E 기반 유방암 재발 예측."),
+              "<b>대한산업공학회 추계학술대회 2020</b> · 영역분할 모델 성능 향상을 위한 대조적 손실 함수의 활용 (구두, 1저자)."),
 }
 
 JA = {
@@ -263,7 +263,7 @@ JA = {
               "<b>AACR 2022</b> · 他臓器へ適用可能な膵臓腺がん生存予測モデル (ポスター, 共著) · "
               "<b>USCAP 2022</b> · 乳がん切除組織の自動組織学的グレード判定 (ポスター, 筆頭) · "
               "<b>USCAP 2022</b> · 前立腺診断モデルの特徴を用いた乳がん生存解析 (ポスター, 共著) · "
-              "<b>韓国産業工学会 秋季学術大会 2020</b> · H&amp;Eによる乳がん再発予測。"),
+              "<b>韓国産業工学会 秋季学術大会 2020</b> · セグメンテーションモデル性能向上のための対照損失関数の活用 (口頭, 筆頭)。"),
 }
 
 EDITIONS = {"EN": EN, "KO": KO, "JA": JA}
