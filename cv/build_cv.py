@@ -83,7 +83,14 @@ def render_html(d):
     a("<section>")
     a(f'<h2>{d["h_talks"]}</h2>')
     for title, meta in d["talks"]:
-        a(f'<div class="award"><div class="h">{title}</div><div class="m">{meta}</div></div>')
+        a(f'<div class="li"><span class="m">{meta}</span> · {title}</div>')
+    a("</section>")
+
+    # community & service
+    a("<section>")
+    a(f'<h2>{d["h_service"]}</h2>')
+    for title, meta in d["service"]:
+        a(f'<div class="li">{title} <span class="m">· {meta}</span></div>')
     a("</section>")
 
     a("</body></html>")

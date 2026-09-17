@@ -47,7 +47,7 @@ EN = {
         "Five years building deep learning for computational pathology and drug discovery. "
         "First-author work on H&amp;E-based breast-cancer recurrence (Scientific Reports 2025), "
         "a contribution to large-scale pathology foundation models (G2L, AAAI 2026 oral), and "
-        "KFDA-track model validation; now extending histopathology AI into proteomics and multi-omics."),
+        "MFDS-track model validation; now extending histopathology AI into proteomics and multi-omics."),
     "h_pubs": "Selected Publications",
     "scholar_note": "Google Scholar · 55 citations · h-index 5 · i10-index 2",
     "h_exp": "Experience",
@@ -68,7 +68,7 @@ EN = {
             "First-authored the multi-center breast-cancer recurrence study (Scientific Reports 2025); built a scalable WSI pipeline handling 500+ slides.",
             "Developed lymph-node metastasis detection and the KPIs 2024 glomeruli segmentation model (2nd place, whole-slide track, MICCAI); challenge results published in Medical Image Analysis (2026).",
             "Led prostate metastasis &amp; recurrence-risk projects; presented at AACR (2022, 2023) and USCAP (2022).",
-            "Contributed to KFDA regulatory documentation and validation, plus internal server-automation tooling (Docker).",
+            "Contributed to MFDS regulatory documentation and validation, plus internal server-automation tooling (Docker).",
         ]),
         ("Nuricon", "2021", "Intern · Pangyo", [
             "Built a parking-lot fire-detection AI system.",
@@ -104,6 +104,12 @@ EN = {
         ("General-Purpose AI for Cancer Pathology Diagnosis",
          "Lead: Deep Bio · National R&amp;D · 2021–2025 · KRW 2.375B · Participating Researcher"),
     ],
+    "h_service": 'Community &amp; Service',
+    "service": [
+        ('Research member (Runner), Pseudo Lab season 12: AutoBioX, AI Agents for End-to-End Bio Research', '2026 · 16 weeks · two outputs accepted at GIW ISCB-Asia 2026, then submitted to ML4H 2026 Findings'),
+        ('Reviewer, ML4H 2026 (Machine Learning for Health Symposium)', '2026'),
+        ('AI Career &amp; Project Mentor, Codeit', '2025 – present · part-time · 13 mentees 1:1, 8+ project teams across 2+ cohorts'),
+    ],
     "talks": [
         ('Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers', 'BIOINFO/GIW ISCB-Asia 2026 · Accepted poster · First &amp; presenting author'),
         ('A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics', 'BIOINFO/GIW ISCB-Asia 2026 · Accepted oral · Co-author'),
@@ -125,7 +131,7 @@ KO = {
     "summary": (
         "5년간 Computational Pathology와 신약 개발을 위한 딥러닝을 연구해 왔습니다. H&amp;E 기반 유방암 재발 예측으로 "
         "Scientific Reports 제1저자 논문을 냈고, 대규모 병리 파운데이션 모델(G2L, AAAI 2026 구두 발표)에 기여했으며, "
-        "식약처(KFDA) 인허가 모델 검증을 수행했습니다. 현재는 조직병리 AI를 프로테오믹스·멀티오믹스로 확장하고 있습니다."),
+        "식약처(MFDS) 인허가 모델 검증을 수행했습니다. 현재는 조직병리 AI를 프로테오믹스·멀티오믹스로 확장하고 있습니다."),
     "h_pubs": "주요 논문",
     "scholar_note": "Google Scholar · 인용 55 · h-index 5 · i10-index 2",
     "h_exp": "경력",
@@ -146,7 +152,7 @@ KO = {
             "다기관 유방암 재발 연구 제1저자(Scientific Reports 2025); 500장 이상을 처리하는 확장형 WSI 파이프라인 구축.",
             "림프절 전이 검출 모델과 KPIs 2024 사구체 분할 모델 개발(전체 슬라이드 트랙 2위, MICCAI). 챌린지 결과는 Medical Image Analysis(2026)에 게재.",
             "전립선 전이·재발 위험 프로젝트 리드; AACR(2022, 2023)·USCAP(2022) 발표.",
-            "식약처(KFDA) 인허가 문서·검증 기여, 사내 서버 자동화 도구(Docker) 개발.",
+            "식약처(MFDS) 인허가 문서·검증 기여, 사내 서버 자동화 도구(Docker) 개발.",
         ]),
         ("누리콘", "2021", "인턴 · 판교", [
             "주차장 화재 감지 AI 시스템 개발.",
@@ -182,6 +188,12 @@ KO = {
         ("암 병리 진단용 범용 AI 개발·상용화",
          "주관: 딥바이오 · 국가 R&amp;D · 2021–2025 · 23.75억 원 · 참여연구원"),
     ],
+    "h_service": '커뮤니티 &amp; 학술 서비스',
+    "service": [
+        ('연구 멤버(러너), 가짜연구소(Pseudo Lab) 시즌 12: AutoBioX, AI Agents for End-to-End Bio Research', '2026 · 16주 · 연구 2편 GIW ISCB-Asia 2026 채택, 이후 ML4H 2026 Findings 투고'),
+        ('리뷰어, ML4H 2026 (Machine Learning for Health Symposium)', '2026'),
+        ('AI 커리어 & 프로젝트 멘토, 코드잇', '2025 – 현재 · 파트타임 · 멘티 13명 1:1, 2개+ 기수 8개+ 프로젝트 팀'),
+    ],
     "talks": [
         ('예측 가능성은 대체 가능성이 아니다: 5개 암종 H&amp;E 기반 분자 예측의 대체 비용 프레임워크', 'BIOINFO/GIW ISCB-Asia 2026 · 포스터 채택 · 1저자 · 발표 예정'),
         ('단일세포 멀티옴 RNA velocity 유전자별 파라미터의 신뢰성 지도', 'BIOINFO/GIW ISCB-Asia 2026 · 구두 발표 채택 · 공저자'),
@@ -203,7 +215,7 @@ JA = {
     "summary": (
         "5年間、Computational Pathologyと創薬のための深層学習を研究してきました。H&amp;Eによる乳がん再発予測で"
         "Scientific Reports筆頭著者論文を発表し、大規模病理基盤モデル(G2L、AAAI 2026 口頭発表)に貢献、"
-        "食品医薬品安全処(KFDA)承認モデル検証を担当しました。現在は組織病理AIをプロテオミクス・マルチオミクスへ拡張しています。"),
+        "食品医薬品安全処(MFDS)承認モデル検証を担当しました。現在は組織病理AIをプロテオミクス・マルチオミクスへ拡張しています。"),
     "h_pubs": "主要論文",
     "scholar_note": "Google Scholar · 被引用 55 · h-index 5 · i10-index 2",
     "h_exp": "職務経歴",
@@ -224,7 +236,7 @@ JA = {
             "多施設乳がん再発研究の筆頭著者(Scientific Reports 2025)；500枚以上を処理するスケーラブルなWSIパイプラインを構築。",
             "リンパ節転移検出モデルとKPIs 2024 糸球体セグメンテーションモデルを開発(全スライドトラック2位、MICCAI)。チャレンジ結果はMedical Image Analysis(2026)に掲載。",
             "前立腺の転移・再発リスクプロジェクトを主導；AACR(2022, 2023)・USCAP(2022)で発表。",
-            "食品医薬品安全処(KFDA)承認文書・検証に貢献、社内サーバ自動化ツール(Docker)を開発。",
+            "食品医薬品安全処(MFDS)承認文書・検証に貢献、社内サーバ自動化ツール(Docker)を開発。",
         ]),
         ("Nuricon", "2021", "インターン · パンギョ", [
             "駐車場の火災検知AIシステムを開発。",
@@ -259,6 +271,12 @@ JA = {
          "農林畜産食品部 IPET · 2026–2030 (採択) · 30億ウォン+ · 参加研究員"),
         ("がん病理診断向け汎用AIの開発・実用化",
          "主管: Deep Bio · 国家R&amp;D · 2021–2025 · 23.75億ウォン · 参加研究員"),
+    ],
+    "h_service": 'コミュニティ &amp; 学術サービス',
+    "service": [
+        ('研究メンバー(ランナー), Pseudo Lab シーズン12: AutoBioX, AI Agents for End-to-End Bio Research', '2026 · 16週 · 2編がGIW ISCB-Asia 2026に採択、その後ML4H 2026 Findingsへ投稿'),
+        ('査読者, ML4H 2026 (Machine Learning for Health Symposium)', '2026'),
+        ('AIキャリア & プロジェクトメンター, Codeit', '2025 – 現在 · パートタイム · メンティー13名1対1、2期以上・8チーム以上'),
     ],
     "talks": [
         ('予測可能性は代替可能性ではない: 5がん種H&amp;E分子予測の代替コストフレームワーク', 'BIOINFO/GIW ISCB-Asia 2026 · ポスター採択 · 筆頭・発表予定'),
