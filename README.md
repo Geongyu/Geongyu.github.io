@@ -35,7 +35,7 @@ I build deep learning systems for **computational pathology** and drug discovery
 | **Foundation models** | G2L: giga-scale → cancer-specific pathology FMs via knowledge distillation · **AAAI 2026 Workshop (W3PHIAI), oral** |
 | **Challenge** | 🥈 **2nd place**, KPIs 2024 Whole-Slide Track (MICCAI 2024) · report in *Medical Image Analysis* (2026) |
 | **Regulatory** | Led pre-deployment model validation and contributed to regulatory documentation for an MFDS-track product (Deep Bio) |
-| **Mentoring** | 13 early-career AI/data professionals · 8+ project teams across 2+ cohorts (Codeit) |
+| **Mentoring** | 30+ early-career AI/data professionals · 8+ project teams across 3 cohorts (Codeit) |
 
 ## Research interests
 
@@ -69,7 +69,7 @@ Pathology foundation models · Proteomics & multi-omics × histopathology · Vir
 
 **Side project:** [FlyGate](https://github.com/Team-FlyGate/Project-FlyGate) ([live](https://flygate.kr)), NVIDIA Korea Agentic AI Hackathon 2026 (team of 5): an evidence-first agent linking drug discovery and pharmacovigilance; built the FlyDiscovery module on BioNeMo NIM (OpenFold3 · DiffDock · Boltz-2) and its workbench UI.
 
-**Leadership & community:** AI Career & Project Mentor, **Codeit** (2025 – present, part-time): 1:1 résumé / portfolio / career programs for 13 mentees; project scoping, methodology and troubleshooting for 8+ teams across 2+ cohorts. · Research member (Runner), **Pseudo Lab** season 12 "AutoBioX: AI Agents for End-to-End Bio Research" (2026, 16 weeks, completed; two outputs accepted at BIOINFO/GIW ISCB-Asia 2026, subsequently submitted to ML4H 2026 Findings) · Reviewer, **ML4H 2026**.
+**Leadership & community:** AI Career & Project Mentor, **Codeit** (2025 – present, part-time): 1:1 résumé / portfolio / career programs for 30+ mentees; project scoping, methodology and troubleshooting for 8+ teams across 3 cohorts. · Research member (Runner), **Pseudo Lab** season 12 "AutoBioX: AI Agents for End-to-End Bio Research" (2026, 16 weeks, completed; two outputs accepted at BIOINFO/GIW ISCB-Asia 2026, subsequently submitted to ML4H 2026 Findings) · Reviewer, **ML4H 2026**.
 
 **Education:** M.S. Data Science, Seoul National University of Science and Technology (2019 – 2021, advisor: Prof. Sangheum Hwang)
 

@@ -52,7 +52,7 @@ EN = {
         "a contribution to large-scale pathology foundation models (G2L, AAAI 2026 oral), and "
         "MFDS-track model validation; now extending histopathology AI into proteomics and multi-omics."),
     "h_pubs": "Selected Publications",
-    "scholar_note": "Google Scholar · 55 citations · h-index 5 · i10-index 2 · as of Sep 2026",
+    "scholar_note": "Google Scholar · 58 citations · h-index 5 · i10-index 3 · as of Sep 2026",
     "h_exp": "Experience",
     "h_proj": "Selected Projects",
     "h_edu": "Education",
@@ -113,7 +113,7 @@ EN = {
     "service": [
         ('Research member (Runner), Pseudo Lab season 12: AutoBioX, AI Agents for End-to-End Bio Research', '2026 · 16 weeks · two outputs accepted at GIW ISCB-Asia 2026, then submitted to ML4H 2026 Findings'),
         ('Reviewer, ML4H 2026 (Machine Learning for Health Symposium)', '2026'),
-        ('AI Career &amp; Project Mentor, Codeit', '2025 – present · part-time · 13 mentees 1:1, 8+ project teams across 2+ cohorts'),
+        ('AI Career &amp; Project Mentor, Codeit', '2025 – present · part-time · 30+ mentees 1:1, 8+ project teams across 3 cohorts'),
     ],
     "talks": [
         ('Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers', 'BIOINFO/GIW ISCB-Asia 2026 · Accepted poster · First &amp; presenting author'),
@@ -138,7 +138,7 @@ KO = {
         "Scientific Reports 제1저자 논문을 냈고, 대규모 병리 파운데이션 모델(G2L, AAAI 2026 구두 발표)에 기여했으며, "
         "식약처(MFDS) 인허가 모델 검증을 수행했습니다. 현재는 조직병리 AI를 프로테오믹스·멀티오믹스로 확장하고 있습니다."),
     "h_pubs": "주요 논문",
-    "scholar_note": "Google Scholar · 인용 55 · h-index 5 · i10-index 2 · 2026년 9월 기준",
+    "scholar_note": "Google Scholar · 인용 58 · h-index 5 · i10-index 3 · 2026년 9월 기준",
     "h_exp": "경력",
     "h_proj": "대표 프로젝트",
     "h_edu": "학력",
@@ -199,7 +199,7 @@ KO = {
     "service": [
         ('연구 멤버(러너), 가짜연구소(Pseudo Lab) 시즌 12: AutoBioX, AI Agents for End-to-End Bio Research', '2026 · 16주 · 연구 2편 GIW ISCB-Asia 2026 채택, 이후 ML4H 2026 Findings 투고'),
         ('리뷰어, ML4H 2026 (Machine Learning for Health Symposium)', '2026'),
-        ('AI 커리어 & 프로젝트 멘토, 코드잇', '2025 – 현재 · 파트타임 · 멘티 13명 1:1, 2개+ 기수 8개+ 프로젝트 팀'),
+        ('AI 커리어 & 프로젝트 멘토, 코드잇', '2025 – 현재 · 파트타임 · 멘티 30명+ 1:1, 3개 기수 8개+ 프로젝트 팀'),
     ],
     "talks": [
         ('예측 가능성은 대체 가능성이 아니다: 5개 암종 H&amp;E 기반 분자 예측의 대체 비용 프레임워크', 'BIOINFO/GIW ISCB-Asia 2026 · 포스터 채택 · 1저자 · 발표 예정'),
@@ -224,7 +224,7 @@ JA = {
         "Scientific Reports筆頭著者論文を発表し、大規模病理基盤モデル(G2L、AAAI 2026 口頭発表)に貢献、"
         "食品医薬品安全処(MFDS)承認モデル検証を担当しました。現在は組織病理AIをプロテオミクス・マルチオミクスへ拡張しています。"),
     "h_pubs": "主要論文",
-    "scholar_note": "Google Scholar · 被引用 55 · h-index 5 · i10-index 2 · 2026年9月時点",
+    "scholar_note": "Google Scholar · 被引用 58 · h-index 5 · i10-index 3 · 2026年9月時点",
     "h_exp": "職務経歴",
     "h_proj": "主なプロジェクト",
     "h_edu": "学歴",
@@ -285,7 +285,7 @@ JA = {
     "service": [
         ('研究メンバー(ランナー), Pseudo Lab シーズン12: AutoBioX, AI Agents for End-to-End Bio Research', '2026 · 16週 · 2編がGIW ISCB-Asia 2026に採択、その後ML4H 2026 Findingsへ投稿'),
         ('査読者, ML4H 2026 (Machine Learning for Health Symposium)', '2026'),
-        ('AIキャリア & プロジェクトメンター, Codeit', '2025 – 現在 · パートタイム · メンティー13名1対1、2期以上・8チーム以上'),
+        ('AIキャリア & プロジェクトメンター, Codeit', '2025 – 現在 · パートタイム · メンティー30名以上1対1、3期・8チーム以上'),
     ],
     "talks": [
         ('予測可能性は代替可能性ではない: 5がん種H&amp;E分子予測の代替コストフレームワーク', 'BIOINFO/GIW ISCB-Asia 2026 · ポスター採択 · 筆頭・発表予定'),
