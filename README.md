@@ -50,6 +50,7 @@ Pathology foundation models · Proteomics & multi-omics × histopathology · Vir
 | 2026 | **Medical Image Analysis** | [KPIs 2024 Challenge: advancing glomerular segmentation from patch- to slide-level](https://doi.org/10.1016/j.media.2026.104234) |
 | 2026 | **AAAI 2026 Workshop** (W3PHIAI) · oral | [G2L: from giga-scale to cancer-specific pathology foundation models via knowledge distillation](https://arxiv.org/abs/2510.11176) |
 | 2026 | Preprint | [Spatial proteomics guided by H&E-based AI reveals recurrence-risk niches in TNBC](https://arxiv.org/abs/2608.03145) |
+| 2026 | Preprint † | [MoSPR: histology-to-gene expression prediction with morpho-spatial macrostates and low-rank molecular programs](https://arxiv.org/abs/2609.34280) · [code](https://github.com/Radisen-Panthera/MoSPR) |
 | 2026 | Preprint | [Efficient multi-section WSI analysis for biochemical-recurrence prediction in prostate cancer](https://arxiv.org/abs/2603.20273) |
 | 2025 | **Scientific Reports** † | [Assessing the risk of recurrence in early-stage breast cancer through H&E-stained whole-slide images](https://www.nature.com/articles/s41598-025-16679-x) |
 | 2025 | **Prostate International** † | [AI-driven digital pathology in urological cancers: current trends and future directions](https://www.sciencedirect.com/science/article/pii/S2287888225000066) |
@@ -65,6 +66,8 @@ Pathology foundation models · Proteomics & multi-omics × histopathology · Vir
 | **OMIXAI** (fmr. RadiSen) | AI Researcher | Feb 2025 – present · multi-omics foundation models, proteomics drug-response prediction, veterinary oncology CDSS, Virtual Cell Challenge (co-lead) |
 | **Deep Bio** | AI Researcher | Mar 2021 – Jan 2025 · computational pathology, WSI pipeline (500+ slides), MFDS-track model validation, KPIs 2024 (2nd), AACR/USCAP presentations |
 | **Nuricon** | Intern | 2021 · parking-lot fire-detection AI |
+
+**Side project:** [FlyGate](https://github.com/Team-FlyGate/Project-FlyGate) ([live](https://flygate.kr)), NVIDIA Korea Agentic AI Hackathon 2026 (team of 5): an evidence-first agent linking drug discovery and pharmacovigilance; built the FlyDiscovery module on BioNeMo NIM (OpenFold3 · DiffDock · Boltz-2) and its workbench UI.
 
 **Leadership & community:** AI Career & Project Mentor, **Codeit** (2025 – present, part-time): 1:1 résumé / portfolio / career programs for 13 mentees; project scoping, methodology and troubleshooting for 8+ teams across 2+ cohorts. · Research member (Runner), **Pseudo Lab** season 12 "AutoBioX: AI Agents for End-to-End Bio Research" (2026, 16 weeks, completed; two outputs accepted at BIOINFO/GIW ISCB-Asia 2026, subsequently submitted to ML4H 2026 Findings) · Reviewer, **ML4H 2026**.
 

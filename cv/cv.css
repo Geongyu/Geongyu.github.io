@@ -54,7 +54,7 @@ a { color: inherit; text-decoration: none; }
 html[lang="ko"] .summary, html[lang="ja"] .summary { text-align: left; }
 
 /* ---------- sections ---------- */
-section { margin-top: 13pt; }
+section { margin-top: 10pt; }
 h2 {
   font-size: 8pt; font-weight: 700; text-transform: uppercase;
   letter-spacing: .13em; color: var(--accent);

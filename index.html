@@ -164,7 +164,8 @@
   .metrics b{color:var(--fg);font-weight:500}.metrics span{color:var(--faint)}
   .go{align-self:center;font-family:var(--f-mono);font-size:.73rem;letter-spacing:.04em;color:var(--muted);white-space:nowrap;border:var(--line-w) solid var(--line-2);padding:8px 13px;border-radius:100px;transition:all .2s}
   a.go:hover{color:#0d0e12;background:var(--accent);border-color:var(--accent)}
-  @media(max-width:820px){.row{grid-template-columns:1fr;gap:8px}.go{justify-self:start;margin-top:4px}}
+  .gos{display:flex;flex-direction:column;gap:8px;align-self:center;align-items:stretch}.gos .go{text-align:center}
+  @media(max-width:820px){.row{grid-template-columns:1fr;gap:8px}.go{justify-self:start;margin-top:4px}.gos{flex-direction:row;justify-self:start;align-self:start}}
   .talks{margin-top:34px;padding:20px 22px;border:var(--line-w) dashed var(--line-2);border-radius:8px;font-size:.95rem;color:var(--muted)}
   .talks b{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:8px}
 
@@ -177,7 +178,7 @@
   .card p{color:var(--muted);font-size:.96rem;margin-bottom:16px;flex:1}
   .card .tagline{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--f-mono);font-size:.73rem;color:var(--faint)}
   .card .tagline b{color:var(--fg);font-weight:500}
-  .card .tagline a{margin-left:auto;color:var(--accent);letter-spacing:.04em;transition:opacity .2s}.card .tagline a:hover{opacity:.7}
+  .card .tagline a{margin-left:auto;color:var(--accent);letter-spacing:.04em;transition:opacity .2s}.card .tagline a:hover{opacity:.7}.card .tagline a+a{margin-left:0}
 
   .role-row{display:grid;grid-template-columns:200px 1fr;gap:clamp(16px,4vw,48px);padding:32px 0;border-top:var(--line-w) solid var(--line)}
   .role-row .when{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
@@ -382,7 +383,7 @@
       <article class="row reveal">
         <div class="acc">02</div>
         <div class="main">
-          <a class="thumb" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="https://arxiv.org/html/2510.11176v3/Figure_2_AAAI.png" alt="G2L knowledge-distillation framework overview" loading="lazy" onerror="var t=this.closest('.thumb'); if(t) t.style.display='none';"></a>
+          <a class="thumb" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="/assets/pub_g2l_distillation.png" alt="G2L knowledge-distillation framework overview" loading="lazy"></a>
           <span class="venue" data-ko="AAAI 2026 워크숍 (W3PHIAI) · 구두" data-ja="AAAI 2026 ワークショップ (W3PHIAI) · 口頭">AAAI 2026 Workshop (W3PHIAI) · Oral</span>
           <h3>G2L: giga-scale to cancer-specific pathology foundation models</h3>
           <p data-ko="지식 증류(knowledge distillation)로 기가스케일 병리 파운데이션 모델을 작고 암종 특화된 인코더로 압축해, 더 적은 연산으로도 downstream 성능을 유지합니다." data-ja="知識蒸留(knowledge distillation)でギガスケール病理画像基盤モデルを小型のがん種特化エンコーダへ圧縮し、より少ない計算量でも下流タスク性能を維持します。">Distilling giga-scale pathology foundation models into compact, cancer-specific encoders via knowledge distillation, preserving downstream performance at lower compute.</p>
@@ -393,7 +394,8 @@
 
       <article class="row reveal">
         <div class="acc">03</div>
-        <div class="main nofig">
+        <div class="main">
+          <a class="thumb" href="https://doi.org/10.1016/j.media.2026.104234" target="_blank" rel="noopener"><img src="/assets/pub_kpis_glomeruli.jpg" alt="KPIs 2024 patch-level glomeruli: PAS image, ground-truth mask and overlay" loading="lazy"></a>
           <span class="venue">Medical Image Analysis · 2026</span>
           <h3>KPIs 2024 Challenge: glomerular segmentation from patch- to slide-level</h3>
           <p data-ko="KPIs 2024 챌린지의 공식 결과 논문(Medical Image Analysis 114권, 104234). 전체 슬라이드 트랙에서 2위를 기록했고, 패치 단위 학습을 슬라이드 단위로 일반화하는 문제를 다룹니다." data-ja="KPIs 2024 チャレンジの公式結果論文(Medical Image Analysis 114巻, 104234)。全スライドトラックで2位を獲得し、パッチ単位の学習をスライド単位へ汎化する課題を扱います。">The official challenge report (Medical Image Analysis, vol. 114, 104234) for kidney glomeruli segmentation, 2nd place in the whole-slide track, tackling generalization from patch-level training to slide-level inference.</p>
@@ -404,7 +406,8 @@
 
       <article class="row reveal">
         <div class="acc">04 †</div>
-        <div class="main nofig">
+        <div class="main">
+          <a class="thumb" href="https://www.sciencedirect.com/science/article/pii/S2287888225000066" target="_blank" rel="noopener"><img src="/assets/pub_urology_workflow.jpg" alt="AI-based digital pathology workflow from specimen slide to diagnostic report" loading="lazy"></a>
           <span class="venue" data-ko="Prostate International · 2025 · 공동 1저자" data-ja="Prostate International · 2025 · 共同筆頭">Prostate International · 2025 · Co-first</span>
           <h3>AI-driven digital pathology in urological cancers</h3>
           <p data-ko="비뇨기암 병리에서의 AI 최신 동향과 향후 방향을 임상·기술·규제 관점에서 정리한 리뷰 논문입니다." data-ja="泌尿器がん病理におけるAIの最新動向と今後の方向性を、臨床・技術・規制の観点から整理したレビュー論文です。">A review of current trends and future directions for AI in urological cancer pathology, spanning clinical, technical, and regulatory perspectives.</p>
@@ -427,7 +430,8 @@
 
       <article class="row reveal">
         <div class="acc">06</div>
-        <div class="main nofig">
+        <div class="main">
+          <a class="thumb" href="https://arxiv.org/abs/2608.03145" target="_blank" rel="noopener"><img src="/assets/pub_tnbc_risk_heatmap.jpg" alt="Tumor patch risk-score heatmap with high- and low-risk patch regions" loading="lazy"></a>
           <span class="venue" data-ko="프리프린트 · 2026" data-ja="プレプリント · 2026">Preprint · 2026</span>
           <h3>Spatial proteomics guided by H&amp;E-based AI: recurrence-risk niches in TNBC</h3>
           <p data-ko="H&E 기반 AI 위험도 점수로 공간 프로테오믹스를 안내해 삼중음성 유방암 156명을 분석했습니다. 고위험 니치는 세포 증식 경로가, 저위험 니치는 면역 활성이 두드러졌고, 여기서 도출한 13개 단백질 시그니처가 영상 기반 위험도와 결합해 예후 성능을 높였습니다." data-ja="H&EベースのAIリスクスコアで空間プロテオミクスを誘導し、トリプルネガティブ乳がん156例を解析しました。高リスクニッチでは細胞増殖経路、低リスクニッチでは免疫活性が顕著で、そこから導出した13タンパク質シグネチャが画像ベースのリスクスコアと組み合わさり予後性能を向上させました。">Using H&amp;E-based AI risk scores to guide spatial proteomics across 156 triple-negative breast cancer patients. High-risk niches showed proliferative programs and low-risk niches immune activation, yielding a 13-protein signature that improved prognosis when combined with the image-based risk score.</p>
@@ -437,7 +441,22 @@
       </article>
 
       <article class="row reveal">
-        <div class="acc">07</div>
+        <div class="acc">07 †</div>
+        <div class="main">
+          <a class="thumb" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><img src="/assets/pub_mospr_macrostate.jpg" alt="MoSPR: patches to morpho-spatial macrostates, then low-rank regression to gene expression" loading="lazy"></a>
+          <span class="venue" data-ko="프리프린트 · 2026 · 공동 1저자" data-ja="プレプリント · 2026 · 共同筆頭">Preprint · 2026 · Co-first</span>
+          <h3>MoSPR: histology-to-gene expression prediction with morpho-spatial macrostates</h3>
+          <p data-ko="WSI 패치를 형태학적 미시 상태로 묶고, 그 공간적 인접 관계에서 거시 상태(macrostate)를 찾아 저랭크 분자 프로그램으로 유전자 발현을 예측하는 선형 회귀 프레임워크입니다. TCGA 3개 암종에서 비교 모델 14종보다 높은 성능을 보였고, 선형 구조 덕분에 예측을 전역·영역별 분자 프로그램으로 분해해 해석할 수 있습니다." data-ja="WSIパッチを形態学的なミクロ状態にまとめ、その空間的隣接関係からマクロ状態(macrostate)を見出し、低ランク分子プログラムで遺伝子発現を予測する線形回帰フレームワークです。TCGAの3がん種で比較14手法を上回り、線形構造により予測を大域・領域別の分子プログラムへ分解して解釈できます。">A linear framework that groups WSI patches into morphological microstates, discovers spatial macrostates from their adjacency, and maps them through low-rank molecular programs to gene expression. Outperforms 14 baselines across three TCGA cancers, stays strong with less training data, and its linear form attributes each prediction to global and region-specific programs.</p>
+          <div class="metrics" data-ko="<span>유전자별 PCC</span><b>BRCA 0.413 · KIRC 0.334 · LUAD 0.358</b><span>· 15개 방법 중 1위</span>" data-ja="<span>遺伝子別PCC</span><b>BRCA 0.413 · KIRC 0.334 · LUAD 0.358</b><span>· 15手法中1位</span>"><span>Gene-wise PCC</span><b>BRCA 0.413 · KIRC 0.334 · LUAD 0.358</b><span>· best of 15 methods</span></div>
+        </div>
+        <div class="gos">
+          <a class="go" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener">arXiv ↗</a>
+          <a class="go" href="https://github.com/Radisen-Panthera/MoSPR" target="_blank" rel="noopener">Code ↗</a>
+        </div>
+      </article>
+
+      <article class="row reveal">
+        <div class="acc">08</div>
         <div class="main">
           <a class="thumb" href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener"><img src="/assets/pub_prostate_multisection.png" alt="Multi-section whole-slide sampling strategies for prostate BCR" loading="lazy"></a>
           <span class="venue" data-ko="프리프린트 · 2026" data-ja="プレプリント · 2026">Preprint · 2026</span>
@@ -449,7 +468,7 @@
       </article>
 
       <article class="row reveal">
-        <div class="acc">08</div>
+        <div class="acc">09</div>
         <div class="main">
           <a class="thumb" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener"><img src="/assets/pub_contrastive_embed.png" alt="Encoder embedding-space illustration for supervised contrastive learning" loading="lazy"></a>
           <span class="venue">IEEE Access · 2021</span>
@@ -580,6 +599,14 @@
         <h3 data-ko="수의 종양 CDSS & 버추얼 셀" data-ja="獣医腫瘍CDSS & バーチャルセル">Veterinary oncology CDSS &amp; Virtual Cell</h3>
         <p data-ko="임상의사결정지원(CDSS)을 위한 반려견 종양 약물 추천 알고리즘 개발, 그리고 Virtual Cell Challenge 공동 주도(만능줄기세포의 CRISPR 넉다운 반응 예측)." data-ja="臨床意思決定支援(CDSS)のためのイヌ腫瘍薬剤推薦アルゴリズム開発、およびVirtual Cell Challengeの共同主導(多能性幹細胞のCRISPRノックダウン応答予測)。">Canine oncology drug-recommendation algorithm toward a clinical decision support system, plus co-leading the Virtual Cell Challenge, predicting CRISPR-knockdown response in pluripotent stem cells.</p>
         <div class="tagline" data-ko="<span>Top-k 정확도</span><b>≥ 70%</b><span>· 반려견 종양 코호트</span><span>·</span><b>CRISPR 섭동</b>" data-ja="<span>Top-k精度</span><b>≥ 70%</b><span>· イヌ腫瘍コホート</span><span>·</span><b>CRISPR摂動</b>"><span>Top-k accuracy</span><b>≥ 70%</b><span>· canine oncology cohort</span><span>·</span><b>CRISPR perturbation</b></div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-fig"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></div>
+        <div class="k" data-ko="사이드 프로젝트 · NVIDIA 해커톤 2026" data-ja="サイドプロジェクト · NVIDIAハッカソン2026">Side project · NVIDIA Hackathon 2026</div>
+        <h3 data-ko="FlyGate: 신약 탐색부터 약물감시까지 근거 기반 에이전트" data-ja="FlyGate: 創薬探索から医薬品安全性監視までの根拠ベースエージェント">FlyGate: evidence-first agent from drug discovery to pharmacovigilance</h3>
+        <p data-ko="NVIDIA Korea Agentic AI Hackathon 2026 출품작(5인 팀). 시판 전 표적 결합 예측(FlyDiscovery)과 시판 후 이상사례 감시(FlyVigilance)를 하나의 에이전트로 잇습니다. BioNeMo NIM(OpenFold3 · DiffDock · Boltz-2)으로 구조 예측부터 친화도까지 평가하는 FlyDiscovery 모듈과 탐색 워크벤치 UI를 담당했습니다." data-ja="NVIDIA Korea Agentic AI Hackathon 2026 出品作(5人チーム)。市販前の標的結合予測(FlyDiscovery)と市販後の有害事象監視(FlyVigilance)を一つのエージェントでつなぎます。BioNeMo NIM(OpenFold3 · DiffDock · Boltz-2)で構造予測から親和性まで評価するFlyDiscoveryモジュールと探索ワークベンチUIを担当しました。">NVIDIA Korea Agentic AI Hackathon 2026 entry (team of 5) linking pre-market target binding (FlyDiscovery) and post-market adverse-event surveillance (FlyVigilance) in one agent. I built FlyDiscovery, which scores candidates from structure prediction to affinity with BioNeMo NIM (OpenFold3 · DiffDock · Boltz-2), and its discovery-workbench UI.</p>
+        <div class="tagline" data-ko="<span>OpenFold3 RMSD</span><b>1.0 Å</b><span>Boltz-2 친화도</span><b>ρ 0.767</b><a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a><a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a>" data-ja="<span>OpenFold3 RMSD</span><b>1.0 Å</b><span>Boltz-2 親和性</span><b>ρ 0.767</b><a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a><a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a>"><span>OpenFold3 RMSD</span><b>1.0 Å</b><span>Boltz-2 affinity</span><b>ρ 0.767</b><a href="https://flygate.kr" target="_blank" rel="noopener">live ↗</a><a href="https://github.com/Team-FlyGate/Project-FlyGate" target="_blank" rel="noopener">code ↗</a></div>
       </div>
 
       <div class="card reveal">
@@ -781,7 +808,7 @@
 </main>
 
 <footer>GEONGYU LEE · 이건규 · AI RESEARCHER · COMPUTATIONAL PATHOLOGY × MULTI-OMICS · SEOUL, KR
-  <span class="upd" data-ko="최종 업데이트 2026-09-17" data-ja="最終更新 2026-09-17">LAST UPDATED 2026-09-17</span>
+  <span class="upd" data-ko="최종 업데이트 2026-09-30" data-ja="最終更新 2026-09-30">LAST UPDATED 2026-09-30</span>
 </footer>
 
 <script>
