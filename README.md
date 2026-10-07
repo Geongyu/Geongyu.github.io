@@ -8,8 +8,12 @@
 <p align="center">
   <a href="https://geongyu.github.io/"><img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-geongyu.github.io-7d8cff?style=flat-square&logo=githubpages&logoColor=white"></a>
   <a href="https://scholar.google.com/citations?user=43BuluYAAAAJ"><img alt="Google Scholar" src="https://img.shields.io/badge/Google%20Scholar-4285F4?style=flat-square&logo=googlescholar&logoColor=white"></a>
+  <!-- temporarily hidden: LinkedIn
   <a href="https://www.linkedin.com/in/geongyu-lee/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white"></a>
+  -->
+  <!-- temporarily hidden: Email
   <a href="mailto:rjsrb365@gmail.com"><img alt="Email" src="https://img.shields.io/badge/Email-rjsrb365%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white"></a>
+  -->
 </p>
 
 <p align="center">
@@ -132,4 +136,4 @@ python3 cv/build_cv.py assets   # → assets/Geongyu_Lee_CV_{EN,KO,JA}.pdf
 - Every page declares `canonical`, `hreflang` (en / ko / ja / x-default), Open Graph + Twitter cards, and a `schema.org/Person` JSON-LD block.
 - Submit `sitemap.xml` in Google Search Console and Bing Webmaster Tools after each structural change.
 
-<p align="center"><sub>© Geongyu Lee · rjsrb365@gmail.com · Seoul, Republic of Korea</sub></p>
+<p align="center"><sub>© Geongyu Lee · <!-- temporarily hidden: rjsrb365@gmail.com · -->Seoul, Republic of Korea</sub></p>
