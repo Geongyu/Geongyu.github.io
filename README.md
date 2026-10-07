@@ -22,7 +22,7 @@
 
 ## About
 
-I build deep learning systems for **computational pathology** and drug discovery: from whole-slide-image (WSI) pipelines and pre-deployment validation for an **MFDS-track** medical AI product, to large-scale **pathology foundation models**. At **OMIXAI** I am extending histopathology AI into **proteomics and multi-omics**, including a Korea–US–Japan precision-oncology collaboration on Pan-Sarcoma proteogenomics.
+I build deep learning systems for **computational pathology** and drug discovery: from whole-slide-image (WSI) pipelines and pre-deployment validation for an **MFDS-track** medical AI product, to large-scale **pathology foundation models**. At **OMIXAI** I am extending histopathology AI into **proteomics and multi-omics**, including a Korea–Japan precision-oncology collaboration on Pan-Sarcoma proteogenomics.
 
 의료영상과 신약개발을 위한 딥러닝을 5년 넘게 만들어 왔습니다. WSI 파이프라인과 식약처(MFDS) 인허가 트랙 모델 검증부터 병리 파운데이션 모델까지 다뤘고, 지금은 조직병리 AI를 **프로테오믹스·멀티오믹스**로 확장하고 있습니다.
 
@@ -75,7 +75,7 @@ Pathology foundation models · Proteomics & multi-omics × histopathology · Vir
 
 ## Funded programs <sub>(participating researcher)</sub>
 
-- **Pan-Sarcoma Proteogenomic Profiling for Precision Oncology** · Korea–US–Japan · Kyung Hee Univ. Medical Center · 2025 – 2028
+- **Pan-Sarcoma Proteogenomic Profiling for Precision Oncology** · Korea–Japan · Kyung Hee Univ. Medical Center · 2025 – 2028
 - **Virtual-Cell CDSS for Veterinary Oncology** · IPET / Ministry of Agriculture, national R&D · 2026 – 2030 (awarded)
 - **General-Purpose AI for Cancer Pathology Diagnosis** · lead: Deep Bio, national R&D · 2021 – 2025
 
