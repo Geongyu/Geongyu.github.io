@@ -37,8 +37,8 @@ PUBS = [
      ""),
 ]
 
-CONTACT = ["rjsrb365@gmail.com", "github.com/Geongyu", "Google Scholar",
-           "linkedin.com/in/geongyu-lee"]
+# temporarily hidden: "rjsrb365@gmail.com", "linkedin.com/in/geongyu-lee"
+CONTACT = ["github.com/Geongyu", "Google Scholar"]
 
 EN = {
     "lang": "en",
