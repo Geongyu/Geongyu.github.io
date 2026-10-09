@@ -19,18 +19,22 @@ SRC = os.path.join(ROOT, "index.html")
 META = {
     "ko": {
         "lang": "ko", "locale": "ko_KR", "dir": "ko",
-        "title": "이건규 | 의료 AI · 디지털 병리 연구자",
-        "description": "디지털 병리, 병리 파운데이션 모델, H&amp;E 기반 분자 정보 예측, 프로테오믹스·멀티오믹스를 연구하는 AI 리서처 이건규(Geongyu Lee)의 포트폴리오.",
-        "og_title": "이건규 · 의료 AI · 디지털 병리 연구자",
-        "og_description": "Computational Pathology × 멀티오믹스: 병리 파운데이션 모델, H&amp;E 기반 분자 정보 예측, 신약개발.",
+        "title": "이건규 | 머신러닝 리서처 · 의료 AI · 디지털 병리",
+        "description": "조직병리(H&amp;E)에서 분자 정보로 이어지는 크로스모달 학습과 기관·코호트·약물 변화에도 신뢰할 수 있는 예측을 연구하는 머신러닝 리서처 이건규(Geongyu Lee)의 포트폴리오. 디지털 병리 · 병리 파운데이션 모델 · 프로테오믹스·멀티오믹스.",
+        "og_title": "이건규 · 머신러닝 리서처 (의료 AI · 디지털 병리)",
+        "og_description": "크로스모달 학습 · 신뢰할 수 있는 예측 · Computational Pathology × 멀티오믹스",
+        "image_alt": "이건규(Geongyu Lee) 공유 카드: 서울의 머신러닝 리서처 · 크로스모달 학습, 신뢰할 수 있는 예측, Computational Pathology × 멀티오믹스.",
+        "ld_description": "조직병리에서 분자 데이터로 이어지는 크로스모달 학습과, 분포가 바뀌어도 유지되는 신뢰할 수 있는 예측을 연구하는 머신러닝 리서처입니다. 응용 분야는 종양학입니다.",
         "cv": "/assets/Geongyu_Lee_CV_KO.pdf",
     },
     "ja": {
         "lang": "ja", "locale": "ja_JP", "dir": "ja",
-        "title": "イ・ゴンギュ | 医療AI・デジタル病理研究者",
-        "description": "デジタル病理、病理基盤モデル、H&amp;Eからの分子情報予測、プロテオミクス・マルチオミクスを専門とするAI研究者、イ・ゴンギュ(Geongyu Lee)のポートフォリオ。",
-        "og_title": "イ・ゴンギュ · 医療AI・デジタル病理研究者",
-        "og_description": "Computational Pathology × マルチオミクス: 病理基盤モデル、H&amp;Eからの分子情報予測、創薬。",
+        "title": "イ・ゴンギュ | 機械学習リサーチャー・医療AI・デジタル病理",
+        "description": "組織病理(H&amp;E)から分子情報へとつなぐクロスモーダル学習と、施設・コホート・薬剤が変わっても信頼できる予測を研究する機械学習リサーチャー、イ・ゴンギュ(Geongyu Lee)のポートフォリオ。デジタル病理・病理基盤モデル・プロテオミクス/マルチオミクス。",
+        "og_title": "イ・ゴンギュ · 機械学習リサーチャー(医療AI・デジタル病理)",
+        "og_description": "クロスモーダル学習 · 信頼できる予測 · Computational Pathology × マルチオミクス",
+        "image_alt": "イ・ゴンギュ(Geongyu Lee)の共有カード:ソウルの機械学習リサーチャー · クロスモーダル学習、信頼できる予測、Computational Pathology × マルチオミクス。",
+        "ld_description": "組織病理から分子データへとつなぐクロスモーダル学習と、分布シフト下でも信頼できる予測を研究する機械学習リサーチャーです。応用領域は腫瘍学です。",
         "cv": "/assets/Geongyu_Lee_CV_JA.pdf",
     },
 }
@@ -113,6 +117,10 @@ def localise_head(s, m):
         new, k = re.subn(pat, repl, s, count=1)
         assert k == 1, pat
         return new
+
+    def sub_opt(pat, repl, s):
+        """Like sub1, but the target may be absent (e.g. a hidden / removed element)."""
+        return re.subn(pat, lambda _m: repl, s, count=1)[0]
     s = sub1(r'<html lang="en">', f'<html lang="{m["lang"]}">', s)
     s = sub1(r"<title>.*?</title>", f"<title>{m['title']}</title>", s)
     s = sub1(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{m["description"]}">', s)
@@ -127,15 +135,19 @@ def localise_head(s, m):
     alt = "\n".join(f'<meta property="og:locale:alternate" content="{l}">' for l in sorted(locales - {m["locale"]}))
     s = sub1(r'<meta property="og:locale" content="en_US">\n<meta property="og:locale:alternate" content="ko_KR">\n<meta property="og:locale:alternate" content="ja_JP">',
              f'<meta property="og:locale" content="{m["locale"]}">\n{alt}', s)
-    # JSON-LD url
+    # share-image alt text (optional tags); og:image URLs (incl. any ?v= cache-buster) are left untouched
+    s = sub_opt(r'<meta property="og:image:alt" content="[^"]*">', f'<meta property="og:image:alt" content="{m["image_alt"]}">', s)
+    s = sub_opt(r'<meta name="twitter:image:alt" content="[^"]*">', f'<meta name="twitter:image:alt" content="{m["image_alt"]}">', s)
+    # JSON-LD url and (optional) description
     s = sub1(r'"url": "https://geongyu.github.io/"', f'"url": "{SITE}/{m["dir"]}/"', s)
+    s = sub_opt(r'"description": "[^"]*"', f'"description": "{m["ld_description"]}"', s)
     # language switcher active state
     s = sub1(r'<a class="langopt is-active" href="/" hreflang="en" lang="en" aria-current="page">EN</a>',
              '<a class="langopt" href="/" hreflang="en" lang="en">EN</a>', s)
     s = sub1(rf'<a class="langopt" href="/{m["dir"]}/" hreflang="{m["lang"]}" lang="{m["lang"]}">',
              f'<a class="langopt is-active" href="/{m["dir"]}/" hreflang="{m["lang"]}" lang="{m["lang"]}" aria-current="page">', s)
-    # CV download
-    s = sub1(r'href="/assets/Geongyu_Lee_CV_EN\.pdf"', f'href="{m["cv"]}"', s)
+    # CV download (optional: the chip is currently hidden and may be removed entirely)
+    s = sub_opt(r'href="/assets/Geongyu_Lee_CV_EN\.pdf"', f'href="{m["cv"]}"', s)
     return s
 
 
@@ -148,6 +160,16 @@ def main():
         with open(SRC, "w", encoding="utf-8") as f:
             f.write(src)
         print(f"index.html  ← footer date stamped {TODAY}")
+    # keep sitemap <lastmod> in step with the footer date
+    upd = re.search(r"LAST UPDATED (\d{4}-\d{2}-\d{2})", src)
+    smap = os.path.join(ROOT, "sitemap.xml")
+    if upd and os.path.exists(smap):
+        xml = open(smap, encoding="utf-8", newline="").read()
+        new_xml = re.sub(r"<lastmod>\d{4}-\d{2}-\d{2}</lastmod>", f"<lastmod>{upd.group(1)}</lastmod>", xml)
+        if new_xml != xml:
+            with open(smap, "w", encoding="utf-8", newline="") as f:
+                f.write(new_xml)
+            print(f"sitemap.xml ← lastmod {upd.group(1)}")
     for lang, m in META.items():
         body, n = localise_body(src, lang)
         page = localise_head(body, m)
