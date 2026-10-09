@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>イ・ゴンギュ | 機械学習リサーチャー・医療AI・デジタル病理</title>
-<meta name="description" content="機械学習リサーチャー、イ・ゴンギュ(Geongyu Lee)のポートフォリオ。組織病理(H&amp;E)から分子情報へとつなぐクロスモーダル学習と、施設・コホート・薬剤が変わっても信頼できる予測を研究しています。デジタル病理・病理基盤モデル・プロテオミクス/マルチオミクス。">
+<meta name="description" content="機械学習リサーチャー、イ・ゴンギュ(Geongyu Lee)のポートフォリオです。病理画像から分子情報を、プロテオミクスから薬剤応答を予測する機械学習モデルを研究しています。学習データに含まれない施設や薬剤でも予測が有効かどうかの検証に力を入れています。">
 <meta name="author" content="Geongyu Lee">
 <link rel="canonical" href="https://geongyu.github.io/ja/">
 <link rel="alternate" hreflang="en" href="https://geongyu.github.io/">
@@ -19,7 +19,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://geongyu.github.io/ja/">
 <meta property="og:title" content="イ・ゴンギュ · 機械学習リサーチャー(医療AI・デジタル病理)">
-<meta property="og:description" content="クロスモーダル学習 · 信頼できる予測 · Computational Pathology × マルチオミクス">
+<meta property="og:description" content="病理画像から分子情報を、プロテオミクスから薬剤応答を予測する機械学習モデルを研究しています。学習データに含まれない施設や薬剤でも予測が有効かどうかの検証に力を入れています。">
 <meta property="og:image" content="https://geongyu.github.io/assets/og.png?v=2">
 <meta property="og:image:alt" content="イ・ゴンギュ(Geongyu Lee)の共有カード。ソウルの機械学習リサーチャー · クロスモーダル学習、信頼できる予測、Computational Pathology × マルチオミクス。">
 <meta property="og:image:width" content="1200">
@@ -30,7 +30,7 @@
 <meta property="og:locale:alternate" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="イ・ゴンギュ · 機械学習リサーチャー(医療AI・デジタル病理)">
-<meta name="twitter:description" content="クロスモーダル学習 · 信頼できる予測 · Computational Pathology × マルチオミクス">
+<meta name="twitter:description" content="病理画像から分子情報を、プロテオミクスから薬剤応答を予測する機械学習モデルを研究しています。学習データに含まれない施設や薬剤でも予測が有効かどうかの検証に力を入れています。">
 <meta name="twitter:image" content="https://geongyu.github.io/assets/og.png?v=2">
 <meta name="twitter:image:alt" content="イ・ゴンギュ(Geongyu Lee)の共有カード。ソウルの機械学習リサーチャー · クロスモーダル学習、信頼できる予測、Computational Pathology × マルチオミクス。">
 <script type="application/ld+json">
@@ -42,7 +42,7 @@
   "url": "https://geongyu.github.io/ja/",
   "image": "https://geongyu.github.io/assets/profile.jpg",
   "jobTitle": "AI Researcher",
-  "description": "機械学習リサーチャーとして、組織病理から分子データへとつなぐクロスモーダル学習と、分布シフト下でも信頼できる予測を研究しています。応用分野は腫瘍学です。",
+  "description": "病理画像から分子情報を予測するモデルを研究し、現職ではプロテオミクスから薬剤応答を予測するモデルも開発している機械学習リサーチャーです。学習データに含まれない施設や薬剤でも予測が有効かどうかの検証に力を入れています。",
   "worksFor": {"@type": "Organization", "name": "OMIXAI"},
   "alumniOf": [
     {"@type": "CollegeOrUniversity", "name": "Seoul National University of Science and Technology"},
@@ -93,7 +93,10 @@
   .nav a{transition:color .2s}.nav a:hover{color:var(--fg)}
   .langbtn{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;color:var(--fg);background:transparent;border:var(--line-w) solid var(--line-2);border-radius:100px;padding:7px 14px;cursor:pointer;transition:all .2s;min-width:78px}
   .langbtn:hover{border-color:var(--accent);color:var(--accent)}
-  @media(max-width:760px){.nav{display:none}}
+  /* mobile: keep three section links (.m); below 520px the links move to a second row under the brand */
+  @media(max-width:1000px){.brand .bsub{display:none}.topright{gap:14px}.nav{gap:14px;font-size:.66rem;letter-spacing:.05em}}
+  @media(max-width:760px){.brand .bsub{display:none}.topright{gap:12px}.nav{gap:12px;font-size:.62rem;letter-spacing:.04em}.nav a:not(.m){display:none}.langsw .langopt{padding:7px 9px}}
+  @media(max-width:520px){.topbar{flex-wrap:wrap;gap:8px 12px;padding-top:12px;padding-bottom:12px;background:linear-gradient(var(--bg) 72%,rgba(13,14,18,0))}.topright{display:contents}.langsw{order:1}.nav{order:2;flex-basis:100%;gap:18px}section.block{scroll-margin-top:12px}}
 
   .hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center;padding:120px 0 72px}
   .hero h1{font-family:var(--f-disp);font-weight:600;font-size:clamp(3rem,7.5vw,5.6rem);line-height:.98;letter-spacing:-.02em;margin:22px 0 .1em}
@@ -270,15 +273,15 @@
 <body>
 
 <div class="topbar">
-  <div class="brand"><b>Geongyu&nbsp;Lee</b> · 이건규</div>
+  <div class="brand"><b>Geongyu&nbsp;Lee</b><span class="bsub"> · 이건규</span></div>
   <div class="topright">
     <nav class="nav">
-      <a href="#publications">論文</a>
+      <a class="m" href="#publications">論文</a>
       <a href="#conferences">学会発表</a>
       <a href="#projects">プロジェクト</a>
-      <a href="#experience">経歴</a>
+      <a class="m" href="#experience">経歴</a>
       <a href="#education">学歴</a>
-      <a href="#contact">連絡先</a>
+      <a class="m" href="#contact">連絡先</a>
     </nav>
     <nav class="langsw" aria-label="Language">
       <a class="langopt" href="/" hreflang="en" lang="en">EN</a>
@@ -299,7 +302,7 @@
       </div>
       <h1>Geongyu Lee<span class="kr">イ・ゴンギュ · 이건규</span></h1>
       <p class="role"><span class='b'>クロスモーダル学習</span> / 信頼できる予測 / <span class='b'>Computational Pathology × マルチオミクス</span></p>
-      <p class="lede">日常診療の<b>H&E染色スライド</b>から分子状態(遺伝子発現、受容体ステータス、遺伝子検査に基づく再発リスク)を推定するモデルを開発し、施設・コホート・薬剤が変わっても予測がどこまで<b>通用する</b>かを検証しています。企業でのR&D経験は5年以上です。Deep Bioでは韓国食品医薬品安全処(MFDS)に承認申請された医療AI製品の出荷前モデル検証に貢献しました。病理基盤モデルG2L論文の共著者でもあります。現在は、H&Eによる分子予測の事前登録・施設分離検証と、未学習薬剤(leave-drug-out)での薬剤応答予測に取り組んでいます。</p>
+      <p class="lede">病理画像から分子情報を予測する機械学習モデルを研究し、現職ではプロテオミクスから薬剤応答を予測するモデルも開発しています。学習データに含まれない施設や薬剤でも予測が有効かどうかの検証に力を入れています。</p>
       <div class="chips">
         <!-- temporarily hidden: CV <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_JA.pdf" download><svg viewBox='0 0 24 24'><path d='M13 3h-2v8H8l4 4 4-4h-3V3zM5 19h14v2H5z'/></svg>CV (PDF)</a> -->
         <a class="chip icon" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=en" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.9V15h2V8zM4 12.4v3.5C4 18.1 7.6 20 12 20s8-1.9 8-4.1v-3.5l-8 4.4z"/></svg><span class="sr">Scholar</span></a>
@@ -310,7 +313,7 @@
     <div class="ledger" aria-label="Selected publications">
       <div class="ledger-h"><span>主要業績</span><span class="dot"></span></div>
       <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t">MoSPR: H&amp;E → gene expression via morpho-spatial macrostates</span><span class="v first">共同筆頭著者 · プレプリント '26</span></a>
-      <a class="pub" href="#conferences"><span class="t">Predictability ≠ substitutability: H&amp;E molecular prediction across 5 cancers</span><span class="v first">筆頭著者 · GIW '26 · ポスター</span></a>
+      <a class="pub" href="#conferences"><span class="t">Predictability ≠ substitutability: H&amp;E molecular prediction across 5 cancers</span><span class="v first">筆頭著者 · GIW '26 · ポスター採択</span></a>
       <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t">Recurrence risk in early-stage breast cancer from H&amp;E WSIs</span><span class="v first">筆頭著者 · Sci. Reports '25</span></a>
       <a class="pub" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><span class="t">G2L: giga-scale → cancer-specific pathology foundation models</span><span class="v">共著者 · AAAI '26 ワークショップ</span></a>
       <a class="pub" href="https://arxiv.org/abs/2608.03145" target="_blank" rel="noopener"><span class="t">Spatial proteomics × H&amp;E AI: recurrence-risk niches in TNBC</span><span class="v">共著者 · プレプリント '26</span></a>
@@ -326,12 +329,12 @@
       <div class="cell"><div class="big">G2L</div><div class="lab">病理基盤モデル · AAAI 2026 ワークショップ口頭発表 · 共著者</div></div>
       <div class="cell"><div class="big">2<span style="font-size:.5em;color:var(--muted)">nd</span></div><div class="lab">KPIs 2024チャレンジ · WSIレベル部門 · MICCAI · Deep Bioチーム</div></div>
     </div>
-    <div class="strip-lab reveal">分布シフト下での結果</div>
+    <div class="strip-lab reveal">主な研究成果</div>
     <div class="strip results reveal">
-      <div class="cell"><div class="big">0.959</div><div class="lab">頭頸部がんHPV AUROC · 事前登録・施設分離検証 · 筆頭著者</div></div>
-      <div class="cell"><div class="big">#1<span style="font-size:.5em;color:var(--muted)"> / 15</span></div><div class="lab">H&E → 遺伝子発現 · TCGA 3がん種で15手法中1位 · 共同筆頭著者</div></div>
-      <div class="cell"><div class="big">≥0.65</div><div class="lab">薬剤応答 Pearson · 未学習薬剤(leave-drug-out) · 社内R&D、未発表</div></div>
-      <div class="cell"><div class="big">0.728<span style="font-size:.5em;color:var(--muted)"> → 0.760</span></div><div class="lab">乳がんWSI mIoU · カバレッジ95% → 80% · 選択的セグメンテーション · 共著者</div></div>
+      <div class="cell"><div class="big">1<span style='font-size:.5em;color:var(--muted)'> / 約15</span></div><div class="lab">事前登録した確定基準を満たしたH&Eエンドポイント(頭頸部がんHPV、AUROC 0.959) · 5がん種 · 筆頭著者</div></div>
+      <div class="cell"><div class="big">1<span style='font-size:.5em;color:var(--muted)'>位 / 15</span></div><div class="lab">遺伝子別PCC、H&E → 遺伝子発現 · 論文内の比較実験で15手法中1位、TCGA 3がん種 · 共同筆頭著者</div></div>
+      <div class="cell"><div class="big">≥0.65</div><div class="lab">薬剤応答 Pearson · 学習データに含まれない薬剤(leave-drug-out) · 社内R&D、未発表</div></div>
+      <div class="cell"><div class="big">0.728<span style="font-size:.5em;color:var(--muted)"> / 0.760</span></div><div class="lab">乳がんWSI mIoU · カバレッジ95% / 80% · 選択的セグメンテーションにおける精度とカバレッジのトレードオフ · 共著者</div></div>
     </div>
   </section>
 
@@ -340,16 +343,16 @@
     <div class="head reveal"><span class="num">00</span><h2>プロフィール</h2></div>
     <div class="about reveal">
       <div>
-        <p>日常診療の<strong>H&E染色スライド</strong>に基づくモデルの予測が、どのような場合に分子検査の代わりになり得るのかを研究しています。これまでに、21遺伝子検査の再発リスク群(<strong>Scientific Reports</strong> 2025、筆頭著者)、ER/PR/HER2受容体ステータス(AACR 2023、筆頭著者)、遺伝子発現(<strong>MoSPR</strong>、共同筆頭著者、TCGA 3がん種で15手法中1位)を対象に<strong>クロスモーダル予測モデル</strong>を開発してきました。現在は、施設分離検証、label-shuffle対照、5がん種にわたる<strong>事前登録の代替コスト評価プロトコル</strong>を用いて、これらの予測が実際の検査を代替できるかを検証しています(GIW ISCB-Asia 2026、筆頭著者)。</p>
-        <p>OMIXAIでは、プロテオミクス・RNAとH&Eを統合して薬剤応答を予測する<strong>マルチオミクスモデルのR&D</strong>を主導しています(進行中)。日韓のPan-Sarcomaプロテオゲノミクス共同研究もその一環です。Deep Bio在籍時にはWSIパイプラインを構築し、<strong>MFDSに承認申請された医療AI製品の出荷前モデル検証および申請文書作成に貢献</strong>しました。</p>
+        <p><strong>H&E染色スライド</strong>から、21遺伝子検査の再発リスク群(<strong>Scientific Reports</strong> 2025、筆頭著者)、ER/PR/HER2受容体ステータス(AACR 2023、筆頭著者)、遺伝子発現(<strong>MoSPR</strong>、共同筆頭著者、論文内の比較実験で遺伝子別PCCが15手法中1位)を予測する<strong>クロスモーダルモデル</strong>を開発してきました。続く5がん種の研究(GIW ISCB-Asia 2026、筆頭著者)では、こうした予測が実際の分子検査を代替できるかを検証しました。<strong>事前登録した単一のプロトコル</strong>を5がん種すべてに適用し、確定基準を満たさなかったエンドポイントの多くは「否定」ではなく「未決」として報告しました。</p>
+        <p>OMIXAIでは、プロテオミクス・RNA・H&Eを統合して薬剤応答を予測する<strong>マルチオミクスモデルのR&D</strong>を主導しています(進行中)。Deep BioではWSIパイプラインを構築し、韓国食品医薬品安全処(MFDS)に承認申請された医療AI製品の<strong>実運用前のモデル検証と申請文書作成に貢献</strong>しました。</p>
       </div>
       <div class="aside">
         <h3>研究テーマ</h3>
         <ul>
           <li>クロスモーダル学習(組織病理 → 遺伝子発現・受容体ステータス・プロテオミクス)</li>
           <li>表現学習と病理基盤モデル</li>
-          <li>分布シフト下での信頼性(施設・コホート・未学習薬剤)</li>
-          <li>選択的予測とショートカット検証</li>
+          <li>分布シフト下での信頼性(施設・コホート・学習データに含まれない薬剤)</li>
+          <li>選択的予測とショートカット学習の検出・検証</li>
           <li>マルチモーダル統合による薬剤応答予測(プロテオミクス × H&E × RNA、進行中)</li>
           <li>バーチャルセル・摂動(perturbation)予測</li>
         </ul>
@@ -388,7 +391,7 @@
           <span class="venue">プレプリント · 2026 · 査読中 · 共同筆頭著者 †</span>
           <h3>MoSPR: Histology-to-Gene Expression Prediction with Morpho-Spatial Macrostates and Low-Rank Molecular Programs</h3>
           <p>WSIパッチを形態学的ミクロ状態にまとめ、空間的隣接関係からマクロ状態(macrostate)を抽出し、低ランク分子プログラムで遺伝子発現を予測する線形回帰フレームワークです。TCGAの3がん種で14の比較手法を上回り、少ない学習データでも性能を維持しました。線形構造のため、予測を大域・領域別の分子プログラムに分解して解釈できます。</p>
-          <div class="metrics"><span>遺伝子別PCC</span><b>BRCA 0.413 · KIRC 0.334 · LUAD 0.358</b><span>· 15手法中1位</span></div>
+          <div class="metrics"><span>遺伝子別PCC</span><b>BRCA 0.413 · KIRC 0.334 · LUAD 0.358</b><span>· 論文内の比較実験で15手法中1位</span></div>
         </div>
         <div class="gos">
           <a class="go" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener">arXiv ↗</a>
@@ -503,7 +506,7 @@
         <div class="main nofig">
           <span class="venue">BIOINFO/GIW ISCB-Asia 2026 · 口頭発表(採択) · 共著者</span>
           <h3>A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics</h3>
-          <p>ソウル · 2026.11.17–20。マルチオームRNA velocityが出力する遺伝子別パラメータ(転写率α、分解率γ、クロマチン-転写ラグ)が本当に信頼できるかを検証しました。5つのvelocity手法を4つの観点(手法間再現性、ATAC-shuffle対照、外部マルチオームデータセット5件での再現、実測の合成・分解率との整合)で評価しました。手法間で再現されたのはαのみで、γとラグには直交検証が必要です。</p>
+          <p>ソウル · 2026.11.17–20。マルチオームRNA velocityが出力する遺伝子別パラメータ(転写率α、分解率γ、クロマチン-転写ラグ)が本当に信頼できるかを検証しました。5つのvelocity手法を4つの観点(手法間再現性、ATAC-shuffle対照、外部マルチオームデータセット5件での再現、実測の合成・分解率との整合)で評価しました。手法間で再現されたのはαのみで、γとラグには独立した測定法による検証が必要です。</p>
           <div class="metrics"><span>α再現性</span><b>ρ = 0.88</b><span>γ</span><b>ρ ≈ −0.1</b><span>事前登録 6/6 通過</span></div>
         </div>
       </article>
@@ -514,7 +517,7 @@
           <a class="thumb" href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener"><img src="/assets/talk_receptor_gradcam.jpg" alt="Grad-CAM over H&amp;E for protein-receptor status prediction" loading="lazy"></a>
           <span class="venue">AACR年次総会 2023 · ポスター発表 · 筆頭著者</span>
           <h3>Predicting protein receptor status from H&amp;E-stained images in breast cancer</h3>
-          <p>抄録 #5404 · 2023.04.02。IHCを用いず、H&E WSIのみからER・PR・HER2ステータスを予測しました。TCGA-BRCA 728例を用い、共有エンコーダと受容体別ヘッドを持つマルチタスクモデルに信頼度ベースのパッチ選択を組み合わせました。信頼度70%未満のパッチは除外し、色調を変動させるデータ拡張で、予測が染色の色調に依存しないようにしました。高麗大学九老病院との共同研究。</p>
+          <p>オーランド · 2023.04 · 抄録 #5404。IHCを用いず、H&E WSIのみからER・PR・HER2ステータスを予測しました。TCGA-BRCA 728例を用い、共有エンコーダと受容体別ヘッドを持つマルチタスクモデルに信頼度ベースのパッチ選択を組み合わせました。信頼度70%未満のパッチは除外しました。染色の色調の違いによる影響を抑えるため、色調のデータ拡張を適用しました。高麗大学九老病院との共同研究。</p>
           <div class="metrics"><span>スライド精度 · クラス均衡テストセット</span><b>ER 74.6 · PR 66.0 · HER2 76.6</b></div>
         </div>
         <a class="go" href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener">ポスター ↗</a>
@@ -526,7 +529,7 @@
           <a class="thumb" href="/archive/conferences/AACR2022_breast_recurrence_slide_01.png" target="_blank" rel="noopener"><img src="/archive/conferences/AACR2022_breast_recurrence_slide_03.png" alt="Patch-level classification and majority-voting pipeline for recurrence risk" loading="lazy"></a>
           <span class="venue">AACR年次総会 2022 · ポスター発表 · 筆頭著者</span>
           <h3>Recurrence risk prediction based on automatic histologic analysis of breast cancer using whole slide images</h3>
-          <p>ニューオーリンズ · 2022.04.12。H&E WSI解析で21遺伝子再発スコアを近似できるかを検証しました。ホルモン受容体陽性・リンパ節陰性・HER2陰性の125例をパッチ単位CNNと多数決で低・中・高リスクに分類し、nested交差検証で評価しました。高リスク症例を低リスクと誤分類した例は0件でした。Scientific Reports(2025)論文につながった研究。</p>
+          <p>ニューオーリンズ · 2022.04.12。H&E WSIから21遺伝子再発スコアのリスク群を予測した研究(125例)で、のちにScientific Reports(2025)論文へと発展しました。高リスク症例を低リスクと誤分類した例はありませんでした。</p>
           <div class="metrics"><span>one-vs-rest精度 L / I / H</span><b>0.832 / 0.776 / 0.912</b><span>感度 L / I / H</span><b>0.857 / 0.746 / 0.529</b></div>
         </div>
         <a class="go" href="/archive/conferences/AACR2022_breast_recurrence_slide_01.png" target="_blank" rel="noopener">スライド ↗</a>
@@ -538,7 +541,7 @@
           <a class="thumb" href="/archive/conferences/AACR2022_pancreatic_survival_slide_01.png" target="_blank" rel="noopener"><img src="/archive/conferences/AACR2022_pancreatic_survival_slide_05.png" alt="5-fold C-index results for pancreatic adenocarcinoma survival model" loading="lazy"></a>
           <span class="venue">AACR年次総会 2022 · ポスター発表 · 共著者</span>
           <h3>A deep learning based pancreatic adenocarcinoma survival prediction model applicable to adenocarcinoma of other organs</h3>
-          <p>ニューオーリンズ · 2022.04。組織画像の生存予測モデルが他臓器にも通用するかを検証しました。TCGA膵腺がん179例で学習し(5-fold交差検証、C-index 0.726)、直腸(0.694)と乳房(0.571)に適用しました。近縁の腺がんである直腸では性能がおおむね維持され、乳房では低下しました。汎腺がん特徴抽出器(GAFE)を使用。</p>
+          <p>ニューオーリンズ · 2022.04。TCGA膵腺がん179例で学習した組織画像の生存予測モデルを、直腸がんと乳がんに適用しました。直腸がんでは性能がおおむね維持され、乳がんでは低下しました。</p>
           <div class="metrics"><span>C-index</span><b>0.726</b><span>READ適用</span><b>0.694</b><span>BRCA適用</span><b>0.571</b></div>
         </div>
         <a class="go" href="/archive/conferences/AACR2022_pancreatic_survival_slide_01.png" target="_blank" rel="noopener">スライド ↗</a>
@@ -550,7 +553,7 @@
           <a class="thumb" href="/archive/conferences/USCAP2022_poster_breast_survival_prostate_feature.png" target="_blank" rel="noopener"><img src="/assets/talk_survival_km.png" alt="Kaplan-Meier survival curves by AI risk score" loading="lazy"></a>
           <span class="venue">USCAP年次総会 2022 · ポスター発表 · 共著者</span>
           <h3>Breast cancer survival analysis through the extracted feature from the prostate diagnosis model</h3>
-          <p>2022.03.18。一般画像バックボーンの代わりに前立腺診断モデルの特徴を用い、H&E WSIから乳がん死亡リスクを予測しました。TCGA-BRCA 980枚でattention型多重インスタンス学習を5-fold交差検証で評価し、高・低リスク群はKaplan-Meier曲線で分離されました。</p>
+          <p>2022.03.18。学習済みの前立腺診断モデルの特徴を用いて、H&E WSIから乳がんの死亡リスクを予測しました(TCGA-BRCA 980枚)。Kaplan-Meier曲線で高リスク群と低リスク群が分離されました。</p>
           <div class="metrics"><span>C-index</span><b>0.655</b><span>log-rank</span><b>p = 0.0011</b></div>
         </div>
         <a class="go" href="/archive/conferences/USCAP2022_poster_breast_survival_prostate_feature.png" target="_blank" rel="noopener">ポスター ↗</a>
@@ -562,7 +565,7 @@
           <a class="thumb" href="/archive/conferences/USCAP2022_poster_histologic_grading.png" target="_blank" rel="noopener"><img src="/assets/talk_grading_cam.jpg" alt="Class-activation maps for breast histologic grading" loading="lazy"></a>
           <span class="venue">USCAP年次総会 2022 · ポスター発表 · 筆頭著者</span>
           <h3>Automatic histological grading of breast cancer resection tissue</h3>
-          <p>2022.03.17。観察者間のばらつきを減らすため、組織学的グレード(腺管形成・核グレード・核分裂像)の一貫した判定を目指しました。病理医がグレードと領域を注釈したH&E WSI 125枚で腫瘍パッチをグレード1/2/3に分類し、class-activation mapで検討しました。高麗大学医学部との共同研究。</p>
+          <p>2022.03.17。病理医が注釈を付けたH&E WSI 125枚で腫瘍パッチを組織学的グレード1・2・3に分類し、観察者間のばらつきの低減を目指しました。高麗大学医学部との共同研究です。</p>
           <div class="metrics"><span>パッチ one-vs-rest精度 G1 / G2 / G3</span><b>0.958 / 0.922 / 0.956</b></div>
         </div>
         <a class="go" href="/archive/conferences/USCAP2022_poster_histologic_grading.png" target="_blank" rel="noopener">ポスター ↗</a>
@@ -574,7 +577,7 @@
           <a class="thumb" href="/archive/conferences/KIIE2020_contrastive_loss_segmentation_slides.pdf" target="_blank" rel="noopener"><img src="/archive/conferences/KIIE2020_contrastive_loss_segmentation_arch.png" alt="U-Net with feature-wise contrastive loss on encoder embeddings" loading="lazy"></a>
           <span class="venue">韓国産業工学会 秋季学術大会 2020 · 口頭発表 · 筆頭著者</span>
           <h3>セグメンテーションモデルの性能向上に向けた対照損失関数の活用</h3>
-          <p>ソウル科学技術大学データサイエンス学科のファン・サンフム教授とともに実施。エンコーダのボトルネック特徴にfeature-wise contrastive lossを課し、同一クラスは近く、異なるクラスは遠くに埋め込まれるようにしました。CT肺(Kaggle)・肝臓(LiTS2017)セグメンテーションでU-Net、UNet++ともに性能が向上し、特に距離ベースの境界指標で大きく改善しました。修士論文のもとになった研究で、研究室のIEEE Access(2021)論文(共著者)とも関連します。</p>
+          <p>ソウル科学技術大学ファン・サンフム教授の指導のもと、エンコーダのボトルネックにfeature-wise contrastive lossを適用し、CT肺・肝臓セグメンテーションでU-NetとUNet++の性能を向上させました。修士論文のもとになった研究です。</p>
           <div class="metrics"><span>肝臓 DSC</span><b>0.912 → 0.923</b><span>肝臓 ASD</span><b>0.533 → 0.365</b></div>
         </div>
         <a class="go" href="/archive/conferences/KIIE2020_contrastive_loss_segmentation_slides.pdf" target="_blank" rel="noopener">スライド ↗</a>
@@ -592,14 +595,14 @@
         <div class="k">プロテオミクス · OMIXAI</div>
         <h3>プロテオミクスによる薬剤応答予測</h3>
         <p>プロテオミクスから細胞株の薬剤応答(IC50)を予測するモデルを開発しました。テスト薬剤をすべて学習から除くleave-drug-out方式で評価しました(Pearson ≥ 0.65)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も別途行いました。</p>
-        <div class="tagline"><span>Leave-drug-out CV Pearson</span><b>≥ 0.65</b><span>· 未学習薬剤</span><span>·</span><span>社内R&D、未発表</span></div>
+        <div class="tagline"><span>Leave-drug-out CV Pearson</span><b>≥ 0.65</b><span>· 学習データに含まれない薬剤</span><span>·</span><span>社内R&D、未発表</span></div>
       </div>
 
       <div class="card reveal">
         <div class="k">精密腫瘍学 · OMIXAI</div>
         <h3>獣医腫瘍CDSS・バーチャルセル</h3>
         <p>臨床意思決定支援システム(CDSS)に向け、犬の腫瘍に対する薬剤推薦アルゴリズムを開発しました。Arc Institute Virtual Cell ChallengeではOMIXAIの参加チームを共同主導し、多能性幹細胞のCRISPRノックダウン応答を予測しました。</p>
-        <div class="tagline"><span>犬の薬剤推薦</span><span>top-k ≥ 70% · 社内コホート</span><b>·</b><span>CRISPR摂動</span></div>
+        <div class="tagline"><span>犬の薬剤推薦</span><span>top-k ≥ 70% · 自社コホート · 社内R&D、未発表</span><b>·</b><span>CRISPR摂動</span></div>
       </div>
 
       <div class="card reveal">
@@ -699,12 +702,12 @@
           <div class="sub">クロスモーダル学習 · マルチオミクス · 薬剤応答</div>
           <ul>
             <li>プロテオミクス・RNAとH&E病理画像を統合して薬剤応答を予測するマルチオミクスモデルの研究開発を主導(進行中)</li>
-            <li>プロテオミクスに基づく細胞株の薬剤応答(IC50)予測モデルを開発し、テスト薬剤をすべて学習から除外したleave-drug-out方式で評価(Pearson ≥ 0.65)。別途、LoRA/PEFTによる自己教師ありプロテオーム表現学習も実施</li>
+            <li>プロテオミクスに基づく細胞株の薬剤応答(IC50)予測モデルの開発(学習データに含まれない薬剤でのleave-drug-out評価、Pearson ≥ 0.65、社内R&D・未発表)</li>
             <li>犬の腫瘍に対する薬剤推薦アルゴリズムとADMET予測モデルの開発</li>
             <li>Arc Institute Virtual Cell ChallengeでのOMIXAI参加チームの共同主導(多能性幹細胞のCRISPRノックダウン応答予測)</li>
-            <li>MoSPR(H&E画像からの遺伝子発現予測)の共同筆頭著者。TCGA 3がん種で15手法中1位、プレプリント・コード公開</li>
-            <li>G2L論文(AAAI 2026 ワークショップ W3PHIAI 口頭発表)の共著者。H&EベースのAIリスクスコアで空間プロテオミクスの解析領域を選定し、トリプルネガティブ乳がんの再発リスクニッチを解析した研究(プレプリント、2026)の共著者</li>
-            <li>社内研究インフラ(サーバー・NAS)の運用とセキュリティ対応、Git運用ルール(PR・コードレビュー・命名規則)の策定、協力会社とのデータ転送プロトコルおよびWebシステムの構築</li>
+            <li>H&E画像から遺伝子発現を予測するMoSPRの共同筆頭著者(プレプリント・コード公開)</li>
+            <li>G2L論文(AAAI 2026 ワークショップ W3PHIAI 口頭発表)およびトリプルネガティブ乳がんの空間プロテオミクス研究(プレプリント、2026)の共著者</li>
+            <li>社内研究サーバー・NASの運用、Git運用ルールの策定、協力会社とのデータ転送システムの構築</li>
           </ul>
         </div>
       </div>
@@ -718,7 +721,7 @@
             <li>リンパ節転移検出モデルとKPIs 2024チャレンジ向け糸球体セグメンテーションモデルの開発(WSIレベル部門2位、MICCAI 2024)。チャレンジ報告論文(Medical Image Analysis、2026)の共著者</li>
             <li>前立腺がんの転移・再発リスクモデリングのプロジェクトを主導</li>
             <li>AACR(2022、2023)・USCAP(2022)で乳がん病理AI研究を筆頭著者として発表。膵臓がん・乳がんの生存予測に関するポスター発表の共著者</li>
-            <li>MFDSに承認申請された医療AI製品の出荷前モデル検証および申請文書作成に貢献。社内サーバー自動化ツール(Docker)の開発</li>
+            <li>MFDSに承認申請された医療AI製品について、実運用前のモデル検証と申請文書作成に貢献。社内サーバー自動化ツール(Docker)の開発</li>
           </ul>
         </div>
       </div>
@@ -764,9 +767,9 @@
         <div class="when"><span class="co">Pseudo Lab</span><span>2026 · シーズン12</span><br><span class="loc">オープンリサーチコミュニティ</span></div>
         <div class="what">
           <h3>AutoBioX: AI Agents for End-to-End Bio Research</h3>
-          <div class="sub">研究メンバー(ランナー) · 16週 · 修了</div>
+          <div class="sub">研究メンバー(ランナー) · 修了</div>
           <ul>
-            <li>バイオ研究向けAIエージェントを扱う16週間のシーズンプロジェクトをランナーとして修了(9名チーム、毎週金曜に定例ミーティング)</li>
+            <li>バイオ研究向けAIエージェントを扱う9名チームに参加</li>
             <li>本プロジェクトから生まれた研究2件がBIOINFO/GIW ISCB-Asia 2026に採択(ポスター発表は筆頭著者・発表者、口頭発表は共著者)。その後、両研究をML4H 2026 Findingsトラックへ投稿(査読中)</li>
           </ul>
         </div>
@@ -787,10 +790,7 @@
           <h3>AIキャリア・プロジェクトメンター</h3>
           <div class="sub">メンタリング · プロジェクト指導 · キャリアコーチング</div>
           <ul>
-            <li>履歴書・ポートフォリオ・キャリア開発に関する1対1プログラムで、若手AI・データ人材30名以上をメンタリング</li>
-            <li>3期・8チーム以上(各4–6名)のプロジェクトで、課題設定から手法設計、実験、トラブルシューティング、結果解釈までを支援</li>
-            <li>課題・プロジェクト成果物をレビューし、技術的完成度・問題定式化・発表について具体的なフィードバックを提供</li>
-            <li>キャリアの方向性、プロジェクトの位置づけ、採用担当者・面接官への技術的貢献の伝え方について助言</li>
+            <li>若手AI・データ人材30名以上への1対1メンタリング(履歴書・ポートフォリオ・キャリアの方向性)と、3期にわたる8チーム以上(各4–6名)のプロジェクト指導(課題設定から手法設計、成果物レビューまで)</li>
           </ul>
         </div>
       </div>
@@ -808,9 +808,9 @@
         <div class="skillset"><h4>MLOps・言語</h4><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div>
       </div>
       <div class="reveal">
-        <div class="fund"><h4>精密腫瘍学に向けたPan-Sarcomaプロテオゲノムプロファイリング</h4><div class="meta">日韓共同 · 慶熙大学校医療院<br>2025.04 – 2028.12 · 総事業費 <span class='amt'>4億ウォン</span> · 参加研究員</div></div>
-        <div class="fund"><h4>獣医腫瘍学に向けたバーチャルセルCDSS</h4><div class="meta">農林畜産食品部 IPET · 国家R&D<br>2026 – 2030(採択) · 総事業費 <span class='amt'>30億ウォン以上</span> · 参加研究員</div></div>
-        <div class="fund"><h4>がん病理診断向け汎用AIの開発・実用化</h4><div class="meta">代表機関: Deep Bio · 国家R&D<br>事業期間 2021.04 – 2025.12 · 総事業費 <span class='amt'>23.75億ウォン</span> · 参加研究員(2021.04 – 2025.01)</div></div>
+        <div class="fund"><h4>精密腫瘍学に向けたPan-Sarcomaプロテオゲノムプロファイリング</h4><div class="meta">日韓共同 · 慶熙大学校医療院<br>2025.04 – 2028.12 · 参加研究員</div></div>
+        <div class="fund"><h4>獣医腫瘍学に向けたバーチャルセルCDSS</h4><div class="meta">農林畜産食品部 IPET · 国家R&D<br>2026 – 2030(採択) · 参加研究員</div></div>
+        <div class="fund"><h4>がん病理診断向け汎用AIの開発・実用化</h4><div class="meta">代表機関: Deep Bio · 国家R&D<br>事業期間 2021.04 – 2025.12 · 参加研究員(2021.04 – 2025.01)</div></div>
         <div class="award"><span class="medal">2<span style="font-size:.5em">nd</span></span><p><b>KPIs 2024チャレンジ · WSIレベル部門</b><br>糸球体セグメンテーション · MICCAI 2024 併催 · Med. Image Anal. 2026 掲載</p></div>
       </div>
     </div>

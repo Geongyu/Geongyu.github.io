@@ -4,9 +4,9 @@ Original posters and slides for conference presentations, kept in full here even
 
 | Date | Venue | Title | Role | Files |
 |---|---|---|---|---|
-| 2026-11 | BIOINFO/GIW ISCB-Asia 2026, Seoul (Nov 17–20) | Predictability Is Not Substitutability: A cost-of-substitution framework for H&E-based molecular prediction across 5 cancers (Submission #193) | First author, presenting, poster | `GIW2026_abstract_substitutability_submission.png` |
-| 2026-11 | BIOINFO/GIW ISCB-Asia 2026, Seoul (Nov 17–20) | A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics (Abstract #241) | Co-author, oral | `GIW2026_abstract_rna_velocity_reliability.png` |
-| 2023-04-02 | AACR Annual Meeting 2023 | Predicting Protein Receptor Status from H&E-stained Images in Breast Cancer (Abstract #5404) | First author, poster | `AACR2023_poster_protein_receptor_HE.png` |
+| 2026-11 | BIOINFO/GIW ISCB-Asia 2026, Seoul (Nov 17–20) | Predictability Is Not Substitutability: A cost-of-substitution framework for H&E-based molecular prediction across 5 cancers (Submission #193) | First author, presenting, accepted poster | `GIW2026_abstract_substitutability_submission.png` |
+| 2026-11 | BIOINFO/GIW ISCB-Asia 2026, Seoul (Nov 17–20) | A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics (Abstract #241) | Co-author, accepted oral | `GIW2026_abstract_rna_velocity_reliability.png` |
+| 2023-04 | AACR Annual Meeting 2023, Orlando | Predicting Protein Receptor Status from H&E-stained Images in Breast Cancer (Abstract #5404) | First author, poster | `AACR2023_poster_protein_receptor_HE.png` |
 | 2022-04-12 | AACR Annual Meeting 2022, New Orleans | Recurrence Risk Prediction Based on Automatic Histologic Analysis of Breast Cancer Using Whole Slide Images | First author, poster | `AACR2022_breast_recurrence_slide_01..06.png` |
 | 2022-04 | AACR Annual Meeting 2022, New Orleans | A Deep Learning based Pancreatic Adenocarcinoma Survival Prediction Model Applicable to Adenocarcinoma of Other Organs | Co-author, poster | `AACR2022_pancreatic_survival_slide_01..06.png` |
 | 2022-03-18 | USCAP Annual Meeting 2022 | Breast Cancer Survival Analysis through the Extracted Feature from the Prostate Diagnosis Model | Co-author, poster | `USCAP2022_poster_breast_survival_prostate_feature.png` |
@@ -15,26 +15,26 @@ Original posters and slides for conference presentations, kept in full here even
 
 ## GIW ISCB-Asia 2026 · Predictability Is Not Substitutability: A cost-of-substitution framework for H&E-based molecular prediction across 5 cancers
 
-BIOINFO/GIW ISCB-Asia 2026, Seoul, November 17–20, 2026. Call for Abstracts, Submission ID 193. Poster, presenting author.
+BIOINFO/GIW ISCB-Asia 2026, Seoul, November 17–20, 2026. Call for Abstracts, Submission ID 193. Accepted poster, presenting author.
 Authors: Geongyu Lee (Pseudo Lab; OmixAI Co. Ltd.), Ka-Kyung Kim (Pseudo Lab), Sejin Park (Pseudo Lab; Seegene Inc.), Jaemyun Lyu (Pseudo Lab; R&D Center, Genolution Inc.), Jeong-Han Seo (Pseudo Lab; ROKIT Genomics; Department of Medical Science, University of Ulsan College of Medicine, Asan Medical Center), Yong Gi Ji (Pseudo Lab; Qaumtum C&S)
 
 Abstract: Deep learning predicts molecular subtypes from H&E histology accurately, but accuracy alone does not indicate what treatment a patient receives when a prediction is wrong. Predictability and substitutability are distinct claims, and replacing a molecular test requires evidence for the latter. We define substitution cost by weighting confusion-matrix errors by treatment distance, translating each error into a deviation from a prespecified treatment routing, with a distance-independent misassignment rate as the primary measure. A single pre-registered protocol was applied across five cancer types (breast, lung, colorectal, gastric, head and neck) using UNI embeddings and CLAM-SB attention-based multiple-instance learning. Evaluation used site-disjoint hold-outs with five-seed label-shuffle controls. Of approximately 15 endpoints, only one non-control endpoint met the pre-registered confirmation criterion: HPV status in head and neck cancer (AUROC 0.959; 26 hold-out positives). The highest-performing result, lung histological subtype (AUROC 0.939), was excluded after the site-confounding audit yielded V(site, label) = 1.000. In the breast anchor, anti-HER2 routing from H&E-predicted subtype misassigned every treatment-eligible patient. Most clinically actionable endpoints were undecided rather than negative, falling below the pre-registered power criterion. Reporting them as undecided is central to this framework. The framework applies to any proposed H&E-based surrogate beyond predictive performance alone.
 
 ## GIW ISCB-Asia 2026 · A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics
 
-BIOINFO/GIW ISCB-Asia 2026, Seoul, November 17–20, 2026. Abstract #241. Oral presentation.
+BIOINFO/GIW ISCB-Asia 2026, Seoul, November 17–20, 2026. Abstract #241. Accepted oral presentation.
 Authors: Ka-Kyung Kim¹, Jaemyun Lyu², Geongyu Lee³˒⁴, Sejin Park⁵, Yong Gi Ji⁶ (¹ Independent Researcher, Seoul · ² R&D Center, Genolution Inc. · ³ Omixai Co., Ltd. · ⁴ Pseudo Lab · ⁵ Seegene Inc. · ⁶ Qaumtum C&S)
 
 Abstract: Multiome RNA-velocity methods emit several per-gene quantities, a transcription rate α, a degradation rate γ, and a chromatin-to-transcription lag, each proposed as a biological readout. A derived quantity is usable only if it is reliable: reproducible across algorithms and consistent with independent measurement. Across up to five velocity arms (an RNA-only scVelo floor plus MultiVelo, MultiVeloVAE, MoFlow and CRAK-Velo) on human hematopoietic stem and progenitor cells (10x Multiome), we tested each output on four axes: cross-method reproducibility, a causal within-lineage ATAC-shuffle control, replication in five external multiomes, and anchoring to measured synthesis and degradation rates. Only α reproduced across methods (Spearman ρ=0.88); the lag reproduced weakly in magnitude (strongest pair +0.163), only at chance in sign (54.6%), and was unchanged by ATAC shuffling, marking it model-structural. γ was fragile (ρ≈−0.1) and ran reversed against measured half-life (−0.224). Fitted α tracked measured synthesis (+0.24 to +0.29), but transcript abundance tracked it at least as strongly (+0.410 versus +0.262), consistency evidence, not α-specific accuracy. The α-over-lag ordering held in all six systems; the sixth was preregistered and passed six-of-six, sealed before fitting. Trust α against an abundance baseline; treat lag, sign, timing and γ as requiring orthogonal validation.
 
 ## AACR 2023 · Predicting Protein Receptor Status from H&E-stained Images in Breast Cancer
 
-Abstract #5404, presented April 2, 2023.
+Abstract #5404, presented at the AACR Annual Meeting 2023, Orlando, April 14–19, 2023.
 Authors: Geongyu Lee¹, Chungyeul Kim²˒³, Tae-Yeong Kwak¹, Sun Woo Kim¹, Hyeyoon Chang¹ (¹ Deep Bio Inc. · ² Korea University Guro Hospital · ³ Korea University)
 
 - Goal: predict ER / PR / HER2 status from H&E whole-slide images alone, without IHC staining.
 - Data: TCGA-BRCA, 728 of 1,097 cases with definitive IHC status; WSI split 3:1:1 (train / tune / test), tiled into 1024×1024 patches.
-- Method: multi-task model with a shared morphology feature extractor and three prediction heads (ER, PR, HER2), each with a confidence output. Patches with confidence below 70% are excluded at the WSI level. Strong augmentation (grayscale, gaussian blur, color jitter, posterization) so predictions are not driven by color alone.
+- Method: multi-task model with a shared morphology feature extractor and three prediction heads (ER, PR, HER2), each with a confidence output. Patches with confidence below 70% are excluded at the WSI level. Strong augmentation (grayscale, gaussian blur, color jitter, posterization) was applied to reduce sensitivity to stain color variation.
 - Results (test set sampled with class balance):
 
 | Receptor | Patch acc. | Patch F1 | Slide acc. | Slide F1 |

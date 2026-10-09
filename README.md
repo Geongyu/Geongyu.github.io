@@ -20,18 +20,18 @@
 
 ## About
 
-I am a machine learning researcher in computational pathology and multi-omics for oncology. I work on predicting molecular measurements such as gene expression, receptor status and assay-based recurrence risk groups from routine H&E slides, and on testing whether these predictions are reliable across sites, cohorts and unseen drugs.
+I develop machine learning models that predict molecular measurements from pathology slides and, in my current industry work, drug response from proteomics. I focus on whether these predictions remain valid at new hospitals and for drugs not seen in training.
 
-I have 5+ years of industry R&D experience. At **Deep Bio** I contributed to pre-deployment model validation and regulatory documentation for a medical-AI product submitted to Korea's **MFDS**. I also co-authored the G2L pathology foundation-model paper. I now run pre-registered, site-disjoint evaluations of H&E-based molecular prediction and build leave-drug-out drug-response models. At **OMIXAI** I lead multi-omics model R&D that combines proteomics and RNA with H&E for drug-response prediction (in progress), including a Korea–Japan Pan-Sarcoma proteogenomics collaboration.
+I have 5+ years of industry R&D experience. At **OMIXAI** I lead R&D on a multi-omics model that combines proteomics, RNA and H&E to predict drug response (in progress). At **Deep Bio** I built the WSI pipeline and contributed to pre-deployment model validation and regulatory documentation for a medical-AI product submitted to Korea's **MFDS**.
 
-종양학 분야에서 조직병리와 분자 데이터를 잇는 **크로스모달 학습**, 분포 변화에도 **신뢰할 수 있는 예측**을 연구하는 머신러닝 리서처입니다. 일상 진료에서 쓰는 H&E 슬라이드로 유전자 발현, 수용체 상태, 유전자 검사 기반 재발 위험 같은 분자 정보를 예측하는 모델을 개발합니다. 병원·코호트·약물이 달라질 때 예측이 어디까지 유효한지도 검증합니다. 산업계 R&D 경력은 5년 이상입니다. 딥바이오에서는 WSI 파이프라인을 구축했고, 식약처(MFDS)에 인허가를 신청한 의료 AI 제품의 출시 전 모델 검증과 인허가 문서 작성에 기여했습니다. 병리 파운데이션 모델 G2L 논문에는 공저자로 참여했습니다. 현재는 사전 등록한 기관 분리 검증으로 H&E 기반 분자 예측을 평가하고 있습니다. 학습에 없던 약물로 평가하는(leave-drug-out) 약물 반응 예측 모델도 개발 중입니다. **OMIXAI**에서는 프로테오믹스·RNA와 H&E를 통합한 약물 반응 예측 멀티오믹스 모델 R&D를 주도하고 있습니다(진행 중). 이 R&D에는 한·일 Pan-Sarcoma 프로테오지노믹스 공동연구도 포함됩니다.
+병리 슬라이드로 분자 정보를 예측하는 머신러닝 모델을 연구하며, 현 직장에서는 프로테오믹스로 약물 반응을 예측하는 모델도 개발합니다. 새로운 병원의 데이터나 학습에 없던 약물에서도 예측이 유효한지 검증하는 데 집중합니다. 산업계 R&D 경력은 5년 이상입니다. **OMIXAI**에서는 프로테오믹스·RNA·H&E를 통합해 약물 반응을 예측하는 멀티오믹스 모델 R&D를 주도하고 있습니다(진행 중). **딥바이오**에서는 WSI 파이프라인을 구축했고, 식약처(MFDS)에 인허가를 신청한 의료 AI 제품의 출시 전 모델 검증과 인허가 문서 작성에 기여했습니다.
 
 ## Highlights
 
 | | |
 |---|---|
-| **Co-first author** † | *MoSPR* (preprint, 2026). Predicts gene expression from H&E using morpho-spatial macrostates and low-rank molecular programs. Best of 15 methods on three TCGA cancers (gene-wise PCC, BRCA 0.413) · [code](https://github.com/Radisen-Panthera/MoSPR) |
-| **First author** | *BIOINFO/GIW ISCB-Asia 2026* (accepted poster). "Predictability is not substitutability" applied one pre-registered protocol with site-disjoint hold-outs and label-shuffle controls to 5 cancers. Of ~15 endpoints, only HNSC HPV status (AUROC 0.959) met the confirmation criterion. |
+| **Co-first author** † | *MoSPR* (preprint, 2026). Predicts gene expression from H&E using morpho-spatial macrostates and low-rank molecular programs. Ranked 1st of 15 methods in the paper's benchmark on three TCGA cancers (gene-wise PCC, BRCA 0.413) · [code](https://github.com/Radisen-Panthera/MoSPR) |
+| **First author** | *BIOINFO/GIW ISCB-Asia 2026* (accepted poster). "Predictability is not substitutability" applied one pre-registered protocol with site-disjoint hold-outs and label-shuffle controls to 5 cancers. Of ~15 endpoints, only HNSC HPV status (AUROC 0.959) met the pre-registered confirmation criterion. Most of the others were reported as inconclusive. |
 | **First author** | *Scientific Reports* (2025). Prediction of 21-gene recurrence-assay risk groups in early-stage breast cancer from H&E alone · n=125, 2 hospitals · sensitivity L / I / H 0.86 / 0.75 / 0.53, specificity L / I / H 0.82 / 0.80 / 0.97 |
 | **Co-author** | *G2L* (AAAI 2026 Workshop W3PHIAI, oral). Distillation of giga-scale pathology foundation models into cancer-specific models. |
 | **Challenge** | 2nd place in the KPIs 2024 Challenge whole-slide track, glomerular segmentation (MICCAI 2024, Deep Bio team) · co-author of the challenge report in *Medical Image Analysis* (2026) |
@@ -73,13 +73,13 @@ Cross-modal learning from histology to gene expression, receptor status and prot
 
 | | | |
 |:--|:--|:--|
-| **OMIXAI** (fmr. RadiSen) | AI Researcher | Feb 2025 – present · lead multi-omics model R&D that combines proteomics and RNA with H&E for drug-response prediction (in progress) · proteomics drug-response model evaluated leave-drug-out, so no test compound is seen in training (Pearson ≥ 0.65) · veterinary oncology CDSS · co-authored G2L and the TNBC spatial-proteomics preprint · co-led OMIXAI's team entry in the Arc Institute Virtual Cell Challenge |
+| **OMIXAI** (fmr. RadiSen) | AI Researcher | Feb 2025 – present · lead multi-omics model R&D that combines proteomics and RNA with H&E for drug-response prediction (in progress) · proteomics drug-response model evaluated leave-drug-out, so no test compound is seen in training (Pearson ≥ 0.65; internal R&D, unpublished) · veterinary oncology CDSS · co-authored G2L and the TNBC spatial-proteomics preprint · co-led OMIXAI's team entry in the Arc Institute Virtual Cell Challenge |
 | **Deep Bio** | AI Researcher | Mar 2021 – Jan 2025 · computational pathology · built a WSI pipeline (500+ slides) · contributed to pre-deployment model validation and regulatory documentation for a medical-AI product submitted to Korea's MFDS · led prostate metastasis & recurrence-risk projects · KPIs 2024 Challenge (2nd, whole-slide track) · first-author presentations on breast-cancer pathology AI at AACR (2022, 2023) and USCAP (2022) |
 | **Nuricon** | Intern | 2021 · parking-lot fire-detection AI |
 
 **Side project:** [FlyGate](https://github.com/Team-FlyGate/Project-FlyGate) ([live](https://flygate.kr)) is an evidence-based agent for drug discovery and pharmacovigilance, made by a team of 5 at the NVIDIA Korea Agentic AI Hackathon 2026. I built the FlyDiscovery module on BioNeMo NIM (OpenFold3, DiffDock, Boltz-2) and its workbench UI.
 
-**Leadership & community:** Research member (Runner), **Pseudo Lab** season 12 "AutoBioX: AI Agents for End-to-End Bio Research" (2026, 16 weeks, completed). Two studies were accepted at BIOINFO/GIW ISCB-Asia 2026 and later submitted to ML4H 2026 Findings (under review) · Reviewer, **ML4H 2026** · AI Career & Project Mentor, **Codeit** (2025 – present, part-time), with 1:1 résumé, portfolio and career mentoring for 30+ mentees and help with project scoping, methods and troubleshooting for 8+ teams across 3 cohorts.
+**Leadership & community:** Research member (Runner), **Pseudo Lab** season 12 "AutoBioX: AI Agents for End-to-End Bio Research" (2026, completed). Two studies were accepted at BIOINFO/GIW ISCB-Asia 2026 and later submitted to ML4H 2026 Findings (under review) · Reviewer, **ML4H 2026** · AI Career & Project Mentor, **Codeit** (2025 – present, part-time), with 1:1 résumé, portfolio and career mentoring for 30+ mentees and help with project scoping, methods and troubleshooting for 8+ teams across 3 cohorts.
 
 **Education:** M.S. Data Science · Seoul National University of Science and Technology (SeoulTech), 2019 – 2021 (advisor: Prof. Sangheum Hwang) · B.S. Information Security · Daejeon University, 2012 – 2019
 
