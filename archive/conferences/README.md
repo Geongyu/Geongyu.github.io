@@ -68,7 +68,8 @@ Authors: Geongyu Lee¹, Chungyeul Kim²˒³, Tae-Yeong Kwak¹, Sun Woo Kim¹, Hy
 | Specificity | 0.791 | 0.797 | 0.966 |
 | PPV | 0.75 | 0.772 | 0.75 |
 
-- No low-risk case was misclassified as high-risk. Grad-CAM shows which regions drove each class.
+- No high-risk case was misclassified as low-risk (predicted Low / true High = 0; 2 true low-risk cases were predicted High). Grad-CAM shows which regions drove each class.
+- Note: the original slide (`AACR2022_breast_recurrence_slide_04.png`) states this the other way round ("no case of misclassifying the low-risk group as high-risk"); the confusion matrix above shows that wording was reversed.
 - Conclusion: limited but promising; expected to improve with more data and additional clinical / pathological inputs. This line of work became the Scientific Reports (2025) paper.
 
 ## AACR 2022 · A Deep Learning based Pancreatic Adenocarcinoma Survival Prediction Model Applicable to Adenocarcinoma of Other Organs
@@ -130,4 +131,4 @@ Authors: 이건규 (Geongyu Lee), 황상흠 (Sangheum Hwang), Department of Data
 | Liver (LiTS2017) | U-Net | 0.850 → 0.867 | 0.912 → 0.923 | 0.697 → 0.499 | 0.533 → 0.365 |
 | Liver (LiTS2017) | UNet++ | 0.860 → 0.877 | 0.919 → 0.924 | 0.647 → 0.460 | 0.541 → 0.321 |
 
-- Conclusion: consistent gains, largest on distance-based boundary metrics, showing that well-structured embeddings help segmentation. Limitation: the contrastive term may not apply correctly when the target region is very small. Future work: handling small targets and testing whether the learned encoder is robust to domain shift. This work led to the M.S. thesis and the IEEE Access (2021) paper.
+- Conclusion: consistent gains, largest on distance-based boundary metrics, showing that well-structured embeddings help segmentation. Limitation: the contrastive term may not apply correctly when the target region is very small. Future work: handling small targets and testing whether the learned encoder is robust to domain shift. This work led to the M.S. thesis and is related to the lab's IEEE Access (2021) paper (co-author, 3rd of 4).

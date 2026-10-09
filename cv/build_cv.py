@@ -33,6 +33,7 @@ def render_html(d):
     a("<section>")
     a(f'<h2>{d["h_pubs"]}<span class="scholar"><a href="{SCHOLAR}">{d["scholar_note"]}</a></span></h2>')
     for i, (title, venue, extra) in enumerate(PUBS, 1):
+        extra = extra[d["lang"]] if isinstance(extra, dict) else extra
         x = f' <span class="x">{extra}</span>' if extra else ""
         a(f'<div class="pub"><div class="n">{i}</div><div class="body">'
           f'<span class="t">{title}</span> <span class="v">{venue}</span>{x}</div></div>')
