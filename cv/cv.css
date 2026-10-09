@@ -1,8 +1,43 @@
-/* Geongyu Lee — CV stylesheet (WeasyPrint)
-   Palette sampled from the previous PDF so regenerated files stay on-brand. */
+/* Geongyu Lee: CV stylesheet (WeasyPrint or headless Chrome)
+   Palette sampled from the previous PDF so regenerated files stay on-brand.
+   Fonts match the portfolio site (IBM Plex Sans / KR / JP) with local fallbacks.
+   IBM Plex Sans KR / JP load from Google Fonts via the <link> that build_cv.py writes.
+   IBM Plex Sans (Latin / Greek) loads below as static instances from Fontsource:
+   Google Fonts serves it as one variable font, which Chrome embeds as Type 3 glyphs. */
+@font-face {
+  font-family: "IBM Plex Sans"; font-style: normal; font-weight: 400; font-display: block;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.2.8/files/ibm-plex-sans-greek-400-normal.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: "IBM Plex Sans"; font-style: normal; font-weight: 400; font-display: block;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.2.8/files/ibm-plex-sans-latin-ext-400-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "IBM Plex Sans"; font-style: normal; font-weight: 400; font-display: block;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.2.8/files/ibm-plex-sans-latin-400-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "IBM Plex Sans"; font-style: normal; font-weight: 700; font-display: block;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.2.8/files/ibm-plex-sans-greek-700-normal.woff2") format("woff2");
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: "IBM Plex Sans"; font-style: normal; font-weight: 700; font-display: block;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.2.8/files/ibm-plex-sans-latin-ext-700-normal.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "IBM Plex Sans"; font-style: normal; font-weight: 700; font-display: block;
+  src: url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.2.8/files/ibm-plex-sans-latin-700-normal.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 @page {
   size: A4;
-  margin: 15mm 15mm 14mm 15mm;
+  margin: 13mm 15mm 12mm 15mm;
 }
 
 :root {
@@ -16,15 +51,34 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+html {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Latin glyphs come from IBM Plex Sans in every edition; CJK falls through to the
+   KR / JP cut (JP first in the Japanese edition so kanji take Japanese forms). */
 body {
-  font-family: "Liberation Sans", "Noto Sans CJK KR", "Noto Sans CJK JP", Arial, sans-serif;
+  font-family: "IBM Plex Sans", "IBM Plex Sans KR", "IBM Plex Sans JP",
+               Arial, "Noto Sans KR", "Malgun Gothic", "Yu Gothic", "Meiryo", sans-serif;
   font-size: 8.6pt;
   line-height: 1.46;
   color: var(--ink-soft);
+  background: #fff;
   -weasy-hyphens: none;
+  hyphens: manual;
 }
-html[lang="ko"] body { font-family: "Noto Sans CJK KR", "Liberation Sans", sans-serif; }
-html[lang="ja"] body { font-family: "Noto Sans CJK JP", "Liberation Sans", sans-serif; }
+html[lang="ko"] body {
+  font-family: "IBM Plex Sans", "IBM Plex Sans KR", "IBM Plex Sans JP",
+               "Noto Sans KR", "Malgun Gothic", "Yu Gothic", Arial, sans-serif;
+  word-break: keep-all;
+}
+/* JP first so kanji take Japanese forms; KR next supplies Hangul and symbols JIS lacks (≥). */
+html[lang="ja"] body {
+  font-family: "IBM Plex Sans", "IBM Plex Sans JP", "IBM Plex Sans KR",
+               "Yu Gothic", "Meiryo", "Malgun Gothic", Arial, sans-serif;
+  word-break: auto-phrase;   /* Chrome: wrap at phrase boundaries, not mid-word */
+}
 
 a { color: inherit; text-decoration: none; }
 
@@ -47,48 +101,62 @@ a { color: inherit; text-decoration: none; }
   font-size: 7.4pt; color: var(--muted); letter-spacing: .005em;
 }
 .contact span + span::before { content: " · "; color: var(--faint); }
+.contact a { color: var(--accent); }
 
 /* ---------- summary ---------- */
-.summary { margin-top: 9pt; font-size: 8.6pt; color: var(--ink-soft); text-align: justify; }
-/* CJK justification stretches inter-character space badly — keep those ragged-right */
-html[lang="ko"] .summary, html[lang="ja"] .summary { text-align: left; }
+/* ragged-right in every edition: hyphenation is manual, so justified lines open wide gaps */
+.summary { margin-top: 9pt; font-size: 8.6pt; color: var(--ink-soft); text-align: left; }
 
 /* ---------- sections ---------- */
-section { margin-top: 10pt; }
+section { margin-top: 8pt; }
+/* the last section is short: move it as one block rather than strand its last line */
+section:last-of-type { break-inside: avoid; page-break-inside: avoid; }
+/* flex rather than float, so the PDF text layer reads heading first, Scholar note second */
 h2 {
+  display: flex; align-items: baseline; gap: 8pt;
   font-size: 8pt; font-weight: 700; text-transform: uppercase;
   letter-spacing: .13em; color: var(--accent);
   border-bottom: .75pt solid var(--rule);
-  padding-bottom: 4pt; margin-bottom: 7pt;
+  padding-bottom: 3.5pt; margin-bottom: 5pt;
+  break-after: avoid; page-break-after: avoid;
 }
+html[lang="ko"] h2, html[lang="ja"] h2 { letter-spacing: .04em; }
 h2 .scholar {
-  float: right; font-weight: 400; text-transform: none;
+  margin-left: auto; font-weight: 400; text-transform: none;
   letter-spacing: .01em; font-size: 7pt; color: var(--faint);
 }
 
 /* ---------- publications ---------- */
-.pub { display: flex; gap: 6pt; margin-bottom: 5pt; page-break-inside: avoid; }
+.pub { display: flex; gap: 6pt; margin-bottom: 3.5pt; break-inside: avoid; page-break-inside: avoid; }
 .pub .n { flex: none; width: 9pt; text-align: right; font-size: 7.4pt; color: var(--accent); padding-top: .8pt; }
 .pub .body { flex: 1; }
 .pub .t { font-weight: 700; color: var(--ink); }
 .pub .v { color: var(--muted); }
-.pub .x { color: var(--faint); font-size: 7.4pt; }
+.pub .x { color: var(--muted); font-size: 7.4pt; }
 
 /* ---------- experience ---------- */
-.job { margin-bottom: 9pt; page-break-inside: avoid; }
+/* a long job may run onto the next page, but its heading stays with the first bullets */
+.job { margin-bottom: 7pt; }
+.job-h, .job .sub { break-after: avoid; page-break-after: avoid; }
 .job-h { display: flex; align-items: baseline; }
 .job-h .co { font-weight: 700; font-size: 9.2pt; color: var(--ink); flex: 1; }
 .job-h .when { font-size: 7.6pt; color: var(--faint); white-space: nowrap; }
 .job .sub { font-size: 8.2pt; color: var(--muted); margin: 1pt 0 3pt; }
 .job ul { list-style: none; }
-.job li { position: relative; padding-left: 9pt; margin-bottom: 1.6pt; }
-.job li::before { content: "–"; position: absolute; left: 0; color: var(--accent); }
+/* hanging dash done in normal flow (no absolute positioning), so text extraction keeps
+   each bullet in reading order with its dash in front */
+.job li { padding-left: 9pt; text-indent: -9pt; margin-bottom: 1.6pt; break-inside: avoid; page-break-inside: avoid; }
+.job li::before { content: "–"; display: inline-block; width: 9pt; text-indent: 0; color: var(--accent); }
 
 /* ---------- projects / education ---------- */
-.item { margin-bottom: 6pt; page-break-inside: avoid; }
+.item { margin-bottom: 6pt; break-inside: avoid; page-break-inside: avoid; }
 .item .h { font-weight: 700; color: var(--ink); font-size: 8.8pt; }
-.item .h .org { font-weight: 400; color: var(--faint); font-size: 7.6pt; }
-.item .h .when { float: right; font-weight: 400; font-size: 7.6pt; color: var(--faint); }
+.item .h .org { font-weight: 400; color: var(--muted); font-size: 7.6pt; }
+.item .h .when { font-weight: 400; font-size: 7.6pt; color: var(--faint); }
+/* education: degree left, dates right, on a shared baseline (flex keeps reading order) */
+.item .h.edu { display: flex; align-items: baseline; gap: 8pt; }
+.item .h.edu > span:first-child { flex: 1; }
+.item .h.edu .when { white-space: nowrap; }
 .item .d { color: var(--ink-soft); }
 
 /* ---------- skills ---------- */
@@ -97,10 +165,13 @@ h2 .scholar {
 .skill .v { flex: 1; color: var(--ink-soft); }
 
 /* ---------- awards ---------- */
-.li { margin-bottom: 2.6pt; font-size: 8.2pt; color: var(--ink); page-break-inside: avoid; }
+.li { margin-bottom: 2.6pt; font-size: 8.2pt; color: var(--ink); break-inside: avoid; page-break-inside: avoid; }
 .li .m { color: var(--muted); font-size: 7.6pt; }
-.award { margin-bottom: 5.5pt; page-break-inside: avoid; }
+.award { margin-bottom: 5.5pt; break-inside: avoid; page-break-inside: avoid; }
 .award .h { font-weight: 700; color: var(--ink); font-size: 8.8pt; }
 .award .m { color: var(--muted); font-size: 8pt; }
 
 .talks { color: var(--ink-soft); }
+
+/* keep a short run (a label, a name with its year) on one line */
+.nw { white-space: nowrap; }

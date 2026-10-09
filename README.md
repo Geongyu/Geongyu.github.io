@@ -114,7 +114,7 @@ ja/index.html       Japanese page: generated
 build_i18n.py       generates ko/ and ja/ from index.html (localised <head>, hreflang, og:locale, CV link); also stamps today's date into the footer and every sitemap <lastmod>
 robots.txt
 sitemap.xml         /, /ko/, /ja/ with hreflang alternates
-assets/             images and favicons (CV PDFs are currently unpublished, see below)
+assets/             images, favicons and CV PDFs (EN / KO / JA)
 cv/                 CV source (content.py + cv.css) rendered to PDF with WeasyPrint
 ```
 
@@ -131,11 +131,10 @@ cv/                 CV source (content.py + cv.css) rendered to PDF with WeasyPr
 
 ### CV PDFs
 
-The CV PDFs (EN / KO / JA) are currently unpublished: they are not in the repository and the site's download button is hidden. The source stays in `cv/`, and the PDFs can be rebuilt locally:
+The CV source lives in `cv/` (`content.py` for text, `cv.css` for layout). `build_cv.py` uses WeasyPrint when it is installed and otherwise prints with headless Chrome or Edge (set `CHROME` to point at a specific browser). Fonts load from the web, so build with internet access. The CV lists GitHub, Google Scholar and the portfolio; email is intentionally left out.
 
 ```bash
-pip install weasyprint
-python3 cv/build_cv.py assets   # → assets/Geongyu_Lee_CV_{EN,KO,JA}.pdf (local only until the CV is republished)
+python3 cv/build_cv.py assets   # → assets/Geongyu_Lee_CV_{EN,KO,JA}.pdf
 ```
 
 ### SEO checklist
