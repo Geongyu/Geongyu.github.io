@@ -5,7 +5,7 @@ Original posters and slides for conference presentations, kept in full here even
 | Date | Venue | Title | Role | Files |
 |---|---|---|---|---|
 | 2026-11 | BIOINFO/GIW ISCB-Asia 2026, Seoul (Nov 17–20) | Predictability Is Not Substitutability: A cost-of-substitution framework for H&E-based molecular prediction across 5 cancers (Submission #193) | First author, presenting, poster | `GIW2026_abstract_substitutability_submission.png` |
-| 2026-11 | BIOINFO/GIW ISCB-Asia 2026, Seoul (Nov 17–20) | A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics (Abstract #241) | Co-author (3rd), oral | `GIW2026_abstract_rna_velocity_reliability.png` |
+| 2026-11 | BIOINFO/GIW ISCB-Asia 2026, Seoul (Nov 17–20) | A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics (Abstract #241) | Co-author, oral | `GIW2026_abstract_rna_velocity_reliability.png` |
 | 2023-04-02 | AACR Annual Meeting 2023 | Predicting Protein Receptor Status from H&E-stained Images in Breast Cancer (Abstract #5404) | First author, poster | `AACR2023_poster_protein_receptor_HE.png` |
 | 2022-04-12 | AACR Annual Meeting 2022, New Orleans | Recurrence Risk Prediction Based on Automatic Histologic Analysis of Breast Cancer Using Whole Slide Images | First author, poster | `AACR2022_breast_recurrence_slide_01..06.png` |
 | 2022-04 | AACR Annual Meeting 2022, New Orleans | A Deep Learning based Pancreatic Adenocarcinoma Survival Prediction Model Applicable to Adenocarcinoma of Other Organs | Co-author, poster | `AACR2022_pancreatic_survival_slide_01..06.png` |
@@ -131,4 +131,4 @@ Authors: 이건규 (Geongyu Lee), 황상흠 (Sangheum Hwang), Department of Data
 | Liver (LiTS2017) | U-Net | 0.850 → 0.867 | 0.912 → 0.923 | 0.697 → 0.499 | 0.533 → 0.365 |
 | Liver (LiTS2017) | UNet++ | 0.860 → 0.877 | 0.919 → 0.924 | 0.647 → 0.460 | 0.541 → 0.321 |
 
-- Conclusion: consistent gains, largest on distance-based boundary metrics, showing that well-structured embeddings help segmentation. Limitation: the contrastive term may not apply correctly when the target region is very small. Future work: handling small targets and testing whether the learned encoder is robust to domain shift. This work led to the M.S. thesis and is related to the lab's IEEE Access (2021) paper (co-author, 3rd of 4).
+- Conclusion: consistent gains, largest on distance-based boundary metrics, showing that well-structured embeddings help segmentation. Limitation: the contrastive term may not apply correctly when the target region is very small. Future work: handling small targets and testing whether the learned encoder is robust to domain shift. This work led to the M.S. thesis and is related to the lab's IEEE Access (2021) paper (co-author).
