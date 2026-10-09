@@ -304,7 +304,7 @@
       <p class="role"><span class='b'>クロスモーダル学習</span> / 信頼できる予測 / <span class='b'>Computational Pathology × マルチオミクス</span></p>
       <p class="lede">病理画像から分子情報を予測する機械学習モデルを研究し、現職ではプロテオミクスから薬剤応答を予測するモデルも開発しています。学習データに含まれない施設や薬剤でも予測が有効かどうかの検証に力を入れています。</p>
       <div class="chips">
-        <!-- temporarily hidden: CV <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_JA.pdf" download><svg viewBox='0 0 24 24'><path d='M13 3h-2v8H8l4 4 4-4h-3V3zM5 19h14v2H5z'/></svg>CV (PDF)</a> -->
+        <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_JA.pdf" download><svg viewBox='0 0 24 24'><path d='M13 3h-2v8H8l4 4 4-4h-3V3zM5 19h14v2H5z'/></svg>CV (PDF)</a>
         <a class="chip icon" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=en" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.9V15h2V8zM4 12.4v3.5C4 18.1 7.6 20 12 20s8-1.9 8-4.1v-3.5l-8 4.4z"/></svg><span class="sr">Scholar</span></a>
         <a class="chip icon" aria-label="GitHub" title="GitHub" href="https://github.com/Geongyu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 1a11 11 0 0 0-3.5 21.4c.6.1.8-.2.8-.5v-2c-3 .7-3.7-1.3-3.7-1.3-.5-1.2-1.2-1.6-1.2-1.6-1-.7 0-.7 0-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.4-.3-5-1.2-5-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10.4 10.4 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.1-2.6 5-5 5.3.4.3.8 1 .8 2.1v3.1c0 .3.2.6.8.5A11 11 0 0 0 12 1z"/></svg><span class="sr">GitHub</span></a>
       </div>
@@ -331,7 +331,7 @@
     </div>
     <div class="strip-lab reveal">主な研究成果</div>
     <div class="strip results reveal">
-      <div class="cell"><div class="big">1<span style='font-size:.5em;color:var(--muted)'> / 約15</span></div><div class="lab">事前登録した確定基準を満たしたH&Eエンドポイント(頭頸部がんHPV、AUROC 0.959) · 5がん種 · 筆頭著者</div></div>
+      <div class="cell"><div class="big">5<span style='font-size:.5em;color:var(--muted)'> がん種</span></div><div class="lab">施設分離評価で分子検査の代替可能性を検証 · 事前登録基準を満たしたのは1項目(頭頸部がんHPV)、他の多くは未決 · 筆頭著者</div></div>
       <div class="cell"><div class="big">1<span style='font-size:.5em;color:var(--muted)'>位 / 15</span></div><div class="lab">遺伝子別PCC、H&E → 遺伝子発現 · 論文内の比較実験で15手法中1位、TCGA 3がん種 · 共同筆頭著者</div></div>
       <div class="cell"><div class="big">≥0.65</div><div class="lab">薬剤応答 Pearson · 学習データに含まれない薬剤(leave-drug-out) · 社内R&D、未発表</div></div>
       <div class="cell"><div class="big">0.728<span style="font-size:.5em;color:var(--muted)"> / 0.760</span></div><div class="lab">乳がんWSI mIoU · カバレッジ95% / 80% · 選択的セグメンテーションにおける精度とカバレッジのトレードオフ · 共著者</div></div>
@@ -496,7 +496,7 @@
         <div class="main nofig">
           <span class="venue">BIOINFO/GIW ISCB-Asia 2026 · ポスター発表(採択) · 筆頭著者・発表者</span>
           <h3>Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers</h3>
-          <p>ソウル · 2026.11.17–20。H&Eモデルの精度が高くても、分子検査を代替できるとは限りません。誤分類を治療経路の逸脱に換算した「代替コスト」を定義し、事前登録した単一プロトコル(UNI + CLAM-SB、施設分離検証、label-shuffle対照)を5がん種(乳・肺・大腸・胃・頭頸部)に適用しました。約15エンドポイントのうち事前登録基準を満たしたのは頭頸部がんのHPV状態のみで、大半は「否定」ではなく「未決」と報告しました。Pseudo Labとの共同研究。</p>
+          <p>ソウル · 2026.11.17–20。H&Eモデルの精度が高くても、分子検査を代替できるとは限りません。誤分類を治療経路の逸脱に換算した「代替コスト」を定義し、事前登録した単一プロトコル(UNI + CLAM-SB、施設分離検証、label-shuffle対照)を5がん種(乳・肺・大腸・胃・頭頸部)に適用しました。約15エンドポイントのうち事前登録基準を満たしたのは頭頸部がんのHPV状態のみでした。最も性能が高かった肺の組織型(AUROC 0.939)は施設交絡の検証で除外し、他の大半は「否定」ではなく「未決」と報告しました。Pseudo Labとの共同研究。</p>
           <div class="metrics"><span>確定</span><b>HNSC HPV · AUROC 0.959</b><span>除外</span><b>肺組織型 · V(site, label) = 1.0</b></div>
         </div>
       </article>
