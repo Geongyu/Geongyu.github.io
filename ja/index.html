@@ -57,220 +57,314 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=IBM+Plex+Sans+JP:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#0d0e12;--panel:#14161d;--panel-2:#1a1d26;
-    --line:rgba(255,255,255,.08);--line-2:rgba(255,255,255,.15);
-    --fg:#e9ebf1;--muted:#949bab;--faint:#5e6573;
-    --accent:#7d8cff;--accent-dim:rgba(125,140,255,.14);
-    --f-disp:"Space Grotesk",system-ui,sans-serif;
-    --f-body:"IBM Plex Sans","IBM Plex Sans KR","IBM Plex Sans JP",system-ui,sans-serif;
-    --f-mono:"IBM Plex Mono",ui-monospace,monospace;
-    --maxw:1140px;
-    /* intensity dials: bump these to push toward brutalism */
-    --line-w:1px;      /* structural line thickness (try 2px / 3px) */
-    /* figure plates: scientific figures need a light ground, but pure #fff
-       glares against the near-black page, so soften plate + image slightly */
-    --plate:#eef0f4;
-    --fig-dim:brightness(.9) saturate(.9) contrast(1.02);
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  ::selection{background:var(--accent);color:#0d0e12}
-  a{color:inherit;text-decoration:none}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
-  .eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.7em}
-  .eyebrow::before{content:"";width:24px;height:1px;background:var(--accent);opacity:.7}
+:root {
+  color-scheme: dark;
+  --bg: #151719;
+  --panel: #1a1e22;
+  --panel-2: #20262b;
+  --line: #32383e;
+  --line-2: #4a555f;
+  --fg: #e8ebee;
+  --muted: #b6bec6;
+  --faint: #a3afb9;
+  --accent: #aac8df;
+  --accent-dim: #212c35;
+  --f-body: "IBM Plex Sans", "IBM Plex Sans KR", "IBM Plex Sans JP", system-ui, sans-serif;
+  --f-disp: var(--f-body);
+  --f-mono: var(--f-body);
+  --maxw: 1120px;
+  --line-w: 1px;
+  --plate: #f1f2f3;
+}
 
-  .topbar{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px clamp(20px,5vw,56px);background:linear-gradient(var(--bg),rgba(13,14,18,0));backdrop-filter:blur(3px)}
-  .brand{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.12em;color:var(--muted)}
-  .brand b{color:var(--fg);font-weight:500}
-  .topright{display:flex;align-items:center;gap:22px}
-  .nav{display:flex;gap:22px;font-family:var(--f-mono);font-size:.73rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
-  .nav a{transition:color .2s}.nav a:hover{color:var(--fg)}
-  .langbtn{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;color:var(--fg);background:transparent;border:var(--line-w) solid var(--line-2);border-radius:100px;padding:7px 14px;cursor:pointer;transition:all .2s;min-width:78px}
-  .langbtn:hover{border-color:var(--accent);color:var(--accent)}
-  /* mobile: keep three section links (.m); below 520px the links move to a second row under the brand */
-  @media(max-width:1000px){.brand .bsub{display:none}.topright{gap:14px}.nav{gap:14px;font-size:.66rem;letter-spacing:.05em}}
-  @media(max-width:760px){.brand .bsub{display:none}.topright{gap:12px}.nav{gap:12px;font-size:.62rem;letter-spacing:.04em}.nav a:not(.m){display:none}.langsw .langopt{padding:7px 9px}}
-  @media(max-width:520px){.topbar{flex-wrap:wrap;gap:8px 12px;padding-top:12px;padding-bottom:12px;background:linear-gradient(var(--bg) 72%,rgba(13,14,18,0))}.topright{display:contents}.langsw{order:1}.nav{order:2;flex-basis:100%;gap:18px}section.block{scroll-margin-top:12px}}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+:lang(ko) { word-break: keep-all; overflow-wrap: break-word; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--f-body);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #aac8df; color: #151719; }
+a { color: var(--accent); text-decoration: none; text-underline-offset: .22em; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+img, svg { max-width: 100%; }
+button, input { font: inherit; }
+strong, b { font-weight: 600; }
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
+.sr { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; top: 8px; left: 16px; z-index: 100; transform: translateY(-160%); padding: 8px 14px; background: var(--fg); color: var(--bg); }
+.skip-link:focus { transform: none; }
 
-  .hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center;padding:120px 0 72px}
-  .hero h1{font-family:var(--f-disp);font-weight:600;font-size:clamp(3rem,7.5vw,5.6rem);line-height:.98;letter-spacing:-.02em;margin:22px 0 .1em}
-  .hero h1 .kr{display:block;font-family:var(--f-body);font-weight:300;font-size:.26em;letter-spacing:.02em;color:var(--muted);margin-top:.5em}
-  .role{font-family:var(--f-mono);font-size:.9rem;color:var(--fg);letter-spacing:.01em;margin:20px 0 22px}
-  .role .b{color:var(--accent)}
-  .lede{font-size:1.12rem;color:var(--muted);max-width:46ch;margin-bottom:30px}
-  .lede b{color:var(--fg);font-weight:400}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.01em;padding:8px 12px;border:var(--line-w) solid var(--line-2);border-radius:100px;color:var(--muted);display:inline-flex;align-items:center;gap:8px;transition:all .2s}
-  .chip:hover{border-color:var(--accent);color:var(--fg);transform:translateY(-2px)}
-  .chip svg{width:14px;height:14px;fill:currentColor}
-  .chip.icon{width:36px;height:36px;padding:0;justify-content:center}
-  .chip.icon svg{width:15px;height:15px}
-  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px max(32px, calc((100vw - 1056px) / 2));
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.brand { flex-shrink: 0; color: var(--muted); font-size: 15px; line-height: 1.4; }
+.brand b { color: var(--fg); font-weight: 600; }
+.topright { display: flex; align-items: center; gap: 24px; min-width: 0; }
+.nav { display: flex; align-items: center; gap: 22px; font-size: 14px; line-height: 1.4; }
+.nav a { color: var(--muted); display: inline-flex; align-items: center; min-height: 44px; }
+.nav a:hover { color: var(--fg); }
+.langsw { display: inline-flex; align-items: center; gap: 2px; flex-shrink: 0; }
+.langopt { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; min-height: 44px; padding: 4px 8px; font-size: 13px; line-height: 1.3; color: var(--muted); border-bottom: 2px solid transparent; }
+.langopt.is-active { color: var(--fg); border-bottom-color: var(--accent); }
+.langopt:hover { color: var(--fg); }
 
-  .ledger{border:var(--line-w) solid var(--line-2);border-radius:8px;background:linear-gradient(180deg,var(--panel),var(--bg));overflow:hidden}
-  .ledger-h{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:var(--line-w) solid var(--line);font-family:var(--f-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-  .ledger-h .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
-  .pub{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:15px 18px;border-bottom:var(--line-w) solid var(--line);transition:background .2s}
-  .pub:last-child{border-bottom:0}.pub:hover{background:var(--accent-dim)}
-  .pub .t{font-size:.92rem;color:var(--fg);line-height:1.35}
-  .pub .v{font-family:var(--f-mono);font-size:.68rem;color:var(--muted);white-space:nowrap;text-align:right;letter-spacing:.02em}
-  .pub .v.first{color:var(--accent)}
-  @media(max-width:860px){.hero{grid-template-columns:1fr}.ledger{order:2}}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+  align-items: center;
+  gap: 64px;
+  padding: 64px 0 72px;
+}
+.hero > * { min-width: 0; }
+.hero-id { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
+.avatar { display: block; flex: 0 0 104px; width: 104px; height: 104px; border-radius: 50%; object-fit: cover; object-position: top; background: var(--panel); }
+.eyebrow { display: block; color: var(--muted); font-size: 14px; line-height: 1.55; }
+.eyebrow::before { content: none; }
+.hero h1 { margin: 0 0 20px; font-size: clamp(36px, 4.25vw, 46px); line-height: 1.14; font-weight: 600; letter-spacing: -.025em; }
+.hero h1 .kr { display: inline-block; margin-left: 12px; font-size: 20px; font-weight: 400; line-height: 1.5; letter-spacing: 0; color: var(--muted); }
+.role { color: var(--muted); font-size: 16px; line-height: 1.55; margin: 8px 0 19px; }
+.role .b { color: var(--fg); }
+.lede { color: var(--muted); font-size: 17px; line-height: 1.75; max-width: 48ch; margin-bottom: 26px; }
+.lede b { color: var(--fg); }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 14px; border: 1px solid var(--line-2); border-radius: 4px; color: var(--fg); font-size: 14px; line-height: 1.4; }
+.chip:hover { border-color: var(--accent); background: var(--panel); text-decoration: none; }
+.chip.cv { background: var(--panel-2); }
+.chip svg { flex: 0 0 15px; width: 15px; height: 15px; fill: currentColor; }
+.chip.icon { width: auto; height: auto; }
+.chip.icon .sr { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
 
-  section.block{padding:clamp(70px,10vw,124px) 0;border-top:var(--line-w) solid var(--line)}
-  .head{display:flex;align-items:baseline;gap:18px;margin-bottom:50px;flex-wrap:wrap}
-  .head h2{font-family:var(--f-disp);font-weight:600;font-size:clamp(1.9rem,4vw,2.9rem);letter-spacing:-.01em;line-height:1}
-  .head .num{font-family:var(--f-mono);font-size:.8rem;color:var(--accent);letter-spacing:.1em}
-  .head .note{font-family:var(--f-mono);font-size:.74rem;color:var(--faint);margin-left:auto;letter-spacing:.04em}
+.ledger { border-left: 1px solid var(--line-2); padding-left: 28px; }
+.ledger-h { color: var(--muted); font-size: 14px; line-height: 1.5; margin-bottom: 8px; }
+.ledger-h .dot { display: none; }
+.pub { display: block; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.pub:hover { text-decoration: none; }
+.pub .t { display: block; font-size: 18px; line-height: 1.45; font-weight: 500; color: var(--fg); overflow-wrap: break-word; }
+.pub:hover .t { color: var(--accent); text-decoration: underline; text-underline-offset: .18em; }
+.pub .v, .pub .v.first { display: block; margin-top: 7px; font-size: 14px; line-height: 1.5; font-weight: 400; color: var(--muted); white-space: normal; }
+.ledger-footer { display: inline-flex; align-items: center; min-height: 44px; margin-top: 13px; font-size: 14px; }
 
-  .strip{display:grid;grid-template-columns:repeat(4,1fr);border:var(--line-w) solid var(--line-2);border-radius:8px;overflow:hidden}
-  .strip .cell{padding:26px 24px;border-right:var(--line-w) solid var(--line)}
-  .strip .cell:last-child{border-right:0}
-  .strip .big{font-family:var(--f-disp);font-weight:600;font-size:2.4rem;line-height:1;color:var(--accent)}
-  .strip .lab{font-family:var(--f-mono);font-size:.71rem;letter-spacing:.05em;color:var(--muted);margin-top:12px;text-transform:uppercase;line-height:1.5}
-  .strip-lab{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:24px 0 11px}
-  .strip.results .big{font-size:2rem}
-  @media(max-width:820px){.strip{grid-template-columns:1fr 1fr}.strip .cell:nth-child(2){border-right:0}.strip .cell:nth-child(-n+2){border-bottom:var(--line-w) solid var(--line)}}
-  @media(max-width:440px){.strip{grid-template-columns:1fr}.strip .cell{border-right:0;border-bottom:var(--line-w) solid var(--line)}.strip .cell:last-child{border-bottom:0}}
-  .strip.five{grid-template-columns:repeat(5,1fr)}
-  .strip.five .cell{padding:24px 18px}
-  .strip.five .big{font-size:2rem}
-  @media(max-width:1000px){.strip.five{grid-template-columns:repeat(3,1fr)}.strip.five .cell{border-right:var(--line-w) solid var(--line)}.strip.five .cell:nth-child(3){border-right:0}.strip.five .cell:nth-child(-n+3){border-bottom:var(--line-w) solid var(--line)}.strip.five .cell:last-child{grid-column:span 2;border-right:0;border-bottom:0}}
-  @media(max-width:820px){.strip.five{grid-template-columns:1fr 1fr}.strip.five .cell{border-right:var(--line-w) solid var(--line);border-bottom:var(--line-w) solid var(--line)}.strip.five .cell:nth-child(2n){border-right:0}.strip.five .cell:last-child{grid-column:1/-1;border-right:0;border-bottom:0}}
-  @media(max-width:440px){.strip.five{grid-template-columns:1fr}.strip.five .cell{border-right:0;border-bottom:var(--line-w) solid var(--line)}.strip.five .cell:last-child{grid-column:1/-1;border-bottom:0}}
+section.block { padding: 68px 0; border-top: 1px solid var(--line); scroll-margin-top: 88px; }
+.row[id], #main-content { scroll-margin-top: 88px; }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 22px; margin-bottom: 26px; }
+.head h2 { font-size: 28px; line-height: 1.3; font-weight: 500; letter-spacing: -.012em; }
+.head .num { display: none; }
+.head .note { font-size: 14px; color: var(--muted); margin-left: auto; }
+.head .ghlink, .head .schlink { color: var(--accent); }
+.head .ghlink { font-size: 14px; margin-left: 8px; }
+.section-intro { color: var(--muted); max-width: 70ch; margin: -8px 0 26px; }
 
-  .about{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
-  .about p{font-size:1.14rem;color:var(--muted);margin-bottom:1.05em}
-  .about p:last-child{margin-bottom:0}
-  .about strong{color:var(--fg);font-weight:400}
-  .aside{border-left:var(--line-w) solid var(--line-2);padding-left:26px}
-  .aside h3{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin-bottom:15px}
-  .aside h3.aside-gap{margin-top:30px}
-  .aside li strong{color:var(--fg);font-weight:500}
-  .aside ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-  .aside li{font-size:.97rem;color:var(--muted);padding-left:18px;position:relative}
-  .aside li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
-  @media(max-width:820px){.about{grid-template-columns:1fr}.aside{border-left:0;border-top:var(--line-w) solid var(--line-2);padding-left:0;padding-top:26px}}
+.about { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 64px; align-items: start; }
+.about p { color: var(--muted); margin-bottom: 18px; }
+.about p:last-child { margin-bottom: 0; }
+.about strong { color: var(--fg); }
+.aside { padding-left: 25px; border-left: 1px solid var(--line); }
+.aside h3 { color: var(--fg); font-size: 16px; font-weight: 500; line-height: 1.5; margin-bottom: 13px; }
+.aside h3.aside-gap { margin-top: 27px; }
+.aside ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.aside li { color: var(--muted); font-size: 15px; line-height: 1.6; }
+.aside li strong { color: var(--fg); }
 
-  .pubs{display:flex;flex-direction:column}
-  .row{display:grid;grid-template-columns:70px 1fr auto;gap:clamp(14px,3vw,36px);padding:28px 0;border-top:var(--line-w) solid var(--line);align-items:baseline;transition:background .25s}
-  .row:hover{background:linear-gradient(90deg,var(--accent-dim),transparent 72%)}
-  .row .acc{font-family:var(--f-mono);font-size:.75rem;color:var(--faint);letter-spacing:.05em}
-  .row .main h3{font-family:var(--f-disp);font-weight:500;font-size:1.35rem;line-height:1.25;margin-bottom:9px}
-  .row .venue{display:inline-block;font-family:var(--f-mono);font-size:.67rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:var(--line-w) solid var(--line-2);padding:4px 9px;border-radius:4px;margin-bottom:12px}
-  .row .main p{color:var(--muted);font-size:.98rem;max-width:60ch;margin-bottom:12px}
-  .metrics{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--f-mono);font-size:.77rem}
-  .metrics b{color:var(--fg);font-weight:500}.metrics span{color:var(--faint)}
-  .go{align-self:center;font-family:var(--f-mono);font-size:.73rem;letter-spacing:.04em;color:var(--muted);white-space:nowrap;border:var(--line-w) solid var(--line-2);padding:8px 13px;border-radius:100px;transition:all .2s}
-  a.go:hover{color:#0d0e12;background:var(--accent);border-color:var(--accent)}
-  .gos{display:flex;flex-direction:column;gap:8px;align-self:center;align-items:stretch}.gos .go{text-align:center}
-  @media(max-width:820px){.row{grid-template-columns:1fr;gap:8px}.go{justify-self:start;margin-top:4px}.gos{flex-direction:row;justify-self:start;align-self:start}}
-  .talks{margin-top:34px;padding:20px 22px;border:var(--line-w) dashed var(--line-2);border-radius:8px;font-size:.95rem;color:var(--muted)}
-  .talks b{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:8px}
+.pubs { display: flex; flex-direction: column; }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 30px; align-items: start; padding: 25px 0; border-top: 1px solid var(--line); }
+.row:first-child { border-top: 0; padding-top: 0; }
+.row .acc { display: none; }
+.row .main { min-width: 0; }
+.row .main.nofig { padding-right: 0; }
+.row .venue { display: block; font-size: 14px; font-weight: 400; line-height: 1.55; color: var(--muted); margin-bottom: 7px; }
+.row .main h3 { color: var(--fg); font-size: 19px; line-height: 1.5; font-weight: 500; margin-bottom: 8px; overflow-wrap: break-word; }
+.row .main h3 a { color: inherit; }
+.row .main h3 a:hover { color: var(--accent); }
+.row .main p { color: var(--muted); font-size: 16px; line-height: 1.7; max-width: 72ch; margin-bottom: 13px; }
+.go { display: inline-flex; align-items: center; justify-content: flex-start; min-height: 44px; color: var(--accent); font-size: 14px; line-height: 1.4; white-space: nowrap; }
+.gos { display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding-top: 14px; min-width: 80px; }
+.metrics { display: flex; flex-wrap: wrap; gap: 7px 20px; font-size: 14px; line-height: 1.65; margin-top: 13px; }
+.metrics b { color: var(--fg); font-weight: 500; }
+.metrics span { color: var(--muted); }
 
-  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  @media(max-width:760px){.grid{grid-template-columns:1fr}}
-  .card{border:var(--line-w) solid var(--line);border-radius:8px;padding:26px;background:var(--panel);transition:border-color .25s,transform .25s,background .25s;display:flex;flex-direction:column}
-  .card:hover{border-color:var(--line-2);transform:translateY(-3px);background:var(--panel-2)}
-  .card .k{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-  .card h3{font-family:var(--f-disp);font-weight:500;font-size:1.32rem;line-height:1.2;margin-bottom:10px}
-  .card p{color:var(--muted);font-size:.96rem;margin-bottom:16px;flex:1}
-  .card .tagline{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--f-mono);font-size:.73rem;color:var(--faint)}
-  .card .tagline b{color:var(--fg);font-weight:500}
-  .card .tagline a{margin-left:auto;color:var(--accent);letter-spacing:.04em;transition:opacity .2s}.card .tagline a:hover{opacity:.7}.card .tagline a+a{margin-left:0}
+details.research-detail, details.project-detail { color: var(--muted); font-size: 15px; line-height: 1.7; }
+details.research-detail::after, details.project-detail::after { content: ""; display: table; clear: both; }
+details.research-detail > summary, details.project-detail > summary { display: list-item; width: fit-content; min-height: 44px; padding: 9px 1px; color: var(--accent); font-size: 14px; line-height: 1.7; cursor: pointer; }
+details.research-detail > summary:hover, details.project-detail > summary:hover { text-decoration: underline; text-underline-offset: .22em; }
+details.research-detail[open] > summary, details.project-detail[open] > summary { margin-bottom: 10px; }
+.thumb { float: right; width: 200px; max-width: 38%; margin: 4px 0 16px 24px; border: 1px solid var(--line-2); border-radius: 3px; overflow: hidden; background: var(--plate); }
+.thumb img { display: block; width: 100%; height: auto; }
+.talks { margin-top: 22px; padding: 20px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+.talks b { color: var(--fg); font-weight: 500; display: block; margin-bottom: 7px; }
+.poster-strip { display: flex; flex-wrap: wrap; gap: 15px; margin: 18px 0 0; }
+.poster { flex: 1 1 180px; max-width: 250px; border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
+.poster img { display: block; width: 100%; height: 140px; object-fit: contain; background: var(--plate); padding: 8px; }
+.poster .cap { padding: 10px 12px; font-size: 13px; line-height: 1.6; color: var(--muted); }
+.poster .cap b { color: var(--fg); font-weight: 500; }
 
-  .role-row{display:grid;grid-template-columns:200px 1fr;gap:clamp(16px,4vw,48px);padding:32px 0;border-top:var(--line-w) solid var(--line)}
-  .role-row .when{font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
-  .role-row .when .co{display:block;color:var(--accent);margin-bottom:6px;font-size:.92rem;letter-spacing:.03em}
-  .role-row .when .loc{color:var(--faint)}
-  .role-row .what h3{font-family:var(--f-disp);font-weight:500;font-size:1.42rem;margin-bottom:6px}
-  .role-row .what .sub{color:var(--faint);font-family:var(--f-mono);font-size:.74rem;letter-spacing:.05em;margin-bottom:15px;text-transform:uppercase}
-  .role-row .what ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-  .role-row .what li{color:var(--muted);font-size:.99rem;padding-left:20px;position:relative;max-width:66ch}
-  .role-row .what li::before{content:"–";position:absolute;left:0;color:var(--accent)}
-  @media(max-width:720px){.role-row{grid-template-columns:1fr;gap:14px}}
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 32px; }
+.card { display: flex; flex-direction: column; min-width: 0; padding: 0 0 26px; border-bottom: 1px solid var(--line); }
+.card-fig { display: flex; align-items: center; justify-content: center; height: 184px; margin-bottom: 19px; border-radius: 3px; overflow: hidden; background: var(--plate); }
+.card-fig img { display: block; width: 100%; height: 100%; object-fit: contain; padding: 11px; }
+.card .k { color: var(--muted); font-size: 14px; line-height: 1.55; margin-bottom: 8px; }
+.card h3 { font-size: 21px; line-height: 1.4; font-weight: 500; margin-bottom: 10px; color: var(--fg); overflow-wrap: break-word; }
+.card p { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
+.card > p { flex: 1; }
+.card .tagline { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 15px; color: var(--muted); font-size: 14px; line-height: 1.6; margin-top: 6px; }
+.card .tagline b { color: var(--fg); font-weight: 500; }
+.card .tagline a { color: var(--accent); display: inline-flex; align-items: center; min-height: 44px; }
+.fold { margin-top: 26px; }
+.fold > summary { display: list-item; cursor: pointer; padding: 13px 0; min-height: 48px; color: var(--accent); border-top: 1px solid var(--line); font-size: 16px; line-height: 1.5; }
+.fold > summary:hover { text-decoration: underline; text-underline-offset: .22em; }
+.fold[open] > summary { margin-bottom: 24px; }
+.subhead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 20px; margin: 36px 0 22px; }
+.subhead h3 { font-size: 22px; line-height: 1.4; font-weight: 500; }
+.subhead .note { color: var(--muted); font-size: 14px; }
 
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px)}
-  @media(max-width:820px){.two{grid-template-columns:1fr;gap:52px}}
-  .skillset{margin-bottom:26px}.skillset:last-child{margin-bottom:0}
-  .skillset h4{font-family:var(--f-mono);font-size:.73rem;letter-spacing:.11em;text-transform:uppercase;color:var(--accent);margin-bottom:13px}
-  .tags{display:flex;flex-wrap:wrap;gap:8px}
-  .tag{font-size:.85rem;color:var(--muted);border:var(--line-w) solid var(--line);padding:6px 12px;border-radius:5px;transition:all .2s}
-  .tag:hover{border-color:var(--line-2);color:var(--fg)}
-  .fund{border-top:var(--line-w) solid var(--line);padding:20px 0}.fund:first-of-type{border-top:0;padding-top:0}
-  .fund h4{font-weight:400;font-size:1.05rem;color:var(--fg);margin-bottom:7px}
-  .fund .meta{font-family:var(--f-mono);font-size:.73rem;color:var(--faint);line-height:1.8}
-  .fund .amt{color:var(--accent)}
-  .award{display:flex;gap:14px;align-items:center;margin-top:8px;padding:16px;border:1px solid rgba(125,140,255,.35);border-radius:8px;background:var(--accent-dim)}
-  .award .medal{font-family:var(--f-disp);font-weight:700;font-size:1.9rem;color:var(--accent);line-height:1}
-  .award p{font-size:.93rem;color:var(--muted)}.award b{color:var(--fg);font-weight:500}
+.role-row { display: grid; grid-template-columns: 205px minmax(0, 1fr); gap: 36px; padding: 25px 0; border-top: 1px solid var(--line); }
+.role-row:first-child { border-top: 0; padding-top: 0; }
+.role-row .when { color: var(--muted); font-size: 14px; line-height: 1.65; }
+.role-row .when .co { display: block; color: var(--fg); font-size: 16px; font-weight: 500; margin-bottom: 5px; }
+.role-row .when .loc { color: var(--muted); }
+.role-row .what { min-width: 0; }
+.role-row .what h3 { color: var(--fg); font-size: 20px; line-height: 1.45; font-weight: 500; margin-bottom: 7px; }
+.role-row .what .sub { color: var(--muted); font-size: 14px; line-height: 1.65; margin-bottom: 11px; }
+.role-row .what ul { padding-left: 19px; display: flex; flex-direction: column; gap: 9px; }
+.role-row .what li { color: var(--muted); font-size: 16px; line-height: 1.7; max-width: 72ch; padding-left: 2px; }
+.role-row .what p { color: var(--muted); font-size: 16px; }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 54px; }
+.skillset { margin-bottom: 24px; }
+.skillset:last-child { margin-bottom: 0; }
+.skillset h3 { font-size: 15px; line-height: 1.5; font-weight: 500; color: var(--fg); margin-bottom: 11px; }
+.tags { display: flex; flex-wrap: wrap; gap: 7px 10px; }
+.tag { font-size: 14px; line-height: 1.55; color: var(--muted); padding: 5px 9px; border: 1px solid var(--line); border-radius: 3px; }
+.fund { padding: 20px 0; border-top: 1px solid var(--line); }
+.fund:first-child { border-top: 0; padding-top: 0; }
+.fund h3 { color: var(--fg); font-size: 16px; line-height: 1.6; font-weight: 500; margin-bottom: 7px; }
+.fund .meta { color: var(--muted); font-size: 14px; line-height: 1.7; }
+.fund .amt { color: var(--accent); }
+.award { display: flex; gap: 18px; align-items: center; padding: 18px 0; border-top: 1px solid var(--line); margin-top: 9px; }
+.award .medal { font-size: 28px; line-height: 1.2; color: var(--fg); font-weight: 500; flex-shrink: 0; }
+.award p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+.award b { color: var(--fg); font-weight: 500; }
 
-  .contact{text-align:center;padding:clamp(86px,13vw,144px) 0}
-  .contact .big{font-family:var(--f-disp);font-weight:600;font-size:clamp(2.2rem,5.5vw,4rem);line-height:1.03;margin:20px 0 14px;letter-spacing:-.01em}
-  .contact .big a{color:var(--accent);border-bottom:2px solid transparent;transition:border-color .2s}
-  .contact .big a:hover{border-color:var(--accent)}
-  .contact .sub{color:var(--muted);max-width:42ch;margin:0 auto 36px}
-  .contact .links{display:flex;justify-content:center;flex-wrap:wrap;gap:11px}
-  footer{border-top:var(--line-w) solid var(--line);padding:26px 0;text-align:center;font-family:var(--f-mono);font-size:.71rem;letter-spacing:.06em;color:var(--faint)}
-  footer .upd{display:block;margin-top:9px;font-size:.66rem;letter-spacing:.12em;opacity:.72}
+.contact { text-align: left; }
+.contact .eyebrow { color: var(--muted); font-size: 14px; }
+.contact .big { font-size: 26px; line-height: 1.4; font-weight: 500; letter-spacing: -.01em; margin: 15px 0 13px; }
+.contact .big a { color: var(--fg); }
+.contact .sub { color: var(--muted); max-width: 66ch; margin: 0 0 24px; }
+.contact .links { display: flex; flex-wrap: wrap; gap: 10px; }
+footer { border-top: 1px solid var(--line); padding: 25px 24px 31px; color: var(--muted); font-size: 13px; line-height: 1.7; text-align: center; }
+footer .upd { display: block; margin-top: 6px; font-size: 13px; }
+.reveal, .reveal.in { opacity: 1; transform: none; }
 
-  .reveal{opacity:0;transform:translateY(20px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1)}
-  .reveal.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-  :lang(ko) .head h2,:lang(ko) .hero h1,:lang(ko) .row .main h3,:lang(ko) .card h3,:lang(ko) .role-row .what h3,:lang(ko) .contact .big,:lang(ja) .head h2,:lang(ja) .hero h1,:lang(ja) .row .main h3,:lang(ja) .card h3,:lang(ja) .role-row .what h3,:lang(ja) .contact .big{letter-spacing:-.01em}
-
-  /* ---- media: avatar, figure thumbnails, card banners ---- */
-  .hero-id{display:flex;align-items:center;gap:16px;margin-bottom:18px}
-  .avatar{width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:top;border:var(--line-w) solid var(--line-2);box-shadow:0 8px 26px rgba(0,0,0,.45);background:var(--panel-2);flex:none}
-  .thumb{float:right;width:190px;margin:3px 0 10px 26px;border:var(--line-w) solid var(--line-2);border-radius:8px;overflow:hidden;background:var(--plate);box-shadow:0 10px 28px rgba(0,0,0,.3);transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
-  .thumb img{display:block;width:100%;height:auto;filter:var(--fig-dim);transition:filter .3s}
-  .thumb:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 36px rgba(0,0,0,.45)}
-  .thumb:hover img{filter:none}
-  @media(max-width:820px){.thumb{float:none;width:100%;max-width:300px;margin:6px 0 16px}}
-  /* rows with no figure reserve the same right gutter, so every publication
-     shares one text measure instead of running the full width */
-  .row .main.nofig{padding-right:216px}
-  @media(max-width:820px){.row .main.nofig{padding-right:0}}
-  .card{overflow:hidden}
-  .fold summary{cursor:pointer;list-style:none;font-family:var(--f-mono);font-size:.78rem;letter-spacing:.04em;color:var(--muted);padding:14px 18px;border:var(--line-w) dashed var(--line-2);border-radius:8px;transition:background .25s,color .25s}
-  .fold summary::-webkit-details-marker{display:none}
-  .fold summary::before{content:"+ ";color:var(--accent)}
-  .fold[open] summary::before{content:"– "}
-  .fold summary:hover{background:var(--accent-dim);color:var(--fg)}
-  .fold[open] summary{margin-bottom:18px}
-  .subhead{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin:56px 0 22px;padding-top:28px;border-top:var(--line-w) solid var(--line)}
-  .subhead h3{font-family:var(--f-disp);font-weight:600;font-size:1.35rem;letter-spacing:-.01em}
-  .subhead .note{font-family:var(--f-mono);font-size:.72rem;color:var(--faint);letter-spacing:.04em}
-  .card-fig{margin:-26px -26px 20px;height:152px;background:var(--plate);border-bottom:var(--line-w) solid var(--line-2);display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .card-fig img{width:100%;height:100%;object-fit:contain;padding:9px;filter:var(--fig-dim);transition:transform .35s cubic-bezier(.2,.7,.2,1),filter .35s}
-  .card:hover .card-fig img{transform:scale(1.045);filter:none}
-  .poster-strip{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-  .poster{flex:1 1 180px;max-width:250px;border:var(--line-w) solid var(--line-2);border-radius:8px;overflow:hidden;background:var(--panel);transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
-  .poster:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.42)}
-  .poster img{display:block;width:100%;height:120px;object-fit:contain;background:var(--plate);padding:5px;filter:var(--fig-dim);transition:filter .3s}
-  .poster:hover img{filter:none}
-  .poster .cap{font-family:var(--f-mono);font-size:.63rem;letter-spacing:.03em;color:var(--muted);padding:8px 10px;border-top:var(--line-w) solid var(--line);line-height:1.5}
-  .poster .cap b{color:var(--accent);font-weight:500}
-  /* ---- language switch ---- */
-  .langsw{display:inline-flex;border:var(--line-w) solid var(--line-2);border-radius:100px;overflow:hidden;font-family:var(--f-mono)}
-  .langopt{display:inline-block;font-size:.72rem;letter-spacing:.06em;color:var(--muted);background:transparent;border:0;padding:7px 12px;cursor:pointer;line-height:1.2;transition:background .2s,color .2s}
-  .langopt:hover{color:var(--fg)}
-  .langopt.is-active{background:var(--accent);color:#0d0e12}
-  .chip.cv{background:var(--accent);border-color:var(--accent);color:#0d0e12;font-weight:500}
-  .chip.cv:hover{background:#fff;border-color:#fff;color:#0d0e12}
-  .head .ghlink{color:var(--accent);font-family:var(--f-mono);font-size:.74rem;letter-spacing:.04em;margin-left:14px;transition:opacity .2s;white-space:nowrap}
-  .head .ghlink:hover{opacity:.65}
-  .head .note .schlink{color:var(--accent);transition:opacity .2s;white-space:nowrap}
-  .head .note .schlink:hover{opacity:.65}
+@media (max-width: 1000px) {
+  .topbar { padding-right: 28px; padding-left: 28px; gap: 18px; }
+  .brand .bsub { display: none; }
+  .topright { gap: 17px; }
+  .nav { gap: 15px; font-size: 13px; }
+  .hero { gap: 36px; }
+}
+@media (max-width: 820px) {
+  .nav a:not(.m) { display: none; }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 42px; padding: 44px 0 56px; }
+  .hero h1 { font-size: 42px; }
+  .lede { max-width: 62ch; }
+  .ledger { padding-left: 23px; }
+  .about { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .aside { border-left: 0; border-top: 1px solid var(--line); padding: 23px 0 0; }
+  .two { grid-template-columns: minmax(0, 1fr); gap: 38px; }
+  .role-row { grid-template-columns: 175px minmax(0, 1fr); gap: 26px; }
+}
+@media (max-width: 600px) {
+  .wrap { padding: 0 24px; }
+  .topbar { flex-wrap: wrap; min-height: 104px; gap: 0 12px; padding: 7px 24px 6px; }
+  .brand { display: flex; align-items: center; min-height: 44px; font-size: 15px; }
+  .topright { display: contents; }
+  .langsw { order: 1; margin-left: auto; }
+  .langopt { min-width: 34px; padding: 4px 6px; }
+  .nav { order: 2; width: 100%; gap: 26px; font-size: 14px; }
+  .nav a { min-height: 39px; }
+  .hero { padding-top: 34px; gap: 33px; }
+  .hero-id { gap: 17px; margin-bottom: 23px; }
+  .hero h1 { font-size: 37px; margin-bottom: 19px; }
+  .hero h1 .kr { margin-left: 9px; font-size: 18px; }
+  .eyebrow { font-size: 14px; }
+  .lede { font-size: 17px; }
+  .pub { padding: 17px 0; }
+  .pub .t { font-size: 18px; }
+  .pub .v { font-size: 14px; }
+  section.block { padding: 48px 0; scroll-margin-top: 112px; }
+  .row[id], #main-content { scroll-margin-top: 112px; }
+  .head { gap: 10px; margin-bottom: 23px; }
+  .head h2 { font-size: 26px; }
+  .head .note { flex-basis: 100%; margin-left: 0; }
+  .grid { grid-template-columns: minmax(0, 1fr); gap: 31px; }
+  .card-fig { height: 170px; }
+  .row { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 24px 0; }
+  .row .main h3 { font-size: 18px; line-height: 1.55; }
+  .gos { flex-direction: row; gap: 23px; padding-top: 2px; flex-wrap: wrap; }
+  .thumb { float: none; display: block; width: 100%; max-width: 320px; margin: 3px 0 18px; }
+  .role-row { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .role-row .when { line-height: 1.65; }
+  .role-row .what h3 { font-size: 19px; }
+  .contact .big { font-size: 24px; }
+  .poster { max-width: none; }
+  footer { text-align: left; }
+}
+@media (max-width: 360px) {
+  .wrap { padding: 0 20px; }
+  .topbar { padding-right: 20px; padding-left: 20px; }
+  .hero h1 { font-size: 34px; }
+  .hero h1 .kr { display: block; margin-left: 0; margin-top: 7px; }
+  .avatar { flex-basis: 88px; width: 88px; height: 88px; }
+  .nav { gap: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+@media print {
+  :root { color-scheme: light; --bg: #fff; --panel: #f4f4f4; --panel-2: #f0f0f0; --fg: #17191c; --muted: #444b51; --faint: #444b51; --accent: #274d6b; --line: #c8cdd1; --line-2: #aab3ba; }
+  html { scroll-padding-top: 0; }
+  body { font-size: 11pt; }
+  .topbar { position: static; padding: 0 0 14px; min-height: 0; }
+  .nav, .langsw, .chips, .contact .links { display: none; }
+  .wrap { max-width: none; padding: 0; }
+  .hero { grid-template-columns: 1fr 1fr; padding: 30px 0; gap: 30px; }
+  .hero h1 { font-size: 30px; }
+  .avatar { width: 78px; height: 78px; flex-basis: 78px; }
+  .lede, .row .main p, .role-row .what li { font-size: 11pt; }
+  section.block { padding: 28px 0; }
+  .head h2 { font-size: 21px; }
+  .row, .card, .role-row, .fund { break-inside: avoid; }
+  .row .main h3 { font-size: 14pt; }
+  .card-fig { height: 140px; }
+  .go { font-size: 10pt; }
+  a { text-decoration: underline; }
+  footer { padding: 18px 0; }
+}
 </style>
 </head>
-<body>
+<body><a class="skip-link" href="#main-content">本文へスキップ</a>
 
 <div class="topbar">
   <div class="brand"><b>Geongyu&nbsp;Lee</b><span class="bsub"> · 이건규</span></div>
@@ -281,7 +375,7 @@
       <a href="#projects">プロジェクト</a>
       <a class="m" href="#experience">経歴</a>
       <a href="#education">学歴</a>
-      <a class="m" href="#contact">連絡先</a>
+      <a class="m" href="#contact">リンク</a>
     </nav>
     <nav class="langsw" aria-label="Language">
       <a class="langopt" href="/" hreflang="en" lang="en">EN</a>
@@ -291,60 +385,43 @@
   </div>
 </div>
 
-<main class="wrap">
+<main class="wrap" id="main-content">
 
   <!-- HERO -->
   <header class="hero">
     <div>
       <div class="hero-id">
-        <img class="avatar" src="/assets/profile.jpg" alt="Geongyu Lee · 이건규" width="76" height="76" loading="eager">
+        <img class="avatar" src="/assets/profile.jpg" alt="Geongyu Lee · 이건규" width="104" height="104" loading="eager">
         <span class="eyebrow">機械学習リサーチャー · ソウル</span>
       </div>
       <h1>Geongyu Lee<span class="kr">イ・ゴンギュ · 이건규</span></h1>
-      <p class="role"><span class='b'>クロスモーダル学習</span> / 信頼できる予測 / <span class='b'>Computational Pathology × マルチオミクス</span></p>
-      <p class="lede">病理画像から分子情報を予測する機械学習モデルを研究し、現職ではプロテオミクスから薬剤応答を予測するモデルも開発しています。学習データに含まれない施設や薬剤でも予測が有効かどうかの検証に力を入れています。</p>
+      <p class="role">AIリサーチャー · OMIXAI</p>
+      <p class="lede">組織画像から分子情報を、プロテオミクスから薬剤応答を予測するモデルを研究しています。新たな施設や学習に含まれない薬剤でも予測が有効かを検証しています。</p>
       <div class="chips">
-        <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_JA.pdf" download><svg viewBox='0 0 24 24'><path d='M13 3h-2v8H8l4 4 4-4h-3V3zM5 19h14v2H5z'/></svg>CV (PDF)</a>
-        <a class="chip icon" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=en" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.9V15h2V8zM4 12.4v3.5C4 18.1 7.6 20 12 20s8-1.9 8-4.1v-3.5l-8 4.4z"/></svg><span class="sr">Scholar</span></a>
-        <a class="chip icon" aria-label="GitHub" title="GitHub" href="https://github.com/Geongyu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 1a11 11 0 0 0-3.5 21.4c.6.1.8-.2.8-.5v-2c-3 .7-3.7-1.3-3.7-1.3-.5-1.2-1.2-1.6-1.2-1.6-1-.7 0-.7 0-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.4-.3-5-1.2-5-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10.4 10.4 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.1-2.6 5-5 5.3.4.3.8 1 .8 2.1v3.1c0 .3.2.6.8.5A11 11 0 0 0 12 1z"/></svg><span class="sr">GitHub</span></a>
+        <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_JA.pdf" download>CV (PDF)</a>
+        <a class="chip" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="chip" aria-label="GitHub" title="GitHub" href="https://github.com/Geongyu" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
 
     <div class="ledger" aria-label="Selected publications">
-      <div class="ledger-h"><span>主要業績</span><span class="dot"></span></div>
-      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t">MoSPR: H&amp;E → gene expression via morpho-spatial macrostates</span><span class="v first">共同筆頭著者 · プレプリント '26</span></a>
-      <a class="pub" href="#conferences"><span class="t">Predictability ≠ substitutability: H&amp;E molecular prediction across 5 cancers</span><span class="v first">筆頭著者 · GIW '26 · ポスター採択</span></a>
-      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t">Recurrence risk in early-stage breast cancer from H&amp;E WSIs</span><span class="v first">筆頭著者 · Sci. Reports '25</span></a>
-      <a class="pub" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><span class="t">G2L: giga-scale → cancer-specific pathology foundation models</span><span class="v">共著者 · AAAI '26 ワークショップ</span></a>
-      <a class="pub" href="https://arxiv.org/abs/2608.03145" target="_blank" rel="noopener"><span class="t">Spatial proteomics × H&amp;E AI: recurrence-risk niches in TNBC</span><span class="v">共著者 · プレプリント '26</span></a>
-      <a class="pub" href="https://doi.org/10.1016/j.media.2026.104234" target="_blank" rel="noopener"><span class="t">KPIs 2024: glomerular segmentation, patch → slide level</span><span class="v">共著者 · MedIA '26</span></a>
-    </div>
+      <div class="ledger-h"><span>主な研究</span></div>
+      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t">MoSPR: 病理画像から遺伝子発現を予測</span><span class="v first">2026 · プレプリント · 共同筆頭著者</span></a>
+      <a class="pub" href="#molecular-substitution"><span class="t">H&Eで分子検査を代替できるか？</span><span class="v first">GIW 2026 · ポスター採択 · 筆頭著者</span></a>
+      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t">H&Eから乳がんの再発リスクを予測</span><span class="v first">Scientific Reports 2025 · 筆頭著者</span></a>
+
+    <a class="ledger-footer" href="#publications">論文一覧を見る →</a></div>
   </header>
 
   <!-- STRIP -->
-  <section class="block" style="border-top:0;padding-top:0">
-    <div class="strip reveal">
-      <div class="cell"><div class="big">5+</div><div class="lab">年 · 企業でのML R&D</div></div>
-      <div class="cell"><div class="big">5</div><div class="lab">査読付き学術誌論文 · 筆頭著者1編、共同筆頭著者の総説1編</div></div>
-      <div class="cell"><div class="big">G2L</div><div class="lab">病理基盤モデル · AAAI 2026 ワークショップ口頭発表 · 共著者</div></div>
-      <div class="cell"><div class="big">2<span style="font-size:.5em;color:var(--muted)">nd</span></div><div class="lab">KPIs 2024チャレンジ · WSIレベル部門 · MICCAI · Deep Bioチーム</div></div>
-    </div>
-    <div class="strip-lab reveal">主な研究成果</div>
-    <div class="strip results reveal">
-      <div class="cell"><div class="big">5<span style='font-size:.5em;color:var(--muted)'> がん種</span></div><div class="lab">施設分離評価で分子検査の代替可能性を検証 · 事前登録基準を満たしたのは1項目(頭頸部がんHPV)、他の多くは未決 · 筆頭著者</div></div>
-      <div class="cell"><div class="big">1<span style='font-size:.5em;color:var(--muted)'>位 / 15</span></div><div class="lab">遺伝子別PCC、H&E → 遺伝子発現 · 論文内の比較実験で15手法中1位、TCGA 3がん種 · 共同筆頭著者</div></div>
-      <div class="cell"><div class="big">≥0.65</div><div class="lab">薬剤応答 Pearson · 学習データに含まれない薬剤(leave-drug-out) · 社内R&D、未発表</div></div>
-      <div class="cell"><div class="big">0.728<span style="font-size:.5em;color:var(--muted)"> / 0.760</span></div><div class="lab">乳がんWSI mIoU · カバレッジ95% / 80% · 選択的セグメンテーションにおける精度とカバレッジのトレードオフ · 共著者</div></div>
-    </div>
-  </section>
 
   <!-- PROFILE -->
   <section class="block" id="about">
-    <div class="head reveal"><span class="num">00</span><h2>プロフィール</h2></div>
-    <div class="about reveal">
+    <div class="head"><h2>研究</h2></div>
+    <div class="about">
       <div>
-        <p><strong>H&E染色スライド</strong>から、21遺伝子検査の再発リスク群(<strong>Scientific Reports</strong> 2025、筆頭著者)、ER/PR/HER2受容体ステータス(AACR 2023、筆頭著者)、遺伝子発現(<strong>MoSPR</strong>、共同筆頭著者、論文内の比較実験で遺伝子別PCCが15手法中1位)を予測する<strong>クロスモーダルモデル</strong>を開発してきました。続く5がん種の研究(GIW ISCB-Asia 2026、筆頭著者)では、こうした予測が実際の分子検査を代替できるかを検証しました。<strong>事前登録した単一のプロトコル</strong>を5がん種すべてに適用し、確定基準を満たさなかったエンドポイントの多くは「否定」ではなく「未決」として報告しました。</p>
-        <p>OMIXAIでは、プロテオミクス・RNA・H&Eを統合して薬剤応答を予測する<strong>マルチオミクスモデルのR&D</strong>を主導しています(進行中)。Deep BioではWSIパイプラインを構築し、韓国食品医薬品安全処(MFDS)に承認申請された医療AI製品の<strong>実運用前のモデル検証と申請文書作成に貢献</strong>しました。</p>
+        <p>病理画像から受容体ステータス、遺伝子発現、再発スコアのリスク群を予測してきました。最近の5がん種の研究では、H&E画像による予測精度の高さだけで分子検査を代替できるかを検証しました。</p>
+        <p>OMIXAIではプロテオミクスに基づく薬剤応答モデルを開発し、プロテオミクス・RNA・H&Eを統合する研究を主導しています。学習に含まれない薬剤を対象にモデルを評価しています。</p>
       </div>
       <div class="aside">
         <h3>研究テーマ</h3>
@@ -356,130 +433,115 @@
           <li>マルチモーダル統合による薬剤応答予測(プロテオミクス × H&E × RNA、進行中)</li>
           <li>バーチャルセル・摂動(perturbation)予測</li>
         </ul>
-        <h3 class="aside-gap">リーダーシップ実績</h3>
-        <ul>
-          <li>前立腺がんの転移・再発リスクモデリング(Deep Bio)、薬剤応答予測のマルチオミクスモデルR&D(OMIXAI、進行中)、Arc Institute Virtual Cell ChallengeへのOMIXAIチーム参加(共同主導)の<strong>3つの研究テーマ</strong>を主導・共同主導</li>
-          <li><strong>2施設</strong>(国立がんセンター・高麗大学九老病院)共同コホート研究の筆頭著者 · WSIパイプラインを構築し、<strong>500枚以上</strong>のスライドを処理</li>
-          <li><strong>3課題</strong>に研究員として参画(国家R&D 2件、日韓共同研究1件)</li>
-          <li>若手AI・データ人材<strong>30名以上</strong>を1対1でメンタリング · 3期にわたり<strong>8チーム以上</strong>のプロジェクトを指導 · Codeitメンター</li>
-        </ul>
+
       </div>
     </div>
   </section>
 
   <!-- PUBLICATIONS -->
   <section class="block" id="publications">
-    <div class="head reveal"><span class="num">01</span><h2>論文</h2><span class="note">† (共同)筆頭著者 · <a class='schlink' href='https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=ja' target='_blank' rel='noopener'>Google Scholar ↗</a></span></div>
+    <div class="head"><h2>論文</h2><span class="note">学術誌論文・プレプリント・ワークショップ</span><a class="ghlink" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar ↗</a></div>
     <div class="pubs">
 
-      <article class="row reveal">
-        <div class="acc">01 †</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><img src="/assets/pub_breast_gradcam.jpg" alt="Grad-CAM heatmaps over H&amp;E breast tissue patches" loading="lazy"></a>
+
           <span class="venue">Scientific Reports · 2025 · 筆頭著者</span>
-          <h3>Assessing the risk of recurrence in early-stage breast cancer through H&amp;E stained whole slide images</h3>
-          <p>H&Eで21遺伝子再発検査を代替できるか検証した多施設後ろ向き研究です(n=125、国立がんセンター + 高麗大学九老病院)。組織病理のみの深層学習で、検査による低/中/高リスク群を近似できることを示しました。</p>
-          <div class="metrics"><span>感度 L / I / H</span><b>0.86 / 0.75 / 0.53</b><span>特異度 L / I / H</span><b>0.82 / 0.80 / 0.97</b></div>
-        </div>
+          <h3><a href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener">Assessing the risk of recurrence in early-stage breast cancer through H&amp;E stained whole slide images</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><img src="/assets/pub_breast_gradcam.jpg" alt="Grad-CAM heatmaps over H&amp;E breast tissue patches" loading="lazy"></a><p>H&Eで21遺伝子再発検査を代替できるか検証した多施設後ろ向き研究です(n=125、国立がんセンター + 高麗大学九老病院)。組織病理のみの深層学習で、検査による低/中/高リスク群を近似できることを示しました。</p><div class="metrics"><span>感度 L / I / H</span><b>0.86 / 0.75 / 0.53</b><span>特異度 L / I / H</span><b>0.82 / 0.80 / 0.97</b></div></details></div>
         <a class="go" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener">Paper ↗</a>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">02 †</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><img src="/assets/pub_mospr_macrostate.jpg" alt="MoSPR: patches to morpho-spatial macrostates, then low-rank regression to gene expression" loading="lazy"></a>
+
           <span class="venue">プレプリント · 2026 · 査読中 · 共同筆頭著者 †</span>
-          <h3>MoSPR: Histology-to-Gene Expression Prediction with Morpho-Spatial Macrostates and Low-Rank Molecular Programs</h3>
-          <p>WSIパッチを形態学的ミクロ状態にまとめ、空間的隣接関係からマクロ状態(macrostate)を抽出し、低ランク分子プログラムで遺伝子発現を予測する線形回帰フレームワークです。TCGAの3がん種で14の比較手法を上回り、少ない学習データでも性能を維持しました。線形構造のため、予測を大域・領域別の分子プログラムに分解して解釈できます。</p>
-          <div class="metrics"><span>遺伝子別PCC</span><b>BRCA 0.413 · KIRC 0.334 · LUAD 0.358</b><span>· 論文内の比較実験で15手法中1位</span></div>
-        </div>
+          <h3><a href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener">MoSPR: Histology-to-Gene Expression Prediction with Morpho-Spatial Macrostates and Low-Rank Molecular Programs</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><img src="/assets/pub_mospr_macrostate.jpg" alt="MoSPR: patches to morpho-spatial macrostates, then low-rank regression to gene expression" loading="lazy"></a><p>WSIパッチを形態学的ミクロ状態にまとめ、空間的隣接関係からマクロ状態(macrostate)を抽出し、低ランク分子プログラムで遺伝子発現を予測する線形回帰フレームワークです。TCGAの3がん種で14の比較手法を上回り、少ない学習データでも性能を維持しました。線形構造のため、予測を大域・領域別の分子プログラムに分解して解釈できます。</p><div class="metrics"><span>遺伝子別PCC</span><b>BRCA 0.413 · KIRC 0.334 · LUAD 0.358</b><span>· 論文内の比較実験で15手法中1位</span></div></details></div>
         <div class="gos">
           <a class="go" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener">arXiv ↗</a>
           <a class="go" href="https://github.com/Radisen-Panthera/MoSPR" target="_blank" rel="noopener">Code ↗</a>
         </div>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">03 †</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="https://www.sciencedirect.com/science/article/pii/S2287888225000066" target="_blank" rel="noopener"><img src="/assets/pub_urology_workflow.jpg" alt="AI-based digital pathology workflow from specimen slide to diagnostic report" loading="lazy"></a>
+
           <span class="venue">Prostate International · 2025 · 総説 · 共同筆頭著者 †</span>
-          <h3>Artificial intelligence–driven digital pathology in urological cancers: current trends and future directions</h3>
-          <p>泌尿器がん病理におけるAIの最新動向と今後の展望を、臨床・技術・規制の観点から整理した総説です。</p>
-          <div class="metrics"><span>総説</span><b>デジタル病理</b></div>
-        </div>
+          <h3><a href="https://www.sciencedirect.com/science/article/pii/S2287888225000066" target="_blank" rel="noopener">Artificial intelligence–driven digital pathology in urological cancers: current trends and future directions</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="https://www.sciencedirect.com/science/article/pii/S2287888225000066" target="_blank" rel="noopener"><img src="/assets/pub_urology_workflow.jpg" alt="AI-based digital pathology workflow from specimen slide to diagnostic report" loading="lazy"></a><p>泌尿器がん病理におけるAIの最新動向と今後の展望を、臨床・技術・規制の観点から整理した総説です。</p><div class="metrics"><span>総説</span><b>デジタル病理</b></div></details></div>
         <a class="go" href="https://www.sciencedirect.com/science/article/pii/S2287888225000066" target="_blank" rel="noopener">Paper ↗</a>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">04</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="https://doi.org/10.1016/j.media.2026.104234" target="_blank" rel="noopener"><img src="/assets/pub_kpis_glomeruli.jpg" alt="KPIs 2024 patch-level glomeruli: PAS image, ground-truth mask and overlay" loading="lazy"></a>
+
           <span class="venue">Medical Image Analysis · 2026 · チャレンジ報告論文 · 共著者</span>
-          <h3>KPIs 2024 challenge: Advancing glomerular segmentation from patch- to slide-level</h3>
-          <p>糸球体セグメンテーションを対象としたKPIs 2024チャレンジの公式報告論文です(Medical Image Analysis 114巻、104234)。パッチ単位の学習からスライド単位の推論への汎化を扱っています。Deep BioチームとしてWSIレベル部門で2位となり、チームの一員として共著者に名を連ねています。</p>
-          <div class="metrics"><span>WSIレベル部門</span><b>2位</b><span>· Deep Bioチーム ·</span><b>MICCAI 2024</b></div>
-        </div>
+          <h3><a href="https://doi.org/10.1016/j.media.2026.104234" target="_blank" rel="noopener">KPIs 2024 challenge: Advancing glomerular segmentation from patch- to slide-level</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="https://doi.org/10.1016/j.media.2026.104234" target="_blank" rel="noopener"><img src="/assets/pub_kpis_glomeruli.jpg" alt="KPIs 2024 patch-level glomeruli: PAS image, ground-truth mask and overlay" loading="lazy"></a><p>糸球体セグメンテーションを対象としたKPIs 2024チャレンジの公式報告論文です(Medical Image Analysis 114巻、104234)。パッチ単位の学習からスライド単位の推論への汎化を扱っています。Deep BioチームとしてWSIレベル部門で2位となり、チームの一員として共著者に名を連ねています。</p><div class="metrics"><span>WSIレベル部門</span><b>2位</b><span>· Deep Bioチーム ·</span><b>MICCAI 2024</b></div></details></div>
         <a class="go" href="https://doi.org/10.1016/j.media.2026.104234" target="_blank" rel="noopener">Paper ↗</a>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">05</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="https://arxiv.org/abs/2608.03145" target="_blank" rel="noopener"><img src="/assets/pub_tnbc_risk_heatmap.jpg" alt="Tumor patch risk-score heatmap with high- and low-risk patch regions" loading="lazy"></a>
+
           <span class="venue">プレプリント · 2026 · 共著者</span>
-          <h3>Spatial proteomics guided by H&amp;E-based AI reveals recurrence-risk niches in triple-negative breast cancer</h3>
-          <p>H&EベースのAIリスクスコアで空間プロテオミクスの解析領域を選定し、トリプルネガティブ乳がん156例を解析しました。高リスクニッチでは細胞増殖経路が、低リスクニッチでは免疫活性が顕著でした。ここから導いた13タンパク質シグネチャを画像ベースのリスクスコアと組み合わせると、予後予測性能が向上しました。</p>
-          <div class="metrics"><span>H&Eリスクモデル</span><b>AUC 0.77 / C-index 0.77</b><span>· 独立テスト</span><span>H&E + 13タンパク質複合</span><b>OOB C-index 0.679 → 0.739</b></div>
-        </div>
+          <h3><a href="https://arxiv.org/abs/2608.03145" target="_blank" rel="noopener">Spatial proteomics guided by H&amp;E-based AI reveals recurrence-risk niches in triple-negative breast cancer</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="https://arxiv.org/abs/2608.03145" target="_blank" rel="noopener"><img src="/assets/pub_tnbc_risk_heatmap.jpg" alt="Tumor patch risk-score heatmap with high- and low-risk patch regions" loading="lazy"></a><p>H&EベースのAIリスクスコアで空間プロテオミクスの解析領域を選定し、トリプルネガティブ乳がん156例を解析しました。高リスクニッチでは細胞増殖経路が、低リスクニッチでは免疫活性が顕著でした。ここから導いた13タンパク質シグネチャを画像ベースのリスクスコアと組み合わせると、予後予測性能が向上しました。</p><div class="metrics"><span>H&Eリスクモデル</span><b>AUC 0.77 / C-index 0.77</b><span>· 独立テスト</span><span>H&E + 13タンパク質複合</span><b>OOB C-index 0.679 → 0.739</b></div></details></div>
         <a class="go" href="https://arxiv.org/abs/2608.03145" target="_blank" rel="noopener">arXiv ↗</a>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">06</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener"><img src="/assets/pub_prostate_multisection.png" alt="Multi-section whole-slide sampling strategies for prostate BCR" loading="lazy"></a>
+
           <span class="venue">プレプリント · 2026 · 共著者</span>
-          <h3>Efficient AI-Driven Multi-Section Whole Slide Image Analysis for Biochemical Recurrence Prediction in Prostate Cancer</h3>
-          <p>複数の組織切片にまたがる効率的なAI解析で、生化学的再発を予測します。単一スライド推論を複数切片からなる検体全体に拡張します。</p>
-          <div class="metrics"><span>複数切片WSI</span><b>前立腺BCR</b></div>
-        </div>
+          <h3><a href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener">Efficient AI-Driven Multi-Section Whole Slide Image Analysis for Biochemical Recurrence Prediction in Prostate Cancer</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener"><img src="/assets/pub_prostate_multisection.png" alt="Multi-section whole-slide sampling strategies for prostate BCR" loading="lazy"></a><p>複数の組織切片にまたがる効率的なAI解析で、生化学的再発を予測します。単一スライド推論を複数切片からなる検体全体に拡張します。</p><div class="metrics"><span>複数切片WSI</span><b>前立腺BCR</b></div></details></div>
         <a class="go" href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener">arXiv ↗</a>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">07</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="/assets/pub_g2l_distillation.png" alt="G2L knowledge-distillation framework overview" loading="lazy"></a>
+
           <span class="venue">AAAI 2026 ワークショップ (W3PHIAI) · 口頭発表 · 共著者</span>
-          <h3>G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Knowledge Distillation</h3>
-          <p>知識蒸留(knowledge distillation)でギガスケール病理基盤モデルをがん種特化の小型エンコーダへ圧縮し、計算量を抑えつつ下流タスクの性能を維持します。</p>
-          <div class="metrics"><span>知識蒸留</span><b>·</b><span>自己教師あり</span></div>
-        </div>
+          <h3><a href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener">G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Knowledge Distillation</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="/assets/pub_g2l_distillation.png" alt="G2L knowledge-distillation framework overview" loading="lazy"></a><p>知識蒸留(knowledge distillation)でギガスケール病理基盤モデルをがん種特化の小型エンコーダへ圧縮し、計算量を抑えつつ下流タスクの性能を維持します。</p><div class="metrics"><span>知識蒸留</span><b>·</b><span>自己教師あり</span></div></details></div>
         <a class="go" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener">arXiv ↗</a>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">08</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener"><img src="/assets/pub_murss_arch.png" alt="MurSS multi-resolution selective segmentation architecture" loading="lazy"></a>
+
           <span class="venue">Bioengineering · 2024 · 共著者</span>
-          <h3>MurSS: A Multi-Resolution Selective Segmentation Model for Breast Cancer</h3>
-          <p>複数解像度を同時に入力し、信頼度(confidence)に基づくreject lossで不確実な領域の予測を保留します。ノイズの多い組織病理ラベルを想定した設計です。</p>
-          <div class="metrics"><span>mIoU</span><b>0.728 · 95%カバレッジ</b><span>·</span><b>0.760 · 80%カバレッジ</b></div>
-        </div>
+          <h3><a href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener">MurSS: A Multi-Resolution Selective Segmentation Model for Breast Cancer</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener"><img src="/assets/pub_murss_arch.png" alt="MurSS multi-resolution selective segmentation architecture" loading="lazy"></a><p>複数解像度を同時に入力し、信頼度(confidence)に基づくreject lossで不確実な領域の予測を保留します。ノイズの多い組織病理ラベルを想定した設計です。</p><div class="metrics"><span>mIoU</span><b>0.728 · 95%カバレッジ</b><span>·</span><b>0.760 · 80%カバレッジ</b></div></details></div>
         <a class="go" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener">Paper ↗</a>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">09</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener"><img src="/assets/pub_contrastive_embed.png" alt="Encoder embedding-space illustration for supervised contrastive learning" loading="lazy"></a>
+
           <span class="venue">IEEE Access · 2021 · 共著者</span>
-          <h3>Supervised Contrastive Embedding for Medical Image Segmentation</h3>
-          <p>修士論文に関連する研究室の研究に、共著者として参加しました。領域アノテーションに基づくピクセル単位の対照損失により、ラベルが少なく不確実な医療画像でもセグメンテーションを安定化します。</p>
-          <div class="metrics"><span>対照学習</span><b>·</b><span>少量・ノイズを含むラベル</span></div>
-        </div>
+          <h3><a href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener">Supervised Contrastive Embedding for Medical Image Segmentation</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener"><img src="/assets/pub_contrastive_embed.png" alt="Encoder embedding-space illustration for supervised contrastive learning" loading="lazy"></a><p>修士論文に関連する研究室の研究に、共著者として参加しました。領域アノテーションに基づくピクセル単位の対照損失により、ラベルが少なく不確実な医療画像でもセグメンテーションを安定化します。</p><div class="metrics"><span>対照学習</span><b>·</b><span>少量・ノイズを含むラベル</span></div></details></div>
         <a class="go" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener">IEEE ↗</a>
       </article>
 
@@ -488,98 +550,90 @@
 
   <!-- CONFERENCES -->
   <section class="block" id="conferences">
-    <div class="head reveal"><span class="num">02</span><h2>学会発表</h2><span class="note">† 筆頭著者 · 発表資料は<a class='schlink' href='https://github.com/Geongyu/Geongyu.github.io/tree/main/archive/conferences' target='_blank' rel='noopener'>GitHubアーカイブ ↗</a>で公開</span></div>
+    <div class="head"><h2>学会発表</h2><span class="note">ポスター・口頭発表</span><a class="ghlink" href="https://github.com/Geongyu/Geongyu.github.io/tree/main/archive/conferences" target="_blank" rel="noopener">発表資料 ↗</a></div>
     <div class="pubs">
 
-      <article class="row reveal">
-        <div class="acc">01 †</div>
-        <div class="main nofig">
+      <article class="row" id="molecular-substitution">
+
+        <div class="main">
           <span class="venue">BIOINFO/GIW ISCB-Asia 2026 · ポスター発表(採択) · 筆頭著者・発表者</span>
           <h3>Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers</h3>
-          <p>ソウル · 2026.11.17–20。H&Eモデルの精度が高くても、分子検査を代替できるとは限りません。誤分類を治療経路の逸脱に換算した「代替コスト」を定義し、事前登録した単一プロトコル(UNI + CLAM-SB、施設分離検証、label-shuffle対照)を5がん種(乳・肺・大腸・胃・頭頸部)に適用しました。約15エンドポイントのうち事前登録基準を満たしたのは頭頸部がんのHPV状態のみでした。最も性能が高かった肺の組織型(AUROC 0.939)は施設交絡の検証で除外し、他の大半は「否定」ではなく「未決」と報告しました。Pseudo Labとの共同研究。</p>
-          <div class="metrics"><span>確定</span><b>HNSC HPV · AUROC 0.959</b><span>除外</span><b>肺組織型 · V(site, label) = 1.0</b></div>
-        </div>
+
+        <details class="research-detail"><summary>研究概要</summary><p>ソウル · 2026.11.17–20。H&Eモデルの精度が高くても、分子検査を代替できるとは限りません。誤分類を治療経路の逸脱に換算した「代替コスト」を定義し、事前登録した単一プロトコル(UNI + CLAM-SB、施設分離検証、label-shuffle対照)を5がん種(乳・肺・大腸・胃・頭頸部)に適用しました。約15エンドポイントのうち事前登録基準を満たしたのは頭頸部がんのHPV状態のみでした。最も性能が高かった肺の組織型(AUROC 0.939)は施設交絡の検証で除外し、他の大半は「否定」ではなく「未決」と報告しました。Pseudo Labとの共同研究。</p><div class="metrics"><span>確定</span><b>HNSC HPV · AUROC 0.959</b><span>除外</span><b>肺組織型 · V(site, label) = 1.0</b></div></details></div>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">02</div>
-        <div class="main nofig">
+      <article class="row">
+
+        <div class="main">
           <span class="venue">BIOINFO/GIW ISCB-Asia 2026 · 口頭発表(採択) · 共著者</span>
           <h3>A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics</h3>
-          <p>ソウル · 2026.11.17–20。マルチオームRNA velocityが出力する遺伝子別パラメータ(転写率α、分解率γ、クロマチン-転写ラグ)が本当に信頼できるかを検証しました。5つのvelocity手法を4つの観点(手法間再現性、ATAC-shuffle対照、外部マルチオームデータセット5件での再現、実測の合成・分解率との整合)で評価しました。手法間で再現されたのはαのみで、γとラグには独立した測定法による検証が必要です。</p>
-          <div class="metrics"><span>α再現性</span><b>ρ = 0.88</b><span>γ</span><b>ρ ≈ −0.1</b><span>事前登録 6/6 通過</span></div>
-        </div>
+
+        <details class="research-detail"><summary>研究概要</summary><p>ソウル · 2026.11.17–20。マルチオームRNA velocityが出力する遺伝子別パラメータ(転写率α、分解率γ、クロマチン-転写ラグ)が本当に信頼できるかを検証しました。5つのvelocity手法を4つの観点(手法間再現性、ATAC-shuffle対照、外部マルチオームデータセット5件での再現、実測の合成・分解率との整合)で評価しました。手法間で再現されたのはαのみで、γとラグには独立した測定法による検証が必要です。</p><div class="metrics"><span>α再現性</span><b>ρ = 0.88</b><span>γ</span><b>ρ ≈ −0.1</b><span>事前登録 6/6 通過</span></div></details></div>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">03 †</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener"><img src="/assets/talk_receptor_gradcam.jpg" alt="Grad-CAM over H&amp;E for protein-receptor status prediction" loading="lazy"></a>
+
           <span class="venue">AACR年次総会 2023 · ポスター発表 · 筆頭著者</span>
-          <h3>Predicting protein receptor status from H&amp;E-stained images in breast cancer</h3>
-          <p>オーランド · 2023.04 · 抄録 #5404。IHCを用いず、H&E WSIのみからER・PR・HER2ステータスを予測しました。TCGA-BRCA 728例を用い、共有エンコーダと受容体別ヘッドを持つマルチタスクモデルに信頼度ベースのパッチ選択を組み合わせました。信頼度70%未満のパッチは除外しました。染色の色調の違いによる影響を抑えるため、色調のデータ拡張を適用しました。高麗大学九老病院との共同研究。</p>
-          <div class="metrics"><span>スライド精度 · クラス均衡テストセット</span><b>ER 74.6 · PR 66.0 · HER2 76.6</b></div>
-        </div>
+          <h3><a href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener">Predicting protein receptor status from H&amp;E-stained images in breast cancer</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener"><img src="/assets/talk_receptor_gradcam.jpg" alt="Grad-CAM over H&amp;E for protein-receptor status prediction" loading="lazy"></a><p>オーランド · 2023.04 · 抄録 #5404。IHCを用いず、H&E WSIのみからER・PR・HER2ステータスを予測しました。TCGA-BRCA 728例を用い、共有エンコーダと受容体別ヘッドを持つマルチタスクモデルに信頼度ベースのパッチ選択を組み合わせました。信頼度70%未満のパッチは除外しました。染色の色調の違いによる影響を抑えるため、色調のデータ拡張を適用しました。高麗大学九老病院との共同研究。</p><div class="metrics"><span>スライド精度 · クラス均衡テストセット</span><b>ER 74.6 · PR 66.0 · HER2 76.6</b></div></details></div>
         <a class="go" href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener">ポスター ↗</a>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">04 †</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="/archive/conferences/AACR2022_breast_recurrence_slide_01.png" target="_blank" rel="noopener"><img src="/archive/conferences/AACR2022_breast_recurrence_slide_03.png" alt="Patch-level classification and majority-voting pipeline for recurrence risk" loading="lazy"></a>
+
           <span class="venue">AACR年次総会 2022 · ポスター発表 · 筆頭著者</span>
-          <h3>Recurrence risk prediction based on automatic histologic analysis of breast cancer using whole slide images</h3>
-          <p>ニューオーリンズ · 2022.04.12。H&E WSIから21遺伝子再発スコアのリスク群を予測した研究(125例)で、のちにScientific Reports(2025)論文へと発展しました。高リスク症例を低リスクと誤分類した例はありませんでした。</p>
-          <div class="metrics"><span>one-vs-rest精度 L / I / H</span><b>0.832 / 0.776 / 0.912</b><span>感度 L / I / H</span><b>0.857 / 0.746 / 0.529</b></div>
-        </div>
+          <h3><a href="/archive/conferences/AACR2022_breast_recurrence_slide_01.png" target="_blank" rel="noopener">Recurrence risk prediction based on automatic histologic analysis of breast cancer using whole slide images</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="/archive/conferences/AACR2022_breast_recurrence_slide_01.png" target="_blank" rel="noopener"><img src="/archive/conferences/AACR2022_breast_recurrence_slide_03.png" alt="Patch-level classification and majority-voting pipeline for recurrence risk" loading="lazy"></a><p>ニューオーリンズ · 2022.04.12。H&E WSIから21遺伝子再発スコアのリスク群を予測した研究(125例)で、のちにScientific Reports(2025)論文へと発展しました。高リスク症例を低リスクと誤分類した例はありませんでした。</p><div class="metrics"><span>one-vs-rest精度 L / I / H</span><b>0.832 / 0.776 / 0.912</b><span>感度 L / I / H</span><b>0.857 / 0.746 / 0.529</b></div></details></div>
         <a class="go" href="/archive/conferences/AACR2022_breast_recurrence_slide_01.png" target="_blank" rel="noopener">スライド ↗</a>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">05</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="/archive/conferences/AACR2022_pancreatic_survival_slide_01.png" target="_blank" rel="noopener"><img src="/archive/conferences/AACR2022_pancreatic_survival_slide_05.png" alt="5-fold C-index results for pancreatic adenocarcinoma survival model" loading="lazy"></a>
+
           <span class="venue">AACR年次総会 2022 · ポスター発表 · 共著者</span>
-          <h3>A deep learning based pancreatic adenocarcinoma survival prediction model applicable to adenocarcinoma of other organs</h3>
-          <p>ニューオーリンズ · 2022.04。TCGA膵腺がん179例で学習した組織画像の生存予測モデルを、直腸がんと乳がんに適用しました。直腸がんでは性能がおおむね維持され、乳がんでは低下しました。</p>
-          <div class="metrics"><span>C-index</span><b>0.726</b><span>READ適用</span><b>0.694</b><span>BRCA適用</span><b>0.571</b></div>
-        </div>
+          <h3><a href="/archive/conferences/AACR2022_pancreatic_survival_slide_01.png" target="_blank" rel="noopener">A deep learning based pancreatic adenocarcinoma survival prediction model applicable to adenocarcinoma of other organs</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="/archive/conferences/AACR2022_pancreatic_survival_slide_01.png" target="_blank" rel="noopener"><img src="/archive/conferences/AACR2022_pancreatic_survival_slide_05.png" alt="5-fold C-index results for pancreatic adenocarcinoma survival model" loading="lazy"></a><p>ニューオーリンズ · 2022.04。TCGA膵腺がん179例で学習した組織画像の生存予測モデルを、直腸がんと乳がんに適用しました。直腸がんでは性能がおおむね維持され、乳がんでは低下しました。</p><div class="metrics"><span>C-index</span><b>0.726</b><span>READ適用</span><b>0.694</b><span>BRCA適用</span><b>0.571</b></div></details></div>
         <a class="go" href="/archive/conferences/AACR2022_pancreatic_survival_slide_01.png" target="_blank" rel="noopener">スライド ↗</a>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">06</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="/archive/conferences/USCAP2022_poster_breast_survival_prostate_feature.png" target="_blank" rel="noopener"><img src="/assets/talk_survival_km.png" alt="Kaplan-Meier survival curves by AI risk score" loading="lazy"></a>
+
           <span class="venue">USCAP年次総会 2022 · ポスター発表 · 共著者</span>
-          <h3>Breast cancer survival analysis through the extracted feature from the prostate diagnosis model</h3>
-          <p>2022.03.18。学習済みの前立腺診断モデルの特徴を用いて、H&E WSIから乳がんの死亡リスクを予測しました(TCGA-BRCA 980枚)。Kaplan-Meier曲線で高リスク群と低リスク群が分離されました。</p>
-          <div class="metrics"><span>C-index</span><b>0.655</b><span>log-rank</span><b>p = 0.0011</b></div>
-        </div>
+          <h3><a href="/archive/conferences/USCAP2022_poster_breast_survival_prostate_feature.png" target="_blank" rel="noopener">Breast cancer survival analysis through the extracted feature from the prostate diagnosis model</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="/archive/conferences/USCAP2022_poster_breast_survival_prostate_feature.png" target="_blank" rel="noopener"><img src="/assets/talk_survival_km.png" alt="Kaplan-Meier survival curves by AI risk score" loading="lazy"></a><p>2022.03.18。学習済みの前立腺診断モデルの特徴を用いて、H&E WSIから乳がんの死亡リスクを予測しました(TCGA-BRCA 980枚)。Kaplan-Meier曲線で高リスク群と低リスク群が分離されました。</p><div class="metrics"><span>C-index</span><b>0.655</b><span>log-rank</span><b>p = 0.0011</b></div></details></div>
         <a class="go" href="/archive/conferences/USCAP2022_poster_breast_survival_prostate_feature.png" target="_blank" rel="noopener">ポスター ↗</a>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">07 †</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="/archive/conferences/USCAP2022_poster_histologic_grading.png" target="_blank" rel="noopener"><img src="/assets/talk_grading_cam.jpg" alt="Class-activation maps for breast histologic grading" loading="lazy"></a>
+
           <span class="venue">USCAP年次総会 2022 · ポスター発表 · 筆頭著者</span>
-          <h3>Automatic histological grading of breast cancer resection tissue</h3>
-          <p>2022.03.17。病理医が注釈を付けたH&E WSI 125枚で腫瘍パッチを組織学的グレード1・2・3に分類し、観察者間のばらつきの低減を目指しました。高麗大学医学部との共同研究です。</p>
-          <div class="metrics"><span>パッチ one-vs-rest精度 G1 / G2 / G3</span><b>0.958 / 0.922 / 0.956</b></div>
-        </div>
+          <h3><a href="/archive/conferences/USCAP2022_poster_histologic_grading.png" target="_blank" rel="noopener">Automatic histological grading of breast cancer resection tissue</a></h3>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="/archive/conferences/USCAP2022_poster_histologic_grading.png" target="_blank" rel="noopener"><img src="/assets/talk_grading_cam.jpg" alt="Class-activation maps for breast histologic grading" loading="lazy"></a><p>2022.03.17。病理医が注釈を付けたH&E WSI 125枚で腫瘍パッチを組織学的グレード1・2・3に分類し、観察者間のばらつきの低減を目指しました。高麗大学医学部との共同研究です。</p><div class="metrics"><span>パッチ one-vs-rest精度 G1 / G2 / G3</span><b>0.958 / 0.922 / 0.956</b></div></details></div>
         <a class="go" href="/archive/conferences/USCAP2022_poster_histologic_grading.png" target="_blank" rel="noopener">ポスター ↗</a>
       </article>
 
-      <article class="row reveal">
-        <div class="acc">08 †</div>
+      <article class="row">
+
         <div class="main">
-          <a class="thumb" href="/archive/conferences/KIIE2020_contrastive_loss_segmentation_slides.pdf" target="_blank" rel="noopener"><img src="/archive/conferences/KIIE2020_contrastive_loss_segmentation_arch.png" alt="U-Net with feature-wise contrastive loss on encoder embeddings" loading="lazy"></a>
+
           <span class="venue">韓国産業工学会 秋季学術大会 2020 · 口頭発表 · 筆頭著者</span>
           <h3>セグメンテーションモデルの性能向上に向けた対照損失関数の活用</h3>
-          <p>ソウル科学技術大学ファン・サンフム教授の指導のもと、エンコーダのボトルネックにfeature-wise contrastive lossを適用し、CT肺・肝臓セグメンテーションでU-NetとUNet++の性能を向上させました。修士論文のもとになった研究です。</p>
-          <div class="metrics"><span>肝臓 DSC</span><b>0.912 → 0.923</b><span>肝臓 ASD</span><b>0.533 → 0.365</b></div>
-        </div>
+
+        <details class="research-detail"><summary>研究概要</summary><a class="thumb" href="/archive/conferences/KIIE2020_contrastive_loss_segmentation_slides.pdf" target="_blank" rel="noopener"><img src="/archive/conferences/KIIE2020_contrastive_loss_segmentation_arch.png" alt="U-Net with feature-wise contrastive loss on encoder embeddings" loading="lazy"></a><p>ソウル科学技術大学ファン・サンフム教授の指導のもと、エンコーダのボトルネックにfeature-wise contrastive lossを適用し、CT肺・肝臓セグメンテーションでU-NetとUNet++の性能を向上させました。修士論文のもとになった研究です。</p><div class="metrics"><span>肝臓 DSC</span><b>0.912 → 0.923</b><span>肝臓 ASD</span><b>0.533 → 0.365</b></div></details></div>
         <a class="go" href="/archive/conferences/KIIE2020_contrastive_loss_segmentation_slides.pdf" target="_blank" rel="noopener">スライド ↗</a>
       </article>
 
@@ -588,104 +642,96 @@
 
   <!-- PROJECTS -->
   <section class="block" id="projects">
-    <div class="head reveal"><span class="num">03</span><h2>プロジェクト</h2><span class="note">クロスモーダル学習・信頼性・薬剤応答</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
+    <div class="head"><h2>プロジェクト</h2><span class="note">クロスモーダル学習・信頼性・薬剤応答</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
     <div class="grid">
 
-      <div class="card reveal">
+      <div class="card">
         <div class="k">プロテオミクス · OMIXAI</div>
         <h3>プロテオミクスによる薬剤応答予測</h3>
-        <p>プロテオミクスから細胞株の薬剤応答(IC50)を予測するモデルを開発しました。テスト薬剤をすべて学習から除くleave-drug-out方式で評価しました(Pearson ≥ 0.65)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も別途行いました。</p>
+        <p>プロテオミクスから細胞株の薬剤応答(IC50)を予測し、学習に含まれない薬剤で評価しています。LoRA/PEFTを用いたプロテオームの自己教師あり表現学習にも取り組んでいます。</p>
         <div class="tagline"><span>Leave-drug-out CV Pearson</span><b>≥ 0.65</b><span>· 学習データに含まれない薬剤</span><span>·</span><span>社内R&D、未発表</span></div>
-      </div>
+      <details class="project-detail"><summary>手法と研究背景</summary><p>プロテオミクスから細胞株の薬剤応答(IC50)を予測するモデルを開発しました。テスト薬剤をすべて学習から除くleave-drug-out方式で評価しました(Pearson ≥ 0.65)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も別途行いました。</p></details></div>
 
-      <div class="card reveal">
-        <div class="k">精密腫瘍学 · OMIXAI</div>
-        <h3>獣医腫瘍CDSS・バーチャルセル</h3>
-        <p>臨床意思決定支援システム(CDSS)に向け、犬の腫瘍に対する薬剤推薦アルゴリズムを開発しました。Arc Institute Virtual Cell ChallengeではOMIXAIの参加チームを共同主導し、多能性幹細胞のCRISPRノックダウン応答を予測しました。</p>
-        <div class="tagline"><span>犬の薬剤推薦</span><span>top-k ≥ 70% · 自社コホート · 社内R&D、未発表</span><b>·</b><span>CRISPR摂動</span></div>
-      </div>
-
-      <div class="card reveal">
+      <div class="card">
         <div class="k">マルチオミクス · OMIXAI</div>
         <h3>デュアルターゲットsiRNAの優先順位付けに向けたRNA–プロテオーム整合性評価</h3>
-        <p>膠芽腫(GBM)のデュアルターゲットsiRNA課題の一環です。CPTAC GBM患者100名のトランスクリプトームとプロテオームを対応づけ、RNA発現がタンパク質量をどの程度反映するかを遺伝子ごとに評価しました。1,000回のpermutation、多重検定補正、変動性・低発現・欠損のフラグ、感度分析を経て、ウェットラボ実験の候補を順位付けるための根拠表にまとめました。</p>
+        <p>CPTAC膠芽腫データのRNA発現とタンパク質量を比較し、実験に進める二重標的siRNA候補の優先順位を検討しました。遺伝子ごとの統計的根拠とデータ品質の注意点を整理しました。</p>
         <div class="tagline"><span>遺伝子</span><b>11,238</b><span>Spearman中央値</span><b>ρ 0.441</b><span>· CPTAC GBM 100名</span></div>
-      </div>
+      <details class="project-detail"><summary>手法と研究背景</summary><p>膠芽腫(GBM)のデュアルターゲットsiRNA課題の一環です。CPTAC GBM患者100名のトランスクリプトームとプロテオームを対応づけ、RNA発現がタンパク質量をどの程度反映するかを遺伝子ごとに評価しました。1,000回のpermutation、多重検定補正、変動性・低発現・欠損のフラグ、感度分析を経て、ウェットラボ実験の候補を順位付けるための根拠表にまとめました。</p></details></div>
 
-      <div class="card reveal">
+      <div class="card">
         <div class="k">比較腫瘍学 · OMIXAI</div>
         <h3>Pan-Sarcoma: マルチモーダル薬剤応答予測</h3>
-        <p>Pan-Sarcomaプロテオゲノムプロファイリング課題の日韓共同研究です。日本側から提供される犬の腫瘍データ(肉腫から始まり、現在は汎がん種へ拡大)のプロテオミクス・病理(H&E)・RNAの3モダリティを統合し、薬剤応答予測と分子解析を行っています。</p>
+        <p>日韓共同研究として、犬の腫瘍のプロテオミクス・H&E・RNAを統合し、薬剤応答を予測しています。肉腫から始まったデータは複数のがん種に拡大しています。</p>
         <div class="tagline"><span>プロテオミクス</span><b>·</b><span>病理</span><b>·</b><span>RNA</span><b>·</b><span>2025 – 2028</span><b>·</b><span>参加研究員 · 進行中、成果は未公開</span></div>
-      </div>
+      <details class="project-detail"><summary>手法と研究背景</summary><p>Pan-Sarcomaプロテオゲノムプロファイリング課題の日韓共同研究です。日本側から提供される犬の腫瘍データ(肉腫から始まり、現在は汎がん種へ拡大)のプロテオミクス・病理(H&E)・RNAの3モダリティを統合し、薬剤応答予測と分子解析を行っています。</p></details></div>
 
-      <div class="card reveal">
-        <div class="card-fig"><img src="/assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></div>
-        <div class="k">デジタル病理 · Deep Bio</div>
-        <h3>Oncotype DX 再発予測</h3>
-        <p>他の臨床情報を用いず、H&E WSIのみで21遺伝子再発スコア(Oncotype DX)のリスク群を予測しました。パッチ単位の分類結果を信頼度(confidence)で選別し、多数決でスライド単位の低/中/高リスク群を判定しました。</p>
-        <div class="tagline"><span>Scientific Reports 2025 · 筆頭著者 · n = 125、2施設</span><span>感度 L / I / H</span><b>0.86 / 0.75 / 0.53</b><span>特異度 L / I / H</span><b>0.82 / 0.80 / 0.97</b></div>
-      </div>
-
-      <div class="card reveal">
-        <div class="k">その他のR&D · Deep Bio</div>
-        <h3>病理画像のOOD考慮型能動学習 · ADMET/DTI</h3>
-        <p>創薬初期の物性プロファイリングに向け、ADMET予測と薬物–標的相互作用のモデリングを行いました。病理画像のOODサンプルを定義してラベル付けを効率化する能動学習フレームワークも開発しました。社内R&Dのため未公開です。</p>
-        <div class="tagline"><span>ADMET</span><b>·</b><span>DTI</span><b>·</b><span>OOD検出</span><b>·</b><span>能動学習</span></div>
-      </div>
-
-      <div class="card reveal">
-        <div class="card-fig"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></div>
-        <div class="k">医療画像 · SK / 亜洲大学病院</div>
-        <h3>CT脳出血検出</h3>
-        <p>脳出血領域の2D・3Dセグメンテーションとスライス単位の分類です。外部公開データでドメイン汎化を検証し、class-activation mapで分類の信頼性を点検しました(U-Net vs DeepLab)。</p>
-        <div class="tagline"><span>2D + 3D セグメンテーション</span><b>·</b><span>ドメイン汎化</span><a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
-      </div>
-
-      <div class="card reveal">
+      <div class="card">
         <div class="card-fig"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></div>
         <div class="k">サイドプロジェクト · NVIDIAハッカソン2026</div>
         <h3>FlyGate: 創薬から医薬品安全性監視までをつなぐ根拠重視のエージェント</h3>
-        <p>NVIDIA Korea Agentic AI Hackathon 2026の参加作品(5人チーム)です。市販前の標的結合予測(FlyDiscovery)と市販後の有害事象監視(FlyVigilance)を一つのエージェントでつなぎます。BioNeMo NIM(OpenFold3 · DiffDock · Boltz-2)で構造予測から親和性まで評価するFlyDiscoveryモジュールと探索ワークベンチUIを担当しました。</p>
+        <p>5人のNVIDIAハッカソンチームでFlyDiscoveryモジュールと探索ワークベンチを開発しました。FlyGateは標的結合の予測と有害事象の監視をつなぎます。</p>
         <div class="tagline"><span>既製NIMの検証 · OpenFold3 RMSD</span><b>1.0 Å</b><span>Boltz-2 親和性</span><b>ρ 0.767</b><a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a><a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
-      </div>
+      <details class="project-detail"><summary>手法と研究背景</summary><p>NVIDIA Korea Agentic AI Hackathon 2026の参加作品(5人チーム)です。市販前の標的結合予測(FlyDiscovery)と市販後の有害事象監視(FlyVigilance)を一つのエージェントでつなぎます。BioNeMo NIM(OpenFold3 · DiffDock · Boltz-2)で構造予測から親和性まで評価するFlyDiscoveryモジュールと探索ワークベンチUIを担当しました。</p></details></div>
 
     </div>
 
-    <div class="subhead reveal">
+    <details class="fold"><summary>その他の研究・開発</summary><div class="grid"><div class="card">
+        <div class="k">精密腫瘍学 · OMIXAI</div>
+        <h3>獣医腫瘍CDSS・バーチャルセル</h3>
+        <p>犬の腫瘍に対する薬剤推薦アルゴリズムを開発しました。CRISPRノックダウン応答を予測するOMIXAIのVirtual Cell Challenge参加チームを共同主導しました。</p>
+        <div class="tagline"><span>犬の薬剤推薦</span><span>top-k ≥ 70% · 自社コホート · 社内R&D、未発表</span><b>·</b><span>CRISPR摂動</span></div>
+      <details class="project-detail"><summary>手法と研究背景</summary><p>臨床意思決定支援システム(CDSS)に向け、犬の腫瘍に対する薬剤推薦アルゴリズムを開発しました。Arc Institute Virtual Cell ChallengeではOMIXAIの参加チームを共同主導し、多能性幹細胞のCRISPRノックダウン応答を予測しました。</p></details></div><div class="card">
+        <div class="card-fig"><img src="/assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></div>
+        <div class="k">デジタル病理 · Deep Bio</div>
+        <h3>Oncotype DX 再発予測</h3>
+        <p>H&E画像のみからOncotype DXのリスク群を予測しました。確信度によるパッチ選択と多数決でスライド単位の予測を算出しました。</p>
+        <div class="tagline"><span>Scientific Reports 2025 · 筆頭著者 · n = 125、2施設</span><span>感度 L / I / H</span><b>0.86 / 0.75 / 0.53</b><span>特異度 L / I / H</span><b>0.82 / 0.80 / 0.97</b></div>
+      <details class="project-detail"><summary>手法と研究背景</summary><p>他の臨床情報を用いず、H&E WSIのみで21遺伝子再発スコア(Oncotype DX)のリスク群を予測しました。パッチ単位の分類結果を信頼度(confidence)で選別し、多数決でスライド単位の低/中/高リスク群を判定しました。</p></details></div><div class="card">
+        <div class="k">その他のR&D · Deep Bio</div>
+        <h3>病理画像のOOD考慮型能動学習 · ADMET/DTI</h3>
+        <p>ADMET・薬剤–標的相互作用の予測と、病理画像のラベル付けに向けたOODを考慮する能動学習の社内研究です。公開された成果はありません。</p>
+        <div class="tagline"><span>ADMET</span><b>·</b><span>DTI</span><b>·</b><span>OOD検出</span><b>·</b><span>能動学習</span></div>
+      <details class="project-detail"><summary>手法と研究背景</summary><p>創薬初期の物性プロファイリングに向け、ADMET予測と薬物–標的相互作用のモデリングを行いました。病理画像のOODサンプルを定義してラベル付けを効率化する能動学習フレームワークも開発しました。社内R&Dのため未公開です。</p></details></div><div class="card">
+        <div class="card-fig"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></div>
+        <div class="k">医療画像 · SK / 亜洲大学病院</div>
+        <h3>CT脳出血検出</h3>
+        <p>CT画像の脳出血領域をセグメンテーションし、スライスごとに分類しました。外部の公開データで汎化を検証し、class-activation mapで予測を点検しました。</p>
+        <div class="tagline"><span>2D + 3D セグメンテーション</span><b>·</b><span>ドメイン汎化</span><a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
+      <details class="project-detail"><summary>手法と研究背景</summary><p>脳出血領域の2D・3Dセグメンテーションとスライス単位の分類です。外部公開データでドメイン汎化を検証し、class-activation mapで分類の信頼性を点検しました(U-Net vs DeepLab)。</p></details></div></div></details><div class="subhead">
       <h3>初期のMLエンジニアリング</h3>
     </div>
-    <details class="fold reveal">
+    <details class="fold">
       <summary>2019–2020 · 産業用ビジョン・表形式データ・データエンジニアリング・セグメンテーションの頑健性 · 全4件</summary>
     <div class="grid">
-      <div class="card reveal">
+      <div class="card">
         <div class="card-fig"><img src="/assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></div>
         <div class="k">コンピュータビジョン · Fronttec</div>
         <h3>ねじ不良判別</h3>
-        <p>製造ラインの不良検出です(969枚、5クラス、1枚0.3秒以内の制約)。分類前に、深層学習ではなくマシンビジョンでねじ位置を特定して背景を除去し、精度を高めました。</p>
+        <p>マシンビジョンでねじの位置を特定して背景を除去し、製造不良を分類しました。処理時間は1枚あたり0.3秒以内という条件です。</p>
         <div class="tagline"><span>5クラス</span><b>·</b><b>1枚0.3秒未満</b></div>
-      </div>
+      <details class="project-detail"><summary>手法と研究背景</summary><p>製造ラインの不良検出です(969枚、5クラス、1枚0.3秒以内の制約)。分類前に、深層学習ではなくマシンビジョンでねじ位置を特定して背景を除去し、精度を高めました。</p></details></div>
 
-      <div class="card reveal">
+      <div class="card">
         <div class="k">表形式データML · Zigbang</div>
         <h3>マンション成約価格予測</h3>
-        <p>ソウル・釜山の成約価格を160万件のデータで予測しました。郵便番号で住所を再照合して誤記の地域を修正し、元データにない公共API特徴量(周辺の地下鉄・学校)を追加しました。</p>
+        <p>ソウル・釜山のマンション成約価格を予測しました。郵便番号で住所の誤りを修正し、公共APIから周辺の地下鉄・学校の情報を追加しました。</p>
         <div class="tagline"><span>160万件</span><b>·</b><span>指標: RMSE</span></div>
-      </div>
+      <details class="project-detail"><summary>手法と研究背景</summary><p>ソウル・釜山の成約価格を160万件のデータで予測しました。郵便番号で住所を再照合して誤記の地域を修正し、元データにない公共API特徴量(周辺の地下鉄・学校)を追加しました。</p></details></div>
 
-      <div class="card reveal">
+      <div class="card">
         <div class="k">データエンジニアリング · ソウル科学技術大</div>
         <h3>音楽チャート収集パイプラインとDB</h3>
-        <p>Melon・Genie・VIBE・YouTube Music・Apple Music・Bugsの6プラットフォームから、Top 100を毎日同時刻に収集しました。曲・アーティスト単位で統合してDBに格納し、チャートイン/アウトによる欠損はNULL許容カラム、多言語タイトルはnvarcharで扱うスキーマを設計しました。</p>
+        <p>6つのプラットフォームの日次Top 100チャートを収集し、曲・アーティストを照合してリレーショナルDBに格納するパイプラインを構築しました。</p>
         <div class="tagline"><span>6プラットフォーム</span><b>·</b><span>日次収集</span><b>·</b><span>スキーマ設計</span><a href='https://github.com/Geongyu/2020-Database-Project' target='_blank' rel='noopener'>code ↗</a></div>
-      </div>
+      <details class="project-detail"><summary>手法と研究背景</summary><p>Melon・Genie・VIBE・YouTube Music・Apple Music・Bugsの6プラットフォームから、Top 100を毎日同時刻に収集しました。曲・アーティスト単位で統合してDBに格納し、チャートイン/アウトによる欠損はNULL許容カラム、多言語タイトルはnvarcharで扱うスキーマを設計しました。</p></details></div>
 
-      <div class="card reveal">
+      <div class="card">
         <div class="k">コンピュータビジョン · ソウル科学技術大</div>
         <h3>セグメンテーションモデルの敵対的頑健性</h3>
-        <p>PASCAL VOC(20クラス、1,928枚、4,203オブジェクト)でU-Netセグメンテーションにadversarial training・label smoothing・cut-outを単独/組み合わせで適用し、頑健性と精度のトレードオフを比較しました。医療AIにも引き継いだ「頑健性優先」の出発点です。</p>
+        <p>PASCAL VOCのU-Netセグメンテーションに敵対的学習・label smoothing・cut-outを適用し、頑健性と精度のトレードオフを比較しました。</p>
         <div class="tagline"><span>敵対的学習</span><b>·</b><span>Label smoothing</span><b>·</b><span>Cut-out</span><a href='https://github.com/Geongyu/2019_DL_Project' target='_blank' rel='noopener'>code ↗</a></div>
-      </div>
+      <details class="project-detail"><summary>手法と研究背景</summary><p>PASCAL VOC(20クラス、1,928枚、4,203オブジェクト)でU-Netセグメンテーションにadversarial training・label smoothing・cut-outを単独/組み合わせで適用し、頑健性と精度のトレードオフを比較しました。医療AIにも引き継いだ「頑健性優先」の出発点です。</p></details></div>
 
     </div>
     </details>
@@ -693,14 +739,15 @@
 
   <!-- EXPERIENCE -->
   <section class="block" id="experience">
-    <div class="head reveal"><span class="num">04</span><h2>経歴</h2></div>
+    <div class="head"><h2>経歴</h2></div>
     <div>
-      <div class="role-row reveal">
+      <div class="role-row">
         <div class="when"><span class="co">OMIXAI</span><span>2025.02 – 現在</span><br><span class="loc">ソウル · 旧RadiSen</span></div>
         <div class="what">
           <h3>AIリサーチャー</h3>
           <div class="sub">クロスモーダル学習 · マルチオミクス · 薬剤応答</div>
-          <ul>
+          <ul><li>プロテオミクス・RNA・H&Eを用いた薬剤応答予測のマルチオミクスR&Dを主導(進行中)</li><li>プロテオミクスに基づくIC50モデル、犬の腫瘍への薬剤推薦アルゴリズム、ADMETモデルを開発</li><li>Arc Institute Virtual Cell ChallengeへのOMIXAIチーム参加を共同主導</li><li>研究サーバー・NASを運用し、Gitの共同作業ルールと協力会社とのデータ転送システムを整備</li></ul>
+        <details class="project-detail"><summary>その他の業務</summary><ul>
             <li>プロテオミクス・RNAとH&E病理画像を統合して薬剤応答を予測するマルチオミクスモデルの研究開発を主導(進行中)</li>
             <li>プロテオミクスに基づく細胞株の薬剤応答(IC50)予測モデルの開発(学習データに含まれない薬剤でのleave-drug-out評価、Pearson ≥ 0.65、社内R&D・未発表)</li>
             <li>犬の腫瘍に対する薬剤推薦アルゴリズムとADMET予測モデルの開発</li>
@@ -708,24 +755,23 @@
             <li>H&E画像から遺伝子発現を予測するMoSPRの共同筆頭著者(プレプリント・コード公開)</li>
             <li>G2L論文(AAAI 2026 ワークショップ W3PHIAI 口頭発表)およびトリプルネガティブ乳がんの空間プロテオミクス研究(プレプリント、2026)の共著者</li>
             <li>社内研究サーバー・NASの運用、Git運用ルールの策定、協力会社とのデータ転送システムの構築</li>
-          </ul>
-        </div>
+          </ul></details></div>
       </div>
-      <div class="role-row reveal">
+      <div class="role-row">
         <div class="when"><span class="co">Deep Bio</span><span>2021.03 – 2025.01</span><br><span class="loc">ソウル · 九老</span></div>
         <div class="what">
           <h3>AIリサーチャー</h3>
           <div class="sub">Computational Pathology · MFDS承認申請に向けたモデル検証</div>
-          <ul>
+          <ul><li>2施設の乳がん再発研究でWSIパイプラインと予測モデルを開発</li><li>リンパ節転移検出と糸球体セグメンテーションのモデルを開発</li><li>前立腺がんの転移・再発リスクモデリングを主導</li><li>MFDS承認申請に向けたモデル検証・申請文書作成に貢献し、Dockerを用いたサーバー自動化ツールを開発</li></ul>
+        <details class="project-detail"><summary>その他の業務</summary><ul>
             <li>2施設の乳がん再発研究(Scientific Reports 2025)の筆頭著者。WSIパイプラインを構築し、500枚以上のスライドを処理</li>
             <li>リンパ節転移検出モデルとKPIs 2024チャレンジ向け糸球体セグメンテーションモデルの開発(WSIレベル部門2位、MICCAI 2024)。チャレンジ報告論文(Medical Image Analysis、2026)の共著者</li>
             <li>前立腺がんの転移・再発リスクモデリングのプロジェクトを主導</li>
             <li>AACR(2022、2023)・USCAP(2022)で乳がん病理AI研究を筆頭著者として発表。膵臓がん・乳がんの生存予測に関するポスター発表の共著者</li>
             <li>MFDSに承認申請された医療AI製品について、実運用前のモデル検証と申請文書作成に貢献。社内サーバー自動化ツール(Docker)の開発</li>
-          </ul>
-        </div>
+          </ul></details></div>
       </div>
-      <div class="role-row reveal">
+      <div class="role-row">
         <div class="when"><span class="co">Nuricon</span>2021<br><span class="loc">板橋(パンギョ)</span></div>
         <div class="what">
           <h3>インターン</h3>
@@ -738,9 +784,9 @@
 
   <!-- EDUCATION -->
   <section class="block" id="education">
-    <div class="head reveal"><span class="num">05</span><h2>学歴</h2></div>
+    <div class="head"><h2>学歴</h2></div>
     <div>
-      <div class="role-row reveal">
+      <div class="role-row">
         <div class="when"><span class="co">ソウル科学技術大学</span><span>2019 – 2021</span><br><span class="loc">ソウル</span></div>
         <div class="what">
           <h3>修士(データサイエンス)</h3>
@@ -750,7 +796,7 @@
           </ul>
         </div>
       </div>
-      <div class="role-row reveal">
+      <div class="role-row">
         <div class="when"><span class="co">大田大学校</span><span>2012 – 2019</span><br><span class="loc">大田</span></div>
         <div class="what">
           <h3>学士(情報セキュリティ)</h3>
@@ -761,9 +807,9 @@
 
   <!-- LEADERSHIP & COMMUNITY -->
   <section class="block" id="leadership">
-    <div class="head reveal"><span class="num">06</span><h2>リーダーシップ・コミュニティ活動</h2><span class="note">本業以外の活動 · コミュニティ研究 · 査読 · メンタリング</span></div>
+    <div class="head"><h2>リーダーシップ・コミュニティ活動</h2><span class="note">本業以外の活動 · コミュニティ研究 · 査読 · メンタリング</span></div>
     <div>
-      <div class="role-row reveal">
+      <div class="role-row">
         <div class="when"><span class="co">Pseudo Lab</span><span>2026 · シーズン12</span><br><span class="loc">オープンリサーチコミュニティ</span></div>
         <div class="what">
           <h3>AutoBioX: AI Agents for End-to-End Bio Research</h3>
@@ -774,7 +820,7 @@
           </ul>
         </div>
       </div>
-      <div class="role-row reveal">
+      <div class="role-row">
         <div class="when"><span class="co">ML4H</span><span>2026</span><br><span class="loc">学術貢献</span></div>
         <div class="what">
           <h3>査読者</h3>
@@ -784,7 +830,7 @@
           </ul>
         </div>
       </div>
-      <div class="role-row reveal">
+      <div class="role-row">
         <div class="when"><span class="co">Codeit</span><span>2025 – 現在</span><br><span class="loc">非常勤</span></div>
         <div class="what">
           <h3>AIキャリア・プロジェクトメンター</h3>
@@ -799,29 +845,16 @@
 
   <!-- SKILLS + FUNDING -->
   <section class="block" id="skills">
-    <div class="head reveal"><span class="num">07</span><h2>技術スタック・研究課題</h2></div>
-    <div class="two">
-      <div class="reveal">
-        <div class="skillset"><h4>深層学習</h4><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div>
-        <div class="skillset"><h4>病理画像解析</h4><div class="tags"><span class="tag">OpenSlide</span><span class="tag">QuPath</span><span class="tag">CLAM / weakly-supervised MIL</span><span class="tag">UNI · CONCH · Virchow</span><span class="tag">WSIタイリング</span></div></div>
-        <div class="skillset"><h4>バイオ / オミクス</h4><div class="tags"><span class="tag">scanpy · AnnData</span><span class="tag">シングルセル摂動</span><span class="tag">プロテオーム表現学習</span><span class="tag">ADMET</span></div></div>
-        <div class="skillset"><h4>MLOps・言語</h4><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div>
-      </div>
-      <div class="reveal">
-        <div class="fund"><h4>精密腫瘍学に向けたPan-Sarcomaプロテオゲノムプロファイリング</h4><div class="meta">日韓共同 · 慶熙大学校医療院<br>2025.04 – 2028.12 · 参加研究員</div></div>
-        <div class="fund"><h4>獣医腫瘍学に向けたバーチャルセルCDSS</h4><div class="meta">農林畜産食品部 IPET · 国家R&D<br>2026 – 2030(採択) · 参加研究員</div></div>
-        <div class="fund"><h4>がん病理診断向け汎用AIの開発・実用化</h4><div class="meta">代表機関: Deep Bio · 国家R&D<br>事業期間 2021.04 – 2025.12 · 参加研究員(2021.04 – 2025.01)</div></div>
-        <div class="award"><span class="medal">2<span style="font-size:.5em">nd</span></span><p><b>KPIs 2024チャレンジ · WSIレベル部門</b><br>糸球体セグメンテーション · MICCAI 2024 併催 · Med. Image Anal. 2026 掲載</p></div>
-      </div>
-    </div>
-  </section>
+    <div class="head"><h2>技術</h2></div>
+
+  <div class="two"><div class="skillset"><h3>深層学習</h3><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div><div class="skillset"><h3>病理画像解析</h3><div class="tags"><span class="tag">OpenSlide</span><span class="tag">QuPath</span><span class="tag">CLAM / weakly-supervised MIL</span><span class="tag">UNI · CONCH · Virchow</span><span class="tag">WSIタイリング</span></div></div><div class="skillset"><h3>バイオ / オミクス</h3><div class="tags"><span class="tag">scanpy · AnnData</span><span class="tag">シングルセル摂動</span><span class="tag">プロテオーム表現学習</span><span class="tag">ADMET</span></div></div><div class="skillset"><h3>MLOps・言語</h3><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div></div></section><section class="block" id="funding"><div class="head"><h2>研究プロジェクト</h2><span class="note">参加研究員</span></div><div class="fund"><h3>精密腫瘍学に向けたPan-Sarcomaプロテオゲノムプロファイリング</h3><div class="meta">日韓共同 · 慶熙大学校医療院<br>2025.04 – 2028.12 · 参加研究員</div></div><div class="fund"><h3>獣医腫瘍学に向けたバーチャルセルCDSS</h3><div class="meta">農林畜産食品部 IPET · 国家R&D<br>2026 – 2030(採択) · 参加研究員</div></div><div class="fund"><h3>がん病理診断向け汎用AIの開発・実用化</h3><div class="meta">代表機関: Deep Bio · 国家R&D<br>事業期間 2021.04 – 2025.12 · 参加研究員(2021.04 – 2025.01)</div></div></section>
 
   <!-- CONTACT -->
   <section class="block contact" id="contact">
-    <span class="eyebrow reveal" style="justify-content:center;display:inline-flex">共同研究・ご相談歓迎</span>
-    <div class="big reveal">スライドから分子まで、<br><a>信頼できる</a>予測を。</div>
-    <p class="sub reveal">クロスモーダル学習、病理基盤モデル、分布シフト下でのモデルの頑健性検証などに関心があれば、お気軽にご連絡ください。</p>
-    <div class="links reveal">
+
+    <h2 class="big">論文とコード</h2>
+    <p class="sub">論文はGoogle Scholarで、コードはGitHubでご覧いただけます。</p>
+    <div class="links">
       <a class="chip" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
       <a class="chip" href="https://github.com/Geongyu" target="_blank" rel="noopener">github.com/Geongyu</a>
     </div>
@@ -829,17 +862,9 @@
 
 </main>
 
-<footer><span>GEONGYU LEE · イ・ゴンギュ · 機械学習リサーチャー · COMPUTATIONAL PATHOLOGY × マルチオミクス · 韓国・ソウル</span>
-  <span class="upd">最終更新 2026-10-09</span>
+<footer><span>イ・ゴンギュ · 韓国・ソウル</span>
+  <span class="upd">最終更新 2026-10-10</span>
 </footer>
 
-<script>
-(function(){
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-  },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-})();
-</script>
 </body>
 </html>
