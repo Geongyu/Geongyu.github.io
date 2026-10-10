@@ -182,15 +182,16 @@ section.block { padding: 68px 0; border-top: 1px solid var(--line); scroll-margi
 .head .ghlink { font-size: 14px; margin-left: 8px; }
 .section-intro { color: var(--muted); max-width: 70ch; margin: -8px 0 26px; }
 
-.about { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 64px; align-items: start; }
-.about p { color: var(--muted); margin-bottom: 18px; }
+.about { max-width: 76ch; }
+.about p { color: var(--muted); margin-bottom: 0; }
 .about p:last-child { margin-bottom: 0; }
 .about strong { color: var(--fg); }
-.aside { padding-left: 25px; border-left: 1px solid var(--line); }
-.aside h3 { color: var(--fg); font-size: 16px; font-weight: 500; line-height: 1.5; margin-bottom: 13px; }
+.aside { margin-top: 26px; }
+.aside h3 { color: var(--fg); font-size: 17px; font-weight: 500; line-height: 1.5; margin-bottom: 12px; }
 .aside h3.aside-gap { margin-top: 27px; }
-.aside ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-.aside li { color: var(--muted); font-size: 15px; line-height: 1.6; }
+.aside ul { list-style: disc; padding-left: 1.25em; }
+.aside li { color: var(--muted); font-size: 16px; line-height: 1.7; margin-bottom: 7px; padding-left: 3px; }
+.aside li:last-child { margin-bottom: 0; }
 .aside li strong { color: var(--fg); }
 
 .pubs { display: flex; flex-direction: column; }
@@ -302,8 +303,6 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   .hero h1 { font-size: 42px; }
   .lede { max-width: 62ch; }
   .ledger { padding-left: 23px; }
-  .about { grid-template-columns: minmax(0, 1fr); gap: 30px; }
-  .aside { border-left: 0; border-top: 1px solid var(--line); padding: 23px 0 0; }
   .two { grid-template-columns: minmax(0, 1fr); gap: 38px; }
   .role-row { grid-template-columns: 175px minmax(0, 1fr); gap: 26px; }
   .thumb { float: none; display: block; width: 100%; max-width: 320px; margin: 3px 0 18px; }
@@ -438,19 +437,16 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <section class="block" id="about">
     <div class="head"><h2 data-ko="연구" data-ja="研究">Research</h2></div>
     <div class="about">
-      <div>
-        <p data-ko="병리 영상으로 수용체 상태, 유전자 발현, 재발 점수 위험군을 예측해 왔습니다. 최근에는 5개 암종을 대상으로 H&amp;E 예측 성능이 높다는 것만으로 분자 검사를 대체할 수 있는지 검증했습니다." data-ja="病理画像から受容体ステータス、遺伝子発現、再発スコアのリスク群を予測してきました。最近の5がん種の研究では、H&amp;E画像による予測精度の高さだけで分子検査を代替できるかを検証しました。">My pathology work covers receptor status, gene expression and <span class="term">recurrence-score</span> risk groups. A recent <span class="term">five-cancer</span> study tested whether accurate predictions from H&amp;E slides were sufficient to replace molecular assays.</p>
-        <p data-ko="OMIXAI에서는 프로테오믹스 기반 약물 반응 모델을 개발하고, 프로테오믹스·RNA·H&amp;E를 통합하는 연구를 주도하고 있습니다. 학습에 없던 약물을 대상으로 모델을 평가합니다." data-ja="OMIXAIではプロテオミクスに基づく薬剤応答モデルを開発し、プロテオミクス・RNA・H&amp;Eを統合する研究を主導しています。学習に含まれない薬剤を対象にモデルを評価しています。">At OMIXAI, I develop <span class="term">drug-response</span> models using proteomics and lead ongoing work combining proteomics, RNA and H&amp;E. I evaluate whether predictions hold up for drugs excluded from training.</p>
-      </div>
+      <p data-ko="병리 영상에서 분자 정보를 예측하는 크로스모달 학습을 연구합니다. 현재 OMIXAI에서는 프로테오믹스 기반 약물 반응 모델을 개발하고, 프로테오믹스·RNA·H&amp;E를 통합하는 연구를 주도하고 있습니다. 다른 병원이나 학습에 없던 약물에서도 예측이 유효한지 검증합니다." data-ja="病理画像から分子情報を予測するクロスモーダル学習を研究しています。現在OMIXAIでは、プロテオミクスに基づく薬剤応答モデルを開発し、プロテオミクス・RNA・H&amp;Eを統合する研究を主導しています。異なる施設や学習に含まれない薬剤でも予測が信頼できるかを検証しています。">I use <span class="term">cross-modal</span> learning to predict molecular measurements from pathology images. At OMIXAI, I develop <span class="term">proteomics-based</span> <span class="term">drug-response</span> models and lead ongoing work integrating proteomics, RNA and H&amp;E. I focus on whether these predictions remain reliable across hospitals and for drugs excluded from training.</p>
       <div class="aside">
         <h3 data-ko="연구 관심사" data-ja="研究テーマ">Research Interests</h3>
         <ul>
-          <li data-ko="크로스모달 학습(조직병리 → 유전자 발현·수용체 상태·프로테오믹스)" data-ja="クロスモーダル学習(組織病理 → 遺伝子発現・受容体ステータス・プロテオミクス)">Cross-modal learning from histology to gene expression, receptor status and proteomics</li>
+          <li data-ko="크로스모달 학습(조직병리 → 유전자 발현·수용체 상태·프로테오믹스)" data-ja="クロスモーダル学習(組織病理 → 遺伝子発現・受容体ステータス・プロテオミクス)"><span class="term">Cross-modal</span> learning from histology to gene expression, receptor status and proteomics</li>
           <li data-ko="표현 학습과 병리 파운데이션 모델" data-ja="表現学習と病理基盤モデル">Representation learning &amp; pathology foundation models</li>
           <li data-ko="분포 변화(기관·코호트·학습에 없던 약물)에서도 신뢰할 수 있는 예측" data-ja="分布シフト下での信頼性(施設・コホート・学習データに含まれない薬剤)">Reliability across sites, cohorts and unseen drugs</li>
           <li data-ko="선택적 예측과 지름길 학습(shortcut learning) 점검" data-ja="選択的予測とショートカット学習の検出・検証">Selective prediction &amp; shortcut audits</li>
-          <li data-ko="멀티모달 통합 기반 약물 반응 예측(프로테오믹스 × H&E × RNA, 진행 중)" data-ja="マルチモーダル統合による薬剤応答予測(プロテオミクス × H&E × RNA、進行中)">Multimodal drug-response prediction from proteomics, H&amp;E and RNA (ongoing)</li>
-          <li data-ko="버추얼 셀·섭동(perturbation) 예측" data-ja="バーチャルセル・摂動(perturbation)予測">Virtual-cell &amp; perturbation prediction</li>
+          <li data-ko="멀티모달 통합 기반 약물 반응 예측(프로테오믹스 × H&E × RNA, 진행 중)" data-ja="マルチモーダル統合による薬剤応答予測(プロテオミクス × H&E × RNA、進行中)">Multimodal <span class="term">drug-response</span> prediction from proteomics, H&amp;E and RNA (ongoing)</li>
+          <li data-ko="버추얼 셀·섭동(perturbation) 예측" data-ja="バーチャルセル・摂動(perturbation)予測"><span class="term">Virtual-cell</span> &amp; perturbation prediction</li>
         </ul>
 
       </div>
