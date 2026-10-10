@@ -129,6 +129,8 @@ figures. Avoid equal-height cards and repeated per-project disclosure controls.
 Group each metric label with its value in `.meta-unit`. Keep short compound
 terms together with `.term`, while allowing whole titles and paragraphs to wrap
 at the available width; avoid fixed line breaks in running text.
+Keep Research in one column: a short introduction followed by a visible bulleted
+list of interests.
 The light theme uses Noto Sans, readable body text and restrained link colors; avoid adding
 duplicate headline metrics or hiding page content behind entrance animations.
 
