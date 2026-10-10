@@ -57,26 +57,25 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  color-scheme: dark;
-  --bg: #151719;
-  --panel: #1a1e22;
-  --panel-2: #20262b;
-  --line: #32383e;
-  --line-2: #4a555f;
-  --fg: #e8ebee;
-  --muted: #b6bec6;
-  --faint: #a3afb9;
-  --accent: #aac8df;
-  --accent-dim: #212c35;
-  --f-body: "IBM Plex Sans", "IBM Plex Sans KR", "IBM Plex Sans JP", system-ui, sans-serif;
+  color-scheme: light;
+  --bg: #ffffff;
+  --panel: #f7f8fa;
+  --panel-2: #f0f2f5;
+  --line: #e1e4e8;
+  --line-2: #c8ced6;
+  --fg: #20242a;
+  --muted: #4c5661;
+  --faint: #5a6570;
+  --accent: #365d7b;
+  --accent-dim: #f0f5f8;
+  --f-body: "Noto Sans", "Noto Sans KR", "Noto Sans JP", Arial, sans-serif;
   --f-disp: var(--f-body);
-  --f-mono: var(--f-body);
   --maxw: 1120px;
   --line-w: 1px;
-  --plate: #f1f2f3;
+  --plate: #f8f9fb;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -91,7 +90,9 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
-::selection { background: #aac8df; color: #151719; }
+::selection { background: #dbe8f2; color: #20242a; }
+p { text-wrap: pretty; }
+.pub .t, .row .main h3, .card h3 { text-wrap: balance; }
 a { color: var(--accent); text-decoration: none; text-underline-offset: .22em; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible, summary:focus-visible {
@@ -295,6 +296,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   .role-row { grid-template-columns: 175px minmax(0, 1fr); gap: 26px; }
 }
 @media (max-width: 600px) {
+  .chips .chip { padding-right: 12px; padding-left: 12px; }
   .wrap { padding: 0 24px; }
   .topbar { flex-wrap: wrap; min-height: 104px; gap: 0 12px; padding: 7px 24px 6px; }
   .brand { display: flex; align-items: center; min-height: 44px; font-size: 15px; }
