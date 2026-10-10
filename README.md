@@ -124,7 +124,7 @@ The homepage uses short descriptive labels for three selected studies. Keep the
 official paper titles, authorship, publication status, figures and evaluation
 conditions in Publications and Conferences. Long study and project descriptions
 use native `<details>` elements, so they remain available without JavaScript.
-The dark theme uses readable body text and restrained link colors; avoid adding
+The light theme uses Noto Sans, readable body text and restrained link colors; avoid adding
 duplicate headline metrics or hiding page content behind entrance animations.
 
 1. Edit `index.html` only. For any user-visible text, keep the Korean and Japanese versions in the element's `data-ko` / `data-ja` attributes.
