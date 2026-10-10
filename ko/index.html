@@ -92,7 +92,11 @@ body {
 }
 ::selection { background: #dbe8f2; color: #20242a; }
 p { text-wrap: pretty; }
-.pub .t, .row .main h3, .card h3 { text-wrap: balance; }
+.pub .t { text-wrap: balance; }
+.row .main h3, .card h3 { text-wrap: pretty; }
+.term { white-space: nowrap; }
+.meta-unit { display: inline-block; max-width: 100%; vertical-align: baseline; overflow-wrap: break-word; }
+.meta-unit > b { white-space: nowrap; }
 a { color: var(--accent); text-decoration: none; text-underline-offset: .22em; }
 a:hover { text-decoration: underline; }
 a:focus-visible, button:focus-visible, summary:focus-visible {
@@ -165,7 +169,7 @@ strong, b { font-weight: 600; }
 .pub:hover { text-decoration: none; }
 .pub .t { display: block; font-size: 18px; line-height: 1.45; font-weight: 500; color: var(--fg); overflow-wrap: break-word; }
 .pub:hover .t { color: var(--accent); text-decoration: underline; text-underline-offset: .18em; }
-.pub .v, .pub .v.first { display: block; margin-top: 7px; font-size: 14px; line-height: 1.5; font-weight: 400; color: var(--muted); white-space: normal; }
+.pub .v, .pub .v.first { display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 12px; margin-top: 7px; font-size: 14px; line-height: 1.5; font-weight: 400; color: var(--muted); white-space: normal; }
 .ledger-footer { display: inline-flex; align-items: center; min-height: 44px; margin-top: 13px; font-size: 14px; }
 
 section.block { padding: 68px 0; border-top: 1px solid var(--line); scroll-margin-top: 88px; }
@@ -178,15 +182,16 @@ section.block { padding: 68px 0; border-top: 1px solid var(--line); scroll-margi
 .head .ghlink { font-size: 14px; margin-left: 8px; }
 .section-intro { color: var(--muted); max-width: 70ch; margin: -8px 0 26px; }
 
-.about { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 64px; align-items: start; }
-.about p { color: var(--muted); margin-bottom: 18px; }
+.about { max-width: 76ch; }
+.about p { color: var(--muted); margin-bottom: 0; }
 .about p:last-child { margin-bottom: 0; }
 .about strong { color: var(--fg); }
-.aside { padding-left: 25px; border-left: 1px solid var(--line); }
-.aside h3 { color: var(--fg); font-size: 16px; font-weight: 500; line-height: 1.5; margin-bottom: 13px; }
+.aside { margin-top: 26px; }
+.aside h3 { color: var(--fg); font-size: 17px; font-weight: 500; line-height: 1.5; margin-bottom: 12px; }
 .aside h3.aside-gap { margin-top: 27px; }
-.aside ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-.aside li { color: var(--muted); font-size: 15px; line-height: 1.6; }
+.aside ul { list-style: disc; padding-left: 1.25em; }
+.aside li { color: var(--muted); font-size: 16px; line-height: 1.7; margin-bottom: 7px; padding-left: 3px; }
+.aside li:last-child { margin-bottom: 0; }
 .aside li strong { color: var(--fg); }
 
 .pubs { display: flex; flex-direction: column; }
@@ -194,15 +199,20 @@ section.block { padding: 68px 0; border-top: 1px solid var(--line); scroll-margi
 .row:first-child { border-top: 0; padding-top: 0; }
 .row .acc { display: none; }
 .row .main { min-width: 0; }
+.row.with-figure { grid-template-columns: 180px minmax(0, 1fr) auto; gap: 26px; }
+.paper-figure { display: block; border: 1px solid var(--line); background: #fff; }
+.paper-figure img { display: block; width: 100%; height: auto; max-height: 150px; object-fit: contain; }
 .row .main.nofig { padding-right: 0; }
-.row .venue { display: block; font-size: 14px; font-weight: 400; line-height: 1.55; color: var(--muted); margin-bottom: 7px; }
+.row .venue { display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 12px; font-size: 14px; font-weight: 400; line-height: 1.55; color: var(--muted); margin-bottom: 7px; }
 .row .main h3 { color: var(--fg); font-size: 19px; line-height: 1.5; font-weight: 500; margin-bottom: 8px; overflow-wrap: break-word; }
 .row .main h3 a { color: inherit; }
 .row .main h3 a:hover { color: var(--accent); }
 .row .main p { color: var(--muted); font-size: 16px; line-height: 1.7; max-width: 72ch; margin-bottom: 13px; }
 .go { display: inline-flex; align-items: center; justify-content: flex-start; min-height: 44px; color: var(--accent); font-size: 14px; line-height: 1.4; white-space: nowrap; }
 .gos { display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding-top: 14px; min-width: 80px; }
-.metrics { display: flex; flex-wrap: wrap; gap: 7px 20px; font-size: 14px; line-height: 1.65; margin-top: 13px; }
+#publications .row > .go { justify-self: end; }
+#publications .gos { align-items: flex-end; justify-content: flex-end; }
+.metrics { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px 20px; font-size: 14px; line-height: 1.65; margin-top: 13px; }
 .metrics b { color: var(--fg); font-weight: 500; }
 .metrics span { color: var(--muted); }
 
@@ -221,15 +231,17 @@ details.research-detail[open] > summary, details.project-detail[open] > summary 
 .poster .cap { padding: 10px 12px; font-size: 13px; line-height: 1.6; color: var(--muted); }
 .poster .cap b { color: var(--fg); font-weight: 500; }
 
-.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 32px; }
-.card { display: flex; flex-direction: column; min-width: 0; padding: 0 0 26px; border-bottom: 1px solid var(--line); }
-.card-fig { display: flex; align-items: center; justify-content: center; height: 184px; margin-bottom: 19px; border-radius: 3px; overflow: hidden; background: var(--plate); }
-.card-fig img { display: block; width: 100%; height: 100%; object-fit: contain; padding: 11px; }
-.card .k { color: var(--muted); font-size: 14px; line-height: 1.55; margin-bottom: 8px; }
-.card h3 { font-size: 21px; line-height: 1.4; font-weight: 500; margin-bottom: 10px; color: var(--fg); overflow-wrap: break-word; }
-.card p { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
-.card > p { flex: 1; }
-.card .tagline { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 15px; color: var(--muted); font-size: 14px; line-height: 1.6; margin-top: 6px; }
+.grid { display: flex; flex-direction: column; }
+.card { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; gap: 28px; min-width: 0; padding: 26px 0; border-top: 1px solid var(--line); }
+.card:first-child { padding-top: 0; border-top: 0; }
+.card.with-figure { grid-template-columns: 240px minmax(0, 1fr); }
+.card-body { min-width: 0; }
+.card-fig { display: block; border: 1px solid var(--line); background: #fff; }
+.card-fig img { display: block; width: 100%; height: auto; max-height: 190px; object-fit: contain; }
+.card .k { color: var(--muted); font-size: 14px; line-height: 1.55; margin-bottom: 7px; }
+.card h3 { font-size: 20px; line-height: 1.45; font-weight: 500; margin-bottom: 7px; color: var(--fg); overflow-wrap: break-word; text-wrap: pretty; }
+.card p { max-width: 76ch; font-size: 16px; color: var(--muted); line-height: 1.7; }
+.card .tagline { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 13px; color: var(--muted); font-size: 14px; line-height: 1.6; margin-bottom: 11px; }
 .card .tagline b { color: var(--fg); font-weight: 500; }
 .card .tagline a { color: var(--accent); display: inline-flex; align-items: center; min-height: 44px; }
 .fold { margin-top: 26px; }
@@ -283,6 +295,9 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   .topright { gap: 17px; }
   .nav { gap: 15px; font-size: 13px; }
   .hero { gap: 36px; }
+  .row.with-figure { grid-template-columns: 140px minmax(0, 1fr); gap: 0 20px; }
+  .row.with-figure > .go { grid-column: 2; }
+  .row.with-figure .gos { grid-column: 2; flex-direction: row; gap: 20px; padding-top: 0; }
 }
 @media (max-width: 820px) {
   .nav a:not(.m) { display: none; }
@@ -290,10 +305,10 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   .hero h1 { font-size: 42px; }
   .lede { max-width: 62ch; }
   .ledger { padding-left: 23px; }
-  .about { grid-template-columns: minmax(0, 1fr); gap: 30px; }
-  .aside { border-left: 0; border-top: 1px solid var(--line); padding: 23px 0 0; }
   .two { grid-template-columns: minmax(0, 1fr); gap: 38px; }
   .role-row { grid-template-columns: 175px minmax(0, 1fr); gap: 26px; }
+  .thumb { float: none; display: block; width: 100%; max-width: 320px; margin: 3px 0 18px; }
+  .card.with-figure { grid-template-columns: 180px minmax(0, 1fr); gap: 24px; }
 }
 @media (max-width: 600px) {
   .chips .chip { padding-right: 12px; padding-left: 12px; }
@@ -319,12 +334,15 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   .head { gap: 10px; margin-bottom: 23px; }
   .head h2 { font-size: 26px; }
   .head .note { flex-basis: 100%; margin-left: 0; }
-  .grid { grid-template-columns: minmax(0, 1fr); gap: 31px; }
-  .card-fig { height: 170px; }
-  .row { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 24px 0; }
+  .card.with-figure { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .card-fig { width: min(100%, 320px); }
+  .card-fig img { max-height: 180px; }
+  .row, .row.with-figure { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 24px 0; }
+  .paper-figure { width: 180px; margin-bottom: 16px; }
+  .row.with-figure > .go { grid-column: auto; }
+  .row.with-figure .gos { grid-column: auto; padding-top: 2px; }
   .row .main h3 { font-size: 18px; line-height: 1.55; }
   .gos { flex-direction: row; gap: 23px; padding-top: 2px; flex-wrap: wrap; }
-  .thumb { float: none; display: block; width: 100%; max-width: 320px; margin: 3px 0 18px; }
   .role-row { grid-template-columns: minmax(0, 1fr); gap: 12px; }
   .role-row .when { line-height: 1.65; }
   .role-row .what h3 { font-size: 19px; }
@@ -359,7 +377,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   .head h2 { font-size: 21px; }
   .row, .card, .role-row, .fund { break-inside: avoid; }
   .row .main h3 { font-size: 14pt; }
-  .card-fig { height: 140px; }
+  .card-fig img, .paper-figure img { max-height: 140px; }
   .go { font-size: 10pt; }
   a { text-decoration: underline; }
   footer { padding: 18px 0; }
@@ -408,9 +426,9 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
     <div class="ledger" aria-label="Selected publications">
       <div class="ledger-h"><span>대표 연구</span></div>
-      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t">MoSPR: 병리 이미지로 유전자 발현 예측</span><span class="v first">2026 · 프리프린트 · 공동 제1저자</span></a>
-      <a class="pub" href="#molecular-substitution"><span class="t">H&E로 분자 검사를 대체할 수 있을까?</span><span class="v first">GIW 2026 · 포스터 채택 · 제1저자</span></a>
-      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t">H&E로 유방암 재발 위험 예측</span><span class="v first">Scientific Reports 2025 · 제1저자</span></a>
+      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t">MoSPR: 병리 이미지로 유전자 발현 예측</span><span class="v first"><span class="meta-unit">2026</span> <span class="meta-unit">프리프린트</span> <span class="meta-unit">공동 제1저자</span></span></a>
+      <a class="pub" href="#molecular-substitution"><span class="t">H&E로 분자 검사를 대체할 수 있을까?</span><span class="v first"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">포스터 채택</span> <span class="meta-unit">제1저자</span></span></a>
+      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t">H&E로 유방암 재발 위험 예측</span><span class="v first"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">제1저자</span></span></a>
 
     <a class="ledger-footer" href="#publications">전체 논문 보기 →</a></div>
   </header>
@@ -421,10 +439,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <section class="block" id="about">
     <div class="head"><h2>연구</h2></div>
     <div class="about">
-      <div>
-        <p>병리 영상으로 수용체 상태, 유전자 발현, 재발 점수 위험군을 예측해 왔습니다. 최근에는 5개 암종을 대상으로 H&E 예측 성능이 높다는 것만으로 분자 검사를 대체할 수 있는지 검증했습니다.</p>
-        <p>OMIXAI에서는 프로테오믹스 기반 약물 반응 모델을 개발하고, 프로테오믹스·RNA·H&E를 통합하는 연구를 주도하고 있습니다. 학습에 없던 약물을 대상으로 모델을 평가합니다.</p>
-      </div>
+      <p>병리 영상에서 분자 정보를 예측하는 크로스모달 학습을 연구합니다. 현재 OMIXAI에서는 프로테오믹스 기반 약물 반응 모델을 개발하고, 프로테오믹스·RNA·H&E를 통합하는 연구를 주도하고 있습니다. 다른 병원이나 학습에 없던 약물에서도 예측이 유효한지 검증합니다.</p>
       <div class="aside">
         <h3>연구 관심사</h3>
         <ul>
@@ -445,105 +460,114 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
     <div class="head"><h2>논문</h2><span class="note">저널 논문 · 프리프린트 · 워크숍</span><a class="ghlink" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar ↗</a></div>
     <div class="pubs">
 
-      <article class="row">
+      <article class="row with-figure">
 
+        <a class="paper-figure" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><img src="/assets/pub_breast_gradcam.jpg" alt="Grad-CAM heatmaps over H&amp;E breast tissue patches" loading="lazy"></a>
         <div class="main">
 
-          <span class="venue">Scientific Reports · 2025 · 제1저자</span>
-          <h3><a href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener">Assessing the risk of recurrence in early-stage breast cancer through H&amp;E stained whole slide images</a></h3>
+          <span class="venue"><span class="meta-unit">Scientific Reports</span> <span class="meta-unit">2025</span> <span class="meta-unit">제1저자</span></span>
+          <h3><a href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener">Assessing the risk of recurrence in <span class="term">early-stage</span> breast cancer through H&amp;E stained whole slide images</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><img src="/assets/pub_breast_gradcam.jpg" alt="Grad-CAM heatmaps over H&amp;E breast tissue patches" loading="lazy"></a><p>H&E 염색 슬라이드를 21-유전자 재발 검사의 대체 지표로 쓸 수 있는지 검증한 다기관 후향적 연구(n=125, 국립암센터·고려대 구로병원)입니다. 조직병리 영상만 사용한 딥러닝으로 검사 기반 저·중·고위험군을 근사적으로 예측했습니다.</p><div class="metrics"><span>민감도 저 / 중 / 고</span><b>0.86 / 0.75 / 0.53</b><span>특이도 저 / 중 / 고</span><b>0.82 / 0.80 / 0.97</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><p>H&E 염색 슬라이드를 21-유전자 재발 검사의 대체 지표로 쓸 수 있는지 검증한 다기관 후향적 연구(n=125, 국립암센터·고려대 구로병원)입니다. 조직병리 영상만 사용한 딥러닝으로 검사 기반 저·중·고위험군을 근사적으로 예측했습니다.</p><div class="metrics"><span class="meta-unit"><span>민감도 저 / 중 / 고</span> <b>0.86 / 0.75 / 0.53</b></span> <span class="meta-unit"><span>특이도 저 / 중 / 고</span> <b>0.82 / 0.80 / 0.97</b></span></div></details></div>
         <a class="go" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener">Paper ↗</a>
       </article>
 
-      <article class="row">
+      <article class="row with-figure">
 
+        <a class="paper-figure" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><img src="/assets/pub_mospr_macrostate.jpg" alt="MoSPR: patches to morpho-spatial macrostates, then low-rank regression to gene expression" loading="lazy"></a>
         <div class="main">
 
-          <span class="venue">프리프린트 · 2026 · 심사 중 · 공동 제1저자 †</span>
-          <h3><a href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener">MoSPR: Histology-to-Gene Expression Prediction with Morpho-Spatial Macrostates and Low-Rank Molecular Programs</a></h3>
+          <span class="venue"><span class="meta-unit">프리프린트</span> <span class="meta-unit">2026</span> <span class="meta-unit">심사 중</span> <span class="meta-unit">공동 제1저자 †</span></span>
+          <h3><a href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener">MoSPR: <span class="term">Histology-to-Gene</span> Expression Prediction with <span class="term">Morpho-Spatial</span> Macrostates and <span class="term">Low-Rank</span> Molecular Programs</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><img src="/assets/pub_mospr_macrostate.jpg" alt="MoSPR: patches to morpho-spatial macrostates, then low-rank regression to gene expression" loading="lazy"></a><p>WSI에서 유전자 발현을 예측하는 선형 회귀 프레임워크입니다. 패치를 형태학적 미시 상태(microstate)로 묶고, 공간적 인접 관계에서 거시 상태(macrostate)를 찾습니다. 거시 상태는 저랭크 분자 프로그램을 거쳐 유전자 발현으로 연결됩니다. TCGA 3개 암종에서 비교 모델 14종보다 성능이 높았고, 학습 데이터가 적을 때도 성능이 유지됐습니다. 선형 구조라 각 예측을 전역·영역별 분자 프로그램의 기여로 나누어 해석할 수 있습니다.</p><div class="metrics"><span>유전자별 PCC</span><b>BRCA 0.413 · KIRC 0.334 · LUAD 0.358</b><span>· 논문에서 비교한 15개 방법 중 1위</span></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><p>WSI에서 유전자 발현을 예측하는 선형 회귀 프레임워크입니다. 패치를 형태학적 미시 상태(microstate)로 묶고, 공간적 인접 관계에서 거시 상태(macrostate)를 찾습니다. 거시 상태는 저랭크 분자 프로그램을 거쳐 유전자 발현으로 연결됩니다. TCGA 3개 암종에서 비교 모델 14종보다 성능이 높았고, 학습 데이터가 적을 때도 성능이 유지됐습니다. 선형 구조라 각 예측을 전역·영역별 분자 프로그램의 기여로 나누어 해석할 수 있습니다.</p><div class="metrics"><span class="meta-unit"><span>유전자별 PCC</span> <b>BRCA 0.413 · KIRC 0.334 · LUAD 0.358</b></span> <span class="meta-unit">논문에서 비교한 15개 방법 중 1위</span></div></details></div>
         <div class="gos">
           <a class="go" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener">arXiv ↗</a>
           <a class="go" href="https://github.com/Radisen-Panthera/MoSPR" target="_blank" rel="noopener">Code ↗</a>
         </div>
       </article>
 
-      <article class="row">
+      <article class="row with-figure">
 
+        <a class="paper-figure" href="https://www.sciencedirect.com/science/article/pii/S2287888225000066" target="_blank" rel="noopener"><img src="/assets/pub_urology_workflow.jpg" alt="AI-based digital pathology workflow from specimen slide to diagnostic report" loading="lazy"></a>
         <div class="main">
 
-          <span class="venue">Prostate International · 2025 · 리뷰 · 공동 제1저자 †</span>
-          <h3><a href="https://www.sciencedirect.com/science/article/pii/S2287888225000066" target="_blank" rel="noopener">Artificial intelligence–driven digital pathology in urological cancers: current trends and future directions</a></h3>
+          <span class="venue"><span class="meta-unit">Prostate International</span> <span class="meta-unit">2025</span> <span class="meta-unit">리뷰</span> <span class="meta-unit">공동 제1저자 †</span></span>
+          <h3><a href="https://www.sciencedirect.com/science/article/pii/S2287888225000066" target="_blank" rel="noopener">Artificial <span class="term">intelligence–driven</span> digital pathology in urological cancers: current trends and future directions</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="https://www.sciencedirect.com/science/article/pii/S2287888225000066" target="_blank" rel="noopener"><img src="/assets/pub_urology_workflow.jpg" alt="AI-based digital pathology workflow from specimen slide to diagnostic report" loading="lazy"></a><p>비뇨기암 병리 분야 AI의 최신 동향과 향후 방향을 임상·기술·규제 관점에서 정리한 리뷰 논문입니다.</p><div class="metrics"><span>리뷰</span><b>디지털 병리</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><p>비뇨기암 병리 분야 AI의 최신 동향과 향후 방향을 임상·기술·규제 관점에서 정리한 리뷰 논문입니다.</p><div class="metrics"><span class="meta-unit"><span>리뷰</span> <b>디지털 병리</b></span></div></details></div>
         <a class="go" href="https://www.sciencedirect.com/science/article/pii/S2287888225000066" target="_blank" rel="noopener">Paper ↗</a>
       </article>
 
-      <article class="row">
+      <article class="row with-figure">
 
+        <a class="paper-figure" href="https://doi.org/10.1016/j.media.2026.104234" target="_blank" rel="noopener"><img src="/assets/pub_kpis_glomeruli.jpg" alt="KPIs 2024 patch-level glomeruli: PAS image, ground-truth mask and overlay" loading="lazy"></a>
         <div class="main">
 
-          <span class="venue">Medical Image Analysis · 2026 · 챌린지 결과 논문 · 공저자</span>
-          <h3><a href="https://doi.org/10.1016/j.media.2026.104234" target="_blank" rel="noopener">KPIs 2024 challenge: Advancing glomerular segmentation from patch- to slide-level</a></h3>
+          <span class="venue"><span class="meta-unit">Medical Image Analysis</span> <span class="meta-unit">2026</span> <span class="meta-unit">챌린지 결과 논문</span> <span class="meta-unit">공저자</span></span>
+          <h3><a href="https://doi.org/10.1016/j.media.2026.104234" target="_blank" rel="noopener">KPIs 2024 challenge: Advancing glomerular segmentation from patch- to <span class="term">slide-level</span></a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="https://doi.org/10.1016/j.media.2026.104234" target="_blank" rel="noopener"><img src="/assets/pub_kpis_glomeruli.jpg" alt="KPIs 2024 patch-level glomeruli: PAS image, ground-truth mask and overlay" loading="lazy"></a><p>사구체 분할을 주제로 한 KPIs 2024 챌린지의 공식 결과 논문(Medical Image Analysis 114권, 104234)입니다. 패치 단위 학습을 슬라이드 단위 추론으로 일반화하는 문제를 다룹니다. 딥바이오 팀으로 참가해 전체 슬라이드 트랙 2위를 차지했고, 팀원으로 공저자에 이름을 올렸습니다.</p><div class="metrics"><span>전체 슬라이드 트랙</span><b>2위</b><span>· 딥바이오 팀 ·</span><b>MICCAI 2024</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><p>사구체 분할을 주제로 한 KPIs 2024 챌린지의 공식 결과 논문(Medical Image Analysis 114권, 104234)입니다. 패치 단위 학습을 슬라이드 단위 추론으로 일반화하는 문제를 다룹니다. 딥바이오 팀으로 참가해 전체 슬라이드 트랙 2위를 차지했고, 팀원으로 공저자에 이름을 올렸습니다.</p><div class="metrics"><span class="meta-unit"><span>전체 슬라이드 트랙</span> <b>2위</b></span> <span class="meta-unit"><span>딥바이오 팀</span> <b>MICCAI 2024</b></span></div></details></div>
         <a class="go" href="https://doi.org/10.1016/j.media.2026.104234" target="_blank" rel="noopener">Paper ↗</a>
       </article>
 
-      <article class="row">
+      <article class="row with-figure">
 
+        <a class="paper-figure" href="https://arxiv.org/abs/2608.03145" target="_blank" rel="noopener"><img src="/assets/pub_tnbc_risk_heatmap.jpg" alt="Tumor patch risk-score heatmap with high- and low-risk patch regions" loading="lazy"></a>
         <div class="main">
 
-          <span class="venue">프리프린트 · 2026 · 공저자</span>
-          <h3><a href="https://arxiv.org/abs/2608.03145" target="_blank" rel="noopener">Spatial proteomics guided by H&amp;E-based AI reveals recurrence-risk niches in triple-negative breast cancer</a></h3>
+          <span class="venue"><span class="meta-unit">프리프린트</span> <span class="meta-unit">2026</span> <span class="meta-unit">공저자</span></span>
+          <h3><a href="https://arxiv.org/abs/2608.03145" target="_blank" rel="noopener">Spatial proteomics guided by <span class="term">H&amp;E-based</span> AI reveals <span class="term">recurrence-risk</span> niches in <span class="term">triple-negative</span> breast cancer</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="https://arxiv.org/abs/2608.03145" target="_blank" rel="noopener"><img src="/assets/pub_tnbc_risk_heatmap.jpg" alt="Tumor patch risk-score heatmap with high- and low-risk patch regions" loading="lazy"></a><p>삼중음성 유방암 환자 156명을 대상으로 H&E 기반 AI 위험도 점수를 활용해 공간 프로테오믹스 분석 영역을 선정했습니다. 고위험 니치에서는 세포 증식 경로가, 저위험 니치에서는 면역 활성이 두드러졌습니다. 니치 분석에서 도출한 13개 단백질 시그니처를 영상 기반 위험도 점수와 결합하자 예후 예측 성능이 향상됐습니다.</p><div class="metrics"><span>H&E 위험도 모델</span><b>AUC 0.77 / C-index 0.77</b><span>· 독립 테스트셋</span><span>H&E + 13개 단백질 통합 모델</span><b>OOB C-index 0.679 → 0.739</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><p>삼중음성 유방암 환자 156명을 대상으로 H&E 기반 AI 위험도 점수를 활용해 공간 프로테오믹스 분석 영역을 선정했습니다. 고위험 니치에서는 세포 증식 경로가, 저위험 니치에서는 면역 활성이 두드러졌습니다. 니치 분석에서 도출한 13개 단백질 시그니처를 영상 기반 위험도 점수와 결합하자 예후 예측 성능이 향상됐습니다.</p><div class="metrics"><span class="meta-unit"><span>H&E 위험도 모델</span> <b>AUC 0.77 / <span class="term">C-index</span> 0.77</b></span> <span class="meta-unit">독립 테스트셋</span> <span class="meta-unit"><span>H&E + 13개 단백질 통합 모델</span> <b>OOB <span class="term">C-index</span> 0.679 → 0.739</b></span></div></details></div>
         <a class="go" href="https://arxiv.org/abs/2608.03145" target="_blank" rel="noopener">arXiv ↗</a>
       </article>
 
-      <article class="row">
+      <article class="row with-figure">
 
+        <a class="paper-figure" href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener"><img src="/assets/pub_prostate_multisection.png" alt="Multi-section whole-slide sampling strategies for prostate BCR" loading="lazy"></a>
         <div class="main">
 
-          <span class="venue">프리프린트 · 2026 · 공저자</span>
-          <h3><a href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener">Efficient AI-Driven Multi-Section Whole Slide Image Analysis for Biochemical Recurrence Prediction in Prostate Cancer</a></h3>
+          <span class="venue"><span class="meta-unit">프리프린트</span> <span class="meta-unit">2026</span> <span class="meta-unit">공저자</span></span>
+          <h3><a href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener">Efficient <span class="term">AI-Driven</span> <span class="term">Multi-Section</span> Whole Slide Image Analysis for Biochemical Recurrence Prediction in Prostate Cancer</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener"><img src="/assets/pub_prostate_multisection.png" alt="Multi-section whole-slide sampling strategies for prostate BCR" loading="lazy"></a><p>여러 조직 섹션을 함께 다루는 효율적인 AI 분석으로 전립선암의 생화학적 재발(BCR)을 예측합니다. 단일 슬라이드 추론을 다중 섹션 검체 전체로 확장했습니다.</p><div class="metrics"><span>다중 섹션 WSI</span><b>전립선암 BCR</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><p>여러 조직 섹션을 함께 다루는 효율적인 AI 분석으로 전립선암의 생화학적 재발(BCR)을 예측합니다. 단일 슬라이드 추론을 다중 섹션 검체 전체로 확장했습니다.</p><div class="metrics"><span class="meta-unit"><span>다중 섹션 WSI</span> <b>전립선암 BCR</b></span></div></details></div>
         <a class="go" href="https://arxiv.org/abs/2603.20273" target="_blank" rel="noopener">arXiv ↗</a>
       </article>
 
-      <article class="row">
+      <article class="row with-figure">
 
+        <a class="paper-figure" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="/assets/pub_g2l_distillation.png" alt="G2L knowledge-distillation framework overview" loading="lazy"></a>
         <div class="main">
 
-          <span class="venue">AAAI 2026 워크숍 (W3PHIAI) · 구두 발표 · 공저자</span>
-          <h3><a href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener">G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Knowledge Distillation</a></h3>
+          <span class="venue"><span class="meta-unit">AAAI 2026 워크숍 (W3PHIAI)</span> <span class="meta-unit">구두 발표</span> <span class="meta-unit">공저자</span></span>
+          <h3><a href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener">G2L: From <span class="term">Giga-Scale</span> to <span class="term">Cancer-Specific</span> <span class="term">Large-Scale</span> Pathology Foundation Models via Knowledge Distillation</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="/assets/pub_g2l_distillation.png" alt="G2L knowledge-distillation framework overview" loading="lazy"></a><p>기가스케일 병리 파운데이션 모델을 지식 증류(knowledge distillation)로 압축해 암종 특화 경량 인코더를 만듭니다. 연산량은 줄이면서 다운스트림 과제 성능은 유지합니다.</p><div class="metrics"><span>지식 증류</span><b>·</b><span>자기지도 학습</span></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><p>기가스케일 병리 파운데이션 모델을 지식 증류(knowledge distillation)로 압축해 암종 특화 경량 인코더를 만듭니다. 연산량은 줄이면서 다운스트림 과제 성능은 유지합니다.</p><div class="metrics"><span class="meta-unit">지식 증류</span> <span class="meta-unit">자기지도 학습</span></div></details></div>
         <a class="go" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener">arXiv ↗</a>
       </article>
 
-      <article class="row">
+      <article class="row with-figure">
 
+        <a class="paper-figure" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener"><img src="/assets/pub_murss_arch.png" alt="MurSS multi-resolution selective segmentation architecture" loading="lazy"></a>
         <div class="main">
 
-          <span class="venue">Bioengineering · 2024 · 공저자</span>
-          <h3><a href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener">MurSS: A Multi-Resolution Selective Segmentation Model for Breast Cancer</a></h3>
+          <span class="venue"><span class="meta-unit">Bioengineering</span> <span class="meta-unit">2024</span> <span class="meta-unit">공저자</span></span>
+          <h3><a href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener">MurSS: A <span class="term">Multi-Resolution</span> Selective Segmentation Model for Breast Cancer</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener"><img src="/assets/pub_murss_arch.png" alt="MurSS multi-resolution selective segmentation architecture" loading="lazy"></a><p>여러 해상도를 동시에 입력받는 분할 모델입니다. 신뢰도(confidence) 기반 reject loss로 불확실한 영역에서는 예측을 보류합니다. 라벨 노이즈가 많은 조직병리 데이터에 맞춰 설계했습니다.</p><div class="metrics"><span>mIoU</span><b>0.728 · 95% 커버리지</b><span>·</span><b>0.760 · 80% 커버리지</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><p>여러 해상도를 동시에 입력받는 분할 모델입니다. 신뢰도(confidence) 기반 reject loss로 불확실한 영역에서는 예측을 보류합니다. 라벨 노이즈가 많은 조직병리 데이터에 맞춰 설계했습니다.</p><div class="metrics"><span class="meta-unit"><span>mIoU</span> <b>0.728 · 95% 커버리지</b></span> <span class="meta-unit"><b>0.760 · 80% 커버리지</b></span></div></details></div>
         <a class="go" href="https://www.mdpi.com/2306-5354/11/5/463" target="_blank" rel="noopener">Paper ↗</a>
       </article>
 
-      <article class="row">
+      <article class="row with-figure">
 
+        <a class="paper-figure" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener"><img src="/assets/pub_contrastive_embed.png" alt="Encoder embedding-space illustration for supervised contrastive learning" loading="lazy"></a>
         <div class="main">
 
-          <span class="venue">IEEE Access · 2021 · 공저자</span>
+          <span class="venue"><span class="meta-unit">IEEE Access</span> <span class="meta-unit">2021</span> <span class="meta-unit">공저자</span></span>
           <h3><a href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener">Supervised Contrastive Embedding for Medical Image Segmentation</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener"><img src="/assets/pub_contrastive_embed.png" alt="Encoder embedding-space illustration for supervised contrastive learning" loading="lazy"></a><p>석사 논문과 관련된 연구실 논문이며, 공저자로 참여했습니다. 영역 주석(annotation) 수준의 픽셀 단위 대조 손실로 라벨이 적고 신뢰도가 낮은 의료영상에서도 분할을 안정화합니다.</p><div class="metrics"><span>대조 학습</span><b>·</b><span>소량·노이즈 라벨</span></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><p>석사 논문과 관련된 연구실 논문이며, 공저자로 참여했습니다. 영역 주석(annotation) 수준의 픽셀 단위 대조 손실로 라벨이 적고 신뢰도가 낮은 의료영상에서도 분할을 안정화합니다.</p><div class="metrics"><span class="meta-unit">대조 학습</span> <span class="meta-unit">소량·노이즈 라벨</span></div></details></div>
         <a class="go" href="https://ieeexplore.ieee.org/document/9564042" target="_blank" rel="noopener">IEEE ↗</a>
       </article>
 
@@ -558,29 +582,29 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
       <article class="row" id="molecular-substitution">
 
         <div class="main">
-          <span class="venue">BIOINFO/GIW ISCB-Asia 2026 · 포스터 발표 채택 · 제1저자·발표자</span>
-          <h3>Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers</h3>
+          <span class="venue"><span class="meta-unit">BIOINFO/GIW <span class="term">ISCB-Asia</span> 2026</span> <span class="meta-unit">포스터 발표 채택</span> <span class="meta-unit">제1저자·발표자</span></span>
+          <h3>Predictability is not substitutability: a <span class="term">cost-of-substitution</span> framework for <span class="term">H&amp;E-based</span> molecular prediction across 5 cancers</h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><p>서울 · 2026.11.17–20. H&E 모델의 정확도가 높다고 해서 분자 검사를 대체할 수 있는 것은 아닙니다. 각 오분류를 사전에 정한 치료 경로 이탈로 환산해 '대체 비용'을 정의했습니다. 사전 등록한 동일 프로토콜(UNI + CLAM-SB, 기관 분리 검증, label-shuffle 대조)을 유방·폐·대장·위·두경부 5개 암종에 적용했습니다. 약 15개 엔드포인트 중 확정 기준을 충족한 것은 두경부암 HPV 상태 하나뿐이었습니다. 성능이 가장 높았던 폐 조직형(AUROC 0.939)은 기관 교란 점검에서 제외했고, 나머지 대부분은 '부정적 결과'가 아닌 '미결'로 보고했습니다. Pseudo Lab과 함께 진행했습니다.</p><div class="metrics"><span>확정</span><b>HNSC HPV · AUROC 0.959</b><span>제외</span><b>폐 조직형 · V(site, label) = 1.0</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><p>서울 · 2026.11.<span class="term">17–20</span>. H&E 모델의 정확도가 높다고 해서 분자 검사를 대체할 수 있는 것은 아닙니다. 각 오분류를 사전에 정한 치료 경로 이탈로 환산해 '대체 비용'을 정의했습니다. 사전 등록한 동일 프로토콜(UNI + <span class="term">CLAM-SB</span>, 기관 분리 검증, <span class="term">label-shuffle</span> 대조)을 유방·폐·대장·위·두경부 5개 암종에 적용했습니다. 약 15개 엔드포인트 중 확정 기준을 충족한 것은 두경부암 HPV 상태 하나뿐이었습니다. 성능이 가장 높았던 폐 조직형(AUROC 0.939)은 기관 교란 점검에서 제외했고, 나머지 대부분은 '부정적 결과'가 아닌 '미결'로 보고했습니다. Pseudo Lab과 함께 진행했습니다.</p><div class="metrics"><span class="meta-unit"><span>확정</span> <b>HNSC HPV · AUROC 0.959</b></span> <span class="meta-unit"><span>제외</span> <b>폐 조직형 · V(site, label) = 1.0</b></span></div></details></div>
       </article>
 
       <article class="row">
 
         <div class="main">
-          <span class="venue">BIOINFO/GIW ISCB-Asia 2026 · 구두 발표 채택 · 공저자</span>
-          <h3>A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics</h3>
+          <span class="venue"><span class="meta-unit">BIOINFO/GIW <span class="term">ISCB-Asia</span> 2026</span> <span class="meta-unit">구두 발표 채택</span> <span class="meta-unit">공저자</span></span>
+          <h3>A reliability map for <span class="term">per-gene</span> multiome RNA velocity parameters in <span class="term">single-cell</span> kinetics</h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><p>서울 · 2026.11.17–20. 멀티옴 RNA velocity 방법이 추정하는 유전자별 파라미터(전사율 α, 분해율 γ, 크로마틴-전사 지연)를 실제로 신뢰할 수 있는지 검증했습니다. 5개 velocity 방법을 4개 축(방법 간 재현성, ATAC-shuffle 대조, 외부 멀티옴 5종 재현, 실측 합성·분해율과의 비교)으로 평가했습니다. 방법 간에 재현된 것은 α뿐이었고, γ와 지연은 독립적인 측정법으로 따로 검증해야 합니다.</p><div class="metrics"><span>α 재현성</span><b>ρ = 0.88</b><span>γ</span><b>ρ ≈ −0.1</b><span>사전 등록 6/6 통과</span></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><p>서울 · 2026.11.<span class="term">17–20</span>. 멀티옴 RNA velocity 방법이 추정하는 유전자별 파라미터(전사율 α, 분해율 γ, 크로마틴-전사 지연)를 실제로 신뢰할 수 있는지 검증했습니다. 5개 velocity 방법을 4개 축(방법 간 재현성, <span class="term">ATAC-shuffle</span> 대조, 외부 멀티옴 5종 재현, 실측 합성·분해율과의 비교)으로 평가했습니다. 방법 간에 재현된 것은 α뿐이었고, γ와 지연은 독립적인 측정법으로 따로 검증해야 합니다.</p><div class="metrics"><span class="meta-unit"><span>α 재현성</span> <b>ρ = 0.88</b></span> <span class="meta-unit"><span>γ</span> <b>ρ ≈ −0.1</b></span> <span class="meta-unit">사전 등록 6/6 통과</span></div></details></div>
       </article>
 
       <article class="row">
 
         <div class="main">
 
-          <span class="venue">AACR 연례학술대회 2023 · 포스터 발표 · 제1저자</span>
-          <h3><a href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener">Predicting protein receptor status from H&amp;E-stained images in breast cancer</a></h3>
+          <span class="venue"><span class="meta-unit">AACR 연례학술대회 2023</span> <span class="meta-unit">포스터 발표</span> <span class="meta-unit">제1저자</span></span>
+          <h3><a href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener">Predicting protein receptor status from <span class="term">H&amp;E-stained</span> images in breast cancer</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener"><img src="/assets/talk_receptor_gradcam.jpg" alt="Grad-CAM over H&amp;E for protein-receptor status prediction" loading="lazy"></a><p>올랜도 · 2023.04 · 초록 #5404. IHC 염색 없이 H&E WSI만으로 ER·PR·HER2 상태를 예측했습니다. TCGA-BRCA 728례를 사용했습니다. 세 수용체가 공유하는 형태 인코더와 수용체별 예측 헤드로 구성된 멀티태스크 모델에 신뢰도 기반 패치 선택을 결합했습니다. 신뢰도 70% 미만 패치는 제외했습니다. 염색 색상 차이의 영향을 줄이기 위해 색상 증강을 적용했습니다. 고려대 구로병원과 함께 진행했습니다.</p><div class="metrics"><span>슬라이드 단위 정확도 · 클래스 균형 테스트셋</span><b>ER 74.6 · PR 66.0 · HER2 76.6</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener"><img src="/assets/talk_receptor_gradcam.jpg" alt="Grad-CAM over H&amp;E for protein-receptor status prediction" loading="lazy"></a><p>올랜도 · 2023.04 · 초록 #5404. IHC 염색 없이 H&E WSI만으로 ER·PR·HER2 상태를 예측했습니다. <span class="term">TCGA-BRCA</span> 728례를 사용했습니다. 세 수용체가 공유하는 형태 인코더와 수용체별 예측 헤드로 구성된 멀티태스크 모델에 신뢰도 기반 패치 선택을 결합했습니다. 신뢰도 70% 미만 패치는 제외했습니다. 염색 색상 차이의 영향을 줄이기 위해 색상 증강을 적용했습니다. 고려대 구로병원과 함께 진행했습니다.</p><div class="metrics"><span class="meta-unit"><span>슬라이드 단위 정확도 · 클래스 균형 테스트셋</span> <b>ER 74.6 · PR 66.0 · HER2 76.6</b></span></div></details></div>
         <a class="go" href="/archive/conferences/AACR2023_poster_protein_receptor_HE.png" target="_blank" rel="noopener">포스터 ↗</a>
       </article>
 
@@ -588,10 +612,10 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
         <div class="main">
 
-          <span class="venue">AACR 연례학술대회 2022 · 포스터 발표 · 제1저자</span>
+          <span class="venue"><span class="meta-unit">AACR 연례학술대회 2022</span> <span class="meta-unit">포스터 발표</span> <span class="meta-unit">제1저자</span></span>
           <h3><a href="/archive/conferences/AACR2022_breast_recurrence_slide_01.png" target="_blank" rel="noopener">Recurrence risk prediction based on automatic histologic analysis of breast cancer using whole slide images</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/AACR2022_breast_recurrence_slide_01.png" target="_blank" rel="noopener"><img src="/archive/conferences/AACR2022_breast_recurrence_slide_03.png" alt="Patch-level classification and majority-voting pipeline for recurrence risk" loading="lazy"></a><p>뉴올리언스 · 2022.04.12. H&E WSI로 21-유전자 재발 점수 위험군을 예측한 연구(125례)로, 이후 Scientific Reports(2025) 논문으로 발전했습니다. 고위험 증례를 저위험으로 잘못 분류한 경우는 한 건도 없었습니다.</p><div class="metrics"><span>일대다 정확도 저 / 중 / 고</span><b>0.832 / 0.776 / 0.912</b><span>민감도 저 / 중 / 고</span><b>0.857 / 0.746 / 0.529</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/AACR2022_breast_recurrence_slide_01.png" target="_blank" rel="noopener"><img src="/archive/conferences/AACR2022_breast_recurrence_slide_03.png" alt="Patch-level classification and majority-voting pipeline for recurrence risk" loading="lazy"></a><p>뉴올리언스 · 2022.04.12. H&E WSI로 21-유전자 재발 점수 위험군을 예측한 연구(125례)로, 이후 Scientific Reports(2025) 논문으로 발전했습니다. 고위험 증례를 저위험으로 잘못 분류한 경우는 한 건도 없었습니다.</p><div class="metrics"><span class="meta-unit"><span>일대다 정확도 저 / 중 / 고</span> <b>0.832 / 0.776 / 0.912</b></span> <span class="meta-unit"><span>민감도 저 / 중 / 고</span> <b>0.857 / 0.746 / 0.529</b></span></div></details></div>
         <a class="go" href="/archive/conferences/AACR2022_breast_recurrence_slide_01.png" target="_blank" rel="noopener">슬라이드 ↗</a>
       </article>
 
@@ -599,10 +623,10 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
         <div class="main">
 
-          <span class="venue">AACR 연례학술대회 2022 · 포스터 발표 · 공저자</span>
+          <span class="venue"><span class="meta-unit">AACR 연례학술대회 2022</span> <span class="meta-unit">포스터 발표</span> <span class="meta-unit">공저자</span></span>
           <h3><a href="/archive/conferences/AACR2022_pancreatic_survival_slide_01.png" target="_blank" rel="noopener">A deep learning based pancreatic adenocarcinoma survival prediction model applicable to adenocarcinoma of other organs</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/AACR2022_pancreatic_survival_slide_01.png" target="_blank" rel="noopener"><img src="/archive/conferences/AACR2022_pancreatic_survival_slide_05.png" alt="5-fold C-index results for pancreatic adenocarcinoma survival model" loading="lazy"></a><p>뉴올리언스 · 2022.04. TCGA 췌장 선암 179례로 학습한 조직 영상 기반 생존 예측 모델을 직장암과 유방암에 적용했습니다. 직장암에서는 성능이 대체로 유지됐고, 유방암에서는 떨어졌습니다.</p><div class="metrics"><span>C-index</span><b>0.726</b><span>READ 적용</span><b>0.694</b><span>BRCA 적용</span><b>0.571</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/AACR2022_pancreatic_survival_slide_01.png" target="_blank" rel="noopener"><img src="/archive/conferences/AACR2022_pancreatic_survival_slide_05.png" alt="5-fold C-index results for pancreatic adenocarcinoma survival model" loading="lazy"></a><p>뉴올리언스 · 2022.04. TCGA 췌장 선암 179례로 학습한 조직 영상 기반 생존 예측 모델을 직장암과 유방암에 적용했습니다. 직장암에서는 성능이 대체로 유지됐고, 유방암에서는 떨어졌습니다.</p><div class="metrics"><span class="meta-unit"><span><span class="term">C-index</span></span> <b>0.726</b></span> <span class="meta-unit"><span>READ 적용</span> <b>0.694</b></span> <span class="meta-unit"><span>BRCA 적용</span> <b>0.571</b></span></div></details></div>
         <a class="go" href="/archive/conferences/AACR2022_pancreatic_survival_slide_01.png" target="_blank" rel="noopener">슬라이드 ↗</a>
       </article>
 
@@ -610,10 +634,10 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
         <div class="main">
 
-          <span class="venue">USCAP 연례학술대회 2022 · 포스터 발표 · 공저자</span>
+          <span class="venue"><span class="meta-unit">USCAP 연례학술대회 2022</span> <span class="meta-unit">포스터 발표</span> <span class="meta-unit">공저자</span></span>
           <h3><a href="/archive/conferences/USCAP2022_poster_breast_survival_prostate_feature.png" target="_blank" rel="noopener">Breast cancer survival analysis through the extracted feature from the prostate diagnosis model</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/USCAP2022_poster_breast_survival_prostate_feature.png" target="_blank" rel="noopener"><img src="/assets/talk_survival_km.png" alt="Kaplan-Meier survival curves by AI risk score" loading="lazy"></a><p>2022.03.18. 사전 학습된 전립선 진단 모델의 특징으로 H&E WSI에서 유방암 사망 위험을 예측했습니다(TCGA-BRCA 980장). Kaplan-Meier 분석에서 고위험군과 저위험군이 분리됐습니다.</p><div class="metrics"><span>C-index</span><b>0.655</b><span>log-rank</span><b>p = 0.0011</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/USCAP2022_poster_breast_survival_prostate_feature.png" target="_blank" rel="noopener"><img src="/assets/talk_survival_km.png" alt="Kaplan-Meier survival curves by AI risk score" loading="lazy"></a><p>2022.03.18. 사전 학습된 전립선 진단 모델의 특징으로 H&E WSI에서 유방암 사망 위험을 예측했습니다(<span class="term">TCGA-BRCA</span> 980장). <span class="term">Kaplan-Meier</span> 분석에서 고위험군과 저위험군이 분리됐습니다.</p><div class="metrics"><span class="meta-unit"><span><span class="term">C-index</span></span> <b>0.655</b></span> <span class="meta-unit"><span><span class="term">log-rank</span></span> <b>p = 0.0011</b></span></div></details></div>
         <a class="go" href="/archive/conferences/USCAP2022_poster_breast_survival_prostate_feature.png" target="_blank" rel="noopener">포스터 ↗</a>
       </article>
 
@@ -621,10 +645,10 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
         <div class="main">
 
-          <span class="venue">USCAP 연례학술대회 2022 · 포스터 발표 · 제1저자</span>
+          <span class="venue"><span class="meta-unit">USCAP 연례학술대회 2022</span> <span class="meta-unit">포스터 발표</span> <span class="meta-unit">제1저자</span></span>
           <h3><a href="/archive/conferences/USCAP2022_poster_histologic_grading.png" target="_blank" rel="noopener">Automatic histological grading of breast cancer resection tissue</a></h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/USCAP2022_poster_histologic_grading.png" target="_blank" rel="noopener"><img src="/assets/talk_grading_cam.jpg" alt="Class-activation maps for breast histologic grading" loading="lazy"></a><p>2022.03.17. 병리의가 주석을 단 H&E WSI 125장에서 종양 패치를 조직학적 1·2·3등급으로 분류해 판독자 간 편차를 줄이고자 했습니다. 고려대 의대와 함께 진행했습니다.</p><div class="metrics"><span>패치 단위 일대다 정확도 G1 / G2 / G3</span><b>0.958 / 0.922 / 0.956</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/USCAP2022_poster_histologic_grading.png" target="_blank" rel="noopener"><img src="/assets/talk_grading_cam.jpg" alt="Class-activation maps for breast histologic grading" loading="lazy"></a><p>2022.03.17. 병리의가 주석을 단 H&E WSI 125장에서 종양 패치를 조직학적 1·2·3등급으로 분류해 판독자 간 편차를 줄이고자 했습니다. 고려대 의대와 함께 진행했습니다.</p><div class="metrics"><span class="meta-unit"><span>패치 단위 일대다 정확도 G1 / G2 / G3</span> <b>0.958 / 0.922 / 0.956</b></span></div></details></div>
         <a class="go" href="/archive/conferences/USCAP2022_poster_histologic_grading.png" target="_blank" rel="noopener">포스터 ↗</a>
       </article>
 
@@ -632,10 +656,10 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
         <div class="main">
 
-          <span class="venue">대한산업공학회 추계학술대회 2020 · 구두 발표 · 제1저자</span>
+          <span class="venue"><span class="meta-unit">대한산업공학회 추계학술대회 2020</span> <span class="meta-unit">구두 발표</span> <span class="meta-unit">제1저자</span></span>
           <h3>영역분할 모델 성능 향상을 위한 대조적 손실 함수의 활용</h3>
 
-        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/KIIE2020_contrastive_loss_segmentation_slides.pdf" target="_blank" rel="noopener"><img src="/archive/conferences/KIIE2020_contrastive_loss_segmentation_arch.png" alt="U-Net with feature-wise contrastive loss on encoder embeddings" loading="lazy"></a><p>서울과학기술대 황상흠 교수 지도로, 인코더 병목에 feature-wise contrastive loss를 적용해 CT 폐·간 분할에서 U-Net과 UNet++의 성능을 높였습니다. 석사 학위논문의 바탕이 된 연구입니다.</p><div class="metrics"><span>간 DSC</span><b>0.912 → 0.923</b><span>간 ASD</span><b>0.533 → 0.365</b></div></details></div>
+        <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/KIIE2020_contrastive_loss_segmentation_slides.pdf" target="_blank" rel="noopener"><img src="/archive/conferences/KIIE2020_contrastive_loss_segmentation_arch.png" alt="U-Net with feature-wise contrastive loss on encoder embeddings" loading="lazy"></a><p>서울과학기술대 황상흠 교수 지도로, 인코더 병목에 <span class="term">feature-wise</span> contrastive loss를 적용해 CT 폐·간 분할에서 U-Net과 UNet++의 성능을 높였습니다. 석사 학위논문의 바탕이 된 연구입니다.</p><div class="metrics"><span class="meta-unit"><span>간 DSC</span> <b>0.912 → 0.923</b></span> <span class="meta-unit"><span>간 ASD</span> <b>0.533 → 0.365</b></span></div></details></div>
         <a class="go" href="/archive/conferences/KIIE2020_contrastive_loss_segmentation_slides.pdf" target="_blank" rel="noopener">슬라이드 ↗</a>
       </article>
 
@@ -647,93 +671,117 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
     <div class="head"><h2>프로젝트</h2><span class="note">크로스모달 학습 · 신뢰성 · 약물 반응</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
     <div class="grid">
 
-      <div class="card">
-        <div class="k">프로테오믹스 · OMIXAI</div>
-        <h3>프로테오믹스 기반 약물 반응 예측</h3>
-        <p>프로테오믹스로 세포주 약물 반응(IC50)을 예측하고, 학습에 없던 약물로 평가합니다. LoRA/PEFT를 활용한 프로테옴 자기지도 표현 학습도 연구합니다.</p>
-        <div class="tagline"><span>Leave-drug-out CV Pearson</span><b>≥ 0.65</b><span>· 학습에 없던 약물</span><span>·</span><span>사내 R&D, 미공개</span></div>
-      <details class="project-detail"><summary>방법과 연구 배경</summary><p>프로테오믹스 데이터로 세포주의 약물 반응(IC50)을 예측하는 모델을 개발했습니다. 학습에 없던 약물로만 테스트하는 leave-drug-out 방식으로 평가했습니다(Pearson ≥ 0.65). LoRA/PEFT 기반 자기지도 프로테옴 표현 학습도 별도로 진행했습니다.</p></details></div>
+      <article class="card">
+        <div class="card-body">
+          <div class="k">프로테오믹스 · OMIXAI</div>
+          <h3>프로테오믹스로 약물 반응 예측</h3>
+          <div class="tagline"><span class="meta-unit">사내 R&D</span> <span class="meta-unit">미공개</span></div>
+          <p>프로테오믹스 데이터로 세포주의 약물 반응(IC50)을 예측하는 모델을 개발했습니다. 학습에 없던 약물로만 테스트하는 <span class="term">leave-drug-out</span> 방식으로 평가했습니다(Pearson ≥ 0.65). LoRA/PEFT 기반 자기지도 프로테옴 표현 학습도 별도로 진행했습니다.</p>
+        </div>
+      </article>
 
-      <div class="card">
-        <div class="k">멀티오믹스 · OMIXAI</div>
-        <h3>듀얼타겟 siRNA 후보 선정을 위한 RNA–단백질 일치도 분석</h3>
-        <p>CPTAC 교모세포종 데이터에서 RNA 발현과 단백질 양을 비교해 실험용 이중표적 siRNA 후보의 우선순위를 정했습니다. 유전자별 통계적 근거와 데이터 품질 정보를 함께 정리했습니다.</p>
-        <div class="tagline"><span>유전자</span><b>11,238개</b><span>Spearman 중앙값</span><b>ρ 0.441</b><span>· CPTAC GBM 100명</span></div>
-      <details class="project-detail"><summary>방법과 연구 배경</summary><p>교모세포종(GBM) 듀얼타겟 siRNA 과제의 일부입니다. CPTAC GBM 환자 100명의 전사체와 단백체를 매칭해, 유전자별로 RNA 발현이 단백질 발현을 얼마나 반영하는지 평가했습니다. 1,000회 permutation으로 귀무분포를 구하고 다중검정 보정을 적용했습니다. 변동성·저발현·결측 지표와 민감도 점검을 더해 웻랩 후보 선정용 근거표로 정리했습니다.</p></details></div>
+      <article class="card">
+        <div class="card-body">
+          <div class="k">멀티오믹스 · OMIXAI</div>
+          <h3>듀얼타겟 siRNA 후보 선정을 위한 RNA–단백질 분석</h3>
+          <div class="tagline"><span class="meta-unit"><span>유전자</span> <b>11,238개</b></span> <span class="meta-unit"><span>Spearman 중앙값</span> <b>ρ 0.441</b></span> <span class="meta-unit">CPTAC GBM 100명</span></div>
+          <p>교모세포종(GBM) 듀얼타겟 siRNA 과제의 일부입니다. CPTAC GBM 환자 100명의 전사체와 단백체를 매칭해, 유전자별로 RNA 발현이 단백질 발현을 얼마나 반영하는지 평가했습니다. 1,000회 permutation으로 귀무분포를 구하고 다중검정 보정을 적용했습니다. 변동성·저발현·결측 지표와 민감도 점검을 더해 웻랩 후보 선정용 근거표로 정리했습니다.</p>
+        </div>
+      </article>
 
-      <div class="card">
-        <div class="k">비교종양학 · OMIXAI</div>
-        <h3>Pan-Sarcoma: 멀티모달 약물 반응 예측</h3>
-        <p>한·일 공동연구로 반려견 종양의 프로테오믹스·H&E·RNA를 통합해 약물 반응을 예측합니다. 육종에서 시작한 데이터는 여러 암종으로 확대되었습니다.</p>
-        <div class="tagline"><span>프로테오믹스</span><b>·</b><span>병리</span><b>·</b><span>RNA</span><b>·</b><span>2025 – 2028</span><b>·</b><span>참여연구원 · 진행 중, 아직 공개 결과 없음</span></div>
-      <details class="project-detail"><summary>방법과 연구 배경</summary><p>Pan-Sarcoma 프로테오지노믹스 프로파일링 과제의 일환인 한·일 공동연구입니다. 일본 측이 제공하는 반려견 종양의 프로테오믹스, 병리(H&E), RNA 데이터를 통합해 약물 반응 예측과 분자 분석을 진행하고 있습니다. 데이터 범위는 육종에서 시작해 현재 범암종으로 넓어졌습니다.</p></details></div>
+      <article class="card">
+        <div class="card-body">
+          <div class="k">OMIXAI · 한·일 공동연구</div>
+          <h3><span class="term">Pan-Sarcoma</span>: 반려견 종양의 약물 반응 예측</h3>
+          <div class="tagline"><span class="meta-unit">참여연구원</span> <span class="meta-unit"><span class="term">2025–2028</span></span> <span class="meta-unit">진행 중</span> <span class="meta-unit">결과 미공개</span></div>
+          <p><span class="term">Pan-Sarcoma</span> 프로테오지노믹스 공동연구에서 일본 측이 제공한 반려견 종양의 프로테오믹스·H&E·RNA 데이터를 통합해 약물 반응 예측과 분자 분석을 진행하고 있습니다. 육종으로 시작한 데이터는 현재 여러 암종으로 확대되었습니다.</p>
+        </div>
+      </article>
 
-      <div class="card">
-        <div class="card-fig"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></div>
-        <div class="k">사이드 프로젝트 · NVIDIA 해커톤 2026</div>
-        <h3>FlyGate: 신약 탐색부터 약물감시까지 잇는 근거 중심 에이전트</h3>
-        <p>5인 NVIDIA 해커톤 팀에서 FlyDiscovery 모듈과 탐색 워크벤치를 개발했습니다. FlyGate는 표적 결합 예측과 이상사례 감시를 연결합니다.</p>
-        <div class="tagline"><span>기성 NIM 모델 점검 · OpenFold3 RMSD</span><b>1.0 Å</b><span>Boltz-2 친화도</span><b>ρ 0.767</b><a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a><a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
-      <details class="project-detail"><summary>방법과 연구 배경</summary><p>5인 팀으로 참가한 NVIDIA Korea Agentic AI Hackathon 2026 출품작입니다. 시판 전 표적 결합 예측(FlyDiscovery)과 시판 후 이상사례 감시(FlyVigilance)를 하나의 에이전트로 잇습니다. 이 중 FlyDiscovery 모듈과 탐색 워크벤치 UI를 개발했습니다. FlyDiscovery는 BioNeMo NIM(OpenFold3 · DiffDock · Boltz-2)으로 후보 물질을 구조 예측부터 결합 친화도까지 평가합니다.</p></details></div>
+      <article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">사이드 프로젝트 · NVIDIA 해커톤 2026</div>
+          <h3>FlyGate: 신약 탐색과 약물 안전성 감시</h3>
+          <div class="tagline"><span class="meta-unit"><span>기성 NIM 모델 점검 · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> 친화도</span> <b>ρ 0.767</b></span> <a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>5인 팀으로 참가한 NVIDIA Korea Agentic AI Hackathon 2026 출품작입니다. 시판 전 표적 결합 예측(FlyDiscovery)과 시판 후 이상사례 감시(FlyVigilance)를 하나의 에이전트로 잇습니다. 이 중 FlyDiscovery 모듈과 탐색 워크벤치 UI를 개발했습니다. FlyDiscovery는 BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)으로 후보 물질을 구조 예측부터 결합 친화도까지 평가합니다.</p>
+        </div>
+      </article>
 
     </div>
 
-    <details class="fold"><summary>추가 연구와 개발</summary><div class="grid"><div class="card">
-        <div class="k">정밀종양학 · OMIXAI</div>
-        <h3>수의 종양 CDSS & 버추얼 셀</h3>
-        <p>반려견 종양의 약물 추천 알고리즘을 개발했습니다. CRISPR 넉다운 반응을 예측하는 OMIXAI의 Virtual Cell Challenge 참가팀을 공동 주도했습니다.</p>
-        <div class="tagline"><span>반려견 약물 추천</span><span>top-k ≥ 70% · 자체 코호트 · 사내 R&D, 미공개</span><b>·</b><span>CRISPR 섭동</span></div>
-      <details class="project-detail"><summary>방법과 연구 배경</summary><p>임상 의사결정 지원 시스템(CDSS) 구축을 목표로 반려견 종양 약물 추천 알고리즘을 개발했습니다. Arc Institute Virtual Cell Challenge에서는 OMIXAI 참가팀을 공동 주도해 만능줄기세포의 CRISPR 넉다운 반응을 예측했습니다.</p></details></div><div class="card">
-        <div class="card-fig"><img src="/assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></div>
-        <div class="k">디지털 병리 · 딥바이오</div>
-        <h3>Oncotype DX 재발 예측</h3>
-        <p>H&E 슬라이드만으로 Oncotype DX 위험군을 예측했습니다. 신뢰도에 따라 패치를 선택하고 다수결로 슬라이드 단위 결과를 산출했습니다.</p>
-        <div class="tagline"><span>Scientific Reports 2025 · 제1저자 · n = 125, 2개 병원</span><span>민감도 저 / 중 / 고</span><b>0.86 / 0.75 / 0.53</b><span>특이도 저 / 중 / 고</span><b>0.82 / 0.80 / 0.97</b></div>
-      <details class="project-detail"><summary>방법과 연구 배경</summary><p>다른 임상 정보 없이 H&E WSI만으로 21-유전자 재발 점수(Oncotype DX)의 위험군을 예측했습니다. 패치 단위로 분류한 뒤 신뢰도(confidence) 기반 선별과 다수결로 슬라이드별 저·중·고위험군을 판정했습니다.</p></details></div><div class="card">
-        <div class="k">기타 R&D · 딥바이오</div>
-        <h3>병리 OOD 기반 액티브 러닝 · ADMET/DTI</h3>
-        <p>ADMET·약물–표적 상호작용 예측과 병리 라벨링을 위한 OOD 기반 능동학습을 연구했습니다. 사내 R&D로, 공개된 결과는 없습니다.</p>
-        <div class="tagline"><span>ADMET</span><b>·</b><span>DTI</span><b>·</b><span>OOD 검출</span><b>·</b><span>액티브 러닝</span></div>
-      <details class="project-detail"><summary>방법과 연구 배경</summary><p>초기 약물 물성 프로파일링을 위한 ADMET 예측과 약물-표적 상호작용 모델링을 진행했습니다. 병리 이미지에서 OOD 샘플을 정의해 라벨링 효율을 높이는 액티브 러닝 프레임워크도 개발했습니다. 사내 R&D라 공개된 성과는 없습니다.</p></details></div><div class="card">
-        <div class="card-fig"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></div>
-        <div class="k">의료영상 · SK / 아주대병원</div>
-        <h3>CT 뇌출혈 검출</h3>
-        <p>CT 뇌출혈 영역을 분할하고 슬라이스를 분류했습니다. 외부 공개 데이터로 일반화를 검증하고 class-activation map으로 예측을 점검했습니다.</p>
-        <div class="tagline"><span>2D + 3D 분할</span><b>·</b><span>도메인 일반화</span><a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
-      <details class="project-detail"><summary>방법과 연구 배경</summary><p>뇌출혈 영역을 2D·3D로 분할하고 슬라이스 단위로 분류했습니다. 외부 공개 데이터로 도메인 일반화를 검증했고, class-activation map으로 분류 결과의 신뢰성을 점검했습니다(U-Net vs DeepLab).</p></details></div></div></details><div class="subhead">
+    <details class="fold"><summary>추가 연구와 개발</summary><div class="grid"><article class="card">
+        <div class="card-body">
+          <div class="k">정밀종양학 · OMIXAI</div>
+          <h3>수의 종양 CDSS & 버추얼 셀</h3>
+          <div class="tagline"><span class="meta-unit">반려견 약물 추천</span> <span class="meta-unit"><span class="term">top-k</span> ≥ 70% · 자체 코호트 · 사내 R&D, 미공개</span> <span class="meta-unit">CRISPR 섭동</span></div>
+          <p>임상 의사결정 지원 시스템(CDSS) 구축을 목표로 반려견 종양 약물 추천 알고리즘을 개발했습니다. Arc Institute Virtual Cell Challenge에서는 OMIXAI 참가팀을 공동 주도해 만능줄기세포의 CRISPR 넉다운 반응을 예측했습니다.</p>
+        </div>
+      </article><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_oncotype_pipeline.png" target="_blank" rel="noopener"><img src="/assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">디지털 병리 · 딥바이오</div>
+          <h3>H&E로 Oncotype DX 위험군 예측</h3>
+          <div class="tagline"><span class="meta-unit">Scientific Reports 2025 · 제1저자 · n = 125, 2개 병원</span> <span class="meta-unit"><span>민감도 저 / 중 / 고</span> <b>0.86 / 0.75 / 0.53</b></span> <span class="meta-unit"><span>특이도 저 / 중 / 고</span> <b>0.82 / 0.80 / 0.97</b></span></div>
+          <p>다른 임상 정보 없이 H&E WSI만으로 21-유전자 재발 점수(Oncotype DX)의 위험군을 예측했습니다. 패치 단위로 분류한 뒤 신뢰도(confidence) 기반 선별과 다수결로 슬라이드별 저·중·고위험군을 판정했습니다.</p>
+        </div>
+      </article><article class="card">
+        <div class="card-body">
+          <div class="k">기타 R&D · 딥바이오</div>
+          <h3>병리 OOD 기반 액티브 러닝 · ADMET/DTI</h3>
+          <div class="tagline"><span class="meta-unit">ADMET</span> <span class="meta-unit">DTI</span> <span class="meta-unit">OOD 검출</span> <span class="meta-unit">액티브 러닝</span></div>
+          <p>초기 약물 물성 프로파일링을 위한 ADMET 예측과 약물-표적 상호작용 모델링을 진행했습니다. 병리 이미지에서 OOD 샘플을 정의해 라벨링 효율을 높이는 액티브 러닝 프레임워크도 개발했습니다. 사내 R&D라 공개된 성과는 없습니다.</p>
+        </div>
+      </article><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_brain_ct.jpg" target="_blank" rel="noopener"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">의료영상 · SK / 아주대병원</div>
+          <h3>CT 뇌출혈 검출</h3>
+          <div class="tagline"><span class="meta-unit">2D + 3D 분할</span> <span class="meta-unit">도메인 일반화</span> <a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>뇌출혈 영역을 2D·3D로 분할하고 슬라이스 단위로 분류했습니다. 외부 공개 데이터로 도메인 일반화를 검증했고, <span class="term">class-activation</span> map으로 분류 결과의 신뢰성을 점검했습니다(<span class="term">U-Net</span> vs DeepLab).</p>
+        </div>
+      </article></div></details><div class="subhead">
       <h3>초기 ML 엔지니어링</h3>
     </div>
     <details class="fold">
       <summary>2019–2020 · 산업용 비전, 정형 데이터, 데이터 엔지니어링, 분할 모델 견고성 · 프로젝트 4개</summary>
     <div class="grid">
-      <div class="card">
-        <div class="card-fig"><img src="/assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></div>
-        <div class="k">컴퓨터 비전 · 프론텍</div>
-        <h3>나사 불량 판별</h3>
-        <p>머신비전으로 나사 위치를 찾고 배경을 제거한 뒤 제조 불량을 분류했습니다. 이미지당 0.3초 이내의 처리 조건을 적용했습니다.</p>
-        <div class="tagline"><span>5개 클래스</span><b>·</b><b>장당 0.3초 미만</b></div>
-      <details class="project-detail"><summary>방법과 연구 배경</summary><p>생산 라인 불량 검출 과제(969장, 5개 클래스, 장당 0.3초 미만 처리 조건)입니다. 딥러닝 대신 머신비전으로 나사 위치를 찾아 배경을 제거한 뒤 분류해 정확도를 높였습니다.</p></details></div>
+      <article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_screw.jpg" target="_blank" rel="noopener"><img src="/assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">컴퓨터 비전 · 프론텍</div>
+          <h3>나사 불량 판별</h3>
+          <div class="tagline"><span class="meta-unit">5개 클래스</span> <span class="meta-unit"><b>장당 0.3초 미만</b></span></div>
+          <p>생산 라인 불량 검출 과제(969장, 5개 클래스, 장당 0.3초 미만 처리 조건)입니다. 딥러닝 대신 머신비전으로 나사 위치를 찾아 배경을 제거한 뒤 분류해 정확도를 높였습니다.</p>
+        </div>
+      </article>
 
-      <div class="card">
-        <div class="k">정형 데이터 ML · 직방</div>
-        <h3>아파트 실거래가 예측</h3>
-        <p>서울·부산 아파트 실거래가를 예측했습니다. 우편번호로 주소 오류를 수정하고 공공 API의 주변 지하철·학교 정보를 추가했습니다.</p>
-        <div class="tagline"><span>160만 건</span><b>·</b><span>지표: RMSE</span></div>
-      <details class="project-detail"><summary>방법과 연구 배경</summary><p>서울·부산 거래 데이터 160만 건으로 실거래가를 예측했습니다. 우편번호로 주소를 다시 매칭해 잘못 기재된 지역을 바로잡았습니다. 원본에 없던 주변 지하철·학교 정보는 공공 API로 받아 피처로 추가했습니다.</p></details></div>
+      <article class="card">
+        <div class="card-body">
+          <div class="k">정형 데이터 ML · 직방</div>
+          <h3>아파트 실거래가 예측</h3>
+          <div class="tagline"><span class="meta-unit">160만 건</span> <span class="meta-unit">지표: RMSE</span></div>
+          <p>서울·부산 거래 데이터 160만 건으로 실거래가를 예측했습니다. 우편번호로 주소를 다시 매칭해 잘못 기재된 지역을 바로잡았습니다. 원본에 없던 주변 지하철·학교 정보는 공공 API로 받아 피처로 추가했습니다.</p>
+        </div>
+      </article>
 
-      <div class="card">
-        <div class="k">데이터 엔지니어링 · 서울과기대</div>
-        <h3>음원 차트 수집 파이프라인 & DB</h3>
-        <p>6개 플랫폼의 일간 Top 100 차트를 수집하고 곡·아티스트 기준으로 병합해 관계형 DB에 적재하는 파이프라인을 구축했습니다.</p>
-        <div class="tagline"><span>6개 플랫폼</span><b>·</b><span>일 단위 수집</span><b>·</b><span>스키마 설계</span><a href='https://github.com/Geongyu/2020-Database-Project' target='_blank' rel='noopener'>code ↗</a></div>
-      <details class="project-detail"><summary>방법과 연구 배경</summary><p>멜론·지니·바이브·유튜브 뮤직·애플 뮤직·벅스 6개 플랫폼의 일간 Top 100을 매일 같은 시각에 수집했습니다. 곡과 아티스트 기준으로 병합해 관계형 DB에 적재했습니다. 차트 진입·이탈로 생기는 결측에 대비해 순위 컬럼은 NULL을 허용하도록 설계했고, 다국어 제목은 nvarchar로 저장했습니다.</p></details></div>
+      <article class="card">
+        <div class="card-body">
+          <div class="k">데이터 엔지니어링 · 서울과기대</div>
+          <h3>음원 차트 수집 파이프라인 & DB</h3>
+          <div class="tagline"><span class="meta-unit">6개 플랫폼</span> <span class="meta-unit">일 단위 수집</span> <span class="meta-unit">스키마 설계</span> <a href='https://github.com/Geongyu/2020-Database-Project' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>멜론·지니·바이브·유튜브 뮤직·애플 뮤직·벅스 6개 플랫폼의 일간 Top 100을 매일 같은 시각에 수집했습니다. 곡과 아티스트 기준으로 병합해 관계형 DB에 적재했습니다. 차트 진입·이탈로 생기는 결측에 대비해 순위 컬럼은 NULL을 허용하도록 설계했고, 다국어 제목은 nvarchar로 저장했습니다.</p>
+        </div>
+      </article>
 
-      <div class="card">
-        <div class="k">컴퓨터 비전 · 서울과기대</div>
-        <h3>분할 모델의 적대적 견고성 연구</h3>
-        <p>PASCAL VOC의 U-Net 분할에 적대적 학습·label smoothing·cut-out을 적용하고 견고성과 정확도의 절충을 비교했습니다.</p>
-        <div class="tagline"><span>적대적 학습</span><b>·</b><span>Label smoothing</span><b>·</b><span>Cut-out</span><a href='https://github.com/Geongyu/2019_DL_Project' target='_blank' rel='noopener'>code ↗</a></div>
-      <details class="project-detail"><summary>방법과 연구 배경</summary><p>PASCAL VOC(20개 클래스, 1,928장, 4,203개 객체)에서 U-Net 분할 모델에 adversarial training·label smoothing·cut-out을 단독 또는 조합으로 적용해 견고성과 정확도의 트레이드오프를 비교했습니다. 이후 의료 AI로 이어진 '견고성 우선' 관점의 출발점입니다.</p></details></div>
+      <article class="card">
+        <div class="card-body">
+          <div class="k">컴퓨터 비전 · 서울과기대</div>
+          <h3>분할 모델의 적대적 견고성 연구</h3>
+          <div class="tagline"><span class="meta-unit">적대적 학습</span> <span class="meta-unit">Label smoothing</span> <span class="meta-unit"><span class="term">Cut-out</span></span> <a href='https://github.com/Geongyu/2019_DL_Project' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>PASCAL VOC(20개 클래스, 1,928장, 4,203개 객체)에서 <span class="term">U-Net</span> 분할 모델에 adversarial training·label smoothing·cut-out을 단독 또는 조합으로 적용해 견고성과 정확도의 트레이드오프를 비교했습니다. 이후 의료 AI로 이어진 '견고성 우선' 관점의 출발점입니다.</p>
+        </div>
+      </article>
 
     </div>
     </details>
@@ -814,7 +862,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
       <div class="role-row">
         <div class="when"><span class="co">Pseudo Lab</span><span>2026 · 12기</span><br><span class="loc">오픈 리서치 커뮤니티</span></div>
         <div class="what">
-          <h3>AutoBioX: AI Agents for End-to-End Bio Research</h3>
+          <h3>AutoBioX: AI Agents for <span class="term">End-to-End</span> Bio Research</h3>
           <div class="sub">연구 멤버(러너) · 수료</div>
           <ul>
             <li>바이오 연구용 AI 에이전트를 다루는 9인 팀 참여</li>
@@ -849,7 +897,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <section class="block" id="skills">
     <div class="head"><h2>기술</h2></div>
 
-  <div class="two"><div class="skillset"><h3>딥러닝</h3><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div><div class="skillset"><h3>디지털 병리</h3><div class="tags"><span class="tag">OpenSlide</span><span class="tag">QuPath</span><span class="tag">CLAM / weakly-supervised MIL</span><span class="tag">UNI · CONCH · Virchow</span><span class="tag">WSI 타일링</span></div></div><div class="skillset"><h3>바이오·오믹스</h3><div class="tags"><span class="tag">scanpy · AnnData</span><span class="tag">단일세포 섭동</span><span class="tag">프로테옴 표현 학습</span><span class="tag">ADMET</span></div></div><div class="skillset"><h3>MLOps & 언어</h3><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div></div></section><section class="block" id="funding"><div class="head"><h2>연구 과제</h2><span class="note">참여연구원</span></div><div class="fund"><h3>정밀종양학을 위한 Pan-Sarcoma 프로테오지노믹스 프로파일링</h3><div class="meta">한·일 공동연구 · 경희대학교 의료원<br>2025.04 – 2028.12 · 참여연구원</div></div><div class="fund"><h3>수의 종양학을 위한 버추얼 셀 CDSS</h3><div class="meta">농림축산식품부 IPET · 국가 R&D<br>2026 – 2030 (선정) · 참여연구원</div></div><div class="fund"><h3>암 병리 진단용 범용 AI 개발·상용화</h3><div class="meta">딥바이오 주관 · 국가 R&D<br>과제 기간 2021.04 – 2025.12 · 참여연구원(2021.04 – 2025.01)</div></div></section>
+  <div class="two"><div class="skillset"><h3>딥러닝</h3><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div><div class="skillset"><h3>디지털 병리</h3><div class="tags"><span class="tag">OpenSlide</span><span class="tag">QuPath</span><span class="tag">CLAM / weakly-supervised MIL</span><span class="tag">UNI · CONCH · Virchow</span><span class="tag">WSI 타일링</span></div></div><div class="skillset"><h3>바이오·오믹스</h3><div class="tags"><span class="tag">scanpy · AnnData</span><span class="tag">단일세포 섭동</span><span class="tag">프로테옴 표현 학습</span><span class="tag">ADMET</span></div></div><div class="skillset"><h3>MLOps & 언어</h3><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div></div></section><section class="block" id="funding"><div class="head"><h2>연구 과제</h2><span class="note">참여연구원</span></div><div class="fund"><h3>정밀종양학을 위한 <span class="term">Pan-Sarcoma</span> 프로테오지노믹스 프로파일링</h3><div class="meta">한·일 공동연구 · 경희대학교 의료원<br>2025.04 – 2028.12 · 참여연구원</div></div><div class="fund"><h3>수의 종양학을 위한 버추얼 셀 CDSS</h3><div class="meta">농림축산식품부 IPET · 국가 R&D<br>2026 – 2030 (선정) · 참여연구원</div></div><div class="fund"><h3>암 병리 진단용 범용 AI 개발·상용화</h3><div class="meta">딥바이오 주관 · 국가 R&D<br>과제 기간 2021.04 – 2025.12 · 참여연구원(2021.04 – 2025.01)</div></div></section>
 
   <!-- CONTACT -->
   <section class="block contact" id="contact">

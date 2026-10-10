@@ -122,8 +122,15 @@ cv/                 CV source (content.py + cv.css) rendered to PDF with WeasyPr
 
 The homepage uses short descriptive labels for three selected studies. Keep the
 official paper titles, authorship, publication status, figures and evaluation
-conditions in Publications and Conferences. Long study and project descriptions
-use native `<details>` elements, so they remain available without JavaScript.
+conditions in Publications and Conferences. Paper figures stay visible beside
+their titles; longer study summaries use native `<details>` elements. Projects
+use rows that size to their content, with one visible description and optional
+figures. Avoid equal-height cards and repeated per-project disclosure controls.
+Group each metric label with its value in `.meta-unit`. Keep short compound
+terms together with `.term`, while allowing whole titles and paragraphs to wrap
+at the available width; avoid fixed line breaks in running text.
+Keep Research in one column: a short introduction followed by a visible bulleted
+list of interests.
 The light theme uses Noto Sans, readable body text and restrained link colors; avoid adding
 duplicate headline metrics or hiding page content behind entrance animations.
 
