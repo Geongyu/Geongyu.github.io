@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>Machine Learning Researcher</b><br>
-  <sub>Cross-modal learning · Reliable prediction · Computational Pathology × Multi-Omics · Seoul, KR</sub>
+  <sub>Multimodal Learning · Interpretability · Reliable ML · Seoul, KR</sub>
 </p>
 
 <p align="center">
@@ -20,11 +20,17 @@
 
 ## About
 
-I develop machine learning models that predict molecular measurements from pathology slides and, in my current industry work, drug response from proteomics. I focus on whether these predictions remain valid at new hospitals and for drugs not seen in training.
+I have 5+ years of industry experience in machine learning R&D, spanning research questions, data analysis, model development, experimental design and scientific writing.
 
-I have 5+ years of industry R&D experience. At **OMIXAI** I lead R&D on a multi-omics model that combines proteomics, RNA and H&E to predict drug response (in progress). At **Deep Bio** I built the WSI pipeline and contributed to pre-deployment model validation and regulatory documentation for a medical-AI product submitted to Korea's **MFDS**.
+My research interests center on learned representations, the basis of model predictions, and the conditions under which results can be trusted. I study methods for connecting different types of data and building interpretable models, with evaluation that accounts for distribution shifts and uncertainty.
 
-병리 슬라이드로 분자 정보를 예측하는 머신러닝 모델을 연구하며, 현 직장에서는 프로테오믹스로 약물 반응을 예측하는 모델도 개발합니다. 새로운 병원의 데이터나 학습에 없던 약물에서도 예측이 유효한지 검증하는 데 집중합니다. 산업계 R&D 경력은 5년 이상입니다. **OMIXAI**에서는 프로테오믹스·RNA·H&E를 통합해 약물 반응을 예측하는 멀티오믹스 모델 R&D를 주도하고 있습니다(진행 중). **딥바이오**에서는 WSI 파이프라인을 구축했고, 식약처(MFDS)에 인허가를 신청한 의료 AI 제품의 출시 전 모델 검증과 인허가 문서 작성에 기여했습니다.
+Biomedical data has been a major setting for this work. I am interested in extending that experience to new domains, data and research questions.
+
+산업 현장에서 5년 이상 머신러닝 연구개발을 수행하며, 연구 질문 설정부터 데이터 분석, 모델 구현, 실험 설계와 논문 작성까지 이어왔습니다.
+
+관심의 중심에는 모델이 학습한 표현, 예측의 근거, 그리고 그 결과를 신뢰할 수 있는 조건이 있습니다. 서로 다른 데이터를 연결하는 학습 방법과 해석 가능한 모델을 연구하고, 분포 변화와 불확실성을 고려해 평가합니다.
+
+의료·생명과학은 이러한 질문을 탐구해 온 주요 응용 분야입니다. 이 경험을 바탕으로 다양한 분야의 데이터와 문제로 연구를 확장하고자 합니다.
 
 ## Highlights
 
@@ -40,7 +46,7 @@ I have 5+ years of industry R&D experience. At **OMIXAI** I lead R&D on a multi-
 
 ## Research interests
 
-Cross-modal learning from histology to gene expression, receptor status and proteomics · Representation learning & pathology foundation models · Reliability across sites, cohorts and unseen drugs · Selective prediction & shortcut audits · Multimodal drug-response prediction from proteomics, H&E and RNA (ongoing) · Virtual-cell & perturbation prediction
+Multimodal & Representation Learning · Interpretability & Explainable AI · Generalization & Robustness · Uncertainty & Reliable Evaluation
 
 ## Publications
 

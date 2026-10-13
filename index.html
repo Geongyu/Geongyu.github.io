@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Geongyu Lee · Machine Learning Researcher (Computational Pathology)</title>
-<meta name="description" content="Machine learning models that predict molecular measurements from pathology slides and drug response from proteomics, with a focus on whether predictions remain valid at new hospitals and for unseen drugs.">
+<title>Geongyu Lee · Machine Learning Researcher</title>
+<meta name="description" content="Machine learning researcher working on multimodal learning, interpretability and reliable evaluation. From research questions to models, experiments and scientific writing.">
 <meta name="author" content="Geongyu Lee">
 <link rel="canonical" href="https://geongyu.github.io/">
 <link rel="alternate" hreflang="en" href="https://geongyu.github.io/">
@@ -18,10 +18,10 @@
 <link rel="apple-touch-icon" href="/assets/favicon-180.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://geongyu.github.io/">
-<meta property="og:title" content="Geongyu Lee · Machine Learning Researcher (Computational Pathology)">
-<meta property="og:description" content="Machine learning models that predict molecular measurements from pathology slides and drug response from proteomics, with a focus on whether predictions remain valid at new hospitals and for unseen drugs.">
-<meta property="og:image" content="https://geongyu.github.io/assets/og.png?v=2">
-<meta property="og:image:alt" content="Share card for Geongyu Lee (이건규), Machine Learning Researcher in Seoul. Cross-modal learning, reliable prediction, computational pathology × multi-omics.">
+<meta property="og:title" content="Geongyu Lee · Machine Learning Researcher">
+<meta property="og:description" content="Machine learning researcher working on multimodal learning, interpretability and reliable evaluation. From research questions to models, experiments and scientific writing.">
+<meta property="og:image" content="https://geongyu.github.io/assets/og-research.png?v=3">
+<meta property="og:image:alt" content="Geongyu Lee · Machine Learning Researcher · Multimodal Learning · Interpretability · Reliable ML">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="Geongyu Lee">
@@ -29,10 +29,10 @@
 <meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:locale:alternate" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Geongyu Lee · Machine Learning Researcher (Computational Pathology)">
-<meta name="twitter:description" content="Machine learning models that predict molecular measurements from pathology slides and drug response from proteomics, with a focus on whether predictions remain valid at new hospitals and for unseen drugs.">
-<meta name="twitter:image" content="https://geongyu.github.io/assets/og.png?v=2">
-<meta name="twitter:image:alt" content="Share card for Geongyu Lee (이건규), Machine Learning Researcher in Seoul. Cross-modal learning, reliable prediction, computational pathology × multi-omics.">
+<meta name="twitter:title" content="Geongyu Lee · Machine Learning Researcher">
+<meta name="twitter:description" content="Machine learning researcher working on multimodal learning, interpretability and reliable evaluation. From research questions to models, experiments and scientific writing.">
+<meta name="twitter:image" content="https://geongyu.github.io/assets/og-research.png?v=3">
+<meta name="twitter:image:alt" content="Geongyu Lee · Machine Learning Researcher · Multimodal Learning · Interpretability · Reliable ML">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -42,13 +42,13 @@
   "url": "https://geongyu.github.io/",
   "image": "https://geongyu.github.io/assets/profile.jpg",
   "jobTitle": "AI Researcher",
-  "description": "Machine learning researcher who develops models that predict molecular measurements from pathology slides and, in current industry work, drug response from proteomics. His focus is whether these predictions remain valid at new hospitals and for drugs not seen in training.",
+  "description": "Machine learning researcher working on multimodal learning, interpretability and reliable evaluation. From research questions to models, experiments and scientific writing.",
   "worksFor": {"@type": "Organization", "name": "OMIXAI"},
   "alumniOf": [
     {"@type": "CollegeOrUniversity", "name": "Seoul National University of Science and Technology"},
     {"@type": "CollegeOrUniversity", "name": "Daejeon University"}
   ],
-  "knowsAbout": ["Machine learning", "Representation learning", "Cross-modal learning", "Distribution shift", "Selective prediction", "Computational pathology", "Pathology foundation models", "Digital pathology", "Proteomics", "Multi-omics", "Medical imaging", "Deep learning"],
+  "knowsAbout": ["Machine learning", "Multimodal learning", "Representation learning", "Interpretability", "Explainable AI", "Generalization", "Robustness", "Uncertainty", "Reliable evaluation", "Computational pathology", "Multi-omics"],
   "sameAs": [
     "https://github.com/Geongyu",
     "https://scholar.google.com/citations?user=43BuluYAAAAJ"
@@ -144,6 +144,7 @@ strong, b { font-weight: 600; }
   padding: 64px 0 72px;
 }
 .hero > * { min-width: 0; }
+.research-focus { color: var(--muted); font-size: 15px; line-height: 1.7; margin: 0 0 14px; }
 .hero-id { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
 .avatar { display: block; flex: 0 0 104px; width: 104px; height: 104px; border-radius: 50%; object-fit: cover; object-position: top; background: var(--panel); }
 .eyebrow { display: block; color: var(--muted); font-size: 14px; line-height: 1.55; }
@@ -184,6 +185,7 @@ section.block { padding: 68px 0; border-top: 1px solid var(--line); scroll-margi
 
 .about { max-width: 76ch; }
 .about p { color: var(--muted); margin-bottom: 0; }
+.about p + p { margin-top: 14px; }
 .about p:last-child { margin-bottom: 0; }
 .about strong { color: var(--fg); }
 .aside { margin-top: 26px; }
@@ -416,7 +418,8 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
       </div>
       <h1>Geongyu Lee<span class="kr" data-ko="이건규" data-ja="イ・ゴンギュ · 이건규">이건규</span></h1>
       <p class="role" data-ko="AI 리서처 · OMIXAI" data-ja="AIリサーチャー · OMIXAI">AI Researcher · OMIXAI</p>
-      <p class="lede" data-ko="조직 영상으로 분자 정보를, 프로테오믹스로 약물 반응을 예측하는 모델을 연구합니다. 새로운 병원이나 학습에 없던 약물에서도 예측이 유효한지 살펴봅니다." data-ja="組織画像から分子情報を、プロテオミクスから薬剤応答を予測するモデルを研究しています。新たな施設や学習に含まれない薬剤でも予測が有効かを検証しています。">I study molecular prediction from tissue images and <span class="term">drug-response</span> prediction from proteomics, with a focus on new hospitals and drugs excluded from training.</p>
+      <p class="research-focus" data-ko="Multimodal Learning · Interpretability · Reliable ML" data-ja="Multimodal Learning · Interpretability · Reliable ML">Multimodal Learning · Interpretability · Reliable ML</p>
+      <p class="lede" data-ko="서로 다른 데이터에서 정보를 연결하고, 모델이 무엇을 학습하며 어떤 근거로 예측하는지 연구합니다. 아이디어를 모델과 실험으로 구체화하고, 새로운 데이터에서도 예측과 설명이 얼마나 유효한지 검증합니다." data-ja="異なる種類のデータを結びつけ、モデルが何を学び、何を根拠に予測するのかを研究しています。アイデアをモデルと実験に具体化し、新しいデータでも予測と説明がどこまで有効かを検証します。">I connect information across different types of data and study what models learn and why they make their predictions. I turn ideas into models and experiments, testing how well predictions and explanations hold up on new data.</p>
       <div class="chips">
         <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_EN.pdf" download data-ko="이력서 (PDF)" data-ja="CV (PDF)">CV (PDF)</a>
         <a class="chip" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
@@ -426,9 +429,9 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
     <div class="ledger" aria-label="Selected publications">
       <div class="ledger-h"><span data-ko="대표 연구" data-ja="主な研究">Selected research</span></div>
-      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t" data-ko="MoSPR: 병리 이미지로 유전자 발현 예측" data-ja="MoSPR: 病理画像から遺伝子発現を予測">MoSPR: Gene expression from histology</span><span class="v first" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;프리프린트&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;공동 제1저자&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;プレプリント&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;共同筆頭著者&lt;/span&gt;"><span class="meta-unit">2026</span> <span class="meta-unit">Preprint</span> <span class="meta-unit"><span class="term">Co-first</span> author</span></span></a>
-      <a class="pub" href="#molecular-substitution"><span class="t" data-ko="H&amp;E로 분자 검사를 대체할 수 있을까?" data-ja="H&amp;Eで分子検査を代替できるか？">Can H&amp;E replace molecular tests?</span><span class="v first" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;GIW 2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;포스터 채택&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;제1저자&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;GIW 2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;ポスター採択&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;筆頭著者&lt;/span&gt;"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">Accepted poster</span> <span class="meta-unit">First author</span></span></a>
-      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t" data-ko="H&amp;E로 유방암 재발 위험 예측" data-ja="H&amp;Eから乳がんの再発リスクを予測">Breast cancer recurrence risk from H&amp;E</span><span class="v first" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;Scientific Reports 2025&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;제1저자&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;Scientific Reports 2025&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;筆頭著者&lt;/span&gt;"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">First author</span></span></a>
+      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t" data-ko="MoSPR: 해석 가능한 크로스모달 예측" data-ja="MoSPR: 解釈可能なクロスモーダル予測">MoSPR: Interpretable cross-modal prediction</span><span class="v first" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;프리프린트&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;공동 제1저자&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;プレプリント&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;共同筆頭著者&lt;/span&gt;"><span class="meta-unit">2026</span> <span class="meta-unit">Preprint</span> <span class="meta-unit"><span class="term">Co-first</span> author</span></span></a>
+      <a class="pub" href="#molecular-substitution"><span class="t" data-ko="Predictability ≠ Substitutability: 의사결정 비용" data-ja="Predictability ≠ Substitutability: 意思決定のコスト">Predictability ≠ Substitutability: Decision costs</span><span class="v first" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;GIW 2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;포스터 채택&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;제1저자&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;GIW 2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;ポスター採択&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;筆頭著者&lt;/span&gt;"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">Accepted poster</span> <span class="meta-unit">First author</span></span></a>
+      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t" data-ko="다기관 데이터에서의 예측 모델 검증" data-ja="複数施設データでの予測モデル検証">Predictive model validation across hospitals</span><span class="v first" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;Scientific Reports 2025&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;제1저자&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;Scientific Reports 2025&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;筆頭著者&lt;/span&gt;"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">First author</span></span></a>
 
     <a class="ledger-footer" href="#publications" data-ko="전체 논문 보기 →" data-ja="論文一覧を見る →">All publications →</a></div>
   </header>
@@ -439,17 +442,12 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <section class="block" id="about">
     <div class="head"><h2 data-ko="연구" data-ja="研究">Research</h2></div>
     <div class="about">
-      <p data-ko="병리 영상에서 분자 정보를 예측하는 크로스모달 학습을 연구합니다. 현재 OMIXAI에서는 프로테오믹스 기반 약물 반응 모델을 개발하고, 프로테오믹스·RNA·H&amp;E를 통합하는 연구를 주도하고 있습니다. 다른 병원이나 학습에 없던 약물에서도 예측이 유효한지 검증합니다." data-ja="病理画像から分子情報を予測するクロスモーダル学習を研究しています。現在OMIXAIでは、プロテオミクスに基づく薬剤応答モデルを開発し、プロテオミクス・RNA・H&amp;Eを統合する研究を主導しています。異なる施設や学習に含まれない薬剤でも予測が信頼できるかを検証しています。">I use <span class="term">cross-modal</span> learning to predict molecular measurements from pathology images. At OMIXAI, I develop <span class="term">proteomics-based</span> <span class="term">drug-response</span> models and lead ongoing work integrating proteomics, RNA and H&amp;E. I focus on whether these predictions remain reliable across hospitals and for drugs excluded from training.</p>
+<p data-ko="산업 현장에서 5년 이상 머신러닝 연구개발을 수행하며, 연구 질문 설정부터 데이터 분석, 모델 구현, 실험 설계와 논문 작성까지 이어왔습니다." data-ja="産業界で5年以上、機械学習の研究開発に携わり、研究課題の設定からデータ分析、モデル開発、実験設計、論文執筆まで取り組んできました。">I have 5+ years of industry experience in machine learning R&amp;D, spanning research questions, data analysis, model development, experimental design and scientific writing.</p>
+<p data-ko="관심의 중심에는 모델이 학습한 표현, 예측의 근거, 그리고 그 결과를 신뢰할 수 있는 조건이 있습니다. 서로 다른 데이터를 연결하는 학습 방법과 해석 가능한 모델을 연구하고, 분포 변화와 불확실성을 고려해 평가합니다." data-ja="学習された表現、予測の根拠、そして結果を信頼できる条件に関心があります。異なるデータを結びつける学習手法と解釈可能なモデルを研究し、分布シフトや不確実性を考慮して評価します。">My research interests center on learned representations, the basis of model predictions, and the conditions under which results can be trusted. I study methods for connecting different types of data and building interpretable models, with evaluation that accounts for distribution shifts and uncertainty.</p>
+<p data-ko="의료·생명과학은 이러한 질문을 탐구해 온 주요 응용 분야입니다. 이 경험을 바탕으로 다양한 분야의 데이터와 문제로 연구를 확장하고자 합니다." data-ja="医療・生命科学は、これらの問いを探究してきた主な応用分野です。この経験を生かし、さまざまな分野のデータや課題へ研究を広げたいと考えています。">Biomedical data has been a major setting for this work. I am interested in extending that experience to new domains, data and research questions.</p>
       <div class="aside">
         <h3 data-ko="연구 관심사" data-ja="研究テーマ">Research Interests</h3>
-        <ul>
-          <li data-ko="크로스모달 학습(조직병리 → 유전자 발현·수용체 상태·프로테오믹스)" data-ja="クロスモーダル学習(組織病理 → 遺伝子発現・受容体ステータス・プロテオミクス)"><span class="term">Cross-modal</span> learning from histology to gene expression, receptor status and proteomics</li>
-          <li data-ko="표현 학습과 병리 파운데이션 모델" data-ja="表現学習と病理基盤モデル">Representation learning &amp; pathology foundation models</li>
-          <li data-ko="분포 변화(기관·코호트·학습에 없던 약물)에서도 신뢰할 수 있는 예측" data-ja="分布シフト下での信頼性(施設・コホート・学習データに含まれない薬剤)">Reliability across sites, cohorts and unseen drugs</li>
-          <li data-ko="선택적 예측과 지름길 학습(shortcut learning) 점검" data-ja="選択的予測とショートカット学習の検出・検証">Selective prediction &amp; shortcut audits</li>
-          <li data-ko="멀티모달 통합 기반 약물 반응 예측(프로테오믹스 × H&E × RNA, 진행 중)" data-ja="マルチモーダル統合による薬剤応答予測(プロテオミクス × H&E × RNA、進行中)">Multimodal <span class="term">drug-response</span> prediction from proteomics, H&amp;E and RNA (ongoing)</li>
-          <li data-ko="버추얼 셀·섭동(perturbation) 예측" data-ja="バーチャルセル・摂動(perturbation)予測"><span class="term">Virtual-cell</span> &amp; perturbation prediction</li>
-        </ul>
+<ul><li data-ko="멀티모달 학습과 표현 학습" data-ja="マルチモーダル学習と表現学習">Multimodal &amp; Representation Learning</li><li data-ko="모델 해석과 설명가능한 AI" data-ja="モデルの解釈と説明可能なAI">Interpretability &amp; Explainable AI</li><li data-ko="일반화와 강건성" data-ja="汎化と頑健性">Generalization &amp; Robustness</li><li data-ko="불확실성과 신뢰성 평가" data-ja="不確実性と信頼性評価">Uncertainty &amp; Reliable Evaluation</li></ul>
 
       </div>
     </div>
@@ -668,7 +666,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
   <!-- PROJECTS -->
   <section class="block" id="projects">
-    <div class="head"><h2 data-ko="프로젝트" data-ja="プロジェクト">Projects</h2><span class="note" data-ko="크로스모달 학습 · 신뢰성 · 약물 반응" data-ja="クロスモーダル学習・信頼性・薬剤応答">cross-modal learning · reliability · drug response</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
+    <div class="head"><h2 data-ko="프로젝트" data-ja="プロジェクト">Projects</h2><span class="note" data-ko="멀티모달 학습 · 설명가능성 · 신뢰할 수 있는 ML" data-ja="マルチモーダル学習 · 解釈可能性 · 信頼できるML">multimodal learning · interpretability · reliable ML</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
     <div class="grid">
 
       <article class="card">
@@ -913,7 +911,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 </main>
 
 <footer><span data-ko="이건규 · 대한민국 서울" data-ja="イ・ゴンギュ · 韓国・ソウル">Geongyu Lee · Seoul, Korea</span>
-  <span class="upd" data-ko="최종 업데이트 2026-10-10" data-ja="最終更新 2026-10-10">LAST UPDATED 2026-10-10</span>
+  <span class="upd" data-ko="최종 업데이트 2026-10-13" data-ja="最終更新 2026-10-13">LAST UPDATED 2026-10-13</span>
 </footer>
 
 </body>
