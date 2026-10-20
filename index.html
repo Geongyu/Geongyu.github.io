@@ -195,6 +195,10 @@ section.block { padding: 68px 0; border-top: 1px solid var(--line); scroll-margi
 .aside li { color: var(--muted); font-size: 16px; line-height: 1.7; margin-bottom: 7px; padding-left: 3px; }
 .aside li:last-child { margin-bottom: 0; }
 .aside li strong { color: var(--fg); }
+.evidence li .it { display: block; color: var(--fg); }
+.evidence li .ev { display: block; font-size: 14px; line-height: 1.6; }
+.aside.bring { margin-top: 0; }
+.earlier { color: var(--muted); font-size: 15px; line-height: 1.7; margin-top: 26px; }
 
 .pubs { display: flex; flex-direction: column; }
 .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 30px; align-items: start; padding: 25px 0; border-top: 1px solid var(--line); }
@@ -392,12 +396,12 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <div class="brand"><b>Geongyu&nbsp;Lee</b><span class="bsub"> · 이건규</span></div>
   <div class="topright">
     <nav class="nav">
+      <a class="m" href="#experience" data-ko="경력" data-ja="経歴">Experience</a>
+      <a href="#projects" data-ko="프로젝트" data-ja="プロジェクト">Projects</a>
       <a class="m" href="#publications" data-ko="논문" data-ja="論文">Publications</a>
       <a href="#conferences" data-ko="학회" data-ja="学会発表">Conferences</a>
-      <a href="#projects" data-ko="프로젝트" data-ja="プロジェクト">Projects</a>
-      <a class="m" href="#experience" data-ko="경력" data-ja="経歴">Experience</a>
       <a href="#education" data-ko="학력" data-ja="学歴">Education</a>
-      <a class="m" href="#contact" data-ko="링크" data-ja="リンク">Links</a>
+      <a class="m" href="#contact" data-ko="연락처" data-ja="連絡先">Contact</a>
     </nav>
     <nav class="langsw" aria-label="Language">
       <a class="langopt is-active" href="/" hreflang="en" lang="en" aria-current="page">EN</a>
@@ -419,7 +423,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
       <h1>Geongyu Lee<span class="kr" data-ko="이건규" data-ja="イ・ゴンギュ · 이건규">이건규</span></h1>
       <p class="role" data-ko="AI 리서처 · OMIXAI" data-ja="AIリサーチャー · OMIXAI">AI Researcher · OMIXAI</p>
       <p class="research-focus" data-ko="Multimodal Learning · Interpretability · Reliable ML" data-ja="Multimodal Learning · Interpretability · Reliable ML">Multimodal Learning · Interpretability · Reliable ML</p>
-      <p class="lede" data-ko="서로 다른 데이터에서 정보를 연결하고, 모델이 무엇을 학습하며 어떤 근거로 예측하는지 연구합니다. 아이디어를 모델과 실험으로 구체화하고, 새로운 데이터에서도 예측과 설명이 얼마나 유효한지 검증합니다." data-ja="異なる種類のデータを結びつけ、モデルが何を学び、何を根拠に予測するのかを研究しています。アイデアをモデルと実験に具体化し、新しいデータでも予測と説明がどこまで有効かを検証します。">I connect information across different types of data and study what models learn and why they make their predictions. I turn ideas into models and experiments, testing how well predictions and explanations hold up on new data.</p>
+      <p class="lede" data-ko="학습에 쓰지 않은 데이터, 예를 들어 새로운 병원이나 처음 보는 약물에서도 유지되는 머신러닝 모델을 만듭니다. 이미지·단백질·RNA처럼 서로 다른 데이터를 연결하고, 예측을 믿기 전에 그 근거가 어디서 오는지 확인합니다." data-ja="学習に使っていないデータ、たとえば新しい病院や未知の薬剤でも通用する機械学習モデルを作ります。画像・タンパク質・RNAなど異なるデータを結びつけ、予測を信頼する前にその根拠がどこから来るのかを確かめます。">I build machine learning models that hold up on data they were not trained on, such as new hospitals and unseen drugs. I connect different types of data, including images, proteins and RNA, and check where each prediction comes from before trusting it.</p>
       <div class="chips">
         <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_EN.pdf" download data-ko="이력서 (PDF)" data-ja="CV (PDF)">CV (PDF)</a>
         <a class="chip" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
@@ -429,9 +433,9 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
     <div class="ledger" aria-label="Selected publications">
       <div class="ledger-h"><span data-ko="대표 연구" data-ja="主な研究">Selected research</span></div>
-      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t" data-ko="MoSPR: 해석 가능한 크로스모달 예측" data-ja="MoSPR: 解釈可能なクロスモーダル予測">MoSPR: Interpretable cross-modal prediction</span><span class="v first" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;프리프린트&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;공동 제1저자&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;プレプリント&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;共同筆頭著者&lt;/span&gt;"><span class="meta-unit">2026</span> <span class="meta-unit">Preprint</span> <span class="meta-unit"><span class="term">Co-first</span> author</span></span></a>
-      <a class="pub" href="#molecular-substitution"><span class="t" data-ko="Predictability ≠ Substitutability: 의사결정 비용" data-ja="Predictability ≠ Substitutability: 意思決定のコスト">Predictability ≠ Substitutability: Decision costs</span><span class="v first" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;GIW 2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;포스터 채택&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;제1저자&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;GIW 2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;ポスター採択&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;筆頭著者&lt;/span&gt;"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">Accepted poster</span> <span class="meta-unit">First author</span></span></a>
-      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t" data-ko="다기관 데이터에서의 예측 모델 검증" data-ja="複数施設データでの予測モデル検証">Predictive model validation across hospitals</span><span class="v first" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;Scientific Reports 2025&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;제1저자&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;Scientific Reports 2025&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;筆頭著者&lt;/span&gt;"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">First author</span></span></a>
+      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t" data-ko="MoSPR: 조직 이미지로 유전자 발현 예측, 영역별로 분해 가능" data-ja="MoSPR: 組織画像から遺伝子発現を予測、領域ごとに分解可能">MoSPR: Gene expression from tissue images, decomposable by region</span><span class="v first" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;프리프린트&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;공동 제1저자&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;プレプリント&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;共同筆頭著者&lt;/span&gt;"><span class="meta-unit">2026</span> <span class="meta-unit">Preprint</span> <span class="meta-unit"><span class="term">Co-first</span> author</span></span></a>
+      <a class="pub" href="#molecular-substitution"><span class="t" data-ko="정확한 모델도 분자검사를 대체하지 못하는 경우" data-ja="高精度でも分子検査を代替できないとき">When an accurate model still cannot replace a molecular test</span><span class="v first" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;GIW 2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;포스터 채택&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;제1저자&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;GIW 2026&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;ポスター採択&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;筆頭著者&lt;/span&gt;"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">Accepted poster</span> <span class="meta-unit">First author</span></span></a>
+      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t" data-ko="H&amp;E만으로 분자검사 위험군 예측, 2개 병원 검증" data-ja="H&amp;Eのみで分子検査のリスク群を予測、2施設で検証">Molecular-test risk groups from H&amp;E alone, validated at two hospitals</span><span class="v first" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;Scientific Reports 2025&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;제1저자&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;Scientific Reports 2025&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;筆頭著者&lt;/span&gt;"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">First author</span></span></a>
 
     <a class="ledger-footer" href="#publications" data-ko="전체 논문 보기 →" data-ja="論文一覧を見る →">All publications →</a></div>
   </header>
@@ -444,13 +448,143 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
     <div class="about">
 <p data-ko="산업 현장에서 5년 이상 머신러닝 연구개발을 수행하며, 연구 질문 설정부터 데이터 분석, 모델 구현, 실험 설계와 논문 작성까지 이어왔습니다." data-ja="産業界で5年以上、機械学習の研究開発に携わり、研究課題の設定からデータ分析、モデル開発、実験設計、論文執筆まで取り組んできました。">I have 5+ years of industry experience in machine learning R&amp;D, spanning research questions, data analysis, model development, experimental design and scientific writing.</p>
 <p data-ko="관심의 중심에는 모델이 학습한 표현, 예측의 근거, 그리고 그 결과를 신뢰할 수 있는 조건이 있습니다. 서로 다른 데이터를 연결하는 학습 방법과 해석 가능한 모델을 연구하고, 분포 변화와 불확실성을 고려해 평가합니다." data-ja="学習された表現、予測の根拠、そして結果を信頼できる条件に関心があります。異なるデータを結びつける学習手法と解釈可能なモデルを研究し、分布シフトや不確実性を考慮して評価します。">My research interests center on learned representations, the basis of model predictions, and the conditions under which results can be trusted. I study methods for connecting different types of data and building interpretable models, with evaluation that accounts for distribution shifts and uncertainty.</p>
-<p data-ko="의료·생명과학은 이러한 질문을 탐구해 온 주요 응용 분야입니다. 이 경험을 바탕으로 다양한 분야의 데이터와 문제로 연구를 확장하고자 합니다." data-ja="医療・生命科学は、これらの問いを探究してきた主な応用分野です。この経験を生かし、さまざまな分野のデータや課題へ研究を広げたいと考えています。">Biomedical data has been a major setting for this work. I am interested in extending that experience to new domains, data and research questions.</p>
+<p data-ko="이 연구의 대부분은 라벨이 비싸고, 병원마다 데이터 분포가 다르며, 규제 검증까지 통과해야 하는 의료 데이터에서 이뤄졌습니다. 이런 조건에서 검증한 방법은 다른 분야에도 그대로 통하며, 새로운 데이터와 문제에 적용하고자 합니다." data-ja="研究の多くは、ラベルの取得コストが高く、病院ごとにデータの分布が異なり、規制当局の検証も求められる医療データで行ってきました。こうした条件で検証した手法は他の分野にもそのまま通用するため、新しいデータや課題に応用したいと考えています。">Most of this work used biomedical data, where labels are expensive, data shift between hospitals and models must pass regulatory validation. Methods that hold up under those conditions carry over to other domains, and I want to apply them to new data and questions.</p>
       <div class="aside">
         <h3 data-ko="연구 관심사" data-ja="研究テーマ">Research Interests</h3>
-<ul><li data-ko="멀티모달 학습과 표현 학습" data-ja="マルチモーダル学習と表現学習">Multimodal &amp; Representation Learning</li><li data-ko="모델 해석과 설명가능한 AI" data-ja="モデルの解釈と説明可能なAI">Interpretability &amp; Explainable AI</li><li data-ko="일반화와 강건성" data-ja="汎化と頑健性">Generalization &amp; Robustness</li><li data-ko="불확실성과 신뢰성 평가" data-ja="不確実性と信頼性評価">Uncertainty &amp; Reliable Evaluation</li></ul>
+<ul class="evidence"><li><span class="it" data-ko="멀티모달 학습과 표현 학습" data-ja="マルチモーダル学習と表現学習">Multimodal &amp; Representation Learning</span><span class="ev" data-ko="H&amp;E 이미지와 프로테오믹스·RNA 통합(MoSPR, 약물 반응 모델)" data-ja="H&amp;E画像とプロテオミクス・RNAの統合(MoSPR、薬剤応答モデル)">H&amp;E images combined with proteomics and RNA (MoSPR, drug-response models)</span></li><li><span class="it" data-ko="모델 해석과 설명가능한 AI" data-ja="モデルの解釈と説明可能なAI">Interpretability &amp; Explainable AI</span><span class="ev" data-ko="예측을 전역·영역별 프로그램으로 분해(MoSPR), class-activation map 점검" data-ja="予測を全体・領域別のプログラムに分解(MoSPR)、class-activation mapによる点検">Predictions decomposed into global and region-specific programs (MoSPR), class-activation-map audits</span></li><li><span class="it" data-ko="일반화와 강건성" data-ja="汎化と頑健性">Generalization &amp; Robustness</span><span class="ev" data-ko="병원 단위 분리 검증, leave-drug-out 분할, 기관 교란 점검" data-ja="施設分離検証、leave-drug-out分割、施設交絡の点検">Site-disjoint hold-outs across hospitals, leave-drug-out splits, site-confounding audits</span></li><li><span class="it" data-ko="불확실성과 신뢰성 평가" data-ja="不確実性と信頼性評価">Uncertainty &amp; Reliable Evaluation</span><span class="ev" data-ko="불확실한 영역의 예측 보류(MurSS), OOD 기반 능동 학습, 사전 등록 프로토콜" data-ja="不確実な領域での予測保留(MurSS)、OODを考慮した能動学習、事前登録プロトコル">Withholding predictions on unreliable regions (MurSS), OOD-aware active learning, pre-registered protocols</span></li></ul>
 
       </div>
     </div>
+  </section>
+
+
+  <!-- STRENGTHS -->
+  <section class="block" id="strengths">
+    <div class="head"><h2 data-ko="팀에 기여할 수 있는 것" data-ja="チームにもたらせること">What I bring to a team</h2></div>
+    <div class="about"><div class="aside bring"><ul><li data-ko="&lt;strong&gt;연구에서 제품까지.&lt;/strong&gt; 식약처(MFDS)에 인허가를 신청한 의료 AI 제품의 출시 전 검증과 인허가 문서 작성에 기여했습니다." data-ja="&lt;strong&gt;研究から製品へ。&lt;/strong&gt; 韓国MFDSに承認申請された医療AI製品の実運用前検証と申請文書の作成に貢献しました。"><strong>From research to product.</strong> Contributed to pre-deployment validation and regulatory documentation for a medical-AI product submitted to Korea&#x27;s MFDS.</li><li data-ko="&lt;strong&gt;데이터 파이프라인.&lt;/strong&gt; 다기관 연구용 WSI 파이프라인과 협력사 데이터 전송 시스템을 구축했습니다." data-ja="&lt;strong&gt;データパイプライン。&lt;/strong&gt; 多施設研究向けのWSIパイプラインと、協力会社とのデータ転送システムを構築しました。"><strong>Data pipelines.</strong> Built whole-slide-image pipelines for multi-hospital studies and a data-transfer system with a partner company.</li><li data-ko="&lt;strong&gt;연구 인프라.&lt;/strong&gt; 팀의 연구 서버·NAS를 운영하고 Git 협업 규칙을 만들었습니다." data-ja="&lt;strong&gt;研究インフラ。&lt;/strong&gt; チームの研究サーバー・NASを運用し、Gitの共同作業ルールを整備しました。"><strong>Research infrastructure.</strong> Run the team&#x27;s research servers and NAS, and set up its Git collaboration rules.</li><li data-ko="&lt;strong&gt;멘토링과 심사.&lt;/strong&gt; 코드잇 멘토로 주니어 인력과 프로젝트 팀을 지도하고, ML4H 2026 리뷰어로 활동합니다." data-ja="&lt;strong&gt;メンタリングと査読。&lt;/strong&gt; Codeitのメンターとして若手人材やプロジェクトチームを指導し、ML4H 2026の査読者も務めています。"><strong>Mentoring and review.</strong> Guide early-career researchers and project teams as a Codeit mentor, and review for ML4H 2026.</li></ul></div></div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="block" id="experience">
+    <div class="head"><h2 data-ko="경력" data-ja="経歴">Experience</h2></div>
+    <div>
+      <div class="role-row">
+        <div class="when"><span class="co">OMIXAI</span><span data-ko="2025.02 – 현재" data-ja="2025.02 – 現在">Feb 2025 – Present</span><br><span class="loc" data-ko="서울 · 구 래디센" data-ja="ソウル · 旧RadiSen">Seoul · formerly RadiSen</span></div>
+        <div class="what">
+          <h3 data-ko="AI 리서처" data-ja="AIリサーチャー">AI Researcher</h3>
+          <div class="sub" data-ko="크로스모달 학습 · 멀티오믹스 · 약물 반응" data-ja="クロスモーダル学習 · マルチオミクス · 薬剤応答">Cross-modal learning · Multi-omics · Drug response</div>
+          <ul><li data-ko="프로테오믹스·RNA·H&amp;E를 활용한 약물 반응 예측 멀티오믹스 R&amp;D 주도(진행 중)" data-ja="プロテオミクス・RNA・H&amp;Eを用いた薬剤応答予測のマルチオミクスR&amp;Dを主導(進行中)">Lead ongoing multi-omics R&amp;D for drug-response prediction using proteomics, RNA and H&amp;E.</li><li data-ko="프로테오믹스 기반 IC50 모델, 반려견 종양 약물 추천 알고리즘, ADMET 모델 개발" data-ja="プロテオミクスに基づくIC50モデル、犬の腫瘍への薬剤推薦アルゴリズム、ADMETモデルを開発">Developed proteomics-based IC50 models, canine-cancer drug recommendations and ADMET models.</li><li data-ko="Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도" data-ja="Arc Institute Virtual Cell ChallengeへのOMIXAIチーム参加を共同主導">Co-led OMIXAI&#x27;s Arc Institute Virtual Cell Challenge entry.</li><li data-ko="연구 서버·NAS 운영, Git 협업 규칙 수립, 협력사 데이터 전송 시스템 구축" data-ja="研究サーバー・NASを運用し、Gitの共同作業ルールと協力会社とのデータ転送システムを整備">Run research servers and NAS; set up Git collaboration rules and a partner data-transfer system.</li></ul>
+        <details class="project-detail"><summary data-ko="추가 업무" data-ja="その他の業務">Additional work</summary><ul>
+            <li data-ko="프로테오믹스·RNA와 H&E 병리를 통합한 약물 반응 예측 멀티오믹스 모델 R&D 주도(진행 중)" data-ja="プロテオミクス・RNAとH&E病理画像を統合して薬剤応答を予測するマルチオミクスモデルの研究開発を主導(進行中)">Lead R&amp;D on a multi-omics model that combines proteomics and RNA with H&amp;E pathology to predict drug response (in progress).</li>
+            <li data-ko="프로테오믹스 기반 세포주 약물 반응(IC50) 예측 모델 개발(학습에 없던 약물 대상 leave-drug-out 평가, Pearson ≥ 0.65, 사내 R&D·미공개)" data-ja="プロテオミクスに基づく細胞株の薬剤応答(IC50)予測モデルの開発(学習データに含まれない薬剤でのleave-drug-out評価、Pearson ≥ 0.65、社内R&D・未発表)">Built a proteomics-based drug-response (IC50) model for cell lines, with Pearson ≥ 0.65 on unseen drugs (leave-drug-out; internal R&amp;D, unpublished).</li>
+            <li data-ko="반려견 종양 약물 추천 알고리즘 및 ADMET 예측 모델 개발" data-ja="犬の腫瘍に対する薬剤推薦アルゴリズムとADMET予測モデルの開発">Developed a drug-recommendation algorithm for canine cancer and ADMET prediction models.</li>
+            <li data-ko="Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도(만능줄기세포 CRISPR 넉다운 반응 예측)" data-ja="Arc Institute Virtual Cell ChallengeでのOMIXAI参加チームの共同主導(多能性幹細胞のCRISPRノックダウン応答予測)">Co-led OMIXAI's team entry in the Arc Institute Virtual Cell Challenge (predicting CRISPR-knockdown response in pluripotent stem cells).</li>
+            <li data-ko="H&E 기반 유전자 발현 예측 모델 MoSPR 논문 공동 제1저자(프리프린트·코드 공개)" data-ja="H&E画像から遺伝子発現を予測するMoSPRの共同筆頭著者(プレプリント・コード公開)">Co-first author of the MoSPR preprint on gene-expression prediction from H&amp;E (code released).</li>
+            <li data-ko="G2L 논문(AAAI 2026 워크숍 W3PHIAI 구두 발표) 및 삼중음성 유방암 공간 프로테오믹스 프리프린트(2026) 공저자" data-ja="G2L論文(AAAI 2026 ワークショップ W3PHIAI 口頭発表)およびトリプルネガティブ乳がんの空間プロテオミクス研究(プレプリント、2026)の共著者">Co-authored the G2L paper (AAAI 2026 Workshop W3PHIAI, oral) and a 2026 spatial-proteomics preprint on triple-negative breast cancer.</li>
+            <li data-ko="사내 연구 서버·NAS 운영, Git 협업 규칙 수립, 협력사와의 데이터 전송 시스템 구축" data-ja="社内研究サーバー・NASの運用、Git運用ルールの策定、協力会社とのデータ転送システムの構築">Run the in-house research servers and NAS. Set up Git collaboration rules and built a data-transfer system with a partner company.</li>
+          </ul></details></div>
+      </div>
+      <div class="role-row">
+        <div class="when"><span class="co" data-ko="딥바이오" data-ja="Deep Bio">Deep Bio</span><span data-ko="2021.03 – 2025.01" data-ja="2021.03 – 2025.01">Mar 2021 – Jan 2025</span><br><span class="loc" data-ko="서울 · 구로" data-ja="ソウル · 九老">Seoul · Guro</span></div>
+        <div class="what">
+          <h3 data-ko="AI 리서처" data-ja="AIリサーチャー">AI Researcher</h3>
+          <div class="sub" data-ko="Computational Pathology · 식약처(MFDS) 인허가용 모델 검증" data-ja="Computational Pathology · MFDS承認申請に向けたモデル検証">Computational pathology · Model validation for an MFDS submission</div>
+          <ul><li data-ko="2개 병원 유방암 재발 연구의 WSI 파이프라인과 예측 모델 개발" data-ja="2施設の乳がん再発研究でWSIパイプラインと予測モデルを開発">Built WSI pipelines and breast-cancer recurrence models for a two-hospital study.</li><li data-ko="림프절 전이 검출 및 사구체 분할 모델 개발" data-ja="リンパ節転移検出と糸球体セグメンテーションのモデルを開発">Developed lymph-node metastasis detection and glomerular segmentation models.</li><li data-ko="전립선암 전이·재발 위험 모델링 주도" data-ja="前立腺がんの転移・再発リスクモデリングを主導">Led prostate-cancer metastasis and recurrence-risk modeling.</li><li data-ko="MFDS 인허가 신청을 위한 모델 검증·문서 작성 기여, Docker 기반 서버 자동화 도구 개발" data-ja="MFDS承認申請に向けたモデル検証・申請文書作成に貢献し、Dockerを用いたサーバー自動化ツールを開発">Contributed model validation and regulatory documentation for an MFDS submission, and built Docker-based server-automation tools.</li></ul>
+        <details class="project-detail"><summary data-ko="추가 업무" data-ja="その他の業務">Additional work</summary><ul>
+            <li data-ko="2개 병원 유방암 재발 예측 연구 제1저자(Scientific Reports 2025), WSI 500장 이상을 처리한 파이프라인 구축" data-ja="2施設の乳がん再発研究(Scientific Reports 2025)の筆頭著者。WSIパイプラインを構築し、500枚以上のスライドを処理">First-authored a two-hospital breast-cancer recurrence study (Scientific Reports 2025). Built a WSI pipeline that processed 500+ slides.</li>
+            <li data-ko="림프절 전이 검출 모델 및 KPIs 2024 챌린지 사구체 분할 모델 개발(전체 슬라이드 트랙 2위, MICCAI 2024), 챌린지 결과 논문(Medical Image Analysis, 2026) 공저자" data-ja="リンパ節転移検出モデルとKPIs 2024チャレンジ向け糸球体セグメンテーションモデルの開発(WSIレベル部門2位、MICCAI 2024)。チャレンジ報告論文(Medical Image Analysis、2026)の共著者">Developed a lymph-node metastasis detection model and the glomerular segmentation model for the KPIs 2024 Challenge at MICCAI 2024 (2nd place, whole-slide track). Co-authored the challenge report (Medical Image Analysis, 2026).</li>
+            <li data-ko="전립선암 전이·재발 위험 모델링 프로젝트 주도" data-ja="前立腺がんの転移・再発リスクモデリングのプロジェクトを主導">Led prostate metastasis and recurrence-risk modeling projects.</li>
+            <li data-ko="AACR(2022, 2023)·USCAP(2022)에서 유방암 병리 AI 연구 제1저자 발표, 췌장암·유방암 생존 예측 포스터 공저자" data-ja="AACR(2022、2023)・USCAP(2022)で乳がん病理AI研究を筆頭著者として発表。膵臓がん・乳がんの生存予測に関するポスター発表の共著者">Presented breast-cancer pathology AI work as first author at AACR (2022, 2023) and USCAP (2022). Co-authored posters on survival prediction in pancreatic and breast cancer.</li>
+            <li data-ko="식약처(MFDS)에 인허가를 신청한 의료 AI 제품의 출시 전 모델 검증 및 인허가 문서 작성 기여, Docker 기반 사내 서버 자동화 도구 개발" data-ja="MFDSに承認申請された医療AI製品について、実運用前のモデル検証と申請文書作成に貢献。社内サーバー自動化ツール(Docker)の開発">Contributed to pre-deployment model validation and regulatory documentation for a medical-AI product submitted to Korea's MFDS. Built internal server-automation tools with Docker.</li>
+          </ul></details></div>
+      </div>
+      <div class="role-row">
+        <div class="when"><span class="co" data-ko="누리콘" data-ja="Nuricon">Nuricon</span>2021<br><span class="loc" data-ko="판교" data-ja="板橋(パンギョ)">Pangyo</span></div>
+        <div class="what">
+          <h3 data-ko="인턴" data-ja="インターン">Intern</h3>
+          <div class="sub" data-ko="컴퓨터 비전" data-ja="コンピュータビジョン">Computer vision</div>
+          <ul><li data-ko="주차장 화재 감지 AI 시스템 개발" data-ja="駐車場向け火災検知AIシステムの開発">Built a parking-lot fire-detection AI system.</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="block" id="projects">
+    <div class="head"><h2 data-ko="프로젝트" data-ja="プロジェクト">Projects</h2><span class="note" data-ko="멀티모달 학습 · 설명가능성 · 신뢰할 수 있는 ML" data-ja="マルチモーダル学習 · 解釈可能性 · 信頼できるML">multimodal learning · interpretability · reliable ML</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k" data-ko="프로테오믹스 · OMIXAI" data-ja="プロテオミクス · OMIXAI">Proteomics · OMIXAI</div>
+          <h3 data-ko="프로테오믹스로 약물 반응 예측" data-ja="プロテオミクスによる薬剤応答予測"><span class="term">Drug-response</span> prediction from proteomics</h3>
+          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;사내 R&amp;D&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;미공개&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;社内R&amp;D&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;未発表&lt;/span&gt;"><span class="meta-unit">Internal R&amp;D</span> <span class="meta-unit">Unpublished</span></div>
+          <p data-ko="프로테오믹스 데이터로 세포주의 약물 반응(IC50)을 예측하는 모델을 개발했습니다. 학습에 없던 약물로만 테스트하는 &lt;span class=&quot;term&quot;&gt;leave-drug-out&lt;/span&gt; 방식으로 평가했습니다(Pearson ≥ 0.65). LoRA/PEFT 기반 자기지도 프로테옴 표현 학습도 별도로 진행했습니다." data-ja="プロテオミクスから細胞株の薬剤応答(IC50)を予測するモデルを開発しました。テスト薬剤をすべて学習から除くleave-drug-out方式で評価しました(Pearson ≥ 0.65)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も別途行いました。"><span class="term">Cell-line</span> <span class="term">drug-response</span> (IC50) prediction from proteomics, evaluated <span class="term">leave-drug-out</span> so that no test compound is seen in training (Pearson ≥ 0.65). Separate work covers <span class="term">self-supervised</span> proteomic representation learning with LoRA/PEFT.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k" data-ko="멀티오믹스 · OMIXAI" data-ja="マルチオミクス · OMIXAI">Multi-omics · OMIXAI</div>
+          <h3 data-ko="듀얼타겟 siRNA 후보 선정을 위한 RNA–단백질 분석" data-ja="二重標的siRNA候補選定に向けたRNA–タンパク質解析"><span class="term">RNA–protein</span> analysis for <span class="term">dual-target</span> siRNA selection</h3>
+          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;유전자&lt;/span&gt; &lt;b&gt;11,238개&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;Spearman 중앙값&lt;/span&gt; &lt;b&gt;ρ 0.441&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;CPTAC GBM 100명&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;遺伝子&lt;/span&gt; &lt;b&gt;11,238&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;Spearman中央値&lt;/span&gt; &lt;b&gt;ρ 0.441&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;CPTAC GBM 100名&lt;/span&gt;"><span class="meta-unit"><span>Genes</span> <b>11,238</b></span> <span class="meta-unit"><span>Median Spearman</span> <b>ρ 0.441</b></span> <span class="meta-unit">CPTAC GBM, n = 100</span></div>
+          <p data-ko="교모세포종(GBM) 듀얼타겟 siRNA 과제의 일부입니다. CPTAC GBM 환자 100명의 전사체와 단백체를 매칭해, 유전자별로 RNA 발현이 단백질 발현을 얼마나 반영하는지 평가했습니다. 1,000회 permutation으로 귀무분포를 구하고 다중검정 보정을 적용했습니다. 변동성·저발현·결측 지표와 민감도 점검을 더해 웻랩 후보 선정용 근거표로 정리했습니다." data-ja="膠芽腫(GBM)のデュアルターゲットsiRNA課題の一環です。CPTAC GBM患者100名のトランスクリプトームとプロテオームを対応づけ、RNA発現がタンパク質量をどの程度反映するかを遺伝子ごとに評価しました。1,000回のpermutation、多重検定補正、変動性・低発現・欠損のフラグ、感度分析を経て、ウェットラボ実験の候補を順位付けるための根拠表にまとめました。">Part of a glioblastoma <span class="term">dual-target</span> siRNA program. Matched transcriptome and proteome for 100 CPTAC GBM patients and tested how well RNA expression tracks protein abundance for each gene. Used <span class="term">1,000-permutation</span> nulls, <span class="term">multiple-testing</span> correction, sensitivity checks and flags for variability, low expression and missingness to build an evidence table for ranking <span class="term">wet-lab</span> candidates.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k" data-ko="OMIXAI · 한·일 공동연구" data-ja="OMIXAI · 日韓共同研究">OMIXAI · Korea–Japan collaboration</div>
+          <h3 data-ko="&lt;span class=&quot;term&quot;&gt;Pan-Sarcoma&lt;/span&gt;: 반려견 종양의 약물 반응 예측" data-ja="&lt;span class=&quot;term&quot;&gt;Pan-Sarcoma&lt;/span&gt;：犬の腫瘍の薬剤応答予測"><span class="term">Pan-Sarcoma</span>: Drug response in canine tumors</h3>
+          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;참여연구원&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span class=&quot;term&quot;&gt;2025–2028&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;진행 중&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;결과 미공개&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;参加研究員&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span class=&quot;term&quot;&gt;2025–2028&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;進行中&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;成果は未公開&lt;/span&gt;"><span class="meta-unit">Participating researcher</span> <span class="meta-unit"><span class="term">2025–2028</span></span> <span class="meta-unit">Ongoing; results not yet public</span></div>
+          <p data-ko="&lt;span class=&quot;term&quot;&gt;Pan-Sarcoma&lt;/span&gt; 프로테오지노믹스 공동연구에서 일본 측이 제공한 반려견 종양의 프로테오믹스·H&amp;E·RNA 데이터를 통합해 약물 반응 예측과 분자 분석을 진행하고 있습니다. 육종으로 시작한 데이터는 현재 여러 암종으로 확대되었습니다." data-ja="Pan-Sarcomaプロテオゲノム共同研究で、日本側から提供された犬の腫瘍のプロテオミクス・H&amp;E画像・RNAを統合し、薬剤応答予測と分子解析を行っています。肉腫から始まったデータは、現在は複数のがん種に拡大しています。">Within the <span class="term">Pan-Sarcoma</span> proteogenomic profiling program, we combine proteomics, H&amp;E images and RNA from canine tumors provided by the Japanese partner to predict drug response and study molecular characteristics. The dataset began with sarcoma and now covers multiple cancer types.</p>
+        </div>
+      </article>
+
+      <article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k" data-ko="사이드 프로젝트 · NVIDIA 해커톤 2026" data-ja="サイドプロジェクト · NVIDIAハッカソン2026">Side project · NVIDIA Hackathon 2026</div>
+          <h3 data-ko="FlyGate: 신약 탐색과 약물 안전성 감시" data-ja="FlyGate：創薬探索と医薬品安全性監視">FlyGate: Drug discovery and safety monitoring</h3>
+          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;기성 NIM 모델 점검 · OpenFold3 RMSD&lt;/span&gt; &lt;b&gt;1.0 Å&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;&lt;span class=&quot;term&quot;&gt;Boltz-2&lt;/span&gt; 친화도&lt;/span&gt; &lt;b&gt;ρ 0.767&lt;/b&gt;&lt;/span&gt; &lt;a href=&#x27;https://flygate.kr&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;live ↗&lt;/a&gt; &lt;a href=&#x27;https://github.com/Team-FlyGate/Project-FlyGate&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;code ↗&lt;/a&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;既製NIMの検証 · OpenFold3 RMSD&lt;/span&gt; &lt;b&gt;1.0 Å&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;&lt;span class=&quot;term&quot;&gt;Boltz-2&lt;/span&gt; 親和性&lt;/span&gt; &lt;b&gt;ρ 0.767&lt;/b&gt;&lt;/span&gt; &lt;a href=&#x27;https://flygate.kr&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;live ↗&lt;/a&gt; &lt;a href=&#x27;https://github.com/Team-FlyGate/Project-FlyGate&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;code ↗&lt;/a&gt;"><span class="meta-unit"><span><span class="term">Off-the-shelf</span> NIM checks · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> affinity</span> <b>ρ 0.767</b></span> <a href="https://flygate.kr" target="_blank" rel="noopener">live ↗</a> <a href="https://github.com/Team-FlyGate/Project-FlyGate" target="_blank" rel="noopener">code ↗</a></div>
+          <p data-ko="5인 팀으로 참가한 NVIDIA Korea Agentic AI Hackathon 2026 출품작입니다. 시판 전 표적 결합 예측(FlyDiscovery)과 시판 후 이상사례 감시(FlyVigilance)를 하나의 에이전트로 잇습니다. 이 중 FlyDiscovery 모듈과 탐색 워크벤치 UI를 개발했습니다. FlyDiscovery는 BioNeMo NIM(OpenFold3 · DiffDock · &lt;span class=&quot;term&quot;&gt;Boltz-2&lt;/span&gt;)으로 후보 물질을 구조 예측부터 결합 친화도까지 평가합니다." data-ja="NVIDIA Korea Agentic AI Hackathon 2026の参加作品(5人チーム)です。市販前の標的結合予測(FlyDiscovery)と市販後の有害事象監視(FlyVigilance)を一つのエージェントでつなぎます。BioNeMo NIM(OpenFold3 · DiffDock · &lt;span class=&quot;term&quot;&gt;Boltz-2&lt;/span&gt;)で構造予測から親和性まで評価するFlyDiscoveryモジュールと探索ワークベンチUIを担当しました。">NVIDIA Korea Agentic AI Hackathon 2026 entry (team of 5). It links <span class="term">pre-market</span> target binding (FlyDiscovery) and <span class="term">post-market</span> <span class="term">adverse-event</span> surveillance (FlyVigilance) in one agent. I built the FlyDiscovery module and its <span class="term">discovery-workbench</span> UI. The module runs structure prediction, docking and <span class="term">binding-affinity</span> scoring with BioNeMo NIM (OpenFold3, DiffDock, <span class="term">Boltz-2</span>).</p>
+        </div>
+      </article>
+
+    </div>
+
+    <details class="fold"><summary data-ko="추가 연구와 개발" data-ja="その他の研究・開発">More research and engineering</summary><div class="grid"><article class="card">
+        <div class="card-body">
+          <div class="k" data-ko="정밀종양학 · OMIXAI" data-ja="精密腫瘍学 · OMIXAI">Precision oncology · OMIXAI</div>
+          <h3 data-ko="수의 종양 CDSS &amp; 버추얼 셀" data-ja="獣医腫瘍CDSS・バーチャルセル">Veterinary oncology CDSS &amp; Virtual Cell</h3>
+          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;반려견 약물 추천&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span class=&quot;term&quot;&gt;top-k&lt;/span&gt; ≥ 70% · 자체 코호트 · 사내 R&amp;D, 미공개&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;CRISPR 섭동&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;犬の薬剤推薦&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span class=&quot;term&quot;&gt;top-k&lt;/span&gt; ≥ 70% · 自社コホート · 社内R&amp;D、未発表&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;CRISPR摂動&lt;/span&gt;"><span class="meta-unit">Canine drug recommendation</span> <span class="meta-unit"><span class="term">top-k</span> ≥ 70% · <span class="term">in-house</span> cohort · internal R&amp;D, unpublished</span> <span class="meta-unit">CRISPR perturbation</span></div>
+          <p data-ko="임상 의사결정 지원 시스템(CDSS) 구축을 목표로 반려견 종양 약물 추천 알고리즘을 개발했습니다. Arc Institute Virtual Cell Challenge에서는 OMIXAI 참가팀을 공동 주도해 만능줄기세포의 CRISPR 넉다운 반응을 예측했습니다." data-ja="臨床意思決定支援システム(CDSS)に向け、犬の腫瘍に対する薬剤推薦アルゴリズムを開発しました。Arc Institute Virtual Cell ChallengeではOMIXAIの参加チームを共同主導し、多能性幹細胞のCRISPRノックダウン応答を予測しました。">Developed a <span class="term">drug-recommendation</span> algorithm for canine cancer, intended for a clinical decision support system. <span class="term">Co-led</span> OMIXAI's team entry in the Arc Institute Virtual Cell Challenge (predicting <span class="term">CRISPR-knockdown</span> response in pluripotent stem cells).</p>
+        </div>
+      </article><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_oncotype_pipeline.png" target="_blank" rel="noopener"><img src="/assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k" data-ko="디지털 병리 · 딥바이오" data-ja="デジタル病理 · Deep Bio">Digital pathology · Deep Bio</div>
+          <h3 data-ko="H&amp;E로 Oncotype DX 위험군 예측" data-ja="H&amp;EによるOncotype DXリスク群予測">Oncotype DX risk groups from H&amp;E</h3>
+          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;Scientific Reports 2025 · 제1저자 · n = 125, 2개 병원&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;민감도 저 / 중 / 고&lt;/span&gt; &lt;b&gt;0.86 / 0.75 / 0.53&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;특이도 저 / 중 / 고&lt;/span&gt; &lt;b&gt;0.82 / 0.80 / 0.97&lt;/b&gt;&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;Scientific Reports 2025 · 筆頭著者 · n = 125、2施設&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;感度 L / I / H&lt;/span&gt; &lt;b&gt;0.86 / 0.75 / 0.53&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;特異度 L / I / H&lt;/span&gt; &lt;b&gt;0.82 / 0.80 / 0.97&lt;/b&gt;&lt;/span&gt;"><span class="meta-unit">Scientific Reports 2025 · first author · n = 125, 2 hospitals</span> <span class="meta-unit"><span>Sensitivity L / I / H</span> <b>0.86 / 0.75 / 0.53</b></span> <span class="meta-unit"><span>Specificity L / I / H</span> <b>0.82 / 0.80 / 0.97</b></span></div>
+          <p data-ko="다른 임상 정보 없이 H&amp;E WSI만으로 21-유전자 재발 점수(Oncotype DX)의 위험군을 예측했습니다. 패치 단위로 분류한 뒤 신뢰도(confidence) 기반 선별과 다수결로 슬라이드별 저·중·고위험군을 판정했습니다." data-ja="他の臨床情報を用いず、H&amp;E WSIのみで21遺伝子再発スコア(Oncotype DX)のリスク群を予測しました。パッチ単位の分類結果を信頼度(confidence)で選別し、多数決でスライド単位の低/中/高リスク群を判定しました。">Predicted <span class="term">21-gene</span> <span class="term">recurrence-score</span> (Oncotype DX) risk groups from H&amp;E WSIs alone, with no other clinical inputs. Patch predictions were selected by confidence and <span class="term">majority-voted</span> into <span class="term">slide-level</span> low / intermediate / high risk groups.</p>
+        </div>
+      </article><article class="card">
+        <div class="card-body">
+          <div class="k" data-ko="기타 R&D · 딥바이오" data-ja="その他のR&D · Deep Bio">Additional R&amp;D · Deep Bio</div>
+          <h3 data-ko="병리 OOD 기반 액티브 러닝 · ADMET/DTI" data-ja="病理画像のOOD考慮型能動学習 · ADMET/DTI"><span class="term">OOD-aware</span> active learning for pathology · ADMET / DTI</h3>
+          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;ADMET&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;DTI&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;OOD 검출&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;액티브 러닝&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;ADMET&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;DTI&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;OOD検出&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;能動学習&lt;/span&gt;"><span class="meta-unit">ADMET</span> <span class="meta-unit">DTI</span> <span class="meta-unit">OOD detection</span> <span class="meta-unit">Active learning</span></div>
+          <p data-ko="초기 약물 물성 프로파일링을 위한 ADMET 예측과 약물-표적 상호작용 모델링을 진행했습니다. 병리 이미지에서 OOD 샘플을 정의해 라벨링 효율을 높이는 액티브 러닝 프레임워크도 개발했습니다. 사내 R&amp;D라 공개된 성과는 없습니다." data-ja="創薬初期の物性プロファイリングに向け、ADMET予測と薬物–標的相互作用のモデリングを行いました。病理画像のOODサンプルを定義してラベル付けを効率化する能動学習フレームワークも開発しました。社内R&amp;Dのため未公開です。">ADMET prediction and <span class="term">drug–target</span> interaction modeling for early <span class="term">drug-property</span> profiling, and an <span class="term">active-learning</span> framework that defines <span class="term">out-of-distribution</span> pathology samples to make labeling more efficient. Internal R&amp;D, no public results.</p>
+        </div>
+      </article><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_brain_ct.jpg" target="_blank" rel="noopener"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k" data-ko="의료영상 · SK / 아주대병원" data-ja="医療画像 · SK / 亜洲大学病院">Medical imaging · SK / Ajou Univ. Hospital</div>
+          <h3 data-ko="CT 뇌출혈 검출" data-ja="CT脳出血検出"><span class="term">Brain-hemorrhage</span> detection on CT</h3>
+          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;2D + 3D 분할&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;도메인 일반화&lt;/span&gt; &lt;a href=&#x27;https://github.com/Geongyu/SK-Project&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;code ↗&lt;/a&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;2D + 3D セグメンテーション&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;ドメイン汎化&lt;/span&gt; &lt;a href=&#x27;https://github.com/Geongyu/SK-Project&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;code ↗&lt;/a&gt;"><span class="meta-unit">2D + 3D seg</span> <span class="meta-unit">Domain generalization</span> <a href="https://github.com/Geongyu/SK-Project" target="_blank" rel="noopener">code ↗</a></div>
+          <p data-ko="뇌출혈 영역을 2D·3D로 분할하고 슬라이스 단위로 분류했습니다. 외부 공개 데이터로 도메인 일반화를 검증했고, &lt;span class=&quot;term&quot;&gt;class-activation&lt;/span&gt; map으로 분류 결과의 신뢰성을 점검했습니다(&lt;span class=&quot;term&quot;&gt;U-Net&lt;/span&gt; vs DeepLab)." data-ja="脳出血領域の2D・3Dセグメンテーションとスライス単位の分類です。外部公開データでドメイン汎化を検証し、&lt;span class=&quot;term&quot;&gt;class-activation&lt;/span&gt; mapで分類の信頼性を点検しました(&lt;span class=&quot;term&quot;&gt;U-Net&lt;/span&gt; vs DeepLab)。">2D and 3D segmentation of hemorrhage regions plus <span class="term">slice-level</span> classification. Validated domain generalization on external public data and used <span class="term">class-activation</span> maps to check classification reliability (<span class="term">U-Net</span> vs DeepLab).</p>
+        </div>
+      </article></div></details>
+    <p class="earlier" data-ko="산업용 비전, 정형 데이터 ML, 데이터 엔지니어링, 분할 모델 견고성을 다룬 초기 작업(2019–2020)은 &lt;a href=&quot;https://github.com/Geongyu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;에서 볼 수 있습니다." data-ja="産業用ビジョン、表形式データML、データエンジニアリング、セグメンテーションの頑健性に関する初期の取り組み(2019–2020)は&lt;a href=&quot;https://github.com/Geongyu&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;でご覧いただけます。">Earlier work (2019–2020) on industrial vision, tabular ML, data engineering and segmentation robustness is on <a href="https://github.com/Geongyu" target="_blank" rel="noopener">GitHub</a>.</p>
   </section>
 
   <!-- PUBLICATIONS -->
@@ -664,171 +798,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="block" id="projects">
-    <div class="head"><h2 data-ko="프로젝트" data-ja="プロジェクト">Projects</h2><span class="note" data-ko="멀티모달 학습 · 설명가능성 · 신뢰할 수 있는 ML" data-ja="マルチモーダル学習 · 解釈可能性 · 信頼できるML">multimodal learning · interpretability · reliable ML</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
-    <div class="grid">
 
-      <article class="card">
-        <div class="card-body">
-          <div class="k" data-ko="프로테오믹스 · OMIXAI" data-ja="プロテオミクス · OMIXAI">Proteomics · OMIXAI</div>
-          <h3 data-ko="프로테오믹스로 약물 반응 예측" data-ja="プロテオミクスによる薬剤応答予測"><span class="term">Drug-response</span> prediction from proteomics</h3>
-          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;사내 R&amp;D&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;미공개&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;社内R&amp;D&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;未発表&lt;/span&gt;"><span class="meta-unit">Internal R&amp;D</span> <span class="meta-unit">Unpublished</span></div>
-          <p data-ko="프로테오믹스 데이터로 세포주의 약물 반응(IC50)을 예측하는 모델을 개발했습니다. 학습에 없던 약물로만 테스트하는 &lt;span class=&quot;term&quot;&gt;leave-drug-out&lt;/span&gt; 방식으로 평가했습니다(Pearson ≥ 0.65). LoRA/PEFT 기반 자기지도 프로테옴 표현 학습도 별도로 진행했습니다." data-ja="プロテオミクスから細胞株の薬剤応答(IC50)を予測するモデルを開発しました。テスト薬剤をすべて学習から除くleave-drug-out方式で評価しました(Pearson ≥ 0.65)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も別途行いました。"><span class="term">Cell-line</span> <span class="term">drug-response</span> (IC50) prediction from proteomics, evaluated <span class="term">leave-drug-out</span> so that no test compound is seen in training (Pearson ≥ 0.65). Separate work covers <span class="term">self-supervised</span> proteomic representation learning with LoRA/PEFT.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k" data-ko="멀티오믹스 · OMIXAI" data-ja="マルチオミクス · OMIXAI">Multi-omics · OMIXAI</div>
-          <h3 data-ko="듀얼타겟 siRNA 후보 선정을 위한 RNA–단백질 분석" data-ja="二重標的siRNA候補選定に向けたRNA–タンパク質解析"><span class="term">RNA–protein</span> analysis for <span class="term">dual-target</span> siRNA selection</h3>
-          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;유전자&lt;/span&gt; &lt;b&gt;11,238개&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;Spearman 중앙값&lt;/span&gt; &lt;b&gt;ρ 0.441&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;CPTAC GBM 100명&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;遺伝子&lt;/span&gt; &lt;b&gt;11,238&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;Spearman中央値&lt;/span&gt; &lt;b&gt;ρ 0.441&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;CPTAC GBM 100名&lt;/span&gt;"><span class="meta-unit"><span>Genes</span> <b>11,238</b></span> <span class="meta-unit"><span>Median Spearman</span> <b>ρ 0.441</b></span> <span class="meta-unit">CPTAC GBM, n = 100</span></div>
-          <p data-ko="교모세포종(GBM) 듀얼타겟 siRNA 과제의 일부입니다. CPTAC GBM 환자 100명의 전사체와 단백체를 매칭해, 유전자별로 RNA 발현이 단백질 발현을 얼마나 반영하는지 평가했습니다. 1,000회 permutation으로 귀무분포를 구하고 다중검정 보정을 적용했습니다. 변동성·저발현·결측 지표와 민감도 점검을 더해 웻랩 후보 선정용 근거표로 정리했습니다." data-ja="膠芽腫(GBM)のデュアルターゲットsiRNA課題の一環です。CPTAC GBM患者100名のトランスクリプトームとプロテオームを対応づけ、RNA発現がタンパク質量をどの程度反映するかを遺伝子ごとに評価しました。1,000回のpermutation、多重検定補正、変動性・低発現・欠損のフラグ、感度分析を経て、ウェットラボ実験の候補を順位付けるための根拠表にまとめました。">Part of a glioblastoma <span class="term">dual-target</span> siRNA program. Matched transcriptome and proteome for 100 CPTAC GBM patients and tested how well RNA expression tracks protein abundance for each gene. Used <span class="term">1,000-permutation</span> nulls, <span class="term">multiple-testing</span> correction, sensitivity checks and flags for variability, low expression and missingness to build an evidence table for ranking <span class="term">wet-lab</span> candidates.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k" data-ko="OMIXAI · 한·일 공동연구" data-ja="OMIXAI · 日韓共同研究">OMIXAI · Korea–Japan collaboration</div>
-          <h3 data-ko="&lt;span class=&quot;term&quot;&gt;Pan-Sarcoma&lt;/span&gt;: 반려견 종양의 약물 반응 예측" data-ja="&lt;span class=&quot;term&quot;&gt;Pan-Sarcoma&lt;/span&gt;：犬の腫瘍の薬剤応答予測"><span class="term">Pan-Sarcoma</span>: Drug response in canine tumors</h3>
-          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;참여연구원&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span class=&quot;term&quot;&gt;2025–2028&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;진행 중&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;결과 미공개&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;参加研究員&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span class=&quot;term&quot;&gt;2025–2028&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;進行中&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;成果は未公開&lt;/span&gt;"><span class="meta-unit">Participating researcher</span> <span class="meta-unit"><span class="term">2025–2028</span></span> <span class="meta-unit">Ongoing; results not yet public</span></div>
-          <p data-ko="&lt;span class=&quot;term&quot;&gt;Pan-Sarcoma&lt;/span&gt; 프로테오지노믹스 공동연구에서 일본 측이 제공한 반려견 종양의 프로테오믹스·H&amp;E·RNA 데이터를 통합해 약물 반응 예측과 분자 분석을 진행하고 있습니다. 육종으로 시작한 데이터는 현재 여러 암종으로 확대되었습니다." data-ja="Pan-Sarcomaプロテオゲノム共同研究で、日本側から提供された犬の腫瘍のプロテオミクス・H&amp;E画像・RNAを統合し、薬剤応答予測と分子解析を行っています。肉腫から始まったデータは、現在は複数のがん種に拡大しています。">Within the <span class="term">Pan-Sarcoma</span> proteogenomic profiling program, we combine proteomics, H&amp;E images and RNA from canine tumors provided by the Japanese partner to predict drug response and study molecular characteristics. The dataset began with sarcoma and now covers multiple cancer types.</p>
-        </div>
-      </article>
-
-      <article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k" data-ko="사이드 프로젝트 · NVIDIA 해커톤 2026" data-ja="サイドプロジェクト · NVIDIAハッカソン2026">Side project · NVIDIA Hackathon 2026</div>
-          <h3 data-ko="FlyGate: 신약 탐색과 약물 안전성 감시" data-ja="FlyGate：創薬探索と医薬品安全性監視">FlyGate: Drug discovery and safety monitoring</h3>
-          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;기성 NIM 모델 점검 · OpenFold3 RMSD&lt;/span&gt; &lt;b&gt;1.0 Å&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;&lt;span class=&quot;term&quot;&gt;Boltz-2&lt;/span&gt; 친화도&lt;/span&gt; &lt;b&gt;ρ 0.767&lt;/b&gt;&lt;/span&gt; &lt;a href=&#x27;https://flygate.kr&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;live ↗&lt;/a&gt; &lt;a href=&#x27;https://github.com/Team-FlyGate/Project-FlyGate&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;code ↗&lt;/a&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;既製NIMの検証 · OpenFold3 RMSD&lt;/span&gt; &lt;b&gt;1.0 Å&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;&lt;span class=&quot;term&quot;&gt;Boltz-2&lt;/span&gt; 親和性&lt;/span&gt; &lt;b&gt;ρ 0.767&lt;/b&gt;&lt;/span&gt; &lt;a href=&#x27;https://flygate.kr&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;live ↗&lt;/a&gt; &lt;a href=&#x27;https://github.com/Team-FlyGate/Project-FlyGate&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;code ↗&lt;/a&gt;"><span class="meta-unit"><span><span class="term">Off-the-shelf</span> NIM checks · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> affinity</span> <b>ρ 0.767</b></span> <a href="https://flygate.kr" target="_blank" rel="noopener">live ↗</a> <a href="https://github.com/Team-FlyGate/Project-FlyGate" target="_blank" rel="noopener">code ↗</a></div>
-          <p data-ko="5인 팀으로 참가한 NVIDIA Korea Agentic AI Hackathon 2026 출품작입니다. 시판 전 표적 결합 예측(FlyDiscovery)과 시판 후 이상사례 감시(FlyVigilance)를 하나의 에이전트로 잇습니다. 이 중 FlyDiscovery 모듈과 탐색 워크벤치 UI를 개발했습니다. FlyDiscovery는 BioNeMo NIM(OpenFold3 · DiffDock · &lt;span class=&quot;term&quot;&gt;Boltz-2&lt;/span&gt;)으로 후보 물질을 구조 예측부터 결합 친화도까지 평가합니다." data-ja="NVIDIA Korea Agentic AI Hackathon 2026の参加作品(5人チーム)です。市販前の標的結合予測(FlyDiscovery)と市販後の有害事象監視(FlyVigilance)を一つのエージェントでつなぎます。BioNeMo NIM(OpenFold3 · DiffDock · &lt;span class=&quot;term&quot;&gt;Boltz-2&lt;/span&gt;)で構造予測から親和性まで評価するFlyDiscoveryモジュールと探索ワークベンチUIを担当しました。">NVIDIA Korea Agentic AI Hackathon 2026 entry (team of 5). It links <span class="term">pre-market</span> target binding (FlyDiscovery) and <span class="term">post-market</span> <span class="term">adverse-event</span> surveillance (FlyVigilance) in one agent. I built the FlyDiscovery module and its <span class="term">discovery-workbench</span> UI. The module runs structure prediction, docking and <span class="term">binding-affinity</span> scoring with BioNeMo NIM (OpenFold3, DiffDock, <span class="term">Boltz-2</span>).</p>
-        </div>
-      </article>
-
-    </div>
-
-    <details class="fold"><summary data-ko="추가 연구와 개발" data-ja="その他の研究・開発">More research and engineering</summary><div class="grid"><article class="card">
-        <div class="card-body">
-          <div class="k" data-ko="정밀종양학 · OMIXAI" data-ja="精密腫瘍学 · OMIXAI">Precision oncology · OMIXAI</div>
-          <h3 data-ko="수의 종양 CDSS &amp; 버추얼 셀" data-ja="獣医腫瘍CDSS・バーチャルセル">Veterinary oncology CDSS &amp; Virtual Cell</h3>
-          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;반려견 약물 추천&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span class=&quot;term&quot;&gt;top-k&lt;/span&gt; ≥ 70% · 자체 코호트 · 사내 R&amp;D, 미공개&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;CRISPR 섭동&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;犬の薬剤推薦&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span class=&quot;term&quot;&gt;top-k&lt;/span&gt; ≥ 70% · 自社コホート · 社内R&amp;D、未発表&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;CRISPR摂動&lt;/span&gt;"><span class="meta-unit">Canine drug recommendation</span> <span class="meta-unit"><span class="term">top-k</span> ≥ 70% · <span class="term">in-house</span> cohort · internal R&amp;D, unpublished</span> <span class="meta-unit">CRISPR perturbation</span></div>
-          <p data-ko="임상 의사결정 지원 시스템(CDSS) 구축을 목표로 반려견 종양 약물 추천 알고리즘을 개발했습니다. Arc Institute Virtual Cell Challenge에서는 OMIXAI 참가팀을 공동 주도해 만능줄기세포의 CRISPR 넉다운 반응을 예측했습니다." data-ja="臨床意思決定支援システム(CDSS)に向け、犬の腫瘍に対する薬剤推薦アルゴリズムを開発しました。Arc Institute Virtual Cell ChallengeではOMIXAIの参加チームを共同主導し、多能性幹細胞のCRISPRノックダウン応答を予測しました。">Developed a <span class="term">drug-recommendation</span> algorithm for canine cancer, intended for a clinical decision support system. <span class="term">Co-led</span> OMIXAI's team entry in the Arc Institute Virtual Cell Challenge (predicting <span class="term">CRISPR-knockdown</span> response in pluripotent stem cells).</p>
-        </div>
-      </article><article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_oncotype_pipeline.png" target="_blank" rel="noopener"><img src="/assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k" data-ko="디지털 병리 · 딥바이오" data-ja="デジタル病理 · Deep Bio">Digital pathology · Deep Bio</div>
-          <h3 data-ko="H&amp;E로 Oncotype DX 위험군 예측" data-ja="H&amp;EによるOncotype DXリスク群予測">Oncotype DX risk groups from H&amp;E</h3>
-          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;Scientific Reports 2025 · 제1저자 · n = 125, 2개 병원&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;민감도 저 / 중 / 고&lt;/span&gt; &lt;b&gt;0.86 / 0.75 / 0.53&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;특이도 저 / 중 / 고&lt;/span&gt; &lt;b&gt;0.82 / 0.80 / 0.97&lt;/b&gt;&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;Scientific Reports 2025 · 筆頭著者 · n = 125、2施設&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;感度 L / I / H&lt;/span&gt; &lt;b&gt;0.86 / 0.75 / 0.53&lt;/b&gt;&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span&gt;特異度 L / I / H&lt;/span&gt; &lt;b&gt;0.82 / 0.80 / 0.97&lt;/b&gt;&lt;/span&gt;"><span class="meta-unit">Scientific Reports 2025 · first author · n = 125, 2 hospitals</span> <span class="meta-unit"><span>Sensitivity L / I / H</span> <b>0.86 / 0.75 / 0.53</b></span> <span class="meta-unit"><span>Specificity L / I / H</span> <b>0.82 / 0.80 / 0.97</b></span></div>
-          <p data-ko="다른 임상 정보 없이 H&amp;E WSI만으로 21-유전자 재발 점수(Oncotype DX)의 위험군을 예측했습니다. 패치 단위로 분류한 뒤 신뢰도(confidence) 기반 선별과 다수결로 슬라이드별 저·중·고위험군을 판정했습니다." data-ja="他の臨床情報を用いず、H&amp;E WSIのみで21遺伝子再発スコア(Oncotype DX)のリスク群を予測しました。パッチ単位の分類結果を信頼度(confidence)で選別し、多数決でスライド単位の低/中/高リスク群を判定しました。">Predicted <span class="term">21-gene</span> <span class="term">recurrence-score</span> (Oncotype DX) risk groups from H&amp;E WSIs alone, with no other clinical inputs. Patch predictions were selected by confidence and <span class="term">majority-voted</span> into <span class="term">slide-level</span> low / intermediate / high risk groups.</p>
-        </div>
-      </article><article class="card">
-        <div class="card-body">
-          <div class="k" data-ko="기타 R&D · 딥바이오" data-ja="その他のR&D · Deep Bio">Additional R&amp;D · Deep Bio</div>
-          <h3 data-ko="병리 OOD 기반 액티브 러닝 · ADMET/DTI" data-ja="病理画像のOOD考慮型能動学習 · ADMET/DTI"><span class="term">OOD-aware</span> active learning for pathology · ADMET / DTI</h3>
-          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;ADMET&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;DTI&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;OOD 검출&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;액티브 러닝&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;ADMET&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;DTI&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;OOD検出&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;能動学習&lt;/span&gt;"><span class="meta-unit">ADMET</span> <span class="meta-unit">DTI</span> <span class="meta-unit">OOD detection</span> <span class="meta-unit">Active learning</span></div>
-          <p data-ko="초기 약물 물성 프로파일링을 위한 ADMET 예측과 약물-표적 상호작용 모델링을 진행했습니다. 병리 이미지에서 OOD 샘플을 정의해 라벨링 효율을 높이는 액티브 러닝 프레임워크도 개발했습니다. 사내 R&amp;D라 공개된 성과는 없습니다." data-ja="創薬初期の物性プロファイリングに向け、ADMET予測と薬物–標的相互作用のモデリングを行いました。病理画像のOODサンプルを定義してラベル付けを効率化する能動学習フレームワークも開発しました。社内R&amp;Dのため未公開です。">ADMET prediction and <span class="term">drug–target</span> interaction modeling for early <span class="term">drug-property</span> profiling, and an <span class="term">active-learning</span> framework that defines <span class="term">out-of-distribution</span> pathology samples to make labeling more efficient. Internal R&amp;D, no public results.</p>
-        </div>
-      </article><article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_brain_ct.jpg" target="_blank" rel="noopener"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k" data-ko="의료영상 · SK / 아주대병원" data-ja="医療画像 · SK / 亜洲大学病院">Medical imaging · SK / Ajou Univ. Hospital</div>
-          <h3 data-ko="CT 뇌출혈 검출" data-ja="CT脳出血検出"><span class="term">Brain-hemorrhage</span> detection on CT</h3>
-          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;2D + 3D 분할&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;도메인 일반화&lt;/span&gt; &lt;a href=&#x27;https://github.com/Geongyu/SK-Project&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;code ↗&lt;/a&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;2D + 3D セグメンテーション&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;ドメイン汎化&lt;/span&gt; &lt;a href=&#x27;https://github.com/Geongyu/SK-Project&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;code ↗&lt;/a&gt;"><span class="meta-unit">2D + 3D seg</span> <span class="meta-unit">Domain generalization</span> <a href="https://github.com/Geongyu/SK-Project" target="_blank" rel="noopener">code ↗</a></div>
-          <p data-ko="뇌출혈 영역을 2D·3D로 분할하고 슬라이스 단위로 분류했습니다. 외부 공개 데이터로 도메인 일반화를 검증했고, &lt;span class=&quot;term&quot;&gt;class-activation&lt;/span&gt; map으로 분류 결과의 신뢰성을 점검했습니다(&lt;span class=&quot;term&quot;&gt;U-Net&lt;/span&gt; vs DeepLab)." data-ja="脳出血領域の2D・3Dセグメンテーションとスライス単位の分類です。外部公開データでドメイン汎化を検証し、&lt;span class=&quot;term&quot;&gt;class-activation&lt;/span&gt; mapで分類の信頼性を点検しました(&lt;span class=&quot;term&quot;&gt;U-Net&lt;/span&gt; vs DeepLab)。">2D and 3D segmentation of hemorrhage regions plus <span class="term">slice-level</span> classification. Validated domain generalization on external public data and used <span class="term">class-activation</span> maps to check classification reliability (<span class="term">U-Net</span> vs DeepLab).</p>
-        </div>
-      </article></div></details><div class="subhead">
-      <h3 data-ko="초기 ML 엔지니어링" data-ja="初期のMLエンジニアリング">Earlier ML engineering</h3>
-    </div>
-    <details class="fold">
-      <summary data-ko="2019–2020 · 산업용 비전, 정형 데이터, 데이터 엔지니어링, 분할 모델 견고성 · 프로젝트 4개" data-ja="2019–2020 · 産業用ビジョン・表形式データ・データエンジニアリング・セグメンテーションの頑健性 · 全4件">2019–2020 · industrial vision, tabular data, data engineering, segmentation robustness · 4 projects</summary>
-    <div class="grid">
-      <article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_screw.jpg" target="_blank" rel="noopener"><img src="/assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k" data-ko="컴퓨터 비전 · 프론텍" data-ja="コンピュータビジョン · Fronttec">Computer vision · Fronttec</div>
-          <h3 data-ko="나사 불량 판별" data-ja="ねじ不良判別">Screw defect classification</h3>
-          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;5개 클래스&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;b&gt;장당 0.3초 미만&lt;/b&gt;&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;5クラス&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;b&gt;1枚0.3秒未満&lt;/b&gt;&lt;/span&gt;"><span class="meta-unit">5 classes</span> <span class="meta-unit"><b>&lt;0.3s / image</b></span></div>
-          <p data-ko="생산 라인 불량 검출 과제(969장, 5개 클래스, 장당 0.3초 미만 처리 조건)입니다. 딥러닝 대신 머신비전으로 나사 위치를 찾아 배경을 제거한 뒤 분류해 정확도를 높였습니다." data-ja="製造ラインの不良検出です(969枚、5クラス、1枚0.3秒以内の制約)。分類前に、深層学習ではなくマシンビジョンでねじ位置を特定して背景を除去し、精度を高めました。">Defect detection on a manufacturing line (969 images, 5 classes) under a hard 0.3s/image limit. Used machine vision (not DL) to locate the screw and remove the background before classification, which improved accuracy.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k" data-ko="정형 데이터 ML · 직방" data-ja="表形式データML · Zigbang">Tabular ML · Zigbang</div>
-          <h3 data-ko="아파트 실거래가 예측" data-ja="マンション成約価格予測">Apartment price prediction</h3>
-          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;160만 건&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;지표: RMSE&lt;/span&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;160万件&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;指標: RMSE&lt;/span&gt;"><span class="meta-unit">1.6M records</span> <span class="meta-unit">Metric: RMSE</span></div>
-          <p data-ko="서울·부산 거래 데이터 160만 건으로 실거래가를 예측했습니다. 우편번호로 주소를 다시 매칭해 잘못 기재된 지역을 바로잡았습니다. 원본에 없던 주변 지하철·학교 정보는 공공 API로 받아 피처로 추가했습니다." data-ja="ソウル・釜山の成約価格を160万件のデータで予測しました。郵便番号で住所を再照合して誤記の地域を修正し、元データにない公共API特徴量(周辺の地下鉄・学校)を追加しました。"><span class="term">Transaction-price</span> modeling for Seoul/Busan from 1.6M records. <span class="term">Re-matched</span> addresses by postal code to fix mislabeled districts and added <span class="term">public-API</span> features (nearby subway, schools) that the raw data lacked.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k" data-ko="데이터 엔지니어링 · 서울과기대" data-ja="データエンジニアリング · ソウル科学技術大">Data engineering · SeoulTech</div>
-          <h3 data-ko="음원 차트 수집 파이프라인 &amp; DB" data-ja="音楽チャート収集パイプラインとDB"><span class="term">Music-chart</span> crawling pipeline &amp; database</h3>
-          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;6개 플랫폼&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;일 단위 수집&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;스키마 설계&lt;/span&gt; &lt;a href=&#x27;https://github.com/Geongyu/2020-Database-Project&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;code ↗&lt;/a&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;6プラットフォーム&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;日次収集&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;スキーマ設計&lt;/span&gt; &lt;a href=&#x27;https://github.com/Geongyu/2020-Database-Project&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;code ↗&lt;/a&gt;"><span class="meta-unit">6 platforms</span> <span class="meta-unit">Daily crawl</span> <span class="meta-unit">Schema design</span> <a href="https://github.com/Geongyu/2020-Database-Project" target="_blank" rel="noopener">code ↗</a></div>
-          <p data-ko="멜론·지니·바이브·유튜브 뮤직·애플 뮤직·벅스 6개 플랫폼의 일간 Top 100을 매일 같은 시각에 수집했습니다. 곡과 아티스트 기준으로 병합해 관계형 DB에 적재했습니다. 차트 진입·이탈로 생기는 결측에 대비해 순위 컬럼은 NULL을 허용하도록 설계했고, 다국어 제목은 nvarchar로 저장했습니다." data-ja="Melon・Genie・VIBE・YouTube Music・Apple Music・Bugsの6プラットフォームから、Top 100を毎日同時刻に収集しました。曲・アーティスト単位で統合してDBに格納し、チャートイン/アウトによる欠損はNULL許容カラム、多言語タイトルはnvarcharで扱うスキーマを設計しました。">Crawled daily <span class="term">Top-100</span> charts from 6 streaming platforms (Melon, Genie, VIBE, YouTube Music, Apple Music, Bugs) at a fixed time, merged them on track + artist and loaded them into a relational DB. Nullable rank columns handle tracks entering and leaving the chart, and nvarchar columns store multilingual titles.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k" data-ko="컴퓨터 비전 · 서울과기대" data-ja="コンピュータビジョン · ソウル科学技術大">Computer vision · SeoulTech</div>
-          <h3 data-ko="분할 모델의 적대적 견고성 연구" data-ja="セグメンテーションモデルの敵対的頑健性">Adversarial robustness for semantic segmentation</h3>
-          <div class="tagline" data-ko="&lt;span class=&quot;meta-unit&quot;&gt;적대적 학습&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;Label smoothing&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span class=&quot;term&quot;&gt;Cut-out&lt;/span&gt;&lt;/span&gt; &lt;a href=&#x27;https://github.com/Geongyu/2019_DL_Project&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;code ↗&lt;/a&gt;" data-ja="&lt;span class=&quot;meta-unit&quot;&gt;敵対的学習&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;Label smoothing&lt;/span&gt; &lt;span class=&quot;meta-unit&quot;&gt;&lt;span class=&quot;term&quot;&gt;Cut-out&lt;/span&gt;&lt;/span&gt; &lt;a href=&#x27;https://github.com/Geongyu/2019_DL_Project&#x27; target=&#x27;_blank&#x27; rel=&#x27;noopener&#x27;&gt;code ↗&lt;/a&gt;"><span class="meta-unit">Adversarial training</span> <span class="meta-unit">Label smoothing</span> <span class="meta-unit"><span class="term">Cut-out</span></span> <a href="https://github.com/Geongyu/2019_DL_Project" target="_blank" rel="noopener">code ↗</a></div>
-          <p data-ko="PASCAL VOC(20개 클래스, 1,928장, 4,203개 객체)에서 &lt;span class=&quot;term&quot;&gt;U-Net&lt;/span&gt; 분할 모델에 adversarial training·label smoothing·cut-out을 단독 또는 조합으로 적용해 견고성과 정확도의 트레이드오프를 비교했습니다. 이후 의료 AI로 이어진 &#x27;견고성 우선&#x27; 관점의 출발점입니다." data-ja="PASCAL VOC(20クラス、1,928枚、4,203オブジェクト)でU-Netセグメンテーションにadversarial training・label smoothing・cut-outを単独/組み合わせで適用し、頑健性と精度のトレードオフを比較しました。医療AIにも引き継いだ「頑健性優先」の出発点です。"><span class="term">U-Net</span> segmentation on PASCAL VOC (20 classes, 1,928 images, 4,203 objects). Applied adversarial training, label smoothing and <span class="term">cut-out</span> alone and in combination to compare the <span class="term">robustness–accuracy</span> <span class="term">trade-off</span>. My later focus on robustness in medical AI started with this project.</p>
-        </div>
-      </article>
-
-    </div>
-    </details>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="block" id="experience">
-    <div class="head"><h2 data-ko="경력" data-ja="経歴">Experience</h2></div>
-    <div>
-      <div class="role-row">
-        <div class="when"><span class="co">OMIXAI</span><span data-ko="2025.02 – 현재" data-ja="2025.02 – 現在">Feb 2025 – Present</span><br><span class="loc" data-ko="서울 · 구 래디센" data-ja="ソウル · 旧RadiSen">Seoul · formerly RadiSen</span></div>
-        <div class="what">
-          <h3 data-ko="AI 리서처" data-ja="AIリサーチャー">AI Researcher</h3>
-          <div class="sub" data-ko="크로스모달 학습 · 멀티오믹스 · 약물 반응" data-ja="クロスモーダル学習 · マルチオミクス · 薬剤応答">Cross-modal learning · Multi-omics · Drug response</div>
-          <ul><li data-ko="프로테오믹스·RNA·H&amp;E를 활용한 약물 반응 예측 멀티오믹스 R&amp;D 주도(진행 중)" data-ja="プロテオミクス・RNA・H&amp;Eを用いた薬剤応答予測のマルチオミクスR&amp;Dを主導(進行中)">Lead ongoing multi-omics R&amp;D for drug-response prediction using proteomics, RNA and H&amp;E.</li><li data-ko="프로테오믹스 기반 IC50 모델, 반려견 종양 약물 추천 알고리즘, ADMET 모델 개발" data-ja="プロテオミクスに基づくIC50モデル、犬の腫瘍への薬剤推薦アルゴリズム、ADMETモデルを開発">Developed proteomics-based IC50 models, canine-cancer drug recommendations and ADMET models.</li><li data-ko="Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도" data-ja="Arc Institute Virtual Cell ChallengeへのOMIXAIチーム参加を共同主導">Co-led OMIXAI&#x27;s Arc Institute Virtual Cell Challenge entry.</li><li data-ko="연구 서버·NAS 운영, Git 협업 규칙 수립, 협력사 데이터 전송 시스템 구축" data-ja="研究サーバー・NASを運用し、Gitの共同作業ルールと協力会社とのデータ転送システムを整備">Run research servers and NAS; set up Git collaboration rules and a partner data-transfer system.</li></ul>
-        <details class="project-detail"><summary data-ko="추가 업무" data-ja="その他の業務">Additional work</summary><ul>
-            <li data-ko="프로테오믹스·RNA와 H&E 병리를 통합한 약물 반응 예측 멀티오믹스 모델 R&D 주도(진행 중)" data-ja="プロテオミクス・RNAとH&E病理画像を統合して薬剤応答を予測するマルチオミクスモデルの研究開発を主導(進行中)">Lead R&amp;D on a multi-omics model that combines proteomics and RNA with H&amp;E pathology to predict drug response (in progress).</li>
-            <li data-ko="프로테오믹스 기반 세포주 약물 반응(IC50) 예측 모델 개발(학습에 없던 약물 대상 leave-drug-out 평가, Pearson ≥ 0.65, 사내 R&D·미공개)" data-ja="プロテオミクスに基づく細胞株の薬剤応答(IC50)予測モデルの開発(学習データに含まれない薬剤でのleave-drug-out評価、Pearson ≥ 0.65、社内R&D・未発表)">Built a proteomics-based drug-response (IC50) model for cell lines, with Pearson ≥ 0.65 on unseen drugs (leave-drug-out; internal R&amp;D, unpublished).</li>
-            <li data-ko="반려견 종양 약물 추천 알고리즘 및 ADMET 예측 모델 개발" data-ja="犬の腫瘍に対する薬剤推薦アルゴリズムとADMET予測モデルの開発">Developed a drug-recommendation algorithm for canine cancer and ADMET prediction models.</li>
-            <li data-ko="Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도(만능줄기세포 CRISPR 넉다운 반응 예측)" data-ja="Arc Institute Virtual Cell ChallengeでのOMIXAI参加チームの共同主導(多能性幹細胞のCRISPRノックダウン応答予測)">Co-led OMIXAI's team entry in the Arc Institute Virtual Cell Challenge (predicting CRISPR-knockdown response in pluripotent stem cells).</li>
-            <li data-ko="H&E 기반 유전자 발현 예측 모델 MoSPR 논문 공동 제1저자(프리프린트·코드 공개)" data-ja="H&E画像から遺伝子発現を予測するMoSPRの共同筆頭著者(プレプリント・コード公開)">Co-first author of the MoSPR preprint on gene-expression prediction from H&amp;E (code released).</li>
-            <li data-ko="G2L 논문(AAAI 2026 워크숍 W3PHIAI 구두 발표) 및 삼중음성 유방암 공간 프로테오믹스 프리프린트(2026) 공저자" data-ja="G2L論文(AAAI 2026 ワークショップ W3PHIAI 口頭発表)およびトリプルネガティブ乳がんの空間プロテオミクス研究(プレプリント、2026)の共著者">Co-authored the G2L paper (AAAI 2026 Workshop W3PHIAI, oral) and a 2026 spatial-proteomics preprint on triple-negative breast cancer.</li>
-            <li data-ko="사내 연구 서버·NAS 운영, Git 협업 규칙 수립, 협력사와의 데이터 전송 시스템 구축" data-ja="社内研究サーバー・NASの運用、Git運用ルールの策定、協力会社とのデータ転送システムの構築">Run the in-house research servers and NAS. Set up Git collaboration rules and built a data-transfer system with a partner company.</li>
-          </ul></details></div>
-      </div>
-      <div class="role-row">
-        <div class="when"><span class="co" data-ko="딥바이오" data-ja="Deep Bio">Deep Bio</span><span data-ko="2021.03 – 2025.01" data-ja="2021.03 – 2025.01">Mar 2021 – Jan 2025</span><br><span class="loc" data-ko="서울 · 구로" data-ja="ソウル · 九老">Seoul · Guro</span></div>
-        <div class="what">
-          <h3 data-ko="AI 리서처" data-ja="AIリサーチャー">AI Researcher</h3>
-          <div class="sub" data-ko="Computational Pathology · 식약처(MFDS) 인허가용 모델 검증" data-ja="Computational Pathology · MFDS承認申請に向けたモデル検証">Computational pathology · Model validation for an MFDS submission</div>
-          <ul><li data-ko="2개 병원 유방암 재발 연구의 WSI 파이프라인과 예측 모델 개발" data-ja="2施設の乳がん再発研究でWSIパイプラインと予測モデルを開発">Built WSI pipelines and breast-cancer recurrence models for a two-hospital study.</li><li data-ko="림프절 전이 검출 및 사구체 분할 모델 개발" data-ja="リンパ節転移検出と糸球体セグメンテーションのモデルを開発">Developed lymph-node metastasis detection and glomerular segmentation models.</li><li data-ko="전립선암 전이·재발 위험 모델링 주도" data-ja="前立腺がんの転移・再発リスクモデリングを主導">Led prostate-cancer metastasis and recurrence-risk modeling.</li><li data-ko="MFDS 인허가 신청을 위한 모델 검증·문서 작성 기여, Docker 기반 서버 자동화 도구 개발" data-ja="MFDS承認申請に向けたモデル検証・申請文書作成に貢献し、Dockerを用いたサーバー自動化ツールを開発">Contributed model validation and regulatory documentation for an MFDS submission, and built Docker-based server-automation tools.</li></ul>
-        <details class="project-detail"><summary data-ko="추가 업무" data-ja="その他の業務">Additional work</summary><ul>
-            <li data-ko="2개 병원 유방암 재발 예측 연구 제1저자(Scientific Reports 2025), WSI 500장 이상을 처리한 파이프라인 구축" data-ja="2施設の乳がん再発研究(Scientific Reports 2025)の筆頭著者。WSIパイプラインを構築し、500枚以上のスライドを処理">First-authored a two-hospital breast-cancer recurrence study (Scientific Reports 2025). Built a WSI pipeline that processed 500+ slides.</li>
-            <li data-ko="림프절 전이 검출 모델 및 KPIs 2024 챌린지 사구체 분할 모델 개발(전체 슬라이드 트랙 2위, MICCAI 2024), 챌린지 결과 논문(Medical Image Analysis, 2026) 공저자" data-ja="リンパ節転移検出モデルとKPIs 2024チャレンジ向け糸球体セグメンテーションモデルの開発(WSIレベル部門2位、MICCAI 2024)。チャレンジ報告論文(Medical Image Analysis、2026)の共著者">Developed a lymph-node metastasis detection model and the glomerular segmentation model for the KPIs 2024 Challenge at MICCAI 2024 (2nd place, whole-slide track). Co-authored the challenge report (Medical Image Analysis, 2026).</li>
-            <li data-ko="전립선암 전이·재발 위험 모델링 프로젝트 주도" data-ja="前立腺がんの転移・再発リスクモデリングのプロジェクトを主導">Led prostate metastasis and recurrence-risk modeling projects.</li>
-            <li data-ko="AACR(2022, 2023)·USCAP(2022)에서 유방암 병리 AI 연구 제1저자 발표, 췌장암·유방암 생존 예측 포스터 공저자" data-ja="AACR(2022、2023)・USCAP(2022)で乳がん病理AI研究を筆頭著者として発表。膵臓がん・乳がんの生存予測に関するポスター発表の共著者">Presented breast-cancer pathology AI work as first author at AACR (2022, 2023) and USCAP (2022). Co-authored posters on survival prediction in pancreatic and breast cancer.</li>
-            <li data-ko="식약처(MFDS)에 인허가를 신청한 의료 AI 제품의 출시 전 모델 검증 및 인허가 문서 작성 기여, Docker 기반 사내 서버 자동화 도구 개발" data-ja="MFDSに承認申請された医療AI製品について、実運用前のモデル検証と申請文書作成に貢献。社内サーバー自動化ツール(Docker)の開発">Contributed to pre-deployment model validation and regulatory documentation for a medical-AI product submitted to Korea's MFDS. Built internal server-automation tools with Docker.</li>
-          </ul></details></div>
-      </div>
-      <div class="role-row">
-        <div class="when"><span class="co" data-ko="누리콘" data-ja="Nuricon">Nuricon</span>2021<br><span class="loc" data-ko="판교" data-ja="板橋(パンギョ)">Pangyo</span></div>
-        <div class="what">
-          <h3 data-ko="인턴" data-ja="インターン">Intern</h3>
-          <div class="sub" data-ko="컴퓨터 비전" data-ja="コンピュータビジョン">Computer vision</div>
-          <ul><li data-ko="주차장 화재 감지 AI 시스템 개발" data-ja="駐車場向け火災検知AIシステムの開発">Built a parking-lot fire-detection AI system.</li></ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- EDUCATION -->
   <section class="block" id="education">
@@ -900,9 +870,10 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <!-- CONTACT -->
   <section class="block contact" id="contact">
 
-    <h2 class="big" data-ko="논문과 코드" data-ja="論文とコード">Papers &amp; code</h2>
-    <p class="sub" data-ko="전체 논문은 Google Scholar에서, 코드는 GitHub에서 볼 수 있습니다." data-ja="論文はGoogle Scholarで、コードはGitHubでご覧いただけます。">You can find my publications on Google Scholar and my code on GitHub.</p>
+    <h2 class="big" data-ko="연락처" data-ja="連絡先">Contact</h2>
+    <p class="sub" data-ko="연구 협업이나 채용 관련 문의는 이메일로 연락해 주세요. 논문은 Google Scholar, 코드는 GitHub에서 볼 수 있습니다." data-ja="研究協力や採用に関するお問い合わせはメールでご連絡ください。論文はGoogle Scholar、コードはGitHubでご覧いただけます。">For research collaborations or roles, email me. Publications are on Google Scholar and code on GitHub.</p>
     <div class="links">
+      <a class="chip cv" href="mailto:rjsrb365@gmail.com">rjsrb365@gmail.com</a>
       <a class="chip" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
       <a class="chip" href="https://github.com/Geongyu" target="_blank" rel="noopener">github.com/Geongyu</a>
     </div>
@@ -911,7 +882,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 </main>
 
 <footer><span data-ko="이건규 · 대한민국 서울" data-ja="イ・ゴンギュ · 韓国・ソウル">Geongyu Lee · Seoul, Korea</span>
-  <span class="upd" data-ko="최종 업데이트 2026-10-13" data-ja="最終更新 2026-10-13">LAST UPDATED 2026-10-13</span>
+  <span class="upd" data-ko="최종 업데이트 2026-10-20" data-ja="最終更新 2026-10-20">LAST UPDATED 2026-10-20</span>
 </footer>
 
 </body>

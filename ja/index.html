@@ -195,6 +195,10 @@ section.block { padding: 68px 0; border-top: 1px solid var(--line); scroll-margi
 .aside li { color: var(--muted); font-size: 16px; line-height: 1.7; margin-bottom: 7px; padding-left: 3px; }
 .aside li:last-child { margin-bottom: 0; }
 .aside li strong { color: var(--fg); }
+.evidence li .it { display: block; color: var(--fg); }
+.evidence li .ev { display: block; font-size: 14px; line-height: 1.6; }
+.aside.bring { margin-top: 0; }
+.earlier { color: var(--muted); font-size: 15px; line-height: 1.7; margin-top: 26px; }
 
 .pubs { display: flex; flex-direction: column; }
 .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 30px; align-items: start; padding: 25px 0; border-top: 1px solid var(--line); }
@@ -392,12 +396,12 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <div class="brand"><b>Geongyu&nbsp;Lee</b><span class="bsub"> · 이건규</span></div>
   <div class="topright">
     <nav class="nav">
+      <a class="m" href="#experience">経歴</a>
+      <a href="#projects">プロジェクト</a>
       <a class="m" href="#publications">論文</a>
       <a href="#conferences">学会発表</a>
-      <a href="#projects">プロジェクト</a>
-      <a class="m" href="#experience">経歴</a>
       <a href="#education">学歴</a>
-      <a class="m" href="#contact">リンク</a>
+      <a class="m" href="#contact">連絡先</a>
     </nav>
     <nav class="langsw" aria-label="Language">
       <a class="langopt" href="/" hreflang="en" lang="en">EN</a>
@@ -419,7 +423,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
       <h1>Geongyu Lee<span class="kr">イ・ゴンギュ · 이건규</span></h1>
       <p class="role">AIリサーチャー · OMIXAI</p>
       <p class="research-focus">Multimodal Learning · Interpretability · Reliable ML</p>
-      <p class="lede">異なる種類のデータを結びつけ、モデルが何を学び、何を根拠に予測するのかを研究しています。アイデアをモデルと実験に具体化し、新しいデータでも予測と説明がどこまで有効かを検証します。</p>
+      <p class="lede">学習に使っていないデータ、たとえば新しい病院や未知の薬剤でも通用する機械学習モデルを作ります。画像・タンパク質・RNAなど異なるデータを結びつけ、予測を信頼する前にその根拠がどこから来るのかを確かめます。</p>
       <div class="chips">
         <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_JA.pdf" download>CV (PDF)</a>
         <a class="chip" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
@@ -429,9 +433,9 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
     <div class="ledger" aria-label="Selected publications">
       <div class="ledger-h"><span>主な研究</span></div>
-      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t">MoSPR: 解釈可能なクロスモーダル予測</span><span class="v first"><span class="meta-unit">2026</span> <span class="meta-unit">プレプリント</span> <span class="meta-unit">共同筆頭著者</span></span></a>
-      <a class="pub" href="#molecular-substitution"><span class="t">Predictability ≠ Substitutability: 意思決定のコスト</span><span class="v first"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">ポスター採択</span> <span class="meta-unit">筆頭著者</span></span></a>
-      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t">複数施設データでの予測モデル検証</span><span class="v first"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">筆頭著者</span></span></a>
+      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t">MoSPR: 組織画像から遺伝子発現を予測、領域ごとに分解可能</span><span class="v first"><span class="meta-unit">2026</span> <span class="meta-unit">プレプリント</span> <span class="meta-unit">共同筆頭著者</span></span></a>
+      <a class="pub" href="#molecular-substitution"><span class="t">高精度でも分子検査を代替できないとき</span><span class="v first"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">ポスター採択</span> <span class="meta-unit">筆頭著者</span></span></a>
+      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t">H&Eのみで分子検査のリスク群を予測、2施設で検証</span><span class="v first"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">筆頭著者</span></span></a>
 
     <a class="ledger-footer" href="#publications">論文一覧を見る →</a></div>
   </header>
@@ -444,13 +448,143 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
     <div class="about">
 <p>産業界で5年以上、機械学習の研究開発に携わり、研究課題の設定からデータ分析、モデル開発、実験設計、論文執筆まで取り組んできました。</p>
 <p>学習された表現、予測の根拠、そして結果を信頼できる条件に関心があります。異なるデータを結びつける学習手法と解釈可能なモデルを研究し、分布シフトや不確実性を考慮して評価します。</p>
-<p>医療・生命科学は、これらの問いを探究してきた主な応用分野です。この経験を生かし、さまざまな分野のデータや課題へ研究を広げたいと考えています。</p>
+<p>研究の多くは、ラベルの取得コストが高く、病院ごとにデータの分布が異なり、規制当局の検証も求められる医療データで行ってきました。こうした条件で検証した手法は他の分野にもそのまま通用するため、新しいデータや課題に応用したいと考えています。</p>
       <div class="aside">
         <h3>研究テーマ</h3>
-<ul><li>マルチモーダル学習と表現学習</li><li>モデルの解釈と説明可能なAI</li><li>汎化と頑健性</li><li>不確実性と信頼性評価</li></ul>
+<ul class="evidence"><li><span class="it">マルチモーダル学習と表現学習</span><span class="ev">H&E画像とプロテオミクス・RNAの統合(MoSPR、薬剤応答モデル)</span></li><li><span class="it">モデルの解釈と説明可能なAI</span><span class="ev">予測を全体・領域別のプログラムに分解(MoSPR)、class-activation mapによる点検</span></li><li><span class="it">汎化と頑健性</span><span class="ev">施設分離検証、leave-drug-out分割、施設交絡の点検</span></li><li><span class="it">不確実性と信頼性評価</span><span class="ev">不確実な領域での予測保留(MurSS)、OODを考慮した能動学習、事前登録プロトコル</span></li></ul>
 
       </div>
     </div>
+  </section>
+
+
+  <!-- STRENGTHS -->
+  <section class="block" id="strengths">
+    <div class="head"><h2>チームにもたらせること</h2></div>
+    <div class="about"><div class="aside bring"><ul><li><strong>研究から製品へ。</strong> 韓国MFDSに承認申請された医療AI製品の実運用前検証と申請文書の作成に貢献しました。</li><li><strong>データパイプライン。</strong> 多施設研究向けのWSIパイプラインと、協力会社とのデータ転送システムを構築しました。</li><li><strong>研究インフラ。</strong> チームの研究サーバー・NASを運用し、Gitの共同作業ルールを整備しました。</li><li><strong>メンタリングと査読。</strong> Codeitのメンターとして若手人材やプロジェクトチームを指導し、ML4H 2026の査読者も務めています。</li></ul></div></div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="block" id="experience">
+    <div class="head"><h2>経歴</h2></div>
+    <div>
+      <div class="role-row">
+        <div class="when"><span class="co">OMIXAI</span><span>2025.02 – 現在</span><br><span class="loc">ソウル · 旧RadiSen</span></div>
+        <div class="what">
+          <h3>AIリサーチャー</h3>
+          <div class="sub">クロスモーダル学習 · マルチオミクス · 薬剤応答</div>
+          <ul><li>プロテオミクス・RNA・H&Eを用いた薬剤応答予測のマルチオミクスR&Dを主導(進行中)</li><li>プロテオミクスに基づくIC50モデル、犬の腫瘍への薬剤推薦アルゴリズム、ADMETモデルを開発</li><li>Arc Institute Virtual Cell ChallengeへのOMIXAIチーム参加を共同主導</li><li>研究サーバー・NASを運用し、Gitの共同作業ルールと協力会社とのデータ転送システムを整備</li></ul>
+        <details class="project-detail"><summary>その他の業務</summary><ul>
+            <li>プロテオミクス・RNAとH&E病理画像を統合して薬剤応答を予測するマルチオミクスモデルの研究開発を主導(進行中)</li>
+            <li>プロテオミクスに基づく細胞株の薬剤応答(IC50)予測モデルの開発(学習データに含まれない薬剤でのleave-drug-out評価、Pearson ≥ 0.65、社内R&D・未発表)</li>
+            <li>犬の腫瘍に対する薬剤推薦アルゴリズムとADMET予測モデルの開発</li>
+            <li>Arc Institute Virtual Cell ChallengeでのOMIXAI参加チームの共同主導(多能性幹細胞のCRISPRノックダウン応答予測)</li>
+            <li>H&E画像から遺伝子発現を予測するMoSPRの共同筆頭著者(プレプリント・コード公開)</li>
+            <li>G2L論文(AAAI 2026 ワークショップ W3PHIAI 口頭発表)およびトリプルネガティブ乳がんの空間プロテオミクス研究(プレプリント、2026)の共著者</li>
+            <li>社内研究サーバー・NASの運用、Git運用ルールの策定、協力会社とのデータ転送システムの構築</li>
+          </ul></details></div>
+      </div>
+      <div class="role-row">
+        <div class="when"><span class="co">Deep Bio</span><span>2021.03 – 2025.01</span><br><span class="loc">ソウル · 九老</span></div>
+        <div class="what">
+          <h3>AIリサーチャー</h3>
+          <div class="sub">Computational Pathology · MFDS承認申請に向けたモデル検証</div>
+          <ul><li>2施設の乳がん再発研究でWSIパイプラインと予測モデルを開発</li><li>リンパ節転移検出と糸球体セグメンテーションのモデルを開発</li><li>前立腺がんの転移・再発リスクモデリングを主導</li><li>MFDS承認申請に向けたモデル検証・申請文書作成に貢献し、Dockerを用いたサーバー自動化ツールを開発</li></ul>
+        <details class="project-detail"><summary>その他の業務</summary><ul>
+            <li>2施設の乳がん再発研究(Scientific Reports 2025)の筆頭著者。WSIパイプラインを構築し、500枚以上のスライドを処理</li>
+            <li>リンパ節転移検出モデルとKPIs 2024チャレンジ向け糸球体セグメンテーションモデルの開発(WSIレベル部門2位、MICCAI 2024)。チャレンジ報告論文(Medical Image Analysis、2026)の共著者</li>
+            <li>前立腺がんの転移・再発リスクモデリングのプロジェクトを主導</li>
+            <li>AACR(2022、2023)・USCAP(2022)で乳がん病理AI研究を筆頭著者として発表。膵臓がん・乳がんの生存予測に関するポスター発表の共著者</li>
+            <li>MFDSに承認申請された医療AI製品について、実運用前のモデル検証と申請文書作成に貢献。社内サーバー自動化ツール(Docker)の開発</li>
+          </ul></details></div>
+      </div>
+      <div class="role-row">
+        <div class="when"><span class="co">Nuricon</span>2021<br><span class="loc">板橋(パンギョ)</span></div>
+        <div class="what">
+          <h3>インターン</h3>
+          <div class="sub">コンピュータビジョン</div>
+          <ul><li>駐車場向け火災検知AIシステムの開発</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="block" id="projects">
+    <div class="head"><h2>プロジェクト</h2><span class="note">マルチモーダル学習 · 解釈可能性 · 信頼できるML</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k">プロテオミクス · OMIXAI</div>
+          <h3>プロテオミクスによる薬剤応答予測</h3>
+          <div class="tagline"><span class="meta-unit">社内R&D</span> <span class="meta-unit">未発表</span></div>
+          <p>プロテオミクスから細胞株の薬剤応答(IC50)を予測するモデルを開発しました。テスト薬剤をすべて学習から除くleave-drug-out方式で評価しました(Pearson ≥ 0.65)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も別途行いました。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k">マルチオミクス · OMIXAI</div>
+          <h3>二重標的siRNA候補選定に向けたRNA–タンパク質解析</h3>
+          <div class="tagline"><span class="meta-unit"><span>遺伝子</span> <b>11,238</b></span> <span class="meta-unit"><span>Spearman中央値</span> <b>ρ 0.441</b></span> <span class="meta-unit">CPTAC GBM 100名</span></div>
+          <p>膠芽腫(GBM)のデュアルターゲットsiRNA課題の一環です。CPTAC GBM患者100名のトランスクリプトームとプロテオームを対応づけ、RNA発現がタンパク質量をどの程度反映するかを遺伝子ごとに評価しました。1,000回のpermutation、多重検定補正、変動性・低発現・欠損のフラグ、感度分析を経て、ウェットラボ実験の候補を順位付けるための根拠表にまとめました。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k">OMIXAI · 日韓共同研究</div>
+          <h3><span class="term">Pan-Sarcoma</span>：犬の腫瘍の薬剤応答予測</h3>
+          <div class="tagline"><span class="meta-unit">参加研究員</span> <span class="meta-unit"><span class="term">2025–2028</span></span> <span class="meta-unit">進行中</span> <span class="meta-unit">成果は未公開</span></div>
+          <p>Pan-Sarcomaプロテオゲノム共同研究で、日本側から提供された犬の腫瘍のプロテオミクス・H&E画像・RNAを統合し、薬剤応答予測と分子解析を行っています。肉腫から始まったデータは、現在は複数のがん種に拡大しています。</p>
+        </div>
+      </article>
+
+      <article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">サイドプロジェクト · NVIDIAハッカソン2026</div>
+          <h3>FlyGate：創薬探索と医薬品安全性監視</h3>
+          <div class="tagline"><span class="meta-unit"><span>既製NIMの検証 · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> 親和性</span> <b>ρ 0.767</b></span> <a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>NVIDIA Korea Agentic AI Hackathon 2026の参加作品(5人チーム)です。市販前の標的結合予測(FlyDiscovery)と市販後の有害事象監視(FlyVigilance)を一つのエージェントでつなぎます。BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)で構造予測から親和性まで評価するFlyDiscoveryモジュールと探索ワークベンチUIを担当しました。</p>
+        </div>
+      </article>
+
+    </div>
+
+    <details class="fold"><summary>その他の研究・開発</summary><div class="grid"><article class="card">
+        <div class="card-body">
+          <div class="k">精密腫瘍学 · OMIXAI</div>
+          <h3>獣医腫瘍CDSS・バーチャルセル</h3>
+          <div class="tagline"><span class="meta-unit">犬の薬剤推薦</span> <span class="meta-unit"><span class="term">top-k</span> ≥ 70% · 自社コホート · 社内R&D、未発表</span> <span class="meta-unit">CRISPR摂動</span></div>
+          <p>臨床意思決定支援システム(CDSS)に向け、犬の腫瘍に対する薬剤推薦アルゴリズムを開発しました。Arc Institute Virtual Cell ChallengeではOMIXAIの参加チームを共同主導し、多能性幹細胞のCRISPRノックダウン応答を予測しました。</p>
+        </div>
+      </article><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_oncotype_pipeline.png" target="_blank" rel="noopener"><img src="/assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">デジタル病理 · Deep Bio</div>
+          <h3>H&EによるOncotype DXリスク群予測</h3>
+          <div class="tagline"><span class="meta-unit">Scientific Reports 2025 · 筆頭著者 · n = 125、2施設</span> <span class="meta-unit"><span>感度 L / I / H</span> <b>0.86 / 0.75 / 0.53</b></span> <span class="meta-unit"><span>特異度 L / I / H</span> <b>0.82 / 0.80 / 0.97</b></span></div>
+          <p>他の臨床情報を用いず、H&E WSIのみで21遺伝子再発スコア(Oncotype DX)のリスク群を予測しました。パッチ単位の分類結果を信頼度(confidence)で選別し、多数決でスライド単位の低/中/高リスク群を判定しました。</p>
+        </div>
+      </article><article class="card">
+        <div class="card-body">
+          <div class="k">その他のR&D · Deep Bio</div>
+          <h3>病理画像のOOD考慮型能動学習 · ADMET/DTI</h3>
+          <div class="tagline"><span class="meta-unit">ADMET</span> <span class="meta-unit">DTI</span> <span class="meta-unit">OOD検出</span> <span class="meta-unit">能動学習</span></div>
+          <p>創薬初期の物性プロファイリングに向け、ADMET予測と薬物–標的相互作用のモデリングを行いました。病理画像のOODサンプルを定義してラベル付けを効率化する能動学習フレームワークも開発しました。社内R&Dのため未公開です。</p>
+        </div>
+      </article><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_brain_ct.jpg" target="_blank" rel="noopener"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">医療画像 · SK / 亜洲大学病院</div>
+          <h3>CT脳出血検出</h3>
+          <div class="tagline"><span class="meta-unit">2D + 3D セグメンテーション</span> <span class="meta-unit">ドメイン汎化</span> <a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>脳出血領域の2D・3Dセグメンテーションとスライス単位の分類です。外部公開データでドメイン汎化を検証し、<span class="term">class-activation</span> mapで分類の信頼性を点検しました(<span class="term">U-Net</span> vs DeepLab)。</p>
+        </div>
+      </article></div></details>
+    <p class="earlier">産業用ビジョン、表形式データML、データエンジニアリング、セグメンテーションの頑健性に関する初期の取り組み(2019–2020)は<a href="https://github.com/Geongyu" target="_blank" rel="noopener">GitHub</a>でご覧いただけます。</p>
   </section>
 
   <!-- PUBLICATIONS -->
@@ -664,171 +798,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="block" id="projects">
-    <div class="head"><h2>プロジェクト</h2><span class="note">マルチモーダル学習 · 解釈可能性 · 信頼できるML</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
-    <div class="grid">
 
-      <article class="card">
-        <div class="card-body">
-          <div class="k">プロテオミクス · OMIXAI</div>
-          <h3>プロテオミクスによる薬剤応答予測</h3>
-          <div class="tagline"><span class="meta-unit">社内R&D</span> <span class="meta-unit">未発表</span></div>
-          <p>プロテオミクスから細胞株の薬剤応答(IC50)を予測するモデルを開発しました。テスト薬剤をすべて学習から除くleave-drug-out方式で評価しました(Pearson ≥ 0.65)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も別途行いました。</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k">マルチオミクス · OMIXAI</div>
-          <h3>二重標的siRNA候補選定に向けたRNA–タンパク質解析</h3>
-          <div class="tagline"><span class="meta-unit"><span>遺伝子</span> <b>11,238</b></span> <span class="meta-unit"><span>Spearman中央値</span> <b>ρ 0.441</b></span> <span class="meta-unit">CPTAC GBM 100名</span></div>
-          <p>膠芽腫(GBM)のデュアルターゲットsiRNA課題の一環です。CPTAC GBM患者100名のトランスクリプトームとプロテオームを対応づけ、RNA発現がタンパク質量をどの程度反映するかを遺伝子ごとに評価しました。1,000回のpermutation、多重検定補正、変動性・低発現・欠損のフラグ、感度分析を経て、ウェットラボ実験の候補を順位付けるための根拠表にまとめました。</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k">OMIXAI · 日韓共同研究</div>
-          <h3><span class="term">Pan-Sarcoma</span>：犬の腫瘍の薬剤応答予測</h3>
-          <div class="tagline"><span class="meta-unit">参加研究員</span> <span class="meta-unit"><span class="term">2025–2028</span></span> <span class="meta-unit">進行中</span> <span class="meta-unit">成果は未公開</span></div>
-          <p>Pan-Sarcomaプロテオゲノム共同研究で、日本側から提供された犬の腫瘍のプロテオミクス・H&E画像・RNAを統合し、薬剤応答予測と分子解析を行っています。肉腫から始まったデータは、現在は複数のがん種に拡大しています。</p>
-        </div>
-      </article>
-
-      <article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">サイドプロジェクト · NVIDIAハッカソン2026</div>
-          <h3>FlyGate：創薬探索と医薬品安全性監視</h3>
-          <div class="tagline"><span class="meta-unit"><span>既製NIMの検証 · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> 親和性</span> <b>ρ 0.767</b></span> <a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>NVIDIA Korea Agentic AI Hackathon 2026の参加作品(5人チーム)です。市販前の標的結合予測(FlyDiscovery)と市販後の有害事象監視(FlyVigilance)を一つのエージェントでつなぎます。BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)で構造予測から親和性まで評価するFlyDiscoveryモジュールと探索ワークベンチUIを担当しました。</p>
-        </div>
-      </article>
-
-    </div>
-
-    <details class="fold"><summary>その他の研究・開発</summary><div class="grid"><article class="card">
-        <div class="card-body">
-          <div class="k">精密腫瘍学 · OMIXAI</div>
-          <h3>獣医腫瘍CDSS・バーチャルセル</h3>
-          <div class="tagline"><span class="meta-unit">犬の薬剤推薦</span> <span class="meta-unit"><span class="term">top-k</span> ≥ 70% · 自社コホート · 社内R&D、未発表</span> <span class="meta-unit">CRISPR摂動</span></div>
-          <p>臨床意思決定支援システム(CDSS)に向け、犬の腫瘍に対する薬剤推薦アルゴリズムを開発しました。Arc Institute Virtual Cell ChallengeではOMIXAIの参加チームを共同主導し、多能性幹細胞のCRISPRノックダウン応答を予測しました。</p>
-        </div>
-      </article><article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_oncotype_pipeline.png" target="_blank" rel="noopener"><img src="/assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">デジタル病理 · Deep Bio</div>
-          <h3>H&EによるOncotype DXリスク群予測</h3>
-          <div class="tagline"><span class="meta-unit">Scientific Reports 2025 · 筆頭著者 · n = 125、2施設</span> <span class="meta-unit"><span>感度 L / I / H</span> <b>0.86 / 0.75 / 0.53</b></span> <span class="meta-unit"><span>特異度 L / I / H</span> <b>0.82 / 0.80 / 0.97</b></span></div>
-          <p>他の臨床情報を用いず、H&E WSIのみで21遺伝子再発スコア(Oncotype DX)のリスク群を予測しました。パッチ単位の分類結果を信頼度(confidence)で選別し、多数決でスライド単位の低/中/高リスク群を判定しました。</p>
-        </div>
-      </article><article class="card">
-        <div class="card-body">
-          <div class="k">その他のR&D · Deep Bio</div>
-          <h3>病理画像のOOD考慮型能動学習 · ADMET/DTI</h3>
-          <div class="tagline"><span class="meta-unit">ADMET</span> <span class="meta-unit">DTI</span> <span class="meta-unit">OOD検出</span> <span class="meta-unit">能動学習</span></div>
-          <p>創薬初期の物性プロファイリングに向け、ADMET予測と薬物–標的相互作用のモデリングを行いました。病理画像のOODサンプルを定義してラベル付けを効率化する能動学習フレームワークも開発しました。社内R&Dのため未公開です。</p>
-        </div>
-      </article><article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_brain_ct.jpg" target="_blank" rel="noopener"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">医療画像 · SK / 亜洲大学病院</div>
-          <h3>CT脳出血検出</h3>
-          <div class="tagline"><span class="meta-unit">2D + 3D セグメンテーション</span> <span class="meta-unit">ドメイン汎化</span> <a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>脳出血領域の2D・3Dセグメンテーションとスライス単位の分類です。外部公開データでドメイン汎化を検証し、<span class="term">class-activation</span> mapで分類の信頼性を点検しました(<span class="term">U-Net</span> vs DeepLab)。</p>
-        </div>
-      </article></div></details><div class="subhead">
-      <h3>初期のMLエンジニアリング</h3>
-    </div>
-    <details class="fold">
-      <summary>2019–2020 · 産業用ビジョン・表形式データ・データエンジニアリング・セグメンテーションの頑健性 · 全4件</summary>
-    <div class="grid">
-      <article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_screw.jpg" target="_blank" rel="noopener"><img src="/assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">コンピュータビジョン · Fronttec</div>
-          <h3>ねじ不良判別</h3>
-          <div class="tagline"><span class="meta-unit">5クラス</span> <span class="meta-unit"><b>1枚0.3秒未満</b></span></div>
-          <p>製造ラインの不良検出です(969枚、5クラス、1枚0.3秒以内の制約)。分類前に、深層学習ではなくマシンビジョンでねじ位置を特定して背景を除去し、精度を高めました。</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k">表形式データML · Zigbang</div>
-          <h3>マンション成約価格予測</h3>
-          <div class="tagline"><span class="meta-unit">160万件</span> <span class="meta-unit">指標: RMSE</span></div>
-          <p>ソウル・釜山の成約価格を160万件のデータで予測しました。郵便番号で住所を再照合して誤記の地域を修正し、元データにない公共API特徴量(周辺の地下鉄・学校)を追加しました。</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k">データエンジニアリング · ソウル科学技術大</div>
-          <h3>音楽チャート収集パイプラインとDB</h3>
-          <div class="tagline"><span class="meta-unit">6プラットフォーム</span> <span class="meta-unit">日次収集</span> <span class="meta-unit">スキーマ設計</span> <a href='https://github.com/Geongyu/2020-Database-Project' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>Melon・Genie・VIBE・YouTube Music・Apple Music・Bugsの6プラットフォームから、Top 100を毎日同時刻に収集しました。曲・アーティスト単位で統合してDBに格納し、チャートイン/アウトによる欠損はNULL許容カラム、多言語タイトルはnvarcharで扱うスキーマを設計しました。</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k">コンピュータビジョン · ソウル科学技術大</div>
-          <h3>セグメンテーションモデルの敵対的頑健性</h3>
-          <div class="tagline"><span class="meta-unit">敵対的学習</span> <span class="meta-unit">Label smoothing</span> <span class="meta-unit"><span class="term">Cut-out</span></span> <a href='https://github.com/Geongyu/2019_DL_Project' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>PASCAL VOC(20クラス、1,928枚、4,203オブジェクト)でU-Netセグメンテーションにadversarial training・label smoothing・cut-outを単独/組み合わせで適用し、頑健性と精度のトレードオフを比較しました。医療AIにも引き継いだ「頑健性優先」の出発点です。</p>
-        </div>
-      </article>
-
-    </div>
-    </details>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="block" id="experience">
-    <div class="head"><h2>経歴</h2></div>
-    <div>
-      <div class="role-row">
-        <div class="when"><span class="co">OMIXAI</span><span>2025.02 – 現在</span><br><span class="loc">ソウル · 旧RadiSen</span></div>
-        <div class="what">
-          <h3>AIリサーチャー</h3>
-          <div class="sub">クロスモーダル学習 · マルチオミクス · 薬剤応答</div>
-          <ul><li>プロテオミクス・RNA・H&Eを用いた薬剤応答予測のマルチオミクスR&Dを主導(進行中)</li><li>プロテオミクスに基づくIC50モデル、犬の腫瘍への薬剤推薦アルゴリズム、ADMETモデルを開発</li><li>Arc Institute Virtual Cell ChallengeへのOMIXAIチーム参加を共同主導</li><li>研究サーバー・NASを運用し、Gitの共同作業ルールと協力会社とのデータ転送システムを整備</li></ul>
-        <details class="project-detail"><summary>その他の業務</summary><ul>
-            <li>プロテオミクス・RNAとH&E病理画像を統合して薬剤応答を予測するマルチオミクスモデルの研究開発を主導(進行中)</li>
-            <li>プロテオミクスに基づく細胞株の薬剤応答(IC50)予測モデルの開発(学習データに含まれない薬剤でのleave-drug-out評価、Pearson ≥ 0.65、社内R&D・未発表)</li>
-            <li>犬の腫瘍に対する薬剤推薦アルゴリズムとADMET予測モデルの開発</li>
-            <li>Arc Institute Virtual Cell ChallengeでのOMIXAI参加チームの共同主導(多能性幹細胞のCRISPRノックダウン応答予測)</li>
-            <li>H&E画像から遺伝子発現を予測するMoSPRの共同筆頭著者(プレプリント・コード公開)</li>
-            <li>G2L論文(AAAI 2026 ワークショップ W3PHIAI 口頭発表)およびトリプルネガティブ乳がんの空間プロテオミクス研究(プレプリント、2026)の共著者</li>
-            <li>社内研究サーバー・NASの運用、Git運用ルールの策定、協力会社とのデータ転送システムの構築</li>
-          </ul></details></div>
-      </div>
-      <div class="role-row">
-        <div class="when"><span class="co">Deep Bio</span><span>2021.03 – 2025.01</span><br><span class="loc">ソウル · 九老</span></div>
-        <div class="what">
-          <h3>AIリサーチャー</h3>
-          <div class="sub">Computational Pathology · MFDS承認申請に向けたモデル検証</div>
-          <ul><li>2施設の乳がん再発研究でWSIパイプラインと予測モデルを開発</li><li>リンパ節転移検出と糸球体セグメンテーションのモデルを開発</li><li>前立腺がんの転移・再発リスクモデリングを主導</li><li>MFDS承認申請に向けたモデル検証・申請文書作成に貢献し、Dockerを用いたサーバー自動化ツールを開発</li></ul>
-        <details class="project-detail"><summary>その他の業務</summary><ul>
-            <li>2施設の乳がん再発研究(Scientific Reports 2025)の筆頭著者。WSIパイプラインを構築し、500枚以上のスライドを処理</li>
-            <li>リンパ節転移検出モデルとKPIs 2024チャレンジ向け糸球体セグメンテーションモデルの開発(WSIレベル部門2位、MICCAI 2024)。チャレンジ報告論文(Medical Image Analysis、2026)の共著者</li>
-            <li>前立腺がんの転移・再発リスクモデリングのプロジェクトを主導</li>
-            <li>AACR(2022、2023)・USCAP(2022)で乳がん病理AI研究を筆頭著者として発表。膵臓がん・乳がんの生存予測に関するポスター発表の共著者</li>
-            <li>MFDSに承認申請された医療AI製品について、実運用前のモデル検証と申請文書作成に貢献。社内サーバー自動化ツール(Docker)の開発</li>
-          </ul></details></div>
-      </div>
-      <div class="role-row">
-        <div class="when"><span class="co">Nuricon</span>2021<br><span class="loc">板橋(パンギョ)</span></div>
-        <div class="what">
-          <h3>インターン</h3>
-          <div class="sub">コンピュータビジョン</div>
-          <ul><li>駐車場向け火災検知AIシステムの開発</li></ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- EDUCATION -->
   <section class="block" id="education">
@@ -900,9 +870,10 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <!-- CONTACT -->
   <section class="block contact" id="contact">
 
-    <h2 class="big">論文とコード</h2>
-    <p class="sub">論文はGoogle Scholarで、コードはGitHubでご覧いただけます。</p>
+    <h2 class="big">連絡先</h2>
+    <p class="sub">研究協力や採用に関するお問い合わせはメールでご連絡ください。論文はGoogle Scholar、コードはGitHubでご覧いただけます。</p>
     <div class="links">
+      <a class="chip cv" href="mailto:rjsrb365@gmail.com">rjsrb365@gmail.com</a>
       <a class="chip" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
       <a class="chip" href="https://github.com/Geongyu" target="_blank" rel="noopener">github.com/Geongyu</a>
     </div>
@@ -911,7 +882,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 </main>
 
 <footer><span>イ・ゴンギュ · 韓国・ソウル</span>
-  <span class="upd">最終更新 2026-10-13</span>
+  <span class="upd">最終更新 2026-10-20</span>
 </footer>
 
 </body>

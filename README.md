@@ -151,7 +151,7 @@ duplicate headline metrics or hiding page content behind entrance animations.
 
 ### CV PDFs
 
-The CV source lives in `cv/` (`content.py` for text, `cv.css` for layout). `build_cv.py` uses WeasyPrint when it is installed and otherwise prints with headless Chrome or Edge (set `CHROME` to point at a specific browser). Fonts load from the web, so build with internet access. The CV lists GitHub, Google Scholar and the portfolio; email is intentionally left out.
+The CV source lives in `cv/` (`content.py` for text, `cv.css` for layout). `build_cv.py` uses WeasyPrint when it is installed and otherwise prints with headless Chrome or Edge (set `CHROME` to point at a specific browser). Fonts load from the web, so build with internet access. The CV lists email, GitHub, Google Scholar and the portfolio; the phone number is intentionally left out.
 
 ```bash
 python3 cv/build_cv.py assets   # → assets/Geongyu_Lee_CV_{EN,KO,JA}.pdf
