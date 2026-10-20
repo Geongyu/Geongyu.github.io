@@ -83,7 +83,7 @@ EN = {
         "at Deep Bio I contributed to pre-deployment model validation for a medical-AI product submitted to "
         "Korea's Ministry of Food and Drug Safety (MFDS)."),
     "h_pubs": "Selected Publications",
-    "scholar_note": "Google Scholar · 58 citations · h-index 5 · i10-index 3 · as of Sep 2026",
+    "scholar_note": "Google Scholar · 60 citations · h-index 5 · i10-index 3 · as of Oct 2026",
     "h_exp": "Experience",
     "h_proj": "Selected Projects",
     "h_edu": "Education",
@@ -167,7 +167,7 @@ KO = {
         "산업계 R&amp;D 경력은 5년 이상이며, 딥바이오에서는 식약처에 인허가를 신청한 의료 AI 제품의 출시 전 모델 "
         "검증에 기여했습니다."),
     "h_pubs": "주요 논문",
-    "scholar_note": "Google Scholar · 인용 58회 · h-index 5 · i10-index 3 · 2026년 9월 기준",
+    "scholar_note": "Google Scholar · 인용 60회 · h-index 5 · i10-index 3 · 2026년 10월 기준",
     "h_exp": "경력",
     "h_proj": "대표 프로젝트",
     "h_edu": "학력",
@@ -252,7 +252,7 @@ JA = {
         "企業でのR&amp;D経験は5年以上で、Deep Bioでは韓国食品医薬品安全処(MFDS)に承認申請された医療AI製品の"
         "実運用前モデル検証に貢献しました。"),
     "h_pubs": "主要論文",
-    "scholar_note": "Google Scholar · 被引用数 58 · h-index 5 · i10-index 3 · 2026年9月時点",
+    "scholar_note": "Google Scholar · 被引用数 60 · h-index 5 · i10-index 3 · 2026年10月時点",
     "h_exp": "職務経歴",
     "h_proj": "主なプロジェクト",
     "h_edu": "学歴",
