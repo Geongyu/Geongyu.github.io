@@ -195,6 +195,10 @@ section.block { padding: 68px 0; border-top: 1px solid var(--line); scroll-margi
 .aside li { color: var(--muted); font-size: 16px; line-height: 1.7; margin-bottom: 7px; padding-left: 3px; }
 .aside li:last-child { margin-bottom: 0; }
 .aside li strong { color: var(--fg); }
+.evidence li .it { display: block; color: var(--fg); }
+.evidence li .ev { display: block; font-size: 14px; line-height: 1.6; }
+.aside.bring { margin-top: 0; }
+.earlier { color: var(--muted); font-size: 15px; line-height: 1.7; margin-top: 26px; }
 
 .pubs { display: flex; flex-direction: column; }
 .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 30px; align-items: start; padding: 25px 0; border-top: 1px solid var(--line); }
@@ -392,12 +396,12 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <div class="brand"><b>Geongyu&nbsp;Lee</b><span class="bsub"> · 이건규</span></div>
   <div class="topright">
     <nav class="nav">
+      <a class="m" href="#experience">경력</a>
+      <a href="#projects">프로젝트</a>
       <a class="m" href="#publications">논문</a>
       <a href="#conferences">학회</a>
-      <a href="#projects">프로젝트</a>
-      <a class="m" href="#experience">경력</a>
       <a href="#education">학력</a>
-      <a class="m" href="#contact">링크</a>
+      <a class="m" href="#contact">연락처</a>
     </nav>
     <nav class="langsw" aria-label="Language">
       <a class="langopt" href="/" hreflang="en" lang="en">EN</a>
@@ -419,7 +423,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
       <h1>Geongyu Lee<span class="kr">이건규</span></h1>
       <p class="role">AI 리서처 · OMIXAI</p>
       <p class="research-focus">Multimodal Learning · Interpretability · Reliable ML</p>
-      <p class="lede">서로 다른 데이터에서 정보를 연결하고, 모델이 무엇을 학습하며 어떤 근거로 예측하는지 연구합니다. 아이디어를 모델과 실험으로 구체화하고, 새로운 데이터에서도 예측과 설명이 얼마나 유효한지 검증합니다.</p>
+      <p class="lede">학습에 쓰지 않은 데이터, 예를 들어 새로운 병원이나 처음 보는 약물에서도 유지되는 머신러닝 모델을 만듭니다. 이미지·단백질·RNA처럼 서로 다른 데이터를 연결하고, 예측을 믿기 전에 그 근거가 어디서 오는지 확인합니다.</p>
       <div class="chips">
         <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_KO.pdf" download>이력서 (PDF)</a>
         <a class="chip" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
@@ -429,9 +433,9 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
     <div class="ledger" aria-label="Selected publications">
       <div class="ledger-h"><span>대표 연구</span></div>
-      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t">MoSPR: 해석 가능한 크로스모달 예측</span><span class="v first"><span class="meta-unit">2026</span> <span class="meta-unit">프리프린트</span> <span class="meta-unit">공동 제1저자</span></span></a>
-      <a class="pub" href="#molecular-substitution"><span class="t">Predictability ≠ Substitutability: 의사결정 비용</span><span class="v first"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">포스터 채택</span> <span class="meta-unit">제1저자</span></span></a>
-      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t">다기관 데이터에서의 예측 모델 검증</span><span class="v first"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">제1저자</span></span></a>
+      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t">MoSPR: 조직 이미지로 유전자 발현 예측, 영역별로 분해 가능</span><span class="v first"><span class="meta-unit">2026</span> <span class="meta-unit">프리프린트</span> <span class="meta-unit">공동 제1저자</span></span></a>
+      <a class="pub" href="#molecular-substitution"><span class="t">정확한 모델도 분자검사를 대체하지 못하는 경우</span><span class="v first"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">포스터 채택</span> <span class="meta-unit">제1저자</span></span></a>
+      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t">H&E만으로 분자검사 위험군 예측, 2개 병원 검증</span><span class="v first"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">제1저자</span></span></a>
 
     <a class="ledger-footer" href="#publications">전체 논문 보기 →</a></div>
   </header>
@@ -444,13 +448,143 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
     <div class="about">
 <p>산업 현장에서 5년 이상 머신러닝 연구개발을 수행하며, 연구 질문 설정부터 데이터 분석, 모델 구현, 실험 설계와 논문 작성까지 이어왔습니다.</p>
 <p>관심의 중심에는 모델이 학습한 표현, 예측의 근거, 그리고 그 결과를 신뢰할 수 있는 조건이 있습니다. 서로 다른 데이터를 연결하는 학습 방법과 해석 가능한 모델을 연구하고, 분포 변화와 불확실성을 고려해 평가합니다.</p>
-<p>의료·생명과학은 이러한 질문을 탐구해 온 주요 응용 분야입니다. 이 경험을 바탕으로 다양한 분야의 데이터와 문제로 연구를 확장하고자 합니다.</p>
+<p>이 연구의 대부분은 라벨이 비싸고, 병원마다 데이터 분포가 다르며, 규제 검증까지 통과해야 하는 의료 데이터에서 이뤄졌습니다. 이런 조건에서 검증한 방법은 다른 분야에도 그대로 통하며, 새로운 데이터와 문제에 적용하고자 합니다.</p>
       <div class="aside">
         <h3>연구 관심사</h3>
-<ul><li>멀티모달 학습과 표현 학습</li><li>모델 해석과 설명가능한 AI</li><li>일반화와 강건성</li><li>불확실성과 신뢰성 평가</li></ul>
+<ul class="evidence"><li><span class="it">멀티모달 학습과 표현 학습</span><span class="ev">H&E 이미지와 프로테오믹스·RNA 통합(MoSPR, 약물 반응 모델)</span></li><li><span class="it">모델 해석과 설명가능한 AI</span><span class="ev">예측을 전역·영역별 프로그램으로 분해(MoSPR), class-activation map 점검</span></li><li><span class="it">일반화와 강건성</span><span class="ev">병원 단위 분리 검증, leave-drug-out 분할, 기관 교란 점검</span></li><li><span class="it">불확실성과 신뢰성 평가</span><span class="ev">불확실한 영역의 예측 보류(MurSS), OOD 기반 능동 학습, 사전 등록 프로토콜</span></li></ul>
 
       </div>
     </div>
+  </section>
+
+
+  <!-- STRENGTHS -->
+  <section class="block" id="strengths">
+    <div class="head"><h2>팀에 기여할 수 있는 것</h2></div>
+    <div class="about"><div class="aside bring"><ul><li><strong>연구에서 제품까지.</strong> 식약처(MFDS)에 인허가를 신청한 의료 AI 제품의 출시 전 검증과 인허가 문서 작성에 기여했습니다.</li><li><strong>데이터 파이프라인.</strong> 다기관 연구용 WSI 파이프라인과 협력사 데이터 전송 시스템을 구축했습니다.</li><li><strong>연구 인프라.</strong> 팀의 연구 서버·NAS를 운영하고 Git 협업 규칙을 만들었습니다.</li><li><strong>멘토링과 심사.</strong> 코드잇 멘토로 주니어 인력과 프로젝트 팀을 지도하고, ML4H 2026 리뷰어로 활동합니다.</li></ul></div></div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="block" id="experience">
+    <div class="head"><h2>경력</h2></div>
+    <div>
+      <div class="role-row">
+        <div class="when"><span class="co">OMIXAI</span><span>2025.02 – 현재</span><br><span class="loc">서울 · 구 래디센</span></div>
+        <div class="what">
+          <h3>AI 리서처</h3>
+          <div class="sub">크로스모달 학습 · 멀티오믹스 · 약물 반응</div>
+          <ul><li>프로테오믹스·RNA·H&E를 활용한 약물 반응 예측 멀티오믹스 R&D 주도(진행 중)</li><li>프로테오믹스 기반 IC50 모델, 반려견 종양 약물 추천 알고리즘, ADMET 모델 개발</li><li>Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도</li><li>연구 서버·NAS 운영, Git 협업 규칙 수립, 협력사 데이터 전송 시스템 구축</li></ul>
+        <details class="project-detail"><summary>추가 업무</summary><ul>
+            <li>프로테오믹스·RNA와 H&E 병리를 통합한 약물 반응 예측 멀티오믹스 모델 R&D 주도(진행 중)</li>
+            <li>프로테오믹스 기반 세포주 약물 반응(IC50) 예측 모델 개발(학습에 없던 약물 대상 leave-drug-out 평가, Pearson ≥ 0.65, 사내 R&D·미공개)</li>
+            <li>반려견 종양 약물 추천 알고리즘 및 ADMET 예측 모델 개발</li>
+            <li>Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도(만능줄기세포 CRISPR 넉다운 반응 예측)</li>
+            <li>H&E 기반 유전자 발현 예측 모델 MoSPR 논문 공동 제1저자(프리프린트·코드 공개)</li>
+            <li>G2L 논문(AAAI 2026 워크숍 W3PHIAI 구두 발표) 및 삼중음성 유방암 공간 프로테오믹스 프리프린트(2026) 공저자</li>
+            <li>사내 연구 서버·NAS 운영, Git 협업 규칙 수립, 협력사와의 데이터 전송 시스템 구축</li>
+          </ul></details></div>
+      </div>
+      <div class="role-row">
+        <div class="when"><span class="co">딥바이오</span><span>2021.03 – 2025.01</span><br><span class="loc">서울 · 구로</span></div>
+        <div class="what">
+          <h3>AI 리서처</h3>
+          <div class="sub">Computational Pathology · 식약처(MFDS) 인허가용 모델 검증</div>
+          <ul><li>2개 병원 유방암 재발 연구의 WSI 파이프라인과 예측 모델 개발</li><li>림프절 전이 검출 및 사구체 분할 모델 개발</li><li>전립선암 전이·재발 위험 모델링 주도</li><li>MFDS 인허가 신청을 위한 모델 검증·문서 작성 기여, Docker 기반 서버 자동화 도구 개발</li></ul>
+        <details class="project-detail"><summary>추가 업무</summary><ul>
+            <li>2개 병원 유방암 재발 예측 연구 제1저자(Scientific Reports 2025), WSI 500장 이상을 처리한 파이프라인 구축</li>
+            <li>림프절 전이 검출 모델 및 KPIs 2024 챌린지 사구체 분할 모델 개발(전체 슬라이드 트랙 2위, MICCAI 2024), 챌린지 결과 논문(Medical Image Analysis, 2026) 공저자</li>
+            <li>전립선암 전이·재발 위험 모델링 프로젝트 주도</li>
+            <li>AACR(2022, 2023)·USCAP(2022)에서 유방암 병리 AI 연구 제1저자 발표, 췌장암·유방암 생존 예측 포스터 공저자</li>
+            <li>식약처(MFDS)에 인허가를 신청한 의료 AI 제품의 출시 전 모델 검증 및 인허가 문서 작성 기여, Docker 기반 사내 서버 자동화 도구 개발</li>
+          </ul></details></div>
+      </div>
+      <div class="role-row">
+        <div class="when"><span class="co">누리콘</span>2021<br><span class="loc">판교</span></div>
+        <div class="what">
+          <h3>인턴</h3>
+          <div class="sub">컴퓨터 비전</div>
+          <ul><li>주차장 화재 감지 AI 시스템 개발</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="block" id="projects">
+    <div class="head"><h2>프로젝트</h2><span class="note">멀티모달 학습 · 설명가능성 · 신뢰할 수 있는 ML</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k">프로테오믹스 · OMIXAI</div>
+          <h3>프로테오믹스로 약물 반응 예측</h3>
+          <div class="tagline"><span class="meta-unit">사내 R&D</span> <span class="meta-unit">미공개</span></div>
+          <p>프로테오믹스 데이터로 세포주의 약물 반응(IC50)을 예측하는 모델을 개발했습니다. 학습에 없던 약물로만 테스트하는 <span class="term">leave-drug-out</span> 방식으로 평가했습니다(Pearson ≥ 0.65). LoRA/PEFT 기반 자기지도 프로테옴 표현 학습도 별도로 진행했습니다.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k">멀티오믹스 · OMIXAI</div>
+          <h3>듀얼타겟 siRNA 후보 선정을 위한 RNA–단백질 분석</h3>
+          <div class="tagline"><span class="meta-unit"><span>유전자</span> <b>11,238개</b></span> <span class="meta-unit"><span>Spearman 중앙값</span> <b>ρ 0.441</b></span> <span class="meta-unit">CPTAC GBM 100명</span></div>
+          <p>교모세포종(GBM) 듀얼타겟 siRNA 과제의 일부입니다. CPTAC GBM 환자 100명의 전사체와 단백체를 매칭해, 유전자별로 RNA 발현이 단백질 발현을 얼마나 반영하는지 평가했습니다. 1,000회 permutation으로 귀무분포를 구하고 다중검정 보정을 적용했습니다. 변동성·저발현·결측 지표와 민감도 점검을 더해 웻랩 후보 선정용 근거표로 정리했습니다.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k">OMIXAI · 한·일 공동연구</div>
+          <h3><span class="term">Pan-Sarcoma</span>: 반려견 종양의 약물 반응 예측</h3>
+          <div class="tagline"><span class="meta-unit">참여연구원</span> <span class="meta-unit"><span class="term">2025–2028</span></span> <span class="meta-unit">진행 중</span> <span class="meta-unit">결과 미공개</span></div>
+          <p><span class="term">Pan-Sarcoma</span> 프로테오지노믹스 공동연구에서 일본 측이 제공한 반려견 종양의 프로테오믹스·H&E·RNA 데이터를 통합해 약물 반응 예측과 분자 분석을 진행하고 있습니다. 육종으로 시작한 데이터는 현재 여러 암종으로 확대되었습니다.</p>
+        </div>
+      </article>
+
+      <article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">사이드 프로젝트 · NVIDIA 해커톤 2026</div>
+          <h3>FlyGate: 신약 탐색과 약물 안전성 감시</h3>
+          <div class="tagline"><span class="meta-unit"><span>기성 NIM 모델 점검 · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> 친화도</span> <b>ρ 0.767</b></span> <a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>5인 팀으로 참가한 NVIDIA Korea Agentic AI Hackathon 2026 출품작입니다. 시판 전 표적 결합 예측(FlyDiscovery)과 시판 후 이상사례 감시(FlyVigilance)를 하나의 에이전트로 잇습니다. 이 중 FlyDiscovery 모듈과 탐색 워크벤치 UI를 개발했습니다. FlyDiscovery는 BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)으로 후보 물질을 구조 예측부터 결합 친화도까지 평가합니다.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <details class="fold"><summary>추가 연구와 개발</summary><div class="grid"><article class="card">
+        <div class="card-body">
+          <div class="k">정밀종양학 · OMIXAI</div>
+          <h3>수의 종양 CDSS & 버추얼 셀</h3>
+          <div class="tagline"><span class="meta-unit">반려견 약물 추천</span> <span class="meta-unit"><span class="term">top-k</span> ≥ 70% · 자체 코호트 · 사내 R&D, 미공개</span> <span class="meta-unit">CRISPR 섭동</span></div>
+          <p>임상 의사결정 지원 시스템(CDSS) 구축을 목표로 반려견 종양 약물 추천 알고리즘을 개발했습니다. Arc Institute Virtual Cell Challenge에서는 OMIXAI 참가팀을 공동 주도해 만능줄기세포의 CRISPR 넉다운 반응을 예측했습니다.</p>
+        </div>
+      </article><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_oncotype_pipeline.png" target="_blank" rel="noopener"><img src="/assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">디지털 병리 · 딥바이오</div>
+          <h3>H&E로 Oncotype DX 위험군 예측</h3>
+          <div class="tagline"><span class="meta-unit">Scientific Reports 2025 · 제1저자 · n = 125, 2개 병원</span> <span class="meta-unit"><span>민감도 저 / 중 / 고</span> <b>0.86 / 0.75 / 0.53</b></span> <span class="meta-unit"><span>특이도 저 / 중 / 고</span> <b>0.82 / 0.80 / 0.97</b></span></div>
+          <p>다른 임상 정보 없이 H&E WSI만으로 21-유전자 재발 점수(Oncotype DX)의 위험군을 예측했습니다. 패치 단위로 분류한 뒤 신뢰도(confidence) 기반 선별과 다수결로 슬라이드별 저·중·고위험군을 판정했습니다.</p>
+        </div>
+      </article><article class="card">
+        <div class="card-body">
+          <div class="k">기타 R&D · 딥바이오</div>
+          <h3>병리 OOD 기반 액티브 러닝 · ADMET/DTI</h3>
+          <div class="tagline"><span class="meta-unit">ADMET</span> <span class="meta-unit">DTI</span> <span class="meta-unit">OOD 검출</span> <span class="meta-unit">액티브 러닝</span></div>
+          <p>초기 약물 물성 프로파일링을 위한 ADMET 예측과 약물-표적 상호작용 모델링을 진행했습니다. 병리 이미지에서 OOD 샘플을 정의해 라벨링 효율을 높이는 액티브 러닝 프레임워크도 개발했습니다. 사내 R&D라 공개된 성과는 없습니다.</p>
+        </div>
+      </article><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_brain_ct.jpg" target="_blank" rel="noopener"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">의료영상 · SK / 아주대병원</div>
+          <h3>CT 뇌출혈 검출</h3>
+          <div class="tagline"><span class="meta-unit">2D + 3D 분할</span> <span class="meta-unit">도메인 일반화</span> <a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>뇌출혈 영역을 2D·3D로 분할하고 슬라이스 단위로 분류했습니다. 외부 공개 데이터로 도메인 일반화를 검증했고, <span class="term">class-activation</span> map으로 분류 결과의 신뢰성을 점검했습니다(<span class="term">U-Net</span> vs DeepLab).</p>
+        </div>
+      </article></div></details>
+    <p class="earlier">산업용 비전, 정형 데이터 ML, 데이터 엔지니어링, 분할 모델 견고성을 다룬 초기 작업(2019–2020)은 <a href="https://github.com/Geongyu" target="_blank" rel="noopener">GitHub</a>에서 볼 수 있습니다.</p>
   </section>
 
   <!-- PUBLICATIONS -->
@@ -664,171 +798,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section class="block" id="projects">
-    <div class="head"><h2>프로젝트</h2><span class="note">멀티모달 학습 · 설명가능성 · 신뢰할 수 있는 ML</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
-    <div class="grid">
 
-      <article class="card">
-        <div class="card-body">
-          <div class="k">프로테오믹스 · OMIXAI</div>
-          <h3>프로테오믹스로 약물 반응 예측</h3>
-          <div class="tagline"><span class="meta-unit">사내 R&D</span> <span class="meta-unit">미공개</span></div>
-          <p>프로테오믹스 데이터로 세포주의 약물 반응(IC50)을 예측하는 모델을 개발했습니다. 학습에 없던 약물로만 테스트하는 <span class="term">leave-drug-out</span> 방식으로 평가했습니다(Pearson ≥ 0.65). LoRA/PEFT 기반 자기지도 프로테옴 표현 학습도 별도로 진행했습니다.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k">멀티오믹스 · OMIXAI</div>
-          <h3>듀얼타겟 siRNA 후보 선정을 위한 RNA–단백질 분석</h3>
-          <div class="tagline"><span class="meta-unit"><span>유전자</span> <b>11,238개</b></span> <span class="meta-unit"><span>Spearman 중앙값</span> <b>ρ 0.441</b></span> <span class="meta-unit">CPTAC GBM 100명</span></div>
-          <p>교모세포종(GBM) 듀얼타겟 siRNA 과제의 일부입니다. CPTAC GBM 환자 100명의 전사체와 단백체를 매칭해, 유전자별로 RNA 발현이 단백질 발현을 얼마나 반영하는지 평가했습니다. 1,000회 permutation으로 귀무분포를 구하고 다중검정 보정을 적용했습니다. 변동성·저발현·결측 지표와 민감도 점검을 더해 웻랩 후보 선정용 근거표로 정리했습니다.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k">OMIXAI · 한·일 공동연구</div>
-          <h3><span class="term">Pan-Sarcoma</span>: 반려견 종양의 약물 반응 예측</h3>
-          <div class="tagline"><span class="meta-unit">참여연구원</span> <span class="meta-unit"><span class="term">2025–2028</span></span> <span class="meta-unit">진행 중</span> <span class="meta-unit">결과 미공개</span></div>
-          <p><span class="term">Pan-Sarcoma</span> 프로테오지노믹스 공동연구에서 일본 측이 제공한 반려견 종양의 프로테오믹스·H&E·RNA 데이터를 통합해 약물 반응 예측과 분자 분석을 진행하고 있습니다. 육종으로 시작한 데이터는 현재 여러 암종으로 확대되었습니다.</p>
-        </div>
-      </article>
-
-      <article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">사이드 프로젝트 · NVIDIA 해커톤 2026</div>
-          <h3>FlyGate: 신약 탐색과 약물 안전성 감시</h3>
-          <div class="tagline"><span class="meta-unit"><span>기성 NIM 모델 점검 · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> 친화도</span> <b>ρ 0.767</b></span> <a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>5인 팀으로 참가한 NVIDIA Korea Agentic AI Hackathon 2026 출품작입니다. 시판 전 표적 결합 예측(FlyDiscovery)과 시판 후 이상사례 감시(FlyVigilance)를 하나의 에이전트로 잇습니다. 이 중 FlyDiscovery 모듈과 탐색 워크벤치 UI를 개발했습니다. FlyDiscovery는 BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)으로 후보 물질을 구조 예측부터 결합 친화도까지 평가합니다.</p>
-        </div>
-      </article>
-
-    </div>
-
-    <details class="fold"><summary>추가 연구와 개발</summary><div class="grid"><article class="card">
-        <div class="card-body">
-          <div class="k">정밀종양학 · OMIXAI</div>
-          <h3>수의 종양 CDSS & 버추얼 셀</h3>
-          <div class="tagline"><span class="meta-unit">반려견 약물 추천</span> <span class="meta-unit"><span class="term">top-k</span> ≥ 70% · 자체 코호트 · 사내 R&D, 미공개</span> <span class="meta-unit">CRISPR 섭동</span></div>
-          <p>임상 의사결정 지원 시스템(CDSS) 구축을 목표로 반려견 종양 약물 추천 알고리즘을 개발했습니다. Arc Institute Virtual Cell Challenge에서는 OMIXAI 참가팀을 공동 주도해 만능줄기세포의 CRISPR 넉다운 반응을 예측했습니다.</p>
-        </div>
-      </article><article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_oncotype_pipeline.png" target="_blank" rel="noopener"><img src="/assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">디지털 병리 · 딥바이오</div>
-          <h3>H&E로 Oncotype DX 위험군 예측</h3>
-          <div class="tagline"><span class="meta-unit">Scientific Reports 2025 · 제1저자 · n = 125, 2개 병원</span> <span class="meta-unit"><span>민감도 저 / 중 / 고</span> <b>0.86 / 0.75 / 0.53</b></span> <span class="meta-unit"><span>특이도 저 / 중 / 고</span> <b>0.82 / 0.80 / 0.97</b></span></div>
-          <p>다른 임상 정보 없이 H&E WSI만으로 21-유전자 재발 점수(Oncotype DX)의 위험군을 예측했습니다. 패치 단위로 분류한 뒤 신뢰도(confidence) 기반 선별과 다수결로 슬라이드별 저·중·고위험군을 판정했습니다.</p>
-        </div>
-      </article><article class="card">
-        <div class="card-body">
-          <div class="k">기타 R&D · 딥바이오</div>
-          <h3>병리 OOD 기반 액티브 러닝 · ADMET/DTI</h3>
-          <div class="tagline"><span class="meta-unit">ADMET</span> <span class="meta-unit">DTI</span> <span class="meta-unit">OOD 검출</span> <span class="meta-unit">액티브 러닝</span></div>
-          <p>초기 약물 물성 프로파일링을 위한 ADMET 예측과 약물-표적 상호작용 모델링을 진행했습니다. 병리 이미지에서 OOD 샘플을 정의해 라벨링 효율을 높이는 액티브 러닝 프레임워크도 개발했습니다. 사내 R&D라 공개된 성과는 없습니다.</p>
-        </div>
-      </article><article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_brain_ct.jpg" target="_blank" rel="noopener"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">의료영상 · SK / 아주대병원</div>
-          <h3>CT 뇌출혈 검출</h3>
-          <div class="tagline"><span class="meta-unit">2D + 3D 분할</span> <span class="meta-unit">도메인 일반화</span> <a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>뇌출혈 영역을 2D·3D로 분할하고 슬라이스 단위로 분류했습니다. 외부 공개 데이터로 도메인 일반화를 검증했고, <span class="term">class-activation</span> map으로 분류 결과의 신뢰성을 점검했습니다(<span class="term">U-Net</span> vs DeepLab).</p>
-        </div>
-      </article></div></details><div class="subhead">
-      <h3>초기 ML 엔지니어링</h3>
-    </div>
-    <details class="fold">
-      <summary>2019–2020 · 산업용 비전, 정형 데이터, 데이터 엔지니어링, 분할 모델 견고성 · 프로젝트 4개</summary>
-    <div class="grid">
-      <article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_screw.jpg" target="_blank" rel="noopener"><img src="/assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">컴퓨터 비전 · 프론텍</div>
-          <h3>나사 불량 판별</h3>
-          <div class="tagline"><span class="meta-unit">5개 클래스</span> <span class="meta-unit"><b>장당 0.3초 미만</b></span></div>
-          <p>생산 라인 불량 검출 과제(969장, 5개 클래스, 장당 0.3초 미만 처리 조건)입니다. 딥러닝 대신 머신비전으로 나사 위치를 찾아 배경을 제거한 뒤 분류해 정확도를 높였습니다.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k">정형 데이터 ML · 직방</div>
-          <h3>아파트 실거래가 예측</h3>
-          <div class="tagline"><span class="meta-unit">160만 건</span> <span class="meta-unit">지표: RMSE</span></div>
-          <p>서울·부산 거래 데이터 160만 건으로 실거래가를 예측했습니다. 우편번호로 주소를 다시 매칭해 잘못 기재된 지역을 바로잡았습니다. 원본에 없던 주변 지하철·학교 정보는 공공 API로 받아 피처로 추가했습니다.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k">데이터 엔지니어링 · 서울과기대</div>
-          <h3>음원 차트 수집 파이프라인 & DB</h3>
-          <div class="tagline"><span class="meta-unit">6개 플랫폼</span> <span class="meta-unit">일 단위 수집</span> <span class="meta-unit">스키마 설계</span> <a href='https://github.com/Geongyu/2020-Database-Project' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>멜론·지니·바이브·유튜브 뮤직·애플 뮤직·벅스 6개 플랫폼의 일간 Top 100을 매일 같은 시각에 수집했습니다. 곡과 아티스트 기준으로 병합해 관계형 DB에 적재했습니다. 차트 진입·이탈로 생기는 결측에 대비해 순위 컬럼은 NULL을 허용하도록 설계했고, 다국어 제목은 nvarchar로 저장했습니다.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-body">
-          <div class="k">컴퓨터 비전 · 서울과기대</div>
-          <h3>분할 모델의 적대적 견고성 연구</h3>
-          <div class="tagline"><span class="meta-unit">적대적 학습</span> <span class="meta-unit">Label smoothing</span> <span class="meta-unit"><span class="term">Cut-out</span></span> <a href='https://github.com/Geongyu/2019_DL_Project' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>PASCAL VOC(20개 클래스, 1,928장, 4,203개 객체)에서 <span class="term">U-Net</span> 분할 모델에 adversarial training·label smoothing·cut-out을 단독 또는 조합으로 적용해 견고성과 정확도의 트레이드오프를 비교했습니다. 이후 의료 AI로 이어진 '견고성 우선' 관점의 출발점입니다.</p>
-        </div>
-      </article>
-
-    </div>
-    </details>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section class="block" id="experience">
-    <div class="head"><h2>경력</h2></div>
-    <div>
-      <div class="role-row">
-        <div class="when"><span class="co">OMIXAI</span><span>2025.02 – 현재</span><br><span class="loc">서울 · 구 래디센</span></div>
-        <div class="what">
-          <h3>AI 리서처</h3>
-          <div class="sub">크로스모달 학습 · 멀티오믹스 · 약물 반응</div>
-          <ul><li>프로테오믹스·RNA·H&E를 활용한 약물 반응 예측 멀티오믹스 R&D 주도(진행 중)</li><li>프로테오믹스 기반 IC50 모델, 반려견 종양 약물 추천 알고리즘, ADMET 모델 개발</li><li>Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도</li><li>연구 서버·NAS 운영, Git 협업 규칙 수립, 협력사 데이터 전송 시스템 구축</li></ul>
-        <details class="project-detail"><summary>추가 업무</summary><ul>
-            <li>프로테오믹스·RNA와 H&E 병리를 통합한 약물 반응 예측 멀티오믹스 모델 R&D 주도(진행 중)</li>
-            <li>프로테오믹스 기반 세포주 약물 반응(IC50) 예측 모델 개발(학습에 없던 약물 대상 leave-drug-out 평가, Pearson ≥ 0.65, 사내 R&D·미공개)</li>
-            <li>반려견 종양 약물 추천 알고리즘 및 ADMET 예측 모델 개발</li>
-            <li>Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도(만능줄기세포 CRISPR 넉다운 반응 예측)</li>
-            <li>H&E 기반 유전자 발현 예측 모델 MoSPR 논문 공동 제1저자(프리프린트·코드 공개)</li>
-            <li>G2L 논문(AAAI 2026 워크숍 W3PHIAI 구두 발표) 및 삼중음성 유방암 공간 프로테오믹스 프리프린트(2026) 공저자</li>
-            <li>사내 연구 서버·NAS 운영, Git 협업 규칙 수립, 협력사와의 데이터 전송 시스템 구축</li>
-          </ul></details></div>
-      </div>
-      <div class="role-row">
-        <div class="when"><span class="co">딥바이오</span><span>2021.03 – 2025.01</span><br><span class="loc">서울 · 구로</span></div>
-        <div class="what">
-          <h3>AI 리서처</h3>
-          <div class="sub">Computational Pathology · 식약처(MFDS) 인허가용 모델 검증</div>
-          <ul><li>2개 병원 유방암 재발 연구의 WSI 파이프라인과 예측 모델 개발</li><li>림프절 전이 검출 및 사구체 분할 모델 개발</li><li>전립선암 전이·재발 위험 모델링 주도</li><li>MFDS 인허가 신청을 위한 모델 검증·문서 작성 기여, Docker 기반 서버 자동화 도구 개발</li></ul>
-        <details class="project-detail"><summary>추가 업무</summary><ul>
-            <li>2개 병원 유방암 재발 예측 연구 제1저자(Scientific Reports 2025), WSI 500장 이상을 처리한 파이프라인 구축</li>
-            <li>림프절 전이 검출 모델 및 KPIs 2024 챌린지 사구체 분할 모델 개발(전체 슬라이드 트랙 2위, MICCAI 2024), 챌린지 결과 논문(Medical Image Analysis, 2026) 공저자</li>
-            <li>전립선암 전이·재발 위험 모델링 프로젝트 주도</li>
-            <li>AACR(2022, 2023)·USCAP(2022)에서 유방암 병리 AI 연구 제1저자 발표, 췌장암·유방암 생존 예측 포스터 공저자</li>
-            <li>식약처(MFDS)에 인허가를 신청한 의료 AI 제품의 출시 전 모델 검증 및 인허가 문서 작성 기여, Docker 기반 사내 서버 자동화 도구 개발</li>
-          </ul></details></div>
-      </div>
-      <div class="role-row">
-        <div class="when"><span class="co">누리콘</span>2021<br><span class="loc">판교</span></div>
-        <div class="what">
-          <h3>인턴</h3>
-          <div class="sub">컴퓨터 비전</div>
-          <ul><li>주차장 화재 감지 AI 시스템 개발</li></ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- EDUCATION -->
   <section class="block" id="education">
@@ -900,9 +870,10 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <!-- CONTACT -->
   <section class="block contact" id="contact">
 
-    <h2 class="big">논문과 코드</h2>
-    <p class="sub">전체 논문은 Google Scholar에서, 코드는 GitHub에서 볼 수 있습니다.</p>
+    <h2 class="big">연락처</h2>
+    <p class="sub">연구 협업이나 채용 관련 문의는 이메일로 연락해 주세요. 논문은 Google Scholar, 코드는 GitHub에서 볼 수 있습니다.</p>
     <div class="links">
+      <a class="chip cv" href="mailto:rjsrb365@gmail.com">rjsrb365@gmail.com</a>
       <a class="chip" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
       <a class="chip" href="https://github.com/Geongyu" target="_blank" rel="noopener">github.com/Geongyu</a>
     </div>
@@ -911,7 +882,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 </main>
 
 <footer><span>이건규 · 대한민국 서울</span>
-  <span class="upd">최종 업데이트 2026-10-13</span>
+  <span class="upd">최종 업데이트 2026-10-20</span>
 </footer>
 
 </body>

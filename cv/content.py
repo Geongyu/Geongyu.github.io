@@ -60,9 +60,10 @@ PUBS = [
 ]
 
 # Contact line: (label, url) tuples render as links; plain strings render as text.
-# For now the CV lists only the portfolio, GitHub and Google Scholar (owner's request).
+# The public CV lists email but no phone number (owner's request).
 def contact(scholar_url):
     return [
+        ("rjsrb365@gmail.com", "mailto:rjsrb365@gmail.com"),
         ("geongyu.github.io", "https://geongyu.github.io"),
         ("github.com/Geongyu", "https://github.com/Geongyu"),
         ("Google Scholar", scholar_url),
