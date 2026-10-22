@@ -117,7 +117,7 @@ EN = {
     ],
     "education": [
         ("M.S. Data Science · Seoul National University of Science and Technology (SeoulTech)", "2019 – 2021",
-         "Advisor: Prof. Sangheum Hwang · Thesis: contrastive loss for segmentation under uncertain medical-image labels."),
+         "Advisor: Prof. Sangheum Hwang · Thesis: “Utilizing Feature-wise Contrastive Loss for Improving Segmentation Performance.”"),
         ("B.S. Information Security · Daejeon University", "2012 – 2019", ""),
     ],
     "skills": [
@@ -202,7 +202,7 @@ KO = {
     ],
     "education": [
         ("서울과학기술대학교(SeoulTech) · 데이터사이언스 석사", "2019 – 2021",
-         "지도교수: 황상흠 · 석사 논문: 라벨이 불확실한 의료영상에서 분할 성능을 높이는 대조 손실"),
+         "지도교수: 황상흠 · 석사 논문: 「영역 분할 모델의 성능 향상을 위한 대조적 손실함수의 활용」"),
         ("대전대학교 · 정보보안학과 학사", "2012 – 2019", ""),
     ],
     "skills": [
@@ -287,7 +287,7 @@ JA = {
     ],
     "education": [
         ("修士(データサイエンス) · ソウル科学技術大学校(SeoulTech)", "2019 – 2021",
-         "指導教員：ファン・サンフム教授 · 修士論文：ラベルが不確実な医療画像のセグメンテーション性能を高める対照損失"),
+         "指導教員：ファン・サンフム教授 · 修士論文：「Utilizing Feature-wise Contrastive Loss for Improving Segmentation Performance」"),
         ("学士(情報セキュリティ) · 大田大学校", "2012 – 2019", ""),
     ],
     "skills": [
