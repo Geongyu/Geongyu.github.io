@@ -516,10 +516,29 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
       <article class="card">
         <div class="card-body">
-          <div class="k">프로테오믹스 · OMIXAI</div>
-          <h3>프로테오믹스로 약물 반응 예측</h3>
-          <div class="tagline"><span class="meta-unit">사내 R&D</span> <span class="meta-unit">미공개</span></div>
-          <p>프로테오믹스 데이터로 세포주의 약물 반응(IC50)을 예측하는 모델을 개발했습니다. 학습에 없던 약물로만 테스트하는 <span class="term">leave-drug-out</span> 방식으로 평가했습니다(Pearson ≥ 0.65). LoRA/PEFT 기반 자기지도 프로테옴 표현 학습도 별도로 진행했습니다.</p>
+          <div class="k">정밀종양학 · OMIXAI</div>
+          <h3>수의 종양 CDSS & 버추얼 셀</h3>
+          <div class="tagline"><span class="meta-unit">반려견 약물 추천</span> <span class="meta-unit"><span class="term">top-k</span> ≥ 70% · 자체 코호트 · 사내 R&D, 미공개</span> <span class="meta-unit">CRISPR 섭동</span></div>
+          <p>임상 의사결정 지원 시스템(CDSS) 구축을 목표로 반려견 종양 약물 추천 알고리즘을 개발했습니다. Arc Institute Virtual Cell Challenge에서는 OMIXAI 참가팀을 공동 주도해 만능줄기세포의 CRISPR 넉다운 반응을 예측했습니다.</p>
+        </div>
+      </article>
+
+      <article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_brain_ct.jpg" target="_blank" rel="noopener"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">의료영상 · SK / 아주대병원</div>
+          <h3>CT 뇌출혈 검출</h3>
+          <div class="tagline"><span class="meta-unit">2D + 3D 분할</span> <span class="meta-unit">도메인 일반화</span> <a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>뇌출혈 영역을 2D·3D로 분할하고 슬라이스 단위로 분류했습니다. 외부 공개 데이터로 도메인 일반화를 검증했고, <span class="term">class-activation</span> map으로 분류 결과의 신뢰성을 점검했습니다(<span class="term">U-Net</span> vs DeepLab).</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k">OMIXAI · 한·일 공동연구</div>
+          <h3><span class="term">Pan-Sarcoma</span>: 반려견 종양의 약물 반응 예측</h3>
+          <div class="tagline"><span class="meta-unit">참여연구원</span> <span class="meta-unit"><span class="term">2025–2028</span></span> <span class="meta-unit">진행 중</span> <span class="meta-unit">결과 미공개</span></div>
+          <p><span class="term">Pan-Sarcoma</span> 프로테오지노믹스 공동연구에서 일본 측이 제공한 반려견 종양의 프로테오믹스·H&E·RNA 데이터를 통합해 약물 반응 예측과 분자 분석을 진행하고 있습니다. 육종으로 시작한 데이터는 현재 여러 암종으로 확대되었습니다.</p>
         </div>
       </article>
 
@@ -534,43 +553,16 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
       <article class="card">
         <div class="card-body">
-          <div class="k">OMIXAI · 한·일 공동연구</div>
-          <h3><span class="term">Pan-Sarcoma</span>: 반려견 종양의 약물 반응 예측</h3>
-          <div class="tagline"><span class="meta-unit">참여연구원</span> <span class="meta-unit"><span class="term">2025–2028</span></span> <span class="meta-unit">진행 중</span> <span class="meta-unit">결과 미공개</span></div>
-          <p><span class="term">Pan-Sarcoma</span> 프로테오지노믹스 공동연구에서 일본 측이 제공한 반려견 종양의 프로테오믹스·H&E·RNA 데이터를 통합해 약물 반응 예측과 분자 분석을 진행하고 있습니다. 육종으로 시작한 데이터는 현재 여러 암종으로 확대되었습니다.</p>
-        </div>
-      </article>
-
-      <article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">사이드 프로젝트 · NVIDIA 해커톤 2026</div>
-          <h3>FlyGate: 신약 탐색과 약물 안전성 감시</h3>
-          <div class="tagline"><span class="meta-unit"><span>추가 학습 없는 NIM 점검 · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> 친화도</span> <b>ρ 0.767</b></span> <a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>5인 팀으로 참가한 NVIDIA Korea Agentic AI Hackathon 2026 출품작입니다. 시판 전 표적 결합 예측(FlyDiscovery)과 시판 후 이상사례 감시(FlyVigilance)를 하나의 에이전트로 잇습니다. 이 중 FlyDiscovery 모듈과 탐색 워크벤치 UI를 개발했습니다. FlyDiscovery는 BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)으로 후보 물질을 구조 예측부터 결합 친화도까지 평가합니다.</p>
-        </div>
-      </article>
-
-      <article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_kbeautygate_architecture.jpg" target="_blank" rel="noopener"><img src="/assets/proj_kbeautygate_architecture.jpg" alt="K-BeautyGate architecture: one Python workflow run on a Vercel web demo and inside an NVIDIA OpenShell sandbox on Brev" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">사이드 프로젝트 · Korea Agentic AI 해커톤 2026</div>
-          <h3>K-BeautyGate: 샌드박스에서 검증한 외국인 관광객용 K-뷰티 쇼핑 에이전트</h3>
-          <div class="tagline"><span class="meta-unit"><span>Nemotron + 규칙 검사</span> <b>한 / 영 / 일 / 중</b></span> <span class="meta-unit"><span>OpenShell 우회 접근 차단</span> <b>4 / 4</b></span> <a href='https://k-beauty-gate-zeta.vercel.app/' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/K-BeautyGate' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>Team FlyGate 5인 팀 출품작입니다. 방문객의 취향·회피 성분·예산·시간을 받아 근거가 있는 제품 추천, 매장 동선, 직원에게 보여 줄 한국어 카드를 만듭니다. 핵심 Python 워크플로와 웹 데모·Vercel 배포, 식약처(MFDS)·대만 TFDA 성분·회수 자료 대조, 위험한 요청과 프롬프트 주입 문서를 거르는 검사를 개발했습니다. 같은 코드를 Brev의 NVIDIA OpenShell 샌드박스에서 실행해, 정상 모델 호출은 허용되고 정책 밖의 파일·네트워크 접근은 차단되는 것을 실행 기록으로 확인했습니다.</p>
+          <div class="k">프로테오믹스 · OMIXAI</div>
+          <h3>프로테오믹스로 약물 반응 예측</h3>
+          <div class="tagline"><span class="meta-unit">사내 R&D</span> <span class="meta-unit">미공개</span></div>
+          <p>프로테오믹스 데이터로 세포주의 약물 반응(IC50)을 예측하는 모델을 개발했습니다. 학습에 없던 약물로만 테스트하는 <span class="term">leave-drug-out</span> 방식으로 평가했습니다(Pearson ≥ 0.65). LoRA/PEFT 기반 자기지도 프로테옴 표현 학습도 별도로 진행했습니다.</p>
         </div>
       </article>
 
     </div>
 
-    <details class="fold"><summary>추가 연구와 개발</summary><div class="grid"><article class="card">
-        <div class="card-body">
-          <div class="k">정밀종양학 · OMIXAI</div>
-          <h3>수의 종양 CDSS & 버추얼 셀</h3>
-          <div class="tagline"><span class="meta-unit">반려견 약물 추천</span> <span class="meta-unit"><span class="term">top-k</span> ≥ 70% · 자체 코호트 · 사내 R&D, 미공개</span> <span class="meta-unit">CRISPR 섭동</span></div>
-          <p>임상 의사결정 지원 시스템(CDSS) 구축을 목표로 반려견 종양 약물 추천 알고리즘을 개발했습니다. Arc Institute Virtual Cell Challenge에서는 OMIXAI 참가팀을 공동 주도해 만능줄기세포의 CRISPR 넉다운 반응을 예측했습니다.</p>
-        </div>
-      </article><article class="card with-figure">
+    <details class="fold"><summary>추가 연구와 사이드 프로젝트</summary><div class="grid"><article class="card with-figure">
         <a class="card-fig" href="/assets/proj_oncotype_pipeline.png" target="_blank" rel="noopener"><img src="/assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></a>
         <div class="card-body">
           <div class="k">디지털 병리 · 딥바이오</div>
@@ -586,12 +578,20 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
           <p>초기 약물 물성 프로파일링을 위한 ADMET 예측과 약물-표적 상호작용 모델링을 진행했습니다. 병리 이미지에서 OOD 샘플을 정의해 라벨링 효율을 높이는 액티브 러닝 프레임워크도 개발했습니다. 사내 R&D라 공개된 성과는 없습니다.</p>
         </div>
       </article><article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_brain_ct.jpg" target="_blank" rel="noopener"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></a>
+        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
         <div class="card-body">
-          <div class="k">의료영상 · SK / 아주대병원</div>
-          <h3>CT 뇌출혈 검출</h3>
-          <div class="tagline"><span class="meta-unit">2D + 3D 분할</span> <span class="meta-unit">도메인 일반화</span> <a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>뇌출혈 영역을 2D·3D로 분할하고 슬라이스 단위로 분류했습니다. 외부 공개 데이터로 도메인 일반화를 검증했고, <span class="term">class-activation</span> map으로 분류 결과의 신뢰성을 점검했습니다(<span class="term">U-Net</span> vs DeepLab).</p>
+          <div class="k">사이드 프로젝트 · NVIDIA 해커톤 2026</div>
+          <h3>FlyGate: 신약 탐색과 약물 안전성 감시</h3>
+          <div class="tagline"><span class="meta-unit"><span>추가 학습 없는 NIM 점검 · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> 친화도</span> <b>ρ 0.767</b></span> <a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>5인 팀으로 참가한 NVIDIA Korea Agentic AI Hackathon 2026 출품작입니다. 시판 전 표적 결합 예측(FlyDiscovery)과 시판 후 이상사례 감시(FlyVigilance)를 하나의 에이전트로 잇습니다. 이 중 FlyDiscovery 모듈과 탐색 워크벤치 UI를 개발했습니다. FlyDiscovery는 BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)으로 후보 물질을 구조 예측부터 결합 친화도까지 평가합니다.</p>
+        </div>
+      </article><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_kbeautygate_architecture.jpg" target="_blank" rel="noopener"><img src="/assets/proj_kbeautygate_architecture.jpg" alt="K-BeautyGate architecture: one Python workflow run on a Vercel web demo and inside an NVIDIA OpenShell sandbox on Brev" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">사이드 프로젝트 · Korea Agentic AI 해커톤 2026</div>
+          <h3>K-BeautyGate: 샌드박스에서 검증한 외국인 관광객용 K-뷰티 쇼핑 에이전트</h3>
+          <div class="tagline"><span class="meta-unit"><span>Nemotron + 규칙 검사</span> <b>한 / 영 / 일 / 중</b></span> <span class="meta-unit"><span>OpenShell 우회 접근 차단</span> <b>4 / 4</b></span> <a href='https://k-beauty-gate-zeta.vercel.app/' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/K-BeautyGate' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>Team FlyGate 5인 팀 출품작입니다. 방문객의 취향·회피 성분·예산·시간을 받아 근거가 있는 제품 추천, 매장 동선, 직원에게 보여 줄 한국어 카드를 만듭니다. 핵심 Python 워크플로와 웹 데모·Vercel 배포, 식약처(MFDS)·대만 TFDA 성분·회수 자료 대조, 위험한 요청과 프롬프트 주입 문서를 거르는 검사를 개발했습니다. 같은 코드를 Brev의 NVIDIA OpenShell 샌드박스에서 실행해, 정상 모델 호출은 허용되고 정책 밖의 파일·네트워크 접근은 차단되는 것을 실행 기록으로 확인했습니다.</p>
         </div>
       </article></div></details>
     <p class="earlier">산업용 비전, 정형 데이터 ML, 데이터 엔지니어링, 분할 모델 견고성을 다룬 초기 작업(2019–2020)은 <a href="https://github.com/Geongyu" target="_blank" rel="noopener">GitHub</a>에서 볼 수 있습니다.</p>
@@ -892,7 +892,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 </main>
 
 <footer><span>이건규 · 대한민국 서울</span>
-  <span class="upd">최종 업데이트 2026-10-25</span>
+  <span class="upd">최종 업데이트 2026-10-26</span>
 </footer>
 
 </body>

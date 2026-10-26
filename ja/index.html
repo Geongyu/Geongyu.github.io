@@ -516,10 +516,29 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
       <article class="card">
         <div class="card-body">
-          <div class="k">プロテオミクス · OMIXAI</div>
-          <h3>プロテオミクスによる薬剤応答予測</h3>
-          <div class="tagline"><span class="meta-unit">社内R&D</span> <span class="meta-unit">未発表</span></div>
-          <p>プロテオミクスから細胞株の薬剤応答(IC50)を予測するモデルを開発しました。テスト薬剤をすべて学習から除くleave-drug-out方式で評価しました(Pearson ≥ 0.65)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も別途行いました。</p>
+          <div class="k">精密腫瘍学 · OMIXAI</div>
+          <h3>獣医腫瘍CDSS・バーチャルセル</h3>
+          <div class="tagline"><span class="meta-unit">犬の薬剤推薦</span> <span class="meta-unit"><span class="term">top-k</span> ≥ 70% · 自社コホート · 社内R&D、未発表</span> <span class="meta-unit">CRISPR摂動</span></div>
+          <p>臨床意思決定支援システム(CDSS)に向け、犬の腫瘍に対する薬剤推薦アルゴリズムを開発しました。Arc Institute Virtual Cell ChallengeではOMIXAIの参加チームを共同主導し、多能性幹細胞のCRISPRノックダウン応答を予測しました。</p>
+        </div>
+      </article>
+
+      <article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_brain_ct.jpg" target="_blank" rel="noopener"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">医療画像 · SK / 亜洲大学病院</div>
+          <h3>CT脳出血検出</h3>
+          <div class="tagline"><span class="meta-unit">2D + 3D セグメンテーション</span> <span class="meta-unit">ドメイン汎化</span> <a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>脳出血領域の2D・3Dセグメンテーションとスライス単位の分類です。外部公開データでドメイン汎化を検証し、<span class="term">class-activation</span> mapで分類の信頼性を点検しました(<span class="term">U-Net</span> vs DeepLab)。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k">OMIXAI · 日韓共同研究</div>
+          <h3><span class="term">Pan-Sarcoma</span>：犬の腫瘍の薬剤応答予測</h3>
+          <div class="tagline"><span class="meta-unit">参加研究員</span> <span class="meta-unit"><span class="term">2025–2028</span></span> <span class="meta-unit">進行中</span> <span class="meta-unit">成果は未公開</span></div>
+          <p>Pan-Sarcomaプロテオゲノム共同研究で、日本側から提供された犬の腫瘍のプロテオミクス・H&E画像・RNAを統合し、薬剤応答予測と分子解析を行っています。肉腫から始まったデータは、現在は複数のがん種に拡大しています。</p>
         </div>
       </article>
 
@@ -534,43 +553,16 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
       <article class="card">
         <div class="card-body">
-          <div class="k">OMIXAI · 日韓共同研究</div>
-          <h3><span class="term">Pan-Sarcoma</span>：犬の腫瘍の薬剤応答予測</h3>
-          <div class="tagline"><span class="meta-unit">参加研究員</span> <span class="meta-unit"><span class="term">2025–2028</span></span> <span class="meta-unit">進行中</span> <span class="meta-unit">成果は未公開</span></div>
-          <p>Pan-Sarcomaプロテオゲノム共同研究で、日本側から提供された犬の腫瘍のプロテオミクス・H&E画像・RNAを統合し、薬剤応答予測と分子解析を行っています。肉腫から始まったデータは、現在は複数のがん種に拡大しています。</p>
-        </div>
-      </article>
-
-      <article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">サイドプロジェクト · NVIDIAハッカソン2026</div>
-          <h3>FlyGate：創薬探索と医薬品安全性監視</h3>
-          <div class="tagline"><span class="meta-unit"><span>追加学習なしのNIM検証 · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> 親和性</span> <b>ρ 0.767</b></span> <a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>NVIDIA Korea Agentic AI Hackathon 2026の参加作品(5人チーム)です。市販前の標的結合予測(FlyDiscovery)と市販後の有害事象監視(FlyVigilance)を一つのエージェントでつなぎます。BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)で構造予測から親和性まで評価するFlyDiscoveryモジュールと探索ワークベンチUIを担当しました。</p>
-        </div>
-      </article>
-
-      <article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_kbeautygate_architecture.jpg" target="_blank" rel="noopener"><img src="/assets/proj_kbeautygate_architecture.jpg" alt="K-BeautyGate architecture: one Python workflow run on a Vercel web demo and inside an NVIDIA OpenShell sandbox on Brev" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">サイドプロジェクト · Korea Agentic AIハッカソン2026</div>
-          <h3>K-BeautyGate：サンドボックスで検証した訪韓客向けK-ビューティー買い物エージェント</h3>
-          <div class="tagline"><span class="meta-unit"><span>Nemotron + ルール検査</span> <b>韓 / 英 / 日 / 中</b></span> <span class="meta-unit"><span>OpenShell迂回アクセス拒否</span> <b>4 / 4</b></span> <a href='https://k-beauty-gate-zeta.vercel.app/' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/K-BeautyGate' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>Team FlyGate(5人チーム)の作品です。訪問者の好み・避けたい成分・予算・時間から、根拠付きの製品推薦、店舗ルート、店員に見せる韓国語カードを作ります。中核のPythonワークフロー、WebデモとVercelデプロイ、韓国MFDS・台湾TFDAの成分・回収データとの照合、危険な依頼やプロンプトインジェクション文書を拒否する検査を担当しました。同じコードをBrev上のNVIDIA OpenShellサンドボックスで実行し、通常のモデル呼び出しは許可され、ポリシー外のファイル・ネットワークアクセスは拒否されることを実行記録で確認しました。</p>
+          <div class="k">プロテオミクス · OMIXAI</div>
+          <h3>プロテオミクスによる薬剤応答予測</h3>
+          <div class="tagline"><span class="meta-unit">社内R&D</span> <span class="meta-unit">未発表</span></div>
+          <p>プロテオミクスから細胞株の薬剤応答(IC50)を予測するモデルを開発しました。テスト薬剤をすべて学習から除くleave-drug-out方式で評価しました(Pearson ≥ 0.65)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も別途行いました。</p>
         </div>
       </article>
 
     </div>
 
-    <details class="fold"><summary>その他の研究・開発</summary><div class="grid"><article class="card">
-        <div class="card-body">
-          <div class="k">精密腫瘍学 · OMIXAI</div>
-          <h3>獣医腫瘍CDSS・バーチャルセル</h3>
-          <div class="tagline"><span class="meta-unit">犬の薬剤推薦</span> <span class="meta-unit"><span class="term">top-k</span> ≥ 70% · 自社コホート · 社内R&D、未発表</span> <span class="meta-unit">CRISPR摂動</span></div>
-          <p>臨床意思決定支援システム(CDSS)に向け、犬の腫瘍に対する薬剤推薦アルゴリズムを開発しました。Arc Institute Virtual Cell ChallengeではOMIXAIの参加チームを共同主導し、多能性幹細胞のCRISPRノックダウン応答を予測しました。</p>
-        </div>
-      </article><article class="card with-figure">
+    <details class="fold"><summary>その他の研究とサイドプロジェクト</summary><div class="grid"><article class="card with-figure">
         <a class="card-fig" href="/assets/proj_oncotype_pipeline.png" target="_blank" rel="noopener"><img src="/assets/proj_oncotype_pipeline.png" alt="H&amp;E WSI tiling to slide-level risk prediction pipeline" loading="lazy"></a>
         <div class="card-body">
           <div class="k">デジタル病理 · Deep Bio</div>
@@ -586,12 +578,20 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
           <p>創薬初期の物性プロファイリングに向け、ADMET予測と薬物–標的相互作用のモデリングを行いました。病理画像のOODサンプルを定義してラベル付けを効率化する能動学習フレームワークも開発しました。社内R&Dのため未公開です。</p>
         </div>
       </article><article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_brain_ct.jpg" target="_blank" rel="noopener"><img src="/assets/proj_brain_ct.jpg" alt="Brain CT hemorrhage segmentation and class-activation maps" loading="lazy"></a>
+        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
         <div class="card-body">
-          <div class="k">医療画像 · SK / 亜洲大学病院</div>
-          <h3>CT脳出血検出</h3>
-          <div class="tagline"><span class="meta-unit">2D + 3D セグメンテーション</span> <span class="meta-unit">ドメイン汎化</span> <a href='https://github.com/Geongyu/SK-Project' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>脳出血領域の2D・3Dセグメンテーションとスライス単位の分類です。外部公開データでドメイン汎化を検証し、<span class="term">class-activation</span> mapで分類の信頼性を点検しました(<span class="term">U-Net</span> vs DeepLab)。</p>
+          <div class="k">サイドプロジェクト · NVIDIAハッカソン2026</div>
+          <h3>FlyGate：創薬探索と医薬品安全性監視</h3>
+          <div class="tagline"><span class="meta-unit"><span>追加学習なしのNIM検証 · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> 親和性</span> <b>ρ 0.767</b></span> <a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>NVIDIA Korea Agentic AI Hackathon 2026の参加作品(5人チーム)です。市販前の標的結合予測(FlyDiscovery)と市販後の有害事象監視(FlyVigilance)を一つのエージェントでつなぎます。BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)で構造予測から親和性まで評価するFlyDiscoveryモジュールと探索ワークベンチUIを担当しました。</p>
+        </div>
+      </article><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_kbeautygate_architecture.jpg" target="_blank" rel="noopener"><img src="/assets/proj_kbeautygate_architecture.jpg" alt="K-BeautyGate architecture: one Python workflow run on a Vercel web demo and inside an NVIDIA OpenShell sandbox on Brev" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">サイドプロジェクト · Korea Agentic AIハッカソン2026</div>
+          <h3>K-BeautyGate：サンドボックスで検証した訪韓客向けK-ビューティー買い物エージェント</h3>
+          <div class="tagline"><span class="meta-unit"><span>Nemotron + ルール検査</span> <b>韓 / 英 / 日 / 中</b></span> <span class="meta-unit"><span>OpenShell迂回アクセス拒否</span> <b>4 / 4</b></span> <a href='https://k-beauty-gate-zeta.vercel.app/' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/K-BeautyGate' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>Team FlyGate(5人チーム)の作品です。訪問者の好み・避けたい成分・予算・時間から、根拠付きの製品推薦、店舗ルート、店員に見せる韓国語カードを作ります。中核のPythonワークフロー、WebデモとVercelデプロイ、韓国MFDS・台湾TFDAの成分・回収データとの照合、危険な依頼やプロンプトインジェクション文書を拒否する検査を担当しました。同じコードをBrev上のNVIDIA OpenShellサンドボックスで実行し、通常のモデル呼び出しは許可され、ポリシー外のファイル・ネットワークアクセスは拒否されることを実行記録で確認しました。</p>
         </div>
       </article></div></details>
     <p class="earlier">産業用ビジョン、表形式データML、データエンジニアリング、セグメンテーションの頑健性に関する初期の取り組み(2019–2020)は<a href="https://github.com/Geongyu" target="_blank" rel="noopener">GitHub</a>でご覧いただけます。</p>
@@ -892,7 +892,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 </main>
 
 <footer><span>イ・ゴンギュ · 韓国・ソウル</span>
-  <span class="upd">最終更新 2026-10-25</span>
+  <span class="upd">最終更新 2026-10-26</span>
 </footer>
 
 </body>
