@@ -55,6 +55,7 @@ Multimodal & Representation Learning · Interpretability & Explainable AI · Gen
 | Year | Venue | Title | Authorship |
 |:--|:--|:--|:--|
 | 2026 | Preprint (arXiv) | [MoSPR: Histology-to-Gene Expression Prediction with Morpho-Spatial Macrostates and Low-Rank Molecular Programs](https://arxiv.org/abs/2609.34280) · [code](https://github.com/Radisen-Panthera/MoSPR) | **Co-first** † |
+| 2026 | **ML4H 2026** Findings · accepted poster | A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics | Co-author (presenting) |
 | 2026 | **Medical Image Analysis** | [KPIs 2024 challenge: Advancing glomerular segmentation from patch- to slide-level](https://doi.org/10.1016/j.media.2026.104234) | Co-author (challenge report) |
 | 2026 | **AAAI 2026 Workshop** (W3PHIAI) · oral | [G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Knowledge Distillation](https://arxiv.org/abs/2510.11176) | Co-author |
 | 2026 | Preprint (arXiv) | [Spatial proteomics guided by H&E-based AI reveals recurrence-risk niches in triple-negative breast cancer](https://arxiv.org/abs/2608.03145) | Co-author |
@@ -66,8 +67,8 @@ Multimodal & Representation Learning · Interpretability & Explainable AI · Gen
 
 **Conferences.** Original posters and slides are in [`archive/conferences/`](archive/conferences/).
 
-- BIOINFO/GIW ISCB-Asia 2026 · *Predictability is not substitutability: a cost-of-substitution framework for H&E-based molecular prediction across 5 cancers* · accepted poster, first & presenting author (later submitted to ML4H 2026 Findings, under review)
-- BIOINFO/GIW ISCB-Asia 2026 · *A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics* · accepted oral, co-author
+- BIOINFO/GIW ISCB-Asia 2026 · *Predictability is not substitutability: a cost-of-substitution framework for H&E-based molecular prediction across 5 cancers* · accepted poster, first & presenting author
+- BIOINFO/GIW ISCB-Asia 2026 · *A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics* · accepted oral, co-author (also accepted to ML4H 2026 Findings)
 - AACR 2023 · *Predicting protein receptor status from H&E-stained images in breast cancer* · poster, first author
 - AACR 2022 · *Recurrence risk prediction based on automatic histologic analysis of breast cancer using whole slide images* · poster, first author
 - AACR 2022 · *A deep learning based pancreatic adenocarcinoma survival prediction model applicable to adenocarcinoma of other organs* · poster, co-author
@@ -85,7 +86,7 @@ Multimodal & Representation Learning · Interpretability & Explainable AI · Gen
 
 **Side project:** [FlyGate](https://github.com/Team-FlyGate/Project-FlyGate) ([live](https://flygate.kr)) is an evidence-based agent for drug discovery and pharmacovigilance, made by a team of 5 at the NVIDIA Korea Agentic AI Hackathon 2026. I built the FlyDiscovery module on BioNeMo NIM (OpenFold3, DiffDock, Boltz-2) and its workbench UI.
 
-**Leadership & community:** Research member (Runner), **Pseudo Lab** season 12 "AutoBioX: AI Agents for End-to-End Bio Research" (2026, completed). Two studies were accepted at BIOINFO/GIW ISCB-Asia 2026 and later submitted to ML4H 2026 Findings (under review) · Reviewer, **ML4H 2026** · AI Career & Project Mentor, **Codeit** (2025 – present, part-time), with 1:1 résumé, portfolio and career mentoring for 30+ mentees and help with project scoping, methods and troubleshooting for 8+ teams across 3 cohorts.
+**Leadership & community:** Research member (Runner), **Pseudo Lab** season 12 "AutoBioX: AI Agents for End-to-End Bio Research" (2026, completed). Two studies were accepted at BIOINFO/GIW ISCB-Asia 2026 and the co-authored one was then accepted to ML4H 2026 Findings · Reviewer, **ML4H 2026** · AI Career & Project Mentor, **Codeit** (2025 – present, part-time), with 1:1 résumé, portfolio and career mentoring for 30+ mentees and help with project scoping, methods and troubleshooting for 8+ teams across 3 cohorts.
 
 **Education:** M.S. Data Science · Seoul National University of Science and Technology (SeoulTech), 2019 – 2021 (advisor: Prof. Sangheum Hwang) · B.S. Information Security · Daejeon University, 2012 – 2019
 
