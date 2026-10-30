@@ -67,7 +67,8 @@
   --line: #e1e4e8;
   --line-2: #c8ced6;
   --fg: #20242a;
-  --muted: #4c5661;
+  --muted: #414a54;
+  --meta: #66707b;
   --faint: #5a6570;
   --accent: #365d7b;
   --accent-dim: #f0f5f8;
@@ -295,12 +296,35 @@ footer { border-top: 1px solid var(--line); padding: 25px 24px 31px; color: var(
 footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 .reveal, .reveal.in { opacity: 1; transform: none; }
 
+/* hero thumbnails */
+.pub { display: grid; grid-template-columns: 64px minmax(0, 1fr); column-gap: 16px; align-items: start; }
+.pub-fig { grid-row: span 2; width: 64px; height: 64px; border: 1px solid rgba(0,0,0,.08); border-radius: 4px; overflow: hidden; background: var(--plate); }
+.pub-fig img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.pub-fig.tile { display: flex; align-items: center; justify-content: center; text-align: center; color: var(--meta); font-size: 12px; line-height: 1.3; letter-spacing: .02em; }
+.pub .t, .pub .v { grid-column: 2; }
+/* research: text left, interests right */
+#about .about { max-width: none; display: grid; grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr); gap: 0 64px; align-items: start; }
+#about .about-text { max-width: 70ch; }
+#about .about-text p + p { margin-top: 14px; }
+#about .aside { margin-top: 4px; }
+/* what I bring: open 2x2 grid with hairlines */
+#strengths .about { max-width: none; }
+#strengths .aside.bring ul { list-style: none; padding-left: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 56px; }
+#strengths .aside.bring li { margin: 0; padding: 16px 0 0; border-top: 1px solid var(--line); }
+#strengths .aside.bring li strong { display: block; margin-bottom: 4px; }
+/* type hierarchy: quieter metadata, award pills, tabular numbers */
+.pub .v, .row .venue, .card .k, .card .tagline, .role-row .when, .role-row .what .sub, .ledger-h, .eyebrow, .research-focus, .head .note, .evidence li .ev, .subhead .note { color: var(--meta); }
+.meta-unit.hl { color: #2c5674; background: #eaf1f6; padding: 0 8px; border-radius: 999px; font-weight: 500; }
+.metrics b { font-variant-numeric: tabular-nums; }
+
 @media (max-width: 1000px) {
   .topbar { padding-right: 28px; padding-left: 28px; gap: 18px; }
   .brand .bsub { display: none; }
   .topright { gap: 17px; }
   .nav { gap: 15px; font-size: 13px; }
   .hero { gap: 36px; }
+  #about .about { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  #about .aside { margin-top: 26px; }
   .row.with-figure { grid-template-columns: 140px minmax(0, 1fr); gap: 0 20px; }
   .row.with-figure > .go { grid-column: 2; }
   .row.with-figure .gos { grid-column: 2; flex-direction: row; gap: 20px; padding-top: 0; }
@@ -312,6 +336,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   .lede { max-width: 62ch; }
   .ledger { padding-left: 23px; }
   .two { grid-template-columns: minmax(0, 1fr); gap: 38px; }
+  #strengths .aside.bring ul { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .role-row { grid-template-columns: 175px minmax(0, 1fr); gap: 26px; }
   .thumb { float: none; display: block; width: 100%; max-width: 320px; margin: 3px 0 18px; }
   .card.with-figure { grid-template-columns: 180px minmax(0, 1fr); gap: 24px; }
@@ -433,9 +458,9 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
     <div class="ledger" aria-label="Selected publications">
       <div class="ledger-h"><span>主な研究</span></div>
-      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t">MoSPR: 組織画像から遺伝子発現を予測、領域ごとに分解可能</span><span class="v first"><span class="meta-unit">2026</span> <span class="meta-unit">プレプリント</span> <span class="meta-unit">共同筆頭著者</span></span></a>
-      <a class="pub" href="#molecular-substitution"><span class="t">高精度でも分子検査を代替できないとき</span><span class="v first"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">ポスター採択</span> <span class="meta-unit">筆頭著者</span></span></a>
-      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t">H&Eのみで分子検査のリスク群を予測、2施設で検証</span><span class="v first"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">筆頭著者</span></span></a>
+      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="pub-fig"><img src="/assets/thumb_mospr.jpg" alt="" width="64" height="64"></span><span class="t">MoSPR: 組織画像から遺伝子発現を予測、領域ごとに分解可能</span><span class="v first"><span class="meta-unit">2026</span> <span class="meta-unit">プレプリント</span> <span class="meta-unit">共同筆頭著者</span></span></a>
+      <a class="pub" href="#molecular-substitution"><span class="pub-fig tile" aria-hidden="true">GIW<br>2026</span><span class="t">高精度でも分子検査を代替できないとき</span><span class="v first"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">ポスター採択</span> <span class="meta-unit">筆頭著者</span></span></a>
+      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="pub-fig"><img src="/assets/thumb_breast.jpg" alt="" width="64" height="64"></span><span class="t">H&Eのみで分子検査のリスク群を予測、2施設で検証</span><span class="v first"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">筆頭著者</span></span></a>
 
     <a class="ledger-footer" href="#publications">論文一覧を見る →</a></div>
   </header>
@@ -446,9 +471,10 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <section class="block" id="about">
     <div class="head"><h2>研究</h2></div>
     <div class="about">
+<div class="about-text">
 <p>産業界で5年以上、機械学習の研究開発に携わり、研究課題の設定からデータ分析、モデル開発、実験設計、論文執筆まで取り組んできました。</p>
 <p>学習された表現、予測の根拠、そして結果を信頼できる条件に関心があります。異なるデータを結びつける学習手法と解釈可能なモデルを研究し、分布シフトや不確実性を考慮して評価します。</p>
-<p>研究の多くは、ラベルの取得コストが高く、病院ごとにデータの分布が異なり、規制当局の検証も求められる医療データで行ってきました。こうした条件で検証した手法は他の分野にもそのまま通用するため、新しいデータや課題に応用したいと考えています。</p>
+<p>研究の多くは、ラベルの取得コストが高く、病院ごとにデータの分布が異なり、規制当局の検証も求められる医療データで行ってきました。こうした条件で検証した手法は他の分野にもそのまま通用するため、新しいデータや課題に応用したいと考えています。</p></div>
       <div class="aside">
         <h3>研究テーマ</h3>
 <ul class="evidence"><li><span class="it">マルチモーダル学習と表現学習</span><span class="ev">H&E画像とプロテオミクス・RNAの統合(MoSPR、薬剤応答モデル)</span></li><li><span class="it">モデルの解釈と説明可能なAI</span><span class="ev">予測を大域・領域別のプログラムに分解(MoSPR)、class-activation mapによる点検</span></li><li><span class="it">汎化と頑健性</span><span class="ev">施設分離検証、leave-drug-out分割、施設交絡の点検</span></li><li><span class="it">不確実性と信頼性評価</span><span class="ev">不確実な領域での予測保留(MurSS)、OODを考慮した能動学習、事前登録プロトコル</span></li></ul>
@@ -691,7 +717,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
         <a class="paper-figure" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="/assets/pub_g2l_distillation.png" alt="G2L knowledge-distillation framework overview" loading="lazy"></a>
         <div class="main">
 
-          <span class="venue"><span class="meta-unit">AAAI 2026 ワークショップ (W3PHIAI)</span> <span class="meta-unit">口頭発表</span> <span class="meta-unit">共著者</span></span>
+          <span class="venue"><span class="meta-unit">AAAI 2026 ワークショップ (W3PHIAI)</span> <span class="meta-unit hl">口頭発表</span> <span class="meta-unit">共著者</span></span>
           <h3><a href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener">G2L: From <span class="term">Giga-Scale</span> to <span class="term">Cancer-Specific</span> <span class="term">Large-Scale</span> Pathology Foundation Models via Knowledge Distillation</a></h3>
 
         <details class="research-detail"><summary>研究概要</summary><p>知識蒸留(knowledge distillation)でギガスケール病理基盤モデルをがん種特化の小型エンコーダへ圧縮し、計算量を抑えつつ下流タスクの性能を維持します。</p><div class="metrics"><span class="meta-unit">知識蒸留</span> <span class="meta-unit">自己教師あり</span></div></details></div>
@@ -742,7 +768,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
       <article class="row">
 
         <div class="main">
-          <span class="venue"><span class="meta-unit">BIOINFO/GIW <span class="term">ISCB-Asia</span> 2026</span> <span class="meta-unit">口頭発表(採択)</span> <span class="meta-unit">共著者</span></span>
+          <span class="venue"><span class="meta-unit">BIOINFO/GIW <span class="term">ISCB-Asia</span> 2026</span> <span class="meta-unit hl">口頭発表(採択)</span> <span class="meta-unit">共著者</span></span>
           <h3>A reliability map for <span class="term">per-gene</span> multiome RNA velocity parameters in <span class="term">single-cell</span> kinetics</h3>
 
         <details class="research-detail"><summary>研究概要</summary><p>ソウル · 2026.11.<span class="term">17–20</span>。マルチオームRNA velocityが出力する遺伝子別パラメータ(転写率α、分解率γ、クロマチン-転写ラグ)が本当に信頼できるかを検証しました。5つのvelocity手法を4つの観点(手法間再現性、ATAC-shuffle対照、外部マルチオームデータセット5件での再現、実測の合成・分解率との整合)で評価しました。手法間で再現されたのはαのみで、γとラグには独立した測定法による検証が必要です。</p><div class="metrics"><span class="meta-unit"><span>α再現性</span> <b>ρ = 0.88</b></span> <span class="meta-unit"><span>γ</span> <b>ρ ≈ −0.1</b></span> <span class="meta-unit">事前登録 6/6 通過</span></div></details></div>
@@ -901,7 +927,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 </main>
 
 <footer><span>イ・ゴンギュ · 韓国・ソウル</span>
-  <span class="upd">最終更新 2026-10-28</span>
+  <span class="upd">最終更新 2026-10-31</span>
 </footer>
 
 </body>

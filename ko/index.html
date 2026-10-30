@@ -67,7 +67,8 @@
   --line: #e1e4e8;
   --line-2: #c8ced6;
   --fg: #20242a;
-  --muted: #4c5661;
+  --muted: #414a54;
+  --meta: #66707b;
   --faint: #5a6570;
   --accent: #365d7b;
   --accent-dim: #f0f5f8;
@@ -295,12 +296,35 @@ footer { border-top: 1px solid var(--line); padding: 25px 24px 31px; color: var(
 footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 .reveal, .reveal.in { opacity: 1; transform: none; }
 
+/* hero thumbnails */
+.pub { display: grid; grid-template-columns: 64px minmax(0, 1fr); column-gap: 16px; align-items: start; }
+.pub-fig { grid-row: span 2; width: 64px; height: 64px; border: 1px solid rgba(0,0,0,.08); border-radius: 4px; overflow: hidden; background: var(--plate); }
+.pub-fig img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.pub-fig.tile { display: flex; align-items: center; justify-content: center; text-align: center; color: var(--meta); font-size: 12px; line-height: 1.3; letter-spacing: .02em; }
+.pub .t, .pub .v { grid-column: 2; }
+/* research: text left, interests right */
+#about .about { max-width: none; display: grid; grid-template-columns: minmax(0, 1.38fr) minmax(0, 1fr); gap: 0 64px; align-items: start; }
+#about .about-text { max-width: 70ch; }
+#about .about-text p + p { margin-top: 14px; }
+#about .aside { margin-top: 4px; }
+/* what I bring: open 2x2 grid with hairlines */
+#strengths .about { max-width: none; }
+#strengths .aside.bring ul { list-style: none; padding-left: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 56px; }
+#strengths .aside.bring li { margin: 0; padding: 16px 0 0; border-top: 1px solid var(--line); }
+#strengths .aside.bring li strong { display: block; margin-bottom: 4px; }
+/* type hierarchy: quieter metadata, award pills, tabular numbers */
+.pub .v, .row .venue, .card .k, .card .tagline, .role-row .when, .role-row .what .sub, .ledger-h, .eyebrow, .research-focus, .head .note, .evidence li .ev, .subhead .note { color: var(--meta); }
+.meta-unit.hl { color: #2c5674; background: #eaf1f6; padding: 0 8px; border-radius: 999px; font-weight: 500; }
+.metrics b { font-variant-numeric: tabular-nums; }
+
 @media (max-width: 1000px) {
   .topbar { padding-right: 28px; padding-left: 28px; gap: 18px; }
   .brand .bsub { display: none; }
   .topright { gap: 17px; }
   .nav { gap: 15px; font-size: 13px; }
   .hero { gap: 36px; }
+  #about .about { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  #about .aside { margin-top: 26px; }
   .row.with-figure { grid-template-columns: 140px minmax(0, 1fr); gap: 0 20px; }
   .row.with-figure > .go { grid-column: 2; }
   .row.with-figure .gos { grid-column: 2; flex-direction: row; gap: 20px; padding-top: 0; }
@@ -312,6 +336,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   .lede { max-width: 62ch; }
   .ledger { padding-left: 23px; }
   .two { grid-template-columns: minmax(0, 1fr); gap: 38px; }
+  #strengths .aside.bring ul { grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .role-row { grid-template-columns: 175px minmax(0, 1fr); gap: 26px; }
   .thumb { float: none; display: block; width: 100%; max-width: 320px; margin: 3px 0 18px; }
   .card.with-figure { grid-template-columns: 180px minmax(0, 1fr); gap: 24px; }
@@ -433,9 +458,9 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 
     <div class="ledger" aria-label="Selected publications">
       <div class="ledger-h"><span>대표 연구</span></div>
-      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="t">MoSPR: 조직 이미지로 유전자 발현 예측, 영역별로 분해 가능</span><span class="v first"><span class="meta-unit">2026</span> <span class="meta-unit">프리프린트</span> <span class="meta-unit">공동 제1저자</span></span></a>
-      <a class="pub" href="#molecular-substitution"><span class="t">정확한 모델도 분자검사를 대체하지 못하는 경우</span><span class="v first"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">포스터 채택</span> <span class="meta-unit">제1저자</span></span></a>
-      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="t">H&E만으로 분자검사 위험군 예측, 2개 병원 검증</span><span class="v first"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">제1저자</span></span></a>
+      <a class="pub" href="https://arxiv.org/abs/2609.34280" target="_blank" rel="noopener"><span class="pub-fig"><img src="/assets/thumb_mospr.jpg" alt="" width="64" height="64"></span><span class="t">MoSPR: 조직 이미지로 유전자 발현 예측, 영역별로 분해 가능</span><span class="v first"><span class="meta-unit">2026</span> <span class="meta-unit">프리프린트</span> <span class="meta-unit">공동 제1저자</span></span></a>
+      <a class="pub" href="#molecular-substitution"><span class="pub-fig tile" aria-hidden="true">GIW<br>2026</span><span class="t">정확한 모델도 분자검사를 대체하지 못하는 경우</span><span class="v first"><span class="meta-unit">GIW 2026</span> <span class="meta-unit">포스터 채택</span> <span class="meta-unit">제1저자</span></span></a>
+      <a class="pub" href="https://www.nature.com/articles/s41598-025-16679-x" target="_blank" rel="noopener"><span class="pub-fig"><img src="/assets/thumb_breast.jpg" alt="" width="64" height="64"></span><span class="t">H&E만으로 분자검사 위험군 예측, 2개 병원 검증</span><span class="v first"><span class="meta-unit">Scientific Reports 2025</span> <span class="meta-unit">제1저자</span></span></a>
 
     <a class="ledger-footer" href="#publications">전체 논문 보기 →</a></div>
   </header>
@@ -446,9 +471,10 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <section class="block" id="about">
     <div class="head"><h2>연구</h2></div>
     <div class="about">
+<div class="about-text">
 <p>산업 현장에서 5년 이상 머신러닝 연구개발을 수행하며, 연구 질문 설정부터 데이터 분석, 모델 구현, 실험 설계와 논문 작성까지 이어왔습니다.</p>
 <p>관심의 중심에는 모델이 학습한 표현, 예측의 근거, 그리고 그 결과를 신뢰할 수 있는 조건이 있습니다. 서로 다른 데이터를 연결하는 학습 방법과 해석 가능한 모델을 연구하고, 분포 변화와 불확실성을 고려해 평가합니다.</p>
-<p>이 연구의 대부분은 라벨이 비싸고, 병원마다 데이터 분포가 다르며, 규제 검증까지 통과해야 하는 의료 데이터에서 이뤄졌습니다. 이런 조건에서 검증한 방법은 다른 분야에도 그대로 통하며, 새로운 데이터와 문제에 적용하고자 합니다.</p>
+<p>이 연구의 대부분은 라벨이 비싸고, 병원마다 데이터 분포가 다르며, 규제 검증까지 통과해야 하는 의료 데이터에서 이뤄졌습니다. 이런 조건에서 검증한 방법은 다른 분야에도 그대로 통하며, 새로운 데이터와 문제에 적용하고자 합니다.</p></div>
       <div class="aside">
         <h3>연구 관심사</h3>
 <ul class="evidence"><li><span class="it">멀티모달 학습과 표현 학습</span><span class="ev">H&E 이미지와 프로테오믹스·RNA 통합(MoSPR, 약물 반응 모델)</span></li><li><span class="it">모델 해석과 설명 가능한 AI</span><span class="ev">예측을 전역·영역별 프로그램으로 분해(MoSPR), class-activation map 점검</span></li><li><span class="it">일반화와 강건성</span><span class="ev">병원 단위 분리 검증, leave-drug-out 분할, 기관 교란 점검</span></li><li><span class="it">불확실성과 신뢰성 평가</span><span class="ev">불확실한 영역의 예측 보류(MurSS), OOD 기반 액티브 러닝, 사전 등록 프로토콜</span></li></ul>
@@ -691,7 +717,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
         <a class="paper-figure" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="/assets/pub_g2l_distillation.png" alt="G2L knowledge-distillation framework overview" loading="lazy"></a>
         <div class="main">
 
-          <span class="venue"><span class="meta-unit">AAAI 2026 워크숍 (W3PHIAI)</span> <span class="meta-unit">구두 발표</span> <span class="meta-unit">공저자</span></span>
+          <span class="venue"><span class="meta-unit">AAAI 2026 워크숍 (W3PHIAI)</span> <span class="meta-unit hl">구두 발표</span> <span class="meta-unit">공저자</span></span>
           <h3><a href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener">G2L: From <span class="term">Giga-Scale</span> to <span class="term">Cancer-Specific</span> <span class="term">Large-Scale</span> Pathology Foundation Models via Knowledge Distillation</a></h3>
 
         <details class="research-detail"><summary>연구 요약</summary><p>기가스케일 병리 파운데이션 모델을 지식 증류(knowledge distillation)로 압축해 암종 특화 경량 인코더를 만듭니다. 연산량은 줄이면서 다운스트림 과제 성능은 유지합니다.</p><div class="metrics"><span class="meta-unit">지식 증류</span> <span class="meta-unit">자기지도 학습</span></div></details></div>
@@ -742,7 +768,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
       <article class="row">
 
         <div class="main">
-          <span class="venue"><span class="meta-unit">BIOINFO/GIW <span class="term">ISCB-Asia</span> 2026</span> <span class="meta-unit">구두 발표 채택</span> <span class="meta-unit">공저자</span></span>
+          <span class="venue"><span class="meta-unit">BIOINFO/GIW <span class="term">ISCB-Asia</span> 2026</span> <span class="meta-unit hl">구두 발표 채택</span> <span class="meta-unit">공저자</span></span>
           <h3>A reliability map for <span class="term">per-gene</span> multiome RNA velocity parameters in <span class="term">single-cell</span> kinetics</h3>
 
         <details class="research-detail"><summary>연구 요약</summary><p>서울 · 2026.11.<span class="term">17–20</span>. 멀티옴 RNA velocity 방법이 추정하는 유전자별 파라미터(전사율 α, 분해율 γ, 크로마틴-전사 지연)를 실제로 신뢰할 수 있는지 검증했습니다. 5개 velocity 방법을 4개 축(방법 간 재현성, <span class="term">ATAC-shuffle</span> 대조, 외부 멀티옴 5종 재현, 실측 합성·분해율과의 비교)으로 평가했습니다. 방법 간에 재현된 것은 α뿐이었고, γ와 지연은 독립적인 측정법으로 따로 검증해야 합니다.</p><div class="metrics"><span class="meta-unit"><span>α 재현성</span> <b>ρ = 0.88</b></span> <span class="meta-unit"><span>γ</span> <b>ρ ≈ −0.1</b></span> <span class="meta-unit">사전 등록 6/6 통과</span></div></details></div>
@@ -901,7 +927,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 </main>
 
 <footer><span>이건규 · 대한민국 서울</span>
-  <span class="upd">최종 업데이트 2026-10-28</span>
+  <span class="upd">최종 업데이트 2026-10-31</span>
 </footer>
 
 </body>
