@@ -499,14 +499,14 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
         <div class="what">
           <h3>AI 리서처</h3>
           <div class="sub">크로스모달 학습 · 멀티오믹스 · 약물 반응</div>
-          <ul><li>프로테오믹스·RNA·H&E를 활용한 약물 반응 예측 멀티오믹스 R&D 주도(진행 중)</li><li>프로테오믹스 기반 IC50 모델, 반려견 종양 약물 추천 알고리즘, ADMET 모델 개발</li><li>Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도</li><li>협력사 데이터 전송 시스템 구축</li></ul>
+          <ul><li>프로테오믹스·RNA·H&E를 활용한 약물 반응 예측 멀티오믹스 R&D 주도(진행 중, 단백체 분석 4명·AI 4명의 8인 팀)</li><li>프로테오믹스 기반 IC50 모델, 반려견 종양 약물 추천 알고리즘, ADMET 모델 개발</li><li>Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도</li><li>협력사 데이터 전송 시스템 구축</li></ul>
         <details class="project-detail"><summary>상세 내용</summary><ul>
             <li>프로테오믹스·RNA와 H&E 병리를 통합한 약물 반응 예측 멀티오믹스 모델 R&D 주도(진행 중)</li>
-            <li>프로테오믹스 기반 세포주 약물 반응(IC50) 예측 모델 개발(학습에 없던 약물 대상 leave-drug-out 평가, Pearson ≥ 0.65, 사내 R&D·미공개)</li>
+            <li>프로테오믹스 기반 세포주 약물 반응(IC50) 예측 모델 개발(381개 약물 각각을 학습에서 빼고 평가하는 leave-one-drug-out, Pearson ≥ 0.65, 사내 R&D·미공개)</li>
             <li>반려견 종양 약물 추천 알고리즘 및 ADMET 예측 모델 개발</li>
             <li>Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도(만능줄기세포 CRISPR 넉다운 반응 예측)</li>
             <li>H&E 기반 유전자 발현 예측 모델 MoSPR 논문 공동 제1저자(프리프린트·코드 공개)</li>
-            <li>G2L 논문(AAAI 2026 워크숍 W3PHIAI 구두 발표) 및 삼중음성 유방암 공간 프로테오믹스 프리프린트(2026) 공저자</li>
+            <li>G2L 논문(AAAI 2026 워크숍 W3PHIAI 논문 채택, 공저자 구두 발표) 및 삼중음성 유방암 공간 프로테오믹스 프리프린트(2026) 공저자</li>
             
           </ul></details></div>
       </div>
@@ -515,11 +515,11 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
         <div class="what">
           <h3>AI 리서처</h3>
           <div class="sub">Computational Pathology · 식약처(MFDS) 인허가용 모델 검증</div>
-          <ul><li>2개 병원 유방암 재발 연구의 WSI 파이프라인과 예측 모델 개발</li><li>림프절 전이 검출 및 사구체 분할 모델 개발</li><li>전립선암 전이·재발 위험 모델링 주도</li><li>MFDS 인허가 신청을 위한 모델 검증·문서 작성 기여, Docker 기반 서버 자동화 도구 개발</li></ul>
+          <ul><li>2개 병원 유방암 재발 연구의 WSI 파이프라인과 예측 모델 개발</li><li>림프절 전이 검출 및 사구체 분할 모델 개발</li><li>전립선암 전이·재발 위험 모델링 주도(사내, 미발표)</li><li>MFDS 인허가 신청을 위한 모델 검증·문서 작성 기여, Docker 기반 서버 자동화 도구 개발</li></ul>
         <details class="project-detail"><summary>상세 내용</summary><ul>
             <li>2개 병원 유방암 재발 예측 연구 제1저자(Scientific Reports 2025), WSI 500장 이상을 처리한 파이프라인 구축</li>
             <li>림프절 전이 검출 모델 개발, 딥바이오 팀과 KPIs 2024 챌린지 사구체 분할 모델 개발(전체 슬라이드 트랙 2위, MICCAI 2024), 챌린지 결과 논문(Medical Image Analysis, 2026) 공저자</li>
-            <li>전립선암 전이·재발 위험 모델링 프로젝트 주도</li>
+            <li>전립선암 전이·재발 위험 모델링 프로젝트 주도(림프절 전이 모델 포함, 사내·미발표)</li>
             <li>AACR(2022, 2023)·USCAP(2022)에서 유방암 병리 AI 연구 제1저자 발표, 췌장암·유방암 생존 예측 포스터 공저자</li>
             
           </ul></details></div>
@@ -592,7 +592,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
           <div class="k">프로테오믹스 · OMIXAI</div>
           <h3>프로테오믹스로 약물 반응 예측</h3>
           <div class="tagline"><span class="meta-unit">사내 R&D</span> <span class="meta-unit">미공개</span></div>
-          <p>프로테오믹스 데이터로 세포주의 약물 반응(IC50)을 예측하는 모델을 개발했습니다. 학습에 없던 약물로만 테스트하는 <span class="term">leave-drug-out</span> 방식으로 평가했습니다(Pearson ≥ 0.65). LoRA/PEFT 기반 자기지도 프로테옴 표현 학습도 별도로 진행했습니다.</p>
+          <p>프로테오믹스 데이터로 세포주의 약물 반응(IC50)을 예측하는 모델을 개발했습니다. 381개 약물 중 380개로 학습하고 남은 1개로 테스트하는 것을 모든 약물에 반복하는 <span class="term">leave-one-drug-out</span> 방식으로 평가했습니다(Pearson ≥ 0.65). LoRA/PEFT 기반 자기지도 프로테옴 표현 학습도 별도로 진행했습니다.</p>
         </div>
       </article>
 
@@ -608,10 +608,18 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
       </article><article class="card with-figure">
         <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
         <div class="card-body">
-          <div class="k">사이드 프로젝트 · NVIDIA 해커톤 2026</div>
+          <div class="k">사이드 프로젝트 · FAST CAMPUS × NVIDIA Agentic AI 해커톤 2026 · 결선 진출</div>
           <h3>FlyGate: 신약 탐색과 약물 안전성 감시</h3>
           <div class="tagline"><span class="meta-unit"><span>추가 학습 없는 NIM 점검 · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> 친화도</span> <b>ρ 0.767</b></span> <a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>5인 팀으로 참가한 NVIDIA Korea Agentic AI Hackathon 2026 출품작입니다. 시판 전 표적 결합 예측(FlyDiscovery)과 시판 후 이상사례 감시(FlyVigilance)를 하나의 에이전트로 잇습니다. 이 중 FlyDiscovery 모듈과 탐색 워크벤치 UI를 개발했습니다. FlyDiscovery는 BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)으로 후보 물질을 구조 예측부터 결합 친화도까지 평가합니다.</p>
+          <p>5인 팀으로 FAST CAMPUS × NVIDIA Agentic AI Hackathon 2026 결선에 진출한 작품입니다. 시판 전 표적 결합 예측(FlyDiscovery)과 시판 후 이상사례 감시(FlyVigilance)를 하나의 에이전트로 잇습니다. 이 중 FlyDiscovery 모듈과 탐색 워크벤치 UI를 개발했습니다. FlyDiscovery는 BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)으로 후보 물질을 구조 예측부터 결합 친화도까지 평가합니다.</p>
+        </div>
+      </article><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_kbeautygate_architecture.jpg" target="_blank" rel="noopener"><img src="/assets/proj_kbeautygate_architecture.jpg" alt="K-BeautyGate architecture: one Python workflow run on a Vercel web demo and inside an NVIDIA OpenShell sandbox on Brev" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">사이드 프로젝트 · FAST CAMPUS × NVIDIA Agentic AI 해커톤 2026 · 본선</div>
+          <h3>K-BeautyGate: 샌드박스에서 검증한 외국인 관광객용 K-뷰티 쇼핑 에이전트</h3>
+          <div class="tagline"><span class="meta-unit"><span>Nemotron + 규칙 검사</span> <b>한 / 영 / 일 / 중</b></span> <span class="meta-unit"><span>OpenShell 우회 접근 차단</span> <b>4 / 4</b></span> <a href='https://k-beauty-gate-zeta.vercel.app/' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/K-BeautyGate' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>같은 해커톤 본선에서 Team FlyGate(5인)가 만든 작품이며, 결선에는 위의 FlyGate로 진출했습니다. 방문객의 취향·회피 성분·예산·시간을 받아 근거가 있는 제품 추천, 매장 동선, 직원에게 보여 줄 한국어 카드를 만듭니다. 핵심 Python 워크플로와 웹 데모·Vercel 배포, 식약처(MFDS)·대만 TFDA 성분·회수 자료 대조, 위험한 요청과 프롬프트 주입 문서를 거르는 검사를 개발했습니다. 같은 코드를 Brev의 NVIDIA OpenShell 샌드박스에서 실행해, 정상 모델 호출은 허용되고 정책 밖의 파일·네트워크 접근은 차단되는 것을 실행 기록으로 확인했습니다.</p>
         </div>
       </article></div></details>
     <p class="earlier">산업용 비전, 정형 데이터 ML, 데이터 엔지니어링, 분할 모델 견고성을 다룬 초기 작업(2019–2020)은 <a href="https://github.com/Geongyu" target="_blank" rel="noopener">GitHub</a>에서 볼 수 있습니다.</p>
@@ -664,7 +672,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
       <article class="row">
 
         <div class="main">
-          <span class="venue"><span class="meta-unit">ML4H 2026 Findings</span> <span class="meta-unit">채택 · 포스터 발표</span> <span class="meta-unit">공저자 · 발표자</span> <span class="meta-unit hl">BIOINFO/GIW ISCB-Asia 2026 구두 발표 채택</span></span>
+          <span class="venue"><span class="meta-unit">ML4H 2026 Findings</span> <span class="meta-unit">논문 채택 · 포스터 발표</span> <span class="meta-unit">공저자 · 발표자</span> <span class="meta-unit hl">BIOINFO/GIW ISCB-Asia 2026 구두 발표 채택</span></span>
           <h3>A reliability map for <span class="term">per-gene</span> multiome RNA velocity parameters in <span class="term">single-cell</span> kinetics</h3>
 
         <details class="research-detail"><summary>연구 요약</summary><p>멀티옴 RNA velocity 방법이 추정하는 유전자별 파라미터(전사율 α, 분해율 γ, 크로마틴-전사 지연)를 실제로 신뢰할 수 있는지 검증했습니다. 5개 velocity 방법을 4개 축(방법 간 재현성, <span class="term">ATAC-shuffle</span> 대조, 외부 멀티옴 5종 재현, 실측 합성·분해율과의 비교)으로 평가했습니다. 방법 간에 재현된 것은 α뿐이었고, γ와 지연은 독립적인 측정법으로 따로 검증해야 합니다.</p><div class="metrics"><span class="meta-unit"><span>α 재현성</span> <b>ρ = 0.88</b></span> <span class="meta-unit"><span>γ</span> <b>ρ ≈ −0.1</b></span> <span class="meta-unit">사전 등록 6/6 통과</span></div></details></div>
@@ -711,7 +719,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
         <a class="paper-figure" href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener"><img src="/assets/pub_g2l_distillation.png" alt="G2L knowledge-distillation framework overview" loading="lazy"></a>
         <div class="main">
 
-          <span class="venue"><span class="meta-unit">AAAI 2026 워크숍 (W3PHIAI)</span> <span class="meta-unit hl">구두 발표</span> <span class="meta-unit">공저자</span></span>
+          <span class="venue"><span class="meta-unit">AAAI 2026 워크숍 (W3PHIAI)</span> <span class="meta-unit">논문 채택 · 구두 발표(공저자 발표)</span> <span class="meta-unit">공저자</span></span>
           <h3><a href="https://arxiv.org/abs/2510.11176" target="_blank" rel="noopener">G2L: From <span class="term">Giga-Scale</span> to <span class="term">Cancer-Specific</span> <span class="term">Large-Scale</span> Pathology Foundation Models via Knowledge Distillation</a></h3>
 
         <details class="research-detail"><summary>연구 요약</summary><p>기가스케일 병리 파운데이션 모델을 지식 증류(knowledge distillation)로 압축해 암종 특화 경량 인코더를 만듭니다. 연산량은 줄이면서 다운스트림 과제 성능은 유지합니다.</p><div class="metrics"><span class="meta-unit">지식 증류</span> <span class="meta-unit">자기지도 학습</span></div></details></div>
@@ -823,7 +831,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
         <div class="main">
 
           <span class="venue"><span class="meta-unit">대한산업공학회 추계학술대회 2020</span> <span class="meta-unit">구두 발표</span> <span class="meta-unit">제1저자</span></span>
-          <h3>영역분할 모델 성능 향상을 위한 대조적 손실 함수의 활용</h3>
+          <h3><a href="/archive/conferences/KIIE2020_contrastive_loss_segmentation_slides.pdf" target="_blank" rel="noopener">영역분할 모델 성능 향상을 위한 대조적 손실 함수의 활용</a></h3>
 
         <details class="research-detail"><summary>연구 요약</summary><a class="thumb" href="/archive/conferences/KIIE2020_contrastive_loss_segmentation_slides.pdf" target="_blank" rel="noopener"><img src="/archive/conferences/KIIE2020_contrastive_loss_segmentation_arch.png" alt="U-Net with feature-wise contrastive loss on encoder embeddings" loading="lazy"></a><p>서울과학기술대 황상흠 교수 지도로, 인코더 병목에 <span class="term">feature-wise</span> contrastive loss를 적용해 CT 폐·간 분할에서 U-Net과 UNet++의 성능을 높였습니다. 석사 학위논문의 바탕이 된 연구입니다.</p><div class="metrics"><span class="meta-unit"><span>간 DSC</span> <b>0.912 → 0.923</b></span> <span class="meta-unit"><span>간 ASD</span> <b>0.533 → 0.365</b></span></div></details></div>
         <a class="go" href="/archive/conferences/KIIE2020_contrastive_loss_segmentation_slides.pdf" target="_blank" rel="noopener">슬라이드 ↗</a>
@@ -928,7 +936,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 </main>
 
 <footer><span>이건규 · 대한민국 서울</span>
-  <span class="upd">최종 업데이트 2026-11-09</span>
+  <span class="upd">최종 업데이트 2026-11-10</span>
 </footer>
 
 </body>

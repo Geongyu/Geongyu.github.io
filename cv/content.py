@@ -29,9 +29,9 @@ PUBS = [
       "ja": "総説 · 共同筆頭著者 · doi.org/10.1016/j.prnil.2025.02.002"}),
     ("A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics.",
      "ML4H 2026, Findings track.",
-     {"en": "Accepted poster · co-author, presenting · also oral at BIOINFO/GIW ISCB-Asia 2026",
-      "ko": "포스터 발표 채택 · 공저자·발표자 · BIOINFO/GIW ISCB-Asia 2026 구두 발표 채택",
-      "ja": "ポスター発表(採択) · 共著者・発表者 · BIOINFO/GIW ISCB-Asia 2026 口頭発表(採択)"}),
+     {"en": "Accepted paper · poster presentation · co-author, presenter · also oral at BIOINFO/GIW ISCB-Asia 2026",
+      "ko": "논문 채택 · 포스터 발표 · 공저자·발표자 · BIOINFO/GIW ISCB-Asia 2026 구두 발표 채택",
+      "ja": "論文採択 · ポスター発表 · 共著者・発表者 · BIOINFO/GIW ISCB-Asia 2026 口頭発表(採択)"}),
     ("KPIs 2024 challenge: Advancing glomerular segmentation from patch- to slide-level.",
      "Medical Image Analysis 114, 104234, 2026.",
      {"en": "Challenge report · co-author · team 2nd place, whole-slide track · doi.org/10.1016/j.media.2026.104234",
@@ -49,9 +49,9 @@ PUBS = [
       "ja": "共著者 · arXiv:2603.20273"}),
     ("G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Knowledge Distillation.",
      "AAAI 2026 Workshop (W3PHIAI).",
-     {"en": "Oral · co-author · arXiv:2510.11176",
-      "ko": "구두 발표 · 공저자 · arXiv:2510.11176",
-      "ja": "口頭発表 · 共著者 · arXiv:2510.11176"}),
+     {"en": "Accepted paper · oral (presented by a co-author) · co-author · arXiv:2510.11176",
+      "ko": "논문 채택 · 구두 발표(공저자 발표) · 공저자 · arXiv:2510.11176",
+      "ja": "論文採択 · 口頭発表(共著者による発表) · 共著者 · arXiv:2510.11176"}),
     ("MurSS: A Multi-Resolution Selective Segmentation Model for Breast Cancer.",
      "Bioengineering 11(5), 463, 2024.",
      {"en": "Co-author · doi.org/10.3390/bioengineering11050463",
@@ -97,8 +97,8 @@ EN = {
     "h_talks": "Conference Presentations",
     "jobs": [
         ("OMIXAI (formerly RadiSen)", "Feb 2025 – Present", "AI Researcher · Seoul", [
-            "Lead R&amp;D on a multi-omics model that combines proteomics and RNA with H&amp;E pathology to predict drug response (in progress).",
-            "Built a proteomics-based model of cell-line drug response (IC50) and evaluated it with leave-drug-out splits, so test drugs were never seen in training (Pearson ≥ 0.65; internal R&amp;D, unpublished). Also worked on self-supervised representation learning for proteomics with LoRA/PEFT.",
+            "Lead R&amp;D on a multi-omics model that combines proteomics and RNA with H&amp;E pathology to predict drug response, in an 8-person team (4 proteomics, 4 AI; in progress).",
+            "Built a proteomics-based model of cell-line drug response (IC50) and evaluated it leave-one-drug-out over 381 compounds, so test drugs were never seen in training (Pearson ≥ 0.65; internal R&amp;D, unpublished). Also worked on self-supervised representation learning for proteomics with LoRA/PEFT.",
             "Developed ADMET prediction models and a drug-recommendation algorithm for canine cancer (top-k ≥ 70% on an in-house cohort; internal R&amp;D, unpublished).",
             "Co-led OMIXAI's team entry in the Arc Institute Virtual Cell Challenge (predicting CRISPR-knockdown response in pluripotent stem cells).",
             "Co-first author of the MoSPR preprint on gene-expression prediction from H&amp;E (code released). The method ranked 1st of 15 in the paper's benchmark on three TCGA cancers (gene-wise PCC).",
@@ -106,9 +106,8 @@ EN = {
         ("Deep Bio", "Mar 2021 – Jan 2025", "AI Researcher · Seoul", [
             "First-authored a two-hospital study (n=125) predicting Oncotype DX recurrence-score risk groups from H&amp;E slides alone (Scientific Reports 2025; sensitivity 0.86 / 0.75 / 0.53 for low / intermediate / high risk). Built a WSI pipeline that processed 500+ slides.",
             "Developed a lymph-node metastasis detection model and, with the Deep Bio team, the glomerular segmentation model for the KPIs 2024 Challenge at MICCAI 2024 (2nd place, whole-slide track). Co-authored the challenge report (Medical Image Analysis, 2026).",
-            "Led prostate metastasis and recurrence-risk modeling projects.",
-            "Presented first-author breast-cancer pathology posters at AACR (2022, 2023) and USCAP (2022).",
-            "Contributed to pre-deployment model validation and regulatory documentation for a medical-AI product submitted to Korea's MFDS. Built internal server-automation tools with Docker.",
+            "Led prostate metastasis and recurrence-risk modeling, incl. lymph-node metastasis detection (unpublished).",
+            "Contributed to pre-deployment model validation and regulatory documentation for a medical-AI product submitted to Korea's MFDS.",
         ]),
         ("Nuricon", "2021", "Intern · Pangyo", [
             "Built a parking-lot fire-detection AI system.",
@@ -181,8 +180,8 @@ KO = {
     "h_talks": "학회 발표",
     "jobs": [
         ("OMIXAI(구 래디센)", "2025.02 – 현재", "AI 리서처 · 서울", [
-            "프로테오믹스·RNA와 H&amp;E 병리를 통합한 약물 반응 예측 멀티오믹스 모델 R&amp;D 주도(진행 중)",
-            "프로테오믹스 기반 세포주 약물 반응(IC50) 예측 모델 개발 및 leave-drug-out 평가(학습에 없던 약물로만 테스트, Pearson ≥ 0.65, 사내 R&amp;D, 미공개), LoRA/PEFT 기반 자기지도 프로테옴 표현 학습 별도 수행",
+            "프로테오믹스·RNA와 H&amp;E 병리를 통합한 약물 반응 예측 멀티오믹스 모델 R&amp;D 주도(진행 중, 단백체 분석 4명·AI 4명의 8인 팀)",
+            "프로테오믹스 기반 세포주 약물 반응(IC50) 예측 모델 개발 및 leave-one-drug-out 평가(381개 약물 각각을 학습에서 빼고 테스트, Pearson ≥ 0.65, 사내 R&amp;D, 미공개), LoRA/PEFT 기반 자기지도 프로테옴 표현 학습 별도 수행",
             "반려견 종양 약물 추천 알고리즘(자체 코호트 top-k ≥ 70%, 사내 R&amp;D, 미공개) 및 ADMET 예측 모델 개발",
             "Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도(만능줄기세포 CRISPR 녹다운 반응 예측)",
             "H&amp;E 기반 유전자 발현 예측 모델 MoSPR 공동 제1저자(논문 벤치마크 15개 방법 중 유전자별 PCC 1위, TCGA 3개 암종, 프리프린트·코드 공개)",
@@ -191,7 +190,7 @@ KO = {
         ("딥바이오", "2021.03 – 2025.01", "AI 리서처 · 서울", [
             "H&amp;E 슬라이드만으로 Oncotype DX 재발 점수 위험군을 예측한 2개 병원 125례 연구 제1저자(Scientific Reports 2025, 저·중·고위험군 민감도 0.86 / 0.75 / 0.53), WSI 500장 이상을 처리한 파이프라인 구축",
             "림프절 전이 검출 모델 개발, 딥바이오 팀과 KPIs 2024 챌린지 사구체 분할 모델 개발(전체 슬라이드 트랙 2위, MICCAI 2024), 챌린지 결과 논문(Medical Image Analysis, 2026) 공저자",
-            "전립선암 전이·재발 위험 모델링 프로젝트 주도",
+            "전립선암 전이·재발 위험 모델링 프로젝트 주도(림프절 전이 모델 포함, 사내·미발표)",
             "AACR(2022, 2023)·USCAP(2022)에서 유방암 병리 AI 연구 제1저자 발표, 췌장암·유방암 생존 예측 포스터 공저자",
             "식약처(MFDS)에 인허가를 신청한 의료 AI 제품의 출시 전 모델 검증 및 인허가 문서 작성 기여, Docker 기반 사내 서버 자동화 도구 개발",
         ]),
@@ -266,8 +265,8 @@ JA = {
     "h_talks": "学会発表",
     "jobs": [
         ("OMIXAI (旧RadiSen)", "2025.02 – 現在", "AIリサーチャー · ソウル", [
-            "プロテオミクス・RNAとH&amp;E病理画像を統合して薬剤応答を予測するマルチオミクスモデルの研究開発を主導(進行中)",
-            "プロテオミクスに基づく細胞株の薬剤応答(IC50)予測モデルを開発し、テスト薬剤を学習から完全に除いた<span class=\"nw\">leave-drug-out方式</span>で評価(Pearson ≥ 0.65、社内R&amp;D・未発表)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も実施",
+            "プロテオミクス・RNAとH&amp;E病理画像を統合して薬剤応答を予測するマルチオミクスモデルの研究開発を主導(進行中、プロテオーム解析4名・AI 4名の8人チーム)",
+            "プロテオミクスに基づく細胞株の薬剤応答(IC50)予測モデルを開発し、381薬剤のそれぞれを学習から外す<span class=\"nw\">leave-one-drug-out方式</span>で評価(Pearson ≥ 0.65、社内R&amp;D・未発表)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も実施",
             "犬の腫瘍に対する薬剤推薦アルゴリズム(自社コホートでtop-k ≥ 70%、社内R&amp;D・未発表)とADMET予測モデルの開発",
             "OMIXAIチームの共同リーダーとしてArc Institute Virtual Cell Challengeに参加(多能性幹細胞のCRISPRノックダウン応答予測)",
             "H&amp;E画像から遺伝子発現を予測するMoSPR論文の共同筆頭著者(TCGA 3がん種での論文内比較で遺伝子別PCCが15手法中1位)",
@@ -276,7 +275,7 @@ JA = {
         ("Deep Bio", "2021.03 – 2025.01", "AIリサーチャー · ソウル", [
             "H&amp;E画像のみからOncotype DX再発スコアのリスク群を予測した2施設・125例の研究の筆頭著者(Scientific Reports 2025、<span class=\"nw\">低・中・高リスクの感度</span> 0.86 / 0.75 / 0.53)。WSIパイプラインを構築し、500枚以上のスライドを処理",
             "リンパ節転移検出モデルの開発、Deep BioチームでのKPIs 2024チャレンジ向け糸球体セグメンテーションモデルの開発(WSIレベル部門2位、MICCAI&nbsp;2024)。チャレンジ報告論文(Medical Image Analysis、2026)の共著者",
-            "前立腺がんの転移・再発リスクモデリングのプロジェクトを主導",
+            "前立腺がんの転移・再発リスクモデリングのプロジェクトを主導(リンパ節転移モデルを含む、社内・未発表)",
             "AACR(2022、2023)・USCAP(2022)で乳がん病理AI研究を筆頭著者として発表。膵臓がん・乳がん生存予測ポスターの共著者",
             "MFDSに承認申請された医療AI製品の実運用前モデル検証と申請文書作成に貢献。Dockerによる社内サーバー自動化ツールの開発",
         ]),
