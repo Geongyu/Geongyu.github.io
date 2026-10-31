@@ -330,7 +330,11 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   .row.with-figure .gos { grid-column: 2; flex-direction: row; gap: 20px; padding-top: 0; }
 }
 @media (max-width: 820px) {
-  .nav a:not(.m) { display: none; }
+  .topright, .nav { min-width: 0; }
+  .nav { overflow-x: auto; white-space: nowrap; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav { -webkit-mask-image: linear-gradient(to right, #000 88%, transparent); mask-image: linear-gradient(to right, #000 88%, transparent); padding-right: 24px; }
+  .nav a { flex: none; }
   .hero { grid-template-columns: minmax(0, 1fr); gap: 42px; padding: 44px 0 56px; }
   .hero h1 { font-size: 42px; }
   .lede { max-width: 62ch; }
@@ -349,7 +353,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   .topright { display: contents; }
   .langsw { order: 1; margin-left: auto; }
   .langopt { min-width: 34px; padding: 4px 6px; }
-  .nav { order: 2; width: 100%; gap: 26px; font-size: 14px; }
+  .nav { order: 2; width: 100%; gap: 22px; font-size: 14px; }
   .nav a { min-height: 39px; }
   .hero { padding-top: 34px; gap: 33px; }
   .hero-id { gap: 17px; margin-bottom: 23px; }
@@ -451,6 +455,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
       <p class="lede">学習に使っていないデータ、たとえば新しい病院や未知の薬剤でも通用する機械学習モデルを作ります。画像・タンパク質・RNAなど異なるデータを結びつけ、予測を信頼する前にその根拠がどこから来るのかを確かめます。</p>
       <div class="chips">
         <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_JA.pdf" download>CV (PDF)</a>
+        <a class="chip" href="mailto:rjsrb365@gmail.com">メール</a>
         <a class="chip" aria-label="Google Scholar" title="Google Scholar" href="https://scholar.google.com/citations?user=43BuluYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
         <a class="chip" aria-label="GitHub" title="GitHub" href="https://github.com/Geongyu" target="_blank" rel="noopener">GitHub</a>
       </div>
