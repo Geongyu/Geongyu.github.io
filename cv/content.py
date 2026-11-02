@@ -143,9 +143,10 @@ EN = {
     ],
     "h_service": 'Community &amp; Service',
     "service": [
-        ('Research member (Runner), AutoBioX: AI Agents for End-to-End Bio Research, Pseudo Lab Season 12', '2026 · completed · 2 studies at BIOINFO/GIW ISCB-Asia 2026, 1 also at ML4H 2026 Findings'),
-        ('Reviewer, ML4H 2026 (Machine Learning for Health Symposium)', '2026'),
+        ('Research member, AutoBioX, Pseudo Lab Season 12', '2026 · 2 studies at BIOINFO/GIW ISCB-Asia 2026, 1 also at ML4H 2026 Findings'),
+        ('Reviewer, ML4H 2026 (Machine Learning for Health)', '2026'),
         ('AI Career &amp; Project Mentor, Codeit', '2025 – Present · part-time · 30+ mentees 1:1, 8+ project teams across 3 cohorts'),
+        ('Co-author, two Korean e-books on AI drug discovery (BOOKK)', '2026 · wrote the AI and math parts'),
     ],
     "talks": [
         ('Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers', 'BIOINFO/GIW ISCB-Asia 2026 · Accepted poster · First author'),
@@ -230,6 +231,7 @@ KO = {
         ('가짜연구소(Pseudo Lab) 12기 AutoBioX(AI Agents for End-to-End Bio Research) 연구 멤버(러너)', '2026 · 수료 · 연구 2편 <span class="nw">BIOINFO/GIW ISCB-Asia 2026</span> 채택, 이후 1편 ML4H 2026 Findings 채택'),
         ('ML4H(Machine Learning for Health Symposium) 리뷰어', '2026'),
         ('코드잇 AI 커리어·프로젝트 멘토', '2025 – 현재 · 파트타임 · 멘티 30명 이상 1:1 멘토링, 3개 기수 프로젝트 팀 8개 이상 지도'),
+        ('AI 신약개발 전자책 2권 공저(부크크)', '2026 · 《질병의 신호를 읽어라》《약이 될 분자를 찾아라》 · AI·수학 파트 집필 · OMIXAI 동료들과 업무 외 자발적 프로젝트'),
     ],
     "talks": [
         ('Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers', 'BIOINFO/GIW ISCB-Asia 2026 · 포스터 발표 채택 · 제1저자'),
@@ -314,6 +316,7 @@ JA = {
         ('Pseudo Lab シーズン12「AutoBioX: AI Agents for End-to-End Bio Research」研究メンバー(ランナー)', '2026 · 修了 · 研究2件が<span class="nw">BIOINFO/GIW ISCB-Asia 2026</span>に採択、その後1件がML4H 2026 Findingsに採択'),
         ('ML4H 2026(Machine Learning for Health Symposium)査読者', '2026'),
         ('AIキャリア・プロジェクトメンター(Codeit)', '2025 – 現在 · 非常勤 · メンティー30名以上への1対1メンタリング、3期にわたり8チーム以上のプロジェクトを指導'),
+        ('AI創薬に関する韓国語電子書籍2冊を共著(BOOKK)', '2026 · 『질병의 신호를 읽어라』『약이 될 분자를 찾아라』 · AI・数学パートを執筆 · OMIXAIの同僚と業務外の自主プロジェクト'),
     ],
     "talks": [
         ('Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers', 'BIOINFO/GIW ISCB-Asia 2026 · ポスター発表(採択) · 筆頭著者'),
