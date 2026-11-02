@@ -115,10 +115,10 @@ EN = {
         ]),
     ],
     "projects": [
-        ("Brain-hemorrhage detection on CT", "SK / Ajou Univ. Hospital",
-         "2D and 3D hemorrhage segmentation and slice-level classification. Validated domain generalization on external data and checked classification reliability with class-activation maps."),
-        ("FlyGate: agent for drug discovery and pharmacovigilance", "NVIDIA Korea Agentic AI Hackathon 2026",
-         "Side project with a team of 5. Built the FlyDiscovery module and its UI on BioNeMo NIM (off-the-shelf model checks: OpenFold3 RMSD&nbsp;1.0&nbsp;Å, Boltz-2 affinity ρ&nbsp;0.767)."),
+        ("Veterinary oncology CDSS: drug recommendation for canine cancer", "OMIXAI · IPET national R&amp;D · 2026–2030",
+         "Drug-recommendation algorithm for canine cancer toward a clinical decision-support system (top-k&nbsp;≥&nbsp;70% on an in-house cohort; internal R&amp;D, unpublished)."),
+        ("Brain-hemorrhage detection on CT", "SeoulTech × SK / Ajou Univ. Hospital · 2019",
+         "Hemorrhage segmentation (U-Net, Dice&nbsp;0.66, 50 test patients) and slice classification (accuracy&nbsp;0.90, 143 patients). Ranking performance held on the external RSNA set; class-activation maps confirmed the model looked at the bleed."),
     ],
     "education": [
         ("M.S. Data Science · Seoul National University of Science and Technology (SeoulTech)", "2019 – 2021",
@@ -200,10 +200,10 @@ KO = {
         ]),
     ],
     "projects": [
-        ("CT 뇌출혈 검출", "SK / 아주대병원",
-         "뇌출혈 2D·3D 분할 및 슬라이스 단위 분류, 외부 데이터 기반 도메인 일반화 검증, class-activation map 기반 분류 신뢰성 점검"),
-        ("FlyGate: 신약 탐색 → 약물감시 에이전트", "NVIDIA Korea Agentic AI 해커톤 2026",
-         "5인 팀 사이드 프로젝트, BioNeMo NIM 기반 FlyDiscovery 모듈 및 UI 개발(기성 모델 점검: OpenFold3 RMSD&nbsp;1.0&nbsp;Å, Boltz-2 친화도 ρ&nbsp;0.767)"),
+        ("수의 종양 CDSS: 반려견 종양 약물 추천", "OMIXAI · 농림식품기술기획평가원(IPET) 국가 R&amp;D · 2026 – 2030",
+         "임상 의사결정 지원 시스템(CDSS)을 위한 반려견 종양 약물 추천 알고리즘 개발(자체 코호트 top-k&nbsp;≥&nbsp;70%, 사내 R&amp;D·미공개)"),
+        ("CT 뇌출혈 검출", "서울과기대 × SK / 아주대병원 · 2019",
+         "뇌출혈 분할(U-Net, Dice&nbsp;0.66, 테스트 50명)과 슬라이스 분류(정확도&nbsp;0.90, 테스트 143명), 외부 RSNA 데이터에서 순위 성능 유지, class-activation map으로 출혈 부위 기반 판단 확인"),
     ],
     "education": [
         ("서울과학기술대학교(SeoulTech) · 데이터사이언스 석사", "2019 – 2021",
@@ -285,10 +285,10 @@ JA = {
         ]),
     ],
     "projects": [
-        ("CT脳出血検出", "SK / 亜洲大学校病院",
-         "脳出血の2D・3Dセグメンテーションとスライス単位の分類。外部データでのドメイン汎化の検証と、class-activation mapによる分類根拠の点検"),
-        ("FlyGate: 創薬探索 → 医薬品安全性監視エージェント", "NVIDIA Korea Agentic AI ハッカソン 2026",
-         "5人チームでのサイドプロジェクト。BioNeMo NIMを用いたFlyDiscoveryモジュールとそのUIを担当(既製NIMの検証でOpenFold3&nbsp;RMSD&nbsp;1.0&nbsp;Å、Boltz-2 親和性 ρ&nbsp;0.767)"),
+        ("獣医腫瘍CDSS：犬の腫瘍に対する薬剤推薦", "OMIXAI · 農林食品技術企画評価院(IPET)国家R&amp;D · 2026–2030",
+         "臨床意思決定支援システム(CDSS)に向けた犬の腫瘍の薬剤推薦アルゴリズムを開発(自社コホートでtop-k&nbsp;≥&nbsp;70%、社内R&amp;D・未公開)"),
+        ("CT脳出血検出", "ソウル科学技術大学 × SK / 亜洲大学校病院 · 2019",
+         "脳出血セグメンテーション(U-Net、Dice&nbsp;0.66、テスト50名)とスライス分類(正解率&nbsp;0.90、テスト143名)。外部RSNAデータでも順位性能を維持し、class-activation mapで出血部位に基づく判断を確認"),
     ],
     "education": [
         ("修士(データサイエンス) · ソウル科学技術大学校(SeoulTech)", "2019 – 2021",
