@@ -36,7 +36,7 @@ Biomedical data has been a major setting for this work. I am interested in exten
 
 | | |
 |---|---|
-| **Co-first author** † | *MoSPR* (preprint, 2026). Predicts gene expression from H&E using morpho-spatial macrostates and low-rank molecular programs. Ranked 1st of 15 methods in the paper's benchmark on three TCGA cancers (gene-wise PCC, BRCA 0.413) · [code](https://github.com/Radisen-Panthera/MoSPR) |
+| **Co-first author** † | *MoSPR* (preprint, under review, 2026). Predicts gene expression from H&E using morpho-spatial macrostates and low-rank molecular programs. Ranked 1st of 15 methods in the paper's benchmark on three TCGA cancers (gene-wise PCC, BRCA 0.413) · [code](https://github.com/Radisen-Panthera/MoSPR) |
 | **First author** | *BIOINFO/GIW ISCB-Asia 2026* (accepted poster). "Predictability is not substitutability" applied one pre-registered protocol with site-disjoint hold-outs and label-shuffle controls to 5 cancers. Of ~15 endpoints, only HNSC HPV status (AUROC 0.959) met the pre-registered confirmation criterion. Most of the others were reported as inconclusive. |
 | **First author** | *Scientific Reports* (2025). Prediction of 21-gene recurrence-assay risk groups in early-stage breast cancer from H&E alone · n=125, 2 hospitals · sensitivity L / I / H 0.86 / 0.75 / 0.53, specificity L / I / H 0.82 / 0.80 / 0.97 |
 | **Co-author** | *G2L* (AAAI 2026 Workshop W3PHIAI, oral). Distillation of giga-scale pathology foundation models into cancer-specific models. |
@@ -54,12 +54,12 @@ Multimodal & Representation Learning · Interpretability & Explainable AI · Gen
 
 | Year | Venue | Title | Authorship |
 |:--|:--|:--|:--|
-| 2026 | Preprint (arXiv) | [MoSPR: Histology-to-Gene Expression Prediction with Morpho-Spatial Macrostates and Low-Rank Molecular Programs](https://arxiv.org/abs/2609.34280) · [code](https://github.com/Radisen-Panthera/MoSPR) | **Co-first** † |
+| 2026 | Preprint (arXiv), under review | [MoSPR: Histology-to-Gene Expression Prediction with Morpho-Spatial Macrostates and Low-Rank Molecular Programs](https://arxiv.org/abs/2609.34280) · [code](https://github.com/Radisen-Panthera/MoSPR) | **Co-first** † |
 | 2026 | **ML4H 2026** Findings · accepted poster | A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics | Co-author (presenting) |
 | 2026 | **Medical Image Analysis** | [KPIs 2024 challenge: Advancing glomerular segmentation from patch- to slide-level](https://doi.org/10.1016/j.media.2026.104234) | Co-author (challenge report) |
 | 2026 | **AAAI 2026 Workshop** (W3PHIAI) · oral | [G2L: From Giga-Scale to Cancer-Specific Large-Scale Pathology Foundation Models via Knowledge Distillation](https://arxiv.org/abs/2510.11176) | Co-author |
-| 2026 | Preprint (arXiv) | [Spatial proteomics guided by H&E-based AI reveals recurrence-risk niches in triple-negative breast cancer](https://arxiv.org/abs/2608.03145) | Co-author |
-| 2026 | Preprint (arXiv) | [Efficient AI-Driven Multi-Section Whole Slide Image Analysis for Biochemical Recurrence Prediction in Prostate Cancer](https://arxiv.org/abs/2603.20273) | Co-author |
+| 2026 | Preprint (arXiv) | [AI-guided deep visual proteomics reveals recurrence-associated morpho-molecular signatures within triple-negative breast cancers](https://arxiv.org/abs/2608.03145) | Co-author |
+| 2026 | Preprint (arXiv) | [A Computationally Efficient Multi-Section Whole Slide Image Analysis for Capturing Prostate Cancer Multifocality in Biochemical Recurrence Prediction](https://arxiv.org/abs/2603.20273) | Co-author |
 | 2025 | **Scientific Reports** | [Assessing the risk of recurrence in early-stage breast cancer through H&E stained whole slide images](https://www.nature.com/articles/s41598-025-16679-x) | **First** |
 | 2025 | **Prostate International** · review | [Artificial intelligence–driven digital pathology in urological cancers: current trends and future directions](https://doi.org/10.1016/j.prnil.2025.02.002) | **Co-first** † |
 | 2024 | **Bioengineering** | [MurSS: A Multi-Resolution Selective Segmentation Model for Breast Cancer](https://www.mdpi.com/2306-5354/11/5/463) | Co-author |
@@ -92,8 +92,8 @@ Multimodal & Representation Learning · Interpretability & Explainable AI · Gen
 
 ## Funded research programs <sub>(participating researcher)</sub>
 
-- **Pan-Sarcoma Proteogenomic Profiling for Precision Oncology** · Korea–Japan · Kyung Hee Univ. Medical Center · 2025 – 2028 · in progress, no public results yet
-- **Virtual-Cell CDSS for Veterinary Oncology** · IPET / Ministry of Agriculture, national R&D · 2026 – 2030 (awarded)
+- **Pan-Sarcoma Proteogenomic Profiling for Precision Oncology** · National Cancer Center Korea, Korea–US Cancer Joint Research Program (RS-2025-02243055) · Korea–US–Japan · two parallel studies: human sarcoma (Kyung Hee Univ. Medical Center) and canine tumors (Japanese partner) · 2025 – 2028 · in progress, no public results yet
+- **Virtual-Cell CDSS for Veterinary Oncology** · IPET / Ministry of Agriculture, national R&D (RS-2026-25527499) · 2026 – 2030, ongoing
 - **General-Purpose AI for Cancer Pathology Diagnosis** · lead: Deep Bio, national R&D · program 2021 – 2025 · my participation Apr 2021 – Jan 2025
 
 ## Toolkit
