@@ -37,7 +37,7 @@ Biomedical data has been a major setting for this work. I am interested in exten
 | | |
 |---|---|
 | **Co-first author** † | *MoSPR* (preprint, under review, 2026). Predicts gene expression from H&E using morpho-spatial macrostates and low-rank molecular programs. Ranked 1st of 15 methods in the paper's benchmark on three TCGA cancers (gene-wise PCC, BRCA 0.413) · [code](https://github.com/Radisen-Panthera/MoSPR) |
-| **First author** | *BIOINFO/GIW ISCB-Asia 2026* (accepted poster). "Predictability is not substitutability" applied one pre-registered protocol with site-disjoint hold-outs and label-shuffle controls to 5 cancers. Of ~15 endpoints, only HNSC HPV status (AUROC 0.959) met the pre-registered confirmation criterion. Most of the others were reported as inconclusive. |
+| **Co-first & corresponding author** | *BIOINFO/GIW ISCB-Asia 2026* (accepted poster). "Predictability is not substitutability" applied one pre-registered protocol with site-disjoint hold-outs and label-shuffle controls to 5 cancers. Of ~15 endpoints, only HNSC HPV status (AUROC 0.959) met the pre-registered confirmation criterion. Most of the others were reported as inconclusive. |
 | **First author** | *Scientific Reports* (2025). Prediction of 21-gene recurrence-assay risk groups in early-stage breast cancer from H&E alone · n=125, 2 hospitals · sensitivity L / I / H 0.86 / 0.75 / 0.53, specificity L / I / H 0.82 / 0.80 / 0.97 |
 | **Co-author** | *G2L* (AAAI 2026 Workshop W3PHIAI, oral). Distillation of giga-scale pathology foundation models into cancer-specific models. |
 | **Challenge** | 2nd place in the KPIs 2024 Challenge whole-slide track, glomerular segmentation (MICCAI 2024, Deep Bio team) · co-author of the challenge report in *Medical Image Analysis* (2026) |
@@ -67,7 +67,7 @@ Multimodal & Representation Learning · Interpretability & Explainable AI · Gen
 
 **Conferences.** Original posters and slides are in [`archive/conferences/`](archive/conferences/).
 
-- BIOINFO/GIW ISCB-Asia 2026 · *Predictability is not substitutability: a cost-of-substitution framework for H&E-based molecular prediction across 5 cancers* · accepted poster, first & presenting author
+- BIOINFO/GIW ISCB-Asia 2026 · *Predictability is not substitutability: a cost-of-substitution framework for H&E-based molecular prediction across 5 cancers* · accepted poster (P082), co-first, corresponding & presenting author · [long abstract (Zenodo)](https://doi.org/10.5281/zenodo.24068874) · [code](https://github.com/Geongyu/predictability-substitutability)
 - BIOINFO/GIW ISCB-Asia 2026 · *A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics* · accepted oral, co-author (also accepted to ML4H 2026 Findings)
 - AACR 2023 · *Predicting protein receptor status from H&E-stained images in breast cancer* · poster, first author
 - AACR 2022 · *Recurrence risk prediction based on automatic histologic analysis of breast cancer using whole slide images* · poster, first author

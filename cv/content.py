@@ -149,7 +149,7 @@ EN = {
         ('Co-author, two Korean e-books on AI drug discovery (BOOKK)', '2026 · wrote the AI and math parts'),
     ],
     "talks": [
-        ('Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers', 'BIOINFO/GIW ISCB-Asia 2026 · Accepted poster · First author'),
+        ('Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers', 'BIOINFO/GIW ISCB-Asia 2026 · Accepted poster · Co-first &amp; corresponding author · doi.org/10.5281/zenodo.24068874'),
         ('Predicting Protein Receptor Status from H&amp;E-stained Images in Breast Cancer', 'AACR Annual Meeting 2023 · Poster · First author'),
         ('Recurrence Risk Prediction Based on Automatic Histologic Analysis of Breast Cancer Using Whole Slide Images', 'AACR Annual Meeting 2022 · Poster · First author'),
         ('A Deep Learning based Pancreatic Adenocarcinoma Survival Prediction Model Applicable to Adenocarcinoma of Other Organs', 'AACR Annual Meeting 2022 · Poster · Co-author'),
@@ -234,7 +234,7 @@ KO = {
         ('AI 신약개발 전자책 2권 공저(부크크)', '2026 · 《질병의 신호를 읽어라》《약이 될 분자를 찾아라》 · AI·수학 파트 집필 · OMIXAI 동료들과 업무 외 자발적 프로젝트'),
     ],
     "talks": [
-        ('Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers', 'BIOINFO/GIW ISCB-Asia 2026 · 포스터 발표 채택 · 제1저자'),
+        ('Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers', 'BIOINFO/GIW ISCB-Asia 2026 · 포스터 발표 채택 · 공동 제1저자·교신저자 · doi.org/10.5281/zenodo.24068874'),
         ('Predicting Protein Receptor Status from H&amp;E-stained Images in Breast Cancer', 'AACR 연례학술대회 2023 · 포스터 발표 · 제1저자'),
         ('Recurrence Risk Prediction Based on Automatic Histologic Analysis of Breast Cancer Using Whole Slide Images', 'AACR 연례학술대회 2022 · 포스터 발표 · 제1저자'),
         ('A Deep Learning based Pancreatic Adenocarcinoma Survival Prediction Model Applicable to Adenocarcinoma of Other Organs', 'AACR 연례학술대회 2022 · 포스터 발표 · 공저자'),
@@ -319,7 +319,7 @@ JA = {
         ('AI創薬に関する韓国語電子書籍2冊を共著(BOOKK)', '2026 · 『질병의 신호를 읽어라』『약이 될 분자를 찾아라』 · AI・数学パートを執筆 · OMIXAIの同僚と業務外の自主プロジェクト'),
     ],
     "talks": [
-        ('Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers', 'BIOINFO/GIW ISCB-Asia 2026 · ポスター発表(採択) · 筆頭著者'),
+        ('Predictability is not substitutability: a cost-of-substitution framework for H&amp;E-based molecular prediction across 5 cancers', 'BIOINFO/GIW ISCB-Asia 2026 · ポスター発表(採択) · 共同筆頭・責任著者 · doi.org/10.5281/zenodo.24068874'),
         ('Predicting Protein Receptor Status from H&amp;E-stained Images in Breast Cancer', 'AACR年次総会 2023 · ポスター発表 · 筆頭著者'),
         ('Recurrence Risk Prediction Based on Automatic Histologic Analysis of Breast Cancer Using Whole Slide Images', 'AACR年次総会 2022 · ポスター発表 · 筆頭著者'),
         ('A Deep Learning based Pancreatic Adenocarcinoma Survival Prediction Model Applicable to Adenocarcinoma of Other Organs', 'AACR年次総会 2022 · ポスター発表 · 共著者'),
