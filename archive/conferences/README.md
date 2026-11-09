@@ -4,7 +4,7 @@ Original posters and slides for conference presentations, kept in full here even
 
 | Date | Venue | Title | Role | Files |
 |---|---|---|---|---|
-| 2026-11 | BIOINFO/GIW ISCB-Asia 2026, Seoul (Nov 17–20) | Predictability Is Not Substitutability: A cost-of-substitution framework for H&E-based molecular prediction across 5 cancers (Submission #193) | First author, presenting, accepted poster | `GIW2026_abstract_substitutability_submission.png` |
+| 2026-11 | BIOINFO/GIW ISCB-Asia 2026, Seoul (Nov 17–20) | Predictability Is Not Substitutability: A cost-of-substitution framework for H&E-based molecular prediction across 5 cancers (Submission #193) | Co-first, corresponding and presenting author, accepted poster (P082) | `GIW2026_poster_substitutability.pdf` (final poster), `GIW2026_abstract_substitutability_submission.png` |
 | 2026-11 | BIOINFO/GIW ISCB-Asia 2026, Seoul (Nov 17–20) | A reliability map for per-gene multiome RNA velocity parameters in single-cell kinetics (Abstract #241) | Co-author, accepted oral | `GIW2026_abstract_rna_velocity_reliability.png` |
 | 2023-04 | AACR Annual Meeting 2023, Orlando | Predicting Protein Receptor Status from H&E-stained Images in Breast Cancer (Abstract #5404) | First author, poster | `AACR2023_poster_protein_receptor_HE.png` |
 | 2022-04-12 | AACR Annual Meeting 2022, New Orleans | Recurrence Risk Prediction Based on Automatic Histologic Analysis of Breast Cancer Using Whole Slide Images | First author, poster | `AACR2022_breast_recurrence_slide_01..06.png` |
