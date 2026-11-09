@@ -626,8 +626,39 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
           <div class="tagline"><span class="meta-unit"><span>Nemotron + ルール検査</span> <b>韓 / 英 / 日 / 中</b></span> <span class="meta-unit"><span>OpenShell迂回アクセス拒否</span> <b>4 / 4</b></span> <a href='https://k-beauty-gate-zeta.vercel.app/' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/K-BeautyGate' target='_blank' rel='noopener'>code ↗</a></div>
           <p>同じハッカソンの本選でTeam FlyGate(5人)が制作した作品で、決勝には上記のFlyGateで進出しました。訪問者の好み・避けたい成分・予算・時間から、根拠付きの製品推薦、店舗ルート、店員に見せる韓国語カードを作ります。中核のPythonワークフロー、WebデモとVercelデプロイ、韓国MFDS・台湾TFDAの成分・回収データとの照合、危険な依頼やプロンプトインジェクション文書を拒否する検査を担当しました。同じコードをBrev上のNVIDIA OpenShellサンドボックスで実行し、通常のモデル呼び出しは許可され、ポリシー外のファイル・ネットワークアクセスは拒否されることを実行記録で確認しました。</p>
         </div>
+      </article><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_screw.jpg" target="_blank" rel="noopener"><img src="/assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">コンピュータビジョン · Fronttec</div>
+          <h3>ねじ不良判別</h3>
+          <div class="tagline"><span class="meta-unit">5クラス</span> <span class="meta-unit"><b>1枚0.3秒未満</b></span></div>
+          <p>製造ラインの不良検出です(969枚、5クラス、1枚0.3秒以内の制約)。分類前に、深層学習ではなくマシンビジョンでねじ位置を特定して背景を除去し、精度を高めました。</p>
+        </div>
+      </article>
+<article class="card">
+        <div class="card-body">
+          <div class="k">表形式データML · Zigbang</div>
+          <h3>マンション成約価格予測</h3>
+          <div class="tagline"><span class="meta-unit">160万件</span> <span class="meta-unit">指標: RMSE</span></div>
+          <p>ソウル・釜山の成約価格を160万件のデータで予測しました。郵便番号で住所を再照合して誤記の地域を修正し、元データにない公共API特徴量(周辺の地下鉄・学校)を追加しました。</p>
+        </div>
+      </article>
+<article class="card">
+        <div class="card-body">
+          <div class="k">データエンジニアリング · ソウル科学技術大</div>
+          <h3>音楽チャート収集パイプラインとDB</h3>
+          <div class="tagline"><span class="meta-unit">6プラットフォーム</span> <span class="meta-unit">日次収集</span> <span class="meta-unit">スキーマ設計</span> <a href='https://github.com/Geongyu/2020-Database-Project' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>Melon・Genie・VIBE・YouTube Music・Apple Music・Bugsの6プラットフォームから、Top 100を毎日同時刻に収集しました。曲・アーティスト単位で統合してDBに格納し、チャートイン/アウトによる欠損はNULL許容カラム、多言語タイトルはnvarcharで扱うスキーマを設計しました。</p>
+        </div>
+      </article>
+<article class="card">
+        <div class="card-body">
+          <div class="k">コンピュータビジョン · ソウル科学技術大</div>
+          <h3>セグメンテーションモデルの敵対的頑健性</h3>
+          <div class="tagline"><span class="meta-unit">敵対的学習</span> <span class="meta-unit">Label smoothing</span> <span class="meta-unit"><span class="term">Cut-out</span></span> <a href='https://github.com/Geongyu/2019_DL_Project' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>PASCAL VOC(20クラス、1,928枚、4,203オブジェクト)でU-Netセグメンテーションにadversarial training・label smoothing・cut-outを単独/組み合わせで適用し、頑健性と精度のトレードオフを比較しました。医療AIにも引き継いだ「頑健性優先」の出発点です。</p>
+        </div>
       </article></div></details>
-    <p class="earlier">産業用ビジョン、表形式データML、データエンジニアリング、セグメンテーションの頑健性に関する初期の取り組み(2019–2020)は<a href="https://github.com/Geongyu" target="_blank" rel="noopener">GitHub</a>でご覧いただけます。</p>
   </section>
 
   <!-- PUBLICATIONS -->
