@@ -100,8 +100,8 @@ EN = {
             "Lead R&amp;D on a multi-omics model that combines proteomics and RNA with H&amp;E pathology to predict drug response, in an 8-person team (4 proteomics, 4 AI; in progress).",
             "Built a proteomics-based model of cell-line drug response (IC50) and evaluated it leave-one-drug-out over 381 compounds, so test drugs were never seen in training (Pearson ≥ 0.65; internal R&amp;D, unpublished). Also worked on self-supervised representation learning for proteomics with LoRA/PEFT.",
             "Developed ADMET prediction models and a drug-recommendation algorithm for canine cancer (top-k ≥ 70% on an in-house cohort; internal R&amp;D, unpublished).",
-            "Co-led OMIXAI's team entry in the Arc Institute Virtual Cell Challenge (predicting CRISPR-knockdown response in pluripotent stem cells).",
-            "Co-first author of the MoSPR preprint on gene-expression prediction from H&amp;E (code released). The method ranked 1st of 15 in the paper's benchmark on three TCGA cancers (gene-wise PCC).",
+            "Planned and ran OMIXAI's Arc Institute Virtual Cell Challenge entry (CRISPR-knockdown response in pluripotent stem cells).",
+            "Co-first author of the MoSPR preprint on gene-expression prediction from H&amp;E (code released); ran half of the experiments, incl. baselines. The method ranked 1st of 15 in the paper's benchmark on three TCGA cancers (gene-wise PCC).",
         ]),
         ("Deep Bio", "Mar 2021 – Jan 2025", "AI Researcher · Seoul", [
             "First-authored a two-hospital study (n=125) predicting Oncotype DX recurrence-score risk groups from H&amp;E slides alone (Scientific Reports 2025; sensitivity 0.86 / 0.75 / 0.53 for low / intermediate / high risk). Built a WSI pipeline that processed 500+ slides.",
@@ -183,8 +183,8 @@ KO = {
             "프로테오믹스·RNA와 H&amp;E 병리를 통합한 약물 반응 예측 멀티오믹스 모델 R&amp;D 주도(진행 중, 단백체 분석 4명·AI 4명의 8인 팀)",
             "프로테오믹스 기반 세포주 약물 반응(IC50) 예측 모델 개발 및 leave-one-drug-out 평가(381개 약물 각각을 학습에서 빼고 테스트, Pearson ≥ 0.65, 사내 R&amp;D, 미공개), LoRA/PEFT 기반 자기지도 프로테옴 표현 학습 별도 수행",
             "반려견 종양 약물 추천 알고리즘(자체 코호트 top-k ≥ 70%, 사내 R&amp;D, 미공개) 및 ADMET 예측 모델 개발",
-            "Arc Institute Virtual Cell Challenge OMIXAI 참가팀 공동 주도(만능줄기세포 CRISPR 녹다운 반응 예측)",
-            "H&amp;E 기반 유전자 발현 예측 모델 MoSPR 공동 제1저자(논문 벤치마크 15개 방법 중 유전자별 PCC 1위, TCGA 3개 암종, 프리프린트·코드 공개)",
+            "Arc Institute Virtual Cell Challenge에 OMIXAI 팀으로 참가해 기획과 실험을 직접 수행(만능줄기세포 CRISPR 녹다운 반응 예측)",
+            "H&amp;E 기반 유전자 발현 예측 모델 MoSPR 공동 제1저자, 베이스라인 비교 등 실험의 절반 담당(논문 벤치마크 15개 방법 중 유전자별 PCC 1위, TCGA 3개 암종, 프리프린트·코드 공개)",
             "G2L 논문(AAAI 2026 워크숍 W3PHIAI 구두 발표) 및 삼중음성 유방암 공간 프로테오믹스 프리프린트(2026) 공저자",
         ]),
         ("딥바이오", "2021.03 – 2025.01", "AI 리서처 · 서울", [
@@ -268,8 +268,8 @@ JA = {
             "プロテオミクス・RNAとH&amp;E病理画像を統合して薬剤応答を予測するマルチオミクスモデルの研究開発を主導(進行中、プロテオーム解析4名・AI 4名の8人チーム)",
             "プロテオミクスに基づく細胞株の薬剤応答(IC50)予測モデルを開発し、381薬剤のそれぞれを学習から外す<span class=\"nw\">leave-one-drug-out方式</span>で評価(Pearson ≥ 0.65、社内R&amp;D・未発表)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も実施",
             "犬の腫瘍に対する薬剤推薦アルゴリズム(自社コホートでtop-k ≥ 70%、社内R&amp;D・未発表)とADMET予測モデルの開発",
-            "OMIXAIチームの共同リーダーとしてArc Institute Virtual Cell Challengeに参加(多能性幹細胞のCRISPRノックダウン応答予測)",
-            "H&amp;E画像から遺伝子発現を予測するMoSPR論文の共同筆頭著者(TCGA 3がん種での論文内比較で遺伝子別PCCが15手法中1位)",
+            "Arc Institute Virtual Cell ChallengeへのOMIXAI参加を企画から実験まで担当(多能性幹細胞のCRISPRノックダウン応答予測)",
+            "H&amp;E画像から遺伝子発現を予測するMoSPR論文の共同筆頭著者。ベースライン比較を含む実験の約半分を担当(TCGA 3がん種での論文内比較で遺伝子別PCCが15手法中1位)",
             "G2L論文(AAAI 2026 ワークショップ W3PHIAI 口頭発表)およびトリプルネガティブ乳がんの空間プロテオミクス研究(プレプリント、2026)の共著者",
         ]),
         ("Deep Bio", "2021.03 – 2025.01", "AIリサーチャー · ソウル", [
