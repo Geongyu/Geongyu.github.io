@@ -542,7 +542,15 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <!-- PROJECTS -->
   <section class="block" id="projects">
     <div class="head"><h2>プロジェクト</h2><span class="note">マルチモーダル学習 · 解釈可能性 · 信頼できるML</span><a class="ghlink" href="https://github.com/Geongyu" target="_blank" rel="noopener">code ↗ github.com/Geongyu</a></div>
-    <div class="grid">
+    <div class="grid"><article class="card with-figure">
+        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
+        <div class="card-body">
+          <div class="k">サイドプロジェクト · NVIDIA Agentic AIハッカソン2026 · 1位</div>
+          <h3>FlyGate：創薬探索と医薬品安全性監視</h3>
+          <div class="tagline"><span class="meta-unit"><span>追加学習なしのNIM検証 · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> 親和性</span> <b>ρ 0.767</b></span> <a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
+          <p>NVIDIA Agentic AI Hackathon 2026(主催パートナー: FAST CAMPUS)で決勝TOP 5に進み、1位を獲得した5人チームの作品です。市販前の標的結合予測(FlyDiscovery)と市販後の有害事象監視(FlyVigilance)を一つのエージェントでつなぎます。BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)で構造予測から親和性まで評価するFlyDiscoveryモジュールと探索ワークベンチUIを担当しました。</p>
+        </div>
+      </article>
 
       <article class="card">
         <div class="card-body">
@@ -610,20 +618,12 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
           <p>創薬初期の物性プロファイリングに向け、ADMET予測と薬物–標的相互作用のモデリングを行いました。病理画像のOODサンプルを定義してラベル付けを効率化する能動学習フレームワークも開発しました。社内R&Dのため未公開です。</p>
         </div>
       </article><article class="card with-figure">
-        <a class="card-fig" href="/assets/proj_flygate_workbench.jpg" target="_blank" rel="noopener"><img src="/assets/proj_flygate_workbench.jpg" alt="FlyDiscovery workbench: PARP1 × niraparib structure, docking and affinity evidence" loading="lazy"></a>
-        <div class="card-body">
-          <div class="k">サイドプロジェクト · FAST CAMPUS × NVIDIA Agentic AIハッカソン2026 · 決勝進出</div>
-          <h3>FlyGate：創薬探索と医薬品安全性監視</h3>
-          <div class="tagline"><span class="meta-unit"><span>追加学習なしのNIM検証 · OpenFold3 RMSD</span> <b>1.0 Å</b></span> <span class="meta-unit"><span><span class="term">Boltz-2</span> 親和性</span> <b>ρ 0.767</b></span> <a href='https://flygate.kr' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/Project-FlyGate' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>FAST CAMPUS × NVIDIA Agentic AI Hackathon 2026で決勝に進出した作品(5人チーム)です。市販前の標的結合予測(FlyDiscovery)と市販後の有害事象監視(FlyVigilance)を一つのエージェントでつなぎます。BioNeMo NIM(OpenFold3 · DiffDock · <span class="term">Boltz-2</span>)で構造予測から親和性まで評価するFlyDiscoveryモジュールと探索ワークベンチUIを担当しました。</p>
-        </div>
-      </article><article class="card with-figure">
         <a class="card-fig" href="/assets/proj_kbeautygate_architecture.jpg" target="_blank" rel="noopener"><img src="/assets/proj_kbeautygate_architecture.jpg" alt="K-BeautyGate architecture: one Python workflow run on a Vercel web demo and inside an NVIDIA OpenShell sandbox on Brev" loading="lazy"></a>
         <div class="card-body">
-          <div class="k">サイドプロジェクト · FAST CAMPUS × NVIDIA Agentic AIハッカソン2026 · 本選</div>
+          <div class="k">サイドプロジェクト · NVIDIA Agentic AIハッカソン2026 · 本選</div>
           <h3>K-BeautyGate：サンドボックスで検証した訪韓客向けK-ビューティー買い物エージェント</h3>
           <div class="tagline"><span class="meta-unit"><span>Nemotron + ルール検査</span> <b>韓 / 英 / 日 / 中</b></span> <span class="meta-unit"><span>OpenShell迂回アクセス拒否</span> <b>4 / 4</b></span> <a href='https://k-beauty-gate-zeta.vercel.app/' target='_blank' rel='noopener'>live ↗</a> <a href='https://github.com/Team-FlyGate/K-BeautyGate' target='_blank' rel='noopener'>code ↗</a></div>
-          <p>同じハッカソンの本選でTeam FlyGate(5人)が制作した作品で、決勝には上記のFlyGateで進出しました。訪問者の好み・避けたい成分・予算・時間から、根拠付きの製品推薦、店舗ルート、店員に見せる韓国語カードを作ります。中核のPythonワークフロー、WebデモとVercelデプロイ、韓国MFDS・台湾TFDAの成分・回収データとの照合、危険な依頼やプロンプトインジェクション文書を拒否する検査を担当しました。同じコードをBrev上のNVIDIA OpenShellサンドボックスで実行し、通常のモデル呼び出しは許可され、ポリシー外のファイル・ネットワークアクセスは拒否されることを実行記録で確認しました。</p>
+          <p>同じハッカソンの本選でTeam FlyGate(5人)が制作した作品で、決勝には上記のFlyGateで進出し、1位を獲得しました。訪問者の好み・避けたい成分・予算・時間から、根拠付きの製品推薦、店舗ルート、店員に見せる韓国語カードを作ります。中核のPythonワークフロー、WebデモとVercelデプロイ、韓国MFDS・台湾TFDAの成分・回収データとの照合、危険な依頼やプロンプトインジェクション文書を拒否する検査を担当しました。同じコードをBrev上のNVIDIA OpenShellサンドボックスで実行し、通常のモデル呼び出しは許可され、ポリシー外のファイル・ネットワークアクセスは拒否されることを実行記録で確認しました。</p>
         </div>
       </article><article class="card with-figure">
         <a class="card-fig" href="/assets/proj_screw.jpg" target="_blank" rel="noopener"><img src="/assets/proj_screw.jpg" alt="Machine-vision screw localization with circle detection" loading="lazy"></a>

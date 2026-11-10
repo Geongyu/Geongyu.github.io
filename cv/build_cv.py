@@ -154,7 +154,7 @@ def render_html(d, inline_css=None):
     a("<section>")
     a(f'<h2>{d["h_awards"]}</h2>')
     for title, meta in d["awards"]:
-        a(f'<div class="award"><div class="h">{title}</div><div class="m">{meta}</div></div>')
+        a(f'<div class="li"><b>{title}</b> <span class="m">{meta_html(meta)}</span></div>')
     a("</section>")
 
     # talks

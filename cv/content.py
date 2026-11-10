@@ -131,6 +131,8 @@ EN = {
         ("MLOps &amp; Languages", "Python, R, SQL, Bash, Docker, Slurm, W&amp;B, MLflow, FastAPI, Git"),
     ],
     "awards": [
+        ("NVIDIA Agentic AI Hackathon 2026",
+         "1st place · FlyGate drug-discovery agent · team of 5"),
         ("KPIs 2024 Challenge · Whole-Slide Track",
          "2nd place · glomerular segmentation, held in conjunction with MICCAI 2024 · results published in Medical Image Analysis 2026"),
         ("Pan-Sarcoma Proteogenomic Profiling for Precision Oncology",
@@ -216,6 +218,8 @@ KO = {
         ("MLOps &amp; 언어", "Python, R, SQL, Bash, Docker, Slurm, W&amp;B, MLflow, FastAPI, Git"),
     ],
     "awards": [
+        ("NVIDIA Agentic AI 해커톤 2026",
+         "1위 · 신약 탐색 에이전트 FlyGate · 5인 팀"),
         ("KPIs 2024 챌린지 · 전체 슬라이드 트랙",
          "2위 · 사구체 분할 · MICCAI 2024 연계 개최 · 결과 논문 Medical Image Analysis 2026 게재"),
         ("정밀종양학을 위한 Pan-Sarcoma 프로테오지노믹스 프로파일링",
@@ -301,6 +305,8 @@ JA = {
         ("MLOps・言語", "Python, R, SQL, Bash, Docker, Slurm, W&amp;B, MLflow, FastAPI, Git"),
     ],
     "awards": [
+        ("NVIDIA Agentic AIハッカソン2026",
+         "1位 · 創薬エージェントFlyGate · 5人チーム"),
         ("KPIs 2024チャレンジ · WSIレベル部門",
          "2位 · 糸球体セグメンテーション · MICCAI 2024 併催 · Medical Image Analysis 2026 掲載"),
         ("精密腫瘍学に向けたPan-Sarcomaプロテオゲノムプロファイリング",
