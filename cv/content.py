@@ -97,9 +97,9 @@ EN = {
     "h_talks": "Conference Presentations",
     "jobs": [
         ("OMIXAI (formerly RadiSen)", "Feb 2025 – Present", "AI Researcher · Seoul", [
-            "Lead R&amp;D on a multi-omics model that combines proteomics and RNA with H&amp;E pathology to predict drug response, in an 8-person team (4 proteomics, 4 AI; in progress).",
-            "Built a proteomics-based model of cell-line drug response (IC50) and evaluated it leave-one-drug-out over 381 compounds, so test drugs were never seen in training (Pearson ≥ 0.65; internal R&amp;D, unpublished). Also worked on self-supervised representation learning for proteomics with LoRA/PEFT.",
-            "Developed ADMET prediction models and a drug-recommendation algorithm for canine cancer (top-k ≥ 70% on an in-house cohort; internal R&amp;D, unpublished).",
+            "Lead multi-omics R&amp;D combining proteomics, RNA and H&amp;E to predict drug response in an 8-person team (4 proteomics, 4 AI); fine-tuned proteomic foundation models with LoRA/PEFT.",
+            "Developed the drug-recommendation algorithm for a veterinary-oncology CDSS (IPET national R&amp;D) and externally validated drug-response models on an independent human-sarcoma cohort (drug ranking held moderately; weak cell-line ranking improved).",
+            "Built an LLM-based proteomics auto-insight system (FastAPI, Next.js, LangChain; Enrichr/STRING, PDF reports, Q&amp;A), deployed in-house for ~9 months, plus a prototype that interprets model predictions and SHAP values.",
             "Planned and ran OMIXAI's Arc Institute Virtual Cell Challenge entry (CRISPR-knockdown response in pluripotent stem cells).",
             "Co-first author of the MoSPR preprint on gene-expression prediction from H&amp;E (code released); ran half of the experiments, incl. baselines. The method ranked 1st of 15 in the paper's benchmark on three TCGA cancers (gene-wise PCC).",
         ]),
@@ -107,7 +107,7 @@ EN = {
             "First-authored a two-hospital study (n=125) predicting Oncotype DX recurrence-score risk groups from H&amp;E slides alone (Scientific Reports 2025; sensitivity 0.86 / 0.75 / 0.53 for low / intermediate / high risk). Built a WSI pipeline that processed 500+ slides.",
             "Developed a lymph-node metastasis detection model and, with the Deep Bio team, the glomerular segmentation model for the KPIs 2024 Challenge at MICCAI 2024 (2nd place, whole-slide track). Co-authored the challenge report (Medical Image Analysis, 2026).",
             "Led prostate metastasis and recurrence-risk modeling, incl. lymph-node metastasis detection (unpublished).",
-            "Contributed to pre-deployment model validation and regulatory documentation for a medical-AI product submitted to Korea's MFDS.",
+            "Contributed to pre-deployment model validation and regulatory documentation for a medical-AI product submitted to Korea's MFDS; built Docker server automation and ran DDP/FSDP training.",
         ]),
         ("Nuricon", "2021", "Intern · Pangyo", [
             "Built a parking-lot fire-detection AI system.",
@@ -115,7 +115,7 @@ EN = {
     ],
     "projects": [
         ("Veterinary oncology CDSS: drug recommendation for canine cancer", "OMIXAI · IPET national R&amp;D · 2026–2030",
-         "Drug-recommendation algorithm for canine cancer toward a clinical decision-support system (top-k&nbsp;≥&nbsp;70% on an in-house cohort; internal R&amp;D, unpublished)."),
+         "Drug-recommendation algorithm for canine cancer toward a clinical decision-support system (internal R&amp;D, unpublished)."),
         ("Brain-hemorrhage detection on CT", "SeoulTech × SK / Ajou Univ. Hospital · 2019",
          "Hemorrhage segmentation (U-Net, Dice&nbsp;0.66, 50 test patients) and slice classification (accuracy&nbsp;0.90, 143 patients). Ranking performance held on the external RSNA set; class-activation maps confirmed the model looked at the bleed."),
     ],
@@ -136,7 +136,7 @@ EN = {
         ("KPIs 2024 Challenge · Whole-Slide Track",
          "2nd place · glomerular segmentation, held in conjunction with MICCAI 2024 · results published in Medical Image Analysis 2026"),
         ("Pan-Sarcoma Proteogenomic Profiling for Precision Oncology",
-         "National Cancer Center Korea · Korea–US–Japan · human (Kyung Hee Univ. Med. Ctr.) + canine · 2025–2028 · Participating Researcher"),
+         "National Cancer Center Korea · international · human (Kyung Hee Univ. Med. Ctr.) + canine (Konkuk Univ. Vet. Med., overseas cancer center) · 2025–2028 · Participating Researcher"),
         ("Virtual-Cell CDSS for Veterinary Oncology",
          "IPET / Ministry of Agriculture · 2026–2030 (ongoing) · Participating Researcher"),
         ("General-Purpose AI for Cancer Pathology Diagnosis",
@@ -182,9 +182,9 @@ KO = {
     "h_talks": "학회 발표",
     "jobs": [
         ("OMIXAI(구 래디센)", "2025.02 – 현재", "AI 리서처 · 서울", [
-            "프로테오믹스·RNA와 H&amp;E 병리를 통합한 약물 반응 예측 멀티오믹스 모델 R&amp;D 주도(진행 중, 8인 팀: 단백체 분석 4명·AI 4명)",
-            "프로테오믹스 기반 세포주 약물 반응(IC50) 예측 모델 개발 및 leave-one-drug-out 평가(381개 약물을 하나씩 학습에서 빼고 테스트, Pearson ≥ 0.65, 사내 R&amp;D, 미공개), LoRA/PEFT 기반 프로테옴 자기지도 표현 학습도 진행",
-            "반려견 종양 약물 추천 알고리즘(자체 코호트 top-k ≥ 70%, 사내 R&amp;D, 미공개) 및 ADMET 예측 모델 개발",
+            "프로테오믹스·RNA와 H&amp;E 병리를 통합한 약물 반응 예측 멀티오믹스 모델 R&amp;D 주도(진행 중, 8인 팀: 단백체 분석 4명·AI 4명), 단백체 파운데이션 모델 LoRA/PEFT 미세조정",
+            "수의 종양 CDSS(IPET 국가 R&amp;D)용 반려견 종양 약물 추천 알고리즘 개발, Pan-Sarcoma 과제에서 독립 사람 육종 코호트로 약물 반응 모델 외부검증(약물 간 순위 예측 일정 수준 유지, 낮았던 세포주 간 순위는 약물별 상호작용 항으로 개선)",
+            "LLM 기반 단백체 자동 해석 시스템 설계·구현(FastAPI·Next.js·LangChain, GPT-4o/Gemini, Enrichr·STRING 연동, PDF 리포트, 결과 질의응답), 사내 서버 배포 후 약 9개월 운영, 모델 예측·SHAP 기여도 해석 프로토타입 구현",
             "Arc Institute Virtual Cell Challenge에 OMIXAI 팀으로 참가해 기획과 실험을 직접 수행(만능줄기세포 CRISPR 녹다운 반응 예측)",
             "H&amp;E 기반 유전자 발현 예측 모델 MoSPR 공동 제1저자, 베이스라인 비교 등 실험 절반 담당(논문 벤치마크 15개 비교 모델 중 유전자별 PCC 1위, TCGA 3개 암종, 프리프린트·코드 공개)",
             "G2L 논문(AAAI 2026 워크숍 W3PHIAI 구두 발표) 및 삼중음성 유방암 공간 프로테오믹스 프리프린트(2026) 공저자",
@@ -194,7 +194,7 @@ KO = {
             "림프절 전이 검출 모델 개발, 팀원들과 KPIs 2024 챌린지 사구체 분할 모델 개발(전체 슬라이드 트랙 2위, MICCAI 2024), 챌린지 결과 논문(Medical Image Analysis, 2026) 공저자",
             "전립선암 전이·재발 위험 모델링 프로젝트 주도(림프절 전이 모델 포함, 사내·미발표)",
             "AACR(2022, 2023)·USCAP(2022)에서 유방암 병리 AI 연구 제1저자 발표, 췌장암·유방암 생존 예측 포스터 공저자",
-            "식약처(MFDS) 인허가를 신청한 의료 AI 제품의 출시 전 모델 검증과 인허가 문서 작성에 참여, Docker 기반 사내 서버 자동화 도구 개발",
+            "식약처(MFDS) 인허가를 신청한 의료 AI 제품의 출시 전 모델 검증과 인허가 문서 작성에 참여, Docker 기반 사내 서버 자동화 도구 개발, DDP/FSDP 분산 학습 운용",
         ]),
         ("누리콘", "2021", "인턴 · 판교", [
             "주차장 화재 감지 AI 시스템 개발",
@@ -202,7 +202,7 @@ KO = {
     ],
     "projects": [
         ("수의 종양 CDSS: 반려견 종양 약물 추천", "OMIXAI · 농림식품기술기획평가원(IPET) 국가 R&amp;D · 2026 – 2030",
-         "임상 의사결정 지원 시스템(CDSS)용 반려견 종양 약물 추천 알고리즘 개발(자체 코호트 top-k&nbsp;≥&nbsp;70%, 사내 R&amp;D·미공개)"),
+         "임상 의사결정 지원 시스템(CDSS)용 반려견 종양 약물 추천 알고리즘 개발(사내 R&amp;D·미공개)"),
         ("CT 뇌출혈 검출", "서울과기대 × SK / 아주대병원 · 2019",
          "뇌출혈 분할(U-Net, Dice&nbsp;0.66, 테스트 50명)과 슬라이스 분류(정확도&nbsp;0.90, 테스트 143명), 외부 RSNA 데이터에서도 순위 성능 유지, class-activation map으로 모델이 출혈 부위를 보고 판단하는지 점검"),
     ],
@@ -223,7 +223,7 @@ KO = {
         ("KPIs 2024 챌린지 · 전체 슬라이드 트랙",
          "2위 · 사구체 분할 · MICCAI 2024 연계 개최 · 결과 논문 Medical Image Analysis 2026 게재"),
         ("정밀종양학을 위한 Pan-Sarcoma 프로테오지노믹스 프로파일링",
-         "국립암센터 한미암공동연구사업 · 한·미·일 · 사람 육종(경희대학교 의료원) + 반려견 종양 · 2025 – 2028 · 참여연구원"),
+         "국립암센터 한미암공동연구사업 · 국제 공동연구 · 사람 육종(경희대학교 의료원) + 반려견 종양(건국대 수의대 · 해외 암센터) · 2025 – 2028 · 참여연구원"),
         ("수의 종양학을 위한 버추얼 셀 CDSS",
          "농림식품기술기획평가원(IPET) · 2026 – 2030(수행 중) · 참여연구원"),
         ("암 병리 진단용 범용 AI 개발·상용화",
@@ -269,9 +269,9 @@ JA = {
     "h_talks": "学会発表",
     "jobs": [
         ("OMIXAI (旧RadiSen)", "2025.02 – 現在", "AIリサーチャー · ソウル", [
-            "プロテオミクス・RNAとH&amp;E病理画像を統合して薬剤応答を予測するマルチオミクスモデルの研究開発を主導(進行中、プロテオーム解析4名・AI 4名の8人チーム)",
-            "プロテオミクスに基づく細胞株の薬剤応答(IC50)予測モデルを開発し、381薬剤のそれぞれを学習から外す<span class=\"nw\">leave-one-drug-out方式</span>で評価(Pearson ≥ 0.65、社内R&amp;D・未発表)。LoRA/PEFTによる自己教師ありプロテオーム表現学習も実施",
-            "犬の腫瘍に対する薬剤推薦アルゴリズム(自社コホートでtop-k ≥ 70%、社内R&amp;D・未発表)とADMET予測モデルの開発",
+            "プロテオミクス・RNA・H&amp;Eを統合した薬剤応答予測のマルチオミクス研究開発を主導(プロテオーム解析4名・AI 4名の8人チーム)、プロテオーム基盤モデルのLoRA/PEFT微調整",
+            "獣医腫瘍CDSS(IPET国家R&amp;D)向けに犬の腫瘍の薬剤推薦アルゴリズムを開発し、Pan-Sarcoma課題では独立したヒト肉腫コホートで薬剤応答モデルを外部検証(薬剤間の順位予測は一定水準を維持、低かった細胞株間の順位は薬剤別交互作用項で改善)",
+            "LLMベースのプロテオミクス自動解釈システムを設計・実装(FastAPI・Next.js・LangChain、Enrichr・STRING、PDFレポート、質疑応答)、社内で約9か月運用、モデル予測とSHAPの解釈プロトタイプも実装",
             "Arc Institute Virtual Cell ChallengeへのOMIXAI参加を企画から実験まで担当(多能性幹細胞のCRISPRノックダウン応答予測)",
             "H&amp;E画像から遺伝子発現を予測するMoSPR論文の共同筆頭著者。ベースライン比較を含む実験の約半分を担当(TCGA 3がん種での論文内比較で遺伝子別PCCが15手法中1位)",
             "G2L論文(AAAI 2026 ワークショップ W3PHIAI 口頭発表)およびトリプルネガティブ乳がんの空間プロテオミクス研究(プレプリント、2026)の共著者",
@@ -281,7 +281,7 @@ JA = {
             "リンパ節転移検出モデルの開発、Deep BioチームでのKPIs 2024チャレンジ向け糸球体セグメンテーションモデルの開発(WSIレベル部門2位、MICCAI&nbsp;2024)。チャレンジ報告論文(Medical Image Analysis、2026)の共著者",
             "前立腺がんの転移・再発リスクモデリングのプロジェクトを主導(リンパ節転移モデルを含む、社内・未発表)",
             "AACR(2022、2023)・USCAP(2022)で乳がん病理AI研究を筆頭著者として発表。膵臓がん・乳がん生存予測ポスターの共著者",
-            "MFDSに承認申請された医療AI製品の実運用前モデル検証と申請文書作成に貢献。Dockerによる社内サーバー自動化ツールの開発",
+            "MFDSに承認申請された医療AI製品の実運用前検証と申請文書作成に貢献、Dockerによるサーバー自動化とDDP/FSDP分散学習",
         ]),
         ("Nuricon", "2021", "インターン · 板橋(パンギョ)", [
             "駐車場向け火災検知AIシステムの開発",
@@ -289,7 +289,7 @@ JA = {
     ],
     "projects": [
         ("獣医腫瘍CDSS：犬の腫瘍に対する薬剤推薦", "OMIXAI · 農林食品技術企画評価院(IPET)国家R&amp;D · 2026–2030",
-         "臨床意思決定支援システム(CDSS)に向けた犬の腫瘍の薬剤推薦アルゴリズムを開発(自社コホートでtop-k&nbsp;≥&nbsp;70%、社内R&amp;D・未公開)"),
+         "臨床意思決定支援システム(CDSS)に向けた犬の腫瘍の薬剤推薦アルゴリズムを開発(社内R&amp;D・未公開)"),
         ("CT脳出血検出", "ソウル科学技術大学 × SK / 亜洲大学校病院 · 2019",
          "脳出血セグメンテーション(U-Net、Dice&nbsp;0.66、テスト50名)とスライス分類(正解率&nbsp;0.90、テスト143名)。外部RSNAデータでも順位性能を維持し、class-activation mapで出血部位に基づく判断を確認"),
     ],
@@ -310,7 +310,7 @@ JA = {
         ("KPIs 2024チャレンジ · WSIレベル部門",
          "2位 · 糸球体セグメンテーション · MICCAI 2024 併催 · Medical Image Analysis 2026 掲載"),
         ("精密腫瘍学に向けたPan-Sarcomaプロテオゲノムプロファイリング",
-         "国立がんセンター 韓米がん共同研究事業 · 韓・米・日 · ヒト肉腫(慶熙大学校医療院)+犬の腫瘍 · 2025–2028 · 研究員として参画"),
+         "国立がんセンター 韓米がん共同研究事業 · 国際共同研究 · ヒト肉腫(慶熙大学校医療院)+犬の腫瘍(建国大学校獣医科大学・海外のがんセンター) · 2025–2028 · 研究員として参画"),
         ("獣医腫瘍学に向けたバーチャルセルCDSS",
          "農林食品技術企画評価院(IPET) · 2026–2030(進行中) · 研究員として参画"),
         ("がん病理診断向け汎用AIの開発・実用化",

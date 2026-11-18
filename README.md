@@ -80,7 +80,7 @@ Multimodal & Representation Learning · Interpretability & Explainable AI · Gen
 
 | | | |
 |:--|:--|:--|
-| **OMIXAI** (fmr. RadiSen) | AI Researcher | Feb 2025 – present · lead multi-omics model R&D that combines proteomics and RNA with H&E for drug-response prediction in an 8-person team (4 proteomics, 4 AI; in progress) · proteomics drug-response model evaluated leave-one-drug-out over 381 compounds, so no test compound is seen in training (Pearson ≥ 0.65; internal R&D, unpublished) · veterinary oncology CDSS · co-authored G2L and the TNBC spatial-proteomics preprint · co-led OMIXAI's team entry in the Arc Institute Virtual Cell Challenge |
+| **OMIXAI** (fmr. RadiSen) | AI Researcher | Feb 2025 – present · lead multi-omics model R&D that combines proteomics and RNA with H&E for drug-response prediction in an 8-person team (4 proteomics, 4 AI; in progress) · veterinary oncology CDSS drug-recommendation algorithm · external validation of drug-response models on an independent human-sarcoma cohort (drug-level ranking held at a moderate level; the initially weak cell-line-level ranking improved with drug-specific interaction terms) · LLM-based proteomics auto-insight system (FastAPI, Next.js, LangChain; deployed in-house for ~9 months; prototyped agent interpretation of model predictions and SHAP attributions) · co-authored G2L and the TNBC spatial-proteomics preprint · planned and ran OMIXAI's Arc Institute Virtual Cell Challenge entry |
 | **Deep Bio** | AI Researcher | Mar 2021 – Jan 2025 · computational pathology · built a WSI pipeline (500+ slides) · contributed to pre-deployment model validation and regulatory documentation for a medical-AI product submitted to Korea's MFDS · led prostate metastasis & recurrence-risk projects · KPIs 2024 Challenge (2nd, whole-slide track) · first-author presentations on breast-cancer pathology AI at AACR (2022, 2023) and USCAP (2022) |
 | **Nuricon** | Intern | 2021 · parking-lot fire-detection AI |
 
@@ -92,7 +92,7 @@ Multimodal & Representation Learning · Interpretability & Explainable AI · Gen
 
 ## Funded research programs <sub>(participating researcher)</sub>
 
-- **Pan-Sarcoma Proteogenomic Profiling for Precision Oncology** · National Cancer Center Korea, Korea–US Cancer Joint Research Program (RS-2025-02243055) · Korea–US–Japan · two parallel studies: human sarcoma (Kyung Hee Univ. Medical Center) and canine tumors (Japanese partner) · 2025 – 2028 · in progress, no public results yet
+- **Pan-Sarcoma Proteogenomic Profiling for Precision Oncology** · National Cancer Center Korea, Korea–US Cancer Joint Research Program (RS-2025-02243055) · international collaboration · two parallel studies: human sarcoma (Kyung Hee Univ. Medical Center) and canine tumors (Konkuk Univ. College of Veterinary Medicine and an overseas cancer center), with external validation on an independent human-sarcoma dataset · 2025 – 2028 · in progress, no public results yet
 - **Virtual-Cell CDSS for Veterinary Oncology** · IPET / Ministry of Agriculture, national R&D (RS-2026-25527499) · 2026 – 2030, ongoing
 - **General-Purpose AI for Cancer Pathology Diagnosis** · lead: Deep Bio, national R&D · program 2021 – 2025 · my participation Apr 2021 – Jan 2025
 

@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """
-Generate /ko/index.html and /ja/index.html from the root index.html.
+Generate /ko/index.html, /ja/index.html and /bio/index.html from the root index.html.
+
+Variants: elements marked data-variant="general" appear on the root, /ko/ and /ja/ pages;
+elements marked data-variant="bio" appear only on /bio/ (English, noindex, shared by link).
+Inside a data-bio-sort container, children with data-bio-order="n" are reordered on /bio/;
+data-bio-open adds `open` to a <details> on /bio/. The root page hides bio elements with CSS.
 
 index.html (English) is the single source of truth: every element that carries
 data-ko="..." / data-ja="..." attributes gets its inner HTML swapped for the
@@ -112,6 +117,91 @@ def localise_body(s, lang):
     return "".join(out), n
 
 
+# ---------- site variants: general (root, ko, ja) vs bio (/bio/, English only) ----------
+VARIANT = re.compile(r'<([a-zA-Z][a-zA-Z0-9]*)(?=[^>]*\sdata-variant="(general|bio)")')
+
+
+def apply_variant(s, keep):
+    """Drop every element whose data-variant is not `keep`; strip the attribute from the rest."""
+    out, pos = [], 0
+    while True:
+        m = VARIANT.search(s, pos)
+        if not m:
+            out.append(s[pos:]); break
+        tag, var = m.group(1), m.group(2)
+        _, _, after = parse_start_tag(s, m.start())
+        if var == keep:
+            out.append(s[pos:m.start()] + s[m.start():after].replace(f' data-variant="{var}"', ""))
+            pos = after
+        else:
+            if tag.lower() in VOID:
+                end = after
+            else:
+                _, end = find_matching_end(s, tag, after)
+            out.append(s[pos:m.start()]); pos = end
+    return "".join(out)
+
+
+def bio_sort(s):
+    """Inside each data-bio-sort container, reorder the children that carry data-bio-order."""
+    pos = 0
+    while True:
+        k = s.find(" data-bio-sort", pos)
+        if k == -1:
+            return s
+        lt = s.rfind("<", 0, k)
+        tag, _, after = parse_start_tag(s, lt)
+        cs, _ = find_matching_end(s, tag, after)
+        inner = s[after:cs]
+        items = []
+        for m in re.finditer(r'<([a-zA-Z]+)[^>]*\sdata-bio-order="(\d+)"', inner):
+            if items and m.start() < items[-1][1]:
+                continue  # nested
+            t, _, a2 = parse_start_tag(inner, m.start())
+            _, e2 = find_matching_end(inner, t, a2)
+            items.append((m.start(), e2, int(m.group(2))))
+        ordered = sorted(items, key=lambda x: x[2])
+        new, p0 = [], 0
+        for (st, en, _), (ost, oen, _) in zip(items, ordered):
+            new.append(inner[p0:st] + inner[ost:oen]); p0 = en
+        new.append(inner[p0:])
+        s = s[:after] + "".join(new) + s[cs:]
+        pos = after
+
+
+def strip_variant_marks(s, bio=False):
+    s = s.replace('[data-variant="bio"] { display: none !important; }\n', "")
+    if bio:
+        s = s.replace(" data-bio-open", " open")
+    s = s.replace(" data-bio-open", "").replace(" data-bio-sort", "")
+    return re.sub(r'\sdata-bio-order="\d+"', "", s)
+
+
+BIO = {
+    "title": "Geongyu Lee · Medical &amp; Bio AI Researcher",
+    "description": "Medical and bio AI researcher working on computational pathology, multi-omics and precision oncology: models that link H&amp;E pathology with proteomics and RNA, validated across sites.",
+}
+
+
+def build_bio(src):
+    s = apply_variant(src, "bio")
+    s = bio_sort(s)
+    s = strip_variant_marks(s, bio=True)
+    s = re.sub(r'\sdata-(?:ko|ja)="[^"]*"', "", s)
+    s = re.sub(r"<title>.*?</title>", f"<title>{BIO['title']}</title>", s, count=1)
+    for pat in (r'<meta name="description" content="[^"]*">', r'<meta property="og:description" content="[^"]*">', r'<meta name="twitter:description" content="[^"]*">'):
+        s = re.sub(pat, lambda m: re.sub(r'content="[^"]*"', f'content="{BIO["description"]}"', m.group(0)), s, count=1)
+    s = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{BIO["title"]}">', s, count=1)
+    s = re.sub(r'<meta name="twitter:title" content="[^"]*">', f'<meta name="twitter:title" content="{BIO["title"]}">', s, count=1)
+    s = s.replace('<meta name="robots" content="index, follow">', '<meta name="robots" content="noindex, nofollow">')
+    s = re.sub(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{SITE}/bio/">', s, count=1)
+    s = re.sub(r'<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n', "", s)
+    s = re.sub(r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{SITE}/bio/">', s, count=1)
+    s = re.sub(r'\s*<nav class="langsw".*?</nav>', "", s, count=1, flags=re.S)
+    assert "data-variant=" not in s and "data-ko=" not in s
+    return s
+
+
 def localise_head(s, m):
     def sub1(pat, repl, s):
         new, k = re.subn(pat, repl, s, count=1)
@@ -170,8 +260,9 @@ def main():
             with open(smap, "w", encoding="utf-8", newline="") as f:
                 f.write(new_xml)
             print(f"sitemap.xml ← lastmod {upd.group(1)}")
+    general = strip_variant_marks(apply_variant(src, "general"))
     for lang, m in META.items():
-        body, n = localise_body(src, lang)
+        body, n = localise_body(general, lang)
         page = localise_head(body, m)
         assert "data-ko=" not in page and "data-ja=" not in page, "leftover data-* attributes"
         assert 'src="assets/' not in page and 'href="assets/' not in page, "relative asset path"
@@ -179,6 +270,11 @@ def main():
         with open(os.path.join(d, "index.html"), "w", encoding="utf-8") as f:
             f.write(page)
         print(f"{m['dir']}/index.html  ← {n} elements localised, {len(page):,} bytes")
+    bio = build_bio(src)
+    os.makedirs(os.path.join(ROOT, "bio"), exist_ok=True)
+    with open(os.path.join(ROOT, "bio", "index.html"), "w", encoding="utf-8") as f:
+        f.write(bio)
+    print(f"bio/index.html  ← biomedical variant (English, noindex), {len(bio):,} bytes")
 
 
 if __name__ == "__main__":
