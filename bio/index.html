@@ -507,6 +507,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
         <details class="project-detail"><summary>Details</summary><ul>
             <li>Lead R&amp;D on a multi-omics model that combines proteomics and RNA with H&amp;E pathology to predict drug response (in progress).</li>
             <li>Built a proteomics foundation-model corpus and fine-tuned models with LoRA/PEFT.</li>
+            <li>Reproduced a published molecular foundation model (MiniMol) end-to-end, including pretraining, and ran pretraining-data scaling experiments on scaffold-based subsets of an ~83M-molecule dataset (PM6), using GNNs and RDKit.</li>
             <li>Developed the drug-recommendation algorithm for a veterinary-oncology CDSS (IPET national R&amp;D), and externally validated drug-response models on an independent human-sarcoma cohort (Pan-Sarcoma program): drug-level ranking held at a moderate level, and the initially weak cell-line-level ranking improved after adding drug-specific interaction terms.</li>
             <li>Designed and built an LLM-based proteomics auto-insight system (FastAPI, Next.js, LangChain with GPT-4o/Gemini; Enrichr and STRING analysis, automatic PDF reports, Q&amp;A on results); ran in-house for about nine months. Also prototyped passing model predictions and SHAP attributions to the agent for interpretation.</li>
             <li>Planned and ran OMIXAI's entry in the Arc Institute Virtual Cell Challenge, from approach to experiments (predicting CRISPR-knockdown response in pluripotent stem cells).</li>
@@ -577,7 +578,16 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
           <div class="k">Multi-omics · OMIXAI</div>
           <h3><span class="term">RNA–protein</span> analysis for <span class="term">dual-target</span> siRNA selection</h3>
           <div class="tagline"><span class="meta-unit"><span>Genes</span> <b>11,238</b></span> <span class="meta-unit"><span>Median Spearman</span> <b>ρ 0.441</b></span> <span class="meta-unit">CPTAC GBM, n = 100</span></div>
-          <p>Part of a glioblastoma <span class="term">dual-target</span> siRNA program. Matched transcriptome and proteome for 100 CPTAC GBM patients and tested how well RNA expression tracks protein abundance for each gene. Used <span class="term">1,000-permutation</span> nulls, <span class="term">multiple-testing</span> correction, sensitivity checks and flags for variability, low expression and missingness to build an evidence table for ranking <span class="term">wet-lab</span> candidates.</p>
+          <p>Part of a glioblastoma <span class="term">dual-target</span> siRNA program. Matched transcriptome and proteome for 100 CPTAC GBM patients and tested how well RNA expression tracks protein abundance for each gene. Used <span class="term">1,000-permutation</span> nulls, <span class="term">multiple-testing</span> correction, sensitivity checks and flags for variability, low expression and missingness to build an evidence table for ranking <span class="term">wet-lab</span> candidates. I then packaged siRNA-efficacy prediction as a Python package and CLI, with MLflow experiment tracking, a web page and a tutorial for the team.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k">Representation learning · OMIXAI</div>
+          <h3>Foundation models for proteomics and molecules</h3>
+          <div class="tagline"><span class="meta-unit">LoRA / PEFT fine-tuning</span> <span class="meta-unit">MiniMol pretraining reproduced</span> <span class="meta-unit">PM6, ~83M molecules</span> <span class="meta-unit">GNN · RDKit</span></div>
+          <p>Built a corpus for pretraining proteomic foundation models and fine-tuned them with LoRA/PEFT, checking whether frozen embeddings actually beat raw features. Separately, reproduced a published molecular foundation model (MiniMol) end-to-end, including pretraining, and ran pretraining-data scaling experiments on scaffold-based subsets of an ~83M-molecule dataset (PM6), using GNNs and RDKit.</p>
         </div>
       </article>
 
@@ -609,6 +619,8 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
           <p>Industry project at SeoulTech&#x27;s Data Intelligence Lab (Jun–Dec 2019, PI Prof. Sangheum Hwang), where I was one of two main researchers. Built hemorrhage segmentation (<span class="term">U-Net</span>, 279 training / 50 test patients) and a <span class="term">slice-level</span> classifier (EfficientNet, 523 / 143 patients). 2D beat 3D because the slices are 5&nbsp;mm thick. On the external RSNA intracranial-hemorrhage set the classifier&#x27;s ranking performance did not drop, and <span class="term">class-activation</span> maps confirmed it looked at the bleed. 80% of missed slices had 100 or fewer labelled pixels, pointing to label noise rather than model error.</p>
         </div>
       </article>
+
+      
 
     </div>
 
@@ -905,6 +917,9 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
         <div class="when"><span class="co">Daejeon University</span><span>2012 – 2019</span><br><span class="loc">Daejeon</span></div>
         <div class="what">
           <h3>B.S. in Information Security</h3>
+          <ul>
+            <li>Placed in three competitions as an undergraduate: the 2017 Living Lab Hackathon (team lead, cross-platform log analyzer), the 2018 Industrial Complex Big Data Idea Contest, and the 2018 Power Industry Big Data &amp; AI Contest (Korea East-West Power; team representative).</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -964,7 +979,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <section class="block" id="skills">
     <div class="head"><h2>Tools</h2></div>
 
-  <div class="two"><div class="skillset"><h3>Pathology Stack</h3><div class="tags"><span class="tag">OpenSlide</span><span class="tag">QuPath</span><span class="tag">CLAM / weakly-supervised MIL</span><span class="tag">UNI · CONCH · Virchow</span><span class="tag">WSI tiling</span></div></div><div class="skillset"><h3>Bio / Omics</h3><div class="tags"><span class="tag">scanpy · AnnData</span><span class="tag">Single-cell perturbation</span><span class="tag">Proteomic representation</span><span class="tag">ADMET</span></div></div><div class="skillset"><h3>Deep Learning</h3><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div><div class="skillset"><h3>MLOps &amp; Languages</h3><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div></div></section><section class="block" id="funding"><div class="head"><h2>Funded research</h2><span class="note">Participating researcher</span></div><details class="fold" open><summary>Show funded projects</summary><div class="fund"><h3><span class="term">Pan-Sarcoma</span> Proteogenomic Profiling for Precision Oncology</h3><div class="meta">National Cancer Center Korea · Korea–US Cancer Joint Research Program · RS-2025-02243055<br>International collaboration · human sarcoma (Kyung Hee Univ. Medical Center) · canine tumors (Konkuk Univ. College of Veterinary Medicine · overseas cancer center)<br>Apr 2025 – Dec 2028 · ongoing · Participating Researcher</div></div><div class="fund"><h3><span class="term">Virtual-Cell</span> CDSS for Veterinary Oncology</h3><div class="meta">IPET (Korea Institute of Planning and Evaluation for Technology in Food, Agriculture and Forestry) · Precision diagnostics for major intractable diseases · RS-2026-25527499<br>2026 – 2030 · ongoing · Participating Researcher</div></div><div class="fund"><h3><span class="term">General-Purpose</span> AI for Cancer Pathology Diagnosis</h3><div class="meta">Lead: Deep Bio · National R&amp;D Program<br>Program Apr 2021 – Dec 2025 · Participating Researcher, Apr 2021 – Jan 2025</div></div></details></section>
+  <div class="two"><div class="skillset"><h3>Pathology Stack</h3><div class="tags"><span class="tag">OpenSlide</span><span class="tag">QuPath</span><span class="tag">CLAM / weakly-supervised MIL</span><span class="tag">UNI · CONCH · Virchow</span><span class="tag">WSI tiling</span></div></div><div class="skillset"><h3>Bio / Omics</h3><div class="tags"><span class="tag">scanpy · AnnData</span><span class="tag">Single-cell perturbation</span><span class="tag">Proteomic representation</span><span class="tag">Molecular representation (GNN · RDKit)</span><span class="tag">ADMET</span></div></div><div class="skillset"><h3>Deep Learning</h3><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div><div class="skillset"><h3>MLOps &amp; Languages</h3><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div></div></section><section class="block" id="funding"><div class="head"><h2>Funded research</h2><span class="note">Participating researcher</span></div><details class="fold" open><summary>Show funded projects</summary><div class="fund"><h3><span class="term">Pan-Sarcoma</span> Proteogenomic Profiling for Precision Oncology</h3><div class="meta">National Cancer Center Korea · Korea–US Cancer Joint Research Program · RS-2025-02243055<br>International collaboration · human sarcoma (Kyung Hee Univ. Medical Center) · canine tumors (Konkuk Univ. College of Veterinary Medicine · overseas cancer center)<br>Apr 2025 – Dec 2028 · ongoing · Participating Researcher</div></div><div class="fund"><h3><span class="term">Virtual-Cell</span> CDSS for Veterinary Oncology</h3><div class="meta">IPET (Korea Institute of Planning and Evaluation for Technology in Food, Agriculture and Forestry) · Precision diagnostics for major intractable diseases · RS-2026-25527499<br>2026 – 2030 · ongoing · Participating Researcher</div></div><div class="fund"><h3><span class="term">General-Purpose</span> AI for Cancer Pathology Diagnosis</h3><div class="meta">Lead: Deep Bio · National R&amp;D Program<br>Program Apr 2021 – Dec 2025 · Participating Researcher, Apr 2021 – Jan 2025</div></div><div class="fund"><h3><span class="term">Brain-hemorrhage</span> detection AI on CT (industry–academia project)</h3><div class="meta">SeoulTech Data Intelligence Lab × SK · Ajou Univ. Hospital data<br>PI: Prof. Sangheum Hwang · Jun 2019 – Dec 2019 · completed · Key participating researcher</div></div><div class="fund"><h3>AI–Semiconductor Convergence Specialist Training Program</h3><div class="meta">National Research Foundation of Korea · System Semiconductor Convergence Specialist Training · RS-2020-NR047145<br>During M.S. at SeoulTech · completed · Participating researcher</div></div></details></section>
 
   <!-- CONTACT -->
   <section class="block contact" id="contact">
@@ -981,7 +996,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 </main>
 
 <footer><span>Geongyu Lee · Seoul, Korea</span>
-  <span class="upd">LAST UPDATED 2026-11-18</span>
+  <span class="upd">LAST UPDATED 2026-11-23</span>
 </footer>
 
 </body>

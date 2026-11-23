@@ -455,7 +455,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
       <p class="role">AIリサーチャー · OMIXAI</p>
       <p class="research-focus">Multimodal Learning · Reliable ML · LLM Systems</p>
       
-      <p class="lede">異なるデータを一つの表現に結びつけ、学習時に見ていない環境でも性能が保たれるかを検証します。モデル研究からデータパイプライン、LLMベースの自動化システムの社内導入まで、自ら実装してきました。</p>
+      <p class="lede">異なるデータを一つの表現に結びつけ、学習時に見ていない環境でも性能が保たれるかを検証します。モデル研究からデータパイプライン、LLMベースの自動化システムの社内導入まで、自ら実装してきました。最近は薬剤応答モデリングとLLMエージェントのワークフローへと領域を広げています。</p>
       
       <div class="chips">
         <a class="chip cv" id="cvbtn" href="/assets/Geongyu_Lee_CV_JA.pdf" download>CV (PDF)</a>
@@ -500,7 +500,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <!-- STRENGTHS -->
   <section class="block" id="strengths">
     <div class="head"><h2>チームにもたらせること</h2></div>
-    <div class="about"><div class="aside bring"><ul><li><strong>本番運用とシステム実装。</strong>LLMベースの自動解釈システムを社内サーバーに導入して約9か月運用し、多施設データパイプラインとDockerベースのサーバー自動化ツールを構築しました。</li><li><strong>分散学習から微調整・検証まで。</strong>FSDP/DDPによる分散学習(Deep Bio)とLoRA/PEFTによる基盤モデルの微調整(OMIXAI)を行い、韓国MFDSへの承認申請に向けたモデル検証と文書作成に参加しました。</li><li><strong>メンタリングと査読。</strong>Codeitのメンターとして若手30名以上と8つ以上のプロジェクトチームを指導し、ML4H 2026の査読者を務めています。</li></ul></div></div>
+    <div class="about"><div class="aside bring"><ul><li><strong>本番運用とシステム実装。</strong>LLMベースの自動解釈システムを社内サーバーに導入して約9か月運用し、多施設データパイプラインとDockerベースのサーバー自動化ツールを構築しました。</li><li><strong>分散学習から微調整・検証まで。</strong>FSDP/DDPによる分散学習(Deep Bio)とLoRA/PEFTによる基盤モデルの微調整(OMIXAI)を行い、韓国MFDSへの承認申請に向けたモデル検証と文書作成に参加しました。</li><li><strong>メンタリングと査読。</strong>Codeitのメンターとして若手30名以上と8つ以上のプロジェクトチームを指導し、ML4H 2026の査読者を務めています。</li><li><strong>エージェントワークフローと研究ツール。</strong>GPT・Gemini・Claudeの5つのエージェントが隔離されたDocker環境で互いの研究設計と結果に反論し合う相互レビュー体制を構築・運用しました。研究コードはチームで使えるツールにまとめました：siRNA効果予測のパッケージ・CLI・Web(MLflowで記録)、元の結果と一致したまま30〜37倍高速化したPPIベースの作用機序(MoA)解析パイプライン。</li></ul></div></div>
   </section>
 
   <!-- EXPERIENCE -->
@@ -516,6 +516,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
         <details class="project-detail"><summary>詳細</summary><ul>
             <li>プロテオミクス・RNAとH&E病理画像を統合して薬剤応答を予測するマルチオミクスモデルの研究開発を主導(進行中)</li>
             <li>プロテオーム基盤モデル用コーパスの構築とLoRA/PEFTによる微調整</li>
+            <li>公開された分子基盤モデル(MiniMol)を事前学習から再現し、約8,300万分子のデータセット(PM6)からスキャフォールド基準のサブセットを作成して、事前学習データ量による性能変化を検証(GNN・RDKit)</li>
             <li>獣医腫瘍CDSS(IPET国家R&D)向けの犬の腫瘍に対する薬剤推薦アルゴリズムを開発し、Pan-Sarcoma課題では独立したヒト肉腫コホートで薬剤応答モデルを外部検証(薬剤間の順位予測は一定の水準を保ち、低かった細胞株間の順位予測は薬剤ごとの交互作用項で改善)</li>
             <li>LLMベースのプロテオミクス自動解釈システムを設計・実装(FastAPI・Next.js・LangChain、GPT-4o/Gemini、Enrichr・STRING連携、PDFレポート自動生成、結果への質疑応答)、社内で約9か月運用。モデル予測とSHAP寄与度をエージェントが解釈する連携プロトタイプも実装</li>
             <li>Arc Institute Virtual Cell ChallengeへのOMIXAI参加を企画から実験まで担当(多能性幹細胞のCRISPRノックダウン応答予測)</li>
@@ -615,7 +616,25 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
           <div class="k">マルチオミクス · OMIXAI</div>
           <h3>デュアルターゲットsiRNA候補選定に向けたRNA–タンパク質解析</h3>
           <div class="tagline"><span class="meta-unit"><span>遺伝子</span> <b>11,238</b></span> <span class="meta-unit"><span>Spearman中央値</span> <b>ρ 0.441</b></span> <span class="meta-unit">CPTAC GBM 100名</span></div>
-          <p>膠芽腫(GBM)のデュアルターゲットsiRNA課題の一環です。CPTAC GBM患者100名のトランスクリプトームとプロテオームを対応づけ、RNA発現がタンパク質量をどの程度反映するかを遺伝子ごとに評価しました。1,000回のpermutation、多重検定補正、変動性・低発現・欠損のフラグ、感度分析を経て、ウェットラボ実験の候補を順位付けるための根拠表にまとめました。</p>
+          <p>膠芽腫(GBM)のデュアルターゲットsiRNA課題の一環です。CPTAC GBM患者100名のトランスクリプトームとプロテオームを対応づけ、RNA発現がタンパク質量をどの程度反映するかを遺伝子ごとに評価しました。1,000回のpermutation、多重検定補正、変動性・低発現・欠損のフラグ、感度分析を経て、ウェットラボ実験の候補を順位付けるための根拠表にまとめました。その後、siRNA効果予測をPythonパッケージとCLIにまとめ、MLflowでの実験記録・Webページ・チュートリアルまで整えてチームに展開しました。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k">表現学習 · OMIXAI</div>
+          <h3>プロテオーム・分子基盤モデル</h3>
+          <div class="tagline"><span class="meta-unit">LoRA / PEFT微調整</span> <span class="meta-unit">MiniMol事前学習の再現</span> <span class="meta-unit">PM6 約8,300万分子</span> <span class="meta-unit">GNN · RDKit</span></div>
+          <p>プロテオーム基盤モデルの事前学習用コーパスを構築し、LoRA/PEFTで微調整しながら、固定埋め込みが元の特徴量より実際に優れているかを点検しました。別途、公開された分子基盤モデル(MiniMol)を事前学習から再現し、約8,300万分子のデータセット(PM6)でスキャフォールド基準の部分集合を作り、事前学習データ量による性能の変化を実験しました(GNN・RDKit)。</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <div class="k">LLMエージェント · 研究運用 · OMIXAI</div>
+          <h3>複数のLLMエージェントが反論し合う研究の相互レビュー</h3>
+          <div class="tagline"><span class="meta-unit">エージェント5つ · GPT / Gemini / Claude</span> <span class="meta-unit">隔離されたDocker環境</span> <span class="meta-unit">メタレビューで判定</span></div>
+          <p>GPT 2つ、Gemini 1つ、Claude 2つのエージェントがそれぞれ隔離されたDockerコンテナで研究課題と結果を独立に検討し、互いの主張に反論したうえで、メタレビューで課題を進めるかどうかを判定する仕組みです。一つのモデルの判断に頼らず研究設計と結果の穴を洗い出すために作り、社内の研究課題のレビューに運用しました。</p>
         </div>
       </article>
 
@@ -914,6 +933,9 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
         <div class="when"><span class="co">大田大学</span><span>2012 – 2019</span><br><span class="loc">大田</span></div>
         <div class="what">
           <h3>学士(情報セキュリティ)</h3>
+          <ul>
+            <li>学部時代にコンテスト3件で入賞：2017 リビングラボ・ハッカソン(Team HACTORのリーダー、統合プラットフォーム・ログ分析器)、2018 産業団地ビッグデータアイデアコンテスト、2018 発電産業ビッグデータ分析AI活用コンテスト(韓国東西発電、チーム代表)</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -973,7 +995,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
   <section class="block" id="skills">
     <div class="head"><h2>技術</h2></div>
 
-  <div class="two"><div class="skillset"><h3>深層学習</h3><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div><div class="skillset"><h3>MLOps・言語</h3><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div><div class="skillset"><h3>病理画像解析</h3><div class="tags"><span class="tag">OpenSlide</span><span class="tag">QuPath</span><span class="tag">CLAM / weakly-supervised MIL</span><span class="tag">UNI · CONCH · Virchow</span><span class="tag">WSIタイリング</span></div></div><div class="skillset"><h3>バイオ / オミクス</h3><div class="tags"><span class="tag">scanpy · AnnData</span><span class="tag">シングルセル摂動</span><span class="tag">プロテオーム表現学習</span><span class="tag">ADMET</span></div></div></div></section><section class="block" id="funding"><div class="head"><h2>研究プロジェクト</h2><span class="note">参加研究員</span></div><details class="fold"><summary>課題一覧を見る</summary><div class="fund"><h3>精密腫瘍学に向けたPan-Sarcomaプロテオゲノムプロファイリング</h3><div class="meta">国立がんセンター 韓米がん共同研究事業 · RS-2025-02243055<br>国際共同研究 · ヒト肉腫(慶熙大学校医療院) · 犬の腫瘍(建国大学校獣医科大学 · 海外のがんセンター)<br>2025.04 – 2028.12 · 進行中 · 参加研究員</div></div><div class="fund"><h3>獣医腫瘍学に向けたバーチャルセルCDSS</h3><div class="meta">農林食品技術企画評価院(IPET) · 先端技術基盤 主要難治性疾患精密診断技術開発事業 · RS-2026-25527499<br>2026 – 2030 · 進行中 · 参加研究員</div></div><div class="fund"><h3>がん病理診断向け汎用AIの開発・実用化</h3><div class="meta">代表機関: Deep Bio · 国家R&D<br>事業期間 2021.04 – 2025.12 · 参加研究員(2021.04 – 2025.01)</div></div></details></section>
+  <div class="two"><div class="skillset"><h3>深層学習</h3><div class="tags"><span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">PEFT / LoRA</span><span class="tag">Accelerate</span><span class="tag">DDP / FSDP</span></div></div><div class="skillset"><h3>MLOps・言語</h3><div class="tags"><span class="tag">Python</span><span class="tag">R · SQL · Bash</span><span class="tag">Docker · Slurm</span><span class="tag">W&amp;B · MLflow</span><span class="tag">FastAPI · Git</span></div></div><div class="skillset"><h3>病理画像解析</h3><div class="tags"><span class="tag">OpenSlide</span><span class="tag">QuPath</span><span class="tag">CLAM / weakly-supervised MIL</span><span class="tag">UNI · CONCH · Virchow</span><span class="tag">WSIタイリング</span></div></div><div class="skillset"><h3>バイオ / オミクス</h3><div class="tags"><span class="tag">scanpy · AnnData</span><span class="tag">シングルセル摂動</span><span class="tag">プロテオーム表現学習</span><span class="tag">分子表現学習 (GNN · RDKit)</span><span class="tag">ADMET</span></div></div></div></section><section class="block" id="funding"><div class="head"><h2>研究プロジェクト</h2><span class="note">参加研究員</span></div><details class="fold"><summary>課題一覧を見る</summary><div class="fund"><h3>精密腫瘍学に向けたPan-Sarcomaプロテオゲノムプロファイリング</h3><div class="meta">国立がんセンター 韓米がん共同研究事業 · RS-2025-02243055<br>国際共同研究 · ヒト肉腫(慶熙大学校医療院) · 犬の腫瘍(建国大学校獣医科大学 · 海外のがんセンター)<br>2025.04 – 2028.12 · 進行中 · 参加研究員</div></div><div class="fund"><h3>獣医腫瘍学に向けたバーチャルセルCDSS</h3><div class="meta">農林食品技術企画評価院(IPET) · 先端技術基盤 主要難治性疾患精密診断技術開発事業 · RS-2026-25527499<br>2026 – 2030 · 進行中 · 参加研究員</div></div><div class="fund"><h3>がん病理診断向け汎用AIの開発・実用化</h3><div class="meta">代表機関: Deep Bio · 国家R&D<br>事業期間 2021.04 – 2025.12 · 参加研究員(2021.04 – 2025.01)</div></div><div class="fund"><h3>CT画像に基づく脳出血検出AI(産学課題)</h3><div class="meta">ソウル科学技術大学 データインテリジェンス研究室 × SK · 亜洲大学病院データ<br>研究責任者 ファン・サンフム教授 · 2019.06 – 2019.12 · 終了 · 主要参加研究員</div></div><div class="fund"><h3>人工知能半導体融合専門人材育成事業</h3><div class="meta">韓国研究財団 · システム半導体融合専門人材育成事業 · RS-2020-NR047145<br>ソウル科学技術大学修士課程在学中に参加 · 終了 · 参加研究者(共同)</div></div></details></section>
 
   <!-- CONTACT -->
   <section class="block contact" id="contact">
@@ -990,7 +1012,7 @@ footer .upd { display: block; margin-top: 6px; font-size: 13px; }
 </main>
 
 <footer><span>イ・ゴンギュ · 韓国・ソウル</span>
-  <span class="upd">最終更新 2026-11-18</span>
+  <span class="upd">最終更新 2026-11-23</span>
 </footer>
 
 </body>

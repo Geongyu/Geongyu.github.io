@@ -97,7 +97,7 @@ EN = {
     "h_talks": "Conference Presentations",
     "jobs": [
         ("OMIXAI (formerly RadiSen)", "Feb 2025 – Present", "AI Researcher · Seoul", [
-            "Lead multi-omics R&amp;D combining proteomics, RNA and H&amp;E to predict drug response in an 8-person team (4 proteomics, 4 AI); fine-tuned proteomic foundation models with LoRA/PEFT.",
+            "Lead multi-omics R&amp;D combining proteomics, RNA and H&amp;E to predict drug response in an 8-person team (4 proteomics, 4 AI); fine-tuned proteomic foundation models with LoRA/PEFT and reproduced a molecular foundation model (MiniMol) with pretraining-data scaling experiments.",
             "Developed the drug-recommendation algorithm for a veterinary-oncology CDSS (IPET national R&amp;D) and externally validated drug-response models on an independent human-sarcoma cohort (drug ranking held moderately; weak cell-line ranking improved).",
             "Built an LLM-based proteomics auto-insight system (FastAPI, Next.js, LangChain; Enrichr/STRING, PDF reports, Q&amp;A), deployed in-house for ~9 months, plus a prototype that interprets model predictions and SHAP values.",
             "Planned and ran OMIXAI's Arc Institute Virtual Cell Challenge entry (CRISPR-knockdown response in pluripotent stem cells).",
@@ -127,7 +127,7 @@ EN = {
     "skills": [
         ("Deep Learning", "PyTorch, HuggingFace, PEFT / LoRA, Accelerate, DDP / FSDP"),
         ("Pathology", "OpenSlide, QuPath, CLAM / weakly-supervised MIL, UNI · CONCH · Virchow, WSI tiling"),
-        ("Bio / Omics", "scanpy · AnnData, single-cell perturbation, proteomic representation learning, ADMET"),
+        ("Bio / Omics", "scanpy · AnnData, single-cell perturbation, proteomic &amp; molecular representation learning (GNN, RDKit), ADMET"),
         ("MLOps &amp; Languages", "Python, R, SQL, Bash, Docker, Slurm, W&amp;B, MLflow, FastAPI, Git"),
     ],
     "awards": [
@@ -182,7 +182,7 @@ KO = {
     "h_talks": "학회 발표",
     "jobs": [
         ("OMIXAI(구 래디센)", "2025.02 – 현재", "AI 리서처 · 서울", [
-            "프로테오믹스·RNA와 H&amp;E 병리를 통합한 약물 반응 예측 멀티오믹스 모델 R&amp;D 주도(진행 중, 8인 팀: 단백체 분석 4명·AI 4명), 단백체 파운데이션 모델 LoRA/PEFT 미세조정",
+            "프로테오믹스·RNA와 H&amp;E 병리를 통합한 약물 반응 예측 멀티오믹스 모델 R&amp;D 주도(진행 중, 8인 팀: 단백체 분석 4명·AI 4명), 단백체 파운데이션 모델 LoRA/PEFT 미세조정, 분자 파운데이션 모델(MiniMol) 사전학습 재현 및 데이터 규모 실험",
             "수의 종양 CDSS(IPET 국가 R&amp;D)용 반려견 종양 약물 추천 알고리즘 개발, Pan-Sarcoma 과제에서 독립 사람 육종 코호트로 약물 반응 모델 외부검증(약물 간 순위 예측 일정 수준 유지, 낮았던 세포주 간 순위는 약물별 상호작용 항으로 개선)",
             "LLM 기반 단백체 자동 해석 시스템 설계·구현(FastAPI·Next.js·LangChain, GPT-4o/Gemini, Enrichr·STRING 연동, PDF 리포트, 결과 질의응답), 사내 서버 배포 후 약 9개월 운영, 모델 예측·SHAP 기여도 해석 프로토타입 구현",
             "Arc Institute Virtual Cell Challenge에 OMIXAI 팀으로 참가해 기획과 실험을 직접 수행(만능줄기세포 CRISPR 녹다운 반응 예측)",
@@ -214,7 +214,7 @@ KO = {
     "skills": [
         ("딥러닝", "PyTorch, HuggingFace, PEFT / LoRA, Accelerate, DDP / FSDP"),
         ("디지털 병리", "OpenSlide, QuPath, CLAM / weakly-supervised MIL, UNI · CONCH · Virchow, WSI 타일링"),
-        ("바이오 / 오믹스", "scanpy · AnnData, 단일세포 섭동, 프로테옴 표현 학습, ADMET"),
+        ("바이오 / 오믹스", "scanpy · AnnData, 단일세포 섭동, 프로테옴·분자 표현 학습(GNN, RDKit), ADMET"),
         ("MLOps &amp; 언어", "Python, R, SQL, Bash, Docker, Slurm, W&amp;B, MLflow, FastAPI, Git"),
     ],
     "awards": [
@@ -269,7 +269,7 @@ JA = {
     "h_talks": "学会発表",
     "jobs": [
         ("OMIXAI (旧RadiSen)", "2025.02 – 現在", "AIリサーチャー · ソウル", [
-            "プロテオミクス・RNA・H&amp;Eを統合した薬剤応答予測のマルチオミクス研究開発を主導(プロテオーム解析4名・AI 4名の8人チーム)、プロテオーム基盤モデルのLoRA/PEFT微調整",
+            "プロテオミクス・RNA・H&amp;Eを統合した薬剤応答予測のマルチオミクス研究開発を主導(プロテオーム解析4名・AI 4名の8人チーム)、プロテオーム基盤モデルのLoRA/PEFT微調整、分子基盤モデル(MiniMol)の事前学習再現とデータ量実験",
             "獣医腫瘍CDSS(IPET国家R&amp;D)向けに犬の腫瘍の薬剤推薦アルゴリズムを開発し、Pan-Sarcoma課題では独立したヒト肉腫コホートで薬剤応答モデルを外部検証(薬剤間の順位予測は一定水準を維持、低かった細胞株間の順位は薬剤別交互作用項で改善)",
             "LLMベースのプロテオミクス自動解釈システムを設計・実装(FastAPI・Next.js・LangChain、Enrichr・STRING、PDFレポート、質疑応答)、社内で約9か月運用、モデル予測とSHAPの解釈プロトタイプも実装",
             "Arc Institute Virtual Cell ChallengeへのOMIXAI参加を企画から実験まで担当(多能性幹細胞のCRISPRノックダウン応答予測)",
@@ -301,7 +301,7 @@ JA = {
     "skills": [
         ("深層学習", "PyTorch, HuggingFace, PEFT / LoRA, Accelerate, DDP / FSDP"),
         ("病理", "OpenSlide, QuPath, CLAM / weakly-supervised MIL, UNI · CONCH · Virchow, WSIタイリング"),
-        ("バイオ / オミクス", "scanpy · AnnData, シングルセル摂動, プロテオーム表現学習, ADMET"),
+        ("バイオ / オミクス", "scanpy · AnnData, シングルセル摂動, プロテオーム・分子表現学習(GNN, RDKit), ADMET"),
         ("MLOps・言語", "Python, R, SQL, Bash, Docker, Slurm, W&amp;B, MLflow, FastAPI, Git"),
     ],
     "awards": [
